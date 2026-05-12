@@ -113,6 +113,26 @@ export function updateCheckinStatus(id: number, status: string): void {
     .run()
 }
 
+// --- Milestone toggle ---
+
+export function getMilestoneHappened(opName: string): Record<string, number> {
+  const rows = getDb().prepare("SELECT milestone, happened FROM checkin_milestones WHERE op_name = ?").all(opName) as { milestone: string; happened: number }[]
+  const map: Record<string, number> = {}
+  for (const r of rows) map[r.milestone] = r.happened
+  return map
+}
+
+export function toggleMilestone(opName: string, milestone: string): number {
+  const current = getDb().prepare("SELECT happened FROM checkin_milestones WHERE op_name = ? AND milestone = ?").get(opName, milestone) as { happened: number } | undefined
+  const next = current ? (current.happened ? 0 : 1) : 1
+  if (current) {
+    getDb().prepare("UPDATE checkin_milestones SET happened = ? WHERE op_name = ? AND milestone = ?").run(next, opName, milestone)
+  } else {
+    getDb().prepare("INSERT INTO checkin_milestones (op_name, milestone, happened) VALUES (?, ?, ?)").run(opName, milestone, next)
+  }
+  return next
+}
+
 // --- Ninety-day Check-ins CRUD ---
 
 export function getCheckinById(id: number) {
