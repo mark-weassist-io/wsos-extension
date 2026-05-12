@@ -40,16 +40,16 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
         <>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
             <div style="display:flex;align-items:center;gap:12px">
-              <span class="text-secondary">{total} active</span>
+              <span class="text-secondary">{total} OPs</span>
+              <a href="/ops" class={`badge ${!showTrashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Active</a>
               <a href="/ops?trashed=1" class={`badge ${showTrashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Trashed</a>
-              {showTrashed && <a href="/ops" class="badge badge-secondary" style="text-decoration:none">Active</a>}
             </div>
             <div style="display:flex;gap:8px">
               <form action="/ops" method="get" class="search-bar" style="margin-bottom:0">
                 <input type="text" name="search" placeholder="Search OPs..." value={search || ""} />
-                <button type="submit">Search</button>
+                <button type="submit" class="btn btn-primary btn-sm">Search</button>
               </form>
-              <a href="/ops/new" style="padding:8px 16px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);text-decoration:none;font-size:0.875rem;font-weight:500">+ New OP</a>
+              <a href="/ops/new" class="btn btn-primary btn-sm" style="text-decoration:none;display:inline-flex;align-items:center">+ New OP</a>
             </div>
           </div>
 
