@@ -56,6 +56,14 @@ export const ops = sqliteTable("wsos_ops", {
   index("idx_ops_email").on(table.email),
 ])
 
+export const opPhones = sqliteTable("wsos_op_phones", {
+  id: integer("id").primaryKey(),
+  opName: text("op_name").notNull(),
+  phone: text("phone").notNull(),
+  sortOrder: integer("sort_order").default(0),
+  createdAt: text("created_at").default("datetime('now')"),
+})
+
 export const clients = sqliteTable("wsos_clients", {
   id: integer("id").primaryKey(),
   name: text("name").notNull(),
