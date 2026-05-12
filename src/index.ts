@@ -74,12 +74,17 @@ function pageHTML(title: string, active: string, body: string): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>${title} — WSOS Extension</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
 <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <style>${CSS}</style></head>
 <body><div class="app-shell"><aside class="sidebar">
 <div class="sidebar-header"><h1 class="logo">WSOS Ext</h1><span class="subtitle">WeAssist Operations</span></div>
-<nav class="nav">${NAV.map(n => `<a href="${n.href}" class="nav-item${active === n.id ? " active" : ""}"><span class="nav-icon">${n.icon}</span><span class="nav-label">${n.label}</span></a>`).join("")}</nav>
-<div class="sidebar-footer"><span class="version">v0.1.0</span></div>
+<nav class="nav">${NAV.map(n => `<a href="${n.href}" class="d-flex align-items-center gap-2 px-2 py-2 rounded text-decoration-none mb-1 nav-item${active === n.id ? " active" : ""}" style="${active === n.id ? "color:var(--sidebar-active-text);background:var(--sidebar-active)" : "color:var(--sidebar-text);background:transparent"}"><i class="${n.icon}" style="font-size:1rem"></i><span style="font-size:0.875rem">${n.label}</span></a>`).join("")}</nav>
+<div class="sidebar-footer"><span class="version">v0.1.0</span>
+<button onclick="toggleTheme()" class="sidebar-btn" title="Toggle theme"><svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+</div>
 </aside><main class="main-content">
 <header class="page-header"><h2 class="page-title">${title}</h2></header>
 <div class="content-body">${body}</div>
