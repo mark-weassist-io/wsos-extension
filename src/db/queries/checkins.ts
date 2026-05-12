@@ -154,3 +154,75 @@ export function softDeleteCheckin(id: number) {
 export function restoreCheckin(id: number) {
   getDb().prepare("UPDATE wsos_ninety_day_checkins SET deleted_at = NULL WHERE id = ?").run(id)
 }
+
+// ─── Milestone Classification ───────────────────────────────────────────────────
+
+const MILESTONE_COLS: [string, string][] = [
+  ["3mo", "after_3_mon"],
+  ["4mo", "after_4_mon"],
+  ["5mo", "after_5_mon"],
+  ["6mo", "after_6_mon"],
+  ["9mo", "after_9_mon"],
+  ["1yr", "after_1_year"],
+  ["1yr3mo", "after_1_year_3_months"],
+]
+
+function parseMdY(s: string): Date | null {
+  const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+  if (!m) return null
+  return new Date(+m[3], +m[1] - 1, +m[2])
+}
+
+export function classifyMilestone(dateStr: string | null, happened: boolean): MilestoneStatus {
+  if (!dateStr) return "cancelled"
+  const d = parseMdY(dateStr)
+  if (!d) return "cancelled"
+  const now = new Date()
+  now.setHours(0, 0, 0, 0)
+  if (happened) return "done"
+  if (d >= now) return "scheduled"
+  return "overdue"
+}
+
+export function getAllClassifiedMilestones(): ClassifiedMilestone[] {
+  const r = getDb()
+  const rows = r.prepare("SELECT * FROM wa_post_90day_schedule").all() as any[]
+  const result: ClassifiedMilestone[] = []
+
+  // Batch-fetch all milestone happened flags
+  const milestones = r.prepare("SELECT op_name, milestone, happened FROM checkin_milestones").all() as any[]
+  const map = new Map<string, Set<string>>()
+  const happenedSet = new Map<string, Map<string, number>>()
+  for (const m of milestones) {
+    if (!happenedSet.has(m.op_name)) happenedSet.set(m.op_name, new Map())
+    happenedSet.get(m.op_name)!.set(m.milestone, m.happened)
+  }
+
+  for (const row of rows) {
+    const flags = happenedSet.get(row.op_name) ?? new Map()
+    for (const [key, col] of MILESTONE_COLS) {
+      const dateStr = row[col]
+      if (!dateStr) continue
+      const happened = (flags.get(key) ?? 0) === 1
+      result.push({
+        opName: row.op_name,
+        milestone: key,
+        date: dateStr,
+        status: classifyMilestone(dateStr, happened),
+        happened,
+      })
+    }
+  }
+  return result
+}
+
+export function getClassifiedMilestoneCounts(): { done: number; scheduled: number; overdue: number } {
+  const all = getAllClassifiedMilestones()
+  let done = 0, scheduled = 0, overdue = 0
+  for (const m of all) {
+    if (m.status === "done") done++
+    else if (m.status === "scheduled") scheduled++
+    else if (m.status === "overdue") overdue++
+  }
+  return { done, scheduled, overdue }
+}
