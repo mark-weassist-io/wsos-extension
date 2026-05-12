@@ -31,7 +31,7 @@ db.run("PRAGMA foreign_keys=ON")
 
 // Drop existing tables (FK order independent with temporary disable)
 db.run("PRAGMA foreign_keys=OFF")
-for (const t of ["wa_ob_statuses", "wa_ob_records", "wa_ob_step_defs", "wa_post_90day_schedule", "wsos_ninety_day_checkins", "wsos_op_client_assignments", "wsos_clients", "wsos_ops", "wa_genders", "wa_assignment_statuses", "wa_assignment_types", "wa_checkin_statuses", "wa_cs_staff"]) {
+  for (const t of ["checkin_milestones", "wa_ob_statuses", "wa_ob_records", "wa_ob_step_defs", "wa_post_90day_schedule", "wsos_ninety_day_checkins", "wsos_op_client_assignments", "wsos_clients", "wsos_ops", "wa_genders", "wa_assignment_statuses", "wa_assignment_types", "wa_checkin_statuses", "wa_cs_staff"]) {
   db.run(`DROP TABLE IF EXISTS "${t}"`)
 }
 db.run("PRAGMA foreign_keys=ON")
