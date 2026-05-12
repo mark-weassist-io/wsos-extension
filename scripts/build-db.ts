@@ -57,6 +57,9 @@ for (const name of ["Dennis"]) {
 db.run(`CREATE TABLE wa_assignment_statuses (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE)`)
 db.run(`INSERT OR IGNORE INTO wa_assignment_statuses (name) VALUES ('Active'), ('Probation'), ('Inactive'), ('Separated'), ('Resigned')`)
 
+db.run(`CREATE TABLE IF NOT EXISTS wsos_op_phones (id INTEGER PRIMARY KEY AUTOINCREMENT, op_name TEXT NOT NULL REFERENCES wsos_ops(full_name), phone TEXT NOT NULL, sort_order INTEGER DEFAULT 0, created_at TEXT DEFAULT (datetime('now')))`)
+db.run(`CREATE INDEX IF NOT EXISTS idx_op_phones_op ON wsos_op_phones(op_name)`)
+
 db.run(`CREATE TABLE wa_assignment_types (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE)`)
 db.run(`INSERT OR IGNORE INTO wa_assignment_types (name) VALUES ('Full-Time'), ('Part-Time'), ('6 Hours')`)
 
