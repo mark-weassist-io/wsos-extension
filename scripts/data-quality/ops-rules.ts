@@ -19,9 +19,9 @@ export const OPS_RULES: EntityQualityRules = {
   created_at DATETIME DEFAULT (datetime('now')),
   UNIQUE(full_name)
 )`,
+
     indexes: [
-      "CREATE INDEX idx_ops_email ON wsos_ops(email)",
-      "CREATE INDEX idx_ops_name ON wsos_ops(full_name)",
+      "CREATE INDEX idx_ops_full_name ON wsos_ops(full_name)",
     ],
   },
   data: {
