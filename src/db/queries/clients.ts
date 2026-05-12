@@ -25,6 +25,10 @@ export function getClients(search?: string, includeTrashed?: boolean): ClientRow
     .all()
 }
 
+export function getClientById(id: number) {
+  return d().select().from(schema.clients).where(eq(schema.clients.id, id)).get()
+}
+
 export function createClient(data: { name: string; email?: string }) {
   return d().insert(schema.clients).values(data).run()
 }
