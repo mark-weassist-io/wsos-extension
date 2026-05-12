@@ -15,7 +15,7 @@ function loadClean(filename: string): any[] {
 }
 
 console.log("=".repeat(60))
-console.log("WSOS EXTENSION — DATA PIPELINE")
+console.log("NEXUS — DATA PIPELINE")
 console.log("=".repeat(60))
 
 // Step 1: Merge & Dedup
