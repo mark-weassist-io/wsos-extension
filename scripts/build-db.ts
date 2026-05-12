@@ -302,6 +302,50 @@ if (schedTab?.formatted?.length > 1) {
     try { stmt.run(...vals); count++ } catch (e: any) { console.log(`  SKIP ${cleanName}: ${e.message}`) }
   }
   console.log(`  wa_post_90day_schedule: ${count} rows`)
+
+  // Normalize milestones into narrow format
+  console.log("  Creating checkin_milestones (normalized)...")
+  db.run(`CREATE TABLE IF NOT EXISTS checkin_milestones (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    op_name TEXT NOT NULL REFERENCES wsos_ops(full_name),
+    milestone TEXT NOT NULL,
+    milestone_date TEXT,
+    happened INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT DEFAULT (datetime('now')),
+    UNIQUE(op_name, milestone)
+  )`)
+  const milestoneInsert = db.prepare("INSERT OR IGNORE INTO checkin_milestones (op_name, milestone, milestone_date) VALUES (?, ?, ?)")
+  const milestoneCols = [
+    ["after_3_mon", "3mo"], ["after_4_mon", "4mo"], ["after_5_mon", "5mo"],
+    ["after_6_mon", "6mo"], ["after_9_mon", "9mo"], ["after_1_year", "1yr"],
+    ["after_1_year_3_months", "1yr3mo"]
+  ]
+  let milestoneCount = 0
+  for (let r = 1; r < schedTab.formatted.length; r++) {
+    const row = schedTab.formatted[r]
+    const first = (row[0] || "").toString().trim()
+    if (!first) continue
+    const cleanName = [...validOps].find((n: string) => n.toLowerCase() === first.toLowerCase())
+    if (!cleanName) continue
+    for (const [colKey, milestone] of milestoneCols) {
+      const colIdx = h.indexOf(colKey)
+      if (colIdx < 0) continue
+      const val = (row[colIdx] || "").toString().trim()
+      if (!val) continue
+      // detect if value is a date (Y-m-d or m/d/Y) or boolean/status text
+      const dateMatch = val.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/)
+      const isoMatch = val.match(/(\d{4})-(\d{2})-(\d{2})/)
+      let dateStr = null
+      if (isoMatch) {
+        dateStr = val
+      } else if (dateMatch) {
+        // Convert from M/D/YYYY to YYYY-MM-DD
+        dateStr = `${dateMatch[3]}-${dateMatch[1].padStart(2,"0")}-${dateMatch[2].padStart(2,"0")}`
+      }
+      try { milestoneInsert.run(cleanName, milestone, dateStr); milestoneCount++ } catch {}
+    }
+  }
+  console.log(`  checkin_milestones: ${milestoneCount} rows`)
 }
 
 // Sync staff: scan ALL tables for staff names not yet in wa_cs_staff
