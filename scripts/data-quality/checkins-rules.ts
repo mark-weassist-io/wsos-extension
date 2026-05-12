@@ -5,8 +5,6 @@ export const CHECKINS_RULES: EntityQualityRules = {
     ddl: `CREATE TABLE wsos_ninety_day_checkins (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   op_name TEXT NOT NULL,
-  checkin_type TEXT,
-  checkin_date DATE,
   status TEXT CHECK(status IN ('GRADUATED','RESIGNED','TERMINATED','TRANSITIONED')),
   notes TEXT,
   assigned_cs TEXT,
@@ -35,7 +33,7 @@ export const CHECKINS_RULES: EntityQualityRules = {
       status: 0.70,
     },
     merge_strategy: {
-      identity_key: ["op_name", "checkin_type"],
+      identity_key: ["op_name"],
       intra_source_dedup: true,
       conflict_resolution: {},
     },
