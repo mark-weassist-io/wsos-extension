@@ -36,7 +36,6 @@ router.get("/:id", (c) => {
     opName: record.opName,
     startDate: record.startDate,
     startTime: record.startTime,
-    rate: record.rate,
     steps: steps.map(s => ({
       step_name: s.step_name,
       step_status: s.status,
