@@ -62,7 +62,7 @@ export const DashboardPage: FC<Props> = ({ metrics, pipeline, attention, workloa
             const pct = (p.count / max) * 100
             return (
               <div style="flex:1;min-width:120px">
-                <div style="font-size:1.5rem;font-weight:700;color:stageColor(p.stage)">{p.count}</div>
+                <div style={`font-size:1.5rem;font-weight:700;color:${stageColor(p.stage)}`}>{p.count}</div>
                 <div style="font-size:0.8rem;font-weight:500;margin-bottom:4px">{p.stage}</div>
                 <div style="height:6px;background:var(--bg);border-radius:3px;overflow:hidden">
                   <div style={`width:${pct}%;height:100%;background:${stageColor(p.stage)};border-radius:3px;transition:width 0.3s`} />
