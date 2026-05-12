@@ -104,7 +104,7 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
         <div class="app-shell">
           <aside class="sidebar">
             <div class="sidebar-header">
-              <h1 class="logo">WSOS Ext</h1>
+              <h1 class="logo">Nexus</h1>
               <span class="subtitle">WeAssist Operations</span>
             </div>
             <nav class="nav">
