@@ -24,7 +24,12 @@ router.get("/", (c) => {
   const total = getOpsCount()
   // Attach phones from one-to-many table
   const opsWithPhones = ops.map(o => ({ ...o, phones: getOpPhones(o.full_name) }))
-  return c.html(<OpsListPage ops={opsWithPhones as any} search={search} total={total} showTrashed={trashed} />)
+  // Attach latest checkin status
+  const opsWithCheckin = opsWithPhones.map(o => {
+    const checkin = getDb().prepare("SELECT status FROM wsos_ninety_day_checkins WHERE op_name = ? ORDER BY id DESC LIMIT 1").get(o.full_name) as any
+    return { ...o, checkin_status: checkin?.status || null }
+  })
+  return c.html(<OpsListPage ops={opsWithCheckin as any} search={search} total={total} showTrashed={trashed} />)
 })
 
 router.get("/new", (c) => {

@@ -58,7 +58,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
               <table>
                 <thead>
                   <tr>
-                    <th>Name</th><th>Email</th><th>Client</th><th>Role</th><th>Status</th><th>Assigned CS</th><th>Phone</th><th>Actions</th>
+                    <th>Name</th><th>Email</th><th>Client</th><th>Role</th><th>Status</th><th>Check-in</th><th>Assigned CS</th><th>Phone</th><th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
