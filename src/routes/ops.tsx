@@ -2,6 +2,7 @@ import { Hono } from "hono"
 import { z } from "zod"
 import { OpsListPage } from "../views/pages/OpsList"
 import { getOpsWithAssignments, getOpById, getOpsCount, createOp, updateOp, softDeleteOp, restoreOp, getOpPhones } from "../db/queries/ops"
+import { getDb } from "../db"
 import { getCsStaff } from "../db/queries/cs-staff"
 
 const router = new Hono()
