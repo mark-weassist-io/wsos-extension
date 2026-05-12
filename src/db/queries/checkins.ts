@@ -98,18 +98,20 @@ export function getUpcomingCheckins(days: number = 30): Post90DayCheckinSchedule
 export function getOverdueCheckins(): Post90DayCheckinSchedule[] {
   const all = getPost90DaySchedule()
   const r = getDb()
-  const milestones = r.prepare("SELECT op_name, milestone, happened FROM checkin_milestones").all() as any[]
-  const map = new Map<string, Map<string, number>>()
+  const milestones = r.prepare("SELECT op_name, milestone, happened, was_green FROM checkin_milestones").all() as any[]
+  const flagMap = new Map<string, Map<string, { happened: number; wasGreen: number }>>()
   for (const m of milestones) {
-    if (!map.has(m.op_name)) map.set(m.op_name, new Map())
-    map.get(m.op_name)!.set(m.milestone, m.happened)
+    if (!flagMap.has(m.op_name)) flagMap.set(m.op_name, new Map())
+    flagMap.get(m.op_name)!.set(m.milestone, { happened: m.happened, wasGreen: m.was_green ?? 0 })
   }
   const MILESTONE_MAP: Record<string, string> = { "3mo": "after3Mon", "4mo": "after4Mon", "5mo": "after5Mon", "6mo": "after6Mon", "9mo": "after9Mon", "1yr": "after1Year", "1yr3mo": "after1Year3Months" }
   return all.filter(s => {
-    const flags = map.get(s.opName) ?? new Map()
+    const flags = flagMap.get(s.opName) ?? new Map()
     for (const [key, col] of Object.entries(MILESTONE_MAP)) {
       const val = (s as any)[col]
-      if (val && classifyMilestone(val, (flags.get(key) ?? 0) === 1) === "overdue") return true
+      if (!val) continue
+      const f = flags.get(key)
+      if (classifyMilestone(val, (f?.happened ?? 0) === 1, (f?.wasGreen ?? 0) === 1) === "overdue") return true
     }
     return false
   })
@@ -212,12 +214,29 @@ export function getAllClassifiedMilestones(): ClassifiedMilestone[] {
   const result: ClassifiedMilestone[] = []
 
   // Batch-fetch all milestone happened flags
-  const milestones = r.prepare("SELECT op_name, milestone, happened FROM checkin_milestones").all() as any[]
-  const map = new Map<string, Set<string>>()
-  const happenedSet = new Map<string, Map<string, number>>()
+  const milestones = r.prepare("SELECT op_name, milestone, happened, was_green FROM checkin_milestones").all() as any[]
+  const flagMap = new Map<string, Map<string, { happened: number; wasGreen: number }>>()
   for (const m of milestones) {
-    if (!happenedSet.has(m.op_name)) happenedSet.set(m.op_name, new Map())
-    happenedSet.get(m.op_name)!.set(m.milestone, m.happened)
+    if (!flagMap.has(m.op_name)) flagMap.set(m.op_name, new Map())
+    flagMap.get(m.op_name)!.set(m.milestone, { happened: m.happened, wasGreen: m.was_green ?? 0 })
+  }
+
+  for (const row of rows) {
+    const flags = flagMap.get(row.op_name) ?? new Map()
+    for (const [key, col] of MILESTONE_COLS) {
+      const dateStr = row[col]
+      if (!dateStr) continue
+      const f = flags.get(key)
+      const happened = (f?.happened ?? 0) === 1
+      const wasGreen = (f?.wasGreen ?? 0) === 1
+      result.push({
+        opName: row.op_name,
+        milestone: key,
+        date: dateStr,
+        status: classifyMilestone(dateStr, happened, wasGreen),
+        happened,
+      })
+    }
   }
 
   for (const row of rows) {
