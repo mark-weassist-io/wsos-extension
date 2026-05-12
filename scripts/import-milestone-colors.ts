@@ -53,18 +53,19 @@ async function main() {
   const db = new Database(DB_PATH)
   db.run("PRAGMA journal_mode=WAL")
 
-  // 4. Upsert milestones — INSERT OR REPLACE so new rows are created
-  const upsert = db.prepare(`
-    INSERT INTO checkin_milestones (op_name, milestone, happened)
-    VALUES (?, ?, 1)
-    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 1
+  // 4. Upsert milestones with was_green flag
+  const upsertGreen = db.prepare(`
+    INSERT INTO checkin_milestones (op_name, milestone, happened, was_green)
+    VALUES (?, ?, 1, 1)
+    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 1, was_green = 1
   `)
-  const clearOthers = db.prepare(`
-    UPDATE checkin_milestones SET happened = 0
-    WHERE op_name = ? AND milestone = ? AND happened = 1
+  const upsertNonGreen = db.prepare(`
+    INSERT INTO checkin_milestones (op_name, milestone, happened, was_green)
+    VALUES (?, ?, 0, 0)
+    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 0, was_green = 0
   `)
 
-  let inserted = 0, updated = 0, cleared = 0, errors = 0
+  let greenCount = 0, nonGreenCount = 0, errors = 0
 
   const tx = db.transaction(() => {
     for (let r = 1; r < rows.length; r++) {
@@ -74,15 +75,14 @@ async function main() {
       try {
         for (const [col, milestone] of MILESTONE_COLS) {
           const dateVal = (row[col] || "").toString().trim()
+          if (!dateVal) continue
           const cellColor = gridRows[r]?.values?.[col]?.effectiveFormat?.backgroundColor
-          const green = isGreen(cellColor)
-          if (green) {
-            upsert.run(opName, milestone)
-            inserted++
-          } else if (dateVal) {
-            // Has a date but not green — clear the happened flag
-            const res = clearOthers.run(opName, milestone)
-            if (res.changes > 0) cleared++
+          if (isGreen(cellColor)) {
+            upsertGreen.run(opName, milestone)
+            greenCount++
+          } else {
+            upsertNonGreen.run(opName, milestone)
+            nonGreenCount++
           }
         }
       } catch (e) {
@@ -94,7 +94,7 @@ async function main() {
 
   try {
     tx()
-    log(`Done: ${inserted} upserted, ${cleared} cleared, ${errors} errors`)
+    log(`Done: ${greenCount} green (scheduled), ${nonGreenCount} non-green (cancelled), ${errors} errors`)
   } catch (e) {
     log(`FATAL transaction failed: ${e}`)
   }
