@@ -142,8 +142,6 @@ export function createCheckin(data: { opName: string; status?: string; notes?: s
 export function updateCheckin(id: number, data: { opName?: string; status?: string; notes?: string }) {
   const sets: string[] = []; const vals: any[] = []
   if (data.opName !== undefined) { sets.push("op_name = ?"); vals.push(data.opName) }
-  if (data.checkinType !== undefined) { sets.push("checkin_type = ?"); vals.push(data.checkinType) }
-  if (data.checkinDate !== undefined) { sets.push("checkin_date = ?"); vals.push(data.checkinDate) }
   if (data.status !== undefined) { sets.push("status = ?"); vals.push(data.status) }
   if (data.notes !== undefined) { sets.push("notes = ?"); vals.push(data.notes) }
   if (sets.length === 0) return
