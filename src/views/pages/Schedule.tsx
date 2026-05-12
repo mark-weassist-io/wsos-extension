@@ -73,7 +73,7 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, filter }) =>
                           data-milestone={m.key}
                           data-happened={happened}
                           style={`cursor:pointer;text-align:center;background:${happened ? '#22c55e' : 'transparent'};border-radius:4px;color:${happened ? '#fff' : 'inherit'}`}
-                          onclick={`fetch('/schedule/toggle/${encodeURIComponent(s.opName)}/${m.key}',{method:'POST'}).then(r=>r.text()).then(h=>this.outerHTML=h)`}>
+                          onclick={`fetch('/schedule/toggle/${encodeURIComponent(s.opName)}/${m.key}',{method:'POST'}).then(r=>{if(r.ok){var h=this.dataset.happened==='1'?'0':'1';this.dataset.happened=h;this.style.background=h==='1'?'#22c55e':'transparent';this.style.color=h==='1'?'#fff':'inherit'}})`}>
                           {val || "—"}
                         </td>
                       )
