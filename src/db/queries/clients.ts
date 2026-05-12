@@ -7,8 +7,6 @@ export interface ClientRow {
   id: number
   name: string
   email: string | null
-  timezone: string | null
-  holiday_schedule: string | null
   deleted_at: string | null
 }
 
@@ -20,8 +18,6 @@ export function getClients(search?: string, includeTrashed?: boolean): ClientRow
     id: schema.clients.id,
     name: schema.clients.name,
     email: schema.clients.email,
-    timezone: schema.clients.timezone,
-    holiday_schedule: schema.clients.holidaySchedule,
     deleted_at: schema.clients.deletedAt,
   }).from(schema.clients)
     .where(cond.length > 0 ? and(...cond) : undefined)
@@ -29,15 +25,11 @@ export function getClients(search?: string, includeTrashed?: boolean): ClientRow
     .all()
 }
 
-export function getClientById(id: number) {
-  return d().select().from(schema.clients).where(eq(schema.clients.id, id)).get()
-}
-
-export function createClient(data: { name: string; email?: string; timezone?: string; holidaySchedule?: string }) {
+export function createClient(data: { name: string; email?: string }) {
   return d().insert(schema.clients).values(data).run()
 }
 
-export function updateClient(id: number, data: { name?: string; email?: string; timezone?: string; holidaySchedule?: string }) {
+export function updateClient(id: number, data: { name?: string; email?: string }) {
   return d().update(schema.clients).set(data).where(eq(schema.clients.id, id)).run()
 }
 
