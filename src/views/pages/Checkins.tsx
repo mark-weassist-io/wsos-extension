@@ -14,7 +14,7 @@ export const CheckinsPage: FC<Props> = ({ checkins, search }) => {
         <p class="text-secondary">{checkins.length} check-in records</p>
         <form action="/checkins" method="get" class="search-bar" style="margin-bottom:0">
           <input type="text" name="search" placeholder="Search..." value={search || ""} />
-          <button type="submit">Search</button>
+          <button type="submit" class="btn btn-primary btn-sm">Search</button>
         </form>
       </div>
       <div class="card" style="padding:0">
