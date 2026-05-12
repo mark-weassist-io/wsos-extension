@@ -105,6 +105,11 @@ db.run("CREATE INDEX IF NOT EXISTS idx_schedule_op ON wa_post_90day_schedule(op_
 // Step 3: Insert clean data
 console.log("\n[3/5] Inserting clean data...")
 
+function toTitleCase(s: string): string {
+  if (!s) return s
+  return s.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())
+}
+
 function insertData(table: string, rows: any[], fields: string[]) {
   if (rows.length === 0) return 0
   const placeholders = fields.map(() => "?").join(",")
