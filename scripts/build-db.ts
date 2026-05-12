@@ -282,6 +282,15 @@ if (reportTab?.formatted?.length > 1) {
     } catch {}
   }
   console.log(`  wsos_ninety_day_checkins: ${count} rows`)
+
+  // Title-case checkin statuses
+  const statusUpdate = db.prepare("UPDATE wsos_ninety_day_checkins SET status = ? WHERE id = ?")
+  const allChecks = db.prepare("SELECT id, status FROM wsos_ninety_day_checkins").all() as any[]
+  for (const c of allChecks) {
+    if (c.status) {
+      statusUpdate.run(toTitleCase(c.status), c.id)
+    }
+  }
 }
 
 const schedTab = rTabs["Client Check-in Schedule"]
