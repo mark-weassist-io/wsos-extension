@@ -98,3 +98,12 @@ export function getOpsCount(): number {
   return d().select({ c: count() }).from(schema.ops).where(isNull(schema.ops.deletedAt)).get()?.c ?? 0
 }
 
+export function getOpPhones(opName: string): string[] {
+  return d().select({ phone: schema.opPhones.phone })
+    .from(schema.opPhones)
+    .where(eq(schema.opPhones.opName, opName))
+    .orderBy(schema.opPhones.sortOrder)
+    .all()
+    .map(r => r.phone)
+}
+
