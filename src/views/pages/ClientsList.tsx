@@ -46,8 +46,6 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
                   <tr style={c.deleted_at ? "opacity:0.5" : ""}>
                     <td><strong>{c.name}</strong>{c.deleted_at && <span class="badge badge-danger" style="margin-left:6px">Deleted</span>}</td>
                     <td class="text-sm">{c.email || "—"}</td>
-                    <td class="text-sm">{c.timezone || "—"}</td>
-                    <td class="text-sm">{c.holiday_schedule || "—"}</td>
                     <td>
                       {c.deleted_at
                         ? <form action={`/clients/${c.id}/restore`} method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>
