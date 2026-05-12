@@ -20,10 +20,21 @@ interface ScheduleRow {
 
 interface Props {
   schedule: ScheduleRow[]
+  milestoneFlags: Record<string, Record<string, number>>
   filter?: string
 }
 
-export const SchedulePage: FC<Props> = ({ schedule, filter }) => {
+const MILESTONES = [
+  { key: "3mo", label: "3 Mo", col: "after3Mon" },
+  { key: "4mo", label: "4 Mo", col: "after4Mon" },
+  { key: "5mo", label: "5 Mo", col: "after5Mon" },
+  { key: "6mo", label: "6 Mo", col: "after6Mon" },
+  { key: "9mo", label: "9 Mo", col: "after9Mon" },
+  { key: "1yr", label: "1 Yr", col: "after1Year" },
+  { key: "1yr3mo", label: "15 Mo", col: "after1Year3Months" },
+]
+
+export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, filter }) => {
   return (
     <Layout title="Check-in Schedule" activeNav="schedule">
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
@@ -39,32 +50,40 @@ export const SchedulePage: FC<Props> = ({ schedule, filter }) => {
               <tr>
                 <th>OP</th><th>Client</th><th>Email</th><th>Role</th>
                 <th>Status</th><th>Start</th>
-                <th>3 Mo</th><th>4 Mo</th><th>5 Mo</th><th>6 Mo</th>
-                <th>9 Mo</th><th>1 Yr</th><th>15 Mo</th>
+                {MILESTONES.map(m => <th key={m.key}>{m.label}</th>)}
                 <th>CS</th>
               </tr>
             </thead>
             <tbody>
-              {schedule.map(s => (
-                <tr>
-                  <td><strong style="white-space:nowrap">{s.opName || "—"}</strong></td>
-                  <td>{s.clientName || "—"}</td>
-                  <td class="text-sm">{s.clientSEmail || "—"}</td>
-                  <td class="text-sm">{s.role || "—"}</td>
-                  <td><span class={statusBadge(s.status)}>{s.status || "—"}</span></td>
-                  <td class="text-sm">{s.startDate || "—"}</td>
-                  <td class="text-sm">{s.after3Mon || "—"}</td>
-                  <td class="text-sm">{s.after4Mon || "—"}</td>
-                  <td class="text-sm">{s.after5Mon || "—"}</td>
-                  <td class="text-sm">{s.after6Mon || "—"}</td>
-                  <td class="text-sm">{s.after9Mon || "—"}</td>
-                  <td class="text-sm">{s.after1Year || "—"}</td>
-                  <td class="text-sm">{s.after1Year3Months || "—"}</td>
-                  <td class="text-sm">{s.assignedCs || "—"}</td>
-                </tr>
-              ))}
+              {schedule.map(s => {
+                const flags = milestoneFlags[s.opName] || {}
+                return (
+                  <tr>
+                    <td><strong style="white-space:nowrap">{s.opName || "—"}</strong></td>
+                    <td>{s.clientName || "—"}</td>
+                    <td class="text-sm">{s.clientSEmail || "—"}</td>
+                    <td class="text-sm">{s.role || "—"}</td>
+                    <td><span class={statusBadge(s.status)}>{s.status || "—"}</span></td>
+                    <td class="text-sm">{s.startDate || "—"}</td>
+                    {MILESTONES.map(m => {
+                      const val = (s as any)[m.col]
+                      const happened = flags[m.key] || 0
+                      return (
+                        <td key={m.key}
+                          data-milestone={m.key}
+                          data-happened={happened}
+                          style={`cursor:pointer;text-align:center;background:${happened ? '#22c55e' : 'transparent'};border-radius:4px;color:${happened ? '#fff' : 'inherit'}`}
+                          onclick={`fetch('/schedule/toggle/${encodeURIComponent(s.opName)}/${m.key}',{method:'POST'}).then(r=>r.text()).then(h=>this.outerHTML=h)`}>
+                          {val || "—"}
+                        </td>
+                      )
+                    })}
+                    <td class="text-sm">{s.assignedCs || "—"}</td>
+                  </tr>
+                )
+              })}
               {schedule.length === 0 && (
-                <tr><td colspan="14" style="text-align:center;padding:40px;color:var(--text-secondary)">No schedule items found</td></tr>
+                <tr><td colspan="16" style="text-align:center;padding:40px;color:var(--text-secondary)">No schedule items found</td></tr>
               )}
             </tbody>
           </table>
