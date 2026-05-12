@@ -315,10 +315,8 @@ if (schedTab?.formatted?.length > 1) {
     UNIQUE(op_name, milestone)
   )`)
   const milestoneInsert = db.prepare("INSERT OR IGNORE INTO checkin_milestones (op_name, milestone, milestone_date) VALUES (?, ?, ?)")
-  const milestoneCols = [
-    ["after_3_mon", "3mo"], ["after_4_mon", "4mo"], ["after_5_mon", "5mo"],
-    ["after_6_mon", "6mo"], ["after_9_mon", "9mo"], ["after_1_year", "1yr"],
-    ["after_1_year_3_months", "1yr3mo"]
+  const milestoneCols: [number, string][] = [
+    [6, "3mo"], [7, "4mo"], [8, "5mo"], [9, "6mo"], [10, "9mo"], [11, "1yr"], [12, "1yr3mo"]
   ]
   let milestoneCount = 0
   for (let r = 1; r < schedTab.formatted.length; r++) {
@@ -327,19 +325,18 @@ if (schedTab?.formatted?.length > 1) {
     if (!first) continue
     const cleanName = [...validOps].find((n: string) => n.toLowerCase() === first.toLowerCase())
     if (!cleanName) continue
-    for (const [colKey, milestone] of milestoneCols) {
-      const colIdx = h.indexOf(colKey)
-      if (colIdx < 0) continue
-      const val = (row[colIdx] || "").toString().trim()
+    for (const [colIdx, milestone] of milestoneCols) {
+      const mapped = colMap[colIdx]
+      if (mapped === null || mapped === undefined) continue
+      const val = (row[mapped] || "").toString().trim()
       if (!val) continue
-      // detect if value is a date (Y-m-d or m/d/Y) or boolean/status text
+      // detect if value is a date (m/d/Y or Y-m-d) or text
       const dateMatch = val.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/)
       const isoMatch = val.match(/(\d{4})-(\d{2})-(\d{2})/)
-      let dateStr = null
+      let dateStr: string | null = null
       if (isoMatch) {
         dateStr = val
       } else if (dateMatch) {
-        // Convert from M/D/YYYY to YYYY-MM-DD
         dateStr = `${dateMatch[3]}-${dateMatch[1].padStart(2,"0")}-${dateMatch[2].padStart(2,"0")}`
       }
       try { milestoneInsert.run(cleanName, milestone, dateStr); milestoneCount++ } catch {}
