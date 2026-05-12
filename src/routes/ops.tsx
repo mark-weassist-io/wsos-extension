@@ -59,7 +59,7 @@ router.post("/:id", async (c) => {
   const id = parseInt(c.req.param("id"))
   const form = await c.req.parseBody()
   const parsed = CreateOpSchema.partial().safeParse(form)
-  if (!parsed.success) return c.redirect(`/ops/${id}/edit`)
+  if (!parsed.success) { console.error("OP update validation failed:", parsed.error.flatten()); return c.redirect(`/ops/${id}/edit`) }
   updateOp(id, parsed.data as any)
   return c.redirect("/ops")
 })
