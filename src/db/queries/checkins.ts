@@ -91,7 +91,23 @@ export function getUpcomingCheckins(days: number = 30): Post90DayCheckinSchedule
 }
 
 export function getOverdueCheckins(): Post90DayCheckinSchedule[] {
-  return getUpcomingCheckins(0)
+  const all = getPost90DaySchedule()
+  const r = getDb()
+  const milestones = r.prepare("SELECT op_name, milestone, happened FROM checkin_milestones").all() as any[]
+  const map = new Map<string, Map<string, number>>()
+  for (const m of milestones) {
+    if (!map.has(m.op_name)) map.set(m.op_name, new Map())
+    map.get(m.op_name)!.set(m.milestone, m.happened)
+  }
+  const MILESTONE_MAP: Record<string, string> = { "3mo": "after3Mon", "4mo": "after4Mon", "5mo": "after5Mon", "6mo": "after6Mon", "9mo": "after9Mon", "1yr": "after1Year", "1yr3mo": "after1Year3Months" }
+  return all.filter(s => {
+    const flags = map.get(s.opName) ?? new Map()
+    for (const [key, col] of Object.entries(MILESTONE_MAP)) {
+      const val = (s as any)[col]
+      if (val && classifyMilestone(val, (flags.get(key) ?? 0) === 1) === "overdue") return true
+    }
+    return false
+  })
 }
 
 export function getScheduledCheckinsByOp(opName: string): Post90DayCheckinSchedule[] {
