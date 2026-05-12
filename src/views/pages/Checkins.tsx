@@ -28,15 +28,13 @@ export const CheckinsPage: FC<Props> = ({ checkins, search }) => {
                 <tr>
                   <td><strong>{c.opName || "—"}</strong></td>
                   <td>{c.clientName || "—"}</td>
-                  <td class="text-sm">{c.checkinType || "—"}</td>
-                  <td class="text-sm">{c.checkinDate || "—"}</td>
                   <td><span class={statusBadge(c.status)}>{c.status || "—"}</span></td>
                   <td class="text-sm">{c.assignedCs || "—"}</td>
                   <td class="text-sm text-secondary">{c.notes || "—"}</td>
                 </tr>
               ))}
               {checkins.length === 0 && (
-                <tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text-secondary)">No check-in records found</td></tr>
+                <tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-secondary)">No check-in records found</td></tr>
               )}
             </tbody>
           </table>
