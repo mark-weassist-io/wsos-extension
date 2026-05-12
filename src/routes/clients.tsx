@@ -7,13 +7,11 @@ const router = new Hono()
 const ClientSchema = z.object({
   name: z.string().min(1, "Name required").max(200),
   email: z.string().max(200).optional().default(""),
-  timezone: z.string().max(100).optional().default(""),
-  holidaySchedule: z.string().max(200).optional().default(""),
 })
 
 router.get("/", (c) => {
   const clients = getClients(c.req.query("search"), c.req.query("trashed") === "1")
-  return c.html(<ClientsPage clients={clients} />)
+  return c.html(<ClientsPage clients={clients} search={c.req.query("search") || undefined} />)
 })
 
 router.get("/new", (c) => {
