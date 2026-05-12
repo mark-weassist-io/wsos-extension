@@ -53,6 +53,18 @@ router.get("/:id", (c) => {
   }} />)
 })
 
+// Update onboarding record (start date, time)
+router.post("/:id", async (c) => {
+  const params = IdParam.safeParse(c.req.param())
+  if (!params.success) return c.redirect("/onboarding")
+  const { id } = params.data
+  const form = await c.req.parseBody()
+  const dateVal = (form.startDate || "").toString().trim() || null
+  const timeVal = (form.startTime || "").toString().trim() || null
+  getDb().prepare("UPDATE wa_ob_records SET start_date = ?, start_time = ? WHERE id = ?").run(dateVal, timeVal, id)
+  return c.redirect(`/onboarding/${id}`)
+})
+
 // Toggle step status via HTMX
 router.post("/:id/toggle/:stepDefId", (c) => {
   const params = ToggleStepParams.safeParse(c.req.param())
