@@ -53,7 +53,7 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
           </div>
           <div class="card" style="padding:0;overflow-x:auto">
             <table style="font-size:0.8rem">
-              <thead><tr><th>OP</th><th>Client</th><th>Role</th><th>Status</th><th>Type</th><th>Rate</th><th>CS</th><th>Actions</th></tr></thead>
+              <thead><tr>                    <th>OP</th><th>Client</th><th>Role</th><th>Status</th><th>Type</th><th>CS</th><th>Actions</th></tr></thead>
               <tbody>
                 {assignments.map(a => (
                   <tr style={a.deleted_at ? "opacity:0.5" : ""}>
@@ -62,7 +62,6 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
                     <td class="text-sm">{a.role || "—"}</td>
                     <td><span class={statusBadge(a.status)}>{a.status || "—"}</span></td>
                     <td class="text-sm" style="white-space:nowrap">{a.type || "—"}</td>
-                    <td class="text-sm">{a.rate ? `$${a.rate}` : "—"}</td>
                     <td class="text-sm">{a.assigned_cs || "—"}</td>
                     <td>
                       {a.deleted_at
@@ -75,7 +74,7 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
                     </td>
                   </tr>
                 ))}
-                {assignments.length === 0 && <tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-secondary)">No assignments found</td></tr>}
+                {assignments.length === 0 &&                     <tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text-secondary)">No assignments found</td></tr>}
               </tbody>
             </table>
           </div>
