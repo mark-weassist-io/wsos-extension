@@ -1,5 +1,5 @@
 import type { FC } from "hono/jsx"
-import { Layout, statusBadge } from "../layout"
+import { Layout, statusBadge, toTitleCase } from "../layout"
 import type {
   DashboardMetrics, PipelineStage, AttentionItem, CsWorkload, RecentActivity
 } from "../../db/queries/dashboard"
