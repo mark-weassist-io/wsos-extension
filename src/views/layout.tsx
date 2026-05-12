@@ -27,6 +27,75 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title} — WSOS Extension</title>
         <script src="https://unpkg.com/htmx.org@2.0.4" />
+        <script dangerouslySetInnerHTML={{ __html: `
+(function() {
+  var saveKey = 'nexus-theme';
+  function apply(theme) {
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var resolved = theme === 'dark' || (theme === 'system' && prefersDark) ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-bs-theme', resolved);
+    document.documentElement.setAttribute('data-theme', resolved);
+    window.__nexusTheme = theme;
+    window.__nexusResolved = resolved;
+    var root = document.documentElement;
+    if (resolved === 'dark') {
+      root.style.setProperty('--body-bg', '#0f1119');
+      root.style.setProperty('--card-bg', '#1a1d29');
+      root.style.setProperty('--header-bg', '#1a1d29');
+      root.style.setProperty('--header-border', '#2a2d3a');
+      root.style.setProperty('--table-header-bg', '#1a1d29');
+      root.style.setProperty('--sidebar-bg', '#0f1119');
+      root.style.setProperty('--sidebar-text', '#a0a4b8');
+      root.style.setProperty('--sidebar-hover', '#1a1d29');
+      root.style.setProperty('--sidebar-active', '#4f7cff');
+      root.style.setProperty('--sidebar-active-text', '#ffffff');
+      root.style.setProperty('--sidebar-border', 'rgba(255,255,255,0.06)');
+      root.style.setProperty('--sidebar-logo', '#ffffff');
+      root.style.setProperty('--sidebar-version', 'rgba(255,255,255,0.3)');
+      root.style.setProperty('--sidebar-btn-border', 'rgba(255,255,255,0.15)');
+    } else {
+      root.style.setProperty('--body-bg', '#f5f6fa');
+      root.style.setProperty('--card-bg', '#ffffff');
+      root.style.setProperty('--header-bg', '#ffffff');
+      root.style.setProperty('--header-border', '#dee2e6');
+      root.style.setProperty('--table-header-bg', '#f5f6fa');
+      root.style.setProperty('--sidebar-bg', '#ffffff');
+      root.style.setProperty('--sidebar-text', '#1a1d29');
+      root.style.setProperty('--sidebar-hover', '#f0f2f5');
+      root.style.setProperty('--sidebar-active', '#4f7cff');
+      root.style.setProperty('--sidebar-active-text', '#ffffff');
+      root.style.setProperty('--sidebar-border', '#e2e4e8');
+      root.style.setProperty('--sidebar-logo', '#1a1d29');
+      root.style.setProperty('--sidebar-version', '#9aa0b0');
+      root.style.setProperty('--sidebar-btn-border', '#d0d2d8');
+    }
+    // Update toggle icon
+    var icon = document.getElementById('theme-icon');
+    if (icon) {
+      if (theme === 'dark') {
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+      } else if (theme === 'light') {
+        icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+      } else {
+        icon.innerHTML = '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>';
+      }
+    }
+  }
+  var saved = localStorage.getItem(saveKey) || 'system';
+  apply(saved);
+  window.__nexusApply = apply;
+  window.toggleTheme = function() {
+    var current = localStorage.getItem(saveKey) || 'system';
+    var next = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
+    localStorage.setItem(saveKey, next);
+    apply(next);
+  };
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+    var t = localStorage.getItem(saveKey) || 'system';
+    if (t === 'system') apply('system');
+  });
+})();
+` }} />
         <style>{css}</style>
       </head>
       <body>
@@ -38,10 +107,12 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
             </div>
             <nav class="nav">
               {NAV_ITEMS.map(item => (
-                <a
-                  href={item.href}
-                  class={`nav-item ${activeNav === item.id ? "active" : ""}`}
-                >
+                <a href={item.href}
+                  class="nav-item"
+                  style={{
+                    color: activeNav === item.id ? 'var(--sidebar-active-text)' : 'var(--sidebar-text)',
+                    background: activeNav === item.id ? 'var(--sidebar-active)' : 'transparent',
+                  }}>
                   <span class="nav-icon">{item.icon}</span>
                   <span class="nav-label">{item.label}</span>
                 </a>
@@ -49,6 +120,9 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
             </nav>
             <div class="sidebar-footer">
               <span class="version">v0.1.0</span>
+              <button onclick="toggleTheme()" class="sidebar-btn" title="Toggle theme">
+                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+              </button>
             </div>
           </aside>
           <main class="main-content">
@@ -70,16 +144,25 @@ export const css = `
 :root {
   --sidebar-w: 220px;
   --bg: #f5f6fa;
-  --sidebar-bg: #1a1d29;
-  --sidebar-text: #a0a4b8;
-  --sidebar-active: #ffffff;
-  --sidebar-hover: #2a2d3a;
+  --body-bg: #f5f6fa;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #1a1d29;
+  --sidebar-hover: #f0f2f5;
+  --sidebar-active: #4f7cff;
+  --sidebar-active-text: #ffffff;
+  --sidebar-border: #e2e4e8;
+  --sidebar-logo: #1a1d29;
+  --sidebar-version: #9aa0b0;
+  --sidebar-btn-border: #d0d2d8;
   --accent: #4f7cff;
   --accent-light: #e8edff;
   --border: #e2e4e8;
   --text: #1a1d29;
   --text-secondary: #6b6f80;
   --card-bg: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #dee2e6;
+  --table-header-bg: #f5f6fa;
   --success: #22c55e;
   --warning: #f59e0b;
   --danger: #ef4444;
@@ -102,8 +185,8 @@ body {
   position: fixed; top: 0; left: 0; bottom: 0;
   z-index: 100;
 }
-.sidebar-header { padding: 20px 16px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.logo { font-size: 1.25rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+.sidebar-header { padding: 20px 16px 16px; border-bottom: 1px solid var(--sidebar-border); }
+.logo { font-size: 1.25rem; font-weight: 700; color: var(--sidebar-logo); letter-spacing: -0.02em; }
 .subtitle { font-size: 0.75rem; color: var(--sidebar-text); display: block; margin-top: 2px; }
 .nav { flex: 1; padding: 8px; display: flex; flex-direction: column; gap: 2px; overflow-y: auto; }
 .nav-item {
@@ -112,11 +195,19 @@ body {
   color: var(--sidebar-text); text-decoration: none;
   font-size: 0.875rem; transition: all 0.15s;
 }
-.nav-item:hover { background: var(--sidebar-hover); color: var(--sidebar-active); }
-.nav-item.active { background: var(--accent); color: #fff; }
+.sidebar a:hover { background: var(--sidebar-hover) !important; color: inherit; }
+.nav-item:hover { background: var(--sidebar-hover) !important; color: inherit; }
+.nav-item.active { background: var(--sidebar-active); color: var(--sidebar-active-text); }
 .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
-.sidebar-footer { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.08); }
-.version { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+.sidebar-footer { padding: 12px 16px; border-top: 1px solid var(--sidebar-border); display: flex; align-items: center; justify-content: space-between; }
+.sidebar-footer .version { font-size: 0.7rem; color: var(--sidebar-version); }
+.sidebar-btn {
+  background: none; border: 1px solid var(--sidebar-btn-border); border-radius: 6px;
+  color: var(--sidebar-text); cursor: pointer; padding: 4px 8px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.sidebar-btn:hover { background: var(--sidebar-hover); }
 
 .main-content { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; }
 .page-header {

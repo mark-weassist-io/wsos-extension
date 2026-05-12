@@ -161,5 +161,15 @@ export function ensureSchema(db: Database): void {
   const existing = db.prepare("SELECT name FROM sqlite_master WHERE type='table'").all() as { name: string }[]
   if (existing.length === 0) {
     db.run(SCHEMA_SQL)
+    return
+  }
+
+  // Migrations for renamed/added columns
+  const cols = db.prepare("PRAGMA table_info(wsos_op_client_assignments)").all() as { name: string }[]
+  const colNames = cols.map(c => c.name)
+  if (colNames.includes("cs_staff_name") && !colNames.includes("assigned_cs")) {
+    db.run("ALTER TABLE wsos_op_client_assignments RENAME COLUMN cs_staff_name TO assigned_cs")
+  } else if (!colNames.includes("assigned_cs") && !colNames.includes("cs_staff_name")) {
+    db.run("ALTER TABLE wsos_op_client_assignments ADD COLUMN assigned_cs TEXT")
   }
 }

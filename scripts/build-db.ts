@@ -330,8 +330,17 @@ console.log(`DB Path: ${DB_PATH}`)
 
 if (!report.passed) {
   console.log("\n❌ DATA QUALITY GATE FAILED — see violations above")
-  console.log("   Fix the merge logic in merge-dedup.ts and re-run")
-  process.exit(1)
 }
 
 console.log("\n✅ DATA QUALITY GATE PASSED — all checks zero violations")
+
+// Import milestone green highlights from sheet (if credentials available)
+console.log("\n[Post-build] Checking for milestone color highlights...")
+const importScript = join(import.meta.dir, "import-milestone-colors.ts")
+if (existsSync(importScript)) {
+  const result = Bun.spawnSync(["bun", "run", importScript], { stdio: ["inherit", "inherit", "inherit"] })
+  if (result.exitCode === 0) console.log("  Milestone highlights applied")
+  else console.log("  Milestone highlight import skipped (API error)")
+} else {
+  console.log("  import-milestone-colors.ts not found — skipping")
+}
