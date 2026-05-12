@@ -23,10 +23,14 @@ router.get("/", (c) => {
 })
 
 router.post("/toggle/:opName/:milestone", async (c) => {
-  const opName = c.req.param("opName")
-  const milestone = c.req.param("milestone")
-  const next = toggleMilestone(decodeURIComponent(opName), decodeURIComponent(milestone))
-  return c.html(`<td data-milestone="${milestone}" data-happened="${next}" style="cursor:pointer;text-align:center;background:${next ? '#22c55e' : 'transparent'};border-radius:4px" onclick="fetch('/schedule/toggle/${encodeURIComponent(opName)}/${milestone}',{method:'POST'}).then(r=>r.text()).then(h=>this.outerHTML=h)">${next ? '✓' : '○'}</td>`)
+  const opName = decodeURIComponent(c.req.param("opName"))
+  const milestone = decodeURIComponent(c.req.param("milestone"))
+  const next = toggleMilestone(opName, milestone)
+  // Return just the style change, keeping the original date text
+  const bg = next ? '#22c55e' : 'transparent'
+  const color = next ? '#fff' : 'inherit'
+  // The client sends back the original date via a header or we just update the parent
+  return c.body(null, 204)  // No content — client handles style toggle
 })
 
 export { router as scheduleRouter }
