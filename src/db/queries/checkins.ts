@@ -133,16 +133,15 @@ export function getCheckinById(id: number) {
   return getDb().prepare("SELECT * FROM wsos_ninety_day_checkins WHERE id = ?").get(id) as any | undefined
 }
 
-export function createCheckin(data: { opName: string; status?: string; notes?: string }) {
-  getDb().prepare("INSERT INTO wsos_ninety_day_checkins (op_name, status, notes) VALUES (?, ?, ?)")
-    .run(data.opName, data.status || null, data.notes || null)
+export function createCheckin(data: { opName: string; status?: string }) {
+  getDb().prepare("INSERT INTO wsos_ninety_day_checkins (op_name, status) VALUES (?, ?)")
+    .run(data.opName, data.status || null)
 }
 
-export function updateCheckin(id: number, data: { opName?: string; status?: string; notes?: string }) {
+export function updateCheckin(id: number, data: { opName?: string; status?: string }) {
   const sets: string[] = []; const vals: any[] = []
   if (data.opName !== undefined) { sets.push("op_name = ?"); vals.push(data.opName) }
   if (data.status !== undefined) { sets.push("status = ?"); vals.push(data.status) }
-  if (data.notes !== undefined) { sets.push("notes = ?"); vals.push(data.notes) }
   if (sets.length === 0) return
   vals.push(id)
   getDb().prepare("UPDATE wsos_ninety_day_checkins SET " + sets.join(", ") + " WHERE id = ?").run(...vals)
