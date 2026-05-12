@@ -47,7 +47,7 @@ export function getNinetyDayCheckinsByOp(opName: string): NinetyDayCheckin[] {
     .all()
 }
 
-// --- Post-90-Day Check-in Schedule (flat table) ---
+// --- Post-90-Day Check-in Schedule (milestone normalized) ---
 
 export function getPost90DaySchedule(search?: string): Post90DayCheckinSchedule[] {
   return d().select({
