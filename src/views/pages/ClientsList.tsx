@@ -35,7 +35,7 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
             <div style="display:flex;gap:8px">
               <form action="/clients" method="get" class="search-bar" style="margin-bottom:0"><input type="text" name="search" placeholder="Search..." value={search || ""} />
               <button type="submit" class="btn btn-primary btn-sm">Search</button></form>
-              <a href="/clients/new" class="btn btn-primary btn-sm" style="text-decoration:none">+ New Client</a>
+              <a href="/clients/new" class="btn btn-primary btn-sm" style="text-decoration:none;display:inline-flex;align-items:center">+ New Client</a>
             </div>
           </div>
           <div class="card" style="padding:0">
