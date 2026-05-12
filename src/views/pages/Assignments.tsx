@@ -32,7 +32,10 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
             {inputField("End Date", "endDate", formData?.endDate || "", errors?.endDate, false, "date")}
             {inputField("Rate", "rate", formData?.rate || "", errors?.rate, false, "number")}
             {csStaff ? selectField("Assigned CS", "assignedCs", formData?.assignedCs || "", csStaff, errors?.assignedCs) : inputField("Assigned CS", "assignedCs", formData?.assignedCs || "", errors?.assignedCs)}
-            <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">{editId ? "Update" : "Create"}</button>
+            <div style="display:flex;gap:8px;margin-top:16px">
+              <button type="submit" class="btn btn-primary btn-sm">{editId ? "Update" : "Create"}</button>
+              <a href="/assignments" class="btn btn-outline-secondary btn-sm">Cancel</a>
+            </div>
           </form>
         </div>
       ) : (
