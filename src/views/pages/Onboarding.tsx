@@ -36,7 +36,6 @@ export const StepRow: FC<{ step: OnboardingStep; recordId: number; index?: numbe
         </button>
       </td>
       <td class="text-sm">{step.owner || "—"}</td>
-      <td class="text-sm text-secondary">{step.notes || "—"}</td>
     </tr>
   )
 }
@@ -64,7 +63,7 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
           <div class="table-container">
             <table>
               <thead>
-                <tr><th>#</th><th>Step</th><th>Status</th><th>Owner</th><th>Notes</th></tr>
+                <tr><th>#</th><th>Step</th><th>Status</th><th>Owner</th></tr>
               </thead>
               <tbody>
                 {detail.steps.map((s, i) => (
