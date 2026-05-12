@@ -4,7 +4,7 @@ import { join } from "path"
 import { Database } from "bun:sqlite"
 
 const CREDENTIALS_PATH = join(import.meta.dir, "..", "..", "weassist", "secrets", "credentials.json")
-const TOKEN_PATH = join(import.meta.dir, "..", "..", "..", "secrets", "token.json")
+const TOKEN_PATH = join(import.meta.dir, "..", "..", "weassist", "secrets", "token.json")
 const SCHEDULE_SHEET_ID = "1s2efOurG2Zh20uQ45CXCItcHqlcgQ1QjxQUy-PGnlJs"
 const SCHEDULE_TAB = "Client Check-in Schedule"
 const MILESTONE_COLS: [number, string][] = [[6, "3mo"], [7, "4mo"], [8, "5mo"], [9, "6mo"], [10, "9mo"], [11, "1yr"]]
