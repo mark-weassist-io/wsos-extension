@@ -3,7 +3,6 @@ import { app } from "./app"
 import { config } from "./config"
 import { getRedFlags, createRedFlag, updateRedFlag, softDeleteRedFlag, restoreRedFlag, getRedFlagById } from "./db/queries/red-flags"
 import { getCsStaff, createCsStaff, updateCsStaff, softDeleteCsStaff, restoreCsStaff, getCsStaffById } from "./db/queries/cs-staff"
-import { getExistingAccounts, createExistingAccount, updateExistingAccount, softDeleteExistingAccount, restoreExistingAccount, getExistingAccountById } from "./db/queries/existing-accounts"
 import { getNinetyDayCheckins, createCheckin, updateCheckin, softDeleteCheckin, restoreCheckin, getCheckinById } from "./db/queries/checkins"
 
 const NAV = [
@@ -16,7 +15,6 @@ const NAV = [
   { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "📅" },
   { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "👥" },
   { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "⚠" },
-  { id: "existing-accounts", label: "Existing Accounts", href: "/existing-accounts", icon: "📁" },
 ]
 
 const CSS = `
@@ -150,39 +148,6 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
       <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Create</button>
     </form>
   `), { headers: { "Content-Type": "text/html" } }),
-  "/existing-accounts": (url, req) => {
-    const trashed = url.searchParams.get("trashed") === "1"
-    const list = getExistingAccounts(url.searchParams.get("search") || undefined, trashed)
-    const rows = list.map(a => {
-      const d = a.deleted_at
-      const actions = d
-        ? `<form action="/existing-accounts/${a.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
-        : `<a href="/existing-accounts/${a.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
-<form action="/existing-accounts/${a.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
-      return `<tr${d ? ' style="opacity:0.5"' : ""}><td><strong>${esc(a.client_name)}</strong>${d ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td>
-<td class="text-sm">${esc(a.update_note)}</td><td class="text-sm">${esc(a.checkin_frequency) || "—"}</td><td>${actions}</td></tr>`
-    }).join("") || '<tr><td colspan="4" style="padding:40px;text-align:center;color:var(--text-secondary)">No accounts found</td></tr>'
-    return new Response(pageHTML("Existing Accounts", "existing-accounts", `
-      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <a href="/existing-accounts" class="badge ${!trashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Active</a>
-        <a href="/existing-accounts?trashed=1" class="badge ${trashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Trashed</a>
-        <a href="/existing-accounts/new" style="margin-left:auto;padding:8px 16px;background:var(--accent);color:#fff;border-radius:var(--radius);text-decoration:none;font-size:.875rem">+ New</a>
-      </div>
-      <div class="card" style="padding:0">
-        <table><thead><tr><th>Client</th><th>Update Note</th><th>Check-in Frequency</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
-      </div>
-    `), { headers: { "Content-Type": "text/html" } })
-  },
-  "/existing-accounts/new": (url) => new Response(pageHTML("New Account", "existing-accounts", `
-    <a href="/existing-accounts" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
-    <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">New Account Note</h3>
-    <form action="/existing-accounts" method="POST" class="card" style="padding:20px;max-width:500px">
-      <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Client *</label><input type="text" name="clientName" required style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-      <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Update Note</label><textarea name="updateNote" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box;min-height:80px"></textarea></div>
-      <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Check-in Frequency</label><input type="text" name="checkinFrequency" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-      <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Create</button>
-    </form>
-  `), { headers: { "Content-Type": "text/html" } }),
 }
 
 serve({
@@ -212,26 +177,6 @@ serve({
     }
     const csMatchUpdate = path.match(/^\/cs-staff\/(\d+)$/)
     if (csMatchUpdate && req.method === "POST") { const b = await bodyParams(req); updateCsStaff(parseInt(csMatchUpdate[1]!), { name: b.name, fullName: b.fullName }); return Response.redirect("/cs-staff") }
-
-    // Existing Accounts CRUD
-    if (path === "/existing-accounts" && req.method === "POST") { const b = await bodyParams(req); if (b.clientName) createExistingAccount({ clientName: b.clientName, updateNote: b.updateNote, checkinFrequency: b.checkinFrequency }); return Response.redirect("/existing-accounts") }
-    const eaEdit = path.match(/^\/existing-accounts\/(\d+)\/edit$/)
-    if (eaEdit) { const a = getExistingAccountById(parseInt(eaEdit[1]!)); if (!a) return Response.redirect("/existing-accounts"); return new Response(pageHTML("Edit Existing Account", "existing-accounts", `
-      <a href="/existing-accounts" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
-      <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">Edit Account</h3>
-      <form action="/existing-accounts/${a.id}" method="POST" class="card" style="padding:20px;max-width:500px">
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Client *</label><input type="text" name="clientName" value="${esc(a.client_name)}" required style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Update Note</label><textarea name="updateNote" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box;min-height:80px">${esc(a.update_note)}</textarea></div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Check-in Frequency</label><input type="text" name="checkinFrequency" value="${esc(a.checkin_frequency)}" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-        <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Update</button>
-      </form>
-    `), { headers: { "Content-Type": "text/html" } }) }
-    const eaDel = path.match(/^\/existing-accounts\/(\d+)\/delete$/)
-    if (eaDel && req.method === "POST") { softDeleteExistingAccount(parseInt(eaDel[1]!)); return Response.redirect("/existing-accounts") }
-    const eaRes = path.match(/^\/existing-accounts\/(\d+)\/restore$/)
-    if (eaRes && req.method === "POST") { restoreExistingAccount(parseInt(eaRes[1]!)); return Response.redirect("/existing-accounts?trashed=1") }
-    const eaUpdate = path.match(/^\/existing-accounts\/(\d+)$/)
-    if (eaUpdate && req.method === "POST") { const b = await bodyParams(req); updateExistingAccount(parseInt(eaUpdate[1]!), b as any); return Response.redirect("/existing-accounts") }
 
     // Check-in CRUD
     if (path === "/checkins" && req.method === "POST") { const b = await bodyParams(req); if (b.opName) createCheckin({ opName: b.opName, checkinType: b.checkinType, checkinDate: b.checkinDate, status: b.status, notes: b.notes }); return Response.redirect("/checkins") }

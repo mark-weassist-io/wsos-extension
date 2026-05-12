@@ -16,7 +16,6 @@ export const NAV_ITEMS = [
   { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
   { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
   { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
-  { id: "existing-accounts", label: "Existing Accounts", href: "/existing-accounts", icon: "bi-folder" },
 ]
 
 export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
