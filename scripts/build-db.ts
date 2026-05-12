@@ -139,7 +139,7 @@ const clientsInserted = insertData("wsos_clients", merged.clients, clientFields)
 totalInserted += clientsInserted
 console.log(`  wsos_clients: ${clientsInserted} rows`)
 
-const assignFields = ["op_name", "client_name", "role", "status", "type", "start_date", "end_date", "working_days", "working_hours", "rate", "assigned_cs", "department"]
+const assignFields = ["op_name", "client_name", "role", "status", "type", "start_date", "end_date", "working_days", "working_hours", "assigned_cs", "department"]
 const assignsInserted = insertData("wsos_op_client_assignments", merged.assignments, assignFields)
 totalInserted += assignsInserted
 console.log(`  wsos_op_client_assignments: ${assignsInserted} rows`)
