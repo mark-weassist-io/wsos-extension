@@ -15,6 +15,7 @@ const NAV = [
   { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
   { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
   { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
+  { id: "reviews", label: "Reviews", href: "/reviews", icon: "bi-clipboard-check" },
 ]
 
 const CSS = `
