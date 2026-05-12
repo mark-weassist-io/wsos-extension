@@ -179,7 +179,7 @@ export const DashboardPage: FC<Props> = ({ metrics, pipeline, attention, workloa
                   <td><strong>{a.op_name}</strong></td>
                   <td>{a.client_name || "—"}</td>
                   <td>{a.source_person || "—"}</td>
-                  <td>{a.last_stage || "—"}</td>
+                  <td>{toTitleCase(a.last_stage) || "—"}</td>
                   <td><span class="badge badge-secondary">In Progress</span></td>
                 </tr>
               ))}
