@@ -22,6 +22,7 @@ interface ScheduleRow {
 interface Props {
   schedule: ScheduleRow[]
   milestoneFlags: Record<string, Record<string, number>>
+  milestoneGreen?: Record<string, Record<string, number>>
   filter?: string
 }
 
@@ -45,7 +46,7 @@ const milestoneBadge = (status: string): string => {
   }
 }
 
-export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, filter }) => {
+export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGreen, filter }) => {
   return (
     <Layout title="Check-in Schedule" activeNav="schedule">
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
@@ -79,7 +80,8 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, filter }) =>
                     {MILESTONES.map(m => {
                       const val = (s as any)[m.col]
                       const happened = flags[m.key] || 0
-                      const status = val ? classifyMilestone(val, happened === 1) : "cancelled"
+                      const wasGreen = milestoneGreen?.[s.opName]?.[m.key] ?? 0
+                      const status = val ? classifyMilestone(val, happened === 1, wasGreen === 1) : "cancelled"
                       return (
                         <td key={m.key}
                           data-milestone={m.key}

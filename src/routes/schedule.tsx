@@ -1,6 +1,7 @@
 import { Hono } from "hono"
 import { SchedulePage } from "../views/pages/Schedule"
 import { getPost90DaySchedule, getUpcomingCheckins, getOverdueCheckins, getMilestoneHappened, toggleMilestone } from "../db/queries/checkins"
+import { getDb } from "../db"
 
 const router = new Hono()
 
@@ -14,12 +15,17 @@ router.get("/", (c) => {
   } else {
     schedule = getPost90DaySchedule()
   }
-  // Fetch milestone happened flags for each OP
+  // Fetch milestone happened + was_green flags for each OP
   const allFlags: Record<string, Record<string, number>> = {}
-  for (const s of schedule) {
-    allFlags[s.opName] = getMilestoneHappened(s.opName)
+  const allGreen: Record<string, Record<string, number>> = {}
+  const milestones = getDb().prepare("SELECT op_name, milestone, happened, was_green FROM checkin_milestones").all() as any[]
+  for (const m of milestones) {
+    if (!allFlags[m.op_name]) allFlags[m.op_name] = {}
+    if (!allGreen[m.op_name]) allGreen[m.op_name] = {}
+    allFlags[m.op_name][m.milestone] = m.happened
+    allGreen[m.op_name][m.milestone] = m.was_green ?? 0
   }
-  return c.html(<SchedulePage schedule={schedule} milestoneFlags={allFlags} filter={filter || undefined} />)
+  return c.html(<SchedulePage schedule={schedule} milestoneFlags={allFlags} milestoneGreen={allGreen} filter={filter || undefined} />)
 })
 
 router.post("/toggle/:opName/:milestone", async (c) => {
