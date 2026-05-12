@@ -2,6 +2,7 @@ import { Hono } from "hono"
 import { z } from "zod"
 import { OnboardingPage, StepRow } from "../views/pages/Onboarding"
 import { getObRecords, getObStepsWithStatus, getObRecordById, toggleStepStatus } from "../db/queries/ob-records"
+import { getDb } from "../db"
 import { PersonQuery, IdParam, ToggleStepParams } from "../validation/schemas"
 
 const router = new Hono()
@@ -30,12 +31,16 @@ router.get("/:id", (c) => {
   const record = getObRecordById(id)
   if (!record) return c.redirect("/onboarding")
 
+  // Fetch rate from ops table
+  const op = getDb().prepare("SELECT rate FROM wsos_ops WHERE full_name = ?").get(record.opName) as any
+
   const steps = getObStepsWithStatus(id)
   return c.html(<OnboardingPage summaries={[]} detail={{
     recordId: id,
     opName: record.opName,
     startDate: record.startDate,
     startTime: record.startTime,
+    rate: op?.rate || null,
     steps: steps.map(s => ({
       step_name: s.step_name,
       step_status: s.status,
