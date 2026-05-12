@@ -7,16 +7,16 @@ interface LayoutProps {
 }
 
 export const NAV_ITEMS = [
-  { id: "dashboard", label: "Dashboard", href: "/", icon: "▦" },
-  { id: "ops", label: "OP Directory", href: "/ops", icon: "👤" },
-  { id: "clients", label: "Clients", href: "/clients", icon: "🏢" },
-  { id: "assignments", label: "Assignments", href: "/assignments", icon: "🔗" },
-  { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "📋" },
-  { id: "checkins", label: "Check-ins", href: "/checkins", icon: "📊" },
-  { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "📅" },
-  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "👥" },
-  { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "⚠" },
-  { id: "existing-accounts", label: "Existing Accounts", href: "/existing-accounts", icon: "📁" },
+  { id: "dashboard", label: "Dashboard", href: "/", icon: "bi-speedometer2" },
+  { id: "ops", label: "OP Directory", href: "/ops", icon: "bi-people" },
+  { id: "clients", label: "Clients", href: "/clients", icon: "bi-building" },
+  { id: "assignments", label: "Assignments", href: "/assignments", icon: "bi-link" },
+  { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "bi-clipboard-data" },
+  { id: "checkins", label: "Check-ins", href: "/checkins", icon: "bi-check-circle" },
+  { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
+  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
+  { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
+  { id: "existing-accounts", label: "Existing Accounts", href: "/existing-accounts", icon: "bi-folder" },
 ]
 
 export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
@@ -27,6 +27,7 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title} — WSOS Extension</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
         <script src="https://unpkg.com/htmx.org@2.0.4" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" />
         <script dangerouslySetInnerHTML={{ __html: `
@@ -115,7 +116,7 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
                     color: activeNav === item.id ? 'var(--sidebar-active-text)' : 'var(--sidebar-text)',
                     background: activeNav === item.id ? 'var(--sidebar-active)' : 'transparent',
                   }}>
-                  <span class="nav-icon">{item.icon}</span>
+                  <i class={item.icon} style="font-size:1rem"></i>
                   <span style="font-size:0.875rem">{item.label}</span>
                 </a>
               ))}
@@ -200,7 +201,6 @@ body {
 .sidebar a:hover { background: var(--sidebar-hover) !important; color: inherit; }
 .nav-item:hover { background: var(--sidebar-hover) !important; color: inherit; }
 .nav-item.active { background: var(--sidebar-active); color: var(--sidebar-active-text); }
-.nav-icon { font-size: 1rem; width: 20px; text-align: center; }
 .sidebar-footer { padding: 12px 16px; border-top: 1px solid var(--sidebar-border); display: flex; align-items: center; justify-content: space-between; }
 .sidebar-footer .version { font-size: 0.7rem; color: var(--sidebar-version); }
 .sidebar-btn {
