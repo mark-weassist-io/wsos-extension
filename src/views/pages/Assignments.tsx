@@ -11,9 +11,10 @@ interface Props {
   ops?: string[]
   clients?: string[]
   csStaff?: string[]
+  search?: string
 }
 
-export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formData, errors, ops, clients, csStaff }) => {
+export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formData, errors, ops, clients, csStaff, search }) => {
   const showTrashed = assignments.length > 0 && assignments[0]?.deleted_at ? true : false
   return (
     <Layout title={editing ? (editId ? "Edit Assignment" : "New Assignment") : "Assignments"} activeNav="assignments">

@@ -15,7 +15,7 @@ function loadClean(filename: string): any[] {
 }
 
 console.log("=".repeat(60))
-console.log("NEXUS — DATA PIPELINE")
+console.log("NEXUS ΓÇö DATA PIPELINE")
 console.log("=".repeat(60))
 
 // Step 1: Merge & Dedup
@@ -144,7 +144,7 @@ console.log(`  wsos_op_client_assignments: ${assignsInserted} rows`)
 console.log("\n[4/5] Loading auxiliary data...")
 
 // Load onboarding from raw JSON (normalized grid model)
-const checklist = JSON.parse(readFileSync(join(import.meta.dir, "..", "..", "..", "secrets", "extracted", "After_Sales_Checklist_-_OP_Onboarding.json"), "utf-8"))
+const checklist = JSON.parse(readFileSync(join(import.meta.dir, "..", "..", "weassist", "secrets", "extracted", "After_Sales_Checklist_-_OP_Onboarding.json"), "utf-8"))
 const clTabs = checklist.tabs
 const validOps = new Set(db.prepare("SELECT full_name FROM wsos_ops").all().map((r: any) => r.full_name))
 
@@ -238,7 +238,7 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
           db.prepare(`INSERT INTO wa_ob_statuses (record_id, step_def_id, status) VALUES (?, ?, ?)`).run(recordId, STEP_DEFS[stepIdx].id, status)
           steps++
         } catch (e: any) {
-          // Unique constraint violation — skip
+          // Unique constraint violation ΓÇö skip
         }
       }
     } catch (e: any) {
@@ -255,7 +255,7 @@ console.log(`  wa_ob_statuses: ${michResult.steps + denResult.steps} step status
 totalInserted += michResult.records + denResult.records + michResult.steps + denResult.steps
 
 // Load check-ins and schedule
-const reporting = JSON.parse(readFileSync(join(import.meta.dir, "..", "..", "..", "secrets", "extracted", "OP_Reporting_-_Check-ins_-_NPS_Tracker.json"), "utf-8"))
+const reporting = JSON.parse(readFileSync(join(import.meta.dir, "..", "..", "weassist", "secrets", "extracted", "OP_Reporting_-_Check-ins_-_NPS_Tracker.json"), "utf-8"))
 const rTabs = reporting.tabs
 
 const reportTab = rTabs["Reporting"]
@@ -402,10 +402,10 @@ console.log(`\nTotal rows inserted: ${totalInserted}`)
 console.log(`DB Path: ${DB_PATH}`)
 
 if (!report.passed) {
-  console.log("\n❌ DATA QUALITY GATE FAILED — see violations above")
+  console.log("\nΓ¥î DATA QUALITY GATE FAILED ΓÇö see violations above")
 }
 
-console.log("\n✅ DATA QUALITY GATE PASSED — all checks zero violations")
+console.log("\nΓ£à DATA QUALITY GATE PASSED ΓÇö all checks zero violations")
 
 // Import milestone green highlights from sheet (if credentials available)
 console.log("\n[Post-build] Checking for milestone color highlights...")
@@ -415,5 +415,5 @@ if (existsSync(importScript)) {
   if (result.exitCode === 0) console.log("  Milestone highlights applied")
   else console.log("  Milestone highlight import skipped (API error)")
 } else {
-  console.log("  import-milestone-colors.ts not found — skipping")
+  console.log("  import-milestone-colors.ts not found ΓÇö skipping")
 }

@@ -3,7 +3,7 @@ import { readFileSync, existsSync } from "fs"
 import { join } from "path"
 import { Database } from "bun:sqlite"
 
-const CREDENTIALS_PATH = join(import.meta.dir, "..", "..", "..", "secrets", "credentials.json")
+const CREDENTIALS_PATH = join(import.meta.dir, "..", "..", "weassist", "secrets", "credentials.json")
 const TOKEN_PATH = join(import.meta.dir, "..", "..", "..", "secrets", "token.json")
 const SCHEDULE_SHEET_ID = "1s2efOurG2Zh20uQ45CXCItcHqlcgQ1QjxQUy-PGnlJs"
 const SCHEDULE_TAB = "Client Check-in Schedule"

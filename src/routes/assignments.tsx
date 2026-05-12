@@ -21,7 +21,7 @@ const AssignmentSchema = z.object({
 
 router.get("/", (c) => {
   const assignments = getAssignments(c.req.query("search"), c.req.query("trashed") === "1")
-  return c.html(<AssignmentsPage assignments={assignments} />)
+  return c.html(<AssignmentsPage assignments={assignments} search={c.req.query("search") || undefined} />)
 })
 
 router.get("/new", (c) => {

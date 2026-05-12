@@ -4,7 +4,7 @@ import type { QualityRules } from "./data-quality/types"
 import { OPS_RULES, CLIENTS_RULES, ASSIGNMENTS_RULES, ONBOARDING_RULES } from "./data-quality/index"
 
 const ROOT = join(import.meta.dir, "..")
-const RAW_DIR = join(ROOT, "..", "..", "secrets", "extracted")
+const RAW_DIR = join(ROOT, "..", "weassist", "secrets", "extracted")
 const CLEAN_DIR = join(ROOT, "data", "clean")
 
 function ensureCleanDir() {
@@ -29,15 +29,15 @@ function normalizePhone(s: any): string {
   if (!raw) return ""
   // Strip all non-digits
   const digits = raw.replace(/\D/g, "")
-  // If starts with 09 and is 11 digits → +63
+  // If starts with 09 and is 11 digits ΓåÆ +63
   if (digits.startsWith("09") && digits.length === 11) {
     return "+63" + digits.slice(1)
   }
-  // If already starts with 63 and is 12 digits → +63
+  // If already starts with 63 and is 12 digits ΓåÆ +63
   if (digits.startsWith("63") && digits.length === 12) {
     return "+" + digits
   }
-  // If 10 digits starting with 9 → +639...
+  // If 10 digits starting with 9 ΓåÆ +639...
   if (digits.startsWith("9") && digits.length === 10) {
     return "+63" + digits
   }
@@ -61,10 +61,10 @@ function isTruthy(s: any): boolean {
 // The merge engine will apply it to ALL tables automatically.
 //
 // CONFIRMATION RULES:
-// - Same person with/without middle name → COLLAPSE
-// - Same person with "Jr." in different position → COLLAPSE
-// - Same person running different businesses → COLLAPSE to person name
-// - Different people sharing a first name → DO NOT collapse
+// - Same person with/without middle name ΓåÆ COLLAPSE
+// - Same person with "Jr." in different position ΓåÆ COLLAPSE
+// - Same person running different businesses ΓåÆ COLLAPSE to person name
+// - Different people sharing a first name ΓåÆ DO NOT collapse
 // ============================================================
 
 const OP_CANONICAL_MAP: Record<string, string> = {
@@ -74,16 +74,16 @@ const OP_CANONICAL_MAP: Record<string, string> = {
 }
 
 const CLIENT_CANONICAL_MAP: Record<string, string> = {
-  // Ian Blair — same person, different service lines
+  // Ian Blair ΓÇö same person, different service lines
   "Ian Blair / Fastlane Drive": "Ian Blair",
   "Ian Blair / Laundry Sauce": "Ian Blair",
   "Ian Blair / Mortal Munchies": "Ian Blair",
-  // Raindrop Agency — same agency
+  // Raindrop Agency ΓÇö same agency
   "Raindrop Agency / Eduardo Correa": "Raindrop Agency",
-  // Zach Pappenhausen — name variations
+  // Zach Pappenhausen ΓÇö name variations
   "Zach Papenhausen (Apollo Bath)": "Zach Papenhausen",
   "Zach Pappenhausen - Apollo Bath": "Zach Papenhausen",
-  // Austin Blair / Laundry Sauce — different name order
+  // Austin Blair / Laundry Sauce ΓÇö different name order
   "Laundrysauce / Austin Blair": "Austin Blair/ Laundry Sauce",
 }
 
@@ -125,7 +125,7 @@ function normalizeDate(val: any): string {
     const dd = m[2].padStart(2, "0")
     return `${m[3]}-${mm}-${dd}`
   }
-  // Not a recognizable date — return as-is (could be milestone label)
+  // Not a recognizable date ΓÇö return as-is (could be milestone label)
   return s
 }
 
@@ -430,7 +430,7 @@ export function runMerge(): {
 
   let cleanClients: any[] = []
   if (clientRules.merge_strategy.collapse?.enabled) {
-    // Collapse: all rows with same name → one row
+    // Collapse: all rows with same name ΓåÆ one row
     const allRows = [...clientGroups.values()].flat()
     cleanClients = collapseGroup(allRows, clientRules.merge_strategy.collapse)
     console.log(`  After collapse: ${cleanClients.length}`)
