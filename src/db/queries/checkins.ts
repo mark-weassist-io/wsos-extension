@@ -240,7 +240,7 @@ export function getAllClassifiedMilestones(): ClassifiedMilestone[] {
   }
 
   for (const row of rows) {
-    const flags = happenedSet.get(row.op_name) ?? new Map()
+    const flags = flagMap.get(row.op_name) ?? new Map()
     for (const [key, col] of MILESTONE_COLS) {
       const dateStr = row[col]
       if (!dateStr) continue
