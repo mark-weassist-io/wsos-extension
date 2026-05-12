@@ -196,9 +196,9 @@ serve({
         <a href="/cs-staff" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
         <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">Edit Staff</h3>
         <form action="/cs-staff/${s.id}" method="POST" class="card" style="padding:20px;max-width:500px">
-          <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Name *</label><input type="text" name="name" value="${esc(s.name)}" required style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-          <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" value="${esc(s.fullName)}" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-          <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Update</button>
+          <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" value="${esc(s.name)}" required class="form-control form-control-sm"></div>
+          <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" value="${esc(s.fullName)}" class="form-control form-control-sm"></div>
+          <button type="submit" class="btn btn-primary btn-sm">Update</button>
         </form>
       `), { headers: { "Content-Type": "text/html" } })
     }
