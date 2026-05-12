@@ -11,7 +11,7 @@ interface Props {
   search?: string
 }
 
-export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formData }) => {
+export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formData, search }) => {
   const trashed = clients.some(c => c.deleted_at)
   return (
     <Layout title={editing ? (editId ? "Edit Client" : "New Client") : "Clients"} activeNav="clients">
