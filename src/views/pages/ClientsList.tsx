@@ -22,7 +22,10 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
           <form action={editId ? `/clients/${editId}` : "/clients"} method="POST" class="card" style="padding:20px">
             {inputField("Name*", "name", formData?.name || "", errors?.name, true)}
             {inputField("Email", "email", formData?.email || "", errors?.email, false, "email")}
-            <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">{editId ? "Update" : "Create"}</button>
+            <div style="display:flex;gap:8px;margin-top:16px">
+              <button type="submit" class="btn btn-primary btn-sm">{editId ? "Update" : "Create"}</button>
+              <a href="/clients" class="btn btn-outline-secondary btn-sm">Cancel</a>
+            </div>
           </form>
         </div>
       ) : (
