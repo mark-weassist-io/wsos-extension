@@ -17,6 +17,8 @@ const stageColor = (stage: string): string => {
   if (stage.includes("Onboarding")) return "var(--accent)"
   if (stage.includes("Probation")) return "var(--warning)"
   if (stage === "Active") return "var(--success)"
+  if (stage.includes("Done")) return "var(--success)"
+  if (stage.includes("Scheduled")) return "var(--accent)"
   if (stage.includes("Overdue")) return "var(--danger)"
   if (stage.includes("Separated")) return "var(--text-secondary)"
   return "var(--text)"
@@ -46,6 +48,14 @@ export const DashboardPage: FC<Props> = ({ metrics, pipeline, attention, workloa
         <div class="stat-card">
           <div class="stat-value" style="color:var(--warning)">{metrics.pending_handoff_calls}</div>
           <div class="stat-label">Pending HO Calls</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--success)">{metrics.done_checkins}</div>
+          <div class="stat-label">Check-ins Done</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--accent)">{metrics.scheduled_checkins}</div>
+          <div class="stat-label">Check-ins Scheduled</div>
         </div>
         <div class="stat-card">
           <div class="stat-value" style="color:var(--danger)">{metrics.overdue_checkins}</div>
