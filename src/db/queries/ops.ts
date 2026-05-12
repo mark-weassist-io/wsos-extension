@@ -40,7 +40,8 @@ function opSelect() {
 
 export function getOps(search?: string, includeTrashed?: boolean): OpRow[] {
   const conditions = []
-  if (!includeTrashed) conditions.push(isNull(schema.ops.deletedAt))
+  if (includeTrashed) conditions.push(sql`${schema.ops.deletedAt} IS NOT NULL`)
+  else conditions.push(isNull(schema.ops.deletedAt))
   if (search) conditions.push(or(like(schema.ops.fullName, `%${search}%`), like(schema.ops.email, `%${search}%`)))
   return d().select(opSelect()).from(schema.ops)
     .where(conditions.length > 0 ? and(...conditions) : undefined)
@@ -50,7 +51,8 @@ export function getOps(search?: string, includeTrashed?: boolean): OpRow[] {
 
 export function getOpsWithAssignments(search?: string, includeTrashed?: boolean): OpWithAssignment[] {
   const conditions = []
-  if (!includeTrashed) conditions.push(isNull(schema.ops.deletedAt))
+  if (includeTrashed) conditions.push(sql`${schema.ops.deletedAt} IS NOT NULL`)
+  else conditions.push(isNull(schema.ops.deletedAt))
   if (search) conditions.push(or(
     like(schema.ops.fullName, `%${search}%`),
     like(schema.assignments.clientName, `%${search}%`),
