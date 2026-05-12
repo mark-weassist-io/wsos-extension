@@ -45,7 +45,7 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
             <div style="display:flex;gap:8px">
               <form action="/assignments" method="get" class="search-bar" style="margin-bottom:0"><input type="text" name="search" placeholder="Search..." value={search || ""} />
               <button type="submit" class="btn btn-primary btn-sm">Search</button></form>
-              <a href="/assignments/new" class="btn btn-primary btn-sm" style="text-decoration:none">+ New Assignment</a>
+              <a href="/assignments/new" class="btn btn-primary btn-sm" style="text-decoration:none;display:inline-flex;align-items:center">+ New Assignment</a>
             </div>
           </div>
           <div class="card" style="padding:0;overflow-x:auto">
