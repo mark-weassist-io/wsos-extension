@@ -21,7 +21,7 @@ async function main() {
   const gridRes = await sheets.spreadsheets.get({ spreadsheetId: SCHEDULE_SHEET_ID, ranges: [SCHEDULE_TAB], includeGridData: true, fields: "sheets.data.rowData.values.effectiveFormat.backgroundColor" })
   const gridRows = gridRes.data.sheets?.[0]?.data?.[0]?.rowData || []
 
-  const db = new Database("D:/dev-wrapper/repositories/weassist/apps/wsos-extension/data/wsos-extension.db")
+  const db = new Database(join(import.meta.dir, "..", "data", "wsos-extension.db"))
   const update = db.prepare("UPDATE checkin_milestones SET happened = 1 WHERE op_name = ? AND milestone = ?")
   let greenCount = 0
 
