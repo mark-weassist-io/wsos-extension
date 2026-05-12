@@ -58,7 +58,7 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
                     <td>{a.client_name}</td>
                     <td class="text-sm">{a.role || "—"}</td>
                     <td><span class={statusBadge(a.status)}>{a.status || "—"}</span></td>
-                    <td class="text-sm">{a.type || "—"}</td>
+                    <td class="text-sm" style="white-space:nowrap">{a.type || "—"}</td>
                     <td class="text-sm">{a.rate ? `$${a.rate}` : "—"}</td>
                     <td class="text-sm">{a.assigned_cs || "—"}</td>
                     <td>
