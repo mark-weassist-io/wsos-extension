@@ -122,7 +122,7 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
         ? `<form action="/red-flags/${f.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
         : `<a href="/red-flags/${f.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
 <form action="/red-flags/${f.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
-      return `<tr${d ? ' style="opacity:0.5"' : ""}><td><strong>${esc(f.flag_name)}</strong>${d ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(f.definition)}</td><td>${ad}</td></tr>`
+      return `<tr${d ? ' style="opacity:0.5"' : ""}><td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${f.color || '#ccc'};margin-right:4px;vertical-align:middle"></span><strong>${esc(f.flag_name)}</strong>${d ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(f.definition)}</td><td>${ad}</td></tr>`
     }).join("") || '<tr><td colspan="3" style="padding:40px;text-align:center;color:var(--text-secondary)">No flags found</td></tr>'
 
     return new Response(pageHTML("Red Flags", "red-flags", `
