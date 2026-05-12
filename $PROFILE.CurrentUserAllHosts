@@ -5,16 +5,36 @@
 # 1. Anti-data-loss enforcement (AGENTS.MD §3.5)
 . 'D:\dev-wrapper\agents\scripts\shell\anti-data-loss.ps1'
 
-# 2. Auto-save daemon reminder (AGENTS.MD §3.2)
-$host.UI.RawUI.WindowTitle = "🚫 ANTI-DATA-LOSS"
-Write-Host -ForegroundColor DarkGray @"
+# 2. Daemon + rules reminder
+$host.UI.RawUI.WindowTitle = "⚠ ANTI-DATA-LOSS | autosave required"
 
-  ╔════════════════════════════════════════════════════╗
-  ║  AGENTS.MD REMINDERS                               ║
-  ╠════════════════════════════════════════════════════╣
-  ║  §3.2  Start 'bun run autosave' with every project ║
-  ║  §3.5  Destructive ops physically blocked          ║
-  ║  §6.3  Archive/ directory — never delete           ║
-  ╚════════════════════════════════════════════════════╝
-  Run 'bun run autosave' in any project to auto-commit+push.
+Write-Host -ForegroundColor Red -BackgroundColor Black @"
+╔══════════════════════════════════════════════════════════════╗
+║                    AUTOSAVE DAEMON REQUIRED                  ║
+╠══════════════════════════════════════════════════════════════╣
+║  ▶  RUN 'bun run autosave' IN EVERY PROJECT TAB              ║
+║  ▶  This auto-commits + pushes on every file change          ║
+║  ▶  NEVER skip starting it — data loss WILL happen           ║
+╠══════════════════════════════════════════════════════════════╣
+║                    DESTRUCTIVE OPS BLOCKED                    ║
+╠══════════════════════════════════════════════════════════════╣
+║  ✗ Remove-Item / del / rm                   → ARCHIVES       ║
+║  ✗ git rebase / --amend / --force           → REJECTED       ║
+║  ✗ Recycle Bin / .NET delete methods        → BLOCKED        ║
+║  ✗ DROP TABLE / DELETE FROM (shell sqlite3) → BLOCKED        ║
+║  ✗ docker volume rm / system prune          → BLOCKED        ║
+║  ✗ Format-Volume / Clear-EventLog           → BLOCKED        ║
+╠══════════════════════════════════════════════════════════════╣
+║  ⚠  NO AGENT MAY AUTHORIZE DESTRUCTIVE OPERATIONS            ║
+╠══════════════════════════════════════════════════════════════╣
+║  ONLY MARK CAN, AND IT REQUIRES:                             ║
+║    1. Explicit "yes I confirm"                               ║
+║    2. Followed by "I really mean it"                         ║
+║  Agents CANNOT self-authorize — EVER.                        ║
+╠══════════════════════════════════════════════════════════════╣
+║  ✓ Use Move-Item to archive/ folder instead                  ║
+║  ✓ AGENTS.MD §3.5 ↔ anti-data-loss.ps1 — cross-reference     ║
+╚══════════════════════════════════════════════════════════════╝
 "@
+
+Write-Host -ForegroundColor DarkGray "  Profile locked (read-only) | $(Get-Date -Format 'yyyy-MM-dd HH:mm')`n"

@@ -6,8 +6,6 @@ export const CLIENTS_RULES: EntityQualityRules = {
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
   email TEXT,
-  timezone TEXT,
-  holiday_schedule TEXT,
   deleted_at DATETIME DEFAULT NULL,
   created_at TEXT DEFAULT (datetime('now')),
   UNIQUE(name)

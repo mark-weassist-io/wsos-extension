@@ -48,7 +48,7 @@ for (const s of STEP_DEFS) {
 }
 
 // Seed staff table (will be expanded after auxiliary data loads)
-db.run(`CREATE TABLE wa_cs_staff (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, deleted_at DATETIME DEFAULT NULL, created_at TEXT DEFAULT (datetime('now')))`)
+db.run(`CREATE TABLE wa_cs_staff (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, full_name TEXT, deleted_at DATETIME DEFAULT NULL, created_at TEXT DEFAULT (datetime('now')))`)
 // Known staff that may not appear in current loaded data
 for (const name of ["Dennis"]) {
   db.prepare("INSERT OR IGNORE INTO wa_cs_staff (name) VALUES (?)").run(name)
