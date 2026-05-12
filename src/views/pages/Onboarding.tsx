@@ -71,7 +71,7 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
             </div>
           </form>
         </div>
-        <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px">Click a status to toggle: Not Done → Done → NA → Not Done</p>
+        <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px">Click a status to toggle: Not Done ↔ Done</p>
         <div class="card" style="padding:0">
           <div class="table-container">
             <table>

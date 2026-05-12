@@ -92,7 +92,7 @@ export function getObInProgressCount(): number {
     .get()?.c ?? 0
 }
 
-const NEXT_STATUS: Record<string, string> = { "Not Done": "Done", "Done": "Not Done", "NA": "Done" }
+const NEXT_STATUS: Record<string, string> = { "Not Done": "Done", "Done": "Not Done" }
 
 export function toggleStepStatus(recordId: number, stepDefId: number): string {
   const current = d().select({ status: schema.obStatuses.status })
