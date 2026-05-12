@@ -64,7 +64,7 @@ db.run(`CREATE TABLE wa_assignment_types (id INTEGER PRIMARY KEY AUTOINCREMENT, 
 db.run(`INSERT OR IGNORE INTO wa_assignment_types (name) VALUES ('Full-Time'), ('Part-Time'), ('6 Hours')`)
 
 db.run(`CREATE TABLE wa_checkin_statuses (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE)`)
-db.run(`INSERT OR IGNORE INTO wa_checkin_statuses (name) VALUES ('GRADUATED'), ('RESIGNED'), ('TERMINATED'), ('TRANSITIONED')`)
+db.run(`INSERT OR IGNORE INTO wa_checkin_statuses (name) VALUES ('Graduated'), ('Resigned'), ('Terminated'), ('Transitioned')`)
 
 // Normalize gender values in merged ops before inserting
 for (const op of merged.ops) {
