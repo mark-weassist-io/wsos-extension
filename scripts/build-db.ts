@@ -206,7 +206,7 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
     const rateVal = (row[9] || "").toString().trim()
     const startDateVal = (row[7] || "").toString().trim()
     const startTimeVal = (row[8] || "").toString().trim()
-    const rateVal = (row[9] || "").toString().trim()
+    let rateVal = (row[9] || "").toString().trim()
     const lastStageVal = cLastStage >= 0 ? (row[cLastStage] || "").toString().trim() : ""
     const statusVal = cStatus >= 0 ? (row[cStatus] || "").toString().trim() : ""
 
