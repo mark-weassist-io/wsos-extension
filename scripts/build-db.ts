@@ -315,7 +315,8 @@ if (schedTab?.formatted?.length > 1) {
     UNIQUE(op_name, milestone)
   )`)
   const milestoneInsert = db.prepare("INSERT OR IGNORE INTO checkin_milestones (op_name, milestone, milestone_date) VALUES (?, ?, ?)")
-  const milestoneCols: [number, string][] = [
+  // Source columns: 6=After 3 Mon, 7=After 4 Mon, 8=After 5 Mon, 9=After 6 Mon, 10=After 9 Mon, 11=After 1 Year, 12=After 1 Yr & 3 Mo
+  const milestoneSrcCols: [number, string][] = [
     [6, "3mo"], [7, "4mo"], [8, "5mo"], [9, "6mo"], [10, "9mo"], [11, "1yr"], [12, "1yr3mo"]
   ]
   let milestoneCount = 0
@@ -325,12 +326,10 @@ if (schedTab?.formatted?.length > 1) {
     if (!first) continue
     const cleanName = [...validOps].find((n: string) => n.toLowerCase() === first.toLowerCase())
     if (!cleanName) continue
-    for (const [colIdx, milestone] of milestoneCols) {
-      const mapped = colMap[colIdx]
-      if (mapped === null || mapped === undefined) continue
-      const val = (row[mapped] || "").toString().trim()
-      if (!val) continue
-      // detect if value is a date (m/d/Y or Y-m-d) or text
+    for (const [srcIdx, milestone] of milestoneSrcCols) {
+      const val = (row[srcIdx] || "").toString().trim()
+      if (!val || val.toLowerCase() === "active" || val.toLowerCase() === "inactive") continue
+      // detect date format (m/d/Y or Y-m-d)
       const dateMatch = val.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/)
       const isoMatch = val.match(/(\d{4})-(\d{2})-(\d{2})/)
       let dateStr: string | null = null
@@ -338,7 +337,7 @@ if (schedTab?.formatted?.length > 1) {
         dateStr = val
       } else if (dateMatch) {
         dateStr = `${dateMatch[3]}-${dateMatch[1].padStart(2,"0")}-${dateMatch[2].padStart(2,"0")}`
-      }
+      } else { continue } // skip non-date values
       try { milestoneInsert.run(cleanName, milestone, dateStr); milestoneCount++ } catch {}
     }
   }
