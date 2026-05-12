@@ -6,15 +6,15 @@ import { getCsStaff, createCsStaff, updateCsStaff, softDeleteCsStaff, restoreCsS
 import { getNinetyDayCheckins, createCheckin, updateCheckin, softDeleteCheckin, restoreCheckin, getCheckinById } from "./db/queries/checkins"
 
 const NAV = [
-  { id: "dashboard", label: "Dashboard", href: "/", icon: "▦" },
-  { id: "ops", label: "OP Directory", href: "/ops", icon: "👤" },
-  { id: "clients", label: "Clients", href: "/clients", icon: "🏢" },
-  { id: "assignments", label: "Assignments", href: "/assignments", icon: "🔗" },
-  { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "📋" },
-  { id: "checkins", label: "Check-ins", href: "/checkins", icon: "📊" },
-  { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "📅" },
-  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "👥" },
-  { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "⚠" },
+  { id: "dashboard", label: "Dashboard", href: "/", icon: "bi-speedometer2" },
+  { id: "ops", label: "OP Directory", href: "/ops", icon: "bi-people" },
+  { id: "clients", label: "Clients", href: "/clients", icon: "bi-building" },
+  { id: "assignments", label: "Assignments", href: "/assignments", icon: "bi-link" },
+  { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "bi-clipboard-data" },
+  { id: "checkins", label: "Check-ins", href: "/checkins", icon: "bi-check-circle" },
+  { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
+  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
+  { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
 ]
 
 const CSS = `
