@@ -58,8 +58,16 @@ router.get("/:id/edit", (c) => {
 router.post("/:id", async (c) => {
   const id = parseInt(c.req.param("id"))
   const form = await c.req.parseBody()
-  const parsed = CreateOpSchema.partial().safeParse(form)
-  if (!parsed.success) { console.error("OP update validation failed:", parsed.error.flatten()); return c.redirect(`/ops/${id}/edit`) }
+  const parsed = z.object({
+    fullName: z.string().optional(),
+    firstName: z.string().optional(),
+    lastName: z.string().optional(),
+    email: z.string().optional(),
+    phone: z.string().optional(),
+    gender: z.string().optional(),
+    nickname: z.string().optional(),
+  }).safeParse(form)
+  if (!parsed.success) return c.redirect(`/ops/${id}/edit`)
   updateOp(id, parsed.data as any)
   return c.redirect("/ops")
 })
