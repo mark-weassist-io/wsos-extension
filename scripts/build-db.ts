@@ -203,7 +203,7 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
 
     try {
       const recResult = db.prepare(
-        `INSERT INTO wa_ob_records (op_name, client_name, company_name, role, rate, start_date, start_time, contact_number, email, notes, last_stage_completed, status, source_person) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO wa_ob_records (op_name, client_name, company_name, role, rate, start_date, start_time, contact_number, email, last_stage_completed, status, source_person) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       ).run(
         cleanName,
         cClient >= 0 ? (row[cClient] || "").toString().trim() || null : null,
@@ -214,7 +214,6 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
         startTimeVal || null,
         cPhone >= 0 ? (row[cPhone] || "").toString().trim() || null : null,
         cEmail >= 0 ? (row[cEmail] || "").toString().trim() || null : null,
-        cNotes >= 0 ? (row[cNotes] || "").toString().trim() || null : null,
         lastStageVal || null,
         statusVal || null,
         person,
