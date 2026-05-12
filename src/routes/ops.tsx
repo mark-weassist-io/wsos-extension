@@ -22,11 +22,11 @@ router.get("/", (c) => {
   const ops = getOpsWithAssignments(search, trashed)
   const total = getOpsCount()
   // Attach phones from one-to-many table
-  const opsWithPhones = ops.map(o => ({
+  const opsWithPhones: (OpsListPageProps["ops"][number] & { phones: string[] })[] = ops.map(o => ({
     ...o,
     phones: getOpPhones(o.full_name),
   }))
-  return c.html(<OpsListPage ops={opsWithPhones} search={search} total={total} showTrashed={trashed} />)
+  return c.html(<OpsListPage ops={opsWithPhones as any} search={search} total={total} showTrashed={trashed} />)
 })
 
 router.get("/new", (c) => {
