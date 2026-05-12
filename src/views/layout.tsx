@@ -291,6 +291,11 @@ export const statusBadge = (status: string | null): string => {
   }
 }
 
+export function toTitleCase(s: string | null | undefined): string {
+  if (!s) return ""
+  return s.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())
+}
+
 export const inputField = (label: string, name: string, value: string | undefined, error?: string, required?: boolean, type?: string) => (
   <div style="margin-bottom:12px">
     <label style="display:block;font-size:0.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">
