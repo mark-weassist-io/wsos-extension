@@ -50,27 +50,36 @@ export function getMetrics(): DashboardMetrics {
     .where(sql`${schema.obRecords.status} IS NULL OR (${schema.obRecords.status} != 'Completed' AND ${schema.obRecords.status} != 'Cancelled' AND ${schema.obRecords.status} != 'Graduated')`)
     .get()?.c ?? 0
 
-  // Overdue check-ins: today's date compared to check-in schedule dates
-  const today = new Date().toLocaleDateString("en-US", { month: "numeric", day: "numeric", year: "numeric" }).split("/").map(n => n.padStart(2, "0")).join("/")
-  const s = schema.checkinSchedule
-  const overdue = d().select({ c: count() }).from(s)
-    .where(or(
-      and(sql`${s.after3Mon} IS NOT NULL`, sql`${s.after3Mon} != ''`, sql`${s.after3Mon} < ${today}`),
-      and(sql`${s.after4Mon} IS NOT NULL`, sql`${s.after4Mon} != ''`, sql`${s.after4Mon} < ${today}`),
-      and(sql`${s.after5Mon} IS NOT NULL`, sql`${s.after5Mon} != ''`, sql`${s.after5Mon} < ${today}`),
-      and(sql`${s.after6Mon} IS NOT NULL`, sql`${s.after6Mon} != ''`, sql`${s.after6Mon} < ${today}`),
-      and(sql`${s.after9Mon} IS NOT NULL`, sql`${s.after9Mon} != ''`, sql`${s.after9Mon} < ${today}`),
-      and(sql`${s.after1Year} IS NOT NULL`, sql`${s.after1Year} != ''`, sql`${s.after1Year} < ${today}`),
-      and(sql`${s.after1Year3Months} IS NOT NULL`, sql`${s.after1Year3Months} != ''`, sql`${s.after1Year3Months} < ${today}`),
-    ))
-    .get()?.c ?? 0
-
-  // Pending handoff calls: onboarding records where HAND-OFF CALL steps are not done
+  // Post-onboarding: active OPs NOT currently in active onboarding
   const r = getDb()
+  const postOnboarding = (r.prepare(`
+    SELECT COUNT(*) as c FROM wa_assignments a
+    WHERE a.status = 'Active'
+    AND a.op_name NOT IN (
+      SELECT r.op_name FROM wa_ob_records r
+      WHERE (r.status IS NULL OR r.status NOT IN ('Completed', 'Cancelled', 'Graduated'))
+    )
+  `).get() as { c: number })?.c ?? 0
+
+  // Overdue check-ins: convert M/D/YYYY to YYYY-MM-DD and compare with today
+  const colToDate = (col: string) =>
+    `date(substr(${col},-4)||'-'||substr('0'||substr(${col},1,instr(${col},'/')-1),-2)||'-'||substr('0'||substr(substr(${col},instr(${col},'/')+1),1,instr(substr(${col},instr(${col},'/')+1),'/')-1),-2))`
+  const overdue = (r.prepare(`
+    SELECT COUNT(*) as c FROM wa_post_90day_schedule
+    WHERE (after_3_mon IS NOT NULL AND after_3_mon != '' AND ${colToDate('after_3_mon')} < date('now'))
+       OR (after_4_mon IS NOT NULL AND after_4_mon != '' AND ${colToDate('after_4_mon')} < date('now'))
+       OR (after_5_mon IS NOT NULL AND after_5_mon != '' AND ${colToDate('after_5_mon')} < date('now'))
+       OR (after_6_mon IS NOT NULL AND after_6_mon != '' AND ${colToDate('after_6_mon')} < date('now'))
+       OR (after_9_mon IS NOT NULL AND after_9_mon != '' AND ${colToDate('after_9_mon')} < date('now'))
+       OR (after_1_year IS NOT NULL AND after_1_year != '' AND ${colToDate('after_1_year')} < date('now'))
+       OR (after_1_year_3_months IS NOT NULL AND after_1_year_3_months != '' AND ${colToDate('after_1_year_3_months')} < date('now'))
+  `).get() as { c: number })?.c ?? 0
+
+  // Pending handoff calls: OPs whose HO call step is not yet Done
   const pendingHandoff = (r.prepare(`
     SELECT COUNT(*) as c FROM wa_ob_statuses s
     JOIN wa_ob_step_defs d ON d.id = s.step_def_id
-    WHERE d.name = 'SCHEDULE HAND-OFF CALL W/ CLIENT?'
+    WHERE d.name LIKE '%Hand-Off Call W/ Client?'
     AND s.status != 'Done'
   `).get() as { c: number })?.c ?? 0
 
@@ -78,7 +87,7 @@ export function getMetrics(): DashboardMetrics {
     total_ops: total,
     active_ops: active,
     onboarding_in_progress: onboardingCount,
-    post_onboarding_active: Math.max(0, active - onboardingCount),
+    post_onboarding_active: postOnboarding,
     separated_ops: separated,
     overdue_checkins: overdue,
     pending_handoff_calls: pendingHandoff,
