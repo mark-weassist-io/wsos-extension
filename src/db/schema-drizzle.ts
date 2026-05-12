@@ -68,8 +68,6 @@ export const clients = sqliteTable("wsos_clients", {
   id: integer("id").primaryKey(),
   name: text("name").notNull(),
   email: text("email"),
-  timezone: text("timezone"),
-  holidaySchedule: text("holiday_schedule"),
   createdAt: text("created_at").default("datetime('now')"),
   deletedAt: text("deleted_at"),
 }, (table) => [
