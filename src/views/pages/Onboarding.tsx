@@ -1,6 +1,6 @@
 import type { FC } from "hono/jsx"
 import type { OnboardingSummary, OnboardingStep } from "../../types"
-import { Layout, statusBadge } from "../layout"
+import { Layout, statusBadge, toTitleCase } from "../layout"
 
 interface DetailProps {
   opName: string
@@ -36,9 +36,6 @@ export const StepRow: FC<{ step: OnboardingStep; recordId: number; index?: numbe
         </button>
       </td>
       <td class="text-sm">{step.owner || "—"}</td>
-    </tr>
-  )
-}
 
 const StepStatusBtn: FC<{ status: string | null }> = ({ status }) => {
   const s = status || "Not Done"
