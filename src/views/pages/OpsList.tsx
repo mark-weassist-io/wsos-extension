@@ -59,7 +59,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
               <table>
                 <thead>
                   <tr>
-                    <th>Name</th><th>Email</th><th>Client</th><th>Role</th><th>Status</th><th>Check-in</th><th>Assigned CS</th><th>Phone</th><th>Actions</th>
+                    <th>Name</th><th>Email</th><th>Client</th><th>Role</th><th>Status</th><th>Check-in</th><th>Assigned CS</th><th>Phone</th><th>Rate</th><th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -73,6 +73,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
                       <td class="text-sm">{op.checkin_status || "—"}</td>
                       <td class="text-sm">{op.assigned_cs || "—"}</td>
                       <td class="text-sm text-secondary">{(op as any).phones?.length ? (op as any).phones.join(", ") : op.phone || "—"}</td>
+                      <td class="text-sm">{op.rate || "—"}</td>
                       <td>
                         {op.deleted_at ? (
                           <form action={`/ops/${op.id}/restore`} method="POST" style="display:inline">
@@ -90,7 +91,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
                     </tr>
                   ))}
                   {ops.length === 0 && (
-                    <tr><td colspan="9" style="text-align:center;padding:40px;color:var(--text-secondary)">No OPs found</td></tr>
+                    <tr><td colspan="10" style="text-align:center;padding:40px;color:var(--text-secondary)">No OPs found</td></tr>
                   )}
                 </tbody>
               </table>
