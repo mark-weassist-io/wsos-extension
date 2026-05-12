@@ -353,16 +353,17 @@ if (schedTab?.formatted?.length > 1) {
 
 // Compute last_stage_completed from step statuses for ob_records
 console.log("  Computing last_stage_completed for ob_records...")
-db.run(`
-  UPDATE wa_ob_records SET last_stage_completed = (
-    SELECT toTitleCase(s.name) FROM wa_ob_statuses os
-    JOIN wa_ob_step_defs s ON s.id = os.step_def_id
-    WHERE os.record_id = wa_ob_records.id AND os.status = 'Done'
-    ORDER BY os.step_def_id DESC LIMIT 1
-  )
-`)
-const updated = db.prepare("SELECT COUNT(*) as c FROM wa_ob_records WHERE last_stage_completed IS NOT NULL AND last_stage_completed != ''").get() as any
-console.log(`  ob_records with last_stage: ${updated.c}`)
+const stepRowsToFix = db.prepare("SELECT id, op_name FROM wa_ob_records ORDER BY id DESC").all() as any[]
+const lastStageUpdate = db.prepare("UPDATE wa_ob_records SET last_stage_completed = ? WHERE id = ?")
+let fixedCount = 0
+for (const rec of stepRowsToFix) {
+  const last = db.prepare("SELECT s.name FROM wa_ob_statuses os JOIN wa_ob_step_defs s ON s.id = os.step_def_id WHERE os.record_id = ? AND os.status = 'Done' ORDER BY os.step_def_id DESC LIMIT 1").get(rec.id) as any
+  if (last?.name) {
+    lastStageUpdate.run(toTitleCase(last.name), rec.id)
+    fixedCount++
+  }
+}
+console.log(`  ob_records with last_stage: ${fixedCount}`)
 
 // Sync staff: scan ALL tables for staff names not yet in wa_cs_staff
 const staffSync = db.prepare("INSERT OR IGNORE INTO wa_cs_staff (name) VALUES (?)")
