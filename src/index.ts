@@ -140,10 +140,11 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
     <form action="/red-flags" method="POST" class="card" style="padding:20px;max-width:500px">
       <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Flag Name *</label><input type="text" name="flagName" required style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
       <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Definition</label><textarea name="definition" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box;min-height:80px"></textarea></div>
-      <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Create</button>
+      <button type="submit" class="btn btn-primary btn-sm">Create</button>
     </form>
-  `), { headers: { "Content-Type": "text/html" } }),
-  "/cs-staff": (url, req) => {
+  `), { headers: { "Content-Type": "text/html" } })
+},
+"/cs-staff": (url, req) => {
     const includeTrashed = url.searchParams.get("trashed") === "1"
     const staff = getCsStaff(url.searchParams.get("search") || undefined, includeTrashed)
     const rows = staff.map(s => {
