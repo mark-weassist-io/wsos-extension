@@ -43,10 +43,15 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
     var root = document.documentElement;
     if (resolved === 'dark') {
       root.style.setProperty('--body-bg', '#0f1119');
+      root.style.setProperty('--bg', '#0f1119');
+      root.style.setProperty('--text', '#e4e6eb');
+      root.style.setProperty('--text-secondary', '#9ca3af');
+      root.style.setProperty('--border', '#2a2d3a');
       root.style.setProperty('--card-bg', '#1a1d29');
       root.style.setProperty('--header-bg', '#1a1d29');
       root.style.setProperty('--header-border', '#2a2d3a');
       root.style.setProperty('--table-header-bg', '#1a1d29');
+      root.style.setProperty('--accent-light', '#1e2a45');
       root.style.setProperty('--sidebar-bg', '#0f1119');
       root.style.setProperty('--sidebar-text', '#a0a4b8');
       root.style.setProperty('--sidebar-hover', '#1a1d29');
@@ -58,10 +63,15 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
       root.style.setProperty('--sidebar-btn-border', 'rgba(255,255,255,0.15)');
     } else {
       root.style.setProperty('--body-bg', '#f5f6fa');
+      root.style.setProperty('--bg', '#f5f6fa');
+      root.style.setProperty('--text', '#1a1d29');
+      root.style.setProperty('--text-secondary', '#6b6f80');
+      root.style.setProperty('--border', '#e2e4e8');
       root.style.setProperty('--card-bg', '#ffffff');
       root.style.setProperty('--header-bg', '#ffffff');
       root.style.setProperty('--header-border', '#dee2e6');
       root.style.setProperty('--table-header-bg', '#f5f6fa');
+      root.style.setProperty('--accent-light', '#e8edff');
       root.style.setProperty('--sidebar-bg', '#ffffff');
       root.style.setProperty('--sidebar-text', '#1a1d29');
       root.style.setProperty('--sidebar-hover', '#f0f2f5');
