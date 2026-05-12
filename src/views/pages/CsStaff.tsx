@@ -10,13 +10,14 @@ interface Props {
 
 export const CsStaffPage: FC<Props> = ({ staff, editId, formData }) => {
   const editing = editId !== undefined
+  const showTrashed = staff.length > 0 && staff[0]?.deleted_at ? true : false
   return (
     <Layout title="CS Staff" activeNav="cs-staff">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
         <span class="text-secondary">{staff.filter(s => !s.deleted_at).length} active staff</span>
         <div style="display:flex;gap:8px">
-          <a href="/cs-staff?trashed=1" class="badge badge-secondary" style="text-decoration:none">Trashed</a>
-          <a href="/cs-staff" class="badge badge-info" style="text-decoration:none">Active</a>
+          <a href="/cs-staff?trashed=1" class={`badge ${showTrashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Trashed</a>
+          <a href="/cs-staff" class={`badge ${!showTrashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Active</a>
         </div>
       </div>
 
