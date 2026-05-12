@@ -184,6 +184,7 @@ export const checkinSchedule = sqliteTable("wa_post_90day_schedule", {
 export const redFlags = sqliteTable("wa_red_flags", {
   id: integer("id").primaryKey(),
   flagName: text("flag_name"),
+  color: text("color"),
   definition: text("definition"),
   sourceTab: text("source_tab"),
   createdAt: text("created_at").default("datetime('now')"),
@@ -224,5 +225,15 @@ export const cellFormatting = sqliteTable("wa_cell_formatting", {
   rowIndex: integer("row_index").notNull(),
   colIndex: integer("col_index").notNull(),
   hexColor: text("hex_color").notNull(),
+  createdAt: text("created_at").default("datetime('now')"),
+})
+
+export const opCheckinReviews = sqliteTable("op_checkin_reviews", {
+  id: integer("id").primaryKey(),
+  opName: text("op_name").notNull(),
+  period: text("period"),
+  redFlag: text("red_flag"),
+  csStaffName: text("cs_staff_name"),
+  sourceTab: text("source_tab"),
   createdAt: text("created_at").default("datetime('now')"),
 })
