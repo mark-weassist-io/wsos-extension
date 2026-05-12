@@ -194,7 +194,7 @@ function parseMdY(s: string): Date | null {
   return new Date(+m[3], +m[1] - 1, +m[2])
 }
 
-export function classifyMilestone(dateStr: string | null, happened: boolean): MilestoneStatus {
+export function classifyMilestone(dateStr: string | null, happened: boolean, wasGreen: boolean = false): MilestoneStatus {
   if (!dateStr) return "cancelled"
   const d = parseMdY(dateStr)
   if (!d) return "cancelled"
@@ -202,6 +202,7 @@ export function classifyMilestone(dateStr: string | null, happened: boolean): Mi
   now.setHours(0, 0, 0, 0)
   if (happened) return "done"
   if (d >= now) return "scheduled"
+  if (!wasGreen) return "cancelled"
   return "overdue"
 }
 
