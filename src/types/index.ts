@@ -177,6 +177,16 @@ export interface OpWithAssignment extends Op {
   assigned_cs: string | null
 }
 
+export type MilestoneStatus = "done" | "scheduled" | "overdue" | "cancelled"
+
+export interface ClassifiedMilestone {
+  opName: string
+  milestone: string
+  date: string
+  status: MilestoneStatus
+  happened: boolean
+}
+
 export interface DashboardMetrics {
   total_ops: number
   active_ops: number
@@ -185,6 +195,8 @@ export interface DashboardMetrics {
   separated_ops: number
   overdue_checkins: number
   pending_handoff_calls: number
+  scheduled_checkins: number
+  done_checkins: number
 }
 
 export interface OnboardingSummary {
