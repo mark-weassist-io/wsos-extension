@@ -129,18 +129,16 @@ export function getPipelineStages(): PipelineStage[] {
 
 export function getAttentionItems(): { michelle: AttentionItem[]; bel: AttentionItem[] } {
   const r = getDb()
-  const today = new Date().toLocaleDateString("en-US", { month: "numeric", day: "numeric", year: "numeric" }).split("/").map(n => n.padStart(2, "0")).join("/")
-
   // Michelle: OPs with pending HO call scheduling
   const michelleItems = (r.prepare(`
     SELECT r.op_name, r.client_name,
-      'SCHEDULE HAND-OFF CALL W/ CLIENT?' as task,
+      'Schedule Hand-Off Call W/ Client?' as task,
       'Michelle' as owner,
       0 as days_overdue
     FROM wa_ob_statuses s
     JOIN wa_ob_step_defs d ON d.id = s.step_def_id
     JOIN wa_ob_records r ON r.id = s.record_id
-    WHERE d.name = 'SCHEDULE HAND-OFF CALL W/ CLIENT?'
+    WHERE d.name LIKE '%Hand-Off Call W/ Client?'
     AND s.status != 'Done'
     AND (r.status IS NULL OR r.status NOT IN ('Completed', 'Cancelled', 'Graduated'))
     ORDER BY r.id DESC
@@ -154,16 +152,16 @@ export function getAttentionItems(): { michelle: AttentionItem[]; bel: Attention
       'Bel' as owner,
       0 as days_overdue
     FROM wa_post_90day_schedule
-    WHERE after_3_mon IS NOT NULL AND after_3_mon != '' AND after_3_mon < ?
-       OR after_4_mon IS NOT NULL AND after_4_mon != '' AND after_4_mon < ?
-       OR after_5_mon IS NOT NULL AND after_5_mon != '' AND after_5_mon < ?
-       OR after_6_mon IS NOT NULL AND after_6_mon != '' AND after_6_mon < ?
-       OR after_9_mon IS NOT NULL AND after_9_mon != '' AND after_9_mon < ?
-       OR after_1_year IS NOT NULL AND after_1_year != '' AND after_1_year < ?
-       OR after_1_year_3_months IS NOT NULL AND after_1_year_3_months != '' AND after_1_year_3_months < ?
+    WHERE (after_3_mon IS NOT NULL AND after_3_mon != '' AND ${colToDate('after_3_mon')} < date('now'))
+       OR (after_4_mon IS NOT NULL AND after_4_mon != '' AND ${colToDate('after_4_mon')} < date('now'))
+       OR (after_5_mon IS NOT NULL AND after_5_mon != '' AND ${colToDate('after_5_mon')} < date('now'))
+       OR (after_6_mon IS NOT NULL AND after_6_mon != '' AND ${colToDate('after_6_mon')} < date('now'))
+       OR (after_9_mon IS NOT NULL AND after_9_mon != '' AND ${colToDate('after_9_mon')} < date('now'))
+       OR (after_1_year IS NOT NULL AND after_1_year != '' AND ${colToDate('after_1_year')} < date('now'))
+       OR (after_1_year_3_months IS NOT NULL AND after_1_year_3_months != '' AND ${colToDate('after_1_year_3_months')} < date('now'))
     ORDER BY op_name
     LIMIT 10
-  `).all(today, today, today, today, today, today, today) as AttentionItem[])
+  `).all() as AttentionItem[])
 
   return { michelle: michelleItems, bel: belItems }
 }
