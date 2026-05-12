@@ -21,7 +21,7 @@ export const CheckinsPage: FC<Props> = ({ checkins, search }) => {
         <div class="table-container">
           <table>
             <thead>
-              <tr><th>OP</th><th>Client</th><th>Status</th><th>CS</th><th>Notes</th></tr>
+              <tr><th>OP</th><th>Client</th><th>Status</th><th>CS</th></tr>
             </thead>
             <tbody>
               {checkins.map(c => (
@@ -30,11 +30,9 @@ export const CheckinsPage: FC<Props> = ({ checkins, search }) => {
                   <td>{c.clientName || "—"}</td>
                   <td><span class={statusBadge(c.status)}>{c.status || "—"}</span></td>
                   <td class="text-sm">{c.assignedCs || "—"}</td>
-                  <td class="text-sm text-secondary">{c.notes || "—"}</td>
-                </tr>
-              ))}
+                </tr>))}
               {checkins.length === 0 && (
-                <tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-secondary)">No check-in records found</td></tr>
+                <tr><td colspan="4" style="text-align:center;padding:40px;color:var(--text-secondary)">No check-in records found</td></tr>
               )}
             </tbody>
           </table>
