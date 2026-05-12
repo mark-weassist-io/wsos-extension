@@ -1,5 +1,6 @@
 import { getDrizzle, getDb, schema } from ".."
 import { count, eq, and, or, sql, desc } from "drizzle-orm"
+import { getAllClassifiedMilestones } from "./checkins"
 
 const d = () => getDrizzle()
 
@@ -11,6 +12,8 @@ export interface DashboardMetrics {
   separated_ops: number
   overdue_checkins: number
   pending_handoff_calls: number
+  scheduled_checkins: number
+  done_checkins: number
 }
 
 export interface PipelineStage {
@@ -41,10 +44,6 @@ export interface RecentActivity {
   updated_at: string | null
 }
 
-// Convert M/D/YYYY to YYYY-MM-DD for proper date comparison
-const colToDate = (col: string) =>
-  `date(substr(${col},-4)||'-'||substr('0'||substr(${col},1,instr(${col},'/')-1),-2)||'-'||substr('0'||substr(substr(${col},instr(${col},'/')+1),1,instr(substr(${col},instr(${col},'/')+1),'/')-1),-2))`
-
 export function getMetrics(): DashboardMetrics {
   const total = d().select({ c: count() }).from(schema.ops).get()?.c ?? 0
   const active = d().select({ c: count() }).from(schema.assignments).where(eq(schema.assignments.status, "Active")).get()?.c ?? 0
@@ -54,7 +53,6 @@ export function getMetrics(): DashboardMetrics {
     .where(sql`${schema.obRecords.status} IS NULL OR (${schema.obRecords.status} != 'Completed' AND ${schema.obRecords.status} != 'Cancelled' AND ${schema.obRecords.status} != 'Graduated')`)
     .get()?.c ?? 0
 
-  // Post-onboarding: active OPs NOT currently in active onboarding
   const r = getDb()
   const postOnboarding = (r.prepare(`
     SELECT COUNT(DISTINCT a.op_name) as c FROM wsos_op_client_assignments a
@@ -65,27 +63,20 @@ export function getMetrics(): DashboardMetrics {
     )
   `).get() as { c: number })?.c ?? 0
 
-  // Overdue check-ins: convert M/D/YYYY to YYYY-MM-DD and compare with today
-  const colToDate = (col: string) =>
-    `date(substr(${col},-4)||'-'||substr('0'||substr(${col},1,instr(${col},'/')-1),-2)||'-'||substr('0'||substr(substr(${col},instr(${col},'/')+1),1,instr(substr(${col},instr(${col},'/')+1),'/')-1),-2))`
-  const overdue = (r.prepare(`
-    SELECT COUNT(*) as c FROM wa_post_90day_schedule
-    WHERE (after_3_mon IS NOT NULL AND after_3_mon != '' AND ${colToDate('after_3_mon')} < date('now'))
-       OR (after_4_mon IS NOT NULL AND after_4_mon != '' AND ${colToDate('after_4_mon')} < date('now'))
-       OR (after_5_mon IS NOT NULL AND after_5_mon != '' AND ${colToDate('after_5_mon')} < date('now'))
-       OR (after_6_mon IS NOT NULL AND after_6_mon != '' AND ${colToDate('after_6_mon')} < date('now'))
-       OR (after_9_mon IS NOT NULL AND after_9_mon != '' AND ${colToDate('after_9_mon')} < date('now'))
-       OR (after_1_year IS NOT NULL AND after_1_year != '' AND ${colToDate('after_1_year')} < date('now'))
-       OR (after_1_year_3_months IS NOT NULL AND after_1_year_3_months != '' AND ${colToDate('after_1_year_3_months')} < date('now'))
-  `).get() as { c: number })?.c ?? 0
-
-  // Pending handoff calls: OPs whose HO call step is not yet Done
   const pendingHandoff = (r.prepare(`
     SELECT COUNT(*) as c FROM wa_ob_statuses s
     JOIN wa_ob_step_defs d ON d.id = s.step_def_id
     WHERE d.name LIKE '%Hand-Off Call W/ Client?'
     AND s.status != 'Done'
   `).get() as { c: number })?.c ?? 0
+
+  const counts = getAllClassifiedMilestones()
+  let done = 0, scheduled = 0, overdue = 0
+  for (const m of counts) {
+    if (m.status === "done") done++
+    else if (m.status === "scheduled") scheduled++
+    else if (m.status === "overdue") overdue++
+  }
 
   return {
     total_ops: total,
@@ -95,6 +86,8 @@ export function getMetrics(): DashboardMetrics {
     separated_ops: separated,
     overdue_checkins: overdue,
     pending_handoff_calls: pendingHandoff,
+    scheduled_checkins: scheduled,
+    done_checkins: done,
   }
 }
 
@@ -106,22 +99,20 @@ export function getPipelineStages(): PipelineStage[] {
     .where(sql`${schema.obRecords.status} IS NULL OR (${schema.obRecords.status} != 'Completed' AND ${schema.obRecords.status} != 'Cancelled' AND ${schema.obRecords.status} != 'Graduated')`)
     .get()?.c ?? 0
 
-  const r = getDb()
-  const overdue = (r.prepare(`
-    SELECT COUNT(*) as c FROM wa_post_90day_schedule
-    WHERE (after_3_mon IS NOT NULL AND after_3_mon != '' AND ${colToDate('after_3_mon')} < date('now'))
-       OR (after_4_mon IS NOT NULL AND after_4_mon != '' AND ${colToDate('after_4_mon')} < date('now'))
-       OR (after_5_mon IS NOT NULL AND after_5_mon != '' AND ${colToDate('after_5_mon')} < date('now'))
-       OR (after_6_mon IS NOT NULL AND after_6_mon != '' AND ${colToDate('after_6_mon')} < date('now'))
-       OR (after_9_mon IS NOT NULL AND after_9_mon != '' AND ${colToDate('after_9_mon')} < date('now'))
-       OR (after_1_year IS NOT NULL AND after_1_year != '' AND ${colToDate('after_1_year')} < date('now'))
-       OR (after_1_year_3_months IS NOT NULL AND after_1_year_3_months != '' AND ${colToDate('after_1_year_3_months')} < date('now'))
-  `).get() as { c: number })?.c ?? 0
+  const counts = getAllClassifiedMilestones()
+  let done = 0, scheduled = 0, overdue = 0
+  for (const m of counts) {
+    if (m.status === "done") done++
+    else if (m.status === "scheduled") scheduled++
+    else if (m.status === "overdue") overdue++
+  }
 
   return [
     { stage: "Onboarding (Michelle)", count: onboarding, detail: "New OPs being onboarded" },
     { stage: "Probation", count: probation, detail: "OPs in probation period" },
     { stage: "Active", count: active, detail: "Fully onboarded and active" },
+    { stage: "Check-ins Done", count: done, detail: "Completed check-in milestones" },
+    { stage: "Check-ins Scheduled", count: scheduled, detail: "Upcoming scheduled check-ins" },
     { stage: "Overdue Check-ins", count: overdue, detail: "Check-ins past due date" },
     { stage: "Separated", count: separated, detail: "No longer assigned" },
   ]
@@ -129,7 +120,7 @@ export function getPipelineStages(): PipelineStage[] {
 
 export function getAttentionItems(): { michelle: AttentionItem[]; bel: AttentionItem[] } {
   const r = getDb()
-  // Michelle: OPs with pending HO call scheduling
+
   const michelleItems = (r.prepare(`
     SELECT r.op_name, r.client_name,
       'Schedule Hand-Off Call W/ Client?' as task,
@@ -145,23 +136,26 @@ export function getAttentionItems(): { michelle: AttentionItem[]; bel: Attention
     LIMIT 10
   `).all() as AttentionItem[])
 
-  // Bel: OPs with overdue check-in milestones
-  const belItems = (r.prepare(`
-    SELECT op_name as op_name, client_name as client_name,
-      'Check-in overdue' as task,
-      'Bel' as owner,
-      0 as days_overdue
-    FROM wa_post_90day_schedule
-    WHERE (after_3_mon IS NOT NULL AND after_3_mon != '' AND ${colToDate('after_3_mon')} < date('now'))
-       OR (after_4_mon IS NOT NULL AND after_4_mon != '' AND ${colToDate('after_4_mon')} < date('now'))
-       OR (after_5_mon IS NOT NULL AND after_5_mon != '' AND ${colToDate('after_5_mon')} < date('now'))
-       OR (after_6_mon IS NOT NULL AND after_6_mon != '' AND ${colToDate('after_6_mon')} < date('now'))
-       OR (after_9_mon IS NOT NULL AND after_9_mon != '' AND ${colToDate('after_9_mon')} < date('now'))
-       OR (after_1_year IS NOT NULL AND after_1_year != '' AND ${colToDate('after_1_year')} < date('now'))
-       OR (after_1_year_3_months IS NOT NULL AND after_1_year_3_months != '' AND ${colToDate('after_1_year_3_months')} < date('now'))
-    ORDER BY op_name
-    LIMIT 10
-  `).all() as AttentionItem[])
+  const allMilestones = getAllClassifiedMilestones()
+  const overdueMap = new Map<string, { opName: string; clientName: string; tasks: string[] }>()
+  for (const m of allMilestones) {
+    if (m.status !== "overdue") continue
+    if (!overdueMap.has(m.opName)) {
+      const row = r.prepare("SELECT client_name FROM wa_post_90day_schedule WHERE op_name = ? LIMIT 1").get(m.opName) as any
+      overdueMap.set(m.opName, { opName: m.opName, clientName: row?.client_name ?? null, tasks: [] })
+    }
+    overdueMap.get(m.opName)!.tasks.push(m.milestone)
+  }
+  const belItems: AttentionItem[] = Array.from(overdueMap.values())
+    .sort((a, b) => a.opName.localeCompare(b.opName))
+    .slice(0, 10)
+    .map(item => ({
+      op_name: item.opName,
+      client_name: item.clientName,
+      task: `Overdue: ${item.tasks.join(", ")}`,
+      owner: "Bel",
+      days_overdue: 0,
+    }))
 
   return { michelle: michelleItems, bel: belItems }
 }
