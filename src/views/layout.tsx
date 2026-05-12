@@ -306,15 +306,16 @@ export function toTitleCase(s: string | null | undefined): string {
 }
 
 export const inputField = (label: string, name: string, value: string | undefined, error?: string, required?: boolean, type?: string) => (
-  <div style="margin-bottom:12px">
-    <label style="display:block;font-size:0.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">
+  <div class="mb-3">
+    <label class="form-label" style="font-size:0.8rem;font-weight:500;color:var(--text-secondary)">
       {label}{required ? " *" : ""}
     </label>
     {type === "textarea" ? (
       <textarea
         name={name}
         required={required}
-        style={`width:100%;padding:8px 12px;border:1px solid ${error ? "var(--danger)" : "var(--border)"};border-radius:var(--radius);font-size:0.875rem;outline:none;box-sizing:border-box;min-height:80px`}
+        class={`form-control form-control-sm${error ? " is-invalid" : ""}`}
+        style="min-height:80px"
       >{(value || "")}</textarea>
     ) : (
       <input
@@ -322,22 +323,22 @@ export const inputField = (label: string, name: string, value: string | undefine
         name={name}
         value={value || ""}
         required={required}
-        style={`width:100%;padding:8px 12px;border:1px solid ${error ? "var(--danger)" : "var(--border)"};border-radius:var(--radius);font-size:0.875rem;outline:none;box-sizing:border-box`}
+        class={`form-control form-control-sm${error ? " is-invalid" : ""}`}
       />
     )}
-    {error && <div style="font-size:0.75rem;color:var(--danger);margin-top:2px">{error}</div>}
+    {error && <div class="invalid-feedback d-block" style="font-size:0.75rem">{error}</div>}
   </div>
 )
 
 export const selectField = (label: string, name: string, value: string | undefined, options: string[], error?: string) => (
-  <div style="margin-bottom:12px">
-    <label style="display:block;font-size:0.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">{label}</label>
+  <div class="mb-3">
+    <label class="form-label" style="font-size:0.8rem;font-weight:500;color:var(--text-secondary)">{label}</label>
     <select
       name={name}
-      style={`width:100%;padding:8px 12px;border:1px solid ${error ? "var(--danger)" : "var(--border)"};border-radius:var(--radius);font-size:0.875rem;outline:none;box-sizing:border-box;background:#fff`}
+      class={`form-select form-select-sm${error ? " is-invalid" : ""}`}
     >
       {options.map(o => <option value={o} selected={value === o}>{o || "—"}</option>)}
     </select>
-    {error && <div style="font-size:0.75rem;color:var(--danger);margin-top:2px">{error}</div>}
+    {error && <div class="invalid-feedback d-block" style="font-size:0.75rem">{error}</div>}
   </div>
 )
