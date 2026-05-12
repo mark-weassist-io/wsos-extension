@@ -203,10 +203,7 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
 
     // Find the matching step columns - they're columns 6-34 in the sheet
     // and they map sequentially to STEP_DEFS
-    const rateVal = (row[9] || "").toString().trim()
-    const startDateVal = (row[7] || "").toString().trim()
-    const startTimeVal = (row[8] || "").toString().trim()
-    let rateVal = (row[9] || "").toString().trim()
+    rateVal = (row[9] || "").toString().trim()
     const lastStageVal = cLastStage >= 0 ? (row[cLastStage] || "").toString().trim() : ""
     const statusVal = cStatus >= 0 ? (row[cStatus] || "").toString().trim() : ""
 
