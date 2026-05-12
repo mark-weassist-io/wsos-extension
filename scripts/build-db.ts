@@ -375,6 +375,22 @@ const staffFound = db.prepare(`
 for (const r of staffFound) staffSync.run(r.name)
 console.log(`  wa_cs_staff synced: ${staffFound.length} staff`)
 
+// Migrate phones to wsos_op_phones (one-to-many)
+console.log("  Migrating phones to wsos_op_phones...")
+db.run("DELETE FROM wsos_op_phones")
+const opsWithPhone = db.prepare("SELECT full_name, phone FROM wsos_ops WHERE phone IS NOT NULL AND phone != ''").all() as any[]
+const phoneInsert = db.prepare("INSERT INTO wsos_op_phones (op_name, phone, sort_order) VALUES (?, ?, ?)")
+let phoneCount = 0
+const phoneSplitter = /[/,|;]+/
+for (const op of opsWithPhone) {
+  const parts = (op.phone || "").split(phoneSplitter).map((p: string) => p.trim()).filter(Boolean)
+  for (let i = 0; i < parts.length; i++) {
+    phoneInsert.run(op.full_name, parts[i], i)
+    phoneCount++
+  }
+}
+console.log(`  wsos_op_phones: ${phoneCount} rows (${opsWithPhone.length} OPs)`)
+
 // Step 5: Verify
 console.log("\n[5/5] Verifying data quality...")
 const report = verifyDatabase(db)
