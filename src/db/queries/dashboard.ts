@@ -57,7 +57,7 @@ export function getMetrics(): DashboardMetrics {
   // Post-onboarding: active OPs NOT currently in active onboarding
   const r = getDb()
   const postOnboarding = (r.prepare(`
-    SELECT COUNT(*) as c FROM wa_assignments a
+    SELECT COUNT(DISTINCT a.op_name) as c FROM wsos_op_client_assignments a
     WHERE a.status = 'Active'
     AND a.op_name NOT IN (
       SELECT r.op_name FROM wa_ob_records r
