@@ -9,7 +9,6 @@ export interface ObRecordWithProgress {
   client_name: string | null
   company_name: string | null
   role: string | null
-  rate: string | null
   start_date: string | null
   status: string | null
   source_person: string | null
@@ -28,7 +27,7 @@ export interface ObStepWithStatus {
 }
 
 export function getObRecords(search?: string, owner?: string): ObRecordWithProgress[] {
-  let sql = `SELECT r.id, r.op_name, r.client_name, r.company_name, r.role, r.rate,
+  let sql = `SELECT r.id, r.op_name, r.client_name, r.company_name, r.role,
     r.start_date, r.status, r.source_person, r.last_stage_completed,
     (SELECT COUNT(*) FROM wa_ob_statuses s WHERE s.record_id = r.id) as total_steps,
     (SELECT COUNT(*) FROM wa_ob_statuses s WHERE s.record_id = r.id AND s.status = 'Done') as done_steps
@@ -46,7 +45,6 @@ export function getObRecords(search?: string, owner?: string): ObRecordWithProgr
     client_name: r.client_name,
     company_name: r.company_name,
     role: r.role,
-    rate: r.rate,
     start_date: r.start_date,
     status: r.status,
     source_person: r.source_person,
