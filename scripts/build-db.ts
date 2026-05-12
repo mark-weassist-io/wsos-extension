@@ -154,7 +154,7 @@ const clTabs = checklist.tabs
 const validOps = new Set(db.prepare("SELECT full_name FROM wsos_ops").all().map((r: any) => r.full_name))
 
 // Create records + statuses tables
-db.run(`CREATE TABLE wa_ob_records (id INTEGER PRIMARY KEY AUTOINCREMENT, op_name TEXT NOT NULL, client_name TEXT, company_name TEXT, role TEXT, rate TEXT, start_date TEXT, start_time TEXT, contact_number TEXT, email TEXT, notes TEXT, last_stage_completed TEXT, status TEXT, source_person TEXT, FOREIGN KEY (op_name) REFERENCES wsos_ops(full_name))`)
+db.run(`CREATE TABLE wa_ob_records (id INTEGER PRIMARY KEY AUTOINCREMENT, op_name TEXT NOT NULL, client_name TEXT, company_name TEXT, role TEXT, start_date TEXT, start_time TEXT, contact_number TEXT, email TEXT, last_stage_completed TEXT, status TEXT, source_person TEXT, FOREIGN KEY (op_name) REFERENCES wsos_ops(full_name))`)
 db.run(`CREATE INDEX idx_ob_records_op ON wa_ob_records(op_name)`)
 db.run(`CREATE INDEX idx_ob_records_status ON wa_ob_records(status)`)
 db.run(`CREATE TABLE wa_ob_statuses (id INTEGER PRIMARY KEY AUTOINCREMENT, record_id INTEGER NOT NULL, step_def_id INTEGER NOT NULL, status TEXT NOT NULL CHECK(status IN ('Done','Not Done','NA')), FOREIGN KEY (record_id) REFERENCES wa_ob_records(id), FOREIGN KEY (step_def_id) REFERENCES wa_ob_step_defs(id), UNIQUE(record_id, step_def_id))`)
