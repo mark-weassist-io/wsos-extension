@@ -10,7 +10,6 @@ export interface NinetyDayCheckinRow {
   clientName: string | null  // from JOIN with assignments
   status: string | null
   assignedCs: string | null  // from JOIN with assignments
-  notes: string | null
 }
 
 export type Post90DayScheduleRow = Post90DayCheckinSchedule
@@ -21,9 +20,9 @@ export function getNinetyDayCheckins(search?: string): NinetyDayCheckinRow[] {
   return d().select({
     id: schema.ninetyDayCheckins.id,
     opName: schema.ninetyDayCheckins.opName,
+    clientName: schema.assignments.clientName,
     status: schema.ninetyDayCheckins.status,
     assignedCs: schema.assignments.assignedCs,
-    notes: schema.ninetyDayCheckins.notes,
   }).from(schema.ninetyDayCheckins)
     .leftJoin(schema.assignments, eq(schema.ninetyDayCheckins.opName, schema.assignments.opName))
     .where(search ? or(
