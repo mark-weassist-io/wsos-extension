@@ -63,7 +63,7 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
         </div>
         <div id="onboarding-edit-form" style="display:none;margin-bottom:16px">
           <form action={`/onboarding/${detail.recordId}`} method="POST" class="card" style="padding:16px;max-width:500px">
-            <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Date</label><input type="date" name="startDate" value={detail.startDate || ""} class="form-control form-control-sm" /></div>
+            <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Date</label><input type="text" name="startDate" value={detail.startDate || ""} class="form-control form-control-sm" placeholder="e.g. 6 Apr 2026" /></div>
             <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Time</label><input type="text" name="startTime" value={detail.startTime || ""} class="form-control form-control-sm" placeholder="e.g. 9:00am PST" /></div>
             <div style="display:flex;gap:8px">
               <button type="submit" class="btn btn-primary btn-sm">Save</button>
