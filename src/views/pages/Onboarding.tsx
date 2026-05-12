@@ -4,6 +4,7 @@ import { Layout, statusBadge, toTitleCase } from "../layout"
 
 interface DetailProps {
   opName: string
+  opId: number | null
   steps: OnboardingStep[]
   recordId: number
   startDate?: string | null
@@ -57,7 +58,7 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
           <span><strong>Start Date:</strong> {detail.startDate || "—"}</span>
           <span><strong>Start Time:</strong> {detail.startTime || "—"}</span>
           <span><strong>Rate:</strong> {detail.rate || "—"}</span>
-          <a href={`/ops/${detail.opName}/edit`} class="btn btn-outline-secondary btn-sm" style="text-decoration:none">Edit OP Details</a>
+          <a href={`/ops/${detail.opId}/edit`} class="btn btn-outline-secondary btn-sm" style="text-decoration:none">Edit Rate & Details</a>
         </div>
         <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px">Click a status to toggle: Not Done → Done → NA → Not Done</p>
         <div class="card" style="padding:0">

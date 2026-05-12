@@ -32,11 +32,12 @@ router.get("/:id", (c) => {
   if (!record) return c.redirect("/onboarding")
 
   // Fetch rate from ops table
-  const op = getDb().prepare("SELECT rate FROM wsos_ops WHERE full_name = ?").get(record.opName) as any
+  const op = getDb().prepare("SELECT id, rate FROM wsos_ops WHERE full_name = ?").get(record.opName) as any
 
   const steps = getObStepsWithStatus(id)
   return c.html(<OnboardingPage summaries={[]} detail={{
     recordId: id,
+    opId: op?.id || null,
     opName: record.opName,
     startDate: record.startDate,
     startTime: record.startTime,
