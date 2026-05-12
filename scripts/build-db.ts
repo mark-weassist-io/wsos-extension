@@ -277,7 +277,7 @@ if (reportTab?.formatted?.length > 1) {
     const cleanName = [...validOps].find((n: string) => n.toLowerCase() === opName.toLowerCase())
     if (!cleanName) continue
     try {
-      stmt.run(cleanName, statusIdx >= 0 ? toTitleCase((row[statusIdx] || "").toString().trim()) || null : null)
+      stmt.run(cleanName, statusIdx >= 0 ? (row[statusIdx] || "").toString().trim() || null : null)
       count++
     } catch {}
   }
