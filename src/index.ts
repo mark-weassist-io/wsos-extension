@@ -140,6 +140,15 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
     <form action="/red-flags" method="POST" class="card" style="padding:20px;max-width:500px">
       <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Flag Name *</label><input type="text" name="flagName" required class="form-control form-control-sm"></div>
       <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Definition</label><textarea name="definition" class="form-control form-control-sm" style="min-height:80px"></textarea></div>
+    <button type="submit" class="btn btn-primary btn-sm">Create</button>
+    </form>
+  `), { headers: { "Content-Type": "text/html" } }),
+"/cs-staff/new": (url) => new Response(pageHTML("New Staff", "cs-staff", `
+    <a href="/cs-staff" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
+    <h3 class="h5 mb-3">New Staff</h3>
+    <form action="/cs-staff" method="POST" class="card" style="padding:20px;max-width:500px">
+      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" required class="form-control form-control-sm"></div>
+      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" class="form-control form-control-sm"></div>
       <button type="submit" class="btn btn-primary btn-sm">Create</button>
     </form>
   `), { headers: { "Content-Type": "text/html" } }),
