@@ -30,12 +30,13 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
         <>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
             <div style="display:flex;gap:8px;align-items:center">
+              <a href="/clients" class={`badge ${!trashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Active</a>
               <a href="/clients?trashed=1" class={`badge ${trashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Trashed</a>
-              {trashed && <a href="/clients" class="badge badge-secondary" style="text-decoration:none">Active</a>}
             </div>
             <div style="display:flex;gap:8px">
-              <form action="/clients" method="get"><input type="text" name="search" placeholder="Search..." class="search-bar" style="margin:0" /></form>
-              <a href="/clients/new" style="padding:8px 16px;background:var(--accent);color:#fff;border-radius:var(--radius);text-decoration:none;font-size:0.875rem">+ New Client</a>
+              <form action="/clients" method="get" class="search-bar" style="margin-bottom:0"><input type="text" name="search" placeholder="Search..." value={search || ""} />
+              <button type="submit" class="btn btn-primary btn-sm">Search</button></form>
+              <a href="/clients/new" class="btn btn-primary btn-sm" style="text-decoration:none">+ New Client</a>
             </div>
           </div>
           <div class="card" style="padding:0">
