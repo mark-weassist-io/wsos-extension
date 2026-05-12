@@ -1,0 +1,3624 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "▦ Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: ▦
+        - generic [ref=e10]: Dashboard
+      - link "👤 OP Directory" [ref=e11] [cursor=pointer]:
+        - /url: /ops
+        - generic [ref=e12]: 👤
+        - generic [ref=e13]: OP Directory
+      - link "🏢 Clients" [ref=e14] [cursor=pointer]:
+        - /url: /clients
+        - generic [ref=e15]: 🏢
+        - generic [ref=e16]: Clients
+      - link "🔗 Assignments" [ref=e17] [cursor=pointer]:
+        - /url: /assignments
+        - generic [ref=e18]: 🔗
+        - generic [ref=e19]: Assignments
+      - link "📋 Onboarding" [ref=e20] [cursor=pointer]:
+        - /url: /onboarding
+        - generic [ref=e21]: 📋
+        - generic [ref=e22]: Onboarding
+      - link "📊 Check-ins" [ref=e23] [cursor=pointer]:
+        - /url: /checkins
+        - generic [ref=e24]: 📊
+        - generic [ref=e25]: Check-ins
+      - link "📅 Check-in Schedule" [ref=e26] [cursor=pointer]:
+        - /url: /schedule
+        - generic [ref=e27]: 📅
+        - generic [ref=e28]: Check-in Schedule
+      - link "👥 CS Staff" [ref=e29] [cursor=pointer]:
+        - /url: /cs-staff
+        - generic [ref=e30]: 👥
+        - generic [ref=e31]: CS Staff
+      - link "⚠ Red Flags" [ref=e32] [cursor=pointer]:
+        - /url: /red-flags
+        - generic [ref=e33]: ⚠
+        - generic [ref=e34]: Red Flags
+      - link "📁 Existing Accounts" [ref=e35] [cursor=pointer]:
+        - /url: /existing-accounts
+        - generic [ref=e36]: 📁
+        - generic [ref=e37]: Existing Accounts
+    - generic [ref=e38]: v0.1.0
+  - main [ref=e39]:
+    - heading "Assignments" [level=2] [ref=e41]
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - link "Trashed" [ref=e45] [cursor=pointer]:
+          - /url: /assignments?trashed=1
+        - generic [ref=e46]:
+          - textbox "Search..." [ref=e48]
+          - link "+ New Assignment" [ref=e49] [cursor=pointer]:
+            - /url: /assignments/new
+      - table [ref=e51]:
+        - rowgroup [ref=e52]:
+          - row "OP Client Role Status Type Rate CS Actions" [ref=e53]:
+            - columnheader "OP" [ref=e54]
+            - columnheader "Client" [ref=e55]
+            - columnheader "Role" [ref=e56]
+            - columnheader "Status" [ref=e57]
+            - columnheader "Type" [ref=e58]
+            - columnheader "Rate" [ref=e59]
+            - columnheader "CS" [ref=e60]
+            - columnheader "Actions" [ref=e61]
+        - rowgroup [ref=e62]:
+          - row "Adriane Ross Quiroz Grace Carr (Raindrop) Video Editor Active Full-Time — Adrian Edit Delete" [ref=e63]:
+            - cell "Adriane Ross Quiroz" [ref=e64]:
+              - strong [ref=e65]: Adriane Ross Quiroz
+            - cell "Grace Carr (Raindrop)" [ref=e66]
+            - cell "Video Editor" [ref=e67]
+            - cell "Active" [ref=e68]:
+              - generic [ref=e69]: Active
+            - cell "Full-Time" [ref=e70]
+            - cell "—" [ref=e71]
+            - cell "Adrian" [ref=e72]
+            - cell "Edit Delete" [ref=e73]:
+              - generic [ref=e74]:
+                - link "Edit" [ref=e75] [cursor=pointer]:
+                  - /url: /assignments/112/edit
+                - button "Delete" [ref=e77] [cursor=pointer]
+          - row "Aliza Abad Austin Blair/ Laundry Sauce Affiliate Marketing Support Probation Full-Time — Bel Edit Delete" [ref=e78]:
+            - cell "Aliza Abad" [ref=e79]:
+              - strong [ref=e80]: Aliza Abad
+            - cell "Austin Blair/ Laundry Sauce" [ref=e81]
+            - cell "Affiliate Marketing Support" [ref=e82]
+            - cell "Probation" [ref=e83]:
+              - generic [ref=e84]: Probation
+            - cell "Full-Time" [ref=e85]
+            - cell "—" [ref=e86]
+            - cell "Bel" [ref=e87]
+            - cell "Edit Delete" [ref=e88]:
+              - generic [ref=e89]:
+                - link "Edit" [ref=e90] [cursor=pointer]:
+                  - /url: /assignments/223/edit
+                - button "Delete" [ref=e92] [cursor=pointer]
+          - row "Althea Africa Clabita Ian Blair Executive Operations & Concierge Assistant Active Full-Time — Bel Edit Delete" [ref=e93]:
+            - cell "Althea Africa Clabita" [ref=e94]:
+              - strong [ref=e95]: Althea Africa Clabita
+            - cell "Ian Blair" [ref=e96]
+            - cell "Executive Operations & Concierge Assistant" [ref=e97]
+            - cell "Active" [ref=e98]:
+              - generic [ref=e99]: Active
+            - cell "Full-Time" [ref=e100]
+            - cell "—" [ref=e101]
+            - cell "Bel" [ref=e102]
+            - cell "Edit Delete" [ref=e103]:
+              - generic [ref=e104]:
+                - link "Edit" [ref=e105] [cursor=pointer]:
+                  - /url: /assignments/202/edit
+                - button "Delete" [ref=e107] [cursor=pointer]
+          - row "Andric Aliwate Cabang Raindrop Agency Creative Resource Manager Probation 6 Hours — Bel Edit Delete" [ref=e108]:
+            - cell "Andric Aliwate Cabang" [ref=e109]:
+              - strong [ref=e110]: Andric Aliwate Cabang
+            - cell "Raindrop Agency" [ref=e111]
+            - cell "Creative Resource Manager" [ref=e112]
+            - cell "Probation" [ref=e113]:
+              - generic [ref=e114]: Probation
+            - cell "6 Hours" [ref=e115]
+            - cell "—" [ref=e116]
+            - cell "Bel" [ref=e117]
+            - cell "Edit Delete" [ref=e118]:
+              - generic [ref=e119]:
+                - link "Edit" [ref=e120] [cursor=pointer]:
+                  - /url: /assignments/220/edit
+                - button "Delete" [ref=e122] [cursor=pointer]
+          - row "Andrie Rementilla Austin Blair/ Laundry Sauce Customer Success Lead Active Full-Time — Bel Edit Delete" [ref=e123]:
+            - cell "Andrie Rementilla" [ref=e124]:
+              - strong [ref=e125]: Andrie Rementilla
+            - cell "Austin Blair/ Laundry Sauce" [ref=e126]
+            - cell "Customer Success Lead" [ref=e127]
+            - cell "Active" [ref=e128]:
+              - generic [ref=e129]: Active
+            - cell "Full-Time" [ref=e130]
+            - cell "—" [ref=e131]
+            - cell "Bel" [ref=e132]
+            - cell "Edit Delete" [ref=e133]:
+              - generic [ref=e134]:
+                - link "Edit" [ref=e135] [cursor=pointer]:
+                  - /url: /assignments/27/edit
+                - button "Delete" [ref=e137] [cursor=pointer]
+          - row "Angela Agranum Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Full-Time — Adrian Edit Delete" [ref=e138]:
+            - cell "Angela Agranum" [ref=e139]:
+              - strong [ref=e140]: Angela Agranum
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e141]
+            - cell "Customer Service Representative/Dispatcher" [ref=e142]
+            - cell "Separated" [ref=e143]:
+              - generic [ref=e144]: Separated
+            - cell "Full-Time" [ref=e145]
+            - cell "—" [ref=e146]
+            - cell "Adrian" [ref=e147]
+            - cell "Edit Delete" [ref=e148]:
+              - generic [ref=e149]:
+                - link "Edit" [ref=e150] [cursor=pointer]:
+                  - /url: /assignments/63/edit
+                - button "Delete" [ref=e152] [cursor=pointer]
+          - row "Angela Apostol Ryan Miller Customer Success Manager Active Full-Time — Adrian Edit Delete" [ref=e153]:
+            - cell "Angela Apostol" [ref=e154]:
+              - strong [ref=e155]: Angela Apostol
+            - cell "Ryan Miller" [ref=e156]
+            - cell "Customer Success Manager" [ref=e157]
+            - cell "Active" [ref=e158]:
+              - generic [ref=e159]: Active
+            - cell "Full-Time" [ref=e160]
+            - cell "—" [ref=e161]
+            - cell "Adrian" [ref=e162]
+            - cell "Edit Delete" [ref=e163]:
+              - generic [ref=e164]:
+                - link "Edit" [ref=e165] [cursor=pointer]:
+                  - /url: /assignments/2/edit
+                - button "Delete" [ref=e167] [cursor=pointer]
+          - row "Angelica Gutierrez Gary Sanchez Executive Assistant Active Full-Time — Adrian Edit Delete" [ref=e168]:
+            - cell "Angelica Gutierrez" [ref=e169]:
+              - strong [ref=e170]: Angelica Gutierrez
+            - cell "Gary Sanchez" [ref=e171]
+            - cell "Executive Assistant" [ref=e172]
+            - cell "Active" [ref=e173]:
+              - generic [ref=e174]: Active
+            - cell "Full-Time" [ref=e175]
+            - cell "—" [ref=e176]
+            - cell "Adrian" [ref=e177]
+            - cell "Edit Delete" [ref=e178]:
+              - generic [ref=e179]:
+                - link "Edit" [ref=e180] [cursor=pointer]:
+                  - /url: /assignments/78/edit
+                - button "Delete" [ref=e182] [cursor=pointer]
+          - row "Angelica Mae Dombrique Cruz Maddison Koper Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e183]:
+            - cell "Angelica Mae Dombrique Cruz" [ref=e184]:
+              - strong [ref=e185]: Angelica Mae Dombrique Cruz
+            - cell "Maddison Koper" [ref=e186]
+            - cell "Executive Assistant" [ref=e187]
+            - cell "Separated" [ref=e188]:
+              - generic [ref=e189]: Separated
+            - cell "Full-Time" [ref=e190]
+            - cell "—" [ref=e191]
+            - cell "Bel" [ref=e192]
+            - cell "Edit Delete" [ref=e193]:
+              - generic [ref=e194]:
+                - link "Edit" [ref=e195] [cursor=pointer]:
+                  - /url: /assignments/174/edit
+                - button "Delete" [ref=e197] [cursor=pointer]
+          - row "Angelika Yuson Basubas Ryan Miller Executive Assistant OP Active Full-Time — Bel Edit Delete" [ref=e198]:
+            - cell "Angelika Yuson Basubas" [ref=e199]:
+              - strong [ref=e200]: Angelika Yuson Basubas
+            - cell "Ryan Miller" [ref=e201]
+            - cell "Executive Assistant OP" [ref=e202]
+            - cell "Active" [ref=e203]:
+              - generic [ref=e204]: Active
+            - cell "Full-Time" [ref=e205]
+            - cell "—" [ref=e206]
+            - cell "Bel" [ref=e207]
+            - cell "Edit Delete" [ref=e208]:
+              - generic [ref=e209]:
+                - link "Edit" [ref=e210] [cursor=pointer]:
+                  - /url: /assignments/233/edit
+                - button "Delete" [ref=e212] [cursor=pointer]
+          - row "Ann Jenniffer Anengyao Cruz Lucas Kemper Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e213]:
+            - cell "Ann Jenniffer Anengyao Cruz" [ref=e214]:
+              - strong [ref=e215]: Ann Jenniffer Anengyao Cruz
+            - cell "Lucas Kemper" [ref=e216]
+            - cell "Executive Assistant" [ref=e217]
+            - cell "Separated" [ref=e218]:
+              - generic [ref=e219]: Separated
+            - cell "Full-Time" [ref=e220]
+            - cell "—" [ref=e221]
+            - cell "Bel" [ref=e222]
+            - cell "Edit Delete" [ref=e223]:
+              - generic [ref=e224]:
+                - link "Edit" [ref=e225] [cursor=pointer]:
+                  - /url: /assignments/201/edit
+                - button "Delete" [ref=e227] [cursor=pointer]
+          - row "Annalyn Olingay Josh Schwartz Commercial Account Manager Active Full-Time — Bel Edit Delete" [ref=e228]:
+            - cell "Annalyn Olingay" [ref=e229]:
+              - strong [ref=e230]: Annalyn Olingay
+            - cell "Josh Schwartz" [ref=e231]
+            - cell "Commercial Account Manager" [ref=e232]
+            - cell "Active" [ref=e233]:
+              - generic [ref=e234]: Active
+            - cell "Full-Time" [ref=e235]
+            - cell "—" [ref=e236]
+            - cell "Bel" [ref=e237]
+            - cell "Edit Delete" [ref=e238]:
+              - generic [ref=e239]:
+                - link "Edit" [ref=e240] [cursor=pointer]:
+                  - /url: /assignments/91/edit
+                - button "Delete" [ref=e242] [cursor=pointer]
+          - row "Annie Martinez Joshua Jeffries Admin Support Active Full-Time $1,955 Adrian Edit Delete" [ref=e243]:
+            - cell "Annie Martinez" [ref=e244]:
+              - strong [ref=e245]: Annie Martinez
+            - cell "Joshua Jeffries" [ref=e246]
+            - cell "Admin Support" [ref=e247]
+            - cell "Active" [ref=e248]:
+              - generic [ref=e249]: Active
+            - cell "Full-Time" [ref=e250]
+            - cell "$1,955" [ref=e251]
+            - cell "Adrian" [ref=e252]
+            - cell "Edit Delete" [ref=e253]:
+              - generic [ref=e254]:
+                - link "Edit" [ref=e255] [cursor=pointer]:
+                  - /url: /assignments/86/edit
+                - button "Delete" [ref=e257] [cursor=pointer]
+          - row "Anthony Clement Salanga Sarte Raindrop Agency Photo Editor Separated Full-Time — Adrian Edit Delete" [ref=e258]:
+            - cell "Anthony Clement Salanga Sarte" [ref=e259]:
+              - strong [ref=e260]: Anthony Clement Salanga Sarte
+            - cell "Raindrop Agency" [ref=e261]
+            - cell "Photo Editor" [ref=e262]
+            - cell "Separated" [ref=e263]:
+              - generic [ref=e264]: Separated
+            - cell "Full-Time" [ref=e265]
+            - cell "—" [ref=e266]
+            - cell "Adrian" [ref=e267]
+            - cell "Edit Delete" [ref=e268]:
+              - generic [ref=e269]:
+                - link "Edit" [ref=e270] [cursor=pointer]:
+                  - /url: /assignments/123/edit
+                - button "Delete" [ref=e272] [cursor=pointer]
+          - row "Apple Joy Cuaresma Edward Piazza Bookkeeper Active Part-Time — Adrian Edit Delete" [ref=e273]:
+            - cell "Apple Joy Cuaresma" [ref=e274]:
+              - strong [ref=e275]: Apple Joy Cuaresma
+            - cell "Edward Piazza" [ref=e276]
+            - cell "Bookkeeper" [ref=e277]
+            - cell "Active" [ref=e278]:
+              - generic [ref=e279]: Active
+            - cell "Part-Time" [ref=e280]
+            - cell "—" [ref=e281]
+            - cell "Adrian" [ref=e282]
+            - cell "Edit Delete" [ref=e283]:
+              - generic [ref=e284]:
+                - link "Edit" [ref=e285] [cursor=pointer]:
+                  - /url: /assignments/71/edit
+                - button "Delete" [ref=e287] [cursor=pointer]
+          - row "April Rose Diaz Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e288]:
+            - cell "April Rose Diaz" [ref=e289]:
+              - strong [ref=e290]: April Rose Diaz
+            - cell "Ryan McFarland" [ref=e291]
+            - cell "Virtual Assistant" [ref=e292]
+            - cell "Separated" [ref=e293]:
+              - generic [ref=e294]: Separated
+            - cell "Full-Time" [ref=e295]
+            - cell "—" [ref=e296]
+            - cell "Bel" [ref=e297]
+            - cell "Edit Delete" [ref=e298]:
+              - generic [ref=e299]:
+                - link "Edit" [ref=e300] [cursor=pointer]:
+                  - /url: /assignments/43/edit
+                - button "Delete" [ref=e302] [cursor=pointer]
+          - row "Arla Mariel Magpayo Stella Song Social Media Specialist Separated Full-Time — Adrian Edit Delete" [ref=e303]:
+            - cell "Arla Mariel Magpayo" [ref=e304]:
+              - strong [ref=e305]: Arla Mariel Magpayo
+            - cell "Stella Song" [ref=e306]
+            - cell "Social Media Specialist" [ref=e307]
+            - cell "Separated" [ref=e308]:
+              - generic [ref=e309]: Separated
+            - cell "Full-Time" [ref=e310]
+            - cell "—" [ref=e311]
+            - cell "Adrian" [ref=e312]
+            - cell "Edit Delete" [ref=e313]:
+              - generic [ref=e314]:
+                - link "Edit" [ref=e315] [cursor=pointer]:
+                  - /url: /assignments/85/edit
+                - button "Delete" [ref=e317] [cursor=pointer]
+          - row "Arlyn Lindain Josh Fancher / Dustin Terry Project Manager Separated Full-Time — Adrian Edit Delete" [ref=e318]:
+            - cell "Arlyn Lindain" [ref=e319]:
+              - strong [ref=e320]: Arlyn Lindain
+            - cell "Josh Fancher / Dustin Terry" [ref=e321]
+            - cell "Project Manager" [ref=e322]
+            - cell "Separated" [ref=e323]:
+              - generic [ref=e324]: Separated
+            - cell "Full-Time" [ref=e325]
+            - cell "—" [ref=e326]
+            - cell "Adrian" [ref=e327]
+            - cell "Edit Delete" [ref=e328]:
+              - generic [ref=e329]:
+                - link "Edit" [ref=e330] [cursor=pointer]:
+                  - /url: /assignments/82/edit
+                - button "Delete" [ref=e332] [cursor=pointer]
+          - row "Arlyn Lindain Dustin Terry (Velocity) Project Manager Active Full-Time 2,250.00 Adrian Edit Delete" [ref=e333]:
+            - cell "Arlyn Lindain" [ref=e334]:
+              - strong [ref=e335]: Arlyn Lindain
+            - cell "Dustin Terry (Velocity)" [ref=e336]
+            - cell "Project Manager" [ref=e337]
+            - cell "Active" [ref=e338]:
+              - generic [ref=e339]: Active
+            - cell "Full-Time" [ref=e340]
+            - cell "2,250.00" [ref=e341]
+            - cell "Adrian" [ref=e342]
+            - cell "Edit Delete" [ref=e343]:
+              - generic [ref=e344]:
+                - link "Edit" [ref=e345] [cursor=pointer]:
+                  - /url: /assignments/211/edit
+                - button "Delete" [ref=e347] [cursor=pointer]
+          - row "Armie Sacala Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Full-Time — Bel Edit Delete" [ref=e348]:
+            - cell "Armie Sacala" [ref=e349]:
+              - strong [ref=e350]: Armie Sacala
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e351]
+            - cell "Customer Service Representative/Dispatcher" [ref=e352]
+            - cell "Separated" [ref=e353]:
+              - generic [ref=e354]: Separated
+            - cell "Full-Time" [ref=e355]
+            - cell "—" [ref=e356]
+            - cell "Bel" [ref=e357]
+            - cell "Edit Delete" [ref=e358]:
+              - generic [ref=e359]:
+                - link "Edit" [ref=e360] [cursor=pointer]:
+                  - /url: /assignments/99/edit
+                - button "Delete" [ref=e362] [cursor=pointer]
+          - row "Arnold PAdriano Ryan McFarland Sales Development Representative Separated Full-Time — Bel Edit Delete" [ref=e363]:
+            - cell "Arnold PAdriano" [ref=e364]:
+              - strong [ref=e365]: Arnold PAdriano
+            - cell "Ryan McFarland" [ref=e366]
+            - cell "Sales Development Representative" [ref=e367]
+            - cell "Separated" [ref=e368]:
+              - generic [ref=e369]: Separated
+            - cell "Full-Time" [ref=e370]
+            - cell "—" [ref=e371]
+            - cell "Bel" [ref=e372]
+            - cell "Edit Delete" [ref=e373]:
+              - generic [ref=e374]:
+                - link "Edit" [ref=e375] [cursor=pointer]:
+                  - /url: /assignments/49/edit
+                - button "Delete" [ref=e377] [cursor=pointer]
+          - row "Audrey Rey Ryan McFarland Colby's Virtual Assistant / Fulfillment Support Specialist Separated Full-Time — Bel Edit Delete" [ref=e378]:
+            - cell "Audrey Rey" [ref=e379]:
+              - strong [ref=e380]: Audrey Rey
+            - cell "Ryan McFarland" [ref=e381]
+            - cell "Colby's Virtual Assistant / Fulfillment Support Specialist" [ref=e382]
+            - cell "Separated" [ref=e383]:
+              - generic [ref=e384]: Separated
+            - cell "Full-Time" [ref=e385]
+            - cell "—" [ref=e386]
+            - cell "Bel" [ref=e387]
+            - cell "Edit Delete" [ref=e388]:
+              - generic [ref=e389]:
+                - link "Edit" [ref=e390] [cursor=pointer]:
+                  - /url: /assignments/52/edit
+                - button "Delete" [ref=e392] [cursor=pointer]
+          - row "Ava Czarina Meneses Jamison Watts Executive Assistant Separated Part-Time — Adrian Edit Delete" [ref=e393]:
+            - cell "Ava Czarina Meneses" [ref=e394]:
+              - strong [ref=e395]: Ava Czarina Meneses
+            - cell "Jamison Watts" [ref=e396]
+            - cell "Executive Assistant" [ref=e397]
+            - cell "Separated" [ref=e398]:
+              - generic [ref=e399]: Separated
+            - cell "Part-Time" [ref=e400]
+            - cell "—" [ref=e401]
+            - cell "Adrian" [ref=e402]
+            - cell "Edit Delete" [ref=e403]:
+              - generic [ref=e404]:
+                - link "Edit" [ref=e405] [cursor=pointer]:
+                  - /url: /assignments/87/edit
+                - button "Delete" [ref=e407] [cursor=pointer]
+          - row "Ava Czarina Meneses Brooklyn Hillenbrand / Weassist Executive Assistant Active Part-Time — Adrian Edit Delete" [ref=e408]:
+            - cell "Ava Czarina Meneses" [ref=e409]:
+              - strong [ref=e410]: Ava Czarina Meneses
+            - cell "Brooklyn Hillenbrand / Weassist" [ref=e411]
+            - cell "Executive Assistant" [ref=e412]
+            - cell "Active" [ref=e413]:
+              - generic [ref=e414]: Active
+            - cell "Part-Time" [ref=e415]
+            - cell "—" [ref=e416]
+            - cell "Adrian" [ref=e417]
+            - cell "Edit Delete" [ref=e418]:
+              - generic [ref=e419]:
+                - link "Edit" [ref=e420] [cursor=pointer]:
+                  - /url: /assignments/88/edit
+                - button "Delete" [ref=e422] [cursor=pointer]
+          - row "Avrey N. Aquino Zac Safron / Safron Solutions Onboarding Specialist Separated Full-Time — Bel Edit Delete" [ref=e423]:
+            - cell "Avrey N. Aquino" [ref=e424]:
+              - strong [ref=e425]: Avrey N. Aquino
+            - cell "Zac Safron / Safron Solutions" [ref=e426]
+            - cell "Onboarding Specialist" [ref=e427]
+            - cell "Separated" [ref=e428]:
+              - generic [ref=e429]: Separated
+            - cell "Full-Time" [ref=e430]
+            - cell "—" [ref=e431]
+            - cell "Bel" [ref=e432]
+            - cell "Edit Delete" [ref=e433]:
+              - generic [ref=e434]:
+                - link "Edit" [ref=e435] [cursor=pointer]:
+                  - /url: /assignments/4/edit
+                - button "Delete" [ref=e437] [cursor=pointer]
+          - row "Ayen Faith Jill Morales Gavin Klauser AI-driven Operations Assistant Probation Full-Time — Bel Edit Delete" [ref=e438]:
+            - cell "Ayen Faith Jill Morales" [ref=e439]:
+              - strong [ref=e440]: Ayen Faith Jill Morales
+            - cell "Gavin Klauser" [ref=e441]
+            - cell "AI-driven Operations Assistant" [ref=e442]
+            - cell "Probation" [ref=e443]:
+              - generic [ref=e444]: Probation
+            - cell "Full-Time" [ref=e445]
+            - cell "—" [ref=e446]
+            - cell "Bel" [ref=e447]
+            - cell "Edit Delete" [ref=e448]:
+              - generic [ref=e449]:
+                - link "Edit" [ref=e450] [cursor=pointer]:
+                  - /url: /assignments/235/edit
+                - button "Delete" [ref=e452] [cursor=pointer]
+          - row "Baran Haider Ryan McFarland Video Editor Separated Full-Time — Bel Edit Delete" [ref=e453]:
+            - cell "Baran Haider" [ref=e454]:
+              - strong [ref=e455]: Baran Haider
+            - cell "Ryan McFarland" [ref=e456]
+            - cell "Video Editor" [ref=e457]
+            - cell "Separated" [ref=e458]:
+              - generic [ref=e459]: Separated
+            - cell "Full-Time" [ref=e460]
+            - cell "—" [ref=e461]
+            - cell "Bel" [ref=e462]
+            - cell "Edit Delete" [ref=e463]:
+              - generic [ref=e464]:
+                - link "Edit" [ref=e465] [cursor=pointer]:
+                  - /url: /assignments/48/edit
+                - button "Delete" [ref=e467] [cursor=pointer]
+          - row "Barrett Spearman Ryan McFarland WH Manager Separated — — Bel Edit Delete" [ref=e468]:
+            - cell "Barrett Spearman" [ref=e469]:
+              - strong [ref=e470]: Barrett Spearman
+            - cell "Ryan McFarland" [ref=e471]
+            - cell "WH Manager" [ref=e472]
+            - cell "Separated" [ref=e473]:
+              - generic [ref=e474]: Separated
+            - cell "—" [ref=e475]
+            - cell "—" [ref=e476]
+            - cell "Bel" [ref=e477]
+            - cell "Edit Delete" [ref=e478]:
+              - generic [ref=e479]:
+                - link "Edit" [ref=e480] [cursor=pointer]:
+                  - /url: /assignments/58/edit
+                - button "Delete" [ref=e482] [cursor=pointer]
+          - row "Bea Marcelle Ramirez Phil Whitebloom Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e483]:
+            - cell "Bea Marcelle Ramirez" [ref=e484]:
+              - strong [ref=e485]: Bea Marcelle Ramirez
+            - cell "Phil Whitebloom" [ref=e486]
+            - cell "Executive Assistant" [ref=e487]
+            - cell "Active" [ref=e488]:
+              - generic [ref=e489]: Active
+            - cell "Full-Time" [ref=e490]
+            - cell "—" [ref=e491]
+            - cell "Bel" [ref=e492]
+            - cell "Edit Delete" [ref=e493]:
+              - generic [ref=e494]:
+                - link "Edit" [ref=e495] [cursor=pointer]:
+                  - /url: /assignments/167/edit
+                - button "Delete" [ref=e497] [cursor=pointer]
+          - row "Bridge Laugo Dan D'Alberto Executive Assistant Separated Full-Time 1758 Adrian Edit Delete" [ref=e498]:
+            - cell "Bridge Laugo" [ref=e499]:
+              - strong [ref=e500]: Bridge Laugo
+            - cell "Dan D'Alberto" [ref=e501]
+            - cell "Executive Assistant" [ref=e502]
+            - cell "Separated" [ref=e503]:
+              - generic [ref=e504]: Separated
+            - cell "Full-Time" [ref=e505]
+            - cell "1758" [ref=e506]
+            - cell "Adrian" [ref=e507]
+            - cell "Edit Delete" [ref=e508]:
+              - generic [ref=e509]:
+                - link "Edit" [ref=e510] [cursor=pointer]:
+                  - /url: /assignments/81/edit
+                - button "Delete" [ref=e512] [cursor=pointer]
+          - row "Bridge Laugo Brian Baber Executive Assistant Active Full-Time 1968 Adrian Edit Delete" [ref=e513]:
+            - cell "Bridge Laugo" [ref=e514]:
+              - strong [ref=e515]: Bridge Laugo
+            - cell "Brian Baber" [ref=e516]
+            - cell "Executive Assistant" [ref=e517]
+            - cell "Active" [ref=e518]:
+              - generic [ref=e519]: Active
+            - cell "Full-Time" [ref=e520]
+            - cell "1968" [ref=e521]
+            - cell "Adrian" [ref=e522]
+            - cell "Edit Delete" [ref=e523]:
+              - generic [ref=e524]:
+                - link "Edit" [ref=e525] [cursor=pointer]:
+                  - /url: /assignments/114/edit
+                - button "Delete" [ref=e527] [cursor=pointer]
+          - row "Caitlin Dana Magno Belda Ryan McFarland Marketing Manager Separated Full-Time — Bel Edit Delete" [ref=e528]:
+            - cell "Caitlin Dana Magno Belda" [ref=e529]:
+              - strong [ref=e530]: Caitlin Dana Magno Belda
+            - cell "Ryan McFarland" [ref=e531]
+            - cell "Marketing Manager" [ref=e532]
+            - cell "Separated" [ref=e533]:
+              - generic [ref=e534]: Separated
+            - cell "Full-Time" [ref=e535]
+            - cell "—" [ref=e536]
+            - cell "Bel" [ref=e537]
+            - cell "Edit Delete" [ref=e538]:
+              - generic [ref=e539]:
+                - link "Edit" [ref=e540] [cursor=pointer]:
+                  - /url: /assignments/182/edit
+                - button "Delete" [ref=e542] [cursor=pointer]
+          - row "Camille Calugay Ryan McFarland Fulfillment Specialist Separated Full-Time — Bel Edit Delete" [ref=e543]:
+            - cell "Camille Calugay" [ref=e544]:
+              - strong [ref=e545]: Camille Calugay
+            - cell "Ryan McFarland" [ref=e546]
+            - cell "Fulfillment Specialist" [ref=e547]
+            - cell "Separated" [ref=e548]:
+              - generic [ref=e549]: Separated
+            - cell "Full-Time" [ref=e550]
+            - cell "—" [ref=e551]
+            - cell "Bel" [ref=e552]
+            - cell "Edit Delete" [ref=e553]:
+              - generic [ref=e554]:
+                - link "Edit" [ref=e555] [cursor=pointer]:
+                  - /url: /assignments/42/edit
+                - button "Delete" [ref=e557] [cursor=pointer]
+          - row "Carl Christian Reyes Dr. Matthew and Theresa Steiner Executive Sales Assistant Separated Full-Time — Adrian Edit Delete" [ref=e558]:
+            - cell "Carl Christian Reyes" [ref=e559]:
+              - strong [ref=e560]: Carl Christian Reyes
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e561]
+            - cell "Executive Sales Assistant" [ref=e562]
+            - cell "Separated" [ref=e563]:
+              - generic [ref=e564]: Separated
+            - cell "Full-Time" [ref=e565]
+            - cell "—" [ref=e566]
+            - cell "Adrian" [ref=e567]
+            - cell "Edit Delete" [ref=e568]:
+              - generic [ref=e569]:
+                - link "Edit" [ref=e570] [cursor=pointer]:
+                  - /url: /assignments/35/edit
+                - button "Delete" [ref=e572] [cursor=pointer]
+          - row "Carlo Marko A. Cuenca Syam Subramaniam Legal Assistant / Paralegal Separated Full-Time — Bel Edit Delete" [ref=e573]:
+            - cell "Carlo Marko A. Cuenca" [ref=e574]:
+              - strong [ref=e575]: Carlo Marko A. Cuenca
+            - cell "Syam Subramaniam" [ref=e576]
+            - cell "Legal Assistant / Paralegal" [ref=e577]
+            - cell "Separated" [ref=e578]:
+              - generic [ref=e579]: Separated
+            - cell "Full-Time" [ref=e580]
+            - cell "—" [ref=e581]
+            - cell "Bel" [ref=e582]
+            - cell "Edit Delete" [ref=e583]:
+              - generic [ref=e584]:
+                - link "Edit" [ref=e585] [cursor=pointer]:
+                  - /url: /assignments/168/edit
+                - button "Delete" [ref=e587] [cursor=pointer]
+          - row "Charissa Joana Giray Francisco Connor Miller (ArdentX) Order Entry Specialist Separated Full-Time — Bel Edit Delete" [ref=e588]:
+            - cell "Charissa Joana Giray Francisco" [ref=e589]:
+              - strong [ref=e590]: Charissa Joana Giray Francisco
+            - cell "Connor Miller (ArdentX)" [ref=e591]
+            - cell "Order Entry Specialist" [ref=e592]
+            - cell "Separated" [ref=e593]:
+              - generic [ref=e594]: Separated
+            - cell "Full-Time" [ref=e595]
+            - cell "—" [ref=e596]
+            - cell "Bel" [ref=e597]
+            - cell "Edit Delete" [ref=e598]:
+              - generic [ref=e599]:
+                - link "Edit" [ref=e600] [cursor=pointer]:
+                  - /url: /assignments/118/edit
+                - button "Delete" [ref=e602] [cursor=pointer]
+          - row "Charisse Pineda Greg and Lisa Shields Executive Assistant Probation Full-Time — Bel Edit Delete" [ref=e603]:
+            - cell "Charisse Pineda" [ref=e604]:
+              - strong [ref=e605]: Charisse Pineda
+            - cell "Greg and Lisa Shields" [ref=e606]
+            - cell "Executive Assistant" [ref=e607]
+            - cell "Probation" [ref=e608]:
+              - generic [ref=e609]: Probation
+            - cell "Full-Time" [ref=e610]
+            - cell "—" [ref=e611]
+            - cell "Bel" [ref=e612]
+            - cell "Edit Delete" [ref=e613]:
+              - generic [ref=e614]:
+                - link "Edit" [ref=e615] [cursor=pointer]:
+                  - /url: /assignments/231/edit
+                - button "Delete" [ref=e617] [cursor=pointer]
+          - row "Charity Bareng Jordan Bass Executive Assistant Separated Part-Time — Bel Edit Delete" [ref=e618]:
+            - cell "Charity Bareng" [ref=e619]:
+              - strong [ref=e620]: Charity Bareng
+            - cell "Jordan Bass" [ref=e621]
+            - cell "Executive Assistant" [ref=e622]
+            - cell "Separated" [ref=e623]:
+              - generic [ref=e624]: Separated
+            - cell "Part-Time" [ref=e625]
+            - cell "—" [ref=e626]
+            - cell "Bel" [ref=e627]
+            - cell "Edit Delete" [ref=e628]:
+              - generic [ref=e629]:
+                - link "Edit" [ref=e630] [cursor=pointer]:
+                  - /url: /assignments/5/edit
+                - button "Delete" [ref=e632] [cursor=pointer]
+          - row "Charity Bareng Nader Safinya Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e633]:
+            - cell "Charity Bareng" [ref=e634]:
+              - strong [ref=e635]: Charity Bareng
+            - cell "Nader Safinya" [ref=e636]
+            - cell "Executive Assistant" [ref=e637]
+            - cell "Separated" [ref=e638]:
+              - generic [ref=e639]: Separated
+            - cell "Full-Time" [ref=e640]
+            - cell "—" [ref=e641]
+            - cell "Bel" [ref=e642]
+            - cell "Edit Delete" [ref=e643]:
+              - generic [ref=e644]:
+                - link "Edit" [ref=e645] [cursor=pointer]:
+                  - /url: /assignments/152/edit
+                - button "Delete" [ref=e647] [cursor=pointer]
+          - row "Charmaine Cuenco Mallari Daniel Hambrick Insurance CSR OP Separated Full-Time — Bel Edit Delete" [ref=e648]:
+            - cell "Charmaine Cuenco Mallari" [ref=e649]:
+              - strong [ref=e650]: Charmaine Cuenco Mallari
+            - cell "Daniel Hambrick" [ref=e651]
+            - cell "Insurance CSR OP" [ref=e652]
+            - cell "Separated" [ref=e653]:
+              - generic [ref=e654]: Separated
+            - cell "Full-Time" [ref=e655]
+            - cell "—" [ref=e656]
+            - cell "Bel" [ref=e657]
+            - cell "Edit Delete" [ref=e658]:
+              - generic [ref=e659]:
+                - link "Edit" [ref=e660] [cursor=pointer]:
+                  - /url: /assignments/187/edit
+                - button "Delete" [ref=e662] [cursor=pointer]
+          - row "Cheere Bee May Tacluyan-Ranile Maddison Koper Executive Assistant Separated Full-Time 2,037.31 Bel Edit Delete" [ref=e663]:
+            - cell "Cheere Bee May Tacluyan-Ranile" [ref=e664]:
+              - strong [ref=e665]: Cheere Bee May Tacluyan-Ranile
+            - cell "Maddison Koper" [ref=e666]
+            - cell "Executive Assistant" [ref=e667]
+            - cell "Separated" [ref=e668]:
+              - generic [ref=e669]: Separated
+            - cell "Full-Time" [ref=e670]
+            - cell "2,037.31" [ref=e671]
+            - cell "Bel" [ref=e672]
+            - cell "Edit Delete" [ref=e673]:
+              - generic [ref=e674]:
+                - link "Edit" [ref=e675] [cursor=pointer]:
+                  - /url: /assignments/194/edit
+                - button "Delete" [ref=e677] [cursor=pointer]
+          - row "Christian Jess Serentas Raindrop Agency CRM Manager OP Separated Part-Time — Bel Edit Delete" [ref=e678]:
+            - cell "Christian Jess Serentas" [ref=e679]:
+              - strong [ref=e680]: Christian Jess Serentas
+            - cell "Raindrop Agency" [ref=e681]
+            - cell "CRM Manager OP" [ref=e682]
+            - cell "Separated" [ref=e683]:
+              - generic [ref=e684]: Separated
+            - cell "Part-Time" [ref=e685]
+            - cell "—" [ref=e686]
+            - cell "Bel" [ref=e687]
+            - cell "Edit Delete" [ref=e688]:
+              - generic [ref=e689]:
+                - link "Edit" [ref=e690] [cursor=pointer]:
+                  - /url: /assignments/191/edit
+                - button "Delete" [ref=e692] [cursor=pointer]
+          - row "Christine Mae Mayol Lucas Robinson Customer Support Representative Active Full-Time — Adrian Edit Delete" [ref=e693]:
+            - cell "Christine Mae Mayol" [ref=e694]:
+              - strong [ref=e695]: Christine Mae Mayol
+            - cell "Lucas Robinson" [ref=e696]
+            - cell "Customer Support Representative" [ref=e697]
+            - cell "Active" [ref=e698]:
+              - generic [ref=e699]: Active
+            - cell "Full-Time" [ref=e700]
+            - cell "—" [ref=e701]
+            - cell "Adrian" [ref=e702]
+            - cell "Edit Delete" [ref=e703]:
+              - generic [ref=e704]:
+                - link "Edit" [ref=e705] [cursor=pointer]:
+                  - /url: /assignments/21/edit
+                - button "Delete" [ref=e707] [cursor=pointer]
+          - row "Cion Melanie Mensidor John Yeoh Executive Assistant Separated Part-Time — Adrian Edit Delete" [ref=e708]:
+            - cell "Cion Melanie Mensidor" [ref=e709]:
+              - strong [ref=e710]: Cion Melanie Mensidor
+            - cell "John Yeoh" [ref=e711]
+            - cell "Executive Assistant" [ref=e712]
+            - cell "Separated" [ref=e713]:
+              - generic [ref=e714]: Separated
+            - cell "Part-Time" [ref=e715]
+            - cell "—" [ref=e716]
+            - cell "Adrian" [ref=e717]
+            - cell "Edit Delete" [ref=e718]:
+              - generic [ref=e719]:
+                - link "Edit" [ref=e720] [cursor=pointer]:
+                  - /url: /assignments/89/edit
+                - button "Delete" [ref=e722] [cursor=pointer]
+          - row "Cliford Macion Joe Worth Executive Assistant Separated Full-Time 1,833.38 Bel Edit Delete" [ref=e723]:
+            - cell "Cliford Macion" [ref=e724]:
+              - strong [ref=e725]: Cliford Macion
+            - cell "Joe Worth" [ref=e726]
+            - cell "Executive Assistant" [ref=e727]
+            - cell "Separated" [ref=e728]:
+              - generic [ref=e729]: Separated
+            - cell "Full-Time" [ref=e730]
+            - cell "1,833.38" [ref=e731]
+            - cell "Bel" [ref=e732]
+            - cell "Edit Delete" [ref=e733]:
+              - generic [ref=e734]:
+                - link "Edit" [ref=e735] [cursor=pointer]:
+                  - /url: /assignments/138/edit
+                - button "Delete" [ref=e737] [cursor=pointer]
+          - row "Clint Warren Gabonada Giangan Josh Sullivan Sales Assistant Probation Full-Time — Adrian Edit Delete" [ref=e738]:
+            - cell "Clint Warren Gabonada Giangan" [ref=e739]:
+              - strong [ref=e740]: Clint Warren Gabonada Giangan
+            - cell "Josh Sullivan" [ref=e741]
+            - cell "Sales Assistant" [ref=e742]
+            - cell "Probation" [ref=e743]:
+              - generic [ref=e744]: Probation
+            - cell "Full-Time" [ref=e745]
+            - cell "—" [ref=e746]
+            - cell "Adrian" [ref=e747]
+            - cell "Edit Delete" [ref=e748]:
+              - generic [ref=e749]:
+                - link "Edit" [ref=e750] [cursor=pointer]:
+                  - /url: /assignments/214/edit
+                - button "Delete" [ref=e752] [cursor=pointer]
+          - row "Conan JD HoldenTalibong Adam Wagner Account Coordinator Separated Full-Time — Adrian Edit Delete" [ref=e753]:
+            - cell "Conan JD HoldenTalibong" [ref=e754]:
+              - strong [ref=e755]: Conan JD HoldenTalibong
+            - cell "Adam Wagner" [ref=e756]
+            - cell "Account Coordinator" [ref=e757]
+            - cell "Separated" [ref=e758]:
+              - generic [ref=e759]: Separated
+            - cell "Full-Time" [ref=e760]
+            - cell "—" [ref=e761]
+            - cell "Adrian" [ref=e762]
+            - cell "Edit Delete" [ref=e763]:
+              - generic [ref=e764]:
+                - link "Edit" [ref=e765] [cursor=pointer]:
+                  - /url: /assignments/106/edit
+                - button "Delete" [ref=e767] [cursor=pointer]
+          - row "Czyren Bautista Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e768]:
+            - cell "Czyren Bautista" [ref=e769]:
+              - strong [ref=e770]: Czyren Bautista
+            - cell "Ryan McFarland" [ref=e771]
+            - cell "Virtual Assistant" [ref=e772]
+            - cell "Separated" [ref=e773]:
+              - generic [ref=e774]: Separated
+            - cell "Full-Time" [ref=e775]
+            - cell "—" [ref=e776]
+            - cell "Bel" [ref=e777]
+            - cell "Edit Delete" [ref=e778]:
+              - generic [ref=e779]:
+                - link "Edit" [ref=e780] [cursor=pointer]:
+                  - /url: /assignments/38/edit
+                - button "Delete" [ref=e782] [cursor=pointer]
+          - row "Daneva Joy Magallanes Joseph Bua Dispatch Coordinator Active Full-Time — Bel Edit Delete" [ref=e783]:
+            - cell "Daneva Joy Magallanes" [ref=e784]:
+              - strong [ref=e785]: Daneva Joy Magallanes
+            - cell "Joseph Bua" [ref=e786]
+            - cell "Dispatch Coordinator" [ref=e787]
+            - cell "Active" [ref=e788]:
+              - generic [ref=e789]: Active
+            - cell "Full-Time" [ref=e790]
+            - cell "—" [ref=e791]
+            - cell "Bel" [ref=e792]
+            - cell "Edit Delete" [ref=e793]:
+              - generic [ref=e794]:
+                - link "Edit" [ref=e795] [cursor=pointer]:
+                  - /url: /assignments/189/edit
+                - button "Delete" [ref=e797] [cursor=pointer]
+          - row "Danica Angela Arce Ibanez Chad Brown Executive Assistant OP Separated Full-Time — Bel Edit Delete" [ref=e798]:
+            - cell "Danica Angela Arce Ibanez" [ref=e799]:
+              - strong [ref=e800]: Danica Angela Arce Ibanez
+            - cell "Chad Brown" [ref=e801]
+            - cell "Executive Assistant OP" [ref=e802]
+            - cell "Separated" [ref=e803]:
+              - generic [ref=e804]: Separated
+            - cell "Full-Time" [ref=e805]
+            - cell "—" [ref=e806]
+            - cell "Bel" [ref=e807]
+            - cell "Edit Delete" [ref=e808]:
+              - generic [ref=e809]:
+                - link "Edit" [ref=e810] [cursor=pointer]:
+                  - /url: /assignments/203/edit
+                - button "Delete" [ref=e812] [cursor=pointer]
+          - row "Daniel Anyebe Blake Evertsen Sales Development Representative Separated Full-Time — Bel Edit Delete" [ref=e813]:
+            - cell "Daniel Anyebe" [ref=e814]:
+              - strong [ref=e815]: Daniel Anyebe
+            - cell "Blake Evertsen" [ref=e816]
+            - cell "Sales Development Representative" [ref=e817]
+            - cell "Separated" [ref=e818]:
+              - generic [ref=e819]: Separated
+            - cell "Full-Time" [ref=e820]
+            - cell "—" [ref=e821]
+            - cell "Bel" [ref=e822]
+            - cell "Edit Delete" [ref=e823]:
+              - generic [ref=e824]:
+                - link "Edit" [ref=e825] [cursor=pointer]:
+                  - /url: /assignments/1/edit
+                - button "Delete" [ref=e827] [cursor=pointer]
+          - row "Danielle Samantha Quinto Zach Papenhausen Admin Assistant & CRM Manager Active Full-Time — Bel Edit Delete" [ref=e828]:
+            - cell "Danielle Samantha Quinto" [ref=e829]:
+              - strong [ref=e830]: Danielle Samantha Quinto
+            - cell "Zach Papenhausen" [ref=e831]
+            - cell "Admin Assistant & CRM Manager" [ref=e832]
+            - cell "Active" [ref=e833]:
+              - generic [ref=e834]: Active
+            - cell "Full-Time" [ref=e835]
+            - cell "—" [ref=e836]
+            - cell "Bel" [ref=e837]
+            - cell "Edit Delete" [ref=e838]:
+              - generic [ref=e839]:
+                - link "Edit" [ref=e840] [cursor=pointer]:
+                  - /url: /assignments/155/edit
+                - button "Delete" [ref=e842] [cursor=pointer]
+          - row "Dara Maria Jezreelle Pailan Jonmarc Brown Marketing Operations Assistant Active Full-Time — Bel Edit Delete" [ref=e843]:
+            - cell "Dara Maria Jezreelle Pailan" [ref=e844]:
+              - strong [ref=e845]: Dara Maria Jezreelle Pailan
+            - cell "Jonmarc Brown" [ref=e846]
+            - cell "Marketing Operations Assistant" [ref=e847]
+            - cell "Active" [ref=e848]:
+              - generic [ref=e849]: Active
+            - cell "Full-Time" [ref=e850]
+            - cell "—" [ref=e851]
+            - cell "Bel" [ref=e852]
+            - cell "Edit Delete" [ref=e853]:
+              - generic [ref=e854]:
+                - link "Edit" [ref=e855] [cursor=pointer]:
+                  - /url: /assignments/23/edit
+                - button "Delete" [ref=e857] [cursor=pointer]
+          - row "Darlene Carmina Hardiolin Zach Paul Marketing VA Separated Part-Time — Bel Edit Delete" [ref=e858]:
+            - cell "Darlene Carmina Hardiolin" [ref=e859]:
+              - strong [ref=e860]: Darlene Carmina Hardiolin
+            - cell "Zach Paul" [ref=e861]
+            - cell "Marketing VA" [ref=e862]
+            - cell "Separated" [ref=e863]:
+              - generic [ref=e864]: Separated
+            - cell "Part-Time" [ref=e865]
+            - cell "—" [ref=e866]
+            - cell "Bel" [ref=e867]
+            - cell "Edit Delete" [ref=e868]:
+              - generic [ref=e869]:
+                - link "Edit" [ref=e870] [cursor=pointer]:
+                  - /url: /assignments/15/edit
+                - button "Delete" [ref=e872] [cursor=pointer]
+          - row "Darlene Carmina Hardiolin Christopher Monasmith Lead Generation Specialist Separated Full-Time — Bel Edit Delete" [ref=e873]:
+            - cell "Darlene Carmina Hardiolin" [ref=e874]:
+              - strong [ref=e875]: Darlene Carmina Hardiolin
+            - cell "Christopher Monasmith" [ref=e876]
+            - cell "Lead Generation Specialist" [ref=e877]
+            - cell "Separated" [ref=e878]:
+              - generic [ref=e879]: Separated
+            - cell "Full-Time" [ref=e880]
+            - cell "—" [ref=e881]
+            - cell "Bel" [ref=e882]
+            - cell "Edit Delete" [ref=e883]:
+              - generic [ref=e884]:
+                - link "Edit" [ref=e885] [cursor=pointer]:
+                  - /url: /assignments/16/edit
+                - button "Delete" [ref=e887] [cursor=pointer]
+          - row "Darnyl Serdiña Cruz Raindrop Agency Designer OP Active Full-Time — Bel Edit Delete" [ref=e888]:
+            - cell "Darnyl Serdiña Cruz" [ref=e889]:
+              - strong [ref=e890]: Darnyl Serdiña Cruz
+            - cell "Raindrop Agency" [ref=e891]
+            - cell "Designer OP" [ref=e892]
+            - cell "Active" [ref=e893]:
+              - generic [ref=e894]: Active
+            - cell "Full-Time" [ref=e895]
+            - cell "—" [ref=e896]
+            - cell "Bel" [ref=e897]
+            - cell "Edit Delete" [ref=e898]:
+              - generic [ref=e899]:
+                - link "Edit" [ref=e900] [cursor=pointer]:
+                  - /url: /assignments/183/edit
+                - button "Delete" [ref=e902] [cursor=pointer]
+          - row "David Joanathan Candaliza Chan Alex Tucci (TDL) AI Creative Engineer Active Full-Time — Bel Edit Delete" [ref=e903]:
+            - cell "David Joanathan Candaliza Chan" [ref=e904]:
+              - strong [ref=e905]: David Joanathan Candaliza Chan
+            - cell "Alex Tucci (TDL)" [ref=e906]
+            - cell "AI Creative Engineer" [ref=e907]
+            - cell "Active" [ref=e908]:
+              - generic [ref=e909]: Active
+            - cell "Full-Time" [ref=e910]
+            - cell "—" [ref=e911]
+            - cell "Bel" [ref=e912]
+            - cell "Edit Delete" [ref=e913]:
+              - generic [ref=e914]:
+                - link "Edit" [ref=e915] [cursor=pointer]:
+                  - /url: /assignments/193/edit
+                - button "Delete" [ref=e917] [cursor=pointer]
+          - row "Derrick Nigel Lim Magpali Ryan Goebel Project Manager Separated Full-Time — Bel Edit Delete" [ref=e918]:
+            - cell "Derrick Nigel Lim Magpali" [ref=e919]:
+              - strong [ref=e920]: Derrick Nigel Lim Magpali
+            - cell "Ryan Goebel" [ref=e921]
+            - cell "Project Manager" [ref=e922]
+            - cell "Separated" [ref=e923]:
+              - generic [ref=e924]: Separated
+            - cell "Full-Time" [ref=e925]
+            - cell "—" [ref=e926]
+            - cell "Bel" [ref=e927]
+            - cell "Edit Delete" [ref=e928]:
+              - generic [ref=e929]:
+                - link "Edit" [ref=e930] [cursor=pointer]:
+                  - /url: /assignments/153/edit
+                - button "Delete" [ref=e932] [cursor=pointer]
+          - row "Diana Sakay Zach Papenhausen Admin Assistant/CRM Manager Separated Full-Time — Bel Edit Delete" [ref=e933]:
+            - cell "Diana Sakay" [ref=e934]:
+              - strong [ref=e935]: Diana Sakay
+            - cell "Zach Papenhausen" [ref=e936]
+            - cell "Admin Assistant/CRM Manager" [ref=e937]
+            - cell "Separated" [ref=e938]:
+              - generic [ref=e939]: Separated
+            - cell "Full-Time" [ref=e940]
+            - cell "—" [ref=e941]
+            - cell "Bel" [ref=e942]
+            - cell "Edit Delete" [ref=e943]:
+              - generic [ref=e944]:
+                - link "Edit" [ref=e945] [cursor=pointer]:
+                  - /url: /assignments/146/edit
+                - button "Delete" [ref=e947] [cursor=pointer]
+          - row "Dorothy Marisse Galvez Cruz Gazala Uradnik Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e948]:
+            - cell "Dorothy Marisse Galvez Cruz" [ref=e949]:
+              - strong [ref=e950]: Dorothy Marisse Galvez Cruz
+            - cell "Gazala Uradnik" [ref=e951]
+            - cell "Executive Assistant" [ref=e952]
+            - cell "Active" [ref=e953]:
+              - generic [ref=e954]: Active
+            - cell "Full-Time" [ref=e955]
+            - cell "—" [ref=e956]
+            - cell "Bel" [ref=e957]
+            - cell "Edit Delete" [ref=e958]:
+              - generic [ref=e959]:
+                - link "Edit" [ref=e960] [cursor=pointer]:
+                  - /url: /assignments/145/edit
+                - button "Delete" [ref=e962] [cursor=pointer]
+          - row "Earl Wong Taladua Mark Hunter Insurance CSR Probation Full-Time — Adrian Edit Delete" [ref=e963]:
+            - cell "Earl Wong Taladua" [ref=e964]:
+              - strong [ref=e965]: Earl Wong Taladua
+            - cell "Mark Hunter" [ref=e966]
+            - cell "Insurance CSR" [ref=e967]
+            - cell "Probation" [ref=e968]:
+              - generic [ref=e969]: Probation
+            - cell "Full-Time" [ref=e970]
+            - cell "—" [ref=e971]
+            - cell "Adrian" [ref=e972]
+            - cell "Edit Delete" [ref=e973]:
+              - generic [ref=e974]:
+                - link "Edit" [ref=e975] [cursor=pointer]:
+                  - /url: /assignments/213/edit
+                - button "Delete" [ref=e977] [cursor=pointer]
+          - row "Eddie Bryll Algones Caballero Dr. Oliver Bathe/QualisureDx Executive Assistant OP Active Full-Time — Bel Edit Delete" [ref=e978]:
+            - cell "Eddie Bryll Algones Caballero" [ref=e979]:
+              - strong [ref=e980]: Eddie Bryll Algones Caballero
+            - cell "Dr. Oliver Bathe/QualisureDx" [ref=e981]
+            - cell "Executive Assistant OP" [ref=e982]
+            - cell "Active" [ref=e983]:
+              - generic [ref=e984]: Active
+            - cell "Full-Time" [ref=e985]
+            - cell "—" [ref=e986]
+            - cell "Bel" [ref=e987]
+            - cell "Edit Delete" [ref=e988]:
+              - generic [ref=e989]:
+                - link "Edit" [ref=e990] [cursor=pointer]:
+                  - /url: /assignments/149/edit
+                - button "Delete" [ref=e992] [cursor=pointer]
+          - row "Edryl Gwayne Castro Bailey Proulx / Brian Lehner Marketing Project Manager Separated Part-Time — Adrian Edit Delete" [ref=e993]:
+            - cell "Edryl Gwayne Castro" [ref=e994]:
+              - strong [ref=e995]: Edryl Gwayne Castro
+            - cell "Bailey Proulx / Brian Lehner" [ref=e996]
+            - cell "Marketing Project Manager" [ref=e997]
+            - cell "Separated" [ref=e998]:
+              - generic [ref=e999]: Separated
+            - cell "Part-Time" [ref=e1000]
+            - cell "—" [ref=e1001]
+            - cell "Adrian" [ref=e1002]
+            - cell "Edit Delete" [ref=e1003]:
+              - generic [ref=e1004]:
+                - link "Edit" [ref=e1005] [cursor=pointer]:
+                  - /url: /assignments/70/edit
+                - button "Delete" [ref=e1007] [cursor=pointer]
+          - row "Eduardo Villarama Fernandez Zach Papenhausen Project Manager Separated Full-Time — Bel Edit Delete" [ref=e1008]:
+            - cell "Eduardo Villarama Fernandez" [ref=e1009]:
+              - strong [ref=e1010]: Eduardo Villarama Fernandez
+            - cell "Zach Papenhausen" [ref=e1011]
+            - cell "Project Manager" [ref=e1012]
+            - cell "Separated" [ref=e1013]:
+              - generic [ref=e1014]: Separated
+            - cell "Full-Time" [ref=e1015]
+            - cell "—" [ref=e1016]
+            - cell "Bel" [ref=e1017]
+            - cell "Edit Delete" [ref=e1018]:
+              - generic [ref=e1019]:
+                - link "Edit" [ref=e1020] [cursor=pointer]:
+                  - /url: /assignments/122/edit
+                - button "Delete" [ref=e1022] [cursor=pointer]
+          - row "El Mahdi Jueid Ryan McFarland Marketing Manager - Virtual Assistant Separated Part-Time — Bel Edit Delete" [ref=e1023]:
+            - cell "El Mahdi Jueid" [ref=e1024]:
+              - strong [ref=e1025]: El Mahdi Jueid
+            - cell "Ryan McFarland" [ref=e1026]
+            - cell "Marketing Manager - Virtual Assistant" [ref=e1027]
+            - cell "Separated" [ref=e1028]:
+              - generic [ref=e1029]: Separated
+            - cell "Part-Time" [ref=e1030]
+            - cell "—" [ref=e1031]
+            - cell "Bel" [ref=e1032]
+            - cell "Edit Delete" [ref=e1033]:
+              - generic [ref=e1034]:
+                - link "Edit" [ref=e1035] [cursor=pointer]:
+                  - /url: /assignments/119/edit
+                - button "Delete" [ref=e1037] [cursor=pointer]
+          - row "Elizabeth Ocde Aguilus Mark Hunter Insurance Customer Service Representative Probation Full-Time — Adrian Edit Delete" [ref=e1038]:
+            - cell "Elizabeth Ocde Aguilus" [ref=e1039]:
+              - strong [ref=e1040]: Elizabeth Ocde Aguilus
+            - cell "Mark Hunter" [ref=e1041]
+            - cell "Insurance Customer Service Representative" [ref=e1042]
+            - cell "Probation" [ref=e1043]:
+              - generic [ref=e1044]: Probation
+            - cell "Full-Time" [ref=e1045]
+            - cell "—" [ref=e1046]
+            - cell "Adrian" [ref=e1047]
+            - cell "Edit Delete" [ref=e1048]:
+              - generic [ref=e1049]:
+                - link "Edit" [ref=e1050] [cursor=pointer]:
+                  - /url: /assignments/227/edit
+                - button "Delete" [ref=e1052] [cursor=pointer]
+          - row "Elizabeth Pasoc Ryan McFarland Zoho CRM Manager Separated Full-Time — Bel Edit Delete" [ref=e1053]:
+            - cell "Elizabeth Pasoc" [ref=e1054]:
+              - strong [ref=e1055]: Elizabeth Pasoc
+            - cell "Ryan McFarland" [ref=e1056]
+            - cell "Zoho CRM Manager" [ref=e1057]
+            - cell "Separated" [ref=e1058]:
+              - generic [ref=e1059]: Separated
+            - cell "Full-Time" [ref=e1060]
+            - cell "—" [ref=e1061]
+            - cell "Bel" [ref=e1062]
+            - cell "Edit Delete" [ref=e1063]:
+              - generic [ref=e1064]:
+                - link "Edit" [ref=e1065] [cursor=pointer]:
+                  - /url: /assignments/165/edit
+                - button "Delete" [ref=e1067] [cursor=pointer]
+          - row "Ella Baloloy Dimaano Daniel Hambrick Insurance CSR Active Full-Time — Bel Edit Delete" [ref=e1068]:
+            - cell "Ella Baloloy Dimaano" [ref=e1069]:
+              - strong [ref=e1070]: Ella Baloloy Dimaano
+            - cell "Daniel Hambrick" [ref=e1071]
+            - cell "Insurance CSR" [ref=e1072]
+            - cell "Active" [ref=e1073]:
+              - generic [ref=e1074]: Active
+            - cell "Full-Time" [ref=e1075]
+            - cell "—" [ref=e1076]
+            - cell "Bel" [ref=e1077]
+            - cell "Edit Delete" [ref=e1078]:
+              - generic [ref=e1079]:
+                - link "Edit" [ref=e1080] [cursor=pointer]:
+                  - /url: /assignments/181/edit
+                - button "Delete" [ref=e1082] [cursor=pointer]
+          - row "Ellison Luke Pamaran Ambray Lucas Kemper Creator & Social Commerce Coordinator Probation Full-Time — Adrian Edit Delete" [ref=e1083]:
+            - cell "Ellison Luke Pamaran Ambray" [ref=e1084]:
+              - strong [ref=e1085]: Ellison Luke Pamaran Ambray
+            - cell "Lucas Kemper" [ref=e1086]
+            - cell "Creator & Social Commerce Coordinator" [ref=e1087]
+            - cell "Probation" [ref=e1088]:
+              - generic [ref=e1089]: Probation
+            - cell "Full-Time" [ref=e1090]
+            - cell "—" [ref=e1091]
+            - cell "Adrian" [ref=e1092]
+            - cell "Edit Delete" [ref=e1093]:
+              - generic [ref=e1094]:
+                - link "Edit" [ref=e1095] [cursor=pointer]:
+                  - /url: /assignments/225/edit
+                - button "Delete" [ref=e1097] [cursor=pointer]
+          - row "Ener Dabu Ryan McFarland General Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e1098]:
+            - cell "Ener Dabu" [ref=e1099]:
+              - strong [ref=e1100]: Ener Dabu
+            - cell "Ryan McFarland" [ref=e1101]
+            - cell "General Virtual Assistant" [ref=e1102]
+            - cell "Separated" [ref=e1103]:
+              - generic [ref=e1104]: Separated
+            - cell "Full-Time" [ref=e1105]
+            - cell "—" [ref=e1106]
+            - cell "Bel" [ref=e1107]
+            - cell "Edit Delete" [ref=e1108]:
+              - generic [ref=e1109]:
+                - link "Edit" [ref=e1110] [cursor=pointer]:
+                  - /url: /assignments/40/edit
+                - button "Delete" [ref=e1112] [cursor=pointer]
+          - row "Estefani Maciel Tavarez Martinez Ryan McFarland Social Media Manager Separated — — Bel Edit Delete" [ref=e1113]:
+            - cell "Estefani Maciel Tavarez Martinez" [ref=e1114]:
+              - strong [ref=e1115]: Estefani Maciel Tavarez Martinez
+            - cell "Ryan McFarland" [ref=e1116]
+            - cell "Social Media Manager" [ref=e1117]
+            - cell "Separated" [ref=e1118]:
+              - generic [ref=e1119]: Separated
+            - cell "—" [ref=e1120]
+            - cell "—" [ref=e1121]
+            - cell "Bel" [ref=e1122]
+            - cell "Edit Delete" [ref=e1123]:
+              - generic [ref=e1124]:
+                - link "Edit" [ref=e1125] [cursor=pointer]:
+                  - /url: /assignments/57/edit
+                - button "Delete" [ref=e1127] [cursor=pointer]
+          - row "Eugene \"Genie\" Salvatierra Jacob Azevedo Executive Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1128]:
+            - cell "Eugene \"Genie\" Salvatierra" [ref=e1129]:
+              - strong [ref=e1130]: Eugene "Genie" Salvatierra
+            - cell "Jacob Azevedo" [ref=e1131]
+            - cell "Executive Assistant" [ref=e1132]
+            - cell "Separated" [ref=e1133]:
+              - generic [ref=e1134]: Separated
+            - cell "Full-Time" [ref=e1135]
+            - cell "—" [ref=e1136]
+            - cell "Adrian" [ref=e1137]
+            - cell "Edit Delete" [ref=e1138]:
+              - generic [ref=e1139]:
+                - link "Edit" [ref=e1140] [cursor=pointer]:
+                  - /url: /assignments/113/edit
+                - button "Delete" [ref=e1142] [cursor=pointer]
+          - row "Eugene Gabriel Narvadez Luke Harmon Solutions Engineer Probation Full-Time — Bel Edit Delete" [ref=e1143]:
+            - cell "Eugene Gabriel Narvadez" [ref=e1144]:
+              - strong [ref=e1145]: Eugene Gabriel Narvadez
+            - cell "Luke Harmon" [ref=e1146]
+            - cell "Solutions Engineer" [ref=e1147]
+            - cell "Probation" [ref=e1148]:
+              - generic [ref=e1149]: Probation
+            - cell "Full-Time" [ref=e1150]
+            - cell "—" [ref=e1151]
+            - cell "Bel" [ref=e1152]
+            - cell "Edit Delete" [ref=e1153]:
+              - generic [ref=e1154]:
+                - link "Edit" [ref=e1155] [cursor=pointer]:
+                  - /url: /assignments/236/edit
+                - button "Delete" [ref=e1157] [cursor=pointer]
+          - row "Fatima-Ez-Zahra Zourhmari Stefan Badertscher Executive Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1158]:
+            - cell "Fatima-Ez-Zahra Zourhmari" [ref=e1159]:
+              - strong [ref=e1160]: Fatima-Ez-Zahra Zourhmari
+            - cell "Stefan Badertscher" [ref=e1161]
+            - cell "Executive Assistant" [ref=e1162]
+            - cell "Separated" [ref=e1163]:
+              - generic [ref=e1164]: Separated
+            - cell "Full-Time" [ref=e1165]
+            - cell "—" [ref=e1166]
+            - cell "Adrian" [ref=e1167]
+            - cell "Edit Delete" [ref=e1168]:
+              - generic [ref=e1169]:
+                - link "Edit" [ref=e1170] [cursor=pointer]:
+                  - /url: /assignments/133/edit
+                - button "Delete" [ref=e1172] [cursor=pointer]
+          - row "Felix Jr. Diaz Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e1173]:
+            - cell "Felix Jr. Diaz" [ref=e1174]:
+              - strong [ref=e1175]: Felix Jr. Diaz
+            - cell "Ryan McFarland" [ref=e1176]
+            - cell "Virtual Assistant" [ref=e1177]
+            - cell "Separated" [ref=e1178]:
+              - generic [ref=e1179]: Separated
+            - cell "Full-Time" [ref=e1180]
+            - cell "—" [ref=e1181]
+            - cell "Bel" [ref=e1182]
+            - cell "Edit Delete" [ref=e1183]:
+              - generic [ref=e1184]:
+                - link "Edit" [ref=e1185] [cursor=pointer]:
+                  - /url: /assignments/44/edit
+                - button "Delete" [ref=e1187] [cursor=pointer]
+          - row "FredAdriank Jr B. Argana Jeremiah Boucher Executive Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1188]:
+            - cell "FredAdriank Jr B. Argana" [ref=e1189]:
+              - strong [ref=e1190]: FredAdriank Jr B. Argana
+            - cell "Jeremiah Boucher" [ref=e1191]
+            - cell "Executive Assistant" [ref=e1192]
+            - cell "Separated" [ref=e1193]:
+              - generic [ref=e1194]: Separated
+            - cell "Full-Time" [ref=e1195]
+            - cell "—" [ref=e1196]
+            - cell "Adrian" [ref=e1197]
+            - cell "Edit Delete" [ref=e1198]:
+              - generic [ref=e1199]:
+                - link "Edit" [ref=e1200] [cursor=pointer]:
+                  - /url: /assignments/64/edit
+                - button "Delete" [ref=e1202] [cursor=pointer]
+          - row "Gabrielle Pauline Mirasol Yancy Wright Executive Sales Assistant Separated Full-Time 1,752 Bel Edit Delete" [ref=e1203]:
+            - cell "Gabrielle Pauline Mirasol" [ref=e1204]:
+              - strong [ref=e1205]: Gabrielle Pauline Mirasol
+            - cell "Yancy Wright" [ref=e1206]
+            - cell "Executive Sales Assistant" [ref=e1207]
+            - cell "Separated" [ref=e1208]:
+              - generic [ref=e1209]: Separated
+            - cell "Full-Time" [ref=e1210]
+            - cell "1,752" [ref=e1211]
+            - cell "Bel" [ref=e1212]
+            - cell "Edit Delete" [ref=e1213]:
+              - generic [ref=e1214]:
+                - link "Edit" [ref=e1215] [cursor=pointer]:
+                  - /url: /assignments/36/edit
+                - button "Delete" [ref=e1217] [cursor=pointer]
+          - row "Gerard Anthony Navarro Raindrop Agency Motiongraphics Designer Separated Full-Time — Bel Edit Delete" [ref=e1218]:
+            - cell "Gerard Anthony Navarro" [ref=e1219]:
+              - strong [ref=e1220]: Gerard Anthony Navarro
+            - cell "Raindrop Agency" [ref=e1221]
+            - cell "Motiongraphics Designer" [ref=e1222]
+            - cell "Separated" [ref=e1223]:
+              - generic [ref=e1224]: Separated
+            - cell "Full-Time" [ref=e1225]
+            - cell "—" [ref=e1226]
+            - cell "Bel" [ref=e1227]
+            - cell "Edit Delete" [ref=e1228]:
+              - generic [ref=e1229]:
+                - link "Edit" [ref=e1230] [cursor=pointer]:
+                  - /url: /assignments/170/edit
+                - button "Delete" [ref=e1232] [cursor=pointer]
+          - row "Gideon Mark Pacete Nicole Bushnell (Mari + Gold)/ Carrie Jones Shopify Web Developer Separated Full-Time — Adrian Edit Delete" [ref=e1233]:
+            - cell "Gideon Mark Pacete" [ref=e1234]:
+              - strong [ref=e1235]: Gideon Mark Pacete
+            - cell "Nicole Bushnell (Mari + Gold)/ Carrie Jones" [ref=e1236]
+            - cell "Shopify Web Developer" [ref=e1237]
+            - cell "Separated" [ref=e1238]:
+              - generic [ref=e1239]: Separated
+            - cell "Full-Time" [ref=e1240]
+            - cell "—" [ref=e1241]
+            - cell "Adrian" [ref=e1242]
+            - cell "Edit Delete" [ref=e1243]:
+              - generic [ref=e1244]:
+                - link "Edit" [ref=e1245] [cursor=pointer]:
+                  - /url: /assignments/92/edit
+                - button "Delete" [ref=e1247] [cursor=pointer]
+          - row "Ginea Ingrid Rancudo Napa Austin Blair/ Laundry Sauce Shopify Customer Service OP Active Full-Time — Bel Edit Delete" [ref=e1248]:
+            - cell "Ginea Ingrid Rancudo Napa" [ref=e1249]:
+              - strong [ref=e1250]: Ginea Ingrid Rancudo Napa
+            - cell "Austin Blair/ Laundry Sauce" [ref=e1251]
+            - cell "Shopify Customer Service OP" [ref=e1252]
+            - cell "Active" [ref=e1253]:
+              - generic [ref=e1254]: Active
+            - cell "Full-Time" [ref=e1255]
+            - cell "—" [ref=e1256]
+            - cell "Bel" [ref=e1257]
+            - cell "Edit Delete" [ref=e1258]:
+              - generic [ref=e1259]:
+                - link "Edit" [ref=e1260] [cursor=pointer]:
+                  - /url: /assignments/185/edit
+                - button "Delete" [ref=e1262] [cursor=pointer]
+          - row "Glendolf Jide Echin Josh Schwartz Insurance Customer Service Representative Active Full-Time — Bel Edit Delete" [ref=e1263]:
+            - cell "Glendolf Jide Echin" [ref=e1264]:
+              - strong [ref=e1265]: Glendolf Jide Echin
+            - cell "Josh Schwartz" [ref=e1266]
+            - cell "Insurance Customer Service Representative" [ref=e1267]
+            - cell "Active" [ref=e1268]:
+              - generic [ref=e1269]: Active
+            - cell "Full-Time" [ref=e1270]
+            - cell "—" [ref=e1271]
+            - cell "Bel" [ref=e1272]
+            - cell "Edit Delete" [ref=e1273]:
+              - generic [ref=e1274]:
+                - link "Edit" [ref=e1275] [cursor=pointer]:
+                  - /url: /assignments/73/edit
+                - button "Delete" [ref=e1277] [cursor=pointer]
+          - row "Grant Cuyos Sabello Dr. Betty Murray Medical Virtual Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1278]:
+            - cell "Grant Cuyos Sabello" [ref=e1279]:
+              - strong [ref=e1280]: Grant Cuyos Sabello
+            - cell "Dr. Betty Murray" [ref=e1281]
+            - cell "Medical Virtual Assistant" [ref=e1282]
+            - cell "Separated" [ref=e1283]:
+              - generic [ref=e1284]: Separated
+            - cell "Full-Time" [ref=e1285]
+            - cell "—" [ref=e1286]
+            - cell "Adrian" [ref=e1287]
+            - cell "Edit Delete" [ref=e1288]:
+              - generic [ref=e1289]:
+                - link "Edit" [ref=e1290] [cursor=pointer]:
+                  - /url: /assignments/130/edit
+                - button "Delete" [ref=e1292] [cursor=pointer]
+          - row "Haydee Cortez Dr. Betty Murray Medical VA OP Separated Full-Time — Adrian Edit Delete" [ref=e1293]:
+            - cell "Haydee Cortez" [ref=e1294]:
+              - strong [ref=e1295]: Haydee Cortez
+            - cell "Dr. Betty Murray" [ref=e1296]
+            - cell "Medical VA OP" [ref=e1297]
+            - cell "Separated" [ref=e1298]:
+              - generic [ref=e1299]: Separated
+            - cell "Full-Time" [ref=e1300]
+            - cell "—" [ref=e1301]
+            - cell "Adrian" [ref=e1302]
+            - cell "Edit Delete" [ref=e1303]:
+              - generic [ref=e1304]:
+                - link "Edit" [ref=e1305] [cursor=pointer]:
+                  - /url: /assignments/135/edit
+                - button "Delete" [ref=e1307] [cursor=pointer]
+          - row "Hazel Anne Llanillo Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Full-Time — Bel Edit Delete" [ref=e1308]:
+            - cell "Hazel Anne Llanillo" [ref=e1309]:
+              - strong [ref=e1310]: Hazel Anne Llanillo
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1311]
+            - cell "Dispatcher OP" [ref=e1312]
+            - cell "Separated" [ref=e1313]:
+              - generic [ref=e1314]: Separated
+            - cell "Full-Time" [ref=e1315]
+            - cell "—" [ref=e1316]
+            - cell "Bel" [ref=e1317]
+            - cell "Edit Delete" [ref=e1318]:
+              - generic [ref=e1319]:
+                - link "Edit" [ref=e1320] [cursor=pointer]:
+                  - /url: /assignments/136/edit
+                - button "Delete" [ref=e1322] [cursor=pointer]
+          - row "Hazel Anne Llanillo Joseph Bua Dispatch Coordinator Probation Full-Time — Bel Edit Delete" [ref=e1323]:
+            - cell "Hazel Anne Llanillo" [ref=e1324]:
+              - strong [ref=e1325]: Hazel Anne Llanillo
+            - cell "Joseph Bua" [ref=e1326]
+            - cell "Dispatch Coordinator" [ref=e1327]
+            - cell "Probation" [ref=e1328]:
+              - generic [ref=e1329]: Probation
+            - cell "Full-Time" [ref=e1330]
+            - cell "—" [ref=e1331]
+            - cell "Bel" [ref=e1332]
+            - cell "Edit Delete" [ref=e1333]:
+              - generic [ref=e1334]:
+                - link "Edit" [ref=e1335] [cursor=pointer]:
+                  - /url: /assignments/188/edit
+                - button "Delete" [ref=e1337] [cursor=pointer]
+          - row "Honnalea Caro Dr. Betty Murray Executive Assistant Separated Full-Time 1888 Adrian Edit Delete" [ref=e1338]:
+            - cell "Honnalea Caro" [ref=e1339]:
+              - strong [ref=e1340]: Honnalea Caro
+            - cell "Dr. Betty Murray" [ref=e1341]
+            - cell "Executive Assistant" [ref=e1342]
+            - cell "Separated" [ref=e1343]:
+              - generic [ref=e1344]: Separated
+            - cell "Full-Time" [ref=e1345]
+            - cell "1888" [ref=e1346]
+            - cell "Adrian" [ref=e1347]
+            - cell "Edit Delete" [ref=e1348]:
+              - generic [ref=e1349]:
+                - link "Edit" [ref=e1350] [cursor=pointer]:
+                  - /url: /assignments/115/edit
+                - button "Delete" [ref=e1352] [cursor=pointer]
+          - row "Irene Padilla Lucas Robinson Bookkeeper Active Full-Time — Adrian Edit Delete" [ref=e1353]:
+            - cell "Irene Padilla" [ref=e1354]:
+              - strong [ref=e1355]: Irene Padilla
+            - cell "Lucas Robinson" [ref=e1356]
+            - cell "Bookkeeper" [ref=e1357]
+            - cell "Active" [ref=e1358]:
+              - generic [ref=e1359]: Active
+            - cell "Full-Time" [ref=e1360]
+            - cell "—" [ref=e1361]
+            - cell "Adrian" [ref=e1362]
+            - cell "Edit Delete" [ref=e1363]:
+              - generic [ref=e1364]:
+                - link "Edit" [ref=e1365] [cursor=pointer]:
+                  - /url: /assignments/22/edit
+                - button "Delete" [ref=e1367] [cursor=pointer]
+          - row "Isaiah James Santiago Frank Ortega Executive Assistant Active Full-Time 1,666.49 Bel Edit Delete" [ref=e1368]:
+            - cell "Isaiah James Santiago" [ref=e1369]:
+              - strong [ref=e1370]: Isaiah James Santiago
+            - cell "Frank Ortega" [ref=e1371]
+            - cell "Executive Assistant" [ref=e1372]
+            - cell "Active" [ref=e1373]:
+              - generic [ref=e1374]: Active
+            - cell "Full-Time" [ref=e1375]
+            - cell "1,666.49" [ref=e1376]
+            - cell "Bel" [ref=e1377]
+            - cell "Edit Delete" [ref=e1378]:
+              - generic [ref=e1379]:
+                - link "Edit" [ref=e1380] [cursor=pointer]:
+                  - /url: /assignments/161/edit
+                - button "Delete" [ref=e1382] [cursor=pointer]
+          - row "Ivan Hoffman Ryan McFarland WH Manager Separated — — Bel Edit Delete" [ref=e1383]:
+            - cell "Ivan Hoffman" [ref=e1384]:
+              - strong [ref=e1385]: Ivan Hoffman
+            - cell "Ryan McFarland" [ref=e1386]
+            - cell "WH Manager" [ref=e1387]
+            - cell "Separated" [ref=e1388]:
+              - generic [ref=e1389]: Separated
+            - cell "—" [ref=e1390]
+            - cell "—" [ref=e1391]
+            - cell "Bel" [ref=e1392]
+            - cell "Edit Delete" [ref=e1393]:
+              - generic [ref=e1394]:
+                - link "Edit" [ref=e1395] [cursor=pointer]:
+                  - /url: /assignments/60/edit
+                - button "Delete" [ref=e1397] [cursor=pointer]
+          - row "Ivy Rose Bongbong Mark Hunter Insurance CSR Separated Full-Time — Bel Edit Delete" [ref=e1398]:
+            - cell "Ivy Rose Bongbong" [ref=e1399]:
+              - strong [ref=e1400]: Ivy Rose Bongbong
+            - cell "Mark Hunter" [ref=e1401]
+            - cell "Insurance CSR" [ref=e1402]
+            - cell "Separated" [ref=e1403]:
+              - generic [ref=e1404]: Separated
+            - cell "Full-Time" [ref=e1405]
+            - cell "—" [ref=e1406]
+            - cell "Bel" [ref=e1407]
+            - cell "Edit Delete" [ref=e1408]:
+              - generic [ref=e1409]:
+                - link "Edit" [ref=e1410] [cursor=pointer]:
+                  - /url: /assignments/212/edit
+                - button "Delete" [ref=e1412] [cursor=pointer]
+          - row "Jaclyn Mae Tolentino Floro Matthew Williams Legal Assistant Separated Full-Time — Bel Edit Delete" [ref=e1413]:
+            - cell "Jaclyn Mae Tolentino Floro" [ref=e1414]:
+              - strong [ref=e1415]: Jaclyn Mae Tolentino Floro
+            - cell "Matthew Williams" [ref=e1416]
+            - cell "Legal Assistant" [ref=e1417]
+            - cell "Separated" [ref=e1418]:
+              - generic [ref=e1419]: Separated
+            - cell "Full-Time" [ref=e1420]
+            - cell "—" [ref=e1421]
+            - cell "Bel" [ref=e1422]
+            - cell "Edit Delete" [ref=e1423]:
+              - generic [ref=e1424]:
+                - link "Edit" [ref=e1425] [cursor=pointer]:
+                  - /url: /assignments/195/edit
+                - button "Delete" [ref=e1427] [cursor=pointer]
+          - row "Jael Franco Pili Brian Hennesy Sales Admin Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1428]:
+            - cell "Jael Franco Pili" [ref=e1429]:
+              - strong [ref=e1430]: Jael Franco Pili
+            - cell "Brian Hennesy" [ref=e1431]
+            - cell "Sales Admin Assistant" [ref=e1432]
+            - cell "Separated" [ref=e1433]:
+              - generic [ref=e1434]: Separated
+            - cell "Full-Time" [ref=e1435]
+            - cell "—" [ref=e1436]
+            - cell "Adrian" [ref=e1437]
+            - cell "Edit Delete" [ref=e1438]:
+              - generic [ref=e1439]:
+                - link "Edit" [ref=e1440] [cursor=pointer]:
+                  - /url: /assignments/98/edit
+                - button "Delete" [ref=e1442] [cursor=pointer]
+          - row "Jael Franco Pili Dr. Matthew and Theresa Steiner Executive Sales Assistant Separated Full-Time — Bel Edit Delete" [ref=e1443]:
+            - cell "Jael Franco Pili" [ref=e1444]:
+              - strong [ref=e1445]: Jael Franco Pili
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e1446]
+            - cell "Executive Sales Assistant" [ref=e1447]
+            - cell "Separated" [ref=e1448]:
+              - generic [ref=e1449]: Separated
+            - cell "Full-Time" [ref=e1450]
+            - cell "—" [ref=e1451]
+            - cell "Bel" [ref=e1452]
+            - cell "Edit Delete" [ref=e1453]:
+              - generic [ref=e1454]:
+                - link "Edit" [ref=e1455] [cursor=pointer]:
+                  - /url: /assignments/142/edit
+                - button "Delete" [ref=e1457] [cursor=pointer]
+          - row "Janielyn Eduardo Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e1458]:
+            - cell "Janielyn Eduardo" [ref=e1459]:
+              - strong [ref=e1460]: Janielyn Eduardo
+            - cell "Ryan McFarland" [ref=e1461]
+            - cell "Virtual Assistant" [ref=e1462]
+            - cell "Separated" [ref=e1463]:
+              - generic [ref=e1464]: Separated
+            - cell "Full-Time" [ref=e1465]
+            - cell "—" [ref=e1466]
+            - cell "Bel" [ref=e1467]
+            - cell "Edit Delete" [ref=e1468]:
+              - generic [ref=e1469]:
+                - link "Edit" [ref=e1470] [cursor=pointer]:
+                  - /url: /assignments/45/edit
+                - button "Delete" [ref=e1472] [cursor=pointer]
+          - row "Jathniel Joseph Salas Ryan McFarland Email Marketing Manager Separated Full-Time — Bel Edit Delete" [ref=e1473]:
+            - cell "Jathniel Joseph Salas" [ref=e1474]:
+              - strong [ref=e1475]: Jathniel Joseph Salas
+            - cell "Ryan McFarland" [ref=e1476]
+            - cell "Email Marketing Manager" [ref=e1477]
+            - cell "Separated" [ref=e1478]:
+              - generic [ref=e1479]: Separated
+            - cell "Full-Time" [ref=e1480]
+            - cell "—" [ref=e1481]
+            - cell "Bel" [ref=e1482]
+            - cell "Edit Delete" [ref=e1483]:
+              - generic [ref=e1484]:
+                - link "Edit" [ref=e1485] [cursor=pointer]:
+                  - /url: /assignments/53/edit
+                - button "Delete" [ref=e1487] [cursor=pointer]
+          - row "Jennielyn Solamo Hilario Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Full-Time — Bel Edit Delete" [ref=e1488]:
+            - cell "Jennielyn Solamo Hilario" [ref=e1489]:
+              - strong [ref=e1490]: Jennielyn Solamo Hilario
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1491]
+            - cell "Dispatcher OP" [ref=e1492]
+            - cell "Separated" [ref=e1493]:
+              - generic [ref=e1494]: Separated
+            - cell "Full-Time" [ref=e1495]
+            - cell "—" [ref=e1496]
+            - cell "Bel" [ref=e1497]
+            - cell "Edit Delete" [ref=e1498]:
+              - generic [ref=e1499]:
+                - link "Edit" [ref=e1500] [cursor=pointer]:
+                  - /url: /assignments/143/edit
+                - button "Delete" [ref=e1502] [cursor=pointer]
+          - row "Jenzuel Pedrajas Fereshteh Fattaahi General & Social Media VA Active Part-Time — Adrian Edit Delete" [ref=e1503]:
+            - cell "Jenzuel Pedrajas" [ref=e1504]:
+              - strong [ref=e1505]: Jenzuel Pedrajas
+            - cell "Fereshteh Fattaahi" [ref=e1506]
+            - cell "General & Social Media VA" [ref=e1507]
+            - cell "Active" [ref=e1508]:
+              - generic [ref=e1509]: Active
+            - cell "Part-Time" [ref=e1510]
+            - cell "—" [ref=e1511]
+            - cell "Adrian" [ref=e1512]
+            - cell "Edit Delete" [ref=e1513]:
+              - generic [ref=e1514]:
+                - link "Edit" [ref=e1515] [cursor=pointer]:
+                  - /url: /assignments/93/edit
+                - button "Delete" [ref=e1517] [cursor=pointer]
+          - row "Jeremy Binwag Connor Miller (ArdentX) Sales Admin Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1518]:
+            - cell "Jeremy Binwag" [ref=e1519]:
+              - strong [ref=e1520]: Jeremy Binwag
+            - cell "Connor Miller (ArdentX)" [ref=e1521]
+            - cell "Sales Admin Assistant" [ref=e1522]
+            - cell "Separated" [ref=e1523]:
+              - generic [ref=e1524]: Separated
+            - cell "Full-Time" [ref=e1525]
+            - cell "—" [ref=e1526]
+            - cell "Adrian" [ref=e1527]
+            - cell "Edit Delete" [ref=e1528]:
+              - generic [ref=e1529]:
+                - link "Edit" [ref=e1530] [cursor=pointer]:
+                  - /url: /assignments/68/edit
+                - button "Delete" [ref=e1532] [cursor=pointer]
+          - row "Jermaine Cabalo Ryan Miller Digital Media Assistant Separated Full-Time — Bel Edit Delete" [ref=e1533]:
+            - cell "Jermaine Cabalo" [ref=e1534]:
+              - strong [ref=e1535]: Jermaine Cabalo
+            - cell "Ryan Miller" [ref=e1536]
+            - cell "Digital Media Assistant" [ref=e1537]
+            - cell "Separated" [ref=e1538]:
+              - generic [ref=e1539]: Separated
+            - cell "Full-Time" [ref=e1540]
+            - cell "—" [ref=e1541]
+            - cell "Bel" [ref=e1542]
+            - cell "Edit Delete" [ref=e1543]:
+              - generic [ref=e1544]:
+                - link "Edit" [ref=e1545] [cursor=pointer]:
+                  - /url: /assignments/7/edit
+                - button "Delete" [ref=e1547] [cursor=pointer]
+          - row "Jeronimo Betancourt Ryan McFarland Graphic Designer Separated Part-Time — Bel Edit Delete" [ref=e1548]:
+            - cell "Jeronimo Betancourt" [ref=e1549]:
+              - strong [ref=e1550]: Jeronimo Betancourt
+            - cell "Ryan McFarland" [ref=e1551]
+            - cell "Graphic Designer" [ref=e1552]
+            - cell "Separated" [ref=e1553]:
+              - generic [ref=e1554]: Separated
+            - cell "Part-Time" [ref=e1555]
+            - cell "—" [ref=e1556]
+            - cell "Bel" [ref=e1557]
+            - cell "Edit Delete" [ref=e1558]:
+              - generic [ref=e1559]:
+                - link "Edit" [ref=e1560] [cursor=pointer]:
+                  - /url: /assignments/39/edit
+                - button "Delete" [ref=e1562] [cursor=pointer]
+          - row "Jerry Marie Rondina Radin Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Full-Time — Bel Edit Delete" [ref=e1563]:
+            - cell "Jerry Marie Rondina Radin" [ref=e1564]:
+              - strong [ref=e1565]: Jerry Marie Rondina Radin
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1566]
+            - cell "Dispatcher OP" [ref=e1567]
+            - cell "Separated" [ref=e1568]:
+              - generic [ref=e1569]: Separated
+            - cell "Full-Time" [ref=e1570]
+            - cell "—" [ref=e1571]
+            - cell "Bel" [ref=e1572]
+            - cell "Edit Delete" [ref=e1573]:
+              - generic [ref=e1574]:
+                - link "Edit" [ref=e1575] [cursor=pointer]:
+                  - /url: /assignments/137/edit
+                - button "Delete" [ref=e1577] [cursor=pointer]
+          - row "Jesalie Sotelo Raindrop Agency Social Media Project Coordinator Separated Full-Time — Adrian Edit Delete" [ref=e1578]:
+            - cell "Jesalie Sotelo" [ref=e1579]:
+              - strong [ref=e1580]: Jesalie Sotelo
+            - cell "Raindrop Agency" [ref=e1581]
+            - cell "Social Media Project Coordinator" [ref=e1582]
+            - cell "Separated" [ref=e1583]:
+              - generic [ref=e1584]: Separated
+            - cell "Full-Time" [ref=e1585]
+            - cell "—" [ref=e1586]
+            - cell "Adrian" [ref=e1587]
+            - cell "Edit Delete" [ref=e1588]:
+              - generic [ref=e1589]:
+                - link "Edit" [ref=e1590] [cursor=pointer]:
+                  - /url: /assignments/105/edit
+                - button "Delete" [ref=e1592] [cursor=pointer]
+          - row "Jesalie Sotelo Jessica Robinson (Catalyst Agency) Marketing Assistant Separated Full-Time — Bel Edit Delete" [ref=e1593]:
+            - cell "Jesalie Sotelo" [ref=e1594]:
+              - strong [ref=e1595]: Jesalie Sotelo
+            - cell "Jessica Robinson (Catalyst Agency)" [ref=e1596]
+            - cell "Marketing Assistant" [ref=e1597]
+            - cell "Separated" [ref=e1598]:
+              - generic [ref=e1599]: Separated
+            - cell "Full-Time" [ref=e1600]
+            - cell "—" [ref=e1601]
+            - cell "Bel" [ref=e1602]
+            - cell "Edit Delete" [ref=e1603]:
+              - generic [ref=e1604]:
+                - link "Edit" [ref=e1605] [cursor=pointer]:
+                  - /url: /assignments/154/edit
+                - button "Delete" [ref=e1607] [cursor=pointer]
+          - row "Jhoana Reyes Lucas Robinson Customer Support Representative Separated Full-Time — Bel Edit Delete" [ref=e1608]:
+            - cell "Jhoana Reyes" [ref=e1609]:
+              - strong [ref=e1610]: Jhoana Reyes
+            - cell "Lucas Robinson" [ref=e1611]
+            - cell "Customer Support Representative" [ref=e1612]
+            - cell "Separated" [ref=e1613]:
+              - generic [ref=e1614]: Separated
+            - cell "Full-Time" [ref=e1615]
+            - cell "—" [ref=e1616]
+            - cell "Bel" [ref=e1617]
+            - cell "Edit Delete" [ref=e1618]:
+              - generic [ref=e1619]:
+                - link "Edit" [ref=e1620] [cursor=pointer]:
+                  - /url: /assignments/28/edit
+                - button "Delete" [ref=e1622] [cursor=pointer]
+          - row "Jim Carlo Magnaye Josh Schwartz / Ed Trovato Insurance Customer Service Representative Active Full-Time — Bel Edit Delete" [ref=e1623]:
+            - cell "Jim Carlo Magnaye" [ref=e1624]:
+              - strong [ref=e1625]: Jim Carlo Magnaye
+            - cell "Josh Schwartz / Ed Trovato" [ref=e1626]
+            - cell "Insurance Customer Service Representative" [ref=e1627]
+            - cell "Active" [ref=e1628]:
+              - generic [ref=e1629]: Active
+            - cell "Full-Time" [ref=e1630]
+            - cell "—" [ref=e1631]
+            - cell "Bel" [ref=e1632]
+            - cell "Edit Delete" [ref=e1633]:
+              - generic [ref=e1634]:
+                - link "Edit" [ref=e1635] [cursor=pointer]:
+                  - /url: /assignments/84/edit
+                - button "Delete" [ref=e1637] [cursor=pointer]
+          - row "Jipsy Qyne Diaz Falle Matthew Williams Executive Legal Assistant Active Full-Time — Bel Edit Delete" [ref=e1638]:
+            - cell "Jipsy Qyne Diaz Falle" [ref=e1639]:
+              - strong [ref=e1640]: Jipsy Qyne Diaz Falle
+            - cell "Matthew Williams" [ref=e1641]
+            - cell "Executive Legal Assistant" [ref=e1642]
+            - cell "Active" [ref=e1643]:
+              - generic [ref=e1644]: Active
+            - cell "Full-Time" [ref=e1645]
+            - cell "—" [ref=e1646]
+            - cell "Bel" [ref=e1647]
+            - cell "Edit Delete" [ref=e1648]:
+              - generic [ref=e1649]:
+                - link "Edit" [ref=e1650] [cursor=pointer]:
+                  - /url: /assignments/162/edit
+                - button "Delete" [ref=e1652] [cursor=pointer]
+          - row "Joanna Cordova Baltazar Brandon Kelly Executive Assistant Probation Full-Time — Bel Edit Delete" [ref=e1653]:
+            - cell "Joanna Cordova Baltazar" [ref=e1654]:
+              - strong [ref=e1655]: Joanna Cordova Baltazar
+            - cell "Brandon Kelly" [ref=e1656]
+            - cell "Executive Assistant" [ref=e1657]
+            - cell "Probation" [ref=e1658]:
+              - generic [ref=e1659]: Probation
+            - cell "Full-Time" [ref=e1660]
+            - cell "—" [ref=e1661]
+            - cell "Bel" [ref=e1662]
+            - cell "Edit Delete" [ref=e1663]:
+              - generic [ref=e1664]:
+                - link "Edit" [ref=e1665] [cursor=pointer]:
+                  - /url: /assignments/210/edit
+                - button "Delete" [ref=e1667] [cursor=pointer]
+          - row "John Abram Cornejo Daliwan Anthony Jimenez (Product Society) Procurement Support Active Full-Time — Bel Edit Delete" [ref=e1668]:
+            - cell "John Abram Cornejo Daliwan" [ref=e1669]:
+              - strong [ref=e1670]: John Abram Cornejo Daliwan
+            - cell "Anthony Jimenez (Product Society)" [ref=e1671]
+            - cell "Procurement Support" [ref=e1672]
+            - cell "Active" [ref=e1673]:
+              - generic [ref=e1674]: Active
+            - cell "Full-Time" [ref=e1675]
+            - cell "—" [ref=e1676]
+            - cell "Bel" [ref=e1677]
+            - cell "Edit Delete" [ref=e1678]:
+              - generic [ref=e1679]:
+                - link "Edit" [ref=e1680] [cursor=pointer]:
+                  - /url: /assignments/173/edit
+                - button "Delete" [ref=e1682] [cursor=pointer]
+          - row "John Raphael Villaluz Dela Paz Ryan McFarland Fractional CFO Separated Full-Time — Bel Edit Delete" [ref=e1683]:
+            - cell "John Raphael Villaluz Dela Paz" [ref=e1684]:
+              - strong [ref=e1685]: John Raphael Villaluz Dela Paz
+            - cell "Ryan McFarland" [ref=e1686]
+            - cell "Fractional CFO" [ref=e1687]
+            - cell "Separated" [ref=e1688]:
+              - generic [ref=e1689]: Separated
+            - cell "Full-Time" [ref=e1690]
+            - cell "—" [ref=e1691]
+            - cell "Bel" [ref=e1692]
+            - cell "Edit Delete" [ref=e1693]:
+              - generic [ref=e1694]:
+                - link "Edit" [ref=e1695] [cursor=pointer]:
+                  - /url: /assignments/128/edit
+                - button "Delete" [ref=e1697] [cursor=pointer]
+          - row "Joline Aubrey De Leon Madison Mains - Mains Marketing LLC GoHighLevel - Automations and Customer Support Active Full-Time — Bel Edit Delete" [ref=e1698]:
+            - cell "Joline Aubrey De Leon" [ref=e1699]:
+              - strong [ref=e1700]: Joline Aubrey De Leon
+            - cell "Madison Mains - Mains Marketing LLC" [ref=e1701]
+            - cell "GoHighLevel - Automations and Customer Support" [ref=e1702]
+            - cell "Active" [ref=e1703]:
+              - generic [ref=e1704]: Active
+            - cell "Full-Time" [ref=e1705]
+            - cell "—" [ref=e1706]
+            - cell "Bel" [ref=e1707]
+            - cell "Edit Delete" [ref=e1708]:
+              - generic [ref=e1709]:
+                - link "Edit" [ref=e1710] [cursor=pointer]:
+                  - /url: /assignments/72/edit
+                - button "Delete" [ref=e1712] [cursor=pointer]
+          - row "Jose Miguel Villamor Alex Tucci (TDL) Content Production Assistant Probation Full-Time — Bel Edit Delete" [ref=e1713]:
+            - cell "Jose Miguel Villamor" [ref=e1714]:
+              - strong [ref=e1715]: Jose Miguel Villamor
+            - cell "Alex Tucci (TDL)" [ref=e1716]
+            - cell "Content Production Assistant" [ref=e1717]
+            - cell "Probation" [ref=e1718]:
+              - generic [ref=e1719]: Probation
+            - cell "Full-Time" [ref=e1720]
+            - cell "—" [ref=e1721]
+            - cell "Bel" [ref=e1722]
+            - cell "Edit Delete" [ref=e1723]:
+              - generic [ref=e1724]:
+                - link "Edit" [ref=e1725] [cursor=pointer]:
+                  - /url: /assignments/224/edit
+                - button "Delete" [ref=e1727] [cursor=pointer]
+          - row "Josef Roy Advincula Luke Harmon Hubspot Account Manager Active Full-Time $2,201 Bel Edit Delete" [ref=e1728]:
+            - cell "Josef Roy Advincula" [ref=e1729]:
+              - strong [ref=e1730]: Josef Roy Advincula
+            - cell "Luke Harmon" [ref=e1731]
+            - cell "Hubspot Account Manager" [ref=e1732]
+            - cell "Active" [ref=e1733]:
+              - generic [ref=e1734]: Active
+            - cell "Full-Time" [ref=e1735]
+            - cell "$2,201" [ref=e1736]
+            - cell "Bel" [ref=e1737]
+            - cell "Edit Delete" [ref=e1738]:
+              - generic [ref=e1739]:
+                - link "Edit" [ref=e1740] [cursor=pointer]:
+                  - /url: /assignments/62/edit
+                - button "Delete" [ref=e1742] [cursor=pointer]
+          - row "Josemaria Garrido Domingo Thomas Lotrecchiano (Vitawild) Marketing Assistant Separated Full-Time — Bel Edit Delete" [ref=e1743]:
+            - cell "Josemaria Garrido Domingo" [ref=e1744]:
+              - strong [ref=e1745]: Josemaria Garrido Domingo
+            - cell "Thomas Lotrecchiano (Vitawild)" [ref=e1746]
+            - cell "Marketing Assistant" [ref=e1747]
+            - cell "Separated" [ref=e1748]:
+              - generic [ref=e1749]: Separated
+            - cell "Full-Time" [ref=e1750]
+            - cell "—" [ref=e1751]
+            - cell "Bel" [ref=e1752]
+            - cell "Edit Delete" [ref=e1753]:
+              - generic [ref=e1754]:
+                - link "Edit" [ref=e1755] [cursor=pointer]:
+                  - /url: /assignments/158/edit
+                - button "Delete" [ref=e1757] [cursor=pointer]
+          - row "Josh Hamlin Ryan McFarland General Counsel Separated — — Bel Edit Delete" [ref=e1758]:
+            - cell "Josh Hamlin" [ref=e1759]:
+              - strong [ref=e1760]: Josh Hamlin
+            - cell "Ryan McFarland" [ref=e1761]
+            - cell "General Counsel" [ref=e1762]
+            - cell "Separated" [ref=e1763]:
+              - generic [ref=e1764]: Separated
+            - cell "—" [ref=e1765]
+            - cell "—" [ref=e1766]
+            - cell "Bel" [ref=e1767]
+            - cell "Edit Delete" [ref=e1768]:
+              - generic [ref=e1769]:
+                - link "Edit" [ref=e1770] [cursor=pointer]:
+                  - /url: /assignments/56/edit
+                - button "Delete" [ref=e1772] [cursor=pointer]
+          - row "Jovelyn Villa Alonzo Ian Blair Shopify CSR OP Separated Full-Time — Bel Edit Delete" [ref=e1773]:
+            - cell "Jovelyn Villa Alonzo" [ref=e1774]:
+              - strong [ref=e1775]: Jovelyn Villa Alonzo
+            - cell "Ian Blair" [ref=e1776]
+            - cell "Shopify CSR OP" [ref=e1777]
+            - cell "Separated" [ref=e1778]:
+              - generic [ref=e1779]: Separated
+            - cell "Full-Time" [ref=e1780]
+            - cell "—" [ref=e1781]
+            - cell "Bel" [ref=e1782]
+            - cell "Edit Delete" [ref=e1783]:
+              - generic [ref=e1784]:
+                - link "Edit" [ref=e1785] [cursor=pointer]:
+                  - /url: /assignments/169/edit
+                - button "Delete" [ref=e1787] [cursor=pointer]
+          - row "Jubrena Enopia Scott Conley Bookkeeper/Accounts Payable Specialist Active Full-Time — Bel Edit Delete" [ref=e1788]:
+            - cell "Jubrena Enopia" [ref=e1789]:
+              - strong [ref=e1790]: Jubrena Enopia
+            - cell "Scott Conley" [ref=e1791]
+            - cell "Bookkeeper/Accounts Payable Specialist" [ref=e1792]
+            - cell "Active" [ref=e1793]:
+              - generic [ref=e1794]: Active
+            - cell "Full-Time" [ref=e1795]
+            - cell "—" [ref=e1796]
+            - cell "Bel" [ref=e1797]
+            - cell "Edit Delete" [ref=e1798]:
+              - generic [ref=e1799]:
+                - link "Edit" [ref=e1800] [cursor=pointer]:
+                  - /url: /assignments/11/edit
+                - button "Delete" [ref=e1802] [cursor=pointer]
+          - row "Judelyn Delector Velasco Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Full-Time — Bel Edit Delete" [ref=e1803]:
+            - cell "Judelyn Delector Velasco" [ref=e1804]:
+              - strong [ref=e1805]: Judelyn Delector Velasco
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1806]
+            - cell "Dispatcher OP" [ref=e1807]
+            - cell "Separated" [ref=e1808]:
+              - generic [ref=e1809]: Separated
+            - cell "Full-Time" [ref=e1810]
+            - cell "—" [ref=e1811]
+            - cell "Bel" [ref=e1812]
+            - cell "Edit Delete" [ref=e1813]:
+              - generic [ref=e1814]:
+                - link "Edit" [ref=e1815] [cursor=pointer]:
+                  - /url: /assignments/121/edit
+                - button "Delete" [ref=e1817] [cursor=pointer]
+          - row "Julie Ann Ranin Jacob Azevedo Medical Virtual Assistant Active Full-Time — Adrian Edit Delete" [ref=e1818]:
+            - cell "Julie Ann Ranin" [ref=e1819]:
+              - strong [ref=e1820]: Julie Ann Ranin
+            - cell "Jacob Azevedo" [ref=e1821]
+            - cell "Medical Virtual Assistant" [ref=e1822]
+            - cell "Active" [ref=e1823]:
+              - generic [ref=e1824]: Active
+            - cell "Full-Time" [ref=e1825]
+            - cell "—" [ref=e1826]
+            - cell "Adrian" [ref=e1827]
+            - cell "Edit Delete" [ref=e1828]:
+              - generic [ref=e1829]:
+                - link "Edit" [ref=e1830] [cursor=pointer]:
+                  - /url: /assignments/95/edit
+                - button "Delete" [ref=e1832] [cursor=pointer]
+          - row "Julius Christopher Ramos Madison Mains - Mains Marketing LLC GoHighLevel - Automation Specialist OP Active Full-Time — Bel Edit Delete" [ref=e1833]:
+            - cell "Julius Christopher Ramos" [ref=e1834]:
+              - strong [ref=e1835]: Julius Christopher Ramos
+            - cell "Madison Mains - Mains Marketing LLC" [ref=e1836]
+            - cell "GoHighLevel - Automation Specialist OP" [ref=e1837]
+            - cell "Active" [ref=e1838]:
+              - generic [ref=e1839]: Active
+            - cell "Full-Time" [ref=e1840]
+            - cell "—" [ref=e1841]
+            - cell "Bel" [ref=e1842]
+            - cell "Edit Delete" [ref=e1843]:
+              - generic [ref=e1844]:
+                - link "Edit" [ref=e1845] [cursor=pointer]:
+                  - /url: /assignments/190/edit
+                - button "Delete" [ref=e1847] [cursor=pointer]
+          - row "Junie joy Gaudier Sabino One PLTFRM (Cecil Barton) Lead Generation Specialist Separated Full-Time — Adrian Edit Delete" [ref=e1848]:
+            - cell "Junie joy Gaudier Sabino" [ref=e1849]:
+              - strong [ref=e1850]: Junie joy Gaudier Sabino
+            - cell "One PLTFRM (Cecil Barton)" [ref=e1851]
+            - cell "Lead Generation Specialist" [ref=e1852]
+            - cell "Separated" [ref=e1853]:
+              - generic [ref=e1854]: Separated
+            - cell "Full-Time" [ref=e1855]
+            - cell "—" [ref=e1856]
+            - cell "Adrian" [ref=e1857]
+            - cell "Edit Delete" [ref=e1858]:
+              - generic [ref=e1859]:
+                - link "Edit" [ref=e1860] [cursor=pointer]:
+                  - /url: /assignments/111/edit
+                - button "Delete" [ref=e1862] [cursor=pointer]
+          - row "Justine Marie Palattao Tabucanon Adam Wolfson and Noah Wolfson (Wolfson BTR) Accounting and Finance Assistant Separated Part-Time — Bel Edit Delete" [ref=e1863]:
+            - cell "Justine Marie Palattao Tabucanon" [ref=e1864]:
+              - strong [ref=e1865]: Justine Marie Palattao Tabucanon
+            - cell "Adam Wolfson and Noah Wolfson (Wolfson BTR)" [ref=e1866]
+            - cell "Accounting and Finance Assistant" [ref=e1867]
+            - cell "Separated" [ref=e1868]:
+              - generic [ref=e1869]: Separated
+            - cell "Part-Time" [ref=e1870]
+            - cell "—" [ref=e1871]
+            - cell "Bel" [ref=e1872]
+            - cell "Edit Delete" [ref=e1873]:
+              - generic [ref=e1874]:
+                - link "Edit" [ref=e1875] [cursor=pointer]:
+                  - /url: /assignments/197/edit
+                - button "Delete" [ref=e1877] [cursor=pointer]
+          - row "Justine Marie Roce Ellen Long/Randy Long Executive Assistant Active Full-Time — Adrian Edit Delete" [ref=e1878]:
+            - cell "Justine Marie Roce" [ref=e1879]:
+              - strong [ref=e1880]: Justine Marie Roce
+            - cell "Ellen Long/Randy Long" [ref=e1881]
+            - cell "Executive Assistant" [ref=e1882]
+            - cell "Active" [ref=e1883]:
+              - generic [ref=e1884]: Active
+            - cell "Full-Time" [ref=e1885]
+            - cell "—" [ref=e1886]
+            - cell "Adrian" [ref=e1887]
+            - cell "Edit Delete" [ref=e1888]:
+              - generic [ref=e1889]:
+                - link "Edit" [ref=e1890] [cursor=pointer]:
+                  - /url: /assignments/97/edit
+                - button "Delete" [ref=e1892] [cursor=pointer]
+          - row "Kaele Venice Chavez Castillo Josh Nelson Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e1893]:
+            - cell "Kaele Venice Chavez Castillo" [ref=e1894]:
+              - strong [ref=e1895]: Kaele Venice Chavez Castillo
+            - cell "Josh Nelson" [ref=e1896]
+            - cell "Executive Assistant" [ref=e1897]
+            - cell "Active" [ref=e1898]:
+              - generic [ref=e1899]: Active
+            - cell "Full-Time" [ref=e1900]
+            - cell "—" [ref=e1901]
+            - cell "Bel" [ref=e1902]
+            - cell "Edit Delete" [ref=e1903]:
+              - generic [ref=e1904]:
+                - link "Edit" [ref=e1905] [cursor=pointer]:
+                  - /url: /assignments/126/edit
+                - button "Delete" [ref=e1907] [cursor=pointer]
+          - row "Karen Allyssa Mae Velez Daquio Thomas Lotrecchiano (Vitawild) Marketing Assistant Separated Full-Time — Adrian Edit Delete" [ref=e1908]:
+            - cell "Karen Allyssa Mae Velez Daquio" [ref=e1909]:
+              - strong [ref=e1910]: Karen Allyssa Mae Velez Daquio
+            - cell "Thomas Lotrecchiano (Vitawild)" [ref=e1911]
+            - cell "Marketing Assistant" [ref=e1912]
+            - cell "Separated" [ref=e1913]:
+              - generic [ref=e1914]: Separated
+            - cell "Full-Time" [ref=e1915]
+            - cell "—" [ref=e1916]
+            - cell "Adrian" [ref=e1917]
+            - cell "Edit Delete" [ref=e1918]:
+              - generic [ref=e1919]:
+                - link "Edit" [ref=e1920] [cursor=pointer]:
+                  - /url: /assignments/124/edit
+                - button "Delete" [ref=e1922] [cursor=pointer]
+          - row "Karessa Joy Batuigas Margallo Nayia Pierrakos Executive Marketing Assistant Separated Full-Time — Bel Edit Delete" [ref=e1923]:
+            - cell "Karessa Joy Batuigas Margallo" [ref=e1924]:
+              - strong [ref=e1925]: Karessa Joy Batuigas Margallo
+            - cell "Nayia Pierrakos" [ref=e1926]
+            - cell "Executive Marketing Assistant" [ref=e1927]
+            - cell "Separated" [ref=e1928]:
+              - generic [ref=e1929]: Separated
+            - cell "Full-Time" [ref=e1930]
+            - cell "—" [ref=e1931]
+            - cell "Bel" [ref=e1932]
+            - cell "Edit Delete" [ref=e1933]:
+              - generic [ref=e1934]:
+                - link "Edit" [ref=e1935] [cursor=pointer]:
+                  - /url: /assignments/184/edit
+                - button "Delete" [ref=e1937] [cursor=pointer]
+          - row "Karl Michael Kenneth Narcisa Colmenar Jenna Corredor Creative Marketing Support Active Full-Time — Bel Edit Delete" [ref=e1938]:
+            - cell "Karl Michael Kenneth Narcisa Colmenar" [ref=e1939]:
+              - strong [ref=e1940]: Karl Michael Kenneth Narcisa Colmenar
+            - cell "Jenna Corredor" [ref=e1941]
+            - cell "Creative Marketing Support" [ref=e1942]
+            - cell "Active" [ref=e1943]:
+              - generic [ref=e1944]: Active
+            - cell "Full-Time" [ref=e1945]
+            - cell "—" [ref=e1946]
+            - cell "Bel" [ref=e1947]
+            - cell "Edit Delete" [ref=e1948]:
+              - generic [ref=e1949]:
+                - link "Edit" [ref=e1950] [cursor=pointer]:
+                  - /url: /assignments/200/edit
+                - button "Delete" [ref=e1952] [cursor=pointer]
+          - row "Kassandra Tsihlis Greg and Lisa Shields Executive Assistant Probation Full-Time — Bel Edit Delete" [ref=e1953]:
+            - cell "Kassandra Tsihlis" [ref=e1954]:
+              - strong [ref=e1955]: Kassandra Tsihlis
+            - cell "Greg and Lisa Shields" [ref=e1956]
+            - cell "Executive Assistant" [ref=e1957]
+            - cell "Probation" [ref=e1958]:
+              - generic [ref=e1959]: Probation
+            - cell "Full-Time" [ref=e1960]
+            - cell "—" [ref=e1961]
+            - cell "Bel" [ref=e1962]
+            - cell "Edit Delete" [ref=e1963]:
+              - generic [ref=e1964]:
+                - link "Edit" [ref=e1965] [cursor=pointer]:
+                  - /url: /assignments/230/edit
+                - button "Delete" [ref=e1967] [cursor=pointer]
+          - row "Katarina Figueroa -Alcaide Connor Miller (ArdentX) Order Entry Specialist Separated Full-Time — Adrian Edit Delete" [ref=e1968]:
+            - cell "Katarina Figueroa -Alcaide" [ref=e1969]:
+              - strong [ref=e1970]: Katarina Figueroa -Alcaide
+            - cell "Connor Miller (ArdentX)" [ref=e1971]
+            - cell "Order Entry Specialist" [ref=e1972]
+            - cell "Separated" [ref=e1973]:
+              - generic [ref=e1974]: Separated
+            - cell "Full-Time" [ref=e1975]
+            - cell "—" [ref=e1976]
+            - cell "Adrian" [ref=e1977]
+            - cell "Edit Delete" [ref=e1978]:
+              - generic [ref=e1979]:
+                - link "Edit" [ref=e1980] [cursor=pointer]:
+                  - /url: /assignments/74/edit
+                - button "Delete" [ref=e1982] [cursor=pointer]
+          - row "Kathleen Charmaine Naraval Ramirez Andrea Race / BeautyBlender Ecommerce DTC Coordinator - Beautyblender Active Full-Time — Bel Edit Delete" [ref=e1983]:
+            - cell "Kathleen Charmaine Naraval Ramirez" [ref=e1984]:
+              - strong [ref=e1985]: Kathleen Charmaine Naraval Ramirez
+            - cell "Andrea Race / BeautyBlender" [ref=e1986]
+            - cell "Ecommerce DTC Coordinator - Beautyblender" [ref=e1987]
+            - cell "Active" [ref=e1988]:
+              - generic [ref=e1989]: Active
+            - cell "Full-Time" [ref=e1990]
+            - cell "—" [ref=e1991]
+            - cell "Bel" [ref=e1992]
+            - cell "Edit Delete" [ref=e1993]:
+              - generic [ref=e1994]:
+                - link "Edit" [ref=e1995] [cursor=pointer]:
+                  - /url: /assignments/218/edit
+                - button "Delete" [ref=e1997] [cursor=pointer]
+          - row "Kathleen Rae De Castro Villanueva Ian Blair Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e1998]:
+            - cell "Kathleen Rae De Castro Villanueva" [ref=e1999]:
+              - strong [ref=e2000]: Kathleen Rae De Castro Villanueva
+            - cell "Ian Blair" [ref=e2001]
+            - cell "Executive Assistant" [ref=e2002]
+            - cell "Separated" [ref=e2003]:
+              - generic [ref=e2004]: Separated
+            - cell "Full-Time" [ref=e2005]
+            - cell "—" [ref=e2006]
+            - cell "Bel" [ref=e2007]
+            - cell "Edit Delete" [ref=e2008]:
+              - generic [ref=e2009]:
+                - link "Edit" [ref=e2010] [cursor=pointer]:
+                  - /url: /assignments/33/edit
+                - button "Delete" [ref=e2012] [cursor=pointer]
+          - row "Kathleen Rae De Castro Villanueva Masen Davis Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e2013]:
+            - cell "Kathleen Rae De Castro Villanueva" [ref=e2014]:
+              - strong [ref=e2015]: Kathleen Rae De Castro Villanueva
+            - cell "Masen Davis" [ref=e2016]
+            - cell "Executive Assistant" [ref=e2017]
+            - cell "Active" [ref=e2018]:
+              - generic [ref=e2019]: Active
+            - cell "Full-Time" [ref=e2020]
+            - cell "—" [ref=e2021]
+            - cell "Bel" [ref=e2022]
+            - cell "Edit Delete" [ref=e2023]:
+              - generic [ref=e2024]:
+                - link "Edit" [ref=e2025] [cursor=pointer]:
+                  - /url: /assignments/172/edit
+                - button "Delete" [ref=e2027] [cursor=pointer]
+          - row "Kathrina Giene Shimano Jason Paulus Executive Assistant Active Full-Time $2,108 Adrian Edit Delete" [ref=e2028]:
+            - cell "Kathrina Giene Shimano" [ref=e2029]:
+              - strong [ref=e2030]: Kathrina Giene Shimano
+            - cell "Jason Paulus" [ref=e2031]
+            - cell "Executive Assistant" [ref=e2032]
+            - cell "Active" [ref=e2033]:
+              - generic [ref=e2034]: Active
+            - cell "Full-Time" [ref=e2035]
+            - cell "$2,108" [ref=e2036]
+            - cell "Adrian" [ref=e2037]
+            - cell "Edit Delete" [ref=e2038]:
+              - generic [ref=e2039]:
+                - link "Edit" [ref=e2040] [cursor=pointer]:
+                  - /url: /assignments/102/edit
+                - button "Delete" [ref=e2042] [cursor=pointer]
+          - row "Katrina Marie Ituriaga Toccara Drucker Executive Assistant Active 6 Hours — Adrian Edit Delete" [ref=e2043]:
+            - cell "Katrina Marie Ituriaga" [ref=e2044]:
+              - strong [ref=e2045]: Katrina Marie Ituriaga
+            - cell "Toccara Drucker" [ref=e2046]
+            - cell "Executive Assistant" [ref=e2047]
+            - cell "Active" [ref=e2048]:
+              - generic [ref=e2049]: Active
+            - cell "6 Hours" [ref=e2050]
+            - cell "—" [ref=e2051]
+            - cell "Adrian" [ref=e2052]
+            - cell "Edit Delete" [ref=e2053]:
+              - generic [ref=e2054]:
+                - link "Edit" [ref=e2055] [cursor=pointer]:
+                  - /url: /assignments/80/edit
+                - button "Delete" [ref=e2057] [cursor=pointer]
+          - row "Kempee S. Gumasing Daniel Hambrick Insurance CSR Separated Full-Time — Bel Edit Delete" [ref=e2058]:
+            - cell "Kempee S. Gumasing" [ref=e2059]:
+              - strong [ref=e2060]: Kempee S. Gumasing
+            - cell "Daniel Hambrick" [ref=e2061]
+            - cell "Insurance CSR" [ref=e2062]
+            - cell "Separated" [ref=e2063]:
+              - generic [ref=e2064]: Separated
+            - cell "Full-Time" [ref=e2065]
+            - cell "—" [ref=e2066]
+            - cell "Bel" [ref=e2067]
+            - cell "Edit Delete" [ref=e2068]:
+              - generic [ref=e2069]:
+                - link "Edit" [ref=e2070] [cursor=pointer]:
+                  - /url: /assignments/176/edit
+                - button "Delete" [ref=e2072] [cursor=pointer]
+          - row "Kerwin Samlero Adam Robinson Executive Assistant Active Full-Time — Adrian Edit Delete" [ref=e2073]:
+            - cell "Kerwin Samlero" [ref=e2074]:
+              - strong [ref=e2075]: Kerwin Samlero
+            - cell "Adam Robinson" [ref=e2076]
+            - cell "Executive Assistant" [ref=e2077]
+            - cell "Active" [ref=e2078]:
+              - generic [ref=e2079]: Active
+            - cell "Full-Time" [ref=e2080]
+            - cell "—" [ref=e2081]
+            - cell "Adrian" [ref=e2082]
+            - cell "Edit Delete" [ref=e2083]:
+              - generic [ref=e2084]:
+                - link "Edit" [ref=e2085] [cursor=pointer]:
+                  - /url: /assignments/100/edit
+                - button "Delete" [ref=e2087] [cursor=pointer]
+          - row "Khenn Mark De Chavez Baybay Dr. Betty Murray Executive Assistant OP Active Full-Time — Bel Edit Delete" [ref=e2088]:
+            - cell "Khenn Mark De Chavez Baybay" [ref=e2089]:
+              - strong [ref=e2090]: Khenn Mark De Chavez Baybay
+            - cell "Dr. Betty Murray" [ref=e2091]
+            - cell "Executive Assistant OP" [ref=e2092]
+            - cell "Active" [ref=e2093]:
+              - generic [ref=e2094]: Active
+            - cell "Full-Time" [ref=e2095]
+            - cell "—" [ref=e2096]
+            - cell "Bel" [ref=e2097]
+            - cell "Edit Delete" [ref=e2098]:
+              - generic [ref=e2099]:
+                - link "Edit" [ref=e2100] [cursor=pointer]:
+                  - /url: /assignments/144/edit
+                - button "Delete" [ref=e2102] [cursor=pointer]
+          - row "Kimberly Kate Caballes Austin Blair/ Laundry Sauce Shopify Customer Service Representative Separated Full-Time — Bel Edit Delete" [ref=e2103]:
+            - cell "Kimberly Kate Caballes" [ref=e2104]:
+              - strong [ref=e2105]: Kimberly Kate Caballes
+            - cell "Austin Blair/ Laundry Sauce" [ref=e2106]
+            - cell "Shopify Customer Service Representative" [ref=e2107]
+            - cell "Separated" [ref=e2108]:
+              - generic [ref=e2109]: Separated
+            - cell "Full-Time" [ref=e2110]
+            - cell "—" [ref=e2111]
+            - cell "Bel" [ref=e2112]
+            - cell "Edit Delete" [ref=e2113]:
+              - generic [ref=e2114]:
+                - link "Edit" [ref=e2115] [cursor=pointer]:
+                  - /url: /assignments/6/edit
+                - button "Delete" [ref=e2117] [cursor=pointer]
+          - row "Kristine Celino Clint Murphy / Lesley Murphy Social Media Assistant Separated Full-Time — Bel Edit Delete" [ref=e2118]:
+            - cell "Kristine Celino" [ref=e2119]:
+              - strong [ref=e2120]: Kristine Celino
+            - cell "Clint Murphy / Lesley Murphy" [ref=e2121]
+            - cell "Social Media Assistant" [ref=e2122]
+            - cell "Separated" [ref=e2123]:
+              - generic [ref=e2124]: Separated
+            - cell "Full-Time" [ref=e2125]
+            - cell "—" [ref=e2126]
+            - cell "Bel" [ref=e2127]
+            - cell "Edit Delete" [ref=e2128]:
+              - generic [ref=e2129]:
+                - link "Edit" [ref=e2130] [cursor=pointer]:
+                  - /url: /assignments/9/edit
+                - button "Delete" [ref=e2132] [cursor=pointer]
+          - row "Kristine Celino Jessica Kerr (Catalyst Agency) Marketing Assistant Active Part-Time — Bel Edit Delete" [ref=e2133]:
+            - cell "Kristine Celino" [ref=e2134]:
+              - strong [ref=e2135]: Kristine Celino
+            - cell "Jessica Kerr (Catalyst Agency)" [ref=e2136]
+            - cell "Marketing Assistant" [ref=e2137]
+            - cell "Active" [ref=e2138]:
+              - generic [ref=e2139]: Active
+            - cell "Part-Time" [ref=e2140]
+            - cell "—" [ref=e2141]
+            - cell "Bel" [ref=e2142]
+            - cell "Edit Delete" [ref=e2143]:
+              - generic [ref=e2144]:
+                - link "Edit" [ref=e2145] [cursor=pointer]:
+                  - /url: /assignments/157/edit
+                - button "Delete" [ref=e2147] [cursor=pointer]
+          - row "Krisven Mae Leynes Aaron Martin (Martin Law and Mediation) Legal Admin Assistant Separated Full-Time — Bel Edit Delete" [ref=e2148]:
+            - cell "Krisven Mae Leynes" [ref=e2149]:
+              - strong [ref=e2150]: Krisven Mae Leynes
+            - cell "Aaron Martin (Martin Law and Mediation)" [ref=e2151]
+            - cell "Legal Admin Assistant" [ref=e2152]
+            - cell "Separated" [ref=e2153]:
+              - generic [ref=e2154]: Separated
+            - cell "Full-Time" [ref=e2155]
+            - cell "—" [ref=e2156]
+            - cell "Bel" [ref=e2157]
+            - cell "Edit Delete" [ref=e2158]:
+              - generic [ref=e2159]:
+                - link "Edit" [ref=e2160] [cursor=pointer]:
+                  - /url: /assignments/19/edit
+                - button "Delete" [ref=e2162] [cursor=pointer]
+          - row "Ladilou Vale Almonte Jr. Ian Blair CSR Separated Full-Time — Bel Edit Delete" [ref=e2163]:
+            - cell "Ladilou Vale Almonte Jr." [ref=e2164]:
+              - strong [ref=e2165]: Ladilou Vale Almonte Jr.
+            - cell "Ian Blair" [ref=e2166]
+            - cell "CSR" [ref=e2167]
+            - cell "Separated" [ref=e2168]:
+              - generic [ref=e2169]: Separated
+            - cell "Full-Time" [ref=e2170]
+            - cell "—" [ref=e2171]
+            - cell "Bel" [ref=e2172]
+            - cell "Edit Delete" [ref=e2173]:
+              - generic [ref=e2174]:
+                - link "Edit" [ref=e2175] [cursor=pointer]:
+                  - /url: /assignments/166/edit
+                - button "Delete" [ref=e2177] [cursor=pointer]
+          - row "Lady Shirmel Pagutayao Anchoriz Larry Evans Executive Sales Assistant Separated Full-Time — Bel Edit Delete" [ref=e2178]:
+            - cell "Lady Shirmel Pagutayao Anchoriz" [ref=e2179]:
+              - strong [ref=e2180]: Lady Shirmel Pagutayao Anchoriz
+            - cell "Larry Evans" [ref=e2181]
+            - cell "Executive Sales Assistant" [ref=e2182]
+            - cell "Separated" [ref=e2183]:
+              - generic [ref=e2184]: Separated
+            - cell "Full-Time" [ref=e2185]
+            - cell "—" [ref=e2186]
+            - cell "Bel" [ref=e2187]
+            - cell "Edit Delete" [ref=e2188]:
+              - generic [ref=e2189]:
+                - link "Edit" [ref=e2190] [cursor=pointer]:
+                  - /url: /assignments/171/edit
+                - button "Delete" [ref=e2192] [cursor=pointer]
+          - row "Lady Shirmel Pagutayao Anchoriz Gavin Klauser AI-Driven Operations Assistant Probation Full-Time — Bel Edit Delete" [ref=e2193]:
+            - cell "Lady Shirmel Pagutayao Anchoriz" [ref=e2194]:
+              - strong [ref=e2195]: Lady Shirmel Pagutayao Anchoriz
+            - cell "Gavin Klauser" [ref=e2196]
+            - cell "AI-Driven Operations Assistant" [ref=e2197]
+            - cell "Probation" [ref=e2198]:
+              - generic [ref=e2199]: Probation
+            - cell "Full-Time" [ref=e2200]
+            - cell "—" [ref=e2201]
+            - cell "Bel" [ref=e2202]
+            - cell "Edit Delete" [ref=e2203]:
+              - generic [ref=e2204]:
+                - link "Edit" [ref=e2205] [cursor=pointer]:
+                  - /url: /assignments/234/edit
+                - button "Delete" [ref=e2207] [cursor=pointer]
+          - row "Laurice Anne Castillo Patrick O'meara Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e2208]:
+            - cell "Laurice Anne Castillo" [ref=e2209]:
+              - strong [ref=e2210]: Laurice Anne Castillo
+            - cell "Patrick O'meara" [ref=e2211]
+            - cell "Executive Assistant" [ref=e2212]
+            - cell "Separated" [ref=e2213]:
+              - generic [ref=e2214]: Separated
+            - cell "Full-Time" [ref=e2215]
+            - cell "—" [ref=e2216]
+            - cell "Bel" [ref=e2217]
+            - cell "Edit Delete" [ref=e2218]:
+              - generic [ref=e2219]:
+                - link "Edit" [ref=e2220] [cursor=pointer]:
+                  - /url: /assignments/8/edit
+                - button "Delete" [ref=e2222] [cursor=pointer]
+          - row "Laurice Anne Castillo Ross Denny Executive Assistant OP Separated Full-Time 2,026.80 Bel Edit Delete" [ref=e2223]:
+            - cell "Laurice Anne Castillo" [ref=e2224]:
+              - strong [ref=e2225]: Laurice Anne Castillo
+            - cell "Ross Denny" [ref=e2226]
+            - cell "Executive Assistant OP" [ref=e2227]
+            - cell "Separated" [ref=e2228]:
+              - generic [ref=e2229]: Separated
+            - cell "Full-Time" [ref=e2230]
+            - cell "2,026.80" [ref=e2231]
+            - cell "Bel" [ref=e2232]
+            - cell "Edit Delete" [ref=e2233]:
+              - generic [ref=e2234]:
+                - link "Edit" [ref=e2235] [cursor=pointer]:
+                  - /url: /assignments/186/edit
+                - button "Delete" [ref=e2237] [cursor=pointer]
+          - row "Ma. Caisa Salvador Austin Blair/ Laundry Sauce Supply Chain Analyst OP Probation Full-Time — Bel Edit Delete" [ref=e2238]:
+            - cell "Ma. Caisa Salvador" [ref=e2239]:
+              - strong [ref=e2240]: Ma. Caisa Salvador
+            - cell "Austin Blair/ Laundry Sauce" [ref=e2241]
+            - cell "Supply Chain Analyst OP" [ref=e2242]
+            - cell "Probation" [ref=e2243]:
+              - generic [ref=e2244]: Probation
+            - cell "Full-Time" [ref=e2245]
+            - cell "—" [ref=e2246]
+            - cell "Bel" [ref=e2247]
+            - cell "Edit Delete" [ref=e2248]:
+              - generic [ref=e2249]:
+                - link "Edit" [ref=e2250] [cursor=pointer]:
+                  - /url: /assignments/207/edit
+                - button "Delete" [ref=e2252] [cursor=pointer]
+          - row "Ma. Clarisse Ann Adagio Lucas Kemper Creator & Social Commerce Coordinator Probation Full-Time — Adrian Edit Delete" [ref=e2253]:
+            - cell "Ma. Clarisse Ann Adagio" [ref=e2254]:
+              - strong [ref=e2255]: Ma. Clarisse Ann Adagio
+            - cell "Lucas Kemper" [ref=e2256]
+            - cell "Creator & Social Commerce Coordinator" [ref=e2257]
+            - cell "Probation" [ref=e2258]:
+              - generic [ref=e2259]: Probation
+            - cell "Full-Time" [ref=e2260]
+            - cell "—" [ref=e2261]
+            - cell "Adrian" [ref=e2262]
+            - cell "Edit Delete" [ref=e2263]:
+              - generic [ref=e2264]:
+                - link "Edit" [ref=e2265] [cursor=pointer]:
+                  - /url: /assignments/217/edit
+                - button "Delete" [ref=e2267] [cursor=pointer]
+          - row "Ma. Linda Prudenciado Blake Evertsen Client Success Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e2268]:
+            - cell "Ma. Linda Prudenciado" [ref=e2269]:
+              - strong [ref=e2270]: Ma. Linda Prudenciado
+            - cell "Blake Evertsen" [ref=e2271]
+            - cell "Client Success Executive Assistant" [ref=e2272]
+            - cell "Separated" [ref=e2273]:
+              - generic [ref=e2274]: Separated
+            - cell "Full-Time" [ref=e2275]
+            - cell "—" [ref=e2276]
+            - cell "Bel" [ref=e2277]
+            - cell "Edit Delete" [ref=e2278]:
+              - generic [ref=e2279]:
+                - link "Edit" [ref=e2280] [cursor=pointer]:
+                  - /url: /assignments/26/edit
+                - button "Delete" [ref=e2282] [cursor=pointer]
+          - row "Ma. Linda Prudenciado Zac Gulbranson Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e2283]:
+            - cell "Ma. Linda Prudenciado" [ref=e2284]:
+              - strong [ref=e2285]: Ma. Linda Prudenciado
+            - cell "Zac Gulbranson" [ref=e2286]
+            - cell "Executive Assistant" [ref=e2287]
+            - cell "Active" [ref=e2288]:
+              - generic [ref=e2289]: Active
+            - cell "Full-Time" [ref=e2290]
+            - cell "—" [ref=e2291]
+            - cell "Bel" [ref=e2292]
+            - cell "Edit Delete" [ref=e2293]:
+              - generic [ref=e2294]:
+                - link "Edit" [ref=e2295] [cursor=pointer]:
+                  - /url: /assignments/159/edit
+                - button "Delete" [ref=e2297] [cursor=pointer]
+          - row "Ma. Shien Esclavia Aaron Richards Sales Development Representative Separated Full-Time — Bel Edit Delete" [ref=e2298]:
+            - cell "Ma. Shien Esclavia" [ref=e2299]:
+              - strong [ref=e2300]: Ma. Shien Esclavia
+            - cell "Aaron Richards" [ref=e2301]
+            - cell "Sales Development Representative" [ref=e2302]
+            - cell "Separated" [ref=e2303]:
+              - generic [ref=e2304]: Separated
+            - cell "Full-Time" [ref=e2305]
+            - cell "—" [ref=e2306]
+            - cell "Bel" [ref=e2307]
+            - cell "Edit Delete" [ref=e2308]:
+              - generic [ref=e2309]:
+                - link "Edit" [ref=e2310] [cursor=pointer]:
+                  - /url: /assignments/12/edit
+                - button "Delete" [ref=e2312] [cursor=pointer]
+          - row "Ma. Shien Esclavia Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Full-Time — Bel Edit Delete" [ref=e2313]:
+            - cell "Ma. Shien Esclavia" [ref=e2314]:
+              - strong [ref=e2315]: Ma. Shien Esclavia
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2316]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2317]
+            - cell "Separated" [ref=e2318]:
+              - generic [ref=e2319]: Separated
+            - cell "Full-Time" [ref=e2320]
+            - cell "—" [ref=e2321]
+            - cell "Bel" [ref=e2322]
+            - cell "Edit Delete" [ref=e2323]:
+              - generic [ref=e2324]:
+                - link "Edit" [ref=e2325] [cursor=pointer]:
+                  - /url: /assignments/117/edit
+                - button "Delete" [ref=e2327] [cursor=pointer]
+          - row "Ma. Shien Esclavia Aaron Redman Insurance Admin Assistant Separated Full-Time — Bel Edit Delete" [ref=e2328]:
+            - cell "Ma. Shien Esclavia" [ref=e2329]:
+              - strong [ref=e2330]: Ma. Shien Esclavia
+            - cell "Aaron Redman" [ref=e2331]
+            - cell "Insurance Admin Assistant" [ref=e2332]
+            - cell "Separated" [ref=e2333]:
+              - generic [ref=e2334]: Separated
+            - cell "Full-Time" [ref=e2335]
+            - cell "—" [ref=e2336]
+            - cell "Bel" [ref=e2337]
+            - cell "Edit Delete" [ref=e2338]:
+              - generic [ref=e2339]:
+                - link "Edit" [ref=e2340] [cursor=pointer]:
+                  - /url: /assignments/209/edit
+                - button "Delete" [ref=e2342] [cursor=pointer]
+          - row "Marc Waltson Leandado Dr. Matthew and Theresa Steiner Admin Support OP Separated Full-Time — Bel Edit Delete" [ref=e2343]:
+            - cell "Marc Waltson Leandado" [ref=e2344]:
+              - strong [ref=e2345]: Marc Waltson Leandado
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e2346]
+            - cell "Admin Support OP" [ref=e2347]
+            - cell "Separated" [ref=e2348]:
+              - generic [ref=e2349]: Separated
+            - cell "Full-Time" [ref=e2350]
+            - cell "—" [ref=e2351]
+            - cell "Bel" [ref=e2352]
+            - cell "Edit Delete" [ref=e2353]:
+              - generic [ref=e2354]:
+                - link "Edit" [ref=e2355] [cursor=pointer]:
+                  - /url: /assignments/34/edit
+                - button "Delete" [ref=e2357] [cursor=pointer]
+          - row "Marcloyd Mateo Mirador Ian Blair Shopify Web Developer OP Separated Full-Time — Bel Edit Delete" [ref=e2358]:
+            - cell "Marcloyd Mateo Mirador" [ref=e2359]:
+              - strong [ref=e2360]: Marcloyd Mateo Mirador
+            - cell "Ian Blair" [ref=e2361]
+            - cell "Shopify Web Developer OP" [ref=e2362]
+            - cell "Separated" [ref=e2363]:
+              - generic [ref=e2364]: Separated
+            - cell "Full-Time" [ref=e2365]
+            - cell "—" [ref=e2366]
+            - cell "Bel" [ref=e2367]
+            - cell "Edit Delete" [ref=e2368]:
+              - generic [ref=e2369]:
+                - link "Edit" [ref=e2370] [cursor=pointer]:
+                  - /url: /assignments/196/edit
+                - button "Delete" [ref=e2372] [cursor=pointer]
+          - row "Mardenn Sicam Piñero One PLTFRM (Cecil Barton) Lead Generation Specialist Separated Full-Time — Bel Edit Delete" [ref=e2373]:
+            - cell "Mardenn Sicam Piñero" [ref=e2374]:
+              - strong [ref=e2375]: Mardenn Sicam Piñero
+            - cell "One PLTFRM (Cecil Barton)" [ref=e2376]
+            - cell "Lead Generation Specialist" [ref=e2377]
+            - cell "Separated" [ref=e2378]:
+              - generic [ref=e2379]: Separated
+            - cell "Full-Time" [ref=e2380]
+            - cell "—" [ref=e2381]
+            - cell "Bel" [ref=e2382]
+            - cell "Edit Delete" [ref=e2383]:
+              - generic [ref=e2384]:
+                - link "Edit" [ref=e2385] [cursor=pointer]:
+                  - /url: /assignments/139/edit
+                - button "Delete" [ref=e2387] [cursor=pointer]
+          - row "Maria Edelwina Angeline Gozon Ryan McFarland LinkedIn Bot Assistant Separated Part-Time — Bel Edit Delete" [ref=e2388]:
+            - cell "Maria Edelwina Angeline Gozon" [ref=e2389]:
+              - strong [ref=e2390]: Maria Edelwina Angeline Gozon
+            - cell "Ryan McFarland" [ref=e2391]
+            - cell "LinkedIn Bot Assistant" [ref=e2392]
+            - cell "Separated" [ref=e2393]:
+              - generic [ref=e2394]: Separated
+            - cell "Part-Time" [ref=e2395]
+            - cell "—" [ref=e2396]
+            - cell "Bel" [ref=e2397]
+            - cell "Edit Delete" [ref=e2398]:
+              - generic [ref=e2399]:
+                - link "Edit" [ref=e2400] [cursor=pointer]:
+                  - /url: /assignments/47/edit
+                - button "Delete" [ref=e2402] [cursor=pointer]
+          - row "Maria Elena Sabanal Blake Evertsen Data Operations Manager Separated Full-Time — Bel Edit Delete" [ref=e2403]:
+            - cell "Maria Elena Sabanal" [ref=e2404]:
+              - strong [ref=e2405]: Maria Elena Sabanal
+            - cell "Blake Evertsen" [ref=e2406]
+            - cell "Data Operations Manager" [ref=e2407]
+            - cell "Separated" [ref=e2408]:
+              - generic [ref=e2409]: Separated
+            - cell "Full-Time" [ref=e2410]
+            - cell "—" [ref=e2411]
+            - cell "Bel" [ref=e2412]
+            - cell "Edit Delete" [ref=e2413]:
+              - generic [ref=e2414]:
+                - link "Edit" [ref=e2415] [cursor=pointer]:
+                  - /url: /assignments/29/edit
+                - button "Delete" [ref=e2417] [cursor=pointer]
+          - row "Maria Patricia Arango Perez James Swanwick Bilingual Executive and Personal Assistant OP Separated Full-Time 1,970.73 Bel Edit Delete" [ref=e2418]:
+            - cell "Maria Patricia Arango Perez" [ref=e2419]:
+              - strong [ref=e2420]: Maria Patricia Arango Perez
+            - cell "James Swanwick" [ref=e2421]
+            - cell "Bilingual Executive and Personal Assistant OP" [ref=e2422]
+            - cell "Separated" [ref=e2423]:
+              - generic [ref=e2424]: Separated
+            - cell "Full-Time" [ref=e2425]
+            - cell "1,970.73" [ref=e2426]
+            - cell "Bel" [ref=e2427]
+            - cell "Edit Delete" [ref=e2428]:
+              - generic [ref=e2429]:
+                - link "Edit" [ref=e2430] [cursor=pointer]:
+                  - /url: /assignments/141/edit
+                - button "Delete" [ref=e2432] [cursor=pointer]
+          - row "Mariel Calugay Ryan McFarland Appointment Setter Separated Full-Time — Bel Edit Delete" [ref=e2433]:
+            - cell "Mariel Calugay" [ref=e2434]:
+              - strong [ref=e2435]: Mariel Calugay
+            - cell "Ryan McFarland" [ref=e2436]
+            - cell "Appointment Setter" [ref=e2437]
+            - cell "Separated" [ref=e2438]:
+              - generic [ref=e2439]: Separated
+            - cell "Full-Time" [ref=e2440]
+            - cell "—" [ref=e2441]
+            - cell "Bel" [ref=e2442]
+            - cell "Edit Delete" [ref=e2443]:
+              - generic [ref=e2444]:
+                - link "Edit" [ref=e2445] [cursor=pointer]:
+                  - /url: /assignments/41/edit
+                - button "Delete" [ref=e2447] [cursor=pointer]
+          - row "Marivic Reamico Bautista Josh Fancher / Ryan Goebel (CINQ) Dispatcher Separated Full-Time — Bel Edit Delete" [ref=e2448]:
+            - cell "Marivic Reamico Bautista" [ref=e2449]:
+              - strong [ref=e2450]: Marivic Reamico Bautista
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2451]
+            - cell "Dispatcher" [ref=e2452]
+            - cell "Separated" [ref=e2453]:
+              - generic [ref=e2454]: Separated
+            - cell "Full-Time" [ref=e2455]
+            - cell "—" [ref=e2456]
+            - cell "Bel" [ref=e2457]
+            - cell "Edit Delete" [ref=e2458]:
+              - generic [ref=e2459]:
+                - link "Edit" [ref=e2460] [cursor=pointer]:
+                  - /url: /assignments/127/edit
+                - button "Delete" [ref=e2462] [cursor=pointer]
+          - row "Mark Joseph Zacal Daniel Hambrick Sr. Account Manager Separated Full-Time — Bel Edit Delete" [ref=e2463]:
+            - cell "Mark Joseph Zacal" [ref=e2464]:
+              - strong [ref=e2465]: Mark Joseph Zacal
+            - cell "Daniel Hambrick" [ref=e2466]
+            - cell "Sr. Account Manager" [ref=e2467]
+            - cell "Separated" [ref=e2468]:
+              - generic [ref=e2469]: Separated
+            - cell "Full-Time" [ref=e2470]
+            - cell "—" [ref=e2471]
+            - cell "Bel" [ref=e2472]
+            - cell "Edit Delete" [ref=e2473]:
+              - generic [ref=e2474]:
+                - link "Edit" [ref=e2475] [cursor=pointer]:
+                  - /url: /assignments/222/edit
+                - button "Delete" [ref=e2477] [cursor=pointer]
+          - row "Mark Lester Caraan Luke Harmon Account Strategist OP Probation Full-Time $2,499.79 Bel Edit Delete" [ref=e2478]:
+            - cell "Mark Lester Caraan" [ref=e2479]:
+              - strong [ref=e2480]: Mark Lester Caraan
+            - cell "Luke Harmon" [ref=e2481]
+            - cell "Account Strategist OP" [ref=e2482]
+            - cell "Probation" [ref=e2483]:
+              - generic [ref=e2484]: Probation
+            - cell "Full-Time" [ref=e2485]
+            - cell "$2,499.79" [ref=e2486]
+            - cell "Bel" [ref=e2487]
+            - cell "Edit Delete" [ref=e2488]:
+              - generic [ref=e2489]:
+                - link "Edit" [ref=e2490] [cursor=pointer]:
+                  - /url: /assignments/229/edit
+                - button "Delete" [ref=e2492] [cursor=pointer]
+          - row "Marriene Joy Salas Ryan McFarland Director of Operations Separated Full-Time — Bel Edit Delete" [ref=e2493]:
+            - cell "Marriene Joy Salas" [ref=e2494]:
+              - strong [ref=e2495]: Marriene Joy Salas
+            - cell "Ryan McFarland" [ref=e2496]
+            - cell "Director of Operations" [ref=e2497]
+            - cell "Separated" [ref=e2498]:
+              - generic [ref=e2499]: Separated
+            - cell "Full-Time" [ref=e2500]
+            - cell "—" [ref=e2501]
+            - cell "Bel" [ref=e2502]
+            - cell "Edit Delete" [ref=e2503]:
+              - generic [ref=e2504]:
+                - link "Edit" [ref=e2505] [cursor=pointer]:
+                  - /url: /assignments/54/edit
+                - button "Delete" [ref=e2507] [cursor=pointer]
+          - row "Marvin Elbert Loraya Connor Miller (ArdentX) Executive Assistant Active Full-Time — Adrian Edit Delete" [ref=e2508]:
+            - cell "Marvin Elbert Loraya" [ref=e2509]:
+              - strong [ref=e2510]: Marvin Elbert Loraya
+            - cell "Connor Miller (ArdentX)" [ref=e2511]
+            - cell "Executive Assistant" [ref=e2512]
+            - cell "Active" [ref=e2513]:
+              - generic [ref=e2514]: Active
+            - cell "Full-Time" [ref=e2515]
+            - cell "—" [ref=e2516]
+            - cell "Adrian" [ref=e2517]
+            - cell "Edit Delete" [ref=e2518]:
+              - generic [ref=e2519]:
+                - link "Edit" [ref=e2520] [cursor=pointer]:
+                  - /url: /assignments/83/edit
+                - button "Delete" [ref=e2522] [cursor=pointer]
+          - row "Marvin Vergara Edward Piazza Social Media Marketing Specialist Active Full-Time — Adrian Edit Delete" [ref=e2523]:
+            - cell "Marvin Vergara" [ref=e2524]:
+              - strong [ref=e2525]: Marvin Vergara
+            - cell "Edward Piazza" [ref=e2526]
+            - cell "Social Media Marketing Specialist" [ref=e2527]
+            - cell "Active" [ref=e2528]:
+              - generic [ref=e2529]: Active
+            - cell "Full-Time" [ref=e2530]
+            - cell "—" [ref=e2531]
+            - cell "Adrian" [ref=e2532]
+            - cell "Edit Delete" [ref=e2533]:
+              - generic [ref=e2534]:
+                - link "Edit" [ref=e2535] [cursor=pointer]:
+                  - /url: /assignments/108/edit
+                - button "Delete" [ref=e2537] [cursor=pointer]
+          - row "Mary Anne Soriano Lucas Robinson Customer Support Representative Active Full-Time — Adrian Edit Delete" [ref=e2538]:
+            - cell "Mary Anne Soriano" [ref=e2539]:
+              - strong [ref=e2540]: Mary Anne Soriano
+            - cell "Lucas Robinson" [ref=e2541]
+            - cell "Customer Support Representative" [ref=e2542]
+            - cell "Active" [ref=e2543]:
+              - generic [ref=e2544]: Active
+            - cell "Full-Time" [ref=e2545]
+            - cell "—" [ref=e2546]
+            - cell "Adrian" [ref=e2547]
+            - cell "Edit Delete" [ref=e2548]:
+              - generic [ref=e2549]:
+                - link "Edit" [ref=e2550] [cursor=pointer]:
+                  - /url: /assignments/31/edit
+                - button "Delete" [ref=e2552] [cursor=pointer]
+          - row "Mary Cris Bautista Sotic Joseph Lucosky / Julia Mabin Virtual Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e2553]:
+            - cell "Mary Cris Bautista Sotic" [ref=e2554]:
+              - strong [ref=e2555]: Mary Cris Bautista Sotic
+            - cell "Joseph Lucosky / Julia Mabin" [ref=e2556]
+            - cell "Virtual Executive Assistant" [ref=e2557]
+            - cell "Active" [ref=e2558]:
+              - generic [ref=e2559]: Active
+            - cell "Full-Time" [ref=e2560]
+            - cell "—" [ref=e2561]
+            - cell "Bel" [ref=e2562]
+            - cell "Edit Delete" [ref=e2563]:
+              - generic [ref=e2564]:
+                - link "Edit" [ref=e2565] [cursor=pointer]:
+                  - /url: /assignments/164/edit
+                - button "Delete" [ref=e2567] [cursor=pointer]
+          - row "Mary Dominique Castro Camacho Gavin Klauser Executive Operations Assistant Active Full-Time — Adrian Edit Delete" [ref=e2568]:
+            - cell "Mary Dominique Castro Camacho" [ref=e2569]:
+              - strong [ref=e2570]: Mary Dominique Castro Camacho
+            - cell "Gavin Klauser" [ref=e2571]
+            - cell "Executive Operations Assistant" [ref=e2572]
+            - cell "Active" [ref=e2573]:
+              - generic [ref=e2574]: Active
+            - cell "Full-Time" [ref=e2575]
+            - cell "—" [ref=e2576]
+            - cell "Adrian" [ref=e2577]
+            - cell "Edit Delete" [ref=e2578]:
+              - generic [ref=e2579]:
+                - link "Edit" [ref=e2580] [cursor=pointer]:
+                  - /url: /assignments/131/edit
+                - button "Delete" [ref=e2582] [cursor=pointer]
+          - row "Mary Grace Tan Dizon Andrea Race / BeautyBlender Bookkeeper Separated Full-Time — Bel Edit Delete" [ref=e2583]:
+            - cell "Mary Grace Tan Dizon" [ref=e2584]:
+              - strong [ref=e2585]: Mary Grace Tan Dizon
+            - cell "Andrea Race / BeautyBlender" [ref=e2586]
+            - cell "Bookkeeper" [ref=e2587]
+            - cell "Separated" [ref=e2588]:
+              - generic [ref=e2589]: Separated
+            - cell "Full-Time" [ref=e2590]
+            - cell "—" [ref=e2591]
+            - cell "Bel" [ref=e2592]
+            - cell "Edit Delete" [ref=e2593]:
+              - generic [ref=e2594]:
+                - link "Edit" [ref=e2595] [cursor=pointer]:
+                  - /url: /assignments/179/edit
+                - button "Delete" [ref=e2597] [cursor=pointer]
+          - row "Mary Kathleen Bayron Josh Schwartz Customer Service Representative Active Full-Time — Bel Edit Delete" [ref=e2598]:
+            - cell "Mary Kathleen Bayron" [ref=e2599]:
+              - strong [ref=e2600]: Mary Kathleen Bayron
+            - cell "Josh Schwartz" [ref=e2601]
+            - cell "Customer Service Representative" [ref=e2602]
+            - cell "Active" [ref=e2603]:
+              - generic [ref=e2604]: Active
+            - cell "Full-Time" [ref=e2605]
+            - cell "—" [ref=e2606]
+            - cell "Bel" [ref=e2607]
+            - cell "Edit Delete" [ref=e2608]:
+              - generic [ref=e2609]:
+                - link "Edit" [ref=e2610] [cursor=pointer]:
+                  - /url: /assignments/66/edit
+                - button "Delete" [ref=e2612] [cursor=pointer]
+          - row "Mary Rachelle Trinidad Thomas Turner Executive Assistant Active Full-Time — Bel Edit Delete" [ref=e2613]:
+            - cell "Mary Rachelle Trinidad" [ref=e2614]:
+              - strong [ref=e2615]: Mary Rachelle Trinidad
+            - cell "Thomas Turner" [ref=e2616]
+            - cell "Executive Assistant" [ref=e2617]
+            - cell "Active" [ref=e2618]:
+              - generic [ref=e2619]: Active
+            - cell "Full-Time" [ref=e2620]
+            - cell "—" [ref=e2621]
+            - cell "Bel" [ref=e2622]
+            - cell "Edit Delete" [ref=e2623]:
+              - generic [ref=e2624]:
+                - link "Edit" [ref=e2625] [cursor=pointer]:
+                  - /url: /assignments/198/edit
+                - button "Delete" [ref=e2627] [cursor=pointer]
+          - row "Maynard Ivan Milana Greg and Lisa Shields Executive Assistant Separated Full-Time 1,501.10 Bel Edit Delete" [ref=e2628]:
+            - cell "Maynard Ivan Milana" [ref=e2629]:
+              - strong [ref=e2630]: Maynard Ivan Milana
+            - cell "Greg and Lisa Shields" [ref=e2631]
+            - cell "Executive Assistant" [ref=e2632]
+            - cell "Separated" [ref=e2633]:
+              - generic [ref=e2634]: Separated
+            - cell "Full-Time" [ref=e2635]
+            - cell "1,501.10" [ref=e2636]
+            - cell "Bel" [ref=e2637]
+            - cell "Edit Delete" [ref=e2638]:
+              - generic [ref=e2639]:
+                - link "Edit" [ref=e2640] [cursor=pointer]:
+                  - /url: /assignments/205/edit
+                - button "Delete" [ref=e2642] [cursor=pointer]
+          - row "Melan Manalo Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e2643]:
+            - cell "Melan Manalo" [ref=e2644]:
+              - strong [ref=e2645]: Melan Manalo
+            - cell "Ryan McFarland" [ref=e2646]
+            - cell "Virtual Assistant" [ref=e2647]
+            - cell "Separated" [ref=e2648]:
+              - generic [ref=e2649]: Separated
+            - cell "Full-Time" [ref=e2650]
+            - cell "—" [ref=e2651]
+            - cell "Bel" [ref=e2652]
+            - cell "Edit Delete" [ref=e2653]:
+              - generic [ref=e2654]:
+                - link "Edit" [ref=e2655] [cursor=pointer]:
+                  - /url: /assignments/50/edit
+                - button "Delete" [ref=e2657] [cursor=pointer]
+          - row "Melanie Joy Pecaña Lucas Robinson Bookkeeper Active Full-Time — Adrian Edit Delete" [ref=e2658]:
+            - cell "Melanie Joy Pecaña" [ref=e2659]:
+              - strong [ref=e2660]: Melanie Joy Pecaña
+            - cell "Lucas Robinson" [ref=e2661]
+            - cell "Bookkeeper" [ref=e2662]
+            - cell "Active" [ref=e2663]:
+              - generic [ref=e2664]: Active
+            - cell "Full-Time" [ref=e2665]
+            - cell "—" [ref=e2666]
+            - cell "Adrian" [ref=e2667]
+            - cell "Edit Delete" [ref=e2668]:
+              - generic [ref=e2669]:
+                - link "Edit" [ref=e2670] [cursor=pointer]:
+                  - /url: /assignments/24/edit
+                - button "Delete" [ref=e2672] [cursor=pointer]
+          - row "Melody Berdan Josh Fancher / Dustin Terry Project Manager Separated Full-Time — Adrian Edit Delete" [ref=e2673]:
+            - cell "Melody Berdan" [ref=e2674]:
+              - strong [ref=e2675]: Melody Berdan
+            - cell "Josh Fancher / Dustin Terry" [ref=e2676]
+            - cell "Project Manager" [ref=e2677]
+            - cell "Separated" [ref=e2678]:
+              - generic [ref=e2679]: Separated
+            - cell "Full-Time" [ref=e2680]
+            - cell "—" [ref=e2681]
+            - cell "Adrian" [ref=e2682]
+            - cell "Edit Delete" [ref=e2683]:
+              - generic [ref=e2684]:
+                - link "Edit" [ref=e2685] [cursor=pointer]:
+                  - /url: /assignments/67/edit
+                - button "Delete" [ref=e2687] [cursor=pointer]
+          - row "Michael Benigno Valdez Adam Wagner Sales Development Representative Separated Full-Time — Adrian Edit Delete" [ref=e2688]:
+            - cell "Michael Benigno Valdez" [ref=e2689]:
+              - strong [ref=e2690]: Michael Benigno Valdez
+            - cell "Adam Wagner" [ref=e2691]
+            - cell "Sales Development Representative" [ref=e2692]
+            - cell "Separated" [ref=e2693]:
+              - generic [ref=e2694]: Separated
+            - cell "Full-Time" [ref=e2695]
+            - cell "—" [ref=e2696]
+            - cell "Adrian" [ref=e2697]
+            - cell "Edit Delete" [ref=e2698]:
+              - generic [ref=e2699]:
+                - link "Edit" [ref=e2700] [cursor=pointer]:
+                  - /url: /assignments/107/edit
+                - button "Delete" [ref=e2702] [cursor=pointer]
+          - row "Michael Roland Katindig Ryan McFarland Graphic Designer Separated Full-Time — Bel Edit Delete" [ref=e2703]:
+            - cell "Michael Roland Katindig" [ref=e2704]:
+              - strong [ref=e2705]: Michael Roland Katindig
+            - cell "Ryan McFarland" [ref=e2706]
+            - cell "Graphic Designer" [ref=e2707]
+            - cell "Separated" [ref=e2708]:
+              - generic [ref=e2709]: Separated
+            - cell "Full-Time" [ref=e2710]
+            - cell "—" [ref=e2711]
+            - cell "Bel" [ref=e2712]
+            - cell "Edit Delete" [ref=e2713]:
+              - generic [ref=e2714]:
+                - link "Edit" [ref=e2715] [cursor=pointer]:
+                  - /url: /assignments/151/edit
+                - button "Delete" [ref=e2717] [cursor=pointer]
+          - row "Michelle Denosta Gevero Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Full-Time — Bel Edit Delete" [ref=e2718]:
+            - cell "Michelle Denosta Gevero" [ref=e2719]:
+              - strong [ref=e2720]: Michelle Denosta Gevero
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2721]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2722]
+            - cell "Separated" [ref=e2723]:
+              - generic [ref=e2724]: Separated
+            - cell "Full-Time" [ref=e2725]
+            - cell "—" [ref=e2726]
+            - cell "Bel" [ref=e2727]
+            - cell "Edit Delete" [ref=e2728]:
+              - generic [ref=e2729]:
+                - link "Edit" [ref=e2730] [cursor=pointer]:
+                  - /url: /assignments/160/edit
+                - button "Delete" [ref=e2732] [cursor=pointer]
+          - row "Miguel Christopher Espela Mark Hunter Insurance Admin Specialist Probation Full-Time — Adrian Edit Delete" [ref=e2733]:
+            - cell "Miguel Christopher Espela" [ref=e2734]:
+              - strong [ref=e2735]: Miguel Christopher Espela
+            - cell "Mark Hunter" [ref=e2736]
+            - cell "Insurance Admin Specialist" [ref=e2737]
+            - cell "Probation" [ref=e2738]:
+              - generic [ref=e2739]: Probation
+            - cell "Full-Time" [ref=e2740]
+            - cell "—" [ref=e2741]
+            - cell "Adrian" [ref=e2742]
+            - cell "Edit Delete" [ref=e2743]:
+              - generic [ref=e2744]:
+                - link "Edit" [ref=e2745] [cursor=pointer]:
+                  - /url: /assignments/216/edit
+                - button "Delete" [ref=e2747] [cursor=pointer]
+          - row "Mike John Singh Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Full-Time — Bel Edit Delete" [ref=e2748]:
+            - cell "Mike John Singh" [ref=e2749]:
+              - strong [ref=e2750]: Mike John Singh
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2751]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2752]
+            - cell "Separated" [ref=e2753]:
+              - generic [ref=e2754]: Separated
+            - cell "Full-Time" [ref=e2755]
+            - cell "—" [ref=e2756]
+            - cell "Bel" [ref=e2757]
+            - cell "Edit Delete" [ref=e2758]:
+              - generic [ref=e2759]:
+                - link "Edit" [ref=e2760] [cursor=pointer]:
+                  - /url: /assignments/104/edit
+                - button "Delete" [ref=e2762] [cursor=pointer]
+          - row "Mira Lyne Mofan Sagales Aaron Redman Insurance Admin Assistant Separated Full-Time — Bel Edit Delete" [ref=e2763]:
+            - cell "Mira Lyne Mofan Sagales" [ref=e2764]:
+              - strong [ref=e2765]: Mira Lyne Mofan Sagales
+            - cell "Aaron Redman" [ref=e2766]
+            - cell "Insurance Admin Assistant" [ref=e2767]
+            - cell "Separated" [ref=e2768]:
+              - generic [ref=e2769]: Separated
+            - cell "Full-Time" [ref=e2770]
+            - cell "—" [ref=e2771]
+            - cell "Bel" [ref=e2772]
+            - cell "Edit Delete" [ref=e2773]:
+              - generic [ref=e2774]:
+                - link "Edit" [ref=e2775] [cursor=pointer]:
+                  - /url: /assignments/192/edit
+                - button "Delete" [ref=e2777] [cursor=pointer]
+          - row "Mirasol Mercado Lloyd Dixon Executive Assistant Active Part-Time — Adrian Edit Delete" [ref=e2778]:
+            - cell "Mirasol Mercado" [ref=e2779]:
+              - strong [ref=e2780]: Mirasol Mercado
+            - cell "Lloyd Dixon" [ref=e2781]
+            - cell "Executive Assistant" [ref=e2782]
+            - cell "Active" [ref=e2783]:
+              - generic [ref=e2784]: Active
+            - cell "Part-Time" [ref=e2785]
+            - cell "—" [ref=e2786]
+            - cell "Adrian" [ref=e2787]
+            - cell "Edit Delete" [ref=e2788]:
+              - generic [ref=e2789]:
+                - link "Edit" [ref=e2790] [cursor=pointer]:
+                  - /url: /assignments/90/edit
+                - button "Delete" [ref=e2792] [cursor=pointer]
+          - row "Monaliza Rose Bustillo Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Full-Time — Bel Edit Delete" [ref=e2793]:
+            - cell "Monaliza Rose Bustillo" [ref=e2794]:
+              - strong [ref=e2795]: Monaliza Rose Bustillo
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2796]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2797]
+            - cell "Separated" [ref=e2798]:
+              - generic [ref=e2799]: Separated
+            - cell "Full-Time" [ref=e2800]
+            - cell "—" [ref=e2801]
+            - cell "Bel" [ref=e2802]
+            - cell "Edit Delete" [ref=e2803]:
+              - generic [ref=e2804]:
+                - link "Edit" [ref=e2805] [cursor=pointer]:
+                  - /url: /assignments/69/edit
+                - button "Delete" [ref=e2807] [cursor=pointer]
+          - row "Nehm Angelito Masen Davis Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e2808]:
+            - cell "Nehm Angelito" [ref=e2809]:
+              - strong [ref=e2810]: Nehm Angelito
+            - cell "Masen Davis" [ref=e2811]
+            - cell "Executive Assistant" [ref=e2812]
+            - cell "Separated" [ref=e2813]:
+              - generic [ref=e2814]: Separated
+            - cell "Full-Time" [ref=e2815]
+            - cell "—" [ref=e2816]
+            - cell "Bel" [ref=e2817]
+            - cell "Edit Delete" [ref=e2818]:
+              - generic [ref=e2819]:
+                - link "Edit" [ref=e2820] [cursor=pointer]:
+                  - /url: /assignments/156/edit
+                - button "Delete" [ref=e2822] [cursor=pointer]
+          - row "Nikki Joy Leander Jonathan Ploransky Marketing Assistant Active Full-Time — Adrian Edit Delete" [ref=e2823]:
+            - cell "Nikki Joy Leander" [ref=e2824]:
+              - strong [ref=e2825]: Nikki Joy Leander
+            - cell "Jonathan Ploransky" [ref=e2826]
+            - cell "Marketing Assistant" [ref=e2827]
+            - cell "Active" [ref=e2828]:
+              - generic [ref=e2829]: Active
+            - cell "Full-Time" [ref=e2830]
+            - cell "—" [ref=e2831]
+            - cell "Adrian" [ref=e2832]
+            - cell "Edit Delete" [ref=e2833]:
+              - generic [ref=e2834]:
+                - link "Edit" [ref=e2835] [cursor=pointer]:
+                  - /url: /assignments/18/edit
+                - button "Delete" [ref=e2837] [cursor=pointer]
+          - row "Nikko Jan Aguilar Manguerra Josh Schwartz Insurance Customer Service Representative Active Full-Time — Bel Edit Delete" [ref=e2838]:
+            - cell "Nikko Jan Aguilar Manguerra" [ref=e2839]:
+              - strong [ref=e2840]: Nikko Jan Aguilar Manguerra
+            - cell "Josh Schwartz" [ref=e2841]
+            - cell "Insurance Customer Service Representative" [ref=e2842]
+            - cell "Active" [ref=e2843]:
+              - generic [ref=e2844]: Active
+            - cell "Full-Time" [ref=e2845]
+            - cell "—" [ref=e2846]
+            - cell "Bel" [ref=e2847]
+            - cell "Edit Delete" [ref=e2848]:
+              - generic [ref=e2849]:
+                - link "Edit" [ref=e2850] [cursor=pointer]:
+                  - /url: /assignments/148/edit
+                - button "Delete" [ref=e2852] [cursor=pointer]
+          - row "Noly Binay Alex Tucci (TDL) Content Production Assistant Active Full-Time 1,668.60 Bel Edit Delete" [ref=e2853]:
+            - cell "Noly Binay" [ref=e2854]:
+              - strong [ref=e2855]: Noly Binay
+            - cell "Alex Tucci (TDL)" [ref=e2856]
+            - cell "Content Production Assistant" [ref=e2857]
+            - cell "Active" [ref=e2858]:
+              - generic [ref=e2859]: Active
+            - cell "Full-Time" [ref=e2860]
+            - cell "1,668.60" [ref=e2861]
+            - cell "Bel" [ref=e2862]
+            - cell "Edit Delete" [ref=e2863]:
+              - generic [ref=e2864]:
+                - link "Edit" [ref=e2865] [cursor=pointer]:
+                  - /url: /assignments/177/edit
+                - button "Delete" [ref=e2867] [cursor=pointer]
+          - row "Patricia Clare M. Sarmiento Geoffrey Adler Executive Assistant OP Active Full-Time — Adrian Edit Delete" [ref=e2868]:
+            - cell "Patricia Clare M. Sarmiento" [ref=e2869]:
+              - strong [ref=e2870]: Patricia Clare M. Sarmiento
+            - cell "Geoffrey Adler" [ref=e2871]
+            - cell "Executive Assistant OP" [ref=e2872]
+            - cell "Active" [ref=e2873]:
+              - generic [ref=e2874]: Active
+            - cell "Full-Time" [ref=e2875]
+            - cell "—" [ref=e2876]
+            - cell "Adrian" [ref=e2877]
+            - cell "Edit Delete" [ref=e2878]:
+              - generic [ref=e2879]:
+                - link "Edit" [ref=e2880] [cursor=pointer]:
+                  - /url: /assignments/30/edit
+                - button "Delete" [ref=e2882] [cursor=pointer]
+          - row "Paul Martin Davina Zahra Customer Service Representative Active Full-Time — Adrian Edit Delete" [ref=e2883]:
+            - cell "Paul Martin" [ref=e2884]:
+              - strong [ref=e2885]: Paul Martin
+            - cell "Davina Zahra" [ref=e2886]
+            - cell "Customer Service Representative" [ref=e2887]
+            - cell "Active" [ref=e2888]:
+              - generic [ref=e2889]: Active
+            - cell "Full-Time" [ref=e2890]
+            - cell "—" [ref=e2891]
+            - cell "Adrian" [ref=e2892]
+            - cell "Edit Delete" [ref=e2893]:
+              - generic [ref=e2894]:
+                - link "Edit" [ref=e2895] [cursor=pointer]:
+                  - /url: /assignments/20/edit
+                - button "Delete" [ref=e2897] [cursor=pointer]
+          - row "Paula Luz Urbano Gomez Christian Romaguera Social Media Manager Separated Full-Time — Adrian Edit Delete" [ref=e2898]:
+            - cell "Paula Luz Urbano Gomez" [ref=e2899]:
+              - strong [ref=e2900]: Paula Luz Urbano Gomez
+            - cell "Christian Romaguera" [ref=e2901]
+            - cell "Social Media Manager" [ref=e2902]
+            - cell "Separated" [ref=e2903]:
+              - generic [ref=e2904]: Separated
+            - cell "Full-Time" [ref=e2905]
+            - cell "—" [ref=e2906]
+            - cell "Adrian" [ref=e2907]
+            - cell "Edit Delete" [ref=e2908]:
+              - generic [ref=e2909]:
+                - link "Edit" [ref=e2910] [cursor=pointer]:
+                  - /url: /assignments/125/edit
+                - button "Delete" [ref=e2912] [cursor=pointer]
+          - row "Pauline Alexandrei AnnePulido Nicole Bushnell (Mari + Gold)/ Carrie Jones Web Services Project Manager Separated Full-Time — Adrian Edit Delete" [ref=e2913]:
+            - cell "Pauline Alexandrei AnnePulido" [ref=e2914]:
+              - strong [ref=e2915]: Pauline Alexandrei AnnePulido
+            - cell "Nicole Bushnell (Mari + Gold)/ Carrie Jones" [ref=e2916]
+            - cell "Web Services Project Manager" [ref=e2917]
+            - cell "Separated" [ref=e2918]:
+              - generic [ref=e2919]: Separated
+            - cell "Full-Time" [ref=e2920]
+            - cell "—" [ref=e2921]
+            - cell "Adrian" [ref=e2922]
+            - cell "Edit Delete" [ref=e2923]:
+              - generic [ref=e2924]:
+                - link "Edit" [ref=e2925] [cursor=pointer]:
+                  - /url: /assignments/94/edit
+                - button "Delete" [ref=e2927] [cursor=pointer]
+          - row "Paulo Jose Gadong Brian Cross PPC Specialist Separated Full-Time $2,126 Bel Edit Delete" [ref=e2928]:
+            - cell "Paulo Jose Gadong" [ref=e2929]:
+              - strong [ref=e2930]: Paulo Jose Gadong
+            - cell "Brian Cross" [ref=e2931]
+            - cell "PPC Specialist" [ref=e2932]
+            - cell "Separated" [ref=e2933]:
+              - generic [ref=e2934]: Separated
+            - cell "Full-Time" [ref=e2935]
+            - cell "$2,126" [ref=e2936]
+            - cell "Bel" [ref=e2937]
+            - cell "Edit Delete" [ref=e2938]:
+              - generic [ref=e2939]:
+                - link "Edit" [ref=e2940] [cursor=pointer]:
+                  - /url: /assignments/14/edit
+                - button "Delete" [ref=e2942] [cursor=pointer]
+          - row "Race Jay Tubongbanua Brian Cross Project Manager Separated Full-Time — Bel Edit Delete" [ref=e2943]:
+            - cell "Race Jay Tubongbanua" [ref=e2944]:
+              - strong [ref=e2945]: Race Jay Tubongbanua
+            - cell "Brian Cross" [ref=e2946]
+            - cell "Project Manager" [ref=e2947]
+            - cell "Separated" [ref=e2948]:
+              - generic [ref=e2949]: Separated
+            - cell "Full-Time" [ref=e2950]
+            - cell "—" [ref=e2951]
+            - cell "Bel" [ref=e2952]
+            - cell "Edit Delete" [ref=e2953]:
+              - generic [ref=e2954]:
+                - link "Edit" [ref=e2955] [cursor=pointer]:
+                  - /url: /assignments/32/edit
+                - button "Delete" [ref=e2957] [cursor=pointer]
+          - row "Race Jay Tubongbanua Geoffrey Adler Cash Flow Analyst Probation Full-Time — Adrian Edit Delete" [ref=e2958]:
+            - cell "Race Jay Tubongbanua" [ref=e2959]:
+              - strong [ref=e2960]: Race Jay Tubongbanua
+            - cell "Geoffrey Adler" [ref=e2961]
+            - cell "Cash Flow Analyst" [ref=e2962]
+            - cell "Probation" [ref=e2963]:
+              - generic [ref=e2964]: Probation
+            - cell "Full-Time" [ref=e2965]
+            - cell "—" [ref=e2966]
+            - cell "Adrian" [ref=e2967]
+            - cell "Edit Delete" [ref=e2968]:
+              - generic [ref=e2969]:
+                - link "Edit" [ref=e2970] [cursor=pointer]:
+                  - /url: /assignments/226/edit
+                - button "Delete" [ref=e2972] [cursor=pointer]
+          - row "Rachel Pineda Cayanan Ryan McFarland General Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e2973]:
+            - cell "Rachel Pineda Cayanan" [ref=e2974]:
+              - strong [ref=e2975]: Rachel Pineda Cayanan
+            - cell "Ryan McFarland" [ref=e2976]
+            - cell "General Virtual Assistant" [ref=e2977]
+            - cell "Separated" [ref=e2978]:
+              - generic [ref=e2979]: Separated
+            - cell "Full-Time" [ref=e2980]
+            - cell "—" [ref=e2981]
+            - cell "Bel" [ref=e2982]
+            - cell "Edit Delete" [ref=e2983]:
+              - generic [ref=e2984]:
+                - link "Edit" [ref=e2985] [cursor=pointer]:
+                  - /url: /assignments/61/edit
+                - button "Delete" [ref=e2987] [cursor=pointer]
+          - row "Ralph Lauren Lopez Cuadillera Raindrop Agency Motion Designer Active Full-Time — Bel Edit Delete" [ref=e2988]:
+            - cell "Ralph Lauren Lopez Cuadillera" [ref=e2989]:
+              - strong [ref=e2990]: Ralph Lauren Lopez Cuadillera
+            - cell "Raindrop Agency" [ref=e2991]
+            - cell "Motion Designer" [ref=e2992]
+            - cell "Active" [ref=e2993]:
+              - generic [ref=e2994]: Active
+            - cell "Full-Time" [ref=e2995]
+            - cell "—" [ref=e2996]
+            - cell "Bel" [ref=e2997]
+            - cell "Edit Delete" [ref=e2998]:
+              - generic [ref=e2999]:
+                - link "Edit" [ref=e3000] [cursor=pointer]:
+                  - /url: /assignments/208/edit
+                - button "Delete" [ref=e3002] [cursor=pointer]
+          - row "Randa Decena Greg and Lisa Shields Executive Assistant Probation Full-Time — Bel Edit Delete" [ref=e3003]:
+            - cell "Randa Decena" [ref=e3004]:
+              - strong [ref=e3005]: Randa Decena
+            - cell "Greg and Lisa Shields" [ref=e3006]
+            - cell "Executive Assistant" [ref=e3007]
+            - cell "Probation" [ref=e3008]:
+              - generic [ref=e3009]: Probation
+            - cell "Full-Time" [ref=e3010]
+            - cell "—" [ref=e3011]
+            - cell "Bel" [ref=e3012]
+            - cell "Edit Delete" [ref=e3013]:
+              - generic [ref=e3014]:
+                - link "Edit" [ref=e3015] [cursor=pointer]:
+                  - /url: /assignments/206/edit
+                - button "Delete" [ref=e3017] [cursor=pointer]
+          - row "Randall Elkins Ryan McFarland WH Manager Separated — — Bel Edit Delete" [ref=e3018]:
+            - cell "Randall Elkins" [ref=e3019]:
+              - strong [ref=e3020]: Randall Elkins
+            - cell "Ryan McFarland" [ref=e3021]
+            - cell "WH Manager" [ref=e3022]
+            - cell "Separated" [ref=e3023]:
+              - generic [ref=e3024]: Separated
+            - cell "—" [ref=e3025]
+            - cell "—" [ref=e3026]
+            - cell "Bel" [ref=e3027]
+            - cell "Edit Delete" [ref=e3028]:
+              - generic [ref=e3029]:
+                - link "Edit" [ref=e3030] [cursor=pointer]:
+                  - /url: /assignments/59/edit
+                - button "Delete" [ref=e3032] [cursor=pointer]
+          - row "Randall Louis Ramis Poquiz Grace Carr (Raindrop) Motion Designer Resigned Full-Time — Adrian Edit Delete" [ref=e3033]:
+            - cell "Randall Louis Ramis Poquiz" [ref=e3034]:
+              - strong [ref=e3035]: Randall Louis Ramis Poquiz
+            - cell "Grace Carr (Raindrop)" [ref=e3036]
+            - cell "Motion Designer" [ref=e3037]
+            - cell "Resigned" [ref=e3038]:
+              - generic [ref=e3039]: Resigned
+            - cell "Full-Time" [ref=e3040]
+            - cell "—" [ref=e3041]
+            - cell "Adrian" [ref=e3042]
+            - cell "Edit Delete" [ref=e3043]:
+              - generic [ref=e3044]:
+                - link "Edit" [ref=e3045] [cursor=pointer]:
+                  - /url: /assignments/116/edit
+                - button "Delete" [ref=e3047] [cursor=pointer]
+          - row "Randiss C. Cadiogan Andrea Race / BeautyBlender eCommerce DTC Coordinator - OP Separated Full-Time — Bel Edit Delete" [ref=e3048]:
+            - cell "Randiss C. Cadiogan" [ref=e3049]:
+              - strong [ref=e3050]: Randiss C. Cadiogan
+            - cell "Andrea Race / BeautyBlender" [ref=e3051]
+            - cell "eCommerce DTC Coordinator - OP" [ref=e3052]
+            - cell "Separated" [ref=e3053]:
+              - generic [ref=e3054]: Separated
+            - cell "Full-Time" [ref=e3055]
+            - cell "—" [ref=e3056]
+            - cell "Bel" [ref=e3057]
+            - cell "Edit Delete" [ref=e3058]:
+              - generic [ref=e3059]:
+                - link "Edit" [ref=e3060] [cursor=pointer]:
+                  - /url: /assignments/132/edit
+                - button "Delete" [ref=e3062] [cursor=pointer]
+          - row "Raser Jutba Abduhadi Ryan McFarland Accountant Separated Full-Time — Bel Edit Delete" [ref=e3063]:
+            - cell "Raser Jutba Abduhadi" [ref=e3064]:
+              - strong [ref=e3065]: Raser Jutba Abduhadi
+            - cell "Ryan McFarland" [ref=e3066]
+            - cell "Accountant" [ref=e3067]
+            - cell "Separated" [ref=e3068]:
+              - generic [ref=e3069]: Separated
+            - cell "Full-Time" [ref=e3070]
+            - cell "—" [ref=e3071]
+            - cell "Bel" [ref=e3072]
+            - cell "Edit Delete" [ref=e3073]:
+              - generic [ref=e3074]:
+                - link "Edit" [ref=e3075] [cursor=pointer]:
+                  - /url: /assignments/37/edit
+                - button "Delete" [ref=e3077] [cursor=pointer]
+          - row "Raymand Vico Gadores Luke Harmon Solutions Engineer Separated Full-Time 2915 Adrian Edit Delete" [ref=e3078]:
+            - cell "Raymand Vico Gadores" [ref=e3079]:
+              - strong [ref=e3080]: Raymand Vico Gadores
+            - cell "Luke Harmon" [ref=e3081]
+            - cell "Solutions Engineer" [ref=e3082]
+            - cell "Separated" [ref=e3083]:
+              - generic [ref=e3084]: Separated
+            - cell "Full-Time" [ref=e3085]
+            - cell "2915" [ref=e3086]
+            - cell "Adrian" [ref=e3087]
+            - cell "Edit Delete" [ref=e3088]:
+              - generic [ref=e3089]:
+                - link "Edit" [ref=e3090] [cursor=pointer]:
+                  - /url: /assignments/75/edit
+                - button "Delete" [ref=e3092] [cursor=pointer]
+          - row "Raymart Gaviola Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e3093]:
+            - cell "Raymart Gaviola" [ref=e3094]:
+              - strong [ref=e3095]: Raymart Gaviola
+            - cell "Ryan McFarland" [ref=e3096]
+            - cell "Virtual Assistant" [ref=e3097]
+            - cell "Separated" [ref=e3098]:
+              - generic [ref=e3099]: Separated
+            - cell "Full-Time" [ref=e3100]
+            - cell "—" [ref=e3101]
+            - cell "Bel" [ref=e3102]
+            - cell "Edit Delete" [ref=e3103]:
+              - generic [ref=e3104]:
+                - link "Edit" [ref=e3105] [cursor=pointer]:
+                  - /url: /assignments/46/edit
+                - button "Delete" [ref=e3107] [cursor=pointer]
+          - row "Razel De Jesus Jason Paulus AI Engineer Probation Full-Time — Bel Edit Delete" [ref=e3108]:
+            - cell "Razel De Jesus" [ref=e3109]:
+              - strong [ref=e3110]: Razel De Jesus
+            - cell "Jason Paulus" [ref=e3111]
+            - cell "AI Engineer" [ref=e3112]
+            - cell "Probation" [ref=e3113]:
+              - generic [ref=e3114]: Probation
+            - cell "Full-Time" [ref=e3115]
+            - cell "—" [ref=e3116]
+            - cell "Bel" [ref=e3117]
+            - cell "Edit Delete" [ref=e3118]:
+              - generic [ref=e3119]:
+                - link "Edit" [ref=e3120] [cursor=pointer]:
+                  - /url: /assignments/178/edit
+                - button "Delete" [ref=e3122] [cursor=pointer]
+          - row "Regine Rose Regala Ryan McFarland Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e3123]:
+            - cell "Regine Rose Regala" [ref=e3124]:
+              - strong [ref=e3125]: Regine Rose Regala
+            - cell "Ryan McFarland" [ref=e3126]
+            - cell "Virtual Assistant" [ref=e3127]
+            - cell "Separated" [ref=e3128]:
+              - generic [ref=e3129]: Separated
+            - cell "Full-Time" [ref=e3130]
+            - cell "—" [ref=e3131]
+            - cell "Bel" [ref=e3132]
+            - cell "Edit Delete" [ref=e3133]:
+              - generic [ref=e3134]:
+                - link "Edit" [ref=e3135] [cursor=pointer]:
+                  - /url: /assignments/51/edit
+                - button "Delete" [ref=e3137] [cursor=pointer]
+          - row "Reynato Silvestre Diane Rainer Intake Specialist Separated Full-Time — Adrian Edit Delete" [ref=e3138]:
+            - cell "Reynato Silvestre" [ref=e3139]:
+              - strong [ref=e3140]: Reynato Silvestre
+            - cell "Diane Rainer" [ref=e3141]
+            - cell "Intake Specialist" [ref=e3142]
+            - cell "Separated" [ref=e3143]:
+              - generic [ref=e3144]: Separated
+            - cell "Full-Time" [ref=e3145]
+            - cell "—" [ref=e3146]
+            - cell "Adrian" [ref=e3147]
+            - cell "Edit Delete" [ref=e3148]:
+              - generic [ref=e3149]:
+                - link "Edit" [ref=e3150] [cursor=pointer]:
+                  - /url: /assignments/103/edit
+                - button "Delete" [ref=e3152] [cursor=pointer]
+          - row "Rezia Mae Ursula Medina Matthew Williams Admin Assistant Probation Full-Time — Bel Edit Delete" [ref=e3153]:
+            - cell "Rezia Mae Ursula Medina" [ref=e3154]:
+              - strong [ref=e3155]: Rezia Mae Ursula Medina
+            - cell "Matthew Williams" [ref=e3156]
+            - cell "Admin Assistant" [ref=e3157]
+            - cell "Probation" [ref=e3158]:
+              - generic [ref=e3159]: Probation
+            - cell "Full-Time" [ref=e3160]
+            - cell "—" [ref=e3161]
+            - cell "Bel" [ref=e3162]
+            - cell "Edit Delete" [ref=e3163]:
+              - generic [ref=e3164]:
+                - link "Edit" [ref=e3165] [cursor=pointer]:
+                  - /url: /assignments/219/edit
+                - button "Delete" [ref=e3167] [cursor=pointer]
+          - row "Rhona Marie Rivera Raindrop Agency Creative Strategist / Market Research Analyst Probation Full-Time — Bel Edit Delete" [ref=e3168]:
+            - cell "Rhona Marie Rivera" [ref=e3169]:
+              - strong [ref=e3170]: Rhona Marie Rivera
+            - cell "Raindrop Agency" [ref=e3171]
+            - cell "Creative Strategist / Market Research Analyst" [ref=e3172]
+            - cell "Probation" [ref=e3173]:
+              - generic [ref=e3174]: Probation
+            - cell "Full-Time" [ref=e3175]
+            - cell "—" [ref=e3176]
+            - cell "Bel" [ref=e3177]
+            - cell "Edit Delete" [ref=e3178]:
+              - generic [ref=e3179]:
+                - link "Edit" [ref=e3180] [cursor=pointer]:
+                  - /url: /assignments/237/edit
+                - button "Delete" [ref=e3182] [cursor=pointer]
+          - row "Richard Agrabante Aguilos Josh Schwartz Insurance CSR OP Separated Full-Time — Bel Edit Delete" [ref=e3183]:
+            - cell "Richard Agrabante Aguilos" [ref=e3184]:
+              - strong [ref=e3185]: Richard Agrabante Aguilos
+            - cell "Josh Schwartz" [ref=e3186]
+            - cell "Insurance CSR OP" [ref=e3187]
+            - cell "Separated" [ref=e3188]:
+              - generic [ref=e3189]: Separated
+            - cell "Full-Time" [ref=e3190]
+            - cell "—" [ref=e3191]
+            - cell "Bel" [ref=e3192]
+            - cell "Edit Delete" [ref=e3193]:
+              - generic [ref=e3194]:
+                - link "Edit" [ref=e3195] [cursor=pointer]:
+                  - /url: /assignments/134/edit
+                - button "Delete" [ref=e3197] [cursor=pointer]
+          - row "Richard Andrew Panedes Pradas Ryan McFarland General Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e3198]:
+            - cell "Richard Andrew Panedes Pradas" [ref=e3199]:
+              - strong [ref=e3200]: Richard Andrew Panedes Pradas
+            - cell "Ryan McFarland" [ref=e3201]
+            - cell "General Virtual Assistant" [ref=e3202]
+            - cell "Separated" [ref=e3203]:
+              - generic [ref=e3204]: Separated
+            - cell "Full-Time" [ref=e3205]
+            - cell "—" [ref=e3206]
+            - cell "Bel" [ref=e3207]
+            - cell "Edit Delete" [ref=e3208]:
+              - generic [ref=e3209]:
+                - link "Edit" [ref=e3210] [cursor=pointer]:
+                  - /url: /assignments/140/edit
+                - button "Delete" [ref=e3212] [cursor=pointer]
+          - row "Rio Krishel Gonzales Mario Sanchez Executive Assistant Separated Full-Time $2,061 Adrian Edit Delete" [ref=e3213]:
+            - cell "Rio Krishel Gonzales" [ref=e3214]:
+              - strong [ref=e3215]: Rio Krishel Gonzales
+            - cell "Mario Sanchez" [ref=e3216]
+            - cell "Executive Assistant" [ref=e3217]
+            - cell "Separated" [ref=e3218]:
+              - generic [ref=e3219]: Separated
+            - cell "Full-Time" [ref=e3220]
+            - cell "$2,061" [ref=e3221]
+            - cell "Adrian" [ref=e3222]
+            - cell "Edit Delete" [ref=e3223]:
+              - generic [ref=e3224]:
+                - link "Edit" [ref=e3225] [cursor=pointer]:
+                  - /url: /assignments/77/edit
+                - button "Delete" [ref=e3227] [cursor=pointer]
+          - row "Roel Estrella Aaron Richards Sales Development Representative Separated Full-Time — Bel Edit Delete" [ref=e3228]:
+            - cell "Roel Estrella" [ref=e3229]:
+              - strong [ref=e3230]: Roel Estrella
+            - cell "Aaron Richards" [ref=e3231]
+            - cell "Sales Development Representative" [ref=e3232]
+            - cell "Separated" [ref=e3233]:
+              - generic [ref=e3234]: Separated
+            - cell "Full-Time" [ref=e3235]
+            - cell "—" [ref=e3236]
+            - cell "Bel" [ref=e3237]
+            - cell "Edit Delete" [ref=e3238]:
+              - generic [ref=e3239]:
+                - link "Edit" [ref=e3240] [cursor=pointer]:
+                  - /url: /assignments/13/edit
+                - button "Delete" [ref=e3242] [cursor=pointer]
+          - row "Rovie Ceaira Pillejera Nicole Glenn / NG Home Solutions Corp. Real Estate Executive Assistant Active Full-Time — Adrian Edit Delete" [ref=e3243]:
+            - cell "Rovie Ceaira Pillejera" [ref=e3244]:
+              - strong [ref=e3245]: Rovie Ceaira Pillejera
+            - cell "Nicole Glenn / NG Home Solutions Corp." [ref=e3246]
+            - cell "Real Estate Executive Assistant" [ref=e3247]
+            - cell "Active" [ref=e3248]:
+              - generic [ref=e3249]: Active
+            - cell "Full-Time" [ref=e3250]
+            - cell "—" [ref=e3251]
+            - cell "Adrian" [ref=e3252]
+            - cell "Edit Delete" [ref=e3253]:
+              - generic [ref=e3254]:
+                - link "Edit" [ref=e3255] [cursor=pointer]:
+                  - /url: /assignments/25/edit
+                - button "Delete" [ref=e3257] [cursor=pointer]
+          - row "Rowenna Remulta Paul Wilson Executive Assistant Separated Full-Time $1,117 Adrian Edit Delete" [ref=e3258]:
+            - cell "Rowenna Remulta" [ref=e3259]:
+              - strong [ref=e3260]: Rowenna Remulta
+            - cell "Paul Wilson" [ref=e3261]
+            - cell "Executive Assistant" [ref=e3262]
+            - cell "Separated" [ref=e3263]:
+              - generic [ref=e3264]: Separated
+            - cell "Full-Time" [ref=e3265]
+            - cell "$1,117" [ref=e3266]
+            - cell "Adrian" [ref=e3267]
+            - cell "Edit Delete" [ref=e3268]:
+              - generic [ref=e3269]:
+                - link "Edit" [ref=e3270] [cursor=pointer]:
+                  - /url: /assignments/96/edit
+                - button "Delete" [ref=e3272] [cursor=pointer]
+          - row "Rowenna Remulta Steve Weatherford Executive Virtual Assistant Separated Full-Time — Bel Edit Delete" [ref=e3273]:
+            - cell "Rowenna Remulta" [ref=e3274]:
+              - strong [ref=e3275]: Rowenna Remulta
+            - cell "Steve Weatherford" [ref=e3276]
+            - cell "Executive Virtual Assistant" [ref=e3277]
+            - cell "Separated" [ref=e3278]:
+              - generic [ref=e3279]: Separated
+            - cell "Full-Time" [ref=e3280]
+            - cell "—" [ref=e3281]
+            - cell "Bel" [ref=e3282]
+            - cell "Edit Delete" [ref=e3283]:
+              - generic [ref=e3284]:
+                - link "Edit" [ref=e3285] [cursor=pointer]:
+                  - /url: /assignments/163/edit
+                - button "Delete" [ref=e3287] [cursor=pointer]
+          - row "Rowenna Yuag Kelly Patton Operations / Marketing Support Probation Full-Time — Bel Edit Delete" [ref=e3288]:
+            - cell "Rowenna Yuag" [ref=e3289]:
+              - strong [ref=e3290]: Rowenna Yuag
+            - cell "Kelly Patton" [ref=e3291]
+            - cell "Operations / Marketing Support" [ref=e3292]
+            - cell "Probation" [ref=e3293]:
+              - generic [ref=e3294]: Probation
+            - cell "Full-Time" [ref=e3295]
+            - cell "—" [ref=e3296]
+            - cell "Bel" [ref=e3297]
+            - cell "Edit Delete" [ref=e3298]:
+              - generic [ref=e3299]:
+                - link "Edit" [ref=e3300] [cursor=pointer]:
+                  - /url: /assignments/221/edit
+                - button "Delete" [ref=e3302] [cursor=pointer]
+          - row "Ryan Balverde Josh Schwartz Insurance Customer Service Representative Active Full-Time — Bel Edit Delete" [ref=e3303]:
+            - cell "Ryan Balverde" [ref=e3304]:
+              - strong [ref=e3305]: Ryan Balverde
+            - cell "Josh Schwartz" [ref=e3306]
+            - cell "Insurance Customer Service Representative" [ref=e3307]
+            - cell "Active" [ref=e3308]:
+              - generic [ref=e3309]: Active
+            - cell "Full-Time" [ref=e3310]
+            - cell "—" [ref=e3311]
+            - cell "Bel" [ref=e3312]
+            - cell "Edit Delete" [ref=e3313]:
+              - generic [ref=e3314]:
+                - link "Edit" [ref=e3315] [cursor=pointer]:
+                  - /url: /assignments/65/edit
+                - button "Delete" [ref=e3317] [cursor=pointer]
+          - row "Sakura Kato Jacques Spitzer Executive Assistant Active Full-Time — Adrian Edit Delete" [ref=e3318]:
+            - cell "Sakura Kato" [ref=e3319]:
+              - strong [ref=e3320]: Sakura Kato
+            - cell "Jacques Spitzer" [ref=e3321]
+            - cell "Executive Assistant" [ref=e3322]
+            - cell "Active" [ref=e3323]:
+              - generic [ref=e3324]: Active
+            - cell "Full-Time" [ref=e3325]
+            - cell "—" [ref=e3326]
+            - cell "Adrian" [ref=e3327]
+            - cell "Edit Delete" [ref=e3328]:
+              - generic [ref=e3329]:
+                - link "Edit" [ref=e3330] [cursor=pointer]:
+                  - /url: /assignments/17/edit
+                - button "Delete" [ref=e3332] [cursor=pointer]
+          - row "Shaira Madiline Gelvizon Diane Rainer Intake Specialist Active Full-Time — Adrian Edit Delete" [ref=e3333]:
+            - cell "Shaira Madiline Gelvizon" [ref=e3334]:
+              - strong [ref=e3335]: Shaira Madiline Gelvizon
+            - cell "Diane Rainer" [ref=e3336]
+            - cell "Intake Specialist" [ref=e3337]
+            - cell "Active" [ref=e3338]:
+              - generic [ref=e3339]: Active
+            - cell "Full-Time" [ref=e3340]
+            - cell "—" [ref=e3341]
+            - cell "Adrian" [ref=e3342]
+            - cell "Edit Delete" [ref=e3343]:
+              - generic [ref=e3344]:
+                - link "Edit" [ref=e3345] [cursor=pointer]:
+                  - /url: /assignments/76/edit
+                - button "Delete" [ref=e3347] [cursor=pointer]
+          - row "Sharmajne Thalia Dampios Navarro Maddison Koper Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e3348]:
+            - cell "Sharmajne Thalia Dampios Navarro" [ref=e3349]:
+              - strong [ref=e3350]: Sharmajne Thalia Dampios Navarro
+            - cell "Maddison Koper" [ref=e3351]
+            - cell "Executive Assistant" [ref=e3352]
+            - cell "Separated" [ref=e3353]:
+              - generic [ref=e3354]: Separated
+            - cell "Full-Time" [ref=e3355]
+            - cell "—" [ref=e3356]
+            - cell "Bel" [ref=e3357]
+            - cell "Edit Delete" [ref=e3358]:
+              - generic [ref=e3359]:
+                - link "Edit" [ref=e3360] [cursor=pointer]:
+                  - /url: /assignments/180/edit
+                - button "Delete" [ref=e3362] [cursor=pointer]
+          - row "Star Fatima Acibar Raindrop Agency Social Media Manager Separated Part-Time 1,163.39 Adrian Edit Delete" [ref=e3363]:
+            - cell "Star Fatima Acibar" [ref=e3364]:
+              - strong [ref=e3365]: Star Fatima Acibar
+            - cell "Raindrop Agency" [ref=e3366]
+            - cell "Social Media Manager" [ref=e3367]
+            - cell "Separated" [ref=e3368]:
+              - generic [ref=e3369]: Separated
+            - cell "Part-Time" [ref=e3370]
+            - cell "1,163.39" [ref=e3371]
+            - cell "Adrian" [ref=e3372]
+            - cell "Edit Delete" [ref=e3373]:
+              - generic [ref=e3374]:
+                - link "Edit" [ref=e3375] [cursor=pointer]:
+                  - /url: /assignments/228/edit
+                - button "Delete" [ref=e3377] [cursor=pointer]
+          - row "Stella MarisseZarate Ryan McFarland Accountant/Bookkeeper Separated Part-Time — Bel Edit Delete" [ref=e3378]:
+            - cell "Stella MarisseZarate" [ref=e3379]:
+              - strong [ref=e3380]: Stella MarisseZarate
+            - cell "Ryan McFarland" [ref=e3381]
+            - cell "Accountant/Bookkeeper" [ref=e3382]
+            - cell "Separated" [ref=e3383]:
+              - generic [ref=e3384]: Separated
+            - cell "Part-Time" [ref=e3385]
+            - cell "—" [ref=e3386]
+            - cell "Bel" [ref=e3387]
+            - cell "Edit Delete" [ref=e3388]:
+              - generic [ref=e3389]:
+                - link "Edit" [ref=e3390] [cursor=pointer]:
+                  - /url: /assignments/55/edit
+                - button "Delete" [ref=e3392] [cursor=pointer]
+          - row "Stephanie Francisco Sychuan Chad Brown Intake & Appeals Administrative Assistant Separated Full-Time — Bel Edit Delete" [ref=e3393]:
+            - cell "Stephanie Francisco Sychuan" [ref=e3394]:
+              - strong [ref=e3395]: Stephanie Francisco Sychuan
+            - cell "Chad Brown" [ref=e3396]
+            - cell "Intake & Appeals Administrative Assistant" [ref=e3397]
+            - cell "Separated" [ref=e3398]:
+              - generic [ref=e3399]: Separated
+            - cell "Full-Time" [ref=e3400]
+            - cell "—" [ref=e3401]
+            - cell "Bel" [ref=e3402]
+            - cell "Edit Delete" [ref=e3403]:
+              - generic [ref=e3404]:
+                - link "Edit" [ref=e3405] [cursor=pointer]:
+                  - /url: /assignments/204/edit
+                - button "Delete" [ref=e3407] [cursor=pointer]
+          - row "Stephanie Joy Paulino Daniel Hambrick Insurance Account Manager Active Full-Time — Bel Edit Delete" [ref=e3408]:
+            - cell "Stephanie Joy Paulino" [ref=e3409]:
+              - strong [ref=e3410]: Stephanie Joy Paulino
+            - cell "Daniel Hambrick" [ref=e3411]
+            - cell "Insurance Account Manager" [ref=e3412]
+            - cell "Active" [ref=e3413]:
+              - generic [ref=e3414]: Active
+            - cell "Full-Time" [ref=e3415]
+            - cell "—" [ref=e3416]
+            - cell "Bel" [ref=e3417]
+            - cell "Edit Delete" [ref=e3418]:
+              - generic [ref=e3419]:
+                - link "Edit" [ref=e3420] [cursor=pointer]:
+                  - /url: /assignments/232/edit
+                - button "Delete" [ref=e3422] [cursor=pointer]
+          - row "Syre Limuel Labodlay Geminiano Brandon Hofer Executive Sales Assistant Separated Full-Time — Bel Edit Delete" [ref=e3423]:
+            - cell "Syre Limuel Labodlay Geminiano" [ref=e3424]:
+              - strong [ref=e3425]: Syre Limuel Labodlay Geminiano
+            - cell "Brandon Hofer" [ref=e3426]
+            - cell "Executive Sales Assistant" [ref=e3427]
+            - cell "Separated" [ref=e3428]:
+              - generic [ref=e3429]: Separated
+            - cell "Full-Time" [ref=e3430]
+            - cell "—" [ref=e3431]
+            - cell "Bel" [ref=e3432]
+            - cell "Edit Delete" [ref=e3433]:
+              - generic [ref=e3434]:
+                - link "Edit" [ref=e3435] [cursor=pointer]:
+                  - /url: /assignments/147/edit
+                - button "Delete" [ref=e3437] [cursor=pointer]
+          - row "Tara Nathalia Apa Hizon Mark Hunter Insurance Admin Specialist Separated Full-Time — Bel Edit Delete" [ref=e3438]:
+            - cell "Tara Nathalia Apa Hizon" [ref=e3439]:
+              - strong [ref=e3440]: Tara Nathalia Apa Hizon
+            - cell "Mark Hunter" [ref=e3441]
+            - cell "Insurance Admin Specialist" [ref=e3442]
+            - cell "Separated" [ref=e3443]:
+              - generic [ref=e3444]: Separated
+            - cell "Full-Time" [ref=e3445]
+            - cell "—" [ref=e3446]
+            - cell "Bel" [ref=e3447]
+            - cell "Edit Delete" [ref=e3448]:
+              - generic [ref=e3449]:
+                - link "Edit" [ref=e3450] [cursor=pointer]:
+                  - /url: /assignments/215/edit
+                - button "Delete" [ref=e3452] [cursor=pointer]
+          - row "Tatiana Yzobelle Bayan Santos Aaron Pursell Executive Sales Assistant Active Full-Time — Adrian Edit Delete" [ref=e3453]:
+            - cell "Tatiana Yzobelle Bayan Santos" [ref=e3454]:
+              - strong [ref=e3455]: Tatiana Yzobelle Bayan Santos
+            - cell "Aaron Pursell" [ref=e3456]
+            - cell "Executive Sales Assistant" [ref=e3457]
+            - cell "Active" [ref=e3458]:
+              - generic [ref=e3459]: Active
+            - cell "Full-Time" [ref=e3460]
+            - cell "—" [ref=e3461]
+            - cell "Adrian" [ref=e3462]
+            - cell "Edit Delete" [ref=e3463]:
+              - generic [ref=e3464]:
+                - link "Edit" [ref=e3465] [cursor=pointer]:
+                  - /url: /assignments/110/edit
+                - button "Delete" [ref=e3467] [cursor=pointer]
+          - row "Tisha Monette De Vila Rosatase Zac Gulbranson Executive Assistant Separated Full-Time — Bel Edit Delete" [ref=e3468]:
+            - cell "Tisha Monette De Vila Rosatase" [ref=e3469]:
+              - strong [ref=e3470]: Tisha Monette De Vila Rosatase
+            - cell "Zac Gulbranson" [ref=e3471]
+            - cell "Executive Assistant" [ref=e3472]
+            - cell "Separated" [ref=e3473]:
+              - generic [ref=e3474]: Separated
+            - cell "Full-Time" [ref=e3475]
+            - cell "—" [ref=e3476]
+            - cell "Bel" [ref=e3477]
+            - cell "Edit Delete" [ref=e3478]:
+              - generic [ref=e3479]:
+                - link "Edit" [ref=e3480] [cursor=pointer]:
+                  - /url: /assignments/150/edit
+                - button "Delete" [ref=e3482] [cursor=pointer]
+          - row "Tisha Monette De Vila Rosatase Chad Capp Executive Sales Assistant Active Full-Time — Bel Edit Delete" [ref=e3483]:
+            - cell "Tisha Monette De Vila Rosatase" [ref=e3484]:
+              - strong [ref=e3485]: Tisha Monette De Vila Rosatase
+            - cell "Chad Capp" [ref=e3486]
+            - cell "Executive Sales Assistant" [ref=e3487]
+            - cell "Active" [ref=e3488]:
+              - generic [ref=e3489]: Active
+            - cell "Full-Time" [ref=e3490]
+            - cell "—" [ref=e3491]
+            - cell "Bel" [ref=e3492]
+            - cell "Edit Delete" [ref=e3493]:
+              - generic [ref=e3494]:
+                - link "Edit" [ref=e3495] [cursor=pointer]:
+                  - /url: /assignments/199/edit
+                - button "Delete" [ref=e3497] [cursor=pointer]
+          - row "Tricia Marie Asignacion Greg and Lisa Shields Executive Assistant Active Part-Time 1708 Bel Edit Delete" [ref=e3498]:
+            - cell "Tricia Marie Asignacion" [ref=e3499]:
+              - strong [ref=e3500]: Tricia Marie Asignacion
+            - cell "Greg and Lisa Shields" [ref=e3501]
+            - cell "Executive Assistant" [ref=e3502]
+            - cell "Active" [ref=e3503]:
+              - generic [ref=e3504]: Active
+            - cell "Part-Time" [ref=e3505]
+            - cell "1708" [ref=e3506]
+            - cell "Bel" [ref=e3507]
+            - cell "Edit Delete" [ref=e3508]:
+              - generic [ref=e3509]:
+                - link "Edit" [ref=e3510] [cursor=pointer]:
+                  - /url: /assignments/3/edit
+                - button "Delete" [ref=e3512] [cursor=pointer]
+          - row "Tucker Johnson Ryan McFarland Chief Financial Office (CFO) Separated Part-Time — Bel Edit Delete" [ref=e3513]:
+            - cell "Tucker Johnson" [ref=e3514]:
+              - strong [ref=e3515]: Tucker Johnson
+            - cell "Ryan McFarland" [ref=e3516]
+            - cell "Chief Financial Office (CFO)" [ref=e3517]
+            - cell "Separated" [ref=e3518]:
+              - generic [ref=e3519]: Separated
+            - cell "Part-Time" [ref=e3520]
+            - cell "—" [ref=e3521]
+            - cell "Bel" [ref=e3522]
+            - cell "Edit Delete" [ref=e3523]:
+              - generic [ref=e3524]:
+                - link "Edit" [ref=e3525] [cursor=pointer]:
+                  - /url: /assignments/120/edit
+                - button "Delete" [ref=e3527] [cursor=pointer]
+          - row "Vanessa Love Joy Iglupas Jeff Youngren Video Editor Active Full-Time — Adrian Edit Delete" [ref=e3528]:
+            - cell "Vanessa Love Joy Iglupas" [ref=e3529]:
+              - strong [ref=e3530]: Vanessa Love Joy Iglupas
+            - cell "Jeff Youngren" [ref=e3531]
+            - cell "Video Editor" [ref=e3532]
+            - cell "Active" [ref=e3533]:
+              - generic [ref=e3534]: Active
+            - cell "Full-Time" [ref=e3535]
+            - cell "—" [ref=e3536]
+            - cell "Adrian" [ref=e3537]
+            - cell "Edit Delete" [ref=e3538]:
+              - generic [ref=e3539]:
+                - link "Edit" [ref=e3540] [cursor=pointer]:
+                  - /url: /assignments/79/edit
+                - button "Delete" [ref=e3542] [cursor=pointer]
+          - row "Venllarel Villariza Diane Rainer Content Production Assistant Active Full-Time — Adrian Edit Delete" [ref=e3543]:
+            - cell "Venllarel Villariza" [ref=e3544]:
+              - strong [ref=e3545]: Venllarel Villariza
+            - cell "Diane Rainer" [ref=e3546]
+            - cell "Content Production Assistant" [ref=e3547]
+            - cell "Active" [ref=e3548]:
+              - generic [ref=e3549]: Active
+            - cell "Full-Time" [ref=e3550]
+            - cell "—" [ref=e3551]
+            - cell "Adrian" [ref=e3552]
+            - cell "Edit Delete" [ref=e3553]:
+              - generic [ref=e3554]:
+                - link "Edit" [ref=e3555] [cursor=pointer]:
+                  - /url: /assignments/109/edit
+                - button "Delete" [ref=e3557] [cursor=pointer]
+          - row "Veronica Seriosa Josh Schwartz Insurance Customer Service Representative Active Full-Time — Bel Edit Delete" [ref=e3558]:
+            - cell "Veronica Seriosa" [ref=e3559]:
+              - strong [ref=e3560]: Veronica Seriosa
+            - cell "Josh Schwartz" [ref=e3561]
+            - cell "Insurance Customer Service Representative" [ref=e3562]
+            - cell "Active" [ref=e3563]:
+              - generic [ref=e3564]: Active
+            - cell "Full-Time" [ref=e3565]
+            - cell "—" [ref=e3566]
+            - cell "Bel" [ref=e3567]
+            - cell "Edit Delete" [ref=e3568]:
+              - generic [ref=e3569]:
+                - link "Edit" [ref=e3570] [cursor=pointer]:
+                  - /url: /assignments/101/edit
+                - button "Delete" [ref=e3572] [cursor=pointer]
+          - row "Wendell Cuarenta Jr. Robert Cardiff / Richelle Drost Customer Support Specialist Separated Full-Time — Bel Edit Delete" [ref=e3573]:
+            - cell "Wendell Cuarenta Jr." [ref=e3574]:
+              - strong [ref=e3575]: Wendell Cuarenta Jr.
+            - cell "Robert Cardiff / Richelle Drost" [ref=e3576]
+            - cell "Customer Support Specialist" [ref=e3577]
+            - cell "Separated" [ref=e3578]:
+              - generic [ref=e3579]: Separated
+            - cell "Full-Time" [ref=e3580]
+            - cell "—" [ref=e3581]
+            - cell "Bel" [ref=e3582]
+            - cell "Edit Delete" [ref=e3583]:
+              - generic [ref=e3584]:
+                - link "Edit" [ref=e3585] [cursor=pointer]:
+                  - /url: /assignments/10/edit
+                - button "Delete" [ref=e3587] [cursor=pointer]
+          - row "Wendell Cuarenta Jr. Ian Blair Customer Support Active Full-Time — Bel Edit Delete" [ref=e3588]:
+            - cell "Wendell Cuarenta Jr." [ref=e3589]:
+              - strong [ref=e3590]: Wendell Cuarenta Jr.
+            - cell "Ian Blair" [ref=e3591]
+            - cell "Customer Support" [ref=e3592]
+            - cell "Active" [ref=e3593]:
+              - generic [ref=e3594]: Active
+            - cell "Full-Time" [ref=e3595]
+            - cell "—" [ref=e3596]
+            - cell "Bel" [ref=e3597]
+            - cell "Edit Delete" [ref=e3598]:
+              - generic [ref=e3599]:
+                - link "Edit" [ref=e3600] [cursor=pointer]:
+                  - /url: /assignments/129/edit
+                - button "Delete" [ref=e3602] [cursor=pointer]
+          - row "Willen Trisha Garcia Caguiat Daniel Hambrick Insurance CSR Active Full-Time — Bel Edit Delete" [ref=e3603]:
+            - cell "Willen Trisha Garcia Caguiat" [ref=e3604]:
+              - strong [ref=e3605]: Willen Trisha Garcia Caguiat
+            - cell "Daniel Hambrick" [ref=e3606]
+            - cell "Insurance CSR" [ref=e3607]
+            - cell "Active" [ref=e3608]:
+              - generic [ref=e3609]: Active
+            - cell "Full-Time" [ref=e3610]
+            - cell "—" [ref=e3611]
+            - cell "Bel" [ref=e3612]
+            - cell "Edit Delete" [ref=e3613]:
+              - generic [ref=e3614]:
+                - link "Edit" [ref=e3615] [cursor=pointer]:
+                  - /url: /assignments/175/edit
+                - button "Delete" [ref=e3617] [cursor=pointer]

@@ -1,0 +1,255 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "▦ Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: ▦
+        - generic [ref=e10]: Dashboard
+      - link "👤 OP Directory" [ref=e11] [cursor=pointer]:
+        - /url: /ops
+        - generic [ref=e12]: 👤
+        - generic [ref=e13]: OP Directory
+      - link "🏢 Clients" [ref=e14] [cursor=pointer]:
+        - /url: /clients
+        - generic [ref=e15]: 🏢
+        - generic [ref=e16]: Clients
+      - link "🔗 Assignments" [ref=e17] [cursor=pointer]:
+        - /url: /assignments
+        - generic [ref=e18]: 🔗
+        - generic [ref=e19]: Assignments
+      - link "📋 Onboarding" [ref=e20] [cursor=pointer]:
+        - /url: /onboarding
+        - generic [ref=e21]: 📋
+        - generic [ref=e22]: Onboarding
+      - link "📊 Check-ins" [ref=e23] [cursor=pointer]:
+        - /url: /checkins
+        - generic [ref=e24]: 📊
+        - generic [ref=e25]: Check-ins
+      - link "📅 Check-in Schedule" [ref=e26] [cursor=pointer]:
+        - /url: /schedule
+        - generic [ref=e27]: 📅
+        - generic [ref=e28]: Check-in Schedule
+      - link "👥 CS Staff" [ref=e29] [cursor=pointer]:
+        - /url: /cs-staff
+        - generic [ref=e30]: 👥
+        - generic [ref=e31]: CS Staff
+      - link "⚠ Red Flags" [ref=e32] [cursor=pointer]:
+        - /url: /red-flags
+        - generic [ref=e33]: ⚠
+        - generic [ref=e34]: Red Flags
+      - link "📁 Existing Accounts" [ref=e35] [cursor=pointer]:
+        - /url: /existing-accounts
+        - generic [ref=e36]: 📁
+        - generic [ref=e37]: Existing Accounts
+    - generic [ref=e38]: v0.1.0
+  - main [ref=e39]:
+    - heading "Onboarding — Andric Aliwate Cabang" [level=2] [ref=e41]
+    - generic [ref=e42]:
+      - link "← Back to Onboarding" [ref=e43] [cursor=pointer]:
+        - /url: /onboarding
+      - heading "Andric Aliwate Cabang — Onboarding" [level=3] [ref=e44]
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - strong [ref=e47]: "Start Date:"
+          - text: 3 Mar 2026
+        - generic [ref=e48]:
+          - strong [ref=e49]: "Start Time:"
+          - text: 1:00PM PST
+        - generic [ref=e50]:
+          - strong [ref=e51]: "Rate:"
+          - text: —
+      - paragraph [ref=e52]: "Click a status to toggle: Not Done → Done → NA → Not Done"
+      - table [ref=e55]:
+        - rowgroup [ref=e56]:
+          - row "# Step Status Owner Notes" [ref=e57]:
+            - columnheader "#" [ref=e58]
+            - columnheader "Step" [ref=e59]
+            - columnheader "Status" [ref=e60]
+            - columnheader "Owner" [ref=e61]
+            - columnheader "Notes" [ref=e62]
+        - rowgroup [ref=e63]:
+          - row "1 CLIENT CONFIRM START DATE AND TIME Done Michelle —" [ref=e64]:
+            - cell "1" [ref=e65]
+            - cell "CLIENT CONFIRM START DATE AND TIME" [ref=e66]
+            - cell "Done" [ref=e67]:
+              - button "Done" [ref=e68] [cursor=pointer]
+            - cell "Michelle" [ref=e69]
+            - cell "—" [ref=e70]
+          - row "2 RELAYED RATE TO CLIENT Not Done Michelle —" [ref=e71]:
+            - cell "2" [ref=e72]
+            - cell "RELAYED RATE TO CLIENT" [ref=e73]
+            - cell "Not Done" [ref=e74]:
+              - button "Not Done" [ref=e75] [cursor=pointer]
+            - cell "Michelle" [ref=e76]
+            - cell "—" [ref=e77]
+          - row "3 RATE CLIENT CONFIRMATION Not Done Michelle —" [ref=e78]:
+            - cell "3" [ref=e79]
+            - cell "RATE CLIENT CONFIRMATION" [ref=e80]
+            - cell "Not Done" [ref=e81]:
+              - button "Not Done" [ref=e82] [cursor=pointer]
+            - cell "Michelle" [ref=e83]
+            - cell "—" [ref=e84]
+          - row "4 OP CONTRACT SIGNATORY Not Done Michelle —" [ref=e85]:
+            - cell "4" [ref=e86]
+            - cell "OP CONTRACT SIGNATORY" [ref=e87]
+            - cell "Not Done" [ref=e88]:
+              - button "Not Done" [ref=e89] [cursor=pointer]
+            - cell "Michelle" [ref=e90]
+            - cell "—" [ref=e91]
+          - row "5 ONBOARDED BY JANE BRIONES + CS Done Jane —" [ref=e92]:
+            - cell "5" [ref=e93]
+            - cell "ONBOARDED BY JANE BRIONES + CS" [ref=e94]
+            - cell "Done" [ref=e95]:
+              - button "Done" [ref=e96] [cursor=pointer]
+            - cell "Jane" [ref=e97]
+            - cell "—" [ref=e98]
+          - row "6 OP SLACK CREATION Done Michelle —" [ref=e99]:
+            - cell "6" [ref=e100]
+            - cell "OP SLACK CREATION" [ref=e101]
+            - cell "Done" [ref=e102]:
+              - button "Done" [ref=e103] [cursor=pointer]
+            - cell "Michelle" [ref=e104]
+            - cell "—" [ref=e105]
+          - row "7 SLACK WELCOME MESSAGE TO OP Done Michelle —" [ref=e106]:
+            - cell "7" [ref=e107]
+            - cell "SLACK WELCOME MESSAGE TO OP" [ref=e108]
+            - cell "Done" [ref=e109]:
+              - button "Done" [ref=e110] [cursor=pointer]
+            - cell "Michelle" [ref=e111]
+            - cell "—" [ref=e112]
+          - row "8 SCHEDULE HAND-OFF CALL W/ CLIENT? Done Michelle —" [ref=e113]:
+            - cell "8" [ref=e114]
+            - cell "SCHEDULE HAND-OFF CALL W/ CLIENT?" [ref=e115]
+            - cell "Done" [ref=e116]:
+              - button "Done" [ref=e117] [cursor=pointer]
+            - cell "Michelle" [ref=e118]
+            - cell "—" [ref=e119]
+          - row "9 HAND-OFF CALL SCHEDULE CONFIRMED Done Michelle —" [ref=e120]:
+            - cell "9" [ref=e121]
+            - cell "HAND-OFF CALL SCHEDULE CONFIRMED" [ref=e122]
+            - cell "Done" [ref=e123]:
+              - button "Done" [ref=e124] [cursor=pointer]
+            - cell "Michelle" [ref=e125]
+            - cell "—" [ref=e126]
+          - row "10 2ND HAND-OFF CALL SCHEDULE CONFIRMED Done Michelle —" [ref=e127]:
+            - cell "10" [ref=e128]
+            - cell "2ND HAND-OFF CALL SCHEDULE CONFIRMED" [ref=e129]
+            - cell "Done" [ref=e130]:
+              - button "Done" [ref=e131] [cursor=pointer]
+            - cell "Michelle" [ref=e132]
+            - cell "—" [ref=e133]
+          - row "11 SEND SLACK MESSAGE TO CLIENT FOR NEXT STEPS Done Michelle —" [ref=e134]:
+            - cell "11" [ref=e135]
+            - cell "SEND SLACK MESSAGE TO CLIENT FOR NEXT STEPS" [ref=e136]
+            - cell "Done" [ref=e137]:
+              - button "Done" [ref=e138] [cursor=pointer]
+            - cell "Michelle" [ref=e139]
+            - cell "—" [ref=e140]
+          - row "12 ADDED HAND-OFF CALL NOTES? Done Michelle —" [ref=e141]:
+            - cell "12" [ref=e142]
+            - cell "ADDED HAND-OFF CALL NOTES?" [ref=e143]
+            - cell "Done" [ref=e144]:
+              - button "Done" [ref=e145] [cursor=pointer]
+            - cell "Michelle" [ref=e146]
+            - cell "—" [ref=e147]
+          - row "13 ADDED OP TO HAND-OFF CALL WITH CLIENT? Not Done Michelle —" [ref=e148]:
+            - cell "13" [ref=e149]
+            - cell "ADDED OP TO HAND-OFF CALL WITH CLIENT?" [ref=e150]
+            - cell "Not Done" [ref=e151]:
+              - button "Not Done" [ref=e152] [cursor=pointer]
+            - cell "Michelle" [ref=e153]
+            - cell "—" [ref=e154]
+          - row "14 WE'RE READY TO GET STARTED EMAIL NA Dennis —" [ref=e155]:
+            - cell "14" [ref=e156]
+            - cell "WE'RE READY TO GET STARTED EMAIL" [ref=e157]
+            - cell "NA" [ref=e158]:
+              - button "NA" [ref=e159] [cursor=pointer]
+            - cell "Dennis" [ref=e160]
+            - cell "—" [ref=e161]
+          - row "15 WARM INTRO EMAIL Done Dennis —" [ref=e162]:
+            - cell "15" [ref=e163]
+            - cell "WARM INTRO EMAIL" [ref=e164]
+            - cell "Done" [ref=e165]:
+              - button "Done" [ref=e166] [cursor=pointer]
+            - cell "Dennis" [ref=e167]
+            - cell "—" [ref=e168]
+          - row "16 DONE WITH HAND OFF CALL? Done Michelle —" [ref=e169]:
+            - cell "16" [ref=e170]
+            - cell "DONE WITH HAND OFF CALL?" [ref=e171]
+            - cell "Done" [ref=e172]:
+              - button "Done" [ref=e173] [cursor=pointer]
+            - cell "Michelle" [ref=e174]
+            - cell "—" [ref=e175]
+          - row "17 OP ADDED TO WEEKLY GATHERING? Done Michelle —" [ref=e176]:
+            - cell "17" [ref=e177]
+            - cell "OP ADDED TO WEEKLY GATHERING?" [ref=e178]
+            - cell "Done" [ref=e179]:
+              - button "Done" [ref=e180] [cursor=pointer]
+            - cell "Michelle" [ref=e181]
+            - cell "—" [ref=e182]
+          - row "18 WHATSAPP GC FOR CLIENT X OP CREATED? Not Done Michelle —" [ref=e183]:
+            - cell "18" [ref=e184]
+            - cell "WHATSAPP GC FOR CLIENT X OP CREATED?" [ref=e185]
+            - cell "Not Done" [ref=e186]:
+              - button "Not Done" [ref=e187] [cursor=pointer]
+            - cell "Michelle" [ref=e188]
+            - cell "—" [ref=e189]
+          - row "19 SCHEDULE WEEKLY CHECK-INS? Done Michelle —" [ref=e190]:
+            - cell "19" [ref=e191]
+            - cell "SCHEDULE WEEKLY CHECK-INS?" [ref=e192]
+            - cell "Done" [ref=e193]:
+              - button "Done" [ref=e194] [cursor=pointer]
+            - cell "Michelle" [ref=e195]
+            - cell "—" [ref=e196]
+          - row "20 WEEKLY CHECK-INS CONFIRMED? Done Michelle —" [ref=e197]:
+            - cell "20" [ref=e198]
+            - cell "WEEKLY CHECK-INS CONFIRMED?" [ref=e199]
+            - cell "Done" [ref=e200]:
+              - button "Done" [ref=e201] [cursor=pointer]
+            - cell "Michelle" [ref=e202]
+            - cell "—" [ref=e203]
+          - row "21 ADDED BELINDA+ERIC TO 1ST & 2ND CLIENT CHECK-IN? NA Michelle —" [ref=e204]:
+            - cell "21" [ref=e205]
+            - cell "ADDED BELINDA+ERIC TO 1ST & 2ND CLIENT CHECK-IN?" [ref=e206]
+            - cell "NA" [ref=e207]:
+              - button "NA" [ref=e208] [cursor=pointer]
+            - cell "Michelle" [ref=e209]
+            - cell "—" [ref=e210]
+          - row "22 ADD REEF TO GRADUATION CALL Done Michelle —" [ref=e211]:
+            - cell "22" [ref=e212]
+            - cell "ADD REEF TO GRADUATION CALL" [ref=e213]
+            - cell "Done" [ref=e214]:
+              - button "Done" [ref=e215] [cursor=pointer]
+            - cell "Michelle" [ref=e216]
+            - cell "—" [ref=e217]
+          - row "23 PTO POLICY SENT? Done Michelle —" [ref=e218]:
+            - cell "23" [ref=e219]
+            - cell "PTO POLICY SENT?" [ref=e220]
+            - cell "Done" [ref=e221]:
+              - button "Done" [ref=e222] [cursor=pointer]
+            - cell "Michelle" [ref=e223]
+            - cell "—" [ref=e224]
+          - row "24 LAST CHECK-IN CALL Done Michelle —" [ref=e225]:
+            - cell "24" [ref=e226]
+            - cell "LAST CHECK-IN CALL" [ref=e227]
+            - cell "Done" [ref=e228]:
+              - button "Done" [ref=e229] [cursor=pointer]
+            - cell "Michelle" [ref=e230]
+            - cell "—" [ref=e231]
+          - row "25 SCHEDULE NEXT CHECK-IN (AFTER 1 MONTH) Not Done Michelle —" [ref=e232]:
+            - cell "25" [ref=e233]
+            - cell "SCHEDULE NEXT CHECK-IN (AFTER 1 MONTH)" [ref=e234]
+            - cell "Not Done" [ref=e235]:
+              - button "Not Done" [ref=e236] [cursor=pointer]
+            - cell "Michelle" [ref=e237]
+            - cell "—" [ref=e238]
+          - row "26 SCHEDULE NEXT CHECK-IN (QUARTERLY) Done Michelle —" [ref=e239]:
+            - cell "26" [ref=e240]
+            - cell "SCHEDULE NEXT CHECK-IN (QUARTERLY)" [ref=e241]
+            - cell "Done" [ref=e242]:
+              - button "Done" [ref=e243] [cursor=pointer]
+            - cell "Michelle" [ref=e244]
+            - cell "—" [ref=e245]

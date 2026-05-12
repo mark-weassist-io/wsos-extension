@@ -1,0 +1,3150 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img [ref=e10]
+        - generic [ref=e15]: Dashboard
+      - link "OP Directory" [ref=e16] [cursor=pointer]:
+        - /url: /ops
+        - img [ref=e18]
+        - generic [ref=e23]: OP Directory
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+        - img [ref=e26]
+        - generic [ref=e29]: Clients
+      - link "Assignments" [ref=e30] [cursor=pointer]:
+        - /url: /assignments
+        - img [ref=e32]
+        - generic [ref=e35]: Assignments
+      - link "Onboarding" [ref=e36] [cursor=pointer]:
+        - /url: /onboarding
+        - img [ref=e38]
+        - generic [ref=e41]: Onboarding
+      - link "Check-ins" [ref=e42] [cursor=pointer]:
+        - /url: /checkins
+        - img [ref=e44]
+        - generic [ref=e47]: Check-ins
+      - link "Check-in Schedule" [ref=e48] [cursor=pointer]:
+        - /url: /schedule
+        - img [ref=e50]
+        - generic [ref=e52]: Check-in Schedule
+      - link "CS Staff" [ref=e53] [cursor=pointer]:
+        - /url: /cs-staff
+        - img [ref=e55]
+        - generic [ref=e57]: CS Staff
+      - link "Red Flags" [ref=e58] [cursor=pointer]:
+        - /url: /red-flags
+        - img [ref=e60]
+        - generic [ref=e62]: Red Flags
+    - generic [ref=e63]: v0.1.0
+  - main [ref=e64]:
+    - heading "OP Directory" [level=2] [ref=e66]
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: 218 total
+          - link "Trashed" [ref=e71] [cursor=pointer]:
+            - /url: /ops?trashed=1
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - textbox "Search OPs..." [ref=e74]
+            - button "Search" [ref=e75] [cursor=pointer]
+          - link "+ New" [ref=e76] [cursor=pointer]:
+            - /url: /ops/new
+      - table [ref=e79]:
+        - rowgroup [ref=e80]:
+          - row "Name Email Client Role Status CS Phone Actions" [ref=e81]:
+            - columnheader "Name" [ref=e82]
+            - columnheader "Email" [ref=e83]
+            - columnheader "Client" [ref=e84]
+            - columnheader "Role" [ref=e85]
+            - columnheader "Status" [ref=e86]
+            - columnheader "CS" [ref=e87]
+            - columnheader "Phone" [ref=e88]
+            - columnheader "Actions" [ref=e89]
+        - rowgroup [ref=e90]:
+          - row "Adriane Ross Quiroz — Grace Carr (Raindrop) Video Editor Active Adrian +63 976 075 2935 Edit Delete" [ref=e91]:
+            - cell "Adriane Ross Quiroz" [ref=e92]
+            - cell "—" [ref=e93]
+            - cell "Grace Carr (Raindrop)" [ref=e94]
+            - cell "Video Editor" [ref=e95]
+            - cell "Active" [ref=e96]
+            - cell "Adrian" [ref=e97]
+            - cell "+63 976 075 2935" [ref=e98]
+            - cell "Edit Delete" [ref=e99]:
+              - generic [ref=e100]:
+                - link "Edit" [ref=e101] [cursor=pointer]:
+                  - /url: /ops/110/edit
+                - button "Delete" [ref=e103] [cursor=pointer]
+          - row "Aliza Abad aliza.oneplus@gmail.com Austin Blair/ Laundry Sauce Affiliate Marketing Support Probation Bel +639660266896 Edit Delete" [ref=e104]:
+            - cell "Aliza Abad" [ref=e105]
+            - cell "aliza.oneplus@gmail.com" [ref=e106]
+            - cell "Austin Blair/ Laundry Sauce" [ref=e107]
+            - cell "Affiliate Marketing Support" [ref=e108]
+            - cell "Probation" [ref=e109]
+            - cell "Bel" [ref=e110]
+            - cell "+639660266896" [ref=e111]
+            - cell "Edit Delete" [ref=e112]:
+              - generic [ref=e113]:
+                - link "Edit" [ref=e114] [cursor=pointer]:
+                  - /url: /ops/206/edit
+                - button "Delete" [ref=e116] [cursor=pointer]
+          - row "Althea Africa Clabita aaclabita@gmail.com Ian Blair Executive Operations & Concierge Assistant Active Bel +639271447506 Edit Delete" [ref=e117]:
+            - cell "Althea Africa Clabita" [ref=e118]
+            - cell "aaclabita@gmail.com" [ref=e119]
+            - cell "Ian Blair" [ref=e120]
+            - cell "Executive Operations & Concierge Assistant" [ref=e121]
+            - cell "Active" [ref=e122]
+            - cell "Bel" [ref=e123]
+            - cell "+639271447506" [ref=e124]
+            - cell "Edit Delete" [ref=e125]:
+              - generic [ref=e126]:
+                - link "Edit" [ref=e127] [cursor=pointer]:
+                  - /url: /ops/187/edit
+                - button "Delete" [ref=e129] [cursor=pointer]
+          - row "Andric Aliwate Cabang andriccabang@gmail.com Raindrop Agency Creative Resource Manager Probation Bel +639264123058 Edit Delete" [ref=e130]:
+            - cell "Andric Aliwate Cabang" [ref=e131]
+            - cell "andriccabang@gmail.com" [ref=e132]
+            - cell "Raindrop Agency" [ref=e133]
+            - cell "Creative Resource Manager" [ref=e134]
+            - cell "Probation" [ref=e135]
+            - cell "Bel" [ref=e136]
+            - cell "+639264123058" [ref=e137]
+            - cell "Edit Delete" [ref=e138]:
+              - generic [ref=e139]:
+                - link "Edit" [ref=e140] [cursor=pointer]:
+                  - /url: /ops/203/edit
+                - button "Delete" [ref=e142] [cursor=pointer]
+          - row "Andrie Rementilla — Austin Blair/ Laundry Sauce Customer Success Lead Active Bel +639171490304 Edit Delete" [ref=e143]:
+            - cell "Andrie Rementilla" [ref=e144]
+            - cell "—" [ref=e145]
+            - cell "Austin Blair/ Laundry Sauce" [ref=e146]
+            - cell "Customer Success Lead" [ref=e147]
+            - cell "Active" [ref=e148]
+            - cell "Bel" [ref=e149]
+            - cell "+639171490304" [ref=e150]
+            - cell "Edit Delete" [ref=e151]:
+              - generic [ref=e152]:
+                - link "Edit" [ref=e153] [cursor=pointer]:
+                  - /url: /ops/26/edit
+                - button "Delete" [ref=e155] [cursor=pointer]
+          - row "Angela Agranum — Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Adrian +639610157021 Edit Delete" [ref=e156]:
+            - cell "Angela Agranum" [ref=e157]
+            - cell "—" [ref=e158]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e159]
+            - cell "Customer Service Representative/Dispatcher" [ref=e160]
+            - cell "Separated" [ref=e161]
+            - cell "Adrian" [ref=e162]
+            - cell "+639610157021" [ref=e163]
+            - cell "Edit Delete" [ref=e164]:
+              - generic [ref=e165]:
+                - link "Edit" [ref=e166] [cursor=pointer]:
+                  - /url: /ops/62/edit
+                - button "Delete" [ref=e168] [cursor=pointer]
+          - row "Angela Apostol — Ryan Miller Customer Success Manager Active Adrian +639164110203 Edit Delete" [ref=e169]:
+            - cell "Angela Apostol" [ref=e170]
+            - cell "—" [ref=e171]
+            - cell "Ryan Miller" [ref=e172]
+            - cell "Customer Success Manager" [ref=e173]
+            - cell "Active" [ref=e174]
+            - cell "Adrian" [ref=e175]
+            - cell "+639164110203" [ref=e176]
+            - cell "Edit Delete" [ref=e177]:
+              - generic [ref=e178]:
+                - link "Edit" [ref=e179] [cursor=pointer]:
+                  - /url: /ops/2/edit
+                - button "Delete" [ref=e181] [cursor=pointer]
+          - row "Angelica Gutierrez — Gary Sanchez Executive Assistant Active Adrian +639064167906 Edit Delete" [ref=e182]:
+            - cell "Angelica Gutierrez" [ref=e183]
+            - cell "—" [ref=e184]
+            - cell "Gary Sanchez" [ref=e185]
+            - cell "Executive Assistant" [ref=e186]
+            - cell "Active" [ref=e187]
+            - cell "Adrian" [ref=e188]
+            - cell "+639064167906" [ref=e189]
+            - cell "Edit Delete" [ref=e190]:
+              - generic [ref=e191]:
+                - link "Edit" [ref=e192] [cursor=pointer]:
+                  - /url: /ops/77/edit
+                - button "Delete" [ref=e194] [cursor=pointer]
+          - row "Angelica Mae Dombrique Cruz angeldombrique28@gmail.com Maddison Koper Executive Assistant Separated Bel +639456722707 Edit Delete" [ref=e195]:
+            - cell "Angelica Mae Dombrique Cruz" [ref=e196]
+            - cell "angeldombrique28@gmail.com" [ref=e197]
+            - cell "Maddison Koper" [ref=e198]
+            - cell "Executive Assistant" [ref=e199]
+            - cell "Separated" [ref=e200]
+            - cell "Bel" [ref=e201]
+            - cell "+639456722707" [ref=e202]
+            - cell "Edit Delete" [ref=e203]:
+              - generic [ref=e204]:
+                - link "Edit" [ref=e205] [cursor=pointer]:
+                  - /url: /ops/162/edit
+                - button "Delete" [ref=e207] [cursor=pointer]
+          - row "Angelika Yuson Basubas angelikabasubas@gmail.com Ryan Miller Executive Assistant OP Active Bel +639478214236 Edit Delete" [ref=e208]:
+            - cell "Angelika Yuson Basubas" [ref=e209]
+            - cell "angelikabasubas@gmail.com" [ref=e210]
+            - cell "Ryan Miller" [ref=e211]
+            - cell "Executive Assistant OP" [ref=e212]
+            - cell "Active" [ref=e213]
+            - cell "Bel" [ref=e214]
+            - cell "+639478214236" [ref=e215]
+            - cell "Edit Delete" [ref=e216]:
+              - generic [ref=e217]:
+                - link "Edit" [ref=e218] [cursor=pointer]:
+                  - /url: /ops/215/edit
+                - button "Delete" [ref=e220] [cursor=pointer]
+          - row "Ann Jenniffer Anengyao Cruz annjenniffercruz@gmail.com Lucas Kemper Executive Assistant Separated Bel +639281911816 Edit Delete" [ref=e221]:
+            - cell "Ann Jenniffer Anengyao Cruz" [ref=e222]
+            - cell "annjenniffercruz@gmail.com" [ref=e223]
+            - cell "Lucas Kemper" [ref=e224]
+            - cell "Executive Assistant" [ref=e225]
+            - cell "Separated" [ref=e226]
+            - cell "Bel" [ref=e227]
+            - cell "+639281911816" [ref=e228]
+            - cell "Edit Delete" [ref=e229]:
+              - generic [ref=e230]:
+                - link "Edit" [ref=e231] [cursor=pointer]:
+                  - /url: /ops/186/edit
+                - button "Delete" [ref=e233] [cursor=pointer]
+          - row "Annalyn Olingay — Josh Schwartz Commercial Account Manager Active Bel +639335597212 Edit Delete" [ref=e234]:
+            - cell "Annalyn Olingay" [ref=e235]
+            - cell "—" [ref=e236]
+            - cell "Josh Schwartz" [ref=e237]
+            - cell "Commercial Account Manager" [ref=e238]
+            - cell "Active" [ref=e239]
+            - cell "Bel" [ref=e240]
+            - cell "+639335597212" [ref=e241]
+            - cell "Edit Delete" [ref=e242]:
+              - generic [ref=e243]:
+                - link "Edit" [ref=e244] [cursor=pointer]:
+                  - /url: /ops/89/edit
+                - button "Delete" [ref=e246] [cursor=pointer]
+          - row "Annie Martinez — Joshua Jeffries Admin Support Active Adrian +639060667045 Edit Delete" [ref=e247]:
+            - cell "Annie Martinez" [ref=e248]
+            - cell "—" [ref=e249]
+            - cell "Joshua Jeffries" [ref=e250]
+            - cell "Admin Support" [ref=e251]
+            - cell "Active" [ref=e252]
+            - cell "Adrian" [ref=e253]
+            - cell "+639060667045" [ref=e254]
+            - cell "Edit Delete" [ref=e255]:
+              - generic [ref=e256]:
+                - link "Edit" [ref=e257] [cursor=pointer]:
+                  - /url: /ops/85/edit
+                - button "Delete" [ref=e259] [cursor=pointer]
+          - row "Anthony Clement Salanga Sarte litratoantonioworks@gmail.com Raindrop Agency Photo Editor Separated Adrian +639176318212 Edit Delete" [ref=e260]:
+            - cell "Anthony Clement Salanga Sarte" [ref=e261]
+            - cell "litratoantonioworks@gmail.com" [ref=e262]
+            - cell "Raindrop Agency" [ref=e263]
+            - cell "Photo Editor" [ref=e264]
+            - cell "Separated" [ref=e265]
+            - cell "Adrian" [ref=e266]
+            - cell "+639176318212" [ref=e267]
+            - cell "Edit Delete" [ref=e268]:
+              - generic [ref=e269]:
+                - link "Edit" [ref=e270] [cursor=pointer]:
+                  - /url: /ops/119/edit
+                - button "Delete" [ref=e272] [cursor=pointer]
+          - row "Apple Joy Cuaresma — Edward Piazza Bookkeeper Active Adrian +639361394111 Edit Delete" [ref=e273]:
+            - cell "Apple Joy Cuaresma" [ref=e274]
+            - cell "—" [ref=e275]
+            - cell "Edward Piazza" [ref=e276]
+            - cell "Bookkeeper" [ref=e277]
+            - cell "Active" [ref=e278]
+            - cell "Adrian" [ref=e279]
+            - cell "+639361394111" [ref=e280]
+            - cell "Edit Delete" [ref=e281]:
+              - generic [ref=e282]:
+                - link "Edit" [ref=e283] [cursor=pointer]:
+                  - /url: /ops/70/edit
+                - button "Delete" [ref=e285] [cursor=pointer]
+          - row "April Rose Diaz — Ryan McFarland Virtual Assistant Separated Bel +639603243146 Edit Delete" [ref=e286]:
+            - cell "April Rose Diaz" [ref=e287]
+            - cell "—" [ref=e288]
+            - cell "Ryan McFarland" [ref=e289]
+            - cell "Virtual Assistant" [ref=e290]
+            - cell "Separated" [ref=e291]
+            - cell "Bel" [ref=e292]
+            - cell "+639603243146" [ref=e293]
+            - cell "Edit Delete" [ref=e294]:
+              - generic [ref=e295]:
+                - link "Edit" [ref=e296] [cursor=pointer]:
+                  - /url: /ops/42/edit
+                - button "Delete" [ref=e298] [cursor=pointer]
+          - row "Arla Mariel Magpayo — Stella Song Social Media Specialist Separated Adrian +639692109727 Edit Delete" [ref=e299]:
+            - cell "Arla Mariel Magpayo" [ref=e300]
+            - cell "—" [ref=e301]
+            - cell "Stella Song" [ref=e302]
+            - cell "Social Media Specialist" [ref=e303]
+            - cell "Separated" [ref=e304]
+            - cell "Adrian" [ref=e305]
+            - cell "+639692109727" [ref=e306]
+            - cell "Edit Delete" [ref=e307]:
+              - generic [ref=e308]:
+                - link "Edit" [ref=e309] [cursor=pointer]:
+                  - /url: /ops/84/edit
+                - button "Delete" [ref=e311] [cursor=pointer]
+          - row "Arlyn Lindain — Josh Fancher / Dustin Terry Project Manager Separated Adrian +639687625935 Edit Delete" [ref=e312]:
+            - cell "Arlyn Lindain" [ref=e313]
+            - cell "—" [ref=e314]
+            - cell "Josh Fancher / Dustin Terry" [ref=e315]
+            - cell "Project Manager" [ref=e316]
+            - cell "Separated" [ref=e317]
+            - cell "Adrian" [ref=e318]
+            - cell "+639687625935" [ref=e319]
+            - cell "Edit Delete" [ref=e320]:
+              - generic [ref=e321]:
+                - link "Edit" [ref=e322] [cursor=pointer]:
+                  - /url: /ops/81/edit
+                - button "Delete" [ref=e324] [cursor=pointer]
+          - row "Arlyn Lindain — Dustin Terry (Velocity) Project Manager Active Adrian +639687625935 Edit Delete" [ref=e325]:
+            - cell "Arlyn Lindain" [ref=e326]
+            - cell "—" [ref=e327]
+            - cell "Dustin Terry (Velocity)" [ref=e328]
+            - cell "Project Manager" [ref=e329]
+            - cell "Active" [ref=e330]
+            - cell "Adrian" [ref=e331]
+            - cell "+639687625935" [ref=e332]
+            - cell "Edit Delete" [ref=e333]:
+              - generic [ref=e334]:
+                - link "Edit" [ref=e335] [cursor=pointer]:
+                  - /url: /ops/81/edit
+                - button "Delete" [ref=e337] [cursor=pointer]
+          - row "Armie Sacala — Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Bel +639567182019 Edit Delete" [ref=e338]:
+            - cell "Armie Sacala" [ref=e339]
+            - cell "—" [ref=e340]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e341]
+            - cell "Customer Service Representative/Dispatcher" [ref=e342]
+            - cell "Separated" [ref=e343]
+            - cell "Bel" [ref=e344]
+            - cell "+639567182019" [ref=e345]
+            - cell "Edit Delete" [ref=e346]:
+              - generic [ref=e347]:
+                - link "Edit" [ref=e348] [cursor=pointer]:
+                  - /url: /ops/97/edit
+                - button "Delete" [ref=e350] [cursor=pointer]
+          - row "Arnold PAdriano — Ryan McFarland Sales Development Representative Separated Bel +639165039593 Edit Delete" [ref=e351]:
+            - cell "Arnold PAdriano" [ref=e352]
+            - cell "—" [ref=e353]
+            - cell "Ryan McFarland" [ref=e354]
+            - cell "Sales Development Representative" [ref=e355]
+            - cell "Separated" [ref=e356]
+            - cell "Bel" [ref=e357]
+            - cell "+639165039593" [ref=e358]
+            - cell "Edit Delete" [ref=e359]:
+              - generic [ref=e360]:
+                - link "Edit" [ref=e361] [cursor=pointer]:
+                  - /url: /ops/48/edit
+                - button "Delete" [ref=e363] [cursor=pointer]
+          - row "Audrey Rey — Ryan McFarland Colby's Virtual Assistant / Fulfillment Support Specialist Separated Bel +639270475437 Edit Delete" [ref=e364]:
+            - cell "Audrey Rey" [ref=e365]
+            - cell "—" [ref=e366]
+            - cell "Ryan McFarland" [ref=e367]
+            - cell "Colby's Virtual Assistant / Fulfillment Support Specialist" [ref=e368]
+            - cell "Separated" [ref=e369]
+            - cell "Bel" [ref=e370]
+            - cell "+639270475437" [ref=e371]
+            - cell "Edit Delete" [ref=e372]:
+              - generic [ref=e373]:
+                - link "Edit" [ref=e374] [cursor=pointer]:
+                  - /url: /ops/51/edit
+                - button "Delete" [ref=e376] [cursor=pointer]
+          - row "Ava Czarina Meneses — Jamison Watts Executive Assistant Separated Adrian +639558596708 / +639166598787 Edit Delete" [ref=e377]:
+            - cell "Ava Czarina Meneses" [ref=e378]
+            - cell "—" [ref=e379]
+            - cell "Jamison Watts" [ref=e380]
+            - cell "Executive Assistant" [ref=e381]
+            - cell "Separated" [ref=e382]
+            - cell "Adrian" [ref=e383]
+            - cell "+639558596708 / +639166598787" [ref=e384]
+            - cell "Edit Delete" [ref=e385]:
+              - generic [ref=e386]:
+                - link "Edit" [ref=e387] [cursor=pointer]:
+                  - /url: /ops/86/edit
+                - button "Delete" [ref=e389] [cursor=pointer]
+          - row "Ava Czarina Meneses — Brooklyn Hillenbrand / Weassist Executive Assistant Active Adrian +639558596708 / +639166598787 Edit Delete" [ref=e390]:
+            - cell "Ava Czarina Meneses" [ref=e391]
+            - cell "—" [ref=e392]
+            - cell "Brooklyn Hillenbrand / Weassist" [ref=e393]
+            - cell "Executive Assistant" [ref=e394]
+            - cell "Active" [ref=e395]
+            - cell "Adrian" [ref=e396]
+            - cell "+639558596708 / +639166598787" [ref=e397]
+            - cell "Edit Delete" [ref=e398]:
+              - generic [ref=e399]:
+                - link "Edit" [ref=e400] [cursor=pointer]:
+                  - /url: /ops/86/edit
+                - button "Delete" [ref=e402] [cursor=pointer]
+          - row "Avrey N. Aquino — Zac Safron / Safron Solutions Onboarding Specialist Separated Bel +639564963906 Edit Delete" [ref=e403]:
+            - cell "Avrey N. Aquino" [ref=e404]
+            - cell "—" [ref=e405]
+            - cell "Zac Safron / Safron Solutions" [ref=e406]
+            - cell "Onboarding Specialist" [ref=e407]
+            - cell "Separated" [ref=e408]
+            - cell "Bel" [ref=e409]
+            - cell "+639564963906" [ref=e410]
+            - cell "Edit Delete" [ref=e411]:
+              - generic [ref=e412]:
+                - link "Edit" [ref=e413] [cursor=pointer]:
+                  - /url: /ops/4/edit
+                - button "Delete" [ref=e415] [cursor=pointer]
+          - row "Ayen Faith Jill Morales faithmorales4002@gmail.com Gavin Klauser AI-driven Operations Assistant Probation Bel +639766628293 Edit Delete" [ref=e416]:
+            - cell "Ayen Faith Jill Morales" [ref=e417]
+            - cell "faithmorales4002@gmail.com" [ref=e418]
+            - cell "Gavin Klauser" [ref=e419]
+            - cell "AI-driven Operations Assistant" [ref=e420]
+            - cell "Probation" [ref=e421]
+            - cell "Bel" [ref=e422]
+            - cell "+639766628293" [ref=e423]
+            - cell "Edit Delete" [ref=e424]:
+              - generic [ref=e425]:
+                - link "Edit" [ref=e426] [cursor=pointer]:
+                  - /url: /ops/216/edit
+                - button "Delete" [ref=e428] [cursor=pointer]
+          - row "Baran Haider — Ryan McFarland Video Editor Separated Bel +923400154616 Edit Delete" [ref=e429]:
+            - cell "Baran Haider" [ref=e430]
+            - cell "—" [ref=e431]
+            - cell "Ryan McFarland" [ref=e432]
+            - cell "Video Editor" [ref=e433]
+            - cell "Separated" [ref=e434]
+            - cell "Bel" [ref=e435]
+            - cell "+923400154616" [ref=e436]
+            - cell "Edit Delete" [ref=e437]:
+              - generic [ref=e438]:
+                - link "Edit" [ref=e439] [cursor=pointer]:
+                  - /url: /ops/47/edit
+                - button "Delete" [ref=e441] [cursor=pointer]
+          - row "Barrett Spearman — Ryan McFarland WH Manager Separated Bel — Edit Delete" [ref=e442]:
+            - cell "Barrett Spearman" [ref=e443]
+            - cell "—" [ref=e444]
+            - cell "Ryan McFarland" [ref=e445]
+            - cell "WH Manager" [ref=e446]
+            - cell "Separated" [ref=e447]
+            - cell "Bel" [ref=e448]
+            - cell "—" [ref=e449]
+            - cell "Edit Delete" [ref=e450]:
+              - generic [ref=e451]:
+                - link "Edit" [ref=e452] [cursor=pointer]:
+                  - /url: /ops/57/edit
+                - button "Delete" [ref=e454] [cursor=pointer]
+          - row "Bea Marcelle Ramirez beamarcelle@outlook.com Phil Whitebloom Executive Assistant Active Bel +639626391703 Edit Delete" [ref=e455]:
+            - cell "Bea Marcelle Ramirez" [ref=e456]
+            - cell "beamarcelle@outlook.com" [ref=e457]
+            - cell "Phil Whitebloom" [ref=e458]
+            - cell "Executive Assistant" [ref=e459]
+            - cell "Active" [ref=e460]
+            - cell "Bel" [ref=e461]
+            - cell "+639626391703" [ref=e462]
+            - cell "Edit Delete" [ref=e463]:
+              - generic [ref=e464]:
+                - link "Edit" [ref=e465] [cursor=pointer]:
+                  - /url: /ops/156/edit
+                - button "Delete" [ref=e467] [cursor=pointer]
+          - row "Bridge Laugo — Dan D'Alberto Executive Assistant Separated Adrian +639913949333 Edit Delete" [ref=e468]:
+            - cell "Bridge Laugo" [ref=e469]
+            - cell "—" [ref=e470]
+            - cell "Dan D'Alberto" [ref=e471]
+            - cell "Executive Assistant" [ref=e472]
+            - cell "Separated" [ref=e473]
+            - cell "Adrian" [ref=e474]
+            - cell "+639913949333" [ref=e475]
+            - cell "Edit Delete" [ref=e476]:
+              - generic [ref=e477]:
+                - link "Edit" [ref=e478] [cursor=pointer]:
+                  - /url: /ops/80/edit
+                - button "Delete" [ref=e480] [cursor=pointer]
+          - row "Bridge Laugo — Brian Baber Executive Assistant Active Adrian +639913949333 Edit Delete" [ref=e481]:
+            - cell "Bridge Laugo" [ref=e482]
+            - cell "—" [ref=e483]
+            - cell "Brian Baber" [ref=e484]
+            - cell "Executive Assistant" [ref=e485]
+            - cell "Active" [ref=e486]
+            - cell "Adrian" [ref=e487]
+            - cell "+639913949333" [ref=e488]
+            - cell "Edit Delete" [ref=e489]:
+              - generic [ref=e490]:
+                - link "Edit" [ref=e491] [cursor=pointer]:
+                  - /url: /ops/80/edit
+                - button "Delete" [ref=e493] [cursor=pointer]
+          - row "Caitlin Dana Magno Belda caitlin.belda@gmail.com Ryan McFarland Marketing Manager Separated Bel +639254782049 Edit Delete" [ref=e494]:
+            - cell "Caitlin Dana Magno Belda" [ref=e495]
+            - cell "caitlin.belda@gmail.com" [ref=e496]
+            - cell "Ryan McFarland" [ref=e497]
+            - cell "Marketing Manager" [ref=e498]
+            - cell "Separated" [ref=e499]
+            - cell "Bel" [ref=e500]
+            - cell "+639254782049" [ref=e501]
+            - cell "Edit Delete" [ref=e502]:
+              - generic [ref=e503]:
+                - link "Edit" [ref=e504] [cursor=pointer]:
+                  - /url: /ops/170/edit
+                - button "Delete" [ref=e506] [cursor=pointer]
+          - row "Camille Calugay — Ryan McFarland Fulfillment Specialist Separated Bel +639277585965 Edit Delete" [ref=e507]:
+            - cell "Camille Calugay" [ref=e508]
+            - cell "—" [ref=e509]
+            - cell "Ryan McFarland" [ref=e510]
+            - cell "Fulfillment Specialist" [ref=e511]
+            - cell "Separated" [ref=e512]
+            - cell "Bel" [ref=e513]
+            - cell "+639277585965" [ref=e514]
+            - cell "Edit Delete" [ref=e515]:
+              - generic [ref=e516]:
+                - link "Edit" [ref=e517] [cursor=pointer]:
+                  - /url: /ops/41/edit
+                - button "Delete" [ref=e519] [cursor=pointer]
+          - row "Carl Christian Reyes — Dr. Matthew and Theresa Steiner Executive Sales Assistant Separated Adrian +639558954301 Edit Delete" [ref=e520]:
+            - cell "Carl Christian Reyes" [ref=e521]
+            - cell "—" [ref=e522]
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e523]
+            - cell "Executive Sales Assistant" [ref=e524]
+            - cell "Separated" [ref=e525]
+            - cell "Adrian" [ref=e526]
+            - cell "+639558954301" [ref=e527]
+            - cell "Edit Delete" [ref=e528]:
+              - generic [ref=e529]:
+                - link "Edit" [ref=e530] [cursor=pointer]:
+                  - /url: /ops/34/edit
+                - button "Delete" [ref=e532] [cursor=pointer]
+          - row "Carlo Marko A. Cuenca carlo.cuenca23@gmail.com Syam Subramaniam Legal Assistant / Paralegal Separated Bel +639605230179 Edit Delete" [ref=e533]:
+            - cell "Carlo Marko A. Cuenca" [ref=e534]
+            - cell "carlo.cuenca23@gmail.com" [ref=e535]
+            - cell "Syam Subramaniam" [ref=e536]
+            - cell "Legal Assistant / Paralegal" [ref=e537]
+            - cell "Separated" [ref=e538]
+            - cell "Bel" [ref=e539]
+            - cell "+639605230179" [ref=e540]
+            - cell "Edit Delete" [ref=e541]:
+              - generic [ref=e542]:
+                - link "Edit" [ref=e543] [cursor=pointer]:
+                  - /url: /ops/157/edit
+                - button "Delete" [ref=e545] [cursor=pointer]
+          - row "Charissa Joana Giray Francisco charissefrancisco0624@gmail.com Connor Miller (ArdentX) Order Entry Specialist Separated Bel +639957463784 Edit Delete" [ref=e546]:
+            - cell "Charissa Joana Giray Francisco" [ref=e547]
+            - cell "charissefrancisco0624@gmail.com" [ref=e548]
+            - cell "Connor Miller (ArdentX)" [ref=e549]
+            - cell "Order Entry Specialist" [ref=e550]
+            - cell "Separated" [ref=e551]
+            - cell "Bel" [ref=e552]
+            - cell "+639957463784" [ref=e553]
+            - cell "Edit Delete" [ref=e554]:
+              - generic [ref=e555]:
+                - link "Edit" [ref=e556] [cursor=pointer]:
+                  - /url: /ops/114/edit
+                - button "Delete" [ref=e558] [cursor=pointer]
+          - row "Charisse Pineda czpineda.va@gmail.com Greg and Lisa Shields Executive Assistant Probation Bel +639764223332 Edit Delete" [ref=e559]:
+            - cell "Charisse Pineda" [ref=e560]
+            - cell "czpineda.va@gmail.com" [ref=e561]
+            - cell "Greg and Lisa Shields" [ref=e562]
+            - cell "Executive Assistant" [ref=e563]
+            - cell "Probation" [ref=e564]
+            - cell "Bel" [ref=e565]
+            - cell "+639764223332" [ref=e566]
+            - cell "Edit Delete" [ref=e567]:
+              - generic [ref=e568]:
+                - link "Edit" [ref=e569] [cursor=pointer]:
+                  - /url: /ops/213/edit
+                - button "Delete" [ref=e571] [cursor=pointer]
+          - row "Charity Bareng caguioabareng@gmail.com Jordan Bass Executive Assistant Separated Bel +639386262424 Edit Delete" [ref=e572]:
+            - cell "Charity Bareng" [ref=e573]
+            - cell "caguioabareng@gmail.com" [ref=e574]
+            - cell "Jordan Bass" [ref=e575]
+            - cell "Executive Assistant" [ref=e576]
+            - cell "Separated" [ref=e577]
+            - cell "Bel" [ref=e578]
+            - cell "+639386262424" [ref=e579]
+            - cell "Edit Delete" [ref=e580]:
+              - generic [ref=e581]:
+                - link "Edit" [ref=e582] [cursor=pointer]:
+                  - /url: /ops/5/edit
+                - button "Delete" [ref=e584] [cursor=pointer]
+          - row "Charity Bareng caguioabareng@gmail.com Nader Safinya Executive Assistant Separated Bel +639386262424 Edit Delete" [ref=e585]:
+            - cell "Charity Bareng" [ref=e586]
+            - cell "caguioabareng@gmail.com" [ref=e587]
+            - cell "Nader Safinya" [ref=e588]
+            - cell "Executive Assistant" [ref=e589]
+            - cell "Separated" [ref=e590]
+            - cell "Bel" [ref=e591]
+            - cell "+639386262424" [ref=e592]
+            - cell "Edit Delete" [ref=e593]:
+              - generic [ref=e594]:
+                - link "Edit" [ref=e595] [cursor=pointer]:
+                  - /url: /ops/5/edit
+                - button "Delete" [ref=e597] [cursor=pointer]
+          - row "Charmaine Cuenco Mallari charmaine.mallari17@gmail.com Daniel Hambrick Insurance CSR OP Separated Bel +639212743674 Edit Delete" [ref=e598]:
+            - cell "Charmaine Cuenco Mallari" [ref=e599]
+            - cell "charmaine.mallari17@gmail.com" [ref=e600]
+            - cell "Daniel Hambrick" [ref=e601]
+            - cell "Insurance CSR OP" [ref=e602]
+            - cell "Separated" [ref=e603]
+            - cell "Bel" [ref=e604]
+            - cell "+639212743674" [ref=e605]
+            - cell "Edit Delete" [ref=e606]:
+              - generic [ref=e607]:
+                - link "Edit" [ref=e608] [cursor=pointer]:
+                  - /url: /ops/174/edit
+                - button "Delete" [ref=e610] [cursor=pointer]
+          - row "Cheere Bee May Tacluyan-Ranile chebstacluyan@gmail.com Maddison Koper Executive Assistant Separated Bel +639278625828 Edit Delete" [ref=e611]:
+            - cell "Cheere Bee May Tacluyan-Ranile" [ref=e612]
+            - cell "chebstacluyan@gmail.com" [ref=e613]
+            - cell "Maddison Koper" [ref=e614]
+            - cell "Executive Assistant" [ref=e615]
+            - cell "Separated" [ref=e616]
+            - cell "Bel" [ref=e617]
+            - cell "+639278625828" [ref=e618]
+            - cell "Edit Delete" [ref=e619]:
+              - generic [ref=e620]:
+                - link "Edit" [ref=e621] [cursor=pointer]:
+                  - /url: /ops/180/edit
+                - button "Delete" [ref=e623] [cursor=pointer]
+          - row "Christian Jess Serentas jessserentas@gmail.com Raindrop Agency CRM Manager OP Separated Bel +639298418876 Edit Delete" [ref=e624]:
+            - cell "Christian Jess Serentas" [ref=e625]
+            - cell "jessserentas@gmail.com" [ref=e626]
+            - cell "Raindrop Agency" [ref=e627]
+            - cell "CRM Manager OP" [ref=e628]
+            - cell "Separated" [ref=e629]
+            - cell "Bel" [ref=e630]
+            - cell "+639298418876" [ref=e631]
+            - cell "Edit Delete" [ref=e632]:
+              - generic [ref=e633]:
+                - link "Edit" [ref=e634] [cursor=pointer]:
+                  - /url: /ops/177/edit
+                - button "Delete" [ref=e636] [cursor=pointer]
+          - row "Christine Mae Mayol — Lucas Robinson Customer Support Representative Active Adrian +639467499381 Edit Delete" [ref=e637]:
+            - cell "Christine Mae Mayol" [ref=e638]
+            - cell "—" [ref=e639]
+            - cell "Lucas Robinson" [ref=e640]
+            - cell "Customer Support Representative" [ref=e641]
+            - cell "Active" [ref=e642]
+            - cell "Adrian" [ref=e643]
+            - cell "+639467499381" [ref=e644]
+            - cell "Edit Delete" [ref=e645]:
+              - generic [ref=e646]:
+                - link "Edit" [ref=e647] [cursor=pointer]:
+                  - /url: /ops/20/edit
+                - button "Delete" [ref=e649] [cursor=pointer]
+          - row "Cion Melanie Mensidor — John Yeoh Executive Assistant Separated Adrian +639985877357 Edit Delete" [ref=e650]:
+            - cell "Cion Melanie Mensidor" [ref=e651]
+            - cell "—" [ref=e652]
+            - cell "John Yeoh" [ref=e653]
+            - cell "Executive Assistant" [ref=e654]
+            - cell "Separated" [ref=e655]
+            - cell "Adrian" [ref=e656]
+            - cell "+639985877357" [ref=e657]
+            - cell "Edit Delete" [ref=e658]:
+              - generic [ref=e659]:
+                - link "Edit" [ref=e660] [cursor=pointer]:
+                  - /url: /ops/87/edit
+                - button "Delete" [ref=e662] [cursor=pointer]
+          - row "Cliford Macion macioncliford@gmail.com Joe Worth Executive Assistant Separated Bel +639608623639 Edit Delete" [ref=e663]:
+            - cell "Cliford Macion" [ref=e664]
+            - cell "macioncliford@gmail.com" [ref=e665]
+            - cell "Joe Worth" [ref=e666]
+            - cell "Executive Assistant" [ref=e667]
+            - cell "Separated" [ref=e668]
+            - cell "Bel" [ref=e669]
+            - cell "+639608623639" [ref=e670]
+            - cell "Edit Delete" [ref=e671]:
+              - generic [ref=e672]:
+                - link "Edit" [ref=e673] [cursor=pointer]:
+                  - /url: /ops/133/edit
+                - button "Delete" [ref=e675] [cursor=pointer]
+          - row "Clint Warren Gabonada Giangan clintgiangan963@gmail.com Josh Sullivan Sales Assistant Probation Adrian +639752089526 Edit Delete" [ref=e676]:
+            - cell "Clint Warren Gabonada Giangan" [ref=e677]
+            - cell "clintgiangan963@gmail.com" [ref=e678]
+            - cell "Josh Sullivan" [ref=e679]
+            - cell "Sales Assistant" [ref=e680]
+            - cell "Probation" [ref=e681]
+            - cell "Adrian" [ref=e682]
+            - cell "+639752089526" [ref=e683]
+            - cell "Edit Delete" [ref=e684]:
+              - generic [ref=e685]:
+                - link "Edit" [ref=e686] [cursor=pointer]:
+                  - /url: /ops/197/edit
+                - button "Delete" [ref=e688] [cursor=pointer]
+          - row "Conan JD HoldenTalibong — Adam Wagner Account Coordinator Separated Adrian +639664117137 Edit Delete" [ref=e689]:
+            - cell "Conan JD HoldenTalibong" [ref=e690]
+            - cell "—" [ref=e691]
+            - cell "Adam Wagner" [ref=e692]
+            - cell "Account Coordinator" [ref=e693]
+            - cell "Separated" [ref=e694]
+            - cell "Adrian" [ref=e695]
+            - cell "+639664117137" [ref=e696]
+            - cell "Edit Delete" [ref=e697]:
+              - generic [ref=e698]:
+                - link "Edit" [ref=e699] [cursor=pointer]:
+                  - /url: /ops/104/edit
+                - button "Delete" [ref=e701] [cursor=pointer]
+          - row "Czyren Bautista — Ryan McFarland Virtual Assistant Separated Bel +639666739347 Edit Delete" [ref=e702]:
+            - cell "Czyren Bautista" [ref=e703]
+            - cell "—" [ref=e704]
+            - cell "Ryan McFarland" [ref=e705]
+            - cell "Virtual Assistant" [ref=e706]
+            - cell "Separated" [ref=e707]
+            - cell "Bel" [ref=e708]
+            - cell "+639666739347" [ref=e709]
+            - cell "Edit Delete" [ref=e710]:
+              - generic [ref=e711]:
+                - link "Edit" [ref=e712] [cursor=pointer]:
+                  - /url: /ops/37/edit
+                - button "Delete" [ref=e714] [cursor=pointer]
+          - row "Daneva Joy Magallanes djmag1987@gmail.com Joseph Bua Dispatch Coordinator Active Bel +639958542643 Edit Delete" [ref=e715]:
+            - cell "Daneva Joy Magallanes" [ref=e716]
+            - cell "djmag1987@gmail.com" [ref=e717]
+            - cell "Joseph Bua" [ref=e718]
+            - cell "Dispatch Coordinator" [ref=e719]
+            - cell "Active" [ref=e720]
+            - cell "Bel" [ref=e721]
+            - cell "+639958542643" [ref=e722]
+            - cell "Edit Delete" [ref=e723]:
+              - generic [ref=e724]:
+                - link "Edit" [ref=e725] [cursor=pointer]:
+                  - /url: /ops/175/edit
+                - button "Delete" [ref=e727] [cursor=pointer]
+          - row "Danica Angela Arce Ibanez ibanezangela.va@gmail.com Chad Brown Executive Assistant OP Separated Bel +639536696517 Edit Delete" [ref=e728]:
+            - cell "Danica Angela Arce Ibanez" [ref=e729]
+            - cell "ibanezangela.va@gmail.com" [ref=e730]
+            - cell "Chad Brown" [ref=e731]
+            - cell "Executive Assistant OP" [ref=e732]
+            - cell "Separated" [ref=e733]
+            - cell "Bel" [ref=e734]
+            - cell "+639536696517" [ref=e735]
+            - cell "Edit Delete" [ref=e736]:
+              - generic [ref=e737]:
+                - link "Edit" [ref=e738] [cursor=pointer]:
+                  - /url: /ops/188/edit
+                - button "Delete" [ref=e740] [cursor=pointer]
+          - row "Daniel Anyebe — Blake Evertsen Sales Development Representative Separated Bel +639569314422 Edit Delete" [ref=e741]:
+            - cell "Daniel Anyebe" [ref=e742]
+            - cell "—" [ref=e743]
+            - cell "Blake Evertsen" [ref=e744]
+            - cell "Sales Development Representative" [ref=e745]
+            - cell "Separated" [ref=e746]
+            - cell "Bel" [ref=e747]
+            - cell "+639569314422" [ref=e748]
+            - cell "Edit Delete" [ref=e749]:
+              - generic [ref=e750]:
+                - link "Edit" [ref=e751] [cursor=pointer]:
+                  - /url: /ops/1/edit
+                - button "Delete" [ref=e753] [cursor=pointer]
+          - row "Danielle Samantha Quinto dsquintoservices@gmail.com Zach Papenhausen Admin Assistant & CRM Manager Active Bel +639701206954 Edit Delete" [ref=e754]:
+            - cell "Danielle Samantha Quinto" [ref=e755]
+            - cell "dsquintoservices@gmail.com" [ref=e756]
+            - cell "Zach Papenhausen" [ref=e757]
+            - cell "Admin Assistant & CRM Manager" [ref=e758]
+            - cell "Active" [ref=e759]
+            - cell "Bel" [ref=e760]
+            - cell "+639701206954" [ref=e761]
+            - cell "Edit Delete" [ref=e762]:
+              - generic [ref=e763]:
+                - link "Edit" [ref=e764] [cursor=pointer]:
+                  - /url: /ops/147/edit
+                - button "Delete" [ref=e766] [cursor=pointer]
+          - row "Dara Maria Jezreelle Pailan — Jonmarc Brown Marketing Operations Assistant Active Bel +447457400729(whatsapp) / +639998862590 / +639453101508 Edit Delete" [ref=e767]:
+            - cell "Dara Maria Jezreelle Pailan" [ref=e768]
+            - cell "—" [ref=e769]
+            - cell "Jonmarc Brown" [ref=e770]
+            - cell "Marketing Operations Assistant" [ref=e771]
+            - cell "Active" [ref=e772]
+            - cell "Bel" [ref=e773]
+            - cell "+447457400729(whatsapp) / +639998862590 / +639453101508" [ref=e774]
+            - cell "Edit Delete" [ref=e775]:
+              - generic [ref=e776]:
+                - link "Edit" [ref=e777] [cursor=pointer]:
+                  - /url: /ops/22/edit
+                - button "Delete" [ref=e779] [cursor=pointer]
+          - row "Darlene Carmina Hardiolin — Zach Paul Marketing VA Separated Bel +639993764810 Edit Delete" [ref=e780]:
+            - cell "Darlene Carmina Hardiolin" [ref=e781]
+            - cell "—" [ref=e782]
+            - cell "Zach Paul" [ref=e783]
+            - cell "Marketing VA" [ref=e784]
+            - cell "Separated" [ref=e785]
+            - cell "Bel" [ref=e786]
+            - cell "+639993764810" [ref=e787]
+            - cell "Edit Delete" [ref=e788]:
+              - generic [ref=e789]:
+                - link "Edit" [ref=e790] [cursor=pointer]:
+                  - /url: /ops/15/edit
+                - button "Delete" [ref=e792] [cursor=pointer]
+          - row "Darlene Carmina Hardiolin — Christopher Monasmith Lead Generation Specialist Separated Bel +639993764810 Edit Delete" [ref=e793]:
+            - cell "Darlene Carmina Hardiolin" [ref=e794]
+            - cell "—" [ref=e795]
+            - cell "Christopher Monasmith" [ref=e796]
+            - cell "Lead Generation Specialist" [ref=e797]
+            - cell "Separated" [ref=e798]
+            - cell "Bel" [ref=e799]
+            - cell "+639993764810" [ref=e800]
+            - cell "Edit Delete" [ref=e801]:
+              - generic [ref=e802]:
+                - link "Edit" [ref=e803] [cursor=pointer]:
+                  - /url: /ops/15/edit
+                - button "Delete" [ref=e805] [cursor=pointer]
+          - row "Darnyl Serdiña Cruz darnylcruz@yahoo.com.ph Raindrop Agency Designer OP Active Bel +639173385743 Edit Delete" [ref=e806]:
+            - cell "Darnyl Serdiña Cruz" [ref=e807]
+            - cell "darnylcruz@yahoo.com.ph" [ref=e808]
+            - cell "Raindrop Agency" [ref=e809]
+            - cell "Designer OP" [ref=e810]
+            - cell "Active" [ref=e811]
+            - cell "Bel" [ref=e812]
+            - cell "+639173385743" [ref=e813]
+            - cell "Edit Delete" [ref=e814]:
+              - generic [ref=e815]:
+                - link "Edit" [ref=e816] [cursor=pointer]:
+                  - /url: /ops/171/edit
+                - button "Delete" [ref=e818] [cursor=pointer]
+          - row "David Joanathan Candaliza Chan chan.davidc@gmail.com Alex Tucci (TDL) AI Creative Engineer Active Bel +639614139777 Edit Delete" [ref=e819]:
+            - cell "David Joanathan Candaliza Chan" [ref=e820]
+            - cell "chan.davidc@gmail.com" [ref=e821]
+            - cell "Alex Tucci (TDL)" [ref=e822]
+            - cell "AI Creative Engineer" [ref=e823]
+            - cell "Active" [ref=e824]
+            - cell "Bel" [ref=e825]
+            - cell "+639614139777" [ref=e826]
+            - cell "Edit Delete" [ref=e827]:
+              - generic [ref=e828]:
+                - link "Edit" [ref=e829] [cursor=pointer]:
+                  - /url: /ops/179/edit
+                - button "Delete" [ref=e831] [cursor=pointer]
+          - row "Derrick Nigel Lim Magpali derrickmagpali@gmail.com Ryan Goebel Project Manager Separated Bel +639672782326 Edit Delete" [ref=e832]:
+            - cell "Derrick Nigel Lim Magpali" [ref=e833]
+            - cell "derrickmagpali@gmail.com" [ref=e834]
+            - cell "Ryan Goebel" [ref=e835]
+            - cell "Project Manager" [ref=e836]
+            - cell "Separated" [ref=e837]
+            - cell "Bel" [ref=e838]
+            - cell "+639672782326" [ref=e839]
+            - cell "Edit Delete" [ref=e840]:
+              - generic [ref=e841]:
+                - link "Edit" [ref=e842] [cursor=pointer]:
+                  - /url: /ops/146/edit
+                - button "Delete" [ref=e844] [cursor=pointer]
+          - row "Diana Sakay sakaydianamaes@gmail.com Zach Papenhausen Admin Assistant/CRM Manager Separated Bel — Edit Delete" [ref=e845]:
+            - cell "Diana Sakay" [ref=e846]
+            - cell "sakaydianamaes@gmail.com" [ref=e847]
+            - cell "Zach Papenhausen" [ref=e848]
+            - cell "Admin Assistant/CRM Manager" [ref=e849]
+            - cell "Separated" [ref=e850]
+            - cell "Bel" [ref=e851]
+            - cell "—" [ref=e852]
+            - cell "Edit Delete" [ref=e853]:
+              - generic [ref=e854]:
+                - link "Edit" [ref=e855] [cursor=pointer]:
+                  - /url: /ops/140/edit
+                - button "Delete" [ref=e857] [cursor=pointer]
+          - row "Dorothy Marisse Galvez Cruz dorothymarissegc@gmail.com Gazala Uradnik Executive Assistant Active Bel +639213212400 Edit Delete" [ref=e858]:
+            - cell "Dorothy Marisse Galvez Cruz" [ref=e859]
+            - cell "dorothymarissegc@gmail.com" [ref=e860]
+            - cell "Gazala Uradnik" [ref=e861]
+            - cell "Executive Assistant" [ref=e862]
+            - cell "Active" [ref=e863]
+            - cell "Bel" [ref=e864]
+            - cell "+639213212400" [ref=e865]
+            - cell "Edit Delete" [ref=e866]:
+              - generic [ref=e867]:
+                - link "Edit" [ref=e868] [cursor=pointer]:
+                  - /url: /ops/139/edit
+                - button "Delete" [ref=e870] [cursor=pointer]
+          - row "Earl Wong Taladua ewtaladua@gmail.com Mark Hunter Insurance CSR Probation Adrian +639553712134 Edit Delete" [ref=e871]:
+            - cell "Earl Wong Taladua" [ref=e872]
+            - cell "ewtaladua@gmail.com" [ref=e873]
+            - cell "Mark Hunter" [ref=e874]
+            - cell "Insurance CSR" [ref=e875]
+            - cell "Probation" [ref=e876]
+            - cell "Adrian" [ref=e877]
+            - cell "+639553712134" [ref=e878]
+            - cell "Edit Delete" [ref=e879]:
+              - generic [ref=e880]:
+                - link "Edit" [ref=e881] [cursor=pointer]:
+                  - /url: /ops/196/edit
+                - button "Delete" [ref=e883] [cursor=pointer]
+          - 'row "Eddie Bryll Algones Caballero eddiebryllc@gmail.com Dr. Oliver Bathe/QualisureDx Executive Assistant OP Active Bel Cell: +639272251358 | WhatsApp: +639272251358 Edit Delete" [ref=e884]':
+            - cell "Eddie Bryll Algones Caballero" [ref=e885]
+            - cell "eddiebryllc@gmail.com" [ref=e886]
+            - cell "Dr. Oliver Bathe/QualisureDx" [ref=e887]
+            - cell "Executive Assistant OP" [ref=e888]
+            - cell "Active" [ref=e889]
+            - cell "Bel" [ref=e890]
+            - 'cell "Cell: +639272251358 | WhatsApp: +639272251358" [ref=e891]'
+            - cell "Edit Delete" [ref=e892]:
+              - generic [ref=e893]:
+                - link "Edit" [ref=e894] [cursor=pointer]:
+                  - /url: /ops/143/edit
+                - button "Delete" [ref=e896] [cursor=pointer]
+          - row "Edryl Gwayne Castro — Bailey Proulx / Brian Lehner Marketing Project Manager Separated Adrian +639190951179 Edit Delete" [ref=e897]:
+            - cell "Edryl Gwayne Castro" [ref=e898]
+            - cell "—" [ref=e899]
+            - cell "Bailey Proulx / Brian Lehner" [ref=e900]
+            - cell "Marketing Project Manager" [ref=e901]
+            - cell "Separated" [ref=e902]
+            - cell "Adrian" [ref=e903]
+            - cell "+639190951179" [ref=e904]
+            - cell "Edit Delete" [ref=e905]:
+              - generic [ref=e906]:
+                - link "Edit" [ref=e907] [cursor=pointer]:
+                  - /url: /ops/69/edit
+                - button "Delete" [ref=e909] [cursor=pointer]
+          - row "Eduardo Villarama Fernandez Specialist019@gmail.com Zach Papenhausen Project Manager Separated Bel +639764886968 Edit Delete" [ref=e910]:
+            - cell "Eduardo Villarama Fernandez" [ref=e911]
+            - cell "Specialist019@gmail.com" [ref=e912]
+            - cell "Zach Papenhausen" [ref=e913]
+            - cell "Project Manager" [ref=e914]
+            - cell "Separated" [ref=e915]
+            - cell "Bel" [ref=e916]
+            - cell "+639764886968" [ref=e917]
+            - cell "Edit Delete" [ref=e918]:
+              - generic [ref=e919]:
+                - link "Edit" [ref=e920] [cursor=pointer]:
+                  - /url: /ops/118/edit
+                - button "Delete" [ref=e922] [cursor=pointer]
+          - row "El Mahdi Jueid elmahdiprof@gmail.com Ryan McFarland Marketing Manager - Virtual Assistant Separated Bel +34671829503 Edit Delete" [ref=e923]:
+            - cell "El Mahdi Jueid" [ref=e924]
+            - cell "elmahdiprof@gmail.com" [ref=e925]
+            - cell "Ryan McFarland" [ref=e926]
+            - cell "Marketing Manager - Virtual Assistant" [ref=e927]
+            - cell "Separated" [ref=e928]
+            - cell "Bel" [ref=e929]
+            - cell "+34671829503" [ref=e930]
+            - cell "Edit Delete" [ref=e931]:
+              - generic [ref=e932]:
+                - link "Edit" [ref=e933] [cursor=pointer]:
+                  - /url: /ops/115/edit
+                - button "Delete" [ref=e935] [cursor=pointer]
+          - row "Elizabeth Ocde Aguilus elizabethaguilus2020@gmail.com Mark Hunter Insurance Customer Service Representative Probation Adrian +639285019777 Edit Delete" [ref=e936]:
+            - cell "Elizabeth Ocde Aguilus" [ref=e937]
+            - cell "elizabethaguilus2020@gmail.com" [ref=e938]
+            - cell "Mark Hunter" [ref=e939]
+            - cell "Insurance Customer Service Representative" [ref=e940]
+            - cell "Probation" [ref=e941]
+            - cell "Adrian" [ref=e942]
+            - cell "+639285019777" [ref=e943]
+            - cell "Edit Delete" [ref=e944]:
+              - generic [ref=e945]:
+                - link "Edit" [ref=e946] [cursor=pointer]:
+                  - /url: /ops/209/edit
+                - button "Delete" [ref=e948] [cursor=pointer]
+          - row "Elizabeth Pasoc Elizabeth@linkedshores.com Ryan McFarland Zoho CRM Manager Separated Bel — Edit Delete" [ref=e949]:
+            - cell "Elizabeth Pasoc" [ref=e950]
+            - cell "Elizabeth@linkedshores.com" [ref=e951]
+            - cell "Ryan McFarland" [ref=e952]
+            - cell "Zoho CRM Manager" [ref=e953]
+            - cell "Separated" [ref=e954]
+            - cell "Bel" [ref=e955]
+            - cell "—" [ref=e956]
+            - cell "Edit Delete" [ref=e957]:
+              - generic [ref=e958]:
+                - link "Edit" [ref=e959] [cursor=pointer]:
+                  - /url: /ops/154/edit
+                - button "Delete" [ref=e961] [cursor=pointer]
+          - row "Ella Baloloy Dimaano ebaloloy1234@gmail.com Daniel Hambrick Insurance CSR Active Bel +639455665710 Edit Delete" [ref=e962]:
+            - cell "Ella Baloloy Dimaano" [ref=e963]
+            - cell "ebaloloy1234@gmail.com" [ref=e964]
+            - cell "Daniel Hambrick" [ref=e965]
+            - cell "Insurance CSR" [ref=e966]
+            - cell "Active" [ref=e967]
+            - cell "Bel" [ref=e968]
+            - cell "+639455665710" [ref=e969]
+            - cell "Edit Delete" [ref=e970]:
+              - generic [ref=e971]:
+                - link "Edit" [ref=e972] [cursor=pointer]:
+                  - /url: /ops/169/edit
+                - button "Delete" [ref=e974] [cursor=pointer]
+          - row "Ellison Luke Pamaran Ambray lukeambray93@gmail.com Lucas Kemper Creator & Social Commerce Coordinator Probation Adrian +639669081578 Edit Delete" [ref=e975]:
+            - cell "Ellison Luke Pamaran Ambray" [ref=e976]
+            - cell "lukeambray93@gmail.com" [ref=e977]
+            - cell "Lucas Kemper" [ref=e978]
+            - cell "Creator & Social Commerce Coordinator" [ref=e979]
+            - cell "Probation" [ref=e980]
+            - cell "Adrian" [ref=e981]
+            - cell "+639669081578" [ref=e982]
+            - cell "Edit Delete" [ref=e983]:
+              - generic [ref=e984]:
+                - link "Edit" [ref=e985] [cursor=pointer]:
+                  - /url: /ops/208/edit
+                - button "Delete" [ref=e987] [cursor=pointer]
+          - row "Ener Dabu — Ryan McFarland General Virtual Assistant Separated Bel — Edit Delete" [ref=e988]:
+            - cell "Ener Dabu" [ref=e989]
+            - cell "—" [ref=e990]
+            - cell "Ryan McFarland" [ref=e991]
+            - cell "General Virtual Assistant" [ref=e992]
+            - cell "Separated" [ref=e993]
+            - cell "Bel" [ref=e994]
+            - cell "—" [ref=e995]
+            - cell "Edit Delete" [ref=e996]:
+              - generic [ref=e997]:
+                - link "Edit" [ref=e998] [cursor=pointer]:
+                  - /url: /ops/39/edit
+                - button "Delete" [ref=e1000] [cursor=pointer]
+          - row "Estefani Maciel Tavarez Martinez — Ryan McFarland Social Media Manager Separated Bel — Edit Delete" [ref=e1001]:
+            - cell "Estefani Maciel Tavarez Martinez" [ref=e1002]
+            - cell "—" [ref=e1003]
+            - cell "Ryan McFarland" [ref=e1004]
+            - cell "Social Media Manager" [ref=e1005]
+            - cell "Separated" [ref=e1006]
+            - cell "Bel" [ref=e1007]
+            - cell "—" [ref=e1008]
+            - cell "Edit Delete" [ref=e1009]:
+              - generic [ref=e1010]:
+                - link "Edit" [ref=e1011] [cursor=pointer]:
+                  - /url: /ops/56/edit
+                - button "Delete" [ref=e1013] [cursor=pointer]
+          - row "Eugene \"Genie\" Salvatierra — Jacob Azevedo Executive Assistant Separated Adrian +639603753282 Edit Delete" [ref=e1014]:
+            - cell "Eugene \"Genie\" Salvatierra" [ref=e1015]
+            - cell "—" [ref=e1016]
+            - cell "Jacob Azevedo" [ref=e1017]
+            - cell "Executive Assistant" [ref=e1018]
+            - cell "Separated" [ref=e1019]
+            - cell "Adrian" [ref=e1020]
+            - cell "+639603753282" [ref=e1021]
+            - cell "Edit Delete" [ref=e1022]:
+              - generic [ref=e1023]:
+                - link "Edit" [ref=e1024] [cursor=pointer]:
+                  - /url: /ops/111/edit
+                - button "Delete" [ref=e1026] [cursor=pointer]
+          - row "Eugene Gabriel Narvadez gab.narvadez@gmail.com Luke Harmon Solutions Engineer Probation Bel +639567433547 Edit Delete" [ref=e1027]:
+            - cell "Eugene Gabriel Narvadez" [ref=e1028]
+            - cell "gab.narvadez@gmail.com" [ref=e1029]
+            - cell "Luke Harmon" [ref=e1030]
+            - cell "Solutions Engineer" [ref=e1031]
+            - cell "Probation" [ref=e1032]
+            - cell "Bel" [ref=e1033]
+            - cell "+639567433547" [ref=e1034]
+            - cell "Edit Delete" [ref=e1035]:
+              - generic [ref=e1036]:
+                - link "Edit" [ref=e1037] [cursor=pointer]:
+                  - /url: /ops/217/edit
+                - button "Delete" [ref=e1039] [cursor=pointer]
+          - row "Fatima-Ez-Zahra Zourhmari effezara@gmail.com Stefan Badertscher Executive Assistant Separated Adrian 00212629716560 Edit Delete" [ref=e1040]:
+            - cell "Fatima-Ez-Zahra Zourhmari" [ref=e1041]
+            - cell "effezara@gmail.com" [ref=e1042]
+            - cell "Stefan Badertscher" [ref=e1043]
+            - cell "Executive Assistant" [ref=e1044]
+            - cell "Separated" [ref=e1045]
+            - cell "Adrian" [ref=e1046]
+            - cell "00212629716560" [ref=e1047]
+            - cell "Edit Delete" [ref=e1048]:
+              - generic [ref=e1049]:
+                - link "Edit" [ref=e1050] [cursor=pointer]:
+                  - /url: /ops/128/edit
+                - button "Delete" [ref=e1052] [cursor=pointer]
+          - row "Felix Jr. Diaz — Ryan McFarland Virtual Assistant Separated Bel — Edit Delete" [ref=e1053]:
+            - cell "Felix Jr. Diaz" [ref=e1054]
+            - cell "—" [ref=e1055]
+            - cell "Ryan McFarland" [ref=e1056]
+            - cell "Virtual Assistant" [ref=e1057]
+            - cell "Separated" [ref=e1058]
+            - cell "Bel" [ref=e1059]
+            - cell "—" [ref=e1060]
+            - cell "Edit Delete" [ref=e1061]:
+              - generic [ref=e1062]:
+                - link "Edit" [ref=e1063] [cursor=pointer]:
+                  - /url: /ops/43/edit
+                - button "Delete" [ref=e1065] [cursor=pointer]
+          - row "FredAdriank Jr B. Argana — Jeremiah Boucher Executive Assistant Separated Adrian +639659629003 Edit Delete" [ref=e1066]:
+            - cell "FredAdriank Jr B. Argana" [ref=e1067]
+            - cell "—" [ref=e1068]
+            - cell "Jeremiah Boucher" [ref=e1069]
+            - cell "Executive Assistant" [ref=e1070]
+            - cell "Separated" [ref=e1071]
+            - cell "Adrian" [ref=e1072]
+            - cell "+639659629003" [ref=e1073]
+            - cell "Edit Delete" [ref=e1074]:
+              - generic [ref=e1075]:
+                - link "Edit" [ref=e1076] [cursor=pointer]:
+                  - /url: /ops/63/edit
+                - button "Delete" [ref=e1078] [cursor=pointer]
+          - row "Gabrielle Pauline Mirasol — Yancy Wright Executive Sales Assistant Separated Bel +639175699233 Edit Delete" [ref=e1079]:
+            - cell "Gabrielle Pauline Mirasol" [ref=e1080]
+            - cell "—" [ref=e1081]
+            - cell "Yancy Wright" [ref=e1082]
+            - cell "Executive Sales Assistant" [ref=e1083]
+            - cell "Separated" [ref=e1084]
+            - cell "Bel" [ref=e1085]
+            - cell "+639175699233" [ref=e1086]
+            - cell "Edit Delete" [ref=e1087]:
+              - generic [ref=e1088]:
+                - link "Edit" [ref=e1089] [cursor=pointer]:
+                  - /url: /ops/35/edit
+                - button "Delete" [ref=e1091] [cursor=pointer]
+          - row "Gerard Anthony Navarro navarro.gerard@gmail.com Raindrop Agency Motiongraphics Designer Separated Bel +639175437273 Edit Delete" [ref=e1092]:
+            - cell "Gerard Anthony Navarro" [ref=e1093]
+            - cell "navarro.gerard@gmail.com" [ref=e1094]
+            - cell "Raindrop Agency" [ref=e1095]
+            - cell "Motiongraphics Designer" [ref=e1096]
+            - cell "Separated" [ref=e1097]
+            - cell "Bel" [ref=e1098]
+            - cell "+639175437273" [ref=e1099]
+            - cell "Edit Delete" [ref=e1100]:
+              - generic [ref=e1101]:
+                - link "Edit" [ref=e1102] [cursor=pointer]:
+                  - /url: /ops/159/edit
+                - button "Delete" [ref=e1104] [cursor=pointer]
+          - row "Gideon Mark Pacete — Nicole Bushnell (Mari + Gold)/ Carrie Jones Shopify Web Developer Separated Adrian +639065784927 Edit Delete" [ref=e1105]:
+            - cell "Gideon Mark Pacete" [ref=e1106]
+            - cell "—" [ref=e1107]
+            - cell "Nicole Bushnell (Mari + Gold)/ Carrie Jones" [ref=e1108]
+            - cell "Shopify Web Developer" [ref=e1109]
+            - cell "Separated" [ref=e1110]
+            - cell "Adrian" [ref=e1111]
+            - cell "+639065784927" [ref=e1112]
+            - cell "Edit Delete" [ref=e1113]:
+              - generic [ref=e1114]:
+                - link "Edit" [ref=e1115] [cursor=pointer]:
+                  - /url: /ops/90/edit
+                - button "Delete" [ref=e1117] [cursor=pointer]
+          - row "Ginea Ingrid Rancudo Napa napagineaingrid@gmail.com Austin Blair/ Laundry Sauce Shopify Customer Service OP Active Bel +639695643123 Edit Delete" [ref=e1118]:
+            - cell "Ginea Ingrid Rancudo Napa" [ref=e1119]
+            - cell "napagineaingrid@gmail.com" [ref=e1120]
+            - cell "Austin Blair/ Laundry Sauce" [ref=e1121]
+            - cell "Shopify Customer Service OP" [ref=e1122]
+            - cell "Active" [ref=e1123]
+            - cell "Bel" [ref=e1124]
+            - cell "+639695643123" [ref=e1125]
+            - cell "Edit Delete" [ref=e1126]:
+              - generic [ref=e1127]:
+                - link "Edit" [ref=e1128] [cursor=pointer]:
+                  - /url: /ops/173/edit
+                - button "Delete" [ref=e1130] [cursor=pointer]
+          - row "Glendolf Jide Echin — Josh Schwartz Insurance Customer Service Representative Active Bel +639511386686 Edit Delete" [ref=e1131]:
+            - cell "Glendolf Jide Echin" [ref=e1132]
+            - cell "—" [ref=e1133]
+            - cell "Josh Schwartz" [ref=e1134]
+            - cell "Insurance Customer Service Representative" [ref=e1135]
+            - cell "Active" [ref=e1136]
+            - cell "Bel" [ref=e1137]
+            - cell "+639511386686" [ref=e1138]
+            - cell "Edit Delete" [ref=e1139]:
+              - generic [ref=e1140]:
+                - link "Edit" [ref=e1141] [cursor=pointer]:
+                  - /url: /ops/72/edit
+                - button "Delete" [ref=e1143] [cursor=pointer]
+          - row "Grant Cuyos Sabello grantsabello27@gmail.com Dr. Betty Murray Medical Virtual Assistant Separated Adrian +639982361555 Edit Delete" [ref=e1144]:
+            - cell "Grant Cuyos Sabello" [ref=e1145]
+            - cell "grantsabello27@gmail.com" [ref=e1146]
+            - cell "Dr. Betty Murray" [ref=e1147]
+            - cell "Medical Virtual Assistant" [ref=e1148]
+            - cell "Separated" [ref=e1149]
+            - cell "Adrian" [ref=e1150]
+            - cell "+639982361555" [ref=e1151]
+            - cell "Edit Delete" [ref=e1152]:
+              - generic [ref=e1153]:
+                - link "Edit" [ref=e1154] [cursor=pointer]:
+                  - /url: /ops/125/edit
+                - button "Delete" [ref=e1156] [cursor=pointer]
+          - row "Haydee Cortez haydee.cortezmva@gmail.com Dr. Betty Murray Medical VA OP Separated Adrian 639765583779 Edit Delete" [ref=e1157]:
+            - cell "Haydee Cortez" [ref=e1158]
+            - cell "haydee.cortezmva@gmail.com" [ref=e1159]
+            - cell "Dr. Betty Murray" [ref=e1160]
+            - cell "Medical VA OP" [ref=e1161]
+            - cell "Separated" [ref=e1162]
+            - cell "Adrian" [ref=e1163]
+            - cell "639765583779" [ref=e1164]
+            - cell "Edit Delete" [ref=e1165]:
+              - generic [ref=e1166]:
+                - link "Edit" [ref=e1167] [cursor=pointer]:
+                  - /url: /ops/130/edit
+                - button "Delete" [ref=e1169] [cursor=pointer]
+          - row "Hazel Anne Llanillo llanillohazel@gmail.com Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Bel +639474533590 Edit Delete" [ref=e1170]:
+            - cell "Hazel Anne Llanillo" [ref=e1171]
+            - cell "llanillohazel@gmail.com" [ref=e1172]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1173]
+            - cell "Dispatcher OP" [ref=e1174]
+            - cell "Separated" [ref=e1175]
+            - cell "Bel" [ref=e1176]
+            - cell "+639474533590" [ref=e1177]
+            - cell "Edit Delete" [ref=e1178]:
+              - generic [ref=e1179]:
+                - link "Edit" [ref=e1180] [cursor=pointer]:
+                  - /url: /ops/131/edit
+                - button "Delete" [ref=e1182] [cursor=pointer]
+          - row "Hazel Anne Llanillo llanillohazel@gmail.com Joseph Bua Dispatch Coordinator Probation Bel +639474533590 Edit Delete" [ref=e1183]:
+            - cell "Hazel Anne Llanillo" [ref=e1184]
+            - cell "llanillohazel@gmail.com" [ref=e1185]
+            - cell "Joseph Bua" [ref=e1186]
+            - cell "Dispatch Coordinator" [ref=e1187]
+            - cell "Probation" [ref=e1188]
+            - cell "Bel" [ref=e1189]
+            - cell "+639474533590" [ref=e1190]
+            - cell "Edit Delete" [ref=e1191]:
+              - generic [ref=e1192]:
+                - link "Edit" [ref=e1193] [cursor=pointer]:
+                  - /url: /ops/131/edit
+                - button "Delete" [ref=e1195] [cursor=pointer]
+          - row "Honnalea Caro — Dr. Betty Murray Executive Assistant Separated Adrian +639565609695 Edit Delete" [ref=e1196]:
+            - cell "Honnalea Caro" [ref=e1197]
+            - cell "—" [ref=e1198]
+            - cell "Dr. Betty Murray" [ref=e1199]
+            - cell "Executive Assistant" [ref=e1200]
+            - cell "Separated" [ref=e1201]
+            - cell "Adrian" [ref=e1202]
+            - cell "+639565609695" [ref=e1203]
+            - cell "Edit Delete" [ref=e1204]:
+              - generic [ref=e1205]:
+                - link "Edit" [ref=e1206] [cursor=pointer]:
+                  - /url: /ops/112/edit
+                - button "Delete" [ref=e1208] [cursor=pointer]
+          - row "Irene Padilla — Lucas Robinson Bookkeeper Active Adrian +639123452234 Edit Delete" [ref=e1209]:
+            - cell "Irene Padilla" [ref=e1210]
+            - cell "—" [ref=e1211]
+            - cell "Lucas Robinson" [ref=e1212]
+            - cell "Bookkeeper" [ref=e1213]
+            - cell "Active" [ref=e1214]
+            - cell "Adrian" [ref=e1215]
+            - cell "+639123452234" [ref=e1216]
+            - cell "Edit Delete" [ref=e1217]:
+              - generic [ref=e1218]:
+                - link "Edit" [ref=e1219] [cursor=pointer]:
+                  - /url: /ops/21/edit
+                - button "Delete" [ref=e1221] [cursor=pointer]
+          - row "Isaiah James Santiago isaiah.james.santiago@gmail.com Frank Ortega Executive Assistant Active Bel +639287273429 Edit Delete" [ref=e1222]:
+            - cell "Isaiah James Santiago" [ref=e1223]
+            - cell "isaiah.james.santiago@gmail.com" [ref=e1224]
+            - cell "Frank Ortega" [ref=e1225]
+            - cell "Executive Assistant" [ref=e1226]
+            - cell "Active" [ref=e1227]
+            - cell "Bel" [ref=e1228]
+            - cell "+639287273429" [ref=e1229]
+            - cell "Edit Delete" [ref=e1230]:
+              - generic [ref=e1231]:
+                - link "Edit" [ref=e1232] [cursor=pointer]:
+                  - /url: /ops/151/edit
+                - button "Delete" [ref=e1234] [cursor=pointer]
+          - row "Ivan Hoffman — Ryan McFarland WH Manager Separated Bel — Edit Delete" [ref=e1235]:
+            - cell "Ivan Hoffman" [ref=e1236]
+            - cell "—" [ref=e1237]
+            - cell "Ryan McFarland" [ref=e1238]
+            - cell "WH Manager" [ref=e1239]
+            - cell "Separated" [ref=e1240]
+            - cell "Bel" [ref=e1241]
+            - cell "—" [ref=e1242]
+            - cell "Edit Delete" [ref=e1243]:
+              - generic [ref=e1244]:
+                - link "Edit" [ref=e1245] [cursor=pointer]:
+                  - /url: /ops/59/edit
+                - button "Delete" [ref=e1247] [cursor=pointer]
+          - row "Ivy Rose Bongbong ivyroseb2001@gmail.com Mark Hunter Insurance CSR Separated Bel +639686351610 Edit Delete" [ref=e1248]:
+            - cell "Ivy Rose Bongbong" [ref=e1249]
+            - cell "ivyroseb2001@gmail.com" [ref=e1250]
+            - cell "Mark Hunter" [ref=e1251]
+            - cell "Insurance CSR" [ref=e1252]
+            - cell "Separated" [ref=e1253]
+            - cell "Bel" [ref=e1254]
+            - cell "+639686351610" [ref=e1255]
+            - cell "Edit Delete" [ref=e1256]:
+              - generic [ref=e1257]:
+                - link "Edit" [ref=e1258] [cursor=pointer]:
+                  - /url: /ops/195/edit
+                - button "Delete" [ref=e1260] [cursor=pointer]
+          - row "Jaclyn Mae Tolentino Floro jaclynfloro@gmail.com Matthew Williams Legal Assistant Separated Bel +63956087823 Edit Delete" [ref=e1261]:
+            - cell "Jaclyn Mae Tolentino Floro" [ref=e1262]
+            - cell "jaclynfloro@gmail.com" [ref=e1263]
+            - cell "Matthew Williams" [ref=e1264]
+            - cell "Legal Assistant" [ref=e1265]
+            - cell "Separated" [ref=e1266]
+            - cell "Bel" [ref=e1267]
+            - cell "+63956087823" [ref=e1268]
+            - cell "Edit Delete" [ref=e1269]:
+              - generic [ref=e1270]:
+                - link "Edit" [ref=e1271] [cursor=pointer]:
+                  - /url: /ops/181/edit
+                - button "Delete" [ref=e1273] [cursor=pointer]
+          - row "Jael Franco Pili jaelpili92@gmail.com Brian Hennesy Sales Admin Assistant Separated Adrian +639672733246 Edit Delete" [ref=e1274]:
+            - cell "Jael Franco Pili" [ref=e1275]
+            - cell "jaelpili92@gmail.com" [ref=e1276]
+            - cell "Brian Hennesy" [ref=e1277]
+            - cell "Sales Admin Assistant" [ref=e1278]
+            - cell "Separated" [ref=e1279]
+            - cell "Adrian" [ref=e1280]
+            - cell "+639672733246" [ref=e1281]
+            - cell "Edit Delete" [ref=e1282]:
+              - generic [ref=e1283]:
+                - link "Edit" [ref=e1284] [cursor=pointer]:
+                  - /url: /ops/96/edit
+                - button "Delete" [ref=e1286] [cursor=pointer]
+          - row "Jael Franco Pili jaelpili92@gmail.com Dr. Matthew and Theresa Steiner Executive Sales Assistant Separated Bel +639672733246 Edit Delete" [ref=e1287]:
+            - cell "Jael Franco Pili" [ref=e1288]
+            - cell "jaelpili92@gmail.com" [ref=e1289]
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e1290]
+            - cell "Executive Sales Assistant" [ref=e1291]
+            - cell "Separated" [ref=e1292]
+            - cell "Bel" [ref=e1293]
+            - cell "+639672733246" [ref=e1294]
+            - cell "Edit Delete" [ref=e1295]:
+              - generic [ref=e1296]:
+                - link "Edit" [ref=e1297] [cursor=pointer]:
+                  - /url: /ops/96/edit
+                - button "Delete" [ref=e1299] [cursor=pointer]
+          - row "Janielyn Eduardo — Ryan McFarland Virtual Assistant Separated Bel +639291087521 Edit Delete" [ref=e1300]:
+            - cell "Janielyn Eduardo" [ref=e1301]
+            - cell "—" [ref=e1302]
+            - cell "Ryan McFarland" [ref=e1303]
+            - cell "Virtual Assistant" [ref=e1304]
+            - cell "Separated" [ref=e1305]
+            - cell "Bel" [ref=e1306]
+            - cell "+639291087521" [ref=e1307]
+            - cell "Edit Delete" [ref=e1308]:
+              - generic [ref=e1309]:
+                - link "Edit" [ref=e1310] [cursor=pointer]:
+                  - /url: /ops/44/edit
+                - button "Delete" [ref=e1312] [cursor=pointer]
+          - row "Jathniel Joseph Salas — Ryan McFarland Email Marketing Manager Separated Bel +639989970831 Edit Delete" [ref=e1313]:
+            - cell "Jathniel Joseph Salas" [ref=e1314]
+            - cell "—" [ref=e1315]
+            - cell "Ryan McFarland" [ref=e1316]
+            - cell "Email Marketing Manager" [ref=e1317]
+            - cell "Separated" [ref=e1318]
+            - cell "Bel" [ref=e1319]
+            - cell "+639989970831" [ref=e1320]
+            - cell "Edit Delete" [ref=e1321]:
+              - generic [ref=e1322]:
+                - link "Edit" [ref=e1323] [cursor=pointer]:
+                  - /url: /ops/52/edit
+                - button "Delete" [ref=e1325] [cursor=pointer]
+          - row "Jennielyn Solamo Hilario jenhilario09@gmail.com Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Bel +639489305332 Edit Delete" [ref=e1326]:
+            - cell "Jennielyn Solamo Hilario" [ref=e1327]
+            - cell "jenhilario09@gmail.com" [ref=e1328]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1329]
+            - cell "Dispatcher OP" [ref=e1330]
+            - cell "Separated" [ref=e1331]
+            - cell "Bel" [ref=e1332]
+            - cell "+639489305332" [ref=e1333]
+            - cell "Edit Delete" [ref=e1334]:
+              - generic [ref=e1335]:
+                - link "Edit" [ref=e1336] [cursor=pointer]:
+                  - /url: /ops/137/edit
+                - button "Delete" [ref=e1338] [cursor=pointer]
+          - row "Jenzuel Pedrajas — Fereshteh Fattaahi General & Social Media VA Active Adrian +639364603210 Edit Delete" [ref=e1339]:
+            - cell "Jenzuel Pedrajas" [ref=e1340]
+            - cell "—" [ref=e1341]
+            - cell "Fereshteh Fattaahi" [ref=e1342]
+            - cell "General & Social Media VA" [ref=e1343]
+            - cell "Active" [ref=e1344]
+            - cell "Adrian" [ref=e1345]
+            - cell "+639364603210" [ref=e1346]
+            - cell "Edit Delete" [ref=e1347]:
+              - generic [ref=e1348]:
+                - link "Edit" [ref=e1349] [cursor=pointer]:
+                  - /url: /ops/91/edit
+                - button "Delete" [ref=e1351] [cursor=pointer]
+          - row "Jeremy Binwag — Connor Miller (ArdentX) Sales Admin Assistant Separated Adrian +639494336910 Edit Delete" [ref=e1352]:
+            - cell "Jeremy Binwag" [ref=e1353]
+            - cell "—" [ref=e1354]
+            - cell "Connor Miller (ArdentX)" [ref=e1355]
+            - cell "Sales Admin Assistant" [ref=e1356]
+            - cell "Separated" [ref=e1357]
+            - cell "Adrian" [ref=e1358]
+            - cell "+639494336910" [ref=e1359]
+            - cell "Edit Delete" [ref=e1360]:
+              - generic [ref=e1361]:
+                - link "Edit" [ref=e1362] [cursor=pointer]:
+                  - /url: /ops/67/edit
+                - button "Delete" [ref=e1364] [cursor=pointer]
+          - row "Jermaine Cabalo — Ryan Miller Digital Media Assistant Separated Bel +639152695071 Edit Delete" [ref=e1365]:
+            - cell "Jermaine Cabalo" [ref=e1366]
+            - cell "—" [ref=e1367]
+            - cell "Ryan Miller" [ref=e1368]
+            - cell "Digital Media Assistant" [ref=e1369]
+            - cell "Separated" [ref=e1370]
+            - cell "Bel" [ref=e1371]
+            - cell "+639152695071" [ref=e1372]
+            - cell "Edit Delete" [ref=e1373]:
+              - generic [ref=e1374]:
+                - link "Edit" [ref=e1375] [cursor=pointer]:
+                  - /url: /ops/7/edit
+                - button "Delete" [ref=e1377] [cursor=pointer]
+          - row "Jeronimo Betancourt — Ryan McFarland Graphic Designer Separated Bel — Edit Delete" [ref=e1378]:
+            - cell "Jeronimo Betancourt" [ref=e1379]
+            - cell "—" [ref=e1380]
+            - cell "Ryan McFarland" [ref=e1381]
+            - cell "Graphic Designer" [ref=e1382]
+            - cell "Separated" [ref=e1383]
+            - cell "Bel" [ref=e1384]
+            - cell "—" [ref=e1385]
+            - cell "Edit Delete" [ref=e1386]:
+              - generic [ref=e1387]:
+                - link "Edit" [ref=e1388] [cursor=pointer]:
+                  - /url: /ops/38/edit
+                - button "Delete" [ref=e1390] [cursor=pointer]
+          - row "Jerry Marie Rondina Radin jerrymarieradin@gmail.com Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Bel +639952823228 Edit Delete" [ref=e1391]:
+            - cell "Jerry Marie Rondina Radin" [ref=e1392]
+            - cell "jerrymarieradin@gmail.com" [ref=e1393]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1394]
+            - cell "Dispatcher OP" [ref=e1395]
+            - cell "Separated" [ref=e1396]
+            - cell "Bel" [ref=e1397]
+            - cell "+639952823228" [ref=e1398]
+            - cell "Edit Delete" [ref=e1399]:
+              - generic [ref=e1400]:
+                - link "Edit" [ref=e1401] [cursor=pointer]:
+                  - /url: /ops/132/edit
+                - button "Delete" [ref=e1403] [cursor=pointer]
+          - row "Jesalie Sotelo jesaliesotelova@gmail.com Raindrop Agency Social Media Project Coordinator Separated Adrian +639687182823 / +639568233847 Edit Delete" [ref=e1404]:
+            - cell "Jesalie Sotelo" [ref=e1405]
+            - cell "jesaliesotelova@gmail.com" [ref=e1406]
+            - cell "Raindrop Agency" [ref=e1407]
+            - cell "Social Media Project Coordinator" [ref=e1408]
+            - cell "Separated" [ref=e1409]
+            - cell "Adrian" [ref=e1410]
+            - cell "+639687182823 / +639568233847" [ref=e1411]
+            - cell "Edit Delete" [ref=e1412]:
+              - generic [ref=e1413]:
+                - link "Edit" [ref=e1414] [cursor=pointer]:
+                  - /url: /ops/103/edit
+                - button "Delete" [ref=e1416] [cursor=pointer]
+          - row "Jesalie Sotelo jesaliesotelova@gmail.com Jessica Robinson (Catalyst Agency) Marketing Assistant Separated Bel +639687182823 / +639568233847 Edit Delete" [ref=e1417]:
+            - cell "Jesalie Sotelo" [ref=e1418]
+            - cell "jesaliesotelova@gmail.com" [ref=e1419]
+            - cell "Jessica Robinson (Catalyst Agency)" [ref=e1420]
+            - cell "Marketing Assistant" [ref=e1421]
+            - cell "Separated" [ref=e1422]
+            - cell "Bel" [ref=e1423]
+            - cell "+639687182823 / +639568233847" [ref=e1424]
+            - cell "Edit Delete" [ref=e1425]:
+              - generic [ref=e1426]:
+                - link "Edit" [ref=e1427] [cursor=pointer]:
+                  - /url: /ops/103/edit
+                - button "Delete" [ref=e1429] [cursor=pointer]
+          - row "Jhoana Reyes — Lucas Robinson Customer Support Representative Separated Bel +639277035579 Edit Delete" [ref=e1430]:
+            - cell "Jhoana Reyes" [ref=e1431]
+            - cell "—" [ref=e1432]
+            - cell "Lucas Robinson" [ref=e1433]
+            - cell "Customer Support Representative" [ref=e1434]
+            - cell "Separated" [ref=e1435]
+            - cell "Bel" [ref=e1436]
+            - cell "+639277035579" [ref=e1437]
+            - cell "Edit Delete" [ref=e1438]:
+              - generic [ref=e1439]:
+                - link "Edit" [ref=e1440] [cursor=pointer]:
+                  - /url: /ops/27/edit
+                - button "Delete" [ref=e1442] [cursor=pointer]
+          - row "Jim Carlo Magnaye — Josh Schwartz / Ed Trovato Insurance Customer Service Representative Active Bel +639470737013 Edit Delete" [ref=e1443]:
+            - cell "Jim Carlo Magnaye" [ref=e1444]
+            - cell "—" [ref=e1445]
+            - cell "Josh Schwartz / Ed Trovato" [ref=e1446]
+            - cell "Insurance Customer Service Representative" [ref=e1447]
+            - cell "Active" [ref=e1448]
+            - cell "Bel" [ref=e1449]
+            - cell "+639470737013" [ref=e1450]
+            - cell "Edit Delete" [ref=e1451]:
+              - generic [ref=e1452]:
+                - link "Edit" [ref=e1453] [cursor=pointer]:
+                  - /url: /ops/83/edit
+                - button "Delete" [ref=e1455] [cursor=pointer]
+          - row "Jipsy Qyne Diaz Falle jipsyqynefalle@gmail.com Matthew Williams Executive Legal Assistant Active Bel +639625874913 Edit Delete" [ref=e1456]:
+            - cell "Jipsy Qyne Diaz Falle" [ref=e1457]
+            - cell "jipsyqynefalle@gmail.com" [ref=e1458]
+            - cell "Matthew Williams" [ref=e1459]
+            - cell "Executive Legal Assistant" [ref=e1460]
+            - cell "Active" [ref=e1461]
+            - cell "Bel" [ref=e1462]
+            - cell "+639625874913" [ref=e1463]
+            - cell "Edit Delete" [ref=e1464]:
+              - generic [ref=e1465]:
+                - link "Edit" [ref=e1466] [cursor=pointer]:
+                  - /url: /ops/152/edit
+                - button "Delete" [ref=e1468] [cursor=pointer]
+          - row "Joanna Cordova Baltazar babsbaltazar@gmail.com Brandon Kelly Executive Assistant Probation Bel +639453455223 Edit Delete" [ref=e1469]:
+            - cell "Joanna Cordova Baltazar" [ref=e1470]
+            - cell "babsbaltazar@gmail.com" [ref=e1471]
+            - cell "Brandon Kelly" [ref=e1472]
+            - cell "Executive Assistant" [ref=e1473]
+            - cell "Probation" [ref=e1474]
+            - cell "Bel" [ref=e1475]
+            - cell "+639453455223" [ref=e1476]
+            - cell "Edit Delete" [ref=e1477]:
+              - generic [ref=e1478]:
+                - link "Edit" [ref=e1479] [cursor=pointer]:
+                  - /url: /ops/194/edit
+                - button "Delete" [ref=e1481] [cursor=pointer]
+          - row "John Abram Cornejo Daliwan jacdaliwan@gmail.com Anthony Jimenez (Product Society) Procurement Support Active Bel +639778167530 Edit Delete" [ref=e1482]:
+            - cell "John Abram Cornejo Daliwan" [ref=e1483]
+            - cell "jacdaliwan@gmail.com" [ref=e1484]
+            - cell "Anthony Jimenez (Product Society)" [ref=e1485]
+            - cell "Procurement Support" [ref=e1486]
+            - cell "Active" [ref=e1487]
+            - cell "Bel" [ref=e1488]
+            - cell "+639778167530" [ref=e1489]
+            - cell "Edit Delete" [ref=e1490]:
+              - generic [ref=e1491]:
+                - link "Edit" [ref=e1492] [cursor=pointer]:
+                  - /url: /ops/161/edit
+                - button "Delete" [ref=e1494] [cursor=pointer]
+          - row "John Raphael Villaluz Dela Paz jrvdelapazcpa@gmail.com Ryan McFarland Fractional CFO Separated Bel +639397106055 Edit Delete" [ref=e1495]:
+            - cell "John Raphael Villaluz Dela Paz" [ref=e1496]
+            - cell "jrvdelapazcpa@gmail.com" [ref=e1497]
+            - cell "Ryan McFarland" [ref=e1498]
+            - cell "Fractional CFO" [ref=e1499]
+            - cell "Separated" [ref=e1500]
+            - cell "Bel" [ref=e1501]
+            - cell "+639397106055" [ref=e1502]
+            - cell "Edit Delete" [ref=e1503]:
+              - generic [ref=e1504]:
+                - link "Edit" [ref=e1505] [cursor=pointer]:
+                  - /url: /ops/124/edit
+                - button "Delete" [ref=e1507] [cursor=pointer]
+          - row "Joline Aubrey De Leon — Madison Mains - Mains Marketing LLC GoHighLevel - Automations and Customer Support Active Bel +639615806153 Edit Delete" [ref=e1508]:
+            - cell "Joline Aubrey De Leon" [ref=e1509]
+            - cell "—" [ref=e1510]
+            - cell "Madison Mains - Mains Marketing LLC" [ref=e1511]
+            - cell "GoHighLevel - Automations and Customer Support" [ref=e1512]
+            - cell "Active" [ref=e1513]
+            - cell "Bel" [ref=e1514]
+            - cell "+639615806153" [ref=e1515]
+            - cell "Edit Delete" [ref=e1516]:
+              - generic [ref=e1517]:
+                - link "Edit" [ref=e1518] [cursor=pointer]:
+                  - /url: /ops/71/edit
+                - button "Delete" [ref=e1520] [cursor=pointer]
+          - row "Jose Miguel Villamor miguelvillamor.motions@gmail.com Alex Tucci (TDL) Content Production Assistant Probation Bel +639956227173 Edit Delete" [ref=e1521]:
+            - cell "Jose Miguel Villamor" [ref=e1522]
+            - cell "miguelvillamor.motions@gmail.com" [ref=e1523]
+            - cell "Alex Tucci (TDL)" [ref=e1524]
+            - cell "Content Production Assistant" [ref=e1525]
+            - cell "Probation" [ref=e1526]
+            - cell "Bel" [ref=e1527]
+            - cell "+639956227173" [ref=e1528]
+            - cell "Edit Delete" [ref=e1529]:
+              - generic [ref=e1530]:
+                - link "Edit" [ref=e1531] [cursor=pointer]:
+                  - /url: /ops/207/edit
+                - button "Delete" [ref=e1533] [cursor=pointer]
+          - row "Josef Roy Advincula — Luke Harmon Hubspot Account Manager Active Bel +639673651246 Edit Delete" [ref=e1534]:
+            - cell "Josef Roy Advincula" [ref=e1535]
+            - cell "—" [ref=e1536]
+            - cell "Luke Harmon" [ref=e1537]
+            - cell "Hubspot Account Manager" [ref=e1538]
+            - cell "Active" [ref=e1539]
+            - cell "Bel" [ref=e1540]
+            - cell "+639673651246" [ref=e1541]
+            - cell "Edit Delete" [ref=e1542]:
+              - generic [ref=e1543]:
+                - link "Edit" [ref=e1544] [cursor=pointer]:
+                  - /url: /ops/61/edit
+                - button "Delete" [ref=e1546] [cursor=pointer]
+          - row "Josemaria Garrido Domingo jsmrdmng@gmail.com Thomas Lotrecchiano (Vitawild) Marketing Assistant Separated Bel +639155229470 Edit Delete" [ref=e1547]:
+            - cell "Josemaria Garrido Domingo" [ref=e1548]
+            - cell "jsmrdmng@gmail.com" [ref=e1549]
+            - cell "Thomas Lotrecchiano (Vitawild)" [ref=e1550]
+            - cell "Marketing Assistant" [ref=e1551]
+            - cell "Separated" [ref=e1552]
+            - cell "Bel" [ref=e1553]
+            - cell "+639155229470" [ref=e1554]
+            - cell "Edit Delete" [ref=e1555]:
+              - generic [ref=e1556]:
+                - link "Edit" [ref=e1557] [cursor=pointer]:
+                  - /url: /ops/149/edit
+                - button "Delete" [ref=e1559] [cursor=pointer]
+          - row "Josh Hamlin — Ryan McFarland General Counsel Separated Bel — Edit Delete" [ref=e1560]:
+            - cell "Josh Hamlin" [ref=e1561]
+            - cell "—" [ref=e1562]
+            - cell "Ryan McFarland" [ref=e1563]
+            - cell "General Counsel" [ref=e1564]
+            - cell "Separated" [ref=e1565]
+            - cell "Bel" [ref=e1566]
+            - cell "—" [ref=e1567]
+            - cell "Edit Delete" [ref=e1568]:
+              - generic [ref=e1569]:
+                - link "Edit" [ref=e1570] [cursor=pointer]:
+                  - /url: /ops/55/edit
+                - button "Delete" [ref=e1572] [cursor=pointer]
+          - row "Jovelyn Villa Alonzo alonzojovelyn61@gmail.com Ian Blair Shopify CSR OP Separated Bel +639124972873 Edit Delete" [ref=e1573]:
+            - cell "Jovelyn Villa Alonzo" [ref=e1574]
+            - cell "alonzojovelyn61@gmail.com" [ref=e1575]
+            - cell "Ian Blair" [ref=e1576]
+            - cell "Shopify CSR OP" [ref=e1577]
+            - cell "Separated" [ref=e1578]
+            - cell "Bel" [ref=e1579]
+            - cell "+639124972873" [ref=e1580]
+            - cell "Edit Delete" [ref=e1581]:
+              - generic [ref=e1582]:
+                - link "Edit" [ref=e1583] [cursor=pointer]:
+                  - /url: /ops/158/edit
+                - button "Delete" [ref=e1585] [cursor=pointer]
+          - row "Jubrena Enopia — Scott Conley Bookkeeper/Accounts Payable Specialist Active Bel +639157284154 Edit Delete" [ref=e1586]:
+            - cell "Jubrena Enopia" [ref=e1587]
+            - cell "—" [ref=e1588]
+            - cell "Scott Conley" [ref=e1589]
+            - cell "Bookkeeper/Accounts Payable Specialist" [ref=e1590]
+            - cell "Active" [ref=e1591]
+            - cell "Bel" [ref=e1592]
+            - cell "+639157284154" [ref=e1593]
+            - cell "Edit Delete" [ref=e1594]:
+              - generic [ref=e1595]:
+                - link "Edit" [ref=e1596] [cursor=pointer]:
+                  - /url: /ops/11/edit
+                - button "Delete" [ref=e1598] [cursor=pointer]
+          - row "Judelyn Delector Velasco judelynd@gmail.com Josh Fancher / Ryan Goebel (CINQ) Dispatcher OP Separated Bel +639957609308 Edit Delete" [ref=e1599]:
+            - cell "Judelyn Delector Velasco" [ref=e1600]
+            - cell "judelynd@gmail.com" [ref=e1601]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e1602]
+            - cell "Dispatcher OP" [ref=e1603]
+            - cell "Separated" [ref=e1604]
+            - cell "Bel" [ref=e1605]
+            - cell "+639957609308" [ref=e1606]
+            - cell "Edit Delete" [ref=e1607]:
+              - generic [ref=e1608]:
+                - link "Edit" [ref=e1609] [cursor=pointer]:
+                  - /url: /ops/117/edit
+                - button "Delete" [ref=e1611] [cursor=pointer]
+          - row "Julie Ann Ranin — Jacob Azevedo Medical Virtual Assistant Active Adrian +639760835558 Edit Delete" [ref=e1612]:
+            - cell "Julie Ann Ranin" [ref=e1613]
+            - cell "—" [ref=e1614]
+            - cell "Jacob Azevedo" [ref=e1615]
+            - cell "Medical Virtual Assistant" [ref=e1616]
+            - cell "Active" [ref=e1617]
+            - cell "Adrian" [ref=e1618]
+            - cell "+639760835558" [ref=e1619]
+            - cell "Edit Delete" [ref=e1620]:
+              - generic [ref=e1621]:
+                - link "Edit" [ref=e1622] [cursor=pointer]:
+                  - /url: /ops/93/edit
+                - button "Delete" [ref=e1624] [cursor=pointer]
+          - row "Julius Christopher Ramos jcmrhlevel@gmail.com Madison Mains - Mains Marketing LLC GoHighLevel - Automation Specialist OP Active Bel +639150163534 Edit Delete" [ref=e1625]:
+            - cell "Julius Christopher Ramos" [ref=e1626]
+            - cell "jcmrhlevel@gmail.com" [ref=e1627]
+            - cell "Madison Mains - Mains Marketing LLC" [ref=e1628]
+            - cell "GoHighLevel - Automation Specialist OP" [ref=e1629]
+            - cell "Active" [ref=e1630]
+            - cell "Bel" [ref=e1631]
+            - cell "+639150163534" [ref=e1632]
+            - cell "Edit Delete" [ref=e1633]:
+              - generic [ref=e1634]:
+                - link "Edit" [ref=e1635] [cursor=pointer]:
+                  - /url: /ops/176/edit
+                - button "Delete" [ref=e1637] [cursor=pointer]
+          - row "Junie joy Gaudier Sabino — One PLTFRM (Cecil Barton) Lead Generation Specialist Separated Adrian +639550095543 Edit Delete" [ref=e1638]:
+            - cell "Junie joy Gaudier Sabino" [ref=e1639]
+            - cell "—" [ref=e1640]
+            - cell "One PLTFRM (Cecil Barton)" [ref=e1641]
+            - cell "Lead Generation Specialist" [ref=e1642]
+            - cell "Separated" [ref=e1643]
+            - cell "Adrian" [ref=e1644]
+            - cell "+639550095543" [ref=e1645]
+            - cell "Edit Delete" [ref=e1646]:
+              - generic [ref=e1647]:
+                - link "Edit" [ref=e1648] [cursor=pointer]:
+                  - /url: /ops/109/edit
+                - button "Delete" [ref=e1650] [cursor=pointer]
+          - row "Justine Marie Palattao Tabucanon jmtabucanon@gmail.com Adam Wolfson and Noah Wolfson (Wolfson BTR) Accounting and Finance Assistant Separated Bel +639284893706 Edit Delete" [ref=e1651]:
+            - cell "Justine Marie Palattao Tabucanon" [ref=e1652]
+            - cell "jmtabucanon@gmail.com" [ref=e1653]
+            - cell "Adam Wolfson and Noah Wolfson (Wolfson BTR)" [ref=e1654]
+            - cell "Accounting and Finance Assistant" [ref=e1655]
+            - cell "Separated" [ref=e1656]
+            - cell "Bel" [ref=e1657]
+            - cell "+639284893706" [ref=e1658]
+            - cell "Edit Delete" [ref=e1659]:
+              - generic [ref=e1660]:
+                - link "Edit" [ref=e1661] [cursor=pointer]:
+                  - /url: /ops/183/edit
+                - button "Delete" [ref=e1663] [cursor=pointer]
+          - row "Justine Marie Roce — Ellen Long/Randy Long Executive Assistant Active Adrian +639175622290 Edit Delete" [ref=e1664]:
+            - cell "Justine Marie Roce" [ref=e1665]
+            - cell "—" [ref=e1666]
+            - cell "Ellen Long/Randy Long" [ref=e1667]
+            - cell "Executive Assistant" [ref=e1668]
+            - cell "Active" [ref=e1669]
+            - cell "Adrian" [ref=e1670]
+            - cell "+639175622290" [ref=e1671]
+            - cell "Edit Delete" [ref=e1672]:
+              - generic [ref=e1673]:
+                - link "Edit" [ref=e1674] [cursor=pointer]:
+                  - /url: /ops/95/edit
+                - button "Delete" [ref=e1676] [cursor=pointer]
+          - row "Kaele Venice Chavez Castillo castillokaelevenice@gmail.com Josh Nelson Executive Assistant Active Bel +639171392495 Edit Delete" [ref=e1677]:
+            - cell "Kaele Venice Chavez Castillo" [ref=e1678]
+            - cell "castillokaelevenice@gmail.com" [ref=e1679]
+            - cell "Josh Nelson" [ref=e1680]
+            - cell "Executive Assistant" [ref=e1681]
+            - cell "Active" [ref=e1682]
+            - cell "Bel" [ref=e1683]
+            - cell "+639171392495" [ref=e1684]
+            - cell "Edit Delete" [ref=e1685]:
+              - generic [ref=e1686]:
+                - link "Edit" [ref=e1687] [cursor=pointer]:
+                  - /url: /ops/122/edit
+                - button "Delete" [ref=e1689] [cursor=pointer]
+          - row "Karen Allyssa Mae Velez Daquio karendaquio@gmail.com Thomas Lotrecchiano (Vitawild) Marketing Assistant Separated Adrian +639992233268 Edit Delete" [ref=e1690]:
+            - cell "Karen Allyssa Mae Velez Daquio" [ref=e1691]
+            - cell "karendaquio@gmail.com" [ref=e1692]
+            - cell "Thomas Lotrecchiano (Vitawild)" [ref=e1693]
+            - cell "Marketing Assistant" [ref=e1694]
+            - cell "Separated" [ref=e1695]
+            - cell "Adrian" [ref=e1696]
+            - cell "+639992233268" [ref=e1697]
+            - cell "Edit Delete" [ref=e1698]:
+              - generic [ref=e1699]:
+                - link "Edit" [ref=e1700] [cursor=pointer]:
+                  - /url: /ops/120/edit
+                - button "Delete" [ref=e1702] [cursor=pointer]
+          - 'row "Karessa Joy Batuigas Margallo karessajoy.va@gmail.com Nayia Pierrakos Executive Marketing Assistant Separated Bel +639983074053 / WhatsApp: +639554719492 Edit Delete" [ref=e1703]':
+            - cell "Karessa Joy Batuigas Margallo" [ref=e1704]
+            - cell "karessajoy.va@gmail.com" [ref=e1705]
+            - cell "Nayia Pierrakos" [ref=e1706]
+            - cell "Executive Marketing Assistant" [ref=e1707]
+            - cell "Separated" [ref=e1708]
+            - cell "Bel" [ref=e1709]
+            - 'cell "+639983074053 / WhatsApp: +639554719492" [ref=e1710]'
+            - cell "Edit Delete" [ref=e1711]:
+              - generic [ref=e1712]:
+                - link "Edit" [ref=e1713] [cursor=pointer]:
+                  - /url: /ops/172/edit
+                - button "Delete" [ref=e1715] [cursor=pointer]
+          - row "Karl Michael Kenneth Narcisa Colmenar karlcolmenar@gmail.com Jenna Corredor Creative Marketing Support Active Bel +639151152294 Edit Delete" [ref=e1716]:
+            - cell "Karl Michael Kenneth Narcisa Colmenar" [ref=e1717]
+            - cell "karlcolmenar@gmail.com" [ref=e1718]
+            - cell "Jenna Corredor" [ref=e1719]
+            - cell "Creative Marketing Support" [ref=e1720]
+            - cell "Active" [ref=e1721]
+            - cell "Bel" [ref=e1722]
+            - cell "+639151152294" [ref=e1723]
+            - cell "Edit Delete" [ref=e1724]:
+              - generic [ref=e1725]:
+                - link "Edit" [ref=e1726] [cursor=pointer]:
+                  - /url: /ops/185/edit
+                - button "Delete" [ref=e1728] [cursor=pointer]
+          - row "Kassandra Tsihlis kassdizon1130@gmail.com Greg and Lisa Shields Executive Assistant Probation Bel +639608241795 Edit Delete" [ref=e1729]:
+            - cell "Kassandra Tsihlis" [ref=e1730]
+            - cell "kassdizon1130@gmail.com" [ref=e1731]
+            - cell "Greg and Lisa Shields" [ref=e1732]
+            - cell "Executive Assistant" [ref=e1733]
+            - cell "Probation" [ref=e1734]
+            - cell "Bel" [ref=e1735]
+            - cell "+639608241795" [ref=e1736]
+            - cell "Edit Delete" [ref=e1737]:
+              - generic [ref=e1738]:
+                - link "Edit" [ref=e1739] [cursor=pointer]:
+                  - /url: /ops/212/edit
+                - button "Delete" [ref=e1741] [cursor=pointer]
+          - row "Katarina Figueroa -Alcaide — Connor Miller (ArdentX) Order Entry Specialist Separated Adrian +639153541453 Edit Delete" [ref=e1742]:
+            - cell "Katarina Figueroa -Alcaide" [ref=e1743]
+            - cell "—" [ref=e1744]
+            - cell "Connor Miller (ArdentX)" [ref=e1745]
+            - cell "Order Entry Specialist" [ref=e1746]
+            - cell "Separated" [ref=e1747]
+            - cell "Adrian" [ref=e1748]
+            - cell "+639153541453" [ref=e1749]
+            - cell "Edit Delete" [ref=e1750]:
+              - generic [ref=e1751]:
+                - link "Edit" [ref=e1752] [cursor=pointer]:
+                  - /url: /ops/73/edit
+                - button "Delete" [ref=e1754] [cursor=pointer]
+          - row "Kathleen Charmaine Naraval Ramirez kc.ramirez@gmail.com Andrea Race / BeautyBlender Ecommerce DTC Coordinator - Beautyblender Active Bel +639668230023 Edit Delete" [ref=e1755]:
+            - cell "Kathleen Charmaine Naraval Ramirez" [ref=e1756]
+            - cell "kc.ramirez@gmail.com" [ref=e1757]
+            - cell "Andrea Race / BeautyBlender" [ref=e1758]
+            - cell "Ecommerce DTC Coordinator - Beautyblender" [ref=e1759]
+            - cell "Active" [ref=e1760]
+            - cell "Bel" [ref=e1761]
+            - cell "+639668230023" [ref=e1762]
+            - cell "Edit Delete" [ref=e1763]:
+              - generic [ref=e1764]:
+                - link "Edit" [ref=e1765] [cursor=pointer]:
+                  - /url: /ops/201/edit
+                - button "Delete" [ref=e1767] [cursor=pointer]
+          - row "Kathleen Rae De Castro Villanueva villanuevakathleenrae@gmail.com Ian Blair Executive Assistant Separated Bel 639569921698 Edit Delete" [ref=e1768]:
+            - cell "Kathleen Rae De Castro Villanueva" [ref=e1769]
+            - cell "villanuevakathleenrae@gmail.com" [ref=e1770]
+            - cell "Ian Blair" [ref=e1771]
+            - cell "Executive Assistant" [ref=e1772]
+            - cell "Separated" [ref=e1773]
+            - cell "Bel" [ref=e1774]
+            - cell "639569921698" [ref=e1775]
+            - cell "Edit Delete" [ref=e1776]:
+              - generic [ref=e1777]:
+                - link "Edit" [ref=e1778] [cursor=pointer]:
+                  - /url: /ops/32/edit
+                - button "Delete" [ref=e1780] [cursor=pointer]
+          - row "Kathleen Rae De Castro Villanueva villanuevakathleenrae@gmail.com Masen Davis Executive Assistant Active Bel 639569921698 Edit Delete" [ref=e1781]:
+            - cell "Kathleen Rae De Castro Villanueva" [ref=e1782]
+            - cell "villanuevakathleenrae@gmail.com" [ref=e1783]
+            - cell "Masen Davis" [ref=e1784]
+            - cell "Executive Assistant" [ref=e1785]
+            - cell "Active" [ref=e1786]
+            - cell "Bel" [ref=e1787]
+            - cell "639569921698" [ref=e1788]
+            - cell "Edit Delete" [ref=e1789]:
+              - generic [ref=e1790]:
+                - link "Edit" [ref=e1791] [cursor=pointer]:
+                  - /url: /ops/32/edit
+                - button "Delete" [ref=e1793] [cursor=pointer]
+          - row "Kathrina Giene Shimano — Jason Paulus Executive Assistant Active Adrian +639982512800 Edit Delete" [ref=e1794]:
+            - cell "Kathrina Giene Shimano" [ref=e1795]
+            - cell "—" [ref=e1796]
+            - cell "Jason Paulus" [ref=e1797]
+            - cell "Executive Assistant" [ref=e1798]
+            - cell "Active" [ref=e1799]
+            - cell "Adrian" [ref=e1800]
+            - cell "+639982512800" [ref=e1801]
+            - cell "Edit Delete" [ref=e1802]:
+              - generic [ref=e1803]:
+                - link "Edit" [ref=e1804] [cursor=pointer]:
+                  - /url: /ops/100/edit
+                - button "Delete" [ref=e1806] [cursor=pointer]
+          - row "Katrina Marie Ituriaga — Toccara Drucker Executive Assistant Active Adrian +639777326863 Edit Delete" [ref=e1807]:
+            - cell "Katrina Marie Ituriaga" [ref=e1808]
+            - cell "—" [ref=e1809]
+            - cell "Toccara Drucker" [ref=e1810]
+            - cell "Executive Assistant" [ref=e1811]
+            - cell "Active" [ref=e1812]
+            - cell "Adrian" [ref=e1813]
+            - cell "+639777326863" [ref=e1814]
+            - cell "Edit Delete" [ref=e1815]:
+              - generic [ref=e1816]:
+                - link "Edit" [ref=e1817] [cursor=pointer]:
+                  - /url: /ops/79/edit
+                - button "Delete" [ref=e1819] [cursor=pointer]
+          - row "Kempee S. Gumasing fyankim1713@gmail.com Daniel Hambrick Insurance CSR Separated Bel +639611484277 / +639053852188 Edit Delete" [ref=e1820]:
+            - cell "Kempee S. Gumasing" [ref=e1821]
+            - cell "fyankim1713@gmail.com" [ref=e1822]
+            - cell "Daniel Hambrick" [ref=e1823]
+            - cell "Insurance CSR" [ref=e1824]
+            - cell "Separated" [ref=e1825]
+            - cell "Bel" [ref=e1826]
+            - cell "+639611484277 / +639053852188" [ref=e1827]
+            - cell "Edit Delete" [ref=e1828]:
+              - generic [ref=e1829]:
+                - link "Edit" [ref=e1830] [cursor=pointer]:
+                  - /url: /ops/164/edit
+                - button "Delete" [ref=e1832] [cursor=pointer]
+          - row "Kerwin Samlero — Adam Robinson Executive Assistant Active Adrian +639690942463 Edit Delete" [ref=e1833]:
+            - cell "Kerwin Samlero" [ref=e1834]
+            - cell "—" [ref=e1835]
+            - cell "Adam Robinson" [ref=e1836]
+            - cell "Executive Assistant" [ref=e1837]
+            - cell "Active" [ref=e1838]
+            - cell "Adrian" [ref=e1839]
+            - cell "+639690942463" [ref=e1840]
+            - cell "Edit Delete" [ref=e1841]:
+              - generic [ref=e1842]:
+                - link "Edit" [ref=e1843] [cursor=pointer]:
+                  - /url: /ops/98/edit
+                - button "Delete" [ref=e1845] [cursor=pointer]
+          - row "Khenn Mark De Chavez Baybay khennmarkbaybay@gmail.com Dr. Betty Murray Executive Assistant OP Active Bel +639086103319 Edit Delete" [ref=e1846]:
+            - cell "Khenn Mark De Chavez Baybay" [ref=e1847]
+            - cell "khennmarkbaybay@gmail.com" [ref=e1848]
+            - cell "Dr. Betty Murray" [ref=e1849]
+            - cell "Executive Assistant OP" [ref=e1850]
+            - cell "Active" [ref=e1851]
+            - cell "Bel" [ref=e1852]
+            - cell "+639086103319" [ref=e1853]
+            - cell "Edit Delete" [ref=e1854]:
+              - generic [ref=e1855]:
+                - link "Edit" [ref=e1856] [cursor=pointer]:
+                  - /url: /ops/138/edit
+                - button "Delete" [ref=e1858] [cursor=pointer]
+          - row "Kimberly Kate Caballes — Austin Blair/ Laundry Sauce Shopify Customer Service Representative Separated Bel +639369032079 Edit Delete" [ref=e1859]:
+            - cell "Kimberly Kate Caballes" [ref=e1860]
+            - cell "—" [ref=e1861]
+            - cell "Austin Blair/ Laundry Sauce" [ref=e1862]
+            - cell "Shopify Customer Service Representative" [ref=e1863]
+            - cell "Separated" [ref=e1864]
+            - cell "Bel" [ref=e1865]
+            - cell "+639369032079" [ref=e1866]
+            - cell "Edit Delete" [ref=e1867]:
+              - generic [ref=e1868]:
+                - link "Edit" [ref=e1869] [cursor=pointer]:
+                  - /url: /ops/6/edit
+                - button "Delete" [ref=e1871] [cursor=pointer]
+          - row "Kristine Celino kacecelino@gmail.com Clint Murphy / Lesley Murphy Social Media Assistant Separated Bel +639190951394 Edit Delete" [ref=e1872]:
+            - cell "Kristine Celino" [ref=e1873]
+            - cell "kacecelino@gmail.com" [ref=e1874]
+            - cell "Clint Murphy / Lesley Murphy" [ref=e1875]
+            - cell "Social Media Assistant" [ref=e1876]
+            - cell "Separated" [ref=e1877]
+            - cell "Bel" [ref=e1878]
+            - cell "+639190951394" [ref=e1879]
+            - cell "Edit Delete" [ref=e1880]:
+              - generic [ref=e1881]:
+                - link "Edit" [ref=e1882] [cursor=pointer]:
+                  - /url: /ops/9/edit
+                - button "Delete" [ref=e1884] [cursor=pointer]
+          - row "Kristine Celino kacecelino@gmail.com Jessica Kerr (Catalyst Agency) Marketing Assistant Active Bel +639190951394 Edit Delete" [ref=e1885]:
+            - cell "Kristine Celino" [ref=e1886]
+            - cell "kacecelino@gmail.com" [ref=e1887]
+            - cell "Jessica Kerr (Catalyst Agency)" [ref=e1888]
+            - cell "Marketing Assistant" [ref=e1889]
+            - cell "Active" [ref=e1890]
+            - cell "Bel" [ref=e1891]
+            - cell "+639190951394" [ref=e1892]
+            - cell "Edit Delete" [ref=e1893]:
+              - generic [ref=e1894]:
+                - link "Edit" [ref=e1895] [cursor=pointer]:
+                  - /url: /ops/9/edit
+                - button "Delete" [ref=e1897] [cursor=pointer]
+          - row "Krisven Mae Leynes — Aaron Martin (Martin Law and Mediation) Legal Admin Assistant Separated Bel +639069358862 Edit Delete" [ref=e1898]:
+            - cell "Krisven Mae Leynes" [ref=e1899]
+            - cell "—" [ref=e1900]
+            - cell "Aaron Martin (Martin Law and Mediation)" [ref=e1901]
+            - cell "Legal Admin Assistant" [ref=e1902]
+            - cell "Separated" [ref=e1903]
+            - cell "Bel" [ref=e1904]
+            - cell "+639069358862" [ref=e1905]
+            - cell "Edit Delete" [ref=e1906]:
+              - generic [ref=e1907]:
+                - link "Edit" [ref=e1908] [cursor=pointer]:
+                  - /url: /ops/18/edit
+                - button "Delete" [ref=e1910] [cursor=pointer]
+          - row "Ladilou Vale Almonte Jr. ladilouvale@gmail.com Ian Blair CSR Separated Bel +639366658438 Edit Delete" [ref=e1911]:
+            - cell "Ladilou Vale Almonte Jr." [ref=e1912]
+            - cell "ladilouvale@gmail.com" [ref=e1913]
+            - cell "Ian Blair" [ref=e1914]
+            - cell "CSR" [ref=e1915]
+            - cell "Separated" [ref=e1916]
+            - cell "Bel" [ref=e1917]
+            - cell "+639366658438" [ref=e1918]
+            - cell "Edit Delete" [ref=e1919]:
+              - generic [ref=e1920]:
+                - link "Edit" [ref=e1921] [cursor=pointer]:
+                  - /url: /ops/155/edit
+                - button "Delete" [ref=e1923] [cursor=pointer]
+          - row "Lady Shirmel Pagutayao Anchoriz anchoriz.ladyshirmel@gmail.com Larry Evans Executive Sales Assistant Separated Bel +639157307664 Edit Delete" [ref=e1924]:
+            - cell "Lady Shirmel Pagutayao Anchoriz" [ref=e1925]
+            - cell "anchoriz.ladyshirmel@gmail.com" [ref=e1926]
+            - cell "Larry Evans" [ref=e1927]
+            - cell "Executive Sales Assistant" [ref=e1928]
+            - cell "Separated" [ref=e1929]
+            - cell "Bel" [ref=e1930]
+            - cell "+639157307664" [ref=e1931]
+            - cell "Edit Delete" [ref=e1932]:
+              - generic [ref=e1933]:
+                - link "Edit" [ref=e1934] [cursor=pointer]:
+                  - /url: /ops/160/edit
+                - button "Delete" [ref=e1936] [cursor=pointer]
+          - row "Lady Shirmel Pagutayao Anchoriz anchoriz.ladyshirmel@gmail.com Gavin Klauser AI-Driven Operations Assistant Probation Bel +639157307664 Edit Delete" [ref=e1937]:
+            - cell "Lady Shirmel Pagutayao Anchoriz" [ref=e1938]
+            - cell "anchoriz.ladyshirmel@gmail.com" [ref=e1939]
+            - cell "Gavin Klauser" [ref=e1940]
+            - cell "AI-Driven Operations Assistant" [ref=e1941]
+            - cell "Probation" [ref=e1942]
+            - cell "Bel" [ref=e1943]
+            - cell "+639157307664" [ref=e1944]
+            - cell "Edit Delete" [ref=e1945]:
+              - generic [ref=e1946]:
+                - link "Edit" [ref=e1947] [cursor=pointer]:
+                  - /url: /ops/160/edit
+                - button "Delete" [ref=e1949] [cursor=pointer]
+          - row "Laurice Anne Castillo laurice.virtualassistant@gmail.com Patrick O'meara Executive Assistant Separated Bel +639171454456 Edit Delete" [ref=e1950]:
+            - cell "Laurice Anne Castillo" [ref=e1951]
+            - cell "laurice.virtualassistant@gmail.com" [ref=e1952]
+            - cell "Patrick O'meara" [ref=e1953]
+            - cell "Executive Assistant" [ref=e1954]
+            - cell "Separated" [ref=e1955]
+            - cell "Bel" [ref=e1956]
+            - cell "+639171454456" [ref=e1957]
+            - cell "Edit Delete" [ref=e1958]:
+              - generic [ref=e1959]:
+                - link "Edit" [ref=e1960] [cursor=pointer]:
+                  - /url: /ops/8/edit
+                - button "Delete" [ref=e1962] [cursor=pointer]
+          - row "Laurice Anne Castillo laurice.virtualassistant@gmail.com Ross Denny Executive Assistant OP Separated Bel +639171454456 Edit Delete" [ref=e1963]:
+            - cell "Laurice Anne Castillo" [ref=e1964]
+            - cell "laurice.virtualassistant@gmail.com" [ref=e1965]
+            - cell "Ross Denny" [ref=e1966]
+            - cell "Executive Assistant OP" [ref=e1967]
+            - cell "Separated" [ref=e1968]
+            - cell "Bel" [ref=e1969]
+            - cell "+639171454456" [ref=e1970]
+            - cell "Edit Delete" [ref=e1971]:
+              - generic [ref=e1972]:
+                - link "Edit" [ref=e1973] [cursor=pointer]:
+                  - /url: /ops/8/edit
+                - button "Delete" [ref=e1975] [cursor=pointer]
+          - row "Ma. Caisa Salvador mcmasalvador@gmail.com Austin Blair/ Laundry Sauce Supply Chain Analyst OP Probation Bel +639778200569 Edit Delete" [ref=e1976]:
+            - cell "Ma. Caisa Salvador" [ref=e1977]
+            - cell "mcmasalvador@gmail.com" [ref=e1978]
+            - cell "Austin Blair/ Laundry Sauce" [ref=e1979]
+            - cell "Supply Chain Analyst OP" [ref=e1980]
+            - cell "Probation" [ref=e1981]
+            - cell "Bel" [ref=e1982]
+            - cell "+639778200569" [ref=e1983]
+            - cell "Edit Delete" [ref=e1984]:
+              - generic [ref=e1985]:
+                - link "Edit" [ref=e1986] [cursor=pointer]:
+                  - /url: /ops/192/edit
+                - button "Delete" [ref=e1988] [cursor=pointer]
+          - row "Ma. Clarisse Ann Adagio clarisseadagio@outlook.com Lucas Kemper Creator & Social Commerce Coordinator Probation Adrian +639064031797 Edit Delete" [ref=e1989]:
+            - cell "Ma. Clarisse Ann Adagio" [ref=e1990]
+            - cell "clarisseadagio@outlook.com" [ref=e1991]
+            - cell "Lucas Kemper" [ref=e1992]
+            - cell "Creator & Social Commerce Coordinator" [ref=e1993]
+            - cell "Probation" [ref=e1994]
+            - cell "Adrian" [ref=e1995]
+            - cell "+639064031797" [ref=e1996]
+            - cell "Edit Delete" [ref=e1997]:
+              - generic [ref=e1998]:
+                - link "Edit" [ref=e1999] [cursor=pointer]:
+                  - /url: /ops/200/edit
+                - button "Delete" [ref=e2001] [cursor=pointer]
+          - row "Ma. Linda Prudenciado ma.linda.prudenciado@gmail.com Blake Evertsen Client Success Executive Assistant Separated Bel +639433090940 Edit Delete" [ref=e2002]:
+            - cell "Ma. Linda Prudenciado" [ref=e2003]
+            - cell "ma.linda.prudenciado@gmail.com" [ref=e2004]
+            - cell "Blake Evertsen" [ref=e2005]
+            - cell "Client Success Executive Assistant" [ref=e2006]
+            - cell "Separated" [ref=e2007]
+            - cell "Bel" [ref=e2008]
+            - cell "+639433090940" [ref=e2009]
+            - cell "Edit Delete" [ref=e2010]:
+              - generic [ref=e2011]:
+                - link "Edit" [ref=e2012] [cursor=pointer]:
+                  - /url: /ops/25/edit
+                - button "Delete" [ref=e2014] [cursor=pointer]
+          - row "Ma. Linda Prudenciado ma.linda.prudenciado@gmail.com Zac Gulbranson Executive Assistant Active Bel +639433090940 Edit Delete" [ref=e2015]:
+            - cell "Ma. Linda Prudenciado" [ref=e2016]
+            - cell "ma.linda.prudenciado@gmail.com" [ref=e2017]
+            - cell "Zac Gulbranson" [ref=e2018]
+            - cell "Executive Assistant" [ref=e2019]
+            - cell "Active" [ref=e2020]
+            - cell "Bel" [ref=e2021]
+            - cell "+639433090940" [ref=e2022]
+            - cell "Edit Delete" [ref=e2023]:
+              - generic [ref=e2024]:
+                - link "Edit" [ref=e2025] [cursor=pointer]:
+                  - /url: /ops/25/edit
+                - button "Delete" [ref=e2027] [cursor=pointer]
+          - row "Ma. Shien Esclavia msesclavia07@gmail.com Aaron Richards Sales Development Representative Separated Bel +639225191140 / +639167479313 Edit Delete" [ref=e2028]:
+            - cell "Ma. Shien Esclavia" [ref=e2029]
+            - cell "msesclavia07@gmail.com" [ref=e2030]
+            - cell "Aaron Richards" [ref=e2031]
+            - cell "Sales Development Representative" [ref=e2032]
+            - cell "Separated" [ref=e2033]
+            - cell "Bel" [ref=e2034]
+            - cell "+639225191140 / +639167479313" [ref=e2035]
+            - cell "Edit Delete" [ref=e2036]:
+              - generic [ref=e2037]:
+                - link "Edit" [ref=e2038] [cursor=pointer]:
+                  - /url: /ops/12/edit
+                - button "Delete" [ref=e2040] [cursor=pointer]
+          - row "Ma. Shien Esclavia msesclavia07@gmail.com Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Bel +639225191140 / +639167479313 Edit Delete" [ref=e2041]:
+            - cell "Ma. Shien Esclavia" [ref=e2042]
+            - cell "msesclavia07@gmail.com" [ref=e2043]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2044]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2045]
+            - cell "Separated" [ref=e2046]
+            - cell "Bel" [ref=e2047]
+            - cell "+639225191140 / +639167479313" [ref=e2048]
+            - cell "Edit Delete" [ref=e2049]:
+              - generic [ref=e2050]:
+                - link "Edit" [ref=e2051] [cursor=pointer]:
+                  - /url: /ops/12/edit
+                - button "Delete" [ref=e2053] [cursor=pointer]
+          - row "Ma. Shien Esclavia msesclavia07@gmail.com Aaron Redman Insurance Admin Assistant Separated Bel +639225191140 / +639167479313 Edit Delete" [ref=e2054]:
+            - cell "Ma. Shien Esclavia" [ref=e2055]
+            - cell "msesclavia07@gmail.com" [ref=e2056]
+            - cell "Aaron Redman" [ref=e2057]
+            - cell "Insurance Admin Assistant" [ref=e2058]
+            - cell "Separated" [ref=e2059]
+            - cell "Bel" [ref=e2060]
+            - cell "+639225191140 / +639167479313" [ref=e2061]
+            - cell "Edit Delete" [ref=e2062]:
+              - generic [ref=e2063]:
+                - link "Edit" [ref=e2064] [cursor=pointer]:
+                  - /url: /ops/12/edit
+                - button "Delete" [ref=e2066] [cursor=pointer]
+          - row "Marc Waltson Leandado — Dr. Matthew and Theresa Steiner Admin Support OP Separated Bel +639171132540 Edit Delete" [ref=e2067]:
+            - cell "Marc Waltson Leandado" [ref=e2068]
+            - cell "—" [ref=e2069]
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e2070]
+            - cell "Admin Support OP" [ref=e2071]
+            - cell "Separated" [ref=e2072]
+            - cell "Bel" [ref=e2073]
+            - cell "+639171132540" [ref=e2074]
+            - cell "Edit Delete" [ref=e2075]:
+              - generic [ref=e2076]:
+                - link "Edit" [ref=e2077] [cursor=pointer]:
+                  - /url: /ops/33/edit
+                - button "Delete" [ref=e2079] [cursor=pointer]
+          - row "Marcloyd Mateo Mirador marcloyd.mirador@live.com Ian Blair Shopify Web Developer OP Separated Bel +639694750316 Edit Delete" [ref=e2080]:
+            - cell "Marcloyd Mateo Mirador" [ref=e2081]
+            - cell "marcloyd.mirador@live.com" [ref=e2082]
+            - cell "Ian Blair" [ref=e2083]
+            - cell "Shopify Web Developer OP" [ref=e2084]
+            - cell "Separated" [ref=e2085]
+            - cell "Bel" [ref=e2086]
+            - cell "+639694750316" [ref=e2087]
+            - cell "Edit Delete" [ref=e2088]:
+              - generic [ref=e2089]:
+                - link "Edit" [ref=e2090] [cursor=pointer]:
+                  - /url: /ops/182/edit
+                - button "Delete" [ref=e2092] [cursor=pointer]
+          - row "Mardenn Sicam Piñero mardennpinero@gmail.com One PLTFRM (Cecil Barton) Lead Generation Specialist Separated Bel +639173981717 Edit Delete" [ref=e2093]:
+            - cell "Mardenn Sicam Piñero" [ref=e2094]
+            - cell "mardennpinero@gmail.com" [ref=e2095]
+            - cell "One PLTFRM (Cecil Barton)" [ref=e2096]
+            - cell "Lead Generation Specialist" [ref=e2097]
+            - cell "Separated" [ref=e2098]
+            - cell "Bel" [ref=e2099]
+            - cell "+639173981717" [ref=e2100]
+            - cell "Edit Delete" [ref=e2101]:
+              - generic [ref=e2102]:
+                - link "Edit" [ref=e2103] [cursor=pointer]:
+                  - /url: /ops/134/edit
+                - button "Delete" [ref=e2105] [cursor=pointer]
+          - row "Maria Edelwina Angeline Gozon — Ryan McFarland LinkedIn Bot Assistant Separated Bel +639237362128 Edit Delete" [ref=e2106]:
+            - cell "Maria Edelwina Angeline Gozon" [ref=e2107]
+            - cell "—" [ref=e2108]
+            - cell "Ryan McFarland" [ref=e2109]
+            - cell "LinkedIn Bot Assistant" [ref=e2110]
+            - cell "Separated" [ref=e2111]
+            - cell "Bel" [ref=e2112]
+            - cell "+639237362128" [ref=e2113]
+            - cell "Edit Delete" [ref=e2114]:
+              - generic [ref=e2115]:
+                - link "Edit" [ref=e2116] [cursor=pointer]:
+                  - /url: /ops/46/edit
+                - button "Delete" [ref=e2118] [cursor=pointer]
+          - row "Maria Elena Sabanal — Blake Evertsen Data Operations Manager Separated Bel +639560569572 Edit Delete" [ref=e2119]:
+            - cell "Maria Elena Sabanal" [ref=e2120]
+            - cell "—" [ref=e2121]
+            - cell "Blake Evertsen" [ref=e2122]
+            - cell "Data Operations Manager" [ref=e2123]
+            - cell "Separated" [ref=e2124]
+            - cell "Bel" [ref=e2125]
+            - cell "+639560569572" [ref=e2126]
+            - cell "Edit Delete" [ref=e2127]:
+              - generic [ref=e2128]:
+                - link "Edit" [ref=e2129] [cursor=pointer]:
+                  - /url: /ops/28/edit
+                - button "Delete" [ref=e2131] [cursor=pointer]
+          - row "Maria Patricia Arango Perez maria072793@gmail.com James Swanwick Bilingual Executive and Personal Assistant OP Separated Bel +573016925494 Edit Delete" [ref=e2132]:
+            - cell "Maria Patricia Arango Perez" [ref=e2133]
+            - cell "maria072793@gmail.com" [ref=e2134]
+            - cell "James Swanwick" [ref=e2135]
+            - cell "Bilingual Executive and Personal Assistant OP" [ref=e2136]
+            - cell "Separated" [ref=e2137]
+            - cell "Bel" [ref=e2138]
+            - cell "+573016925494" [ref=e2139]
+            - cell "Edit Delete" [ref=e2140]:
+              - generic [ref=e2141]:
+                - link "Edit" [ref=e2142] [cursor=pointer]:
+                  - /url: /ops/136/edit
+                - button "Delete" [ref=e2144] [cursor=pointer]
+          - row "Mariel Calugay — Ryan McFarland Appointment Setter Separated Bel +639163151919 Edit Delete" [ref=e2145]:
+            - cell "Mariel Calugay" [ref=e2146]
+            - cell "—" [ref=e2147]
+            - cell "Ryan McFarland" [ref=e2148]
+            - cell "Appointment Setter" [ref=e2149]
+            - cell "Separated" [ref=e2150]
+            - cell "Bel" [ref=e2151]
+            - cell "+639163151919" [ref=e2152]
+            - cell "Edit Delete" [ref=e2153]:
+              - generic [ref=e2154]:
+                - link "Edit" [ref=e2155] [cursor=pointer]:
+                  - /url: /ops/40/edit
+                - button "Delete" [ref=e2157] [cursor=pointer]
+          - row "Marivic Reamico Bautista mavicbq1012@gmail.com Josh Fancher / Ryan Goebel (CINQ) Dispatcher Separated Bel +639173046123 Edit Delete" [ref=e2158]:
+            - cell "Marivic Reamico Bautista" [ref=e2159]
+            - cell "mavicbq1012@gmail.com" [ref=e2160]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2161]
+            - cell "Dispatcher" [ref=e2162]
+            - cell "Separated" [ref=e2163]
+            - cell "Bel" [ref=e2164]
+            - cell "+639173046123" [ref=e2165]
+            - cell "Edit Delete" [ref=e2166]:
+              - generic [ref=e2167]:
+                - link "Edit" [ref=e2168] [cursor=pointer]:
+                  - /url: /ops/123/edit
+                - button "Delete" [ref=e2170] [cursor=pointer]
+          - row "Mark Joseph Zacal markjosephzacal@gmail.com Daniel Hambrick Sr. Account Manager Separated Bel +639664137055 Edit Delete" [ref=e2171]:
+            - cell "Mark Joseph Zacal" [ref=e2172]
+            - cell "markjosephzacal@gmail.com" [ref=e2173]
+            - cell "Daniel Hambrick" [ref=e2174]
+            - cell "Sr. Account Manager" [ref=e2175]
+            - cell "Separated" [ref=e2176]
+            - cell "Bel" [ref=e2177]
+            - cell "+639664137055" [ref=e2178]
+            - cell "Edit Delete" [ref=e2179]:
+              - generic [ref=e2180]:
+                - link "Edit" [ref=e2181] [cursor=pointer]:
+                  - /url: /ops/205/edit
+                - button "Delete" [ref=e2183] [cursor=pointer]
+          - row "Mark Lester Caraan lester.caraan0527@gmail.com Luke Harmon Account Strategist OP Probation Bel +639680491362 Edit Delete" [ref=e2184]:
+            - cell "Mark Lester Caraan" [ref=e2185]
+            - cell "lester.caraan0527@gmail.com" [ref=e2186]
+            - cell "Luke Harmon" [ref=e2187]
+            - cell "Account Strategist OP" [ref=e2188]
+            - cell "Probation" [ref=e2189]
+            - cell "Bel" [ref=e2190]
+            - cell "+639680491362" [ref=e2191]
+            - cell "Edit Delete" [ref=e2192]:
+              - generic [ref=e2193]:
+                - link "Edit" [ref=e2194] [cursor=pointer]:
+                  - /url: /ops/211/edit
+                - button "Delete" [ref=e2196] [cursor=pointer]
+          - row "Marriene Joy Salas — Ryan McFarland Director of Operations Separated Bel +639190070831 Edit Delete" [ref=e2197]:
+            - cell "Marriene Joy Salas" [ref=e2198]
+            - cell "—" [ref=e2199]
+            - cell "Ryan McFarland" [ref=e2200]
+            - cell "Director of Operations" [ref=e2201]
+            - cell "Separated" [ref=e2202]
+            - cell "Bel" [ref=e2203]
+            - cell "+639190070831" [ref=e2204]
+            - cell "Edit Delete" [ref=e2205]:
+              - generic [ref=e2206]:
+                - link "Edit" [ref=e2207] [cursor=pointer]:
+                  - /url: /ops/53/edit
+                - button "Delete" [ref=e2209] [cursor=pointer]
+          - row "Marvin Elbert Loraya — Connor Miller (ArdentX) Executive Assistant Active Adrian +639351324635 Edit Delete" [ref=e2210]:
+            - cell "Marvin Elbert Loraya" [ref=e2211]
+            - cell "—" [ref=e2212]
+            - cell "Connor Miller (ArdentX)" [ref=e2213]
+            - cell "Executive Assistant" [ref=e2214]
+            - cell "Active" [ref=e2215]
+            - cell "Adrian" [ref=e2216]
+            - cell "+639351324635" [ref=e2217]
+            - cell "Edit Delete" [ref=e2218]:
+              - generic [ref=e2219]:
+                - link "Edit" [ref=e2220] [cursor=pointer]:
+                  - /url: /ops/82/edit
+                - button "Delete" [ref=e2222] [cursor=pointer]
+          - row "Marvin Vergara — Edward Piazza Social Media Marketing Specialist Active Adrian +639260055494 Edit Delete" [ref=e2223]:
+            - cell "Marvin Vergara" [ref=e2224]
+            - cell "—" [ref=e2225]
+            - cell "Edward Piazza" [ref=e2226]
+            - cell "Social Media Marketing Specialist" [ref=e2227]
+            - cell "Active" [ref=e2228]
+            - cell "Adrian" [ref=e2229]
+            - cell "+639260055494" [ref=e2230]
+            - cell "Edit Delete" [ref=e2231]:
+              - generic [ref=e2232]:
+                - link "Edit" [ref=e2233] [cursor=pointer]:
+                  - /url: /ops/106/edit
+                - button "Delete" [ref=e2235] [cursor=pointer]
+          - row "Mary Anne Soriano — Lucas Robinson Customer Support Representative Active Adrian +639778203644 Edit Delete" [ref=e2236]:
+            - cell "Mary Anne Soriano" [ref=e2237]
+            - cell "—" [ref=e2238]
+            - cell "Lucas Robinson" [ref=e2239]
+            - cell "Customer Support Representative" [ref=e2240]
+            - cell "Active" [ref=e2241]
+            - cell "Adrian" [ref=e2242]
+            - cell "+639778203644" [ref=e2243]
+            - cell "Edit Delete" [ref=e2244]:
+              - generic [ref=e2245]:
+                - link "Edit" [ref=e2246] [cursor=pointer]:
+                  - /url: /ops/30/edit
+                - button "Delete" [ref=e2248] [cursor=pointer]
+          - row "Mary Cris Bautista Sotic marycrisbsotic@gmail.com Joseph Lucosky / Julia Mabin Virtual Executive Assistant Active Bel +639618051718 Edit Delete" [ref=e2249]:
+            - cell "Mary Cris Bautista Sotic" [ref=e2250]
+            - cell "marycrisbsotic@gmail.com" [ref=e2251]
+            - cell "Joseph Lucosky / Julia Mabin" [ref=e2252]
+            - cell "Virtual Executive Assistant" [ref=e2253]
+            - cell "Active" [ref=e2254]
+            - cell "Bel" [ref=e2255]
+            - cell "+639618051718" [ref=e2256]
+            - cell "Edit Delete" [ref=e2257]:
+              - generic [ref=e2258]:
+                - link "Edit" [ref=e2259] [cursor=pointer]:
+                  - /url: /ops/153/edit
+                - button "Delete" [ref=e2261] [cursor=pointer]
+          - row "Mary Dominique Castro Camacho dominique@klausercapital.io Gavin Klauser Executive Operations Assistant Active Adrian +639473228999 Edit Delete" [ref=e2262]:
+            - cell "Mary Dominique Castro Camacho" [ref=e2263]
+            - cell "dominique@klausercapital.io" [ref=e2264]
+            - cell "Gavin Klauser" [ref=e2265]
+            - cell "Executive Operations Assistant" [ref=e2266]
+            - cell "Active" [ref=e2267]
+            - cell "Adrian" [ref=e2268]
+            - cell "+639473228999" [ref=e2269]
+            - cell "Edit Delete" [ref=e2270]:
+              - generic [ref=e2271]:
+                - link "Edit" [ref=e2272] [cursor=pointer]:
+                  - /url: /ops/126/edit
+                - button "Delete" [ref=e2274] [cursor=pointer]
+          - row "Mary Grace Tan Dizon marygracemtan@gmail.com Andrea Race / BeautyBlender Bookkeeper Separated Bel +639179641666 Edit Delete" [ref=e2275]:
+            - cell "Mary Grace Tan Dizon" [ref=e2276]
+            - cell "marygracemtan@gmail.com" [ref=e2277]
+            - cell "Andrea Race / BeautyBlender" [ref=e2278]
+            - cell "Bookkeeper" [ref=e2279]
+            - cell "Separated" [ref=e2280]
+            - cell "Bel" [ref=e2281]
+            - cell "+639179641666" [ref=e2282]
+            - cell "Edit Delete" [ref=e2283]:
+              - generic [ref=e2284]:
+                - link "Edit" [ref=e2285] [cursor=pointer]:
+                  - /url: /ops/167/edit
+                - button "Delete" [ref=e2287] [cursor=pointer]
+          - row "Mary Kathleen Bayron — Josh Schwartz Customer Service Representative Active Bel +639282856229 Edit Delete" [ref=e2288]:
+            - cell "Mary Kathleen Bayron" [ref=e2289]
+            - cell "—" [ref=e2290]
+            - cell "Josh Schwartz" [ref=e2291]
+            - cell "Customer Service Representative" [ref=e2292]
+            - cell "Active" [ref=e2293]
+            - cell "Bel" [ref=e2294]
+            - cell "+639282856229" [ref=e2295]
+            - cell "Edit Delete" [ref=e2296]:
+              - generic [ref=e2297]:
+                - link "Edit" [ref=e2298] [cursor=pointer]:
+                  - /url: /ops/65/edit
+                - button "Delete" [ref=e2300] [cursor=pointer]
+          - row "Mary Rachelle Trinidad realty.rachellesy@gmail.com Thomas Turner Executive Assistant Active Bel +639219503079 Edit Delete" [ref=e2301]:
+            - cell "Mary Rachelle Trinidad" [ref=e2302]
+            - cell "realty.rachellesy@gmail.com" [ref=e2303]
+            - cell "Thomas Turner" [ref=e2304]
+            - cell "Executive Assistant" [ref=e2305]
+            - cell "Active" [ref=e2306]
+            - cell "Bel" [ref=e2307]
+            - cell "+639219503079" [ref=e2308]
+            - cell "Edit Delete" [ref=e2309]:
+              - generic [ref=e2310]:
+                - link "Edit" [ref=e2311] [cursor=pointer]:
+                  - /url: /ops/184/edit
+                - button "Delete" [ref=e2313] [cursor=pointer]
+          - row "Maynard Ivan Milana maynardivan.milana@gmail.com Greg and Lisa Shields Executive Assistant Separated Bel +639688895511 Edit Delete" [ref=e2314]:
+            - cell "Maynard Ivan Milana" [ref=e2315]
+            - cell "maynardivan.milana@gmail.com" [ref=e2316]
+            - cell "Greg and Lisa Shields" [ref=e2317]
+            - cell "Executive Assistant" [ref=e2318]
+            - cell "Separated" [ref=e2319]
+            - cell "Bel" [ref=e2320]
+            - cell "+639688895511" [ref=e2321]
+            - cell "Edit Delete" [ref=e2322]:
+              - generic [ref=e2323]:
+                - link "Edit" [ref=e2324] [cursor=pointer]:
+                  - /url: /ops/190/edit
+                - button "Delete" [ref=e2326] [cursor=pointer]
+          - row "Melan Manalo — Ryan McFarland Virtual Assistant Separated Bel +639814245549 Edit Delete" [ref=e2327]:
+            - cell "Melan Manalo" [ref=e2328]
+            - cell "—" [ref=e2329]
+            - cell "Ryan McFarland" [ref=e2330]
+            - cell "Virtual Assistant" [ref=e2331]
+            - cell "Separated" [ref=e2332]
+            - cell "Bel" [ref=e2333]
+            - cell "+639814245549" [ref=e2334]
+            - cell "Edit Delete" [ref=e2335]:
+              - generic [ref=e2336]:
+                - link "Edit" [ref=e2337] [cursor=pointer]:
+                  - /url: /ops/49/edit
+                - button "Delete" [ref=e2339] [cursor=pointer]
+          - row "Melanie Joy Pecaña — Lucas Robinson Bookkeeper Active Adrian +639171669539 Edit Delete" [ref=e2340]:
+            - cell "Melanie Joy Pecaña" [ref=e2341]
+            - cell "—" [ref=e2342]
+            - cell "Lucas Robinson" [ref=e2343]
+            - cell "Bookkeeper" [ref=e2344]
+            - cell "Active" [ref=e2345]
+            - cell "Adrian" [ref=e2346]
+            - cell "+639171669539" [ref=e2347]
+            - cell "Edit Delete" [ref=e2348]:
+              - generic [ref=e2349]:
+                - link "Edit" [ref=e2350] [cursor=pointer]:
+                  - /url: /ops/23/edit
+                - button "Delete" [ref=e2352] [cursor=pointer]
+          - row "Melody Berdan — Josh Fancher / Dustin Terry Project Manager Separated Adrian +639764638419 / +639177361733 Edit Delete" [ref=e2353]:
+            - cell "Melody Berdan" [ref=e2354]
+            - cell "—" [ref=e2355]
+            - cell "Josh Fancher / Dustin Terry" [ref=e2356]
+            - cell "Project Manager" [ref=e2357]
+            - cell "Separated" [ref=e2358]
+            - cell "Adrian" [ref=e2359]
+            - cell "+639764638419 / +639177361733" [ref=e2360]
+            - cell "Edit Delete" [ref=e2361]:
+              - generic [ref=e2362]:
+                - link "Edit" [ref=e2363] [cursor=pointer]:
+                  - /url: /ops/66/edit
+                - button "Delete" [ref=e2365] [cursor=pointer]
+          - row "Michael Benigno Valdez — Adam Wagner Sales Development Representative Separated Adrian +639985862528 Edit Delete" [ref=e2366]:
+            - cell "Michael Benigno Valdez" [ref=e2367]
+            - cell "—" [ref=e2368]
+            - cell "Adam Wagner" [ref=e2369]
+            - cell "Sales Development Representative" [ref=e2370]
+            - cell "Separated" [ref=e2371]
+            - cell "Adrian" [ref=e2372]
+            - cell "+639985862528" [ref=e2373]
+            - cell "Edit Delete" [ref=e2374]:
+              - generic [ref=e2375]:
+                - link "Edit" [ref=e2376] [cursor=pointer]:
+                  - /url: /ops/105/edit
+                - button "Delete" [ref=e2378] [cursor=pointer]
+          - row "Michael Roland Katindig fenrisform3000@gmail.com Ryan McFarland Graphic Designer Separated Bel +639177690692 Edit Delete" [ref=e2379]:
+            - cell "Michael Roland Katindig" [ref=e2380]
+            - cell "fenrisform3000@gmail.com" [ref=e2381]
+            - cell "Ryan McFarland" [ref=e2382]
+            - cell "Graphic Designer" [ref=e2383]
+            - cell "Separated" [ref=e2384]
+            - cell "Bel" [ref=e2385]
+            - cell "+639177690692" [ref=e2386]
+            - cell "Edit Delete" [ref=e2387]:
+              - generic [ref=e2388]:
+                - link "Edit" [ref=e2389] [cursor=pointer]:
+                  - /url: /ops/145/edit
+                - button "Delete" [ref=e2391] [cursor=pointer]
+          - row "Michelle Denosta Gevero tootsierollz87@gmail.com Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Bel +639455437353 Edit Delete" [ref=e2392]:
+            - cell "Michelle Denosta Gevero" [ref=e2393]
+            - cell "tootsierollz87@gmail.com" [ref=e2394]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2395]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2396]
+            - cell "Separated" [ref=e2397]
+            - cell "Bel" [ref=e2398]
+            - cell "+639455437353" [ref=e2399]
+            - cell "Edit Delete" [ref=e2400]:
+              - generic [ref=e2401]:
+                - link "Edit" [ref=e2402] [cursor=pointer]:
+                  - /url: /ops/150/edit
+                - button "Delete" [ref=e2404] [cursor=pointer]
+          - row "Miguel Christopher Espela espelamiguel@gmail.com Mark Hunter Insurance Admin Specialist Probation Adrian +639696341773 Edit Delete" [ref=e2405]:
+            - cell "Miguel Christopher Espela" [ref=e2406]
+            - cell "espelamiguel@gmail.com" [ref=e2407]
+            - cell "Mark Hunter" [ref=e2408]
+            - cell "Insurance Admin Specialist" [ref=e2409]
+            - cell "Probation" [ref=e2410]
+            - cell "Adrian" [ref=e2411]
+            - cell "+639696341773" [ref=e2412]
+            - cell "Edit Delete" [ref=e2413]:
+              - generic [ref=e2414]:
+                - link "Edit" [ref=e2415] [cursor=pointer]:
+                  - /url: /ops/199/edit
+                - button "Delete" [ref=e2417] [cursor=pointer]
+          - row "Mike John Singh — Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Bel +639155587212 Edit Delete" [ref=e2418]:
+            - cell "Mike John Singh" [ref=e2419]
+            - cell "—" [ref=e2420]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2421]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2422]
+            - cell "Separated" [ref=e2423]
+            - cell "Bel" [ref=e2424]
+            - cell "+639155587212" [ref=e2425]
+            - cell "Edit Delete" [ref=e2426]:
+              - generic [ref=e2427]:
+                - link "Edit" [ref=e2428] [cursor=pointer]:
+                  - /url: /ops/102/edit
+                - button "Delete" [ref=e2430] [cursor=pointer]
+          - row "Mira Lyne Mofan Sagales mirasagales.611@gmail.com Aaron Redman Insurance Admin Assistant Separated Bel +639106887380 Edit Delete" [ref=e2431]:
+            - cell "Mira Lyne Mofan Sagales" [ref=e2432]
+            - cell "mirasagales.611@gmail.com" [ref=e2433]
+            - cell "Aaron Redman" [ref=e2434]
+            - cell "Insurance Admin Assistant" [ref=e2435]
+            - cell "Separated" [ref=e2436]
+            - cell "Bel" [ref=e2437]
+            - cell "+639106887380" [ref=e2438]
+            - cell "Edit Delete" [ref=e2439]:
+              - generic [ref=e2440]:
+                - link "Edit" [ref=e2441] [cursor=pointer]:
+                  - /url: /ops/178/edit
+                - button "Delete" [ref=e2443] [cursor=pointer]
+          - row "Mirasol Mercado — Lloyd Dixon Executive Assistant Active Adrian +639778548389 Edit Delete" [ref=e2444]:
+            - cell "Mirasol Mercado" [ref=e2445]
+            - cell "—" [ref=e2446]
+            - cell "Lloyd Dixon" [ref=e2447]
+            - cell "Executive Assistant" [ref=e2448]
+            - cell "Active" [ref=e2449]
+            - cell "Adrian" [ref=e2450]
+            - cell "+639778548389" [ref=e2451]
+            - cell "Edit Delete" [ref=e2452]:
+              - generic [ref=e2453]:
+                - link "Edit" [ref=e2454] [cursor=pointer]:
+                  - /url: /ops/88/edit
+                - button "Delete" [ref=e2456] [cursor=pointer]
+          - row "Monaliza Rose Bustillo — Josh Fancher / Ryan Goebel (CINQ) Customer Service Representative/Dispatcher Separated Bel +639307855888 Edit Delete" [ref=e2457]:
+            - cell "Monaliza Rose Bustillo" [ref=e2458]
+            - cell "—" [ref=e2459]
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e2460]
+            - cell "Customer Service Representative/Dispatcher" [ref=e2461]
+            - cell "Separated" [ref=e2462]
+            - cell "Bel" [ref=e2463]
+            - cell "+639307855888" [ref=e2464]
+            - cell "Edit Delete" [ref=e2465]:
+              - generic [ref=e2466]:
+                - link "Edit" [ref=e2467] [cursor=pointer]:
+                  - /url: /ops/68/edit
+                - button "Delete" [ref=e2469] [cursor=pointer]
+          - row "Nehm Angelito nehm.va@gmail.com Masen Davis Executive Assistant Separated Bel +639651490005 Edit Delete" [ref=e2470]:
+            - cell "Nehm Angelito" [ref=e2471]
+            - cell "nehm.va@gmail.com" [ref=e2472]
+            - cell "Masen Davis" [ref=e2473]
+            - cell "Executive Assistant" [ref=e2474]
+            - cell "Separated" [ref=e2475]
+            - cell "Bel" [ref=e2476]
+            - cell "+639651490005" [ref=e2477]
+            - cell "Edit Delete" [ref=e2478]:
+              - generic [ref=e2479]:
+                - link "Edit" [ref=e2480] [cursor=pointer]:
+                  - /url: /ops/148/edit
+                - button "Delete" [ref=e2482] [cursor=pointer]
+          - row "Nikki Joy Leander — Jonathan Ploransky Marketing Assistant Active Adrian +639763426036 / +639695326343 Edit Delete" [ref=e2483]:
+            - cell "Nikki Joy Leander" [ref=e2484]
+            - cell "—" [ref=e2485]
+            - cell "Jonathan Ploransky" [ref=e2486]
+            - cell "Marketing Assistant" [ref=e2487]
+            - cell "Active" [ref=e2488]
+            - cell "Adrian" [ref=e2489]
+            - cell "+639763426036 / +639695326343" [ref=e2490]
+            - cell "Edit Delete" [ref=e2491]:
+              - generic [ref=e2492]:
+                - link "Edit" [ref=e2493] [cursor=pointer]:
+                  - /url: /ops/17/edit
+                - button "Delete" [ref=e2495] [cursor=pointer]
+          - row "Nikko Jan Aguilar Manguerra manguerranikkojan@gmail.com Josh Schwartz Insurance Customer Service Representative Active Bel +639157213067 Edit Delete" [ref=e2496]:
+            - cell "Nikko Jan Aguilar Manguerra" [ref=e2497]
+            - cell "manguerranikkojan@gmail.com" [ref=e2498]
+            - cell "Josh Schwartz" [ref=e2499]
+            - cell "Insurance Customer Service Representative" [ref=e2500]
+            - cell "Active" [ref=e2501]
+            - cell "Bel" [ref=e2502]
+            - cell "+639157213067" [ref=e2503]
+            - cell "Edit Delete" [ref=e2504]:
+              - generic [ref=e2505]:
+                - link "Edit" [ref=e2506] [cursor=pointer]:
+                  - /url: /ops/142/edit
+                - button "Delete" [ref=e2508] [cursor=pointer]
+          - row "Noly Binay nolybinay08@gmail.com Alex Tucci (TDL) Content Production Assistant Active Bel +639173531007 Edit Delete" [ref=e2509]:
+            - cell "Noly Binay" [ref=e2510]
+            - cell "nolybinay08@gmail.com" [ref=e2511]
+            - cell "Alex Tucci (TDL)" [ref=e2512]
+            - cell "Content Production Assistant" [ref=e2513]
+            - cell "Active" [ref=e2514]
+            - cell "Bel" [ref=e2515]
+            - cell "+639173531007" [ref=e2516]
+            - cell "Edit Delete" [ref=e2517]:
+              - generic [ref=e2518]:
+                - link "Edit" [ref=e2519] [cursor=pointer]:
+                  - /url: /ops/165/edit
+                - button "Delete" [ref=e2521] [cursor=pointer]
+          - row "Patricia Clare M. Sarmiento — Geoffrey Adler Executive Assistant OP Active Adrian +639477772637 Edit Delete" [ref=e2522]:
+            - cell "Patricia Clare M. Sarmiento" [ref=e2523]
+            - cell "—" [ref=e2524]
+            - cell "Geoffrey Adler" [ref=e2525]
+            - cell "Executive Assistant OP" [ref=e2526]
+            - cell "Active" [ref=e2527]
+            - cell "Adrian" [ref=e2528]
+            - cell "+639477772637" [ref=e2529]
+            - cell "Edit Delete" [ref=e2530]:
+              - generic [ref=e2531]:
+                - link "Edit" [ref=e2532] [cursor=pointer]:
+                  - /url: /ops/29/edit
+                - button "Delete" [ref=e2534] [cursor=pointer]
+          - row "Paul Martin — Davina Zahra Customer Service Representative Active Adrian +639760062531 Edit Delete" [ref=e2535]:
+            - cell "Paul Martin" [ref=e2536]
+            - cell "—" [ref=e2537]
+            - cell "Davina Zahra" [ref=e2538]
+            - cell "Customer Service Representative" [ref=e2539]
+            - cell "Active" [ref=e2540]
+            - cell "Adrian" [ref=e2541]
+            - cell "+639760062531" [ref=e2542]
+            - cell "Edit Delete" [ref=e2543]:
+              - generic [ref=e2544]:
+                - link "Edit" [ref=e2545] [cursor=pointer]:
+                  - /url: /ops/19/edit
+                - button "Delete" [ref=e2547] [cursor=pointer]
+          - row "Paula Luz Urbano Gomez paulaluz.gomez@gmail.com Christian Romaguera Social Media Manager Separated Adrian +639610547390 Edit Delete" [ref=e2548]:
+            - cell "Paula Luz Urbano Gomez" [ref=e2549]
+            - cell "paulaluz.gomez@gmail.com" [ref=e2550]
+            - cell "Christian Romaguera" [ref=e2551]
+            - cell "Social Media Manager" [ref=e2552]
+            - cell "Separated" [ref=e2553]
+            - cell "Adrian" [ref=e2554]
+            - cell "+639610547390" [ref=e2555]
+            - cell "Edit Delete" [ref=e2556]:
+              - generic [ref=e2557]:
+                - link "Edit" [ref=e2558] [cursor=pointer]:
+                  - /url: /ops/121/edit
+                - button "Delete" [ref=e2560] [cursor=pointer]
+          - row "Pauline Alexandrei AnnePulido — Nicole Bushnell (Mari + Gold)/ Carrie Jones Web Services Project Manager Separated Adrian +639064010388 Edit Delete" [ref=e2561]:
+            - cell "Pauline Alexandrei AnnePulido" [ref=e2562]
+            - cell "—" [ref=e2563]
+            - cell "Nicole Bushnell (Mari + Gold)/ Carrie Jones" [ref=e2564]
+            - cell "Web Services Project Manager" [ref=e2565]
+            - cell "Separated" [ref=e2566]
+            - cell "Adrian" [ref=e2567]
+            - cell "+639064010388" [ref=e2568]
+            - cell "Edit Delete" [ref=e2569]:
+              - generic [ref=e2570]:
+                - link "Edit" [ref=e2571] [cursor=pointer]:
+                  - /url: /ops/92/edit
+                - button "Delete" [ref=e2573] [cursor=pointer]
+          - row "Paulo Jose Gadong — Brian Cross PPC Specialist Separated Bel +639454779729 Edit Delete" [ref=e2574]:
+            - cell "Paulo Jose Gadong" [ref=e2575]
+            - cell "—" [ref=e2576]
+            - cell "Brian Cross" [ref=e2577]
+            - cell "PPC Specialist" [ref=e2578]
+            - cell "Separated" [ref=e2579]
+            - cell "Bel" [ref=e2580]
+            - cell "+639454779729" [ref=e2581]
+            - cell "Edit Delete" [ref=e2582]:
+              - generic [ref=e2583]:
+                - link "Edit" [ref=e2584] [cursor=pointer]:
+                  - /url: /ops/14/edit
+                - button "Delete" [ref=e2586] [cursor=pointer]
+          - row "Race Jay Tubongbanua — Brian Cross Project Manager Separated Bel +639814850167 Edit Delete" [ref=e2587]:
+            - cell "Race Jay Tubongbanua" [ref=e2588]
+            - cell "—" [ref=e2589]
+            - cell "Brian Cross" [ref=e2590]
+            - cell "Project Manager" [ref=e2591]
+            - cell "Separated" [ref=e2592]
+            - cell "Bel" [ref=e2593]
+            - cell "+639814850167" [ref=e2594]
+            - cell "Edit Delete" [ref=e2595]:
+              - generic [ref=e2596]:
+                - link "Edit" [ref=e2597] [cursor=pointer]:
+                  - /url: /ops/31/edit
+                - button "Delete" [ref=e2599] [cursor=pointer]
+          - row "Race Jay Tubongbanua — Geoffrey Adler Cash Flow Analyst Probation Adrian +639814850167 Edit Delete" [ref=e2600]:
+            - cell "Race Jay Tubongbanua" [ref=e2601]
+            - cell "—" [ref=e2602]
+            - cell "Geoffrey Adler" [ref=e2603]
+            - cell "Cash Flow Analyst" [ref=e2604]
+            - cell "Probation" [ref=e2605]
+            - cell "Adrian" [ref=e2606]
+            - cell "+639814850167" [ref=e2607]
+            - cell "Edit Delete" [ref=e2608]:
+              - generic [ref=e2609]:
+                - link "Edit" [ref=e2610] [cursor=pointer]:
+                  - /url: /ops/31/edit
+                - button "Delete" [ref=e2612] [cursor=pointer]
+          - row "Rachel Pineda Cayanan — Ryan McFarland General Virtual Assistant Separated Bel +639998452682 Edit Delete" [ref=e2613]:
+            - cell "Rachel Pineda Cayanan" [ref=e2614]
+            - cell "—" [ref=e2615]
+            - cell "Ryan McFarland" [ref=e2616]
+            - cell "General Virtual Assistant" [ref=e2617]
+            - cell "Separated" [ref=e2618]
+            - cell "Bel" [ref=e2619]
+            - cell "+639998452682" [ref=e2620]
+            - cell "Edit Delete" [ref=e2621]:
+              - generic [ref=e2622]:
+                - link "Edit" [ref=e2623] [cursor=pointer]:
+                  - /url: /ops/60/edit
+                - button "Delete" [ref=e2625] [cursor=pointer]
+          - row "Ralph Lauren Lopez Cuadillera rcuadillera@gmail.com Raindrop Agency Motion Designer Active Bel +639952725405 Edit Delete" [ref=e2626]:
+            - cell "Ralph Lauren Lopez Cuadillera" [ref=e2627]
+            - cell "rcuadillera@gmail.com" [ref=e2628]
+            - cell "Raindrop Agency" [ref=e2629]
+            - cell "Motion Designer" [ref=e2630]
+            - cell "Active" [ref=e2631]
+            - cell "Bel" [ref=e2632]
+            - cell "+639952725405" [ref=e2633]
+            - cell "Edit Delete" [ref=e2634]:
+              - generic [ref=e2635]:
+                - link "Edit" [ref=e2636] [cursor=pointer]:
+                  - /url: /ops/193/edit
+                - button "Delete" [ref=e2638] [cursor=pointer]
+          - row "Randa Decena rxjg.decena@gmail.com Greg and Lisa Shields Executive Assistant Probation Bel +639273249423 Edit Delete" [ref=e2639]:
+            - cell "Randa Decena" [ref=e2640]
+            - cell "rxjg.decena@gmail.com" [ref=e2641]
+            - cell "Greg and Lisa Shields" [ref=e2642]
+            - cell "Executive Assistant" [ref=e2643]
+            - cell "Probation" [ref=e2644]
+            - cell "Bel" [ref=e2645]
+            - cell "+639273249423" [ref=e2646]
+            - cell "Edit Delete" [ref=e2647]:
+              - generic [ref=e2648]:
+                - link "Edit" [ref=e2649] [cursor=pointer]:
+                  - /url: /ops/191/edit
+                - button "Delete" [ref=e2651] [cursor=pointer]
+          - row "Randall Elkins — Ryan McFarland WH Manager Separated Bel — Edit Delete" [ref=e2652]:
+            - cell "Randall Elkins" [ref=e2653]
+            - cell "—" [ref=e2654]
+            - cell "Ryan McFarland" [ref=e2655]
+            - cell "WH Manager" [ref=e2656]
+            - cell "Separated" [ref=e2657]
+            - cell "Bel" [ref=e2658]
+            - cell "—" [ref=e2659]
+            - cell "Edit Delete" [ref=e2660]:
+              - generic [ref=e2661]:
+                - link "Edit" [ref=e2662] [cursor=pointer]:
+                  - /url: /ops/58/edit
+                - button "Delete" [ref=e2664] [cursor=pointer]
+          - row "Randall Louis Ramis Poquiz louis.poquiz@yahoo.com.ph Grace Carr (Raindrop) Motion Designer Resigned Adrian +639065588037 Edit Delete" [ref=e2665]:
+            - cell "Randall Louis Ramis Poquiz" [ref=e2666]
+            - cell "louis.poquiz@yahoo.com.ph" [ref=e2667]
+            - cell "Grace Carr (Raindrop)" [ref=e2668]
+            - cell "Motion Designer" [ref=e2669]
+            - cell "Resigned" [ref=e2670]
+            - cell "Adrian" [ref=e2671]
+            - cell "+639065588037" [ref=e2672]
+            - cell "Edit Delete" [ref=e2673]:
+              - generic [ref=e2674]:
+                - link "Edit" [ref=e2675] [cursor=pointer]:
+                  - /url: /ops/113/edit
+                - button "Delete" [ref=e2677] [cursor=pointer]
+          - row "Randiss C. Cadiogan randisscadioganva@gmail.com Andrea Race / BeautyBlender eCommerce DTC Coordinator - OP Separated Bel +639175402204 Edit Delete" [ref=e2678]:
+            - cell "Randiss C. Cadiogan" [ref=e2679]
+            - cell "randisscadioganva@gmail.com" [ref=e2680]
+            - cell "Andrea Race / BeautyBlender" [ref=e2681]
+            - cell "eCommerce DTC Coordinator - OP" [ref=e2682]
+            - cell "Separated" [ref=e2683]
+            - cell "Bel" [ref=e2684]
+            - cell "+639175402204" [ref=e2685]
+            - cell "Edit Delete" [ref=e2686]:
+              - generic [ref=e2687]:
+                - link "Edit" [ref=e2688] [cursor=pointer]:
+                  - /url: /ops/127/edit
+                - button "Delete" [ref=e2690] [cursor=pointer]
+          - row "Raser Jutba Abduhadi — Ryan McFarland Accountant Separated Bel +639358030858 Edit Delete" [ref=e2691]:
+            - cell "Raser Jutba Abduhadi" [ref=e2692]
+            - cell "—" [ref=e2693]
+            - cell "Ryan McFarland" [ref=e2694]
+            - cell "Accountant" [ref=e2695]
+            - cell "Separated" [ref=e2696]
+            - cell "Bel" [ref=e2697]
+            - cell "+639358030858" [ref=e2698]
+            - cell "Edit Delete" [ref=e2699]:
+              - generic [ref=e2700]:
+                - link "Edit" [ref=e2701] [cursor=pointer]:
+                  - /url: /ops/36/edit
+                - button "Delete" [ref=e2703] [cursor=pointer]
+          - row "Raymand Vico Gadores — Luke Harmon Solutions Engineer Separated Adrian +639455541949 Edit Delete" [ref=e2704]:
+            - cell "Raymand Vico Gadores" [ref=e2705]
+            - cell "—" [ref=e2706]
+            - cell "Luke Harmon" [ref=e2707]
+            - cell "Solutions Engineer" [ref=e2708]
+            - cell "Separated" [ref=e2709]
+            - cell "Adrian" [ref=e2710]
+            - cell "+639455541949" [ref=e2711]
+            - cell "Edit Delete" [ref=e2712]:
+              - generic [ref=e2713]:
+                - link "Edit" [ref=e2714] [cursor=pointer]:
+                  - /url: /ops/74/edit
+                - button "Delete" [ref=e2716] [cursor=pointer]
+          - row "Raymart Gaviola — Ryan McFarland Virtual Assistant Separated Bel +639618004520 Edit Delete" [ref=e2717]:
+            - cell "Raymart Gaviola" [ref=e2718]
+            - cell "—" [ref=e2719]
+            - cell "Ryan McFarland" [ref=e2720]
+            - cell "Virtual Assistant" [ref=e2721]
+            - cell "Separated" [ref=e2722]
+            - cell "Bel" [ref=e2723]
+            - cell "+639618004520" [ref=e2724]
+            - cell "Edit Delete" [ref=e2725]:
+              - generic [ref=e2726]:
+                - link "Edit" [ref=e2727] [cursor=pointer]:
+                  - /url: /ops/45/edit
+                - button "Delete" [ref=e2729] [cursor=pointer]
+          - row "Razel De Jesus 9824arj@gmail.com Jason Paulus AI Engineer Probation Bel +639166083096 Edit Delete" [ref=e2730]:
+            - cell "Razel De Jesus" [ref=e2731]
+            - cell "9824arj@gmail.com" [ref=e2732]
+            - cell "Jason Paulus" [ref=e2733]
+            - cell "AI Engineer" [ref=e2734]
+            - cell "Probation" [ref=e2735]
+            - cell "Bel" [ref=e2736]
+            - cell "+639166083096" [ref=e2737]
+            - cell "Edit Delete" [ref=e2738]:
+              - generic [ref=e2739]:
+                - link "Edit" [ref=e2740] [cursor=pointer]:
+                  - /url: /ops/166/edit
+                - button "Delete" [ref=e2742] [cursor=pointer]
+          - row "Regine Rose Regala — Ryan McFarland Virtual Assistant Separated Bel +639052720248 Edit Delete" [ref=e2743]:
+            - cell "Regine Rose Regala" [ref=e2744]
+            - cell "—" [ref=e2745]
+            - cell "Ryan McFarland" [ref=e2746]
+            - cell "Virtual Assistant" [ref=e2747]
+            - cell "Separated" [ref=e2748]
+            - cell "Bel" [ref=e2749]
+            - cell "+639052720248" [ref=e2750]
+            - cell "Edit Delete" [ref=e2751]:
+              - generic [ref=e2752]:
+                - link "Edit" [ref=e2753] [cursor=pointer]:
+                  - /url: /ops/50/edit
+                - button "Delete" [ref=e2755] [cursor=pointer]
+          - row "Reynato Silvestre — Diane Rainer Intake Specialist Separated Adrian +639456541479 Edit Delete" [ref=e2756]:
+            - cell "Reynato Silvestre" [ref=e2757]
+            - cell "—" [ref=e2758]
+            - cell "Diane Rainer" [ref=e2759]
+            - cell "Intake Specialist" [ref=e2760]
+            - cell "Separated" [ref=e2761]
+            - cell "Adrian" [ref=e2762]
+            - cell "+639456541479" [ref=e2763]
+            - cell "Edit Delete" [ref=e2764]:
+              - generic [ref=e2765]:
+                - link "Edit" [ref=e2766] [cursor=pointer]:
+                  - /url: /ops/101/edit
+                - button "Delete" [ref=e2768] [cursor=pointer]
+          - row "Rezia Mae Ursula Medina rezia.medina18@gmail.com Matthew Williams Admin Assistant Probation Bel +639954928739 Edit Delete" [ref=e2769]:
+            - cell "Rezia Mae Ursula Medina" [ref=e2770]
+            - cell "rezia.medina18@gmail.com" [ref=e2771]
+            - cell "Matthew Williams" [ref=e2772]
+            - cell "Admin Assistant" [ref=e2773]
+            - cell "Probation" [ref=e2774]
+            - cell "Bel" [ref=e2775]
+            - cell "+639954928739" [ref=e2776]
+            - cell "Edit Delete" [ref=e2777]:
+              - generic [ref=e2778]:
+                - link "Edit" [ref=e2779] [cursor=pointer]:
+                  - /url: /ops/202/edit
+                - button "Delete" [ref=e2781] [cursor=pointer]
+          - row "Rhona Marie Rivera rhonamarie.rivera@gmail.com Raindrop Agency Creative Strategist / Market Research Analyst Probation Bel 09611268702 (Mobile) / 09212167938 (WhatsApp) Edit Delete" [ref=e2782]:
+            - cell "Rhona Marie Rivera" [ref=e2783]
+            - cell "rhonamarie.rivera@gmail.com" [ref=e2784]
+            - cell "Raindrop Agency" [ref=e2785]
+            - cell "Creative Strategist / Market Research Analyst" [ref=e2786]
+            - cell "Probation" [ref=e2787]
+            - cell "Bel" [ref=e2788]
+            - cell "09611268702 (Mobile) / 09212167938 (WhatsApp)" [ref=e2789]
+            - cell "Edit Delete" [ref=e2790]:
+              - generic [ref=e2791]:
+                - link "Edit" [ref=e2792] [cursor=pointer]:
+                  - /url: /ops/218/edit
+                - button "Delete" [ref=e2794] [cursor=pointer]
+          - row "Richard Agrabante Aguilos raa1101.uber@gmail.com Josh Schwartz Insurance CSR OP Separated Bel +639172407875 Edit Delete" [ref=e2795]:
+            - cell "Richard Agrabante Aguilos" [ref=e2796]
+            - cell "raa1101.uber@gmail.com" [ref=e2797]
+            - cell "Josh Schwartz" [ref=e2798]
+            - cell "Insurance CSR OP" [ref=e2799]
+            - cell "Separated" [ref=e2800]
+            - cell "Bel" [ref=e2801]
+            - cell "+639172407875" [ref=e2802]
+            - cell "Edit Delete" [ref=e2803]:
+              - generic [ref=e2804]:
+                - link "Edit" [ref=e2805] [cursor=pointer]:
+                  - /url: /ops/129/edit
+                - button "Delete" [ref=e2807] [cursor=pointer]
+          - row "Richard Andrew Panedes Pradas rap_rd06@yahoo.com Ryan McFarland General Virtual Assistant Separated Bel +639173332540 Edit Delete" [ref=e2808]:
+            - cell "Richard Andrew Panedes Pradas" [ref=e2809]
+            - cell "rap_rd06@yahoo.com" [ref=e2810]
+            - cell "Ryan McFarland" [ref=e2811]
+            - cell "General Virtual Assistant" [ref=e2812]
+            - cell "Separated" [ref=e2813]
+            - cell "Bel" [ref=e2814]
+            - cell "+639173332540" [ref=e2815]
+            - cell "Edit Delete" [ref=e2816]:
+              - generic [ref=e2817]:
+                - link "Edit" [ref=e2818] [cursor=pointer]:
+                  - /url: /ops/135/edit
+                - button "Delete" [ref=e2820] [cursor=pointer]
+          - row "Rio Krishel Gonzales — Mario Sanchez Executive Assistant Separated Adrian +639198565377 Edit Delete" [ref=e2821]:
+            - cell "Rio Krishel Gonzales" [ref=e2822]
+            - cell "—" [ref=e2823]
+            - cell "Mario Sanchez" [ref=e2824]
+            - cell "Executive Assistant" [ref=e2825]
+            - cell "Separated" [ref=e2826]
+            - cell "Adrian" [ref=e2827]
+            - cell "+639198565377" [ref=e2828]
+            - cell "Edit Delete" [ref=e2829]:
+              - generic [ref=e2830]:
+                - link "Edit" [ref=e2831] [cursor=pointer]:
+                  - /url: /ops/76/edit
+                - button "Delete" [ref=e2833] [cursor=pointer]
+          - row "Roel Estrella — Aaron Richards Sales Development Representative Separated Bel +639192163503 Edit Delete" [ref=e2834]:
+            - cell "Roel Estrella" [ref=e2835]
+            - cell "—" [ref=e2836]
+            - cell "Aaron Richards" [ref=e2837]
+            - cell "Sales Development Representative" [ref=e2838]
+            - cell "Separated" [ref=e2839]
+            - cell "Bel" [ref=e2840]
+            - cell "+639192163503" [ref=e2841]
+            - cell "Edit Delete" [ref=e2842]:
+              - generic [ref=e2843]:
+                - link "Edit" [ref=e2844] [cursor=pointer]:
+                  - /url: /ops/13/edit
+                - button "Delete" [ref=e2846] [cursor=pointer]
+          - row "Rovie Ceaira Pillejera — Nicole Glenn / NG Home Solutions Corp. Real Estate Executive Assistant Active Adrian +639702105268 Edit Delete" [ref=e2847]:
+            - cell "Rovie Ceaira Pillejera" [ref=e2848]
+            - cell "—" [ref=e2849]
+            - cell "Nicole Glenn / NG Home Solutions Corp." [ref=e2850]
+            - cell "Real Estate Executive Assistant" [ref=e2851]
+            - cell "Active" [ref=e2852]
+            - cell "Adrian" [ref=e2853]
+            - cell "+639702105268" [ref=e2854]
+            - cell "Edit Delete" [ref=e2855]:
+              - generic [ref=e2856]:
+                - link "Edit" [ref=e2857] [cursor=pointer]:
+                  - /url: /ops/24/edit
+                - button "Delete" [ref=e2859] [cursor=pointer]
+          - row "Rowenna Remulta rremulta1996@gmail.com Paul Wilson Executive Assistant Separated Adrian +639757530109 Edit Delete" [ref=e2860]:
+            - cell "Rowenna Remulta" [ref=e2861]
+            - cell "rremulta1996@gmail.com" [ref=e2862]
+            - cell "Paul Wilson" [ref=e2863]
+            - cell "Executive Assistant" [ref=e2864]
+            - cell "Separated" [ref=e2865]
+            - cell "Adrian" [ref=e2866]
+            - cell "+639757530109" [ref=e2867]
+            - cell "Edit Delete" [ref=e2868]:
+              - generic [ref=e2869]:
+                - link "Edit" [ref=e2870] [cursor=pointer]:
+                  - /url: /ops/94/edit
+                - button "Delete" [ref=e2872] [cursor=pointer]
+          - row "Rowenna Remulta rremulta1996@gmail.com Steve Weatherford Executive Virtual Assistant Separated Bel +639757530109 Edit Delete" [ref=e2873]:
+            - cell "Rowenna Remulta" [ref=e2874]
+            - cell "rremulta1996@gmail.com" [ref=e2875]
+            - cell "Steve Weatherford" [ref=e2876]
+            - cell "Executive Virtual Assistant" [ref=e2877]
+            - cell "Separated" [ref=e2878]
+            - cell "Bel" [ref=e2879]
+            - cell "+639757530109" [ref=e2880]
+            - cell "Edit Delete" [ref=e2881]:
+              - generic [ref=e2882]:
+                - link "Edit" [ref=e2883] [cursor=pointer]:
+                  - /url: /ops/94/edit
+                - button "Delete" [ref=e2885] [cursor=pointer]
+          - row "Rowenna Yuag rremulta1996@gmail.com Kelly Patton Operations / Marketing Support Probation Bel +639757530109 Edit Delete" [ref=e2886]:
+            - cell "Rowenna Yuag" [ref=e2887]
+            - cell "rremulta1996@gmail.com" [ref=e2888]
+            - cell "Kelly Patton" [ref=e2889]
+            - cell "Operations / Marketing Support" [ref=e2890]
+            - cell "Probation" [ref=e2891]
+            - cell "Bel" [ref=e2892]
+            - cell "+639757530109" [ref=e2893]
+            - cell "Edit Delete" [ref=e2894]:
+              - generic [ref=e2895]:
+                - link "Edit" [ref=e2896] [cursor=pointer]:
+                  - /url: /ops/204/edit
+                - button "Delete" [ref=e2898] [cursor=pointer]
+          - row "Ryan Balverde — Josh Schwartz Insurance Customer Service Representative Active Bel +639512078827 Edit Delete" [ref=e2899]:
+            - cell "Ryan Balverde" [ref=e2900]
+            - cell "—" [ref=e2901]
+            - cell "Josh Schwartz" [ref=e2902]
+            - cell "Insurance Customer Service Representative" [ref=e2903]
+            - cell "Active" [ref=e2904]
+            - cell "Bel" [ref=e2905]
+            - cell "+639512078827" [ref=e2906]
+            - cell "Edit Delete" [ref=e2907]:
+              - generic [ref=e2908]:
+                - link "Edit" [ref=e2909] [cursor=pointer]:
+                  - /url: /ops/64/edit
+                - button "Delete" [ref=e2911] [cursor=pointer]
+          - row "Sakura Kato — Jacques Spitzer Executive Assistant Active Adrian +639694722813 Edit Delete" [ref=e2912]:
+            - cell "Sakura Kato" [ref=e2913]
+            - cell "—" [ref=e2914]
+            - cell "Jacques Spitzer" [ref=e2915]
+            - cell "Executive Assistant" [ref=e2916]
+            - cell "Active" [ref=e2917]
+            - cell "Adrian" [ref=e2918]
+            - cell "+639694722813" [ref=e2919]
+            - cell "Edit Delete" [ref=e2920]:
+              - generic [ref=e2921]:
+                - link "Edit" [ref=e2922] [cursor=pointer]:
+                  - /url: /ops/16/edit
+                - button "Delete" [ref=e2924] [cursor=pointer]
+          - row "Shaira Madiline Gelvizon — Diane Rainer Intake Specialist Active Adrian +639851400667 Edit Delete" [ref=e2925]:
+            - cell "Shaira Madiline Gelvizon" [ref=e2926]
+            - cell "—" [ref=e2927]
+            - cell "Diane Rainer" [ref=e2928]
+            - cell "Intake Specialist" [ref=e2929]
+            - cell "Active" [ref=e2930]
+            - cell "Adrian" [ref=e2931]
+            - cell "+639851400667" [ref=e2932]
+            - cell "Edit Delete" [ref=e2933]:
+              - generic [ref=e2934]:
+                - link "Edit" [ref=e2935] [cursor=pointer]:
+                  - /url: /ops/75/edit
+                - button "Delete" [ref=e2937] [cursor=pointer]
+          - row "Sharmajne Thalia Dampios Navarro s.ithalian@gmail.com Maddison Koper Executive Assistant Separated Bel +639622575407 Edit Delete" [ref=e2938]:
+            - cell "Sharmajne Thalia Dampios Navarro" [ref=e2939]
+            - cell "s.ithalian@gmail.com" [ref=e2940]
+            - cell "Maddison Koper" [ref=e2941]
+            - cell "Executive Assistant" [ref=e2942]
+            - cell "Separated" [ref=e2943]
+            - cell "Bel" [ref=e2944]
+            - cell "+639622575407" [ref=e2945]
+            - cell "Edit Delete" [ref=e2946]:
+              - generic [ref=e2947]:
+                - link "Edit" [ref=e2948] [cursor=pointer]:
+                  - /url: /ops/168/edit
+                - button "Delete" [ref=e2950] [cursor=pointer]
+          - 'row "Star Fatima Acibar starrienighttt@gmail.com Raindrop Agency Social Media Manager Separated Adrian 09760218012 whatsapp: 09694897285 Edit Delete" [ref=e2951]':
+            - cell "Star Fatima Acibar" [ref=e2952]
+            - cell "starrienighttt@gmail.com" [ref=e2953]
+            - cell "Raindrop Agency" [ref=e2954]
+            - cell "Social Media Manager" [ref=e2955]
+            - cell "Separated" [ref=e2956]
+            - cell "Adrian" [ref=e2957]
+            - 'cell "09760218012 whatsapp: 09694897285" [ref=e2958]'
+            - cell "Edit Delete" [ref=e2959]:
+              - generic [ref=e2960]:
+                - link "Edit" [ref=e2961] [cursor=pointer]:
+                  - /url: /ops/210/edit
+                - button "Delete" [ref=e2963] [cursor=pointer]
+          - row "Stella MarisseZarate — Ryan McFarland Accountant/Bookkeeper Separated Bel — Edit Delete" [ref=e2964]:
+            - cell "Stella MarisseZarate" [ref=e2965]
+            - cell "—" [ref=e2966]
+            - cell "Ryan McFarland" [ref=e2967]
+            - cell "Accountant/Bookkeeper" [ref=e2968]
+            - cell "Separated" [ref=e2969]
+            - cell "Bel" [ref=e2970]
+            - cell "—" [ref=e2971]
+            - cell "Edit Delete" [ref=e2972]:
+              - generic [ref=e2973]:
+                - link "Edit" [ref=e2974] [cursor=pointer]:
+                  - /url: /ops/54/edit
+                - button "Delete" [ref=e2976] [cursor=pointer]
+          - row "Stephanie Francisco Sychuan tep.f.sychuan@gmail.com Chad Brown Intake & Appeals Administrative Assistant Separated Bel +639189312175 Edit Delete" [ref=e2977]:
+            - cell "Stephanie Francisco Sychuan" [ref=e2978]
+            - cell "tep.f.sychuan@gmail.com" [ref=e2979]
+            - cell "Chad Brown" [ref=e2980]
+            - cell "Intake & Appeals Administrative Assistant" [ref=e2981]
+            - cell "Separated" [ref=e2982]
+            - cell "Bel" [ref=e2983]
+            - cell "+639189312175" [ref=e2984]
+            - cell "Edit Delete" [ref=e2985]:
+              - generic [ref=e2986]:
+                - link "Edit" [ref=e2987] [cursor=pointer]:
+                  - /url: /ops/189/edit
+                - button "Delete" [ref=e2989] [cursor=pointer]
+          - row "Stephanie Joy Paulino iamsjpaulino@gmail.com Daniel Hambrick Insurance Account Manager Active Bel +639625436746 Edit Delete" [ref=e2990]:
+            - cell "Stephanie Joy Paulino" [ref=e2991]
+            - cell "iamsjpaulino@gmail.com" [ref=e2992]
+            - cell "Daniel Hambrick" [ref=e2993]
+            - cell "Insurance Account Manager" [ref=e2994]
+            - cell "Active" [ref=e2995]
+            - cell "Bel" [ref=e2996]
+            - cell "+639625436746" [ref=e2997]
+            - cell "Edit Delete" [ref=e2998]:
+              - generic [ref=e2999]:
+                - link "Edit" [ref=e3000] [cursor=pointer]:
+                  - /url: /ops/214/edit
+                - button "Delete" [ref=e3002] [cursor=pointer]
+          - row "Syre Limuel Labodlay Geminiano geminianosyre@gmail.com Brandon Hofer Executive Sales Assistant Separated Bel +639214779964 Edit Delete" [ref=e3003]:
+            - cell "Syre Limuel Labodlay Geminiano" [ref=e3004]
+            - cell "geminianosyre@gmail.com" [ref=e3005]
+            - cell "Brandon Hofer" [ref=e3006]
+            - cell "Executive Sales Assistant" [ref=e3007]
+            - cell "Separated" [ref=e3008]
+            - cell "Bel" [ref=e3009]
+            - cell "+639214779964" [ref=e3010]
+            - cell "Edit Delete" [ref=e3011]:
+              - generic [ref=e3012]:
+                - link "Edit" [ref=e3013] [cursor=pointer]:
+                  - /url: /ops/141/edit
+                - button "Delete" [ref=e3015] [cursor=pointer]
+          - row "Tara Nathalia Apa Hizon tanadumapias@gmail.com Mark Hunter Insurance Admin Specialist Separated Bel +639360780373 Edit Delete" [ref=e3016]:
+            - cell "Tara Nathalia Apa Hizon" [ref=e3017]
+            - cell "tanadumapias@gmail.com" [ref=e3018]
+            - cell "Mark Hunter" [ref=e3019]
+            - cell "Insurance Admin Specialist" [ref=e3020]
+            - cell "Separated" [ref=e3021]
+            - cell "Bel" [ref=e3022]
+            - cell "+639360780373" [ref=e3023]
+            - cell "Edit Delete" [ref=e3024]:
+              - generic [ref=e3025]:
+                - link "Edit" [ref=e3026] [cursor=pointer]:
+                  - /url: /ops/198/edit
+                - button "Delete" [ref=e3028] [cursor=pointer]
+          - row "Tatiana Yzobelle Bayan Santos — Aaron Pursell Executive Sales Assistant Active Adrian +639664125311 Edit Delete" [ref=e3029]:
+            - cell "Tatiana Yzobelle Bayan Santos" [ref=e3030]
+            - cell "—" [ref=e3031]
+            - cell "Aaron Pursell" [ref=e3032]
+            - cell "Executive Sales Assistant" [ref=e3033]
+            - cell "Active" [ref=e3034]
+            - cell "Adrian" [ref=e3035]
+            - cell "+639664125311" [ref=e3036]
+            - cell "Edit Delete" [ref=e3037]:
+              - generic [ref=e3038]:
+                - link "Edit" [ref=e3039] [cursor=pointer]:
+                  - /url: /ops/108/edit
+                - button "Delete" [ref=e3041] [cursor=pointer]
+          - row "Tisha Monette De Vila Rosatase devila.tishamonette@gmail.com Zac Gulbranson Executive Assistant Separated Bel +639765121502 Edit Delete" [ref=e3042]:
+            - cell "Tisha Monette De Vila Rosatase" [ref=e3043]
+            - cell "devila.tishamonette@gmail.com" [ref=e3044]
+            - cell "Zac Gulbranson" [ref=e3045]
+            - cell "Executive Assistant" [ref=e3046]
+            - cell "Separated" [ref=e3047]
+            - cell "Bel" [ref=e3048]
+            - cell "+639765121502" [ref=e3049]
+            - cell "Edit Delete" [ref=e3050]:
+              - generic [ref=e3051]:
+                - link "Edit" [ref=e3052] [cursor=pointer]:
+                  - /url: /ops/144/edit
+                - button "Delete" [ref=e3054] [cursor=pointer]
+          - row "Tisha Monette De Vila Rosatase devila.tishamonette@gmail.com Chad Capp Executive Sales Assistant Active Bel +639765121502 Edit Delete" [ref=e3055]:
+            - cell "Tisha Monette De Vila Rosatase" [ref=e3056]
+            - cell "devila.tishamonette@gmail.com" [ref=e3057]
+            - cell "Chad Capp" [ref=e3058]
+            - cell "Executive Sales Assistant" [ref=e3059]
+            - cell "Active" [ref=e3060]
+            - cell "Bel" [ref=e3061]
+            - cell "+639765121502" [ref=e3062]
+            - cell "Edit Delete" [ref=e3063]:
+              - generic [ref=e3064]:
+                - link "Edit" [ref=e3065] [cursor=pointer]:
+                  - /url: /ops/144/edit
+                - button "Delete" [ref=e3067] [cursor=pointer]
+          - row "Tricia Marie Asignacion — Greg and Lisa Shields Executive Assistant Active Bel +639688510028 Edit Delete" [ref=e3068]:
+            - cell "Tricia Marie Asignacion" [ref=e3069]
+            - cell "—" [ref=e3070]
+            - cell "Greg and Lisa Shields" [ref=e3071]
+            - cell "Executive Assistant" [ref=e3072]
+            - cell "Active" [ref=e3073]
+            - cell "Bel" [ref=e3074]
+            - cell "+639688510028" [ref=e3075]
+            - cell "Edit Delete" [ref=e3076]:
+              - generic [ref=e3077]:
+                - link "Edit" [ref=e3078] [cursor=pointer]:
+                  - /url: /ops/3/edit
+                - button "Delete" [ref=e3080] [cursor=pointer]
+          - row "Tucker Johnson — Ryan McFarland Chief Financial Office (CFO) Separated Bel — Edit Delete" [ref=e3081]:
+            - cell "Tucker Johnson" [ref=e3082]
+            - cell "—" [ref=e3083]
+            - cell "Ryan McFarland" [ref=e3084]
+            - cell "Chief Financial Office (CFO)" [ref=e3085]
+            - cell "Separated" [ref=e3086]
+            - cell "Bel" [ref=e3087]
+            - cell "—" [ref=e3088]
+            - cell "Edit Delete" [ref=e3089]:
+              - generic [ref=e3090]:
+                - link "Edit" [ref=e3091] [cursor=pointer]:
+                  - /url: /ops/116/edit
+                - button "Delete" [ref=e3093] [cursor=pointer]
+          - row "Vanessa Love Joy Iglupas — Jeff Youngren Video Editor Active Adrian +639566873611 Edit Delete" [ref=e3094]:
+            - cell "Vanessa Love Joy Iglupas" [ref=e3095]
+            - cell "—" [ref=e3096]
+            - cell "Jeff Youngren" [ref=e3097]
+            - cell "Video Editor" [ref=e3098]
+            - cell "Active" [ref=e3099]
+            - cell "Adrian" [ref=e3100]
+            - cell "+639566873611" [ref=e3101]
+            - cell "Edit Delete" [ref=e3102]:
+              - generic [ref=e3103]:
+                - link "Edit" [ref=e3104] [cursor=pointer]:
+                  - /url: /ops/78/edit
+                - button "Delete" [ref=e3106] [cursor=pointer]
+          - row "Venllarel Villariza — Diane Rainer Content Production Assistant Active Adrian +639061572092 Edit Delete" [ref=e3107]:
+            - cell "Venllarel Villariza" [ref=e3108]
+            - cell "—" [ref=e3109]
+            - cell "Diane Rainer" [ref=e3110]
+            - cell "Content Production Assistant" [ref=e3111]
+            - cell "Active" [ref=e3112]
+            - cell "Adrian" [ref=e3113]
+            - cell "+639061572092" [ref=e3114]
+            - cell "Edit Delete" [ref=e3115]:
+              - generic [ref=e3116]:
+                - link "Edit" [ref=e3117] [cursor=pointer]:
+                  - /url: /ops/107/edit
+                - button "Delete" [ref=e3119] [cursor=pointer]
+          - row "Veronica Seriosa — Josh Schwartz Insurance Customer Service Representative Active Bel +639706418323 Edit Delete" [ref=e3120]:
+            - cell "Veronica Seriosa" [ref=e3121]
+            - cell "—" [ref=e3122]
+            - cell "Josh Schwartz" [ref=e3123]
+            - cell "Insurance Customer Service Representative" [ref=e3124]
+            - cell "Active" [ref=e3125]
+            - cell "Bel" [ref=e3126]
+            - cell "+639706418323" [ref=e3127]
+            - cell "Edit Delete" [ref=e3128]:
+              - generic [ref=e3129]:
+                - link "Edit" [ref=e3130] [cursor=pointer]:
+                  - /url: /ops/99/edit
+                - button "Delete" [ref=e3132] [cursor=pointer]
+          - row "Wendell Cuarenta Jr. — Robert Cardiff / Richelle Drost Customer Support Specialist Separated Bel +639457937134 Edit Delete" [ref=e3133]:
+            - cell "Wendell Cuarenta Jr." [ref=e3134]
+            - cell "—" [ref=e3135]
+            - cell "Robert Cardiff / Richelle Drost" [ref=e3136]
+            - cell "Customer Support Specialist" [ref=e3137]
+            - cell "Separated" [ref=e3138]
+            - cell "Bel" [ref=e3139]
+            - cell "+639457937134" [ref=e3140]
+            - cell "Edit Delete" [ref=e3141]:
+              - generic [ref=e3142]:
+                - link "Edit" [ref=e3143] [cursor=pointer]:
+                  - /url: /ops/10/edit
+                - button "Delete" [ref=e3145] [cursor=pointer]
+          - row "Wendell Cuarenta Jr. — Ian Blair Customer Support Active Bel +639457937134 Edit Delete" [ref=e3146]:
+            - cell "Wendell Cuarenta Jr." [ref=e3147]
+            - cell "—" [ref=e3148]
+            - cell "Ian Blair" [ref=e3149]
+            - cell "Customer Support" [ref=e3150]
+            - cell "Active" [ref=e3151]
+            - cell "Bel" [ref=e3152]
+            - cell "+639457937134" [ref=e3153]
+            - cell "Edit Delete" [ref=e3154]:
+              - generic [ref=e3155]:
+                - link "Edit" [ref=e3156] [cursor=pointer]:
+                  - /url: /ops/10/edit
+                - button "Delete" [ref=e3158] [cursor=pointer]
+          - row "Willen Trisha Garcia Caguiat willentrisha123@gmail.com Daniel Hambrick Insurance CSR Active Bel +639614045559 / +639266972415 Edit Delete" [ref=e3159]:
+            - cell "Willen Trisha Garcia Caguiat" [ref=e3160]
+            - cell "willentrisha123@gmail.com" [ref=e3161]
+            - cell "Daniel Hambrick" [ref=e3162]
+            - cell "Insurance CSR" [ref=e3163]
+            - cell "Active" [ref=e3164]
+            - cell "Bel" [ref=e3165]
+            - cell "+639614045559 / +639266972415" [ref=e3166]
+            - cell "Edit Delete" [ref=e3167]:
+              - generic [ref=e3168]:
+                - link "Edit" [ref=e3169] [cursor=pointer]:
+                  - /url: /ops/163/edit
+                - button "Delete" [ref=e3171] [cursor=pointer]

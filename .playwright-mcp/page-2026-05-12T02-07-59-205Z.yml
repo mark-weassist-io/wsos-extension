@@ -1,0 +1,98 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img [ref=e10]
+        - generic [ref=e15]: Dashboard
+      - link "OP Directory" [ref=e16] [cursor=pointer]:
+        - /url: /ops
+        - img [ref=e18]
+        - generic [ref=e23]: OP Directory
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+        - img [ref=e26]
+        - generic [ref=e29]: Clients
+      - link "Assignments" [ref=e30] [cursor=pointer]:
+        - /url: /assignments
+        - img [ref=e32]
+        - generic [ref=e35]: Assignments
+      - link "Onboarding" [ref=e36] [cursor=pointer]:
+        - /url: /onboarding
+        - img [ref=e38]
+        - generic [ref=e41]: Onboarding
+      - link "Check-ins" [ref=e42] [cursor=pointer]:
+        - /url: /checkins
+        - img [ref=e44]
+        - generic [ref=e47]: Check-ins
+      - link "Check-in Schedule" [ref=e48] [cursor=pointer]:
+        - /url: /schedule
+        - img [ref=e50]
+        - generic [ref=e52]: Check-in Schedule
+      - link "90-Day Reviews" [ref=e53] [cursor=pointer]:
+        - /url: /reviews
+        - img [ref=e55]
+        - generic [ref=e57]: 90-Day Reviews
+      - link "CS Staff" [ref=e58] [cursor=pointer]:
+        - /url: /cs-staff
+        - img [ref=e60]
+        - generic [ref=e62]: CS Staff
+      - link "Red Flags" [ref=e63] [cursor=pointer]:
+        - /url: /red-flags
+        - img [ref=e65]
+        - generic [ref=e67]: Red Flags
+    - generic [ref=e68]: v0.1.0
+  - main [ref=e69]:
+    - heading "CS Staff" [level=2] [ref=e71]
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]: 4 active
+        - generic [ref=e75]:
+          - link "Trashed" [ref=e76] [cursor=pointer]:
+            - /url: /cs-staff?trashed=1
+          - link "Active" [ref=e77] [cursor=pointer]:
+            - /url: /cs-staff
+      - table [ref=e80]:
+        - rowgroup [ref=e81]:
+          - row "Name Full Name Actions" [ref=e82]:
+            - columnheader "Name" [ref=e83]
+            - columnheader "Full Name" [ref=e84]
+            - columnheader "Actions" [ref=e85]
+        - rowgroup [ref=e86]:
+          - row "Adrian — Edit Delete" [ref=e87]:
+            - cell "Adrian" [ref=e88]
+            - cell "—" [ref=e89]
+            - cell "Edit Delete" [ref=e90]:
+              - generic [ref=e91]:
+                - link "Edit" [ref=e92] [cursor=pointer]:
+                  - /url: /cs-staff/1/edit
+                - button "Delete" [ref=e94] [cursor=pointer]
+          - row "Bel — Edit Delete" [ref=e95]:
+            - cell "Bel" [ref=e96]
+            - cell "—" [ref=e97]
+            - cell "Edit Delete" [ref=e98]:
+              - generic [ref=e99]:
+                - link "Edit" [ref=e100] [cursor=pointer]:
+                  - /url: /cs-staff/2/edit
+                - button "Delete" [ref=e102] [cursor=pointer]
+          - row "Dennis — Edit Delete" [ref=e103]:
+            - cell "Dennis" [ref=e104]
+            - cell "—" [ref=e105]
+            - cell "Edit Delete" [ref=e106]:
+              - generic [ref=e107]:
+                - link "Edit" [ref=e108] [cursor=pointer]:
+                  - /url: /cs-staff/4/edit
+                - button "Delete" [ref=e110] [cursor=pointer]
+          - row "Michelle — Edit Delete" [ref=e111]:
+            - cell "Michelle" [ref=e112]
+            - cell "—" [ref=e113]
+            - cell "Edit Delete" [ref=e114]:
+              - generic [ref=e115]:
+                - link "Edit" [ref=e116] [cursor=pointer]:
+                  - /url: /cs-staff/3/edit
+                - button "Delete" [ref=e118] [cursor=pointer]
+      - link "+ Add Staff" [ref=e119] [cursor=pointer]:
+        - /url: /cs-staff/0/edit

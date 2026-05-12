@@ -1,0 +1,192 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img [ref=e10]
+        - generic [ref=e15]: Dashboard
+      - link "OP Directory" [ref=e16] [cursor=pointer]:
+        - /url: /ops
+        - img [ref=e18]
+        - generic [ref=e23]: OP Directory
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+        - img [ref=e26]
+        - generic [ref=e29]: Clients
+      - link "Assignments" [ref=e30] [cursor=pointer]:
+        - /url: /assignments
+        - img [ref=e32]
+        - generic [ref=e35]: Assignments
+      - link "Onboarding" [ref=e36] [cursor=pointer]:
+        - /url: /onboarding
+        - img [ref=e38]
+        - generic [ref=e41]: Onboarding
+      - link "Check-ins" [ref=e42] [cursor=pointer]:
+        - /url: /checkins
+        - img [ref=e44]
+        - generic [ref=e47]: Check-ins
+      - link "Check-in Schedule" [ref=e48] [cursor=pointer]:
+        - /url: /schedule
+        - img [ref=e50]
+        - generic [ref=e52]: Check-in Schedule
+      - link "90-Day Reviews" [ref=e53] [cursor=pointer]:
+        - /url: /reviews
+        - img [ref=e55]
+        - generic [ref=e57]: 90-Day Reviews
+      - link "CS Staff" [ref=e58] [cursor=pointer]:
+        - /url: /cs-staff
+        - img [ref=e60]
+        - generic [ref=e62]: CS Staff
+      - link "Red Flags" [ref=e63] [cursor=pointer]:
+        - /url: /red-flags
+        - img [ref=e65]
+        - generic [ref=e67]: Red Flags
+    - generic [ref=e68]: v0.1.0
+  - main [ref=e69]:
+    - heading "Dashboard" [level=2] [ref=e71]
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e75]:
+          - generic [ref=e76]: "218"
+          - generic [ref=e77]: Total OPs
+        - generic [ref=e79]:
+          - generic [ref=e80]: "74"
+          - generic [ref=e81]: Active
+        - generic [ref=e83]:
+          - generic [ref=e84]: "315"
+          - generic [ref=e85]: In Onboarding
+        - generic [ref=e87]:
+          - generic [ref=e88]: "389"
+          - generic [ref=e89]: Overdue Check-ins
+      - generic [ref=e90]:
+        - generic [ref=e93]:
+          - heading "Pipeline Stages" [level=3] [ref=e94]
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: Onboarding (Michelle)
+              - generic [ref=e98]: "315"
+            - generic [ref=e100]: New OPs being onboarded
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - generic [ref=e103]: Probation
+              - generic [ref=e104]: "24"
+            - generic [ref=e106]: OPs in probation period
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]: Active
+              - generic [ref=e110]: "74"
+            - generic [ref=e112]: Fully onboarded and active
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: Overdue Check-ins
+              - generic [ref=e116]: "389"
+            - generic [ref=e118]: Check-ins past due date
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Separated
+              - generic [ref=e122]: "138"
+            - generic [ref=e124]: No longer assigned
+        - generic [ref=e127]:
+          - heading "Michelle — Needs Attention" [level=3] [ref=e128]
+          - generic [ref=e129]: All caught up!
+          - separator [ref=e130]
+          - heading "Bel — Needs Attention" [level=3] [ref=e131]
+          - generic [ref=e132]:
+            - text: Adriane Ross Quiroz
+            - generic [ref=e133]: Grace Carr (Raindrop)
+          - generic [ref=e134]:
+            - text: Adriane Ross Quiroz
+            - generic [ref=e135]: Grace Carr (Raindrop)
+          - generic [ref=e136]:
+            - text: Aliza Abad
+            - generic [ref=e137]: Austin Blair/ Laundry Sauce
+          - generic [ref=e138]:
+            - text: Althea Africa Clabita
+            - generic [ref=e139]: Ian Blair
+          - generic [ref=e140]:
+            - text: Andric Aliwate Cabang
+            - generic [ref=e141]: Raindrop Agency
+          - generic [ref=e142]:
+            - text: Angela Agranum
+            - generic [ref=e143]: Josh Fancher / Ryan Goebel (CINQ)
+          - generic [ref=e144]:
+            - text: Angela Agranum
+            - generic [ref=e145]: Josh Fancher / Ryan Goebel (CINQ)
+          - generic [ref=e146]:
+            - text: Angela Agranum
+            - generic [ref=e147]: Josh Fancher / Ryan Goebel (CINQ)
+          - generic [ref=e148]:
+            - text: Angela Apostol
+            - generic [ref=e149]: Ryan Miller
+          - generic [ref=e150]:
+            - text: Angela Apostol
+            - generic [ref=e151]: Ryan Miller
+      - generic [ref=e152]:
+        - generic [ref=e155]:
+          - heading "CS Workload" [level=3] [ref=e156]
+          - generic [ref=e157]:
+            - generic [ref=e158]: Unassigned
+            - generic [ref=e162]: 74 active
+        - generic [ref=e165]:
+          - heading "Recent Onboarding Activity" [level=3] [ref=e166]
+          - table [ref=e167]:
+            - rowgroup [ref=e168]:
+              - row "OP Client Owner Status" [ref=e169]:
+                - columnheader "OP" [ref=e170]
+                - columnheader "Client" [ref=e171]
+                - columnheader "Owner" [ref=e172]
+                - columnheader "Status" [ref=e173]
+            - rowgroup [ref=e174]:
+              - row "Laura Yancy Wright (TBC) Dennis In Progress" [ref=e175]:
+                - cell "Laura" [ref=e176]
+                - cell "Yancy Wright (TBC)" [ref=e177]
+                - cell "Dennis" [ref=e178]
+                - cell "In Progress" [ref=e179]
+              - row "Kassandra Tsihlis (Kass) Greg and Lisa Shields (In Alignment Media) Dennis In Progress" [ref=e180]:
+                - cell "Kassandra Tsihlis (Kass)" [ref=e181]
+                - cell "Greg and Lisa Shields (In Alignment Media)" [ref=e182]
+                - cell "Dennis" [ref=e183]
+                - cell "In Progress" [ref=e184]
+              - row "Charisse Pineda Greg and Lisa Shields (In Alignment Media) Dennis In Progress" [ref=e185]:
+                - cell "Charisse Pineda" [ref=e186]
+                - cell "Greg and Lisa Shields (In Alignment Media)" [ref=e187]
+                - cell "Dennis" [ref=e188]
+                - cell "In Progress" [ref=e189]
+              - row "Elizabeth Aguilus Mark Hunter/Heather Wagner (Hunter Insurance) Dennis In Progress" [ref=e190]:
+                - cell "Elizabeth Aguilus" [ref=e191]
+                - cell "Mark Hunter/Heather Wagner (Hunter Insurance)" [ref=e192]
+                - cell "Dennis" [ref=e193]
+                - cell "In Progress" [ref=e194]
+              - row "Race Jay Tubongbanua Geoff Adler Dennis In Progress" [ref=e195]:
+                - cell "Race Jay Tubongbanua" [ref=e196]
+                - cell "Geoff Adler" [ref=e197]
+                - cell "Dennis" [ref=e198]
+                - cell "In Progress" [ref=e199]
+              - row "Star Fatima Acibar Raindrop Agency Dennis In Progress" [ref=e200]:
+                - cell "Star Fatima Acibar" [ref=e201]
+                - cell "Raindrop Agency" [ref=e202]
+                - cell "Dennis" [ref=e203]
+                - cell "In Progress" [ref=e204]
+              - row "Ellison Luke Ambray Lucas Kemper Dennis In Progress" [ref=e205]:
+                - cell "Ellison Luke Ambray" [ref=e206]
+                - cell "Lucas Kemper" [ref=e207]
+                - cell "Dennis" [ref=e208]
+                - cell "In Progress" [ref=e209]
+              - row "Aliza Jo Angela Abad Austin Blair (Laundrysauce) Dennis In Progress" [ref=e210]:
+                - cell "Aliza Jo Angela Abad" [ref=e211]
+                - cell "Austin Blair (Laundrysauce)" [ref=e212]
+                - cell "Dennis" [ref=e213]
+                - cell "In Progress" [ref=e214]
+              - row "Mark Joseph Zacal (MJ) Danny Hambrick Dennis In Progress" [ref=e215]:
+                - cell "Mark Joseph Zacal (MJ)" [ref=e216]
+                - cell "Danny Hambrick" [ref=e217]
+                - cell "Dennis" [ref=e218]
+                - cell "In Progress" [ref=e219]
+              - row "Rowenna Remulta Yuag (Weng) Kelly Patton Dennis In Progress" [ref=e220]:
+                - cell "Rowenna Remulta Yuag (Weng)" [ref=e221]
+                - cell "Kelly Patton" [ref=e222]
+                - cell "Dennis" [ref=e223]
+                - cell "In Progress" [ref=e224]

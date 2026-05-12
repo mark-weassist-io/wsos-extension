@@ -1,0 +1,195 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img [ref=e10]
+        - generic [ref=e15]: Dashboard
+      - link "OP Directory" [ref=e16] [cursor=pointer]:
+        - /url: /ops
+        - img [ref=e18]
+        - generic [ref=e23]: OP Directory
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+        - img [ref=e26]
+        - generic [ref=e29]: Clients
+      - link "Assignments" [ref=e30] [cursor=pointer]:
+        - /url: /assignments
+        - img [ref=e32]
+        - generic [ref=e35]: Assignments
+      - link "Onboarding" [ref=e36] [cursor=pointer]:
+        - /url: /onboarding
+        - img [ref=e38]
+        - generic [ref=e41]: Onboarding
+      - link "Check-ins" [ref=e42] [cursor=pointer]:
+        - /url: /checkins
+        - img [ref=e44]
+        - generic [ref=e47]: Check-ins
+      - link "Check-in Schedule" [ref=e48] [cursor=pointer]:
+        - /url: /schedule
+        - img [ref=e50]
+        - generic [ref=e52]: Check-in Schedule
+      - link "CS Staff" [ref=e53] [cursor=pointer]:
+        - /url: /cs-staff
+        - img [ref=e55]
+        - generic [ref=e57]: CS Staff
+      - link "Red Flags" [ref=e58] [cursor=pointer]:
+        - /url: /red-flags
+        - img [ref=e60]
+        - generic [ref=e62]: Red Flags
+      - link "Existing Accounts" [ref=e63] [cursor=pointer]:
+        - /url: /existing-accounts
+        - img [ref=e65]
+        - generic [ref=e67]: Existing Accounts
+    - generic [ref=e68]: v0.1.0
+  - main [ref=e69]:
+    - heading "Dashboard" [level=2] [ref=e71]
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e75]:
+          - generic [ref=e76]: "218"
+          - generic [ref=e77]: Total OPs
+        - generic [ref=e79]:
+          - generic [ref=e80]: "74"
+          - generic [ref=e81]: Active
+        - generic [ref=e83]:
+          - generic [ref=e84]: "114"
+          - generic [ref=e85]: In Onboarding
+        - generic [ref=e87]:
+          - generic [ref=e88]: "0"
+          - generic [ref=e89]: Overdue Check-ins
+      - generic [ref=e90]:
+        - generic [ref=e93]:
+          - heading "Pipeline Stages" [level=3] [ref=e94]
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]: Onboarding (Michelle)
+              - generic [ref=e98]: "114"
+            - generic [ref=e100]: New OPs being onboarded
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - generic [ref=e103]: Probation
+              - generic [ref=e104]: "24"
+            - generic [ref=e106]: OPs in probation period
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]: Active
+              - generic [ref=e110]: "74"
+            - generic [ref=e112]: Fully onboarded and active
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: Overdue Check-ins
+              - generic [ref=e116]: "0"
+            - generic [ref=e118]: Check-ins past due date
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: Separated
+              - generic [ref=e122]: "138"
+            - generic [ref=e124]: No longer assigned
+        - generic [ref=e127]:
+          - heading "Michelle — Needs Attention" [level=3] [ref=e128]
+          - generic [ref=e129]:
+            - text: Race Jay Tubongbanua
+            - generic [ref=e130]: Geoff Adler
+          - generic [ref=e131]:
+            - text: Arlyn Lindain
+            - generic [ref=e132]: Dustin Terry (Velocity)
+          - generic [ref=e133]:
+            - text: Hazel Anne Llanillo
+            - generic [ref=e134]: Joseph Bua (Cool/Hot Guys AC (HVAC Company))
+          - generic [ref=e135]:
+            - text: Rowenna Remulta
+            - generic [ref=e136]: Frank Ortega (for Steve) / Laura Weatherword
+          - generic [ref=e137]:
+            - text: Jermaine Cabalo
+            - generic [ref=e138]: Ryan Miller (Share The Struggle)
+          - generic [ref=e139]:
+            - text: Jesalie Sotelo
+            - generic [ref=e140]: Eduardo Correa (Raindrop)
+          - generic [ref=e141]:
+            - text: Race Jay Tubongbanua
+            - generic [ref=e142]: Geoff Adler
+          - generic [ref=e143]:
+            - text: Arlyn Lindain
+            - generic [ref=e144]: Dustin Terry (Velocity)
+          - generic [ref=e145]:
+            - text: Hazel Anne Llanillo
+            - generic [ref=e146]: Joseph Bua (Cool/Hot Guys AC (HVAC Company))
+          - generic [ref=e147]:
+            - text: Rowenna Remulta
+            - generic [ref=e148]: Frank Ortega (for Steve) / Laura Weatherword
+          - separator [ref=e149]
+          - heading "Bel — Needs Attention" [level=3] [ref=e150]
+          - generic [ref=e151]: All caught up!
+      - generic [ref=e152]:
+        - generic [ref=e155]:
+          - heading "CS Workload" [level=3] [ref=e156]
+          - generic [ref=e157]:
+            - generic [ref=e158]: Bel
+            - generic [ref=e162]: 43 active
+          - generic [ref=e163]:
+            - generic [ref=e164]: Adrian
+            - generic [ref=e168]: 31 active
+        - generic [ref=e171]:
+          - heading "Recent Onboarding Activity" [level=3] [ref=e172]
+          - table [ref=e173]:
+            - rowgroup [ref=e174]:
+              - row "OP Client Owner Status" [ref=e175]:
+                - columnheader "OP" [ref=e176]
+                - columnheader "Client" [ref=e177]
+                - columnheader "Owner" [ref=e178]
+                - columnheader "Status" [ref=e179]
+            - rowgroup [ref=e180]:
+              - row "Charisse Pineda Greg and Lisa Shields (In Alignment Media) Dennis In Progress" [ref=e181]:
+                - cell "Charisse Pineda" [ref=e182]
+                - cell "Greg and Lisa Shields (In Alignment Media)" [ref=e183]
+                - cell "Dennis" [ref=e184]
+                - cell "In Progress" [ref=e185]
+              - row "Race Jay Tubongbanua Geoff Adler Dennis In Progress" [ref=e186]:
+                - cell "Race Jay Tubongbanua" [ref=e187]
+                - cell "Geoff Adler" [ref=e188]
+                - cell "Dennis" [ref=e189]
+                - cell "In Progress" [ref=e190]
+              - row "Star Fatima Acibar Raindrop Agency Dennis In Progress" [ref=e191]:
+                - cell "Star Fatima Acibar" [ref=e192]
+                - cell "Raindrop Agency" [ref=e193]
+                - cell "Dennis" [ref=e194]
+                - cell "In Progress" [ref=e195]
+              - row "Andric Aliwate Cabang Raindop Agency Dennis In Progress" [ref=e196]:
+                - cell "Andric Aliwate Cabang" [ref=e197]
+                - cell "Raindop Agency" [ref=e198]
+                - cell "Dennis" [ref=e199]
+                - cell "In Progress" [ref=e200]
+              - row "Earl Wong Taladua Mark Hunter/Heather Wagner (Austin Lambert) Dennis In Progress" [ref=e201]:
+                - cell "Earl Wong Taladua" [ref=e202]
+                - cell "Mark Hunter/Heather Wagner (Austin Lambert)" [ref=e203]
+                - cell "Dennis" [ref=e204]
+                - cell "In Progress" [ref=e205]
+              - row "Ivy Rose Bongbong Mark Hunter/Heather Wagner Dennis In Progress" [ref=e206]:
+                - cell "Ivy Rose Bongbong" [ref=e207]
+                - cell "Mark Hunter/Heather Wagner" [ref=e208]
+                - cell "Dennis" [ref=e209]
+                - cell "In Progress" [ref=e210]
+              - row "Arlyn Lindain Dustin Terry (Velocity) Dennis In Progress" [ref=e211]:
+                - cell "Arlyn Lindain" [ref=e212]
+                - cell "Dustin Terry (Velocity)" [ref=e213]
+                - cell "Dennis" [ref=e214]
+                - cell "In Progress" [ref=e215]
+              - row "Ma. Caisa Salvador Austin Blair (Laundrysauce) Dennis In Progress" [ref=e216]:
+                - cell "Ma. Caisa Salvador" [ref=e217]
+                - cell "Austin Blair (Laundrysauce)" [ref=e218]
+                - cell "Dennis" [ref=e219]
+                - cell "In Progress" [ref=e220]
+              - row "Maynard Ivan Milana Greg and Lisa Shields Dennis In Progress" [ref=e221]:
+                - cell "Maynard Ivan Milana" [ref=e222]
+                - cell "Greg and Lisa Shields" [ref=e223]
+                - cell "Dennis" [ref=e224]
+                - cell "In Progress" [ref=e225]
+              - row "Mary Rachelle Trinidad Ryan Auhl (for Thomas Turner / Relentless Beats) Dennis In Progress" [ref=e226]:
+                - cell "Mary Rachelle Trinidad" [ref=e227]
+                - cell "Ryan Auhl (for Thomas Turner / Relentless Beats)" [ref=e228]
+                - cell "Dennis" [ref=e229]
+                - cell "In Progress" [ref=e230]

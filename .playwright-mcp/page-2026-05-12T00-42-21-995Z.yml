@@ -1,0 +1,919 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img [ref=e10]
+        - generic [ref=e15]: Dashboard
+      - link "OP Directory" [ref=e16] [cursor=pointer]:
+        - /url: /ops
+        - img [ref=e18]
+        - generic [ref=e23]: OP Directory
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+        - img [ref=e26]
+        - generic [ref=e29]: Clients
+      - link "Assignments" [ref=e30] [cursor=pointer]:
+        - /url: /assignments
+        - img [ref=e32]
+        - generic [ref=e35]: Assignments
+      - link "Onboarding" [ref=e36] [cursor=pointer]:
+        - /url: /onboarding
+        - img [ref=e38]
+        - generic [ref=e41]: Onboarding
+      - link "Check-ins" [ref=e42] [cursor=pointer]:
+        - /url: /checkins
+        - img [ref=e44]
+        - generic [ref=e47]: Check-ins
+      - link "Check-in Schedule" [ref=e48] [cursor=pointer]:
+        - /url: /schedule
+        - img [ref=e50]
+        - generic [ref=e52]: Check-in Schedule
+      - link "CS Staff" [ref=e53] [cursor=pointer]:
+        - /url: /cs-staff
+        - img [ref=e55]
+        - generic [ref=e57]: CS Staff
+      - link "Red Flags" [ref=e58] [cursor=pointer]:
+        - /url: /red-flags
+        - img [ref=e60]
+        - generic [ref=e62]: Red Flags
+    - generic [ref=e63]: v0.1.0
+  - main [ref=e64]:
+    - heading "Clients" [level=2] [ref=e66]
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - link "Trashed" [ref=e70] [cursor=pointer]:
+            - /url: /clients?trashed=1
+          - link "Active" [ref=e71] [cursor=pointer]:
+            - /url: /clients
+        - generic [ref=e72]:
+          - textbox "Search..." [ref=e74]
+          - link "+ New Client" [ref=e75] [cursor=pointer]:
+            - /url: /clients/new
+      - table [ref=e78]:
+        - rowgroup [ref=e79]:
+          - row "Name Email Actions" [ref=e80]:
+            - columnheader "Name" [ref=e81]
+            - columnheader "Email" [ref=e82]
+            - columnheader "Actions" [ref=e83]
+        - rowgroup [ref=e84]:
+          - row "Aaron Martin (Martin Law and Mediation) — Edit Delete" [ref=e85]:
+            - cell "Aaron Martin (Martin Law and Mediation)" [ref=e86]
+            - cell "—" [ref=e87]
+            - cell "Edit Delete" [ref=e88]:
+              - generic [ref=e89]:
+                - link "Edit" [ref=e90] [cursor=pointer]:
+                  - /url: /clients/17/edit
+                - button "Delete" [ref=e92] [cursor=pointer]
+          - row "Aaron Pursell — Edit Delete" [ref=e93]:
+            - cell "Aaron Pursell" [ref=e94]
+            - cell "—" [ref=e95]
+            - cell "Edit Delete" [ref=e96]:
+              - generic [ref=e97]:
+                - link "Edit" [ref=e98] [cursor=pointer]:
+                  - /url: /clients/59/edit
+                - button "Delete" [ref=e100] [cursor=pointer]
+          - row "Aaron Redman aaron.b.redman@gmail.com Edit Delete" [ref=e101]:
+            - cell "Aaron Redman" [ref=e102]
+            - cell "aaron.b.redman@gmail.com" [ref=e103]
+            - cell "Edit Delete" [ref=e104]:
+              - generic [ref=e105]:
+                - link "Edit" [ref=e106] [cursor=pointer]:
+                  - /url: /clients/96/edit
+                - button "Delete" [ref=e108] [cursor=pointer]
+          - row "Aaron Richards — Edit Delete" [ref=e109]:
+            - cell "Aaron Richards" [ref=e110]
+            - cell "—" [ref=e111]
+            - cell "Edit Delete" [ref=e112]:
+              - generic [ref=e113]:
+                - link "Edit" [ref=e114] [cursor=pointer]:
+                  - /url: /clients/11/edit
+                - button "Delete" [ref=e116] [cursor=pointer]
+          - row "Adam Robinson — Edit Delete" [ref=e117]:
+            - cell "Adam Robinson" [ref=e118]
+            - cell "—" [ref=e119]
+            - cell "Edit Delete" [ref=e120]:
+              - generic [ref=e121]:
+                - link "Edit" [ref=e122] [cursor=pointer]:
+                  - /url: /clients/55/edit
+                - button "Delete" [ref=e124] [cursor=pointer]
+          - row "Adam Wagner — Edit Delete" [ref=e125]:
+            - cell "Adam Wagner" [ref=e126]
+            - cell "—" [ref=e127]
+            - cell "Edit Delete" [ref=e128]:
+              - generic [ref=e129]:
+                - link "Edit" [ref=e130] [cursor=pointer]:
+                  - /url: /clients/58/edit
+                - button "Delete" [ref=e132] [cursor=pointer]
+          - row "Adam Wolfson and Noah Wolfson (Wolfson BTR) nwolfson@wolfsondevelopment.com Edit Delete" [ref=e133]:
+            - cell "Adam Wolfson and Noah Wolfson (Wolfson BTR)" [ref=e134]
+            - cell "nwolfson@wolfsondevelopment.com" [ref=e135]
+            - cell "Edit Delete" [ref=e136]:
+              - generic [ref=e137]:
+                - link "Edit" [ref=e138] [cursor=pointer]:
+                  - /url: /clients/97/edit
+                - button "Delete" [ref=e140] [cursor=pointer]
+          - row "Alex Tucci (TDL) alex.tucci@topdoglaw.com Edit Delete" [ref=e141]:
+            - cell "Alex Tucci (TDL)" [ref=e142]
+            - cell "alex.tucci@topdoglaw.com" [ref=e143]
+            - cell "Edit Delete" [ref=e144]:
+              - generic [ref=e145]:
+                - link "Edit" [ref=e146] [cursor=pointer]:
+                  - /url: /clients/92/edit
+                - button "Delete" [ref=e148] [cursor=pointer]
+          - row "Andrea Race / BeautyBlender Andrea.Race@beautyblender.com Edit Delete" [ref=e149]:
+            - cell "Andrea Race / BeautyBlender" [ref=e150]
+            - cell "Andrea.Race@beautyblender.com" [ref=e151]
+            - cell "Edit Delete" [ref=e152]:
+              - generic [ref=e153]:
+                - link "Edit" [ref=e154] [cursor=pointer]:
+                  - /url: /clients/69/edit
+                - button "Delete" [ref=e156] [cursor=pointer]
+          - row "Anthony Jimenez (Product Society) anthony@productsociety.com Edit Delete" [ref=e157]:
+            - cell "Anthony Jimenez (Product Society)" [ref=e158]
+            - cell "anthony@productsociety.com" [ref=e159]
+            - cell "Edit Delete" [ref=e160]:
+              - generic [ref=e161]:
+                - link "Edit" [ref=e162] [cursor=pointer]:
+                  - /url: /clients/89/edit
+                - button "Delete" [ref=e164] [cursor=pointer]
+          - row "Austin Blair/ Laundry Sauce austin@laundrysauce.com Edit Delete" [ref=e165]:
+            - cell "Austin Blair/ Laundry Sauce" [ref=e166]
+            - cell "austin@laundrysauce.com" [ref=e167]
+            - cell "Edit Delete" [ref=e168]:
+              - generic [ref=e169]:
+                - link "Edit" [ref=e170] [cursor=pointer]:
+                  - /url: /clients/6/edit
+                - button "Delete" [ref=e172] [cursor=pointer]
+          - row "Bailey Proulx / Brian Lehner — Edit Delete" [ref=e173]:
+            - cell "Bailey Proulx / Brian Lehner" [ref=e174]
+            - cell "—" [ref=e175]
+            - cell "Edit Delete" [ref=e176]:
+              - generic [ref=e177]:
+                - link "Edit" [ref=e178] [cursor=pointer]:
+                  - /url: /clients/33/edit
+                - button "Delete" [ref=e180] [cursor=pointer]
+          - row "Blake Evertsen — Edit Delete" [ref=e181]:
+            - cell "Blake Evertsen" [ref=e182]
+            - cell "—" [ref=e183]
+            - cell "Edit Delete" [ref=e184]:
+              - generic [ref=e185]:
+                - link "Edit" [ref=e186] [cursor=pointer]:
+                  - /url: /clients/1/edit
+                - button "Delete" [ref=e188] [cursor=pointer]
+          - row "Brandon Hofer brandon.hofer@gmail.com Edit Delete" [ref=e189]:
+            - cell "Brandon Hofer" [ref=e190]
+            - cell "brandon.hofer@gmail.com" [ref=e191]
+            - cell "Edit Delete" [ref=e192]:
+              - generic [ref=e193]:
+                - link "Edit" [ref=e194] [cursor=pointer]:
+                  - /url: /clients/74/edit
+                - button "Delete" [ref=e196] [cursor=pointer]
+          - row "Brandon Kelly brandon@rjkelly.com Edit Delete" [ref=e197]:
+            - cell "Brandon Kelly" [ref=e198]
+            - cell "brandon@rjkelly.com" [ref=e199]
+            - cell "Edit Delete" [ref=e200]:
+              - generic [ref=e201]:
+                - link "Edit" [ref=e202] [cursor=pointer]:
+                  - /url: /clients/103/edit
+                - button "Delete" [ref=e204] [cursor=pointer]
+          - row "Brian Baber — Edit Delete" [ref=e205]:
+            - cell "Brian Baber" [ref=e206]
+            - cell "—" [ref=e207]
+            - cell "Edit Delete" [ref=e208]:
+              - generic [ref=e209]:
+                - link "Edit" [ref=e210] [cursor=pointer]:
+                  - /url: /clients/62/edit
+                - button "Delete" [ref=e212] [cursor=pointer]
+          - row "Brian Cross — Edit Delete" [ref=e213]:
+            - cell "Brian Cross" [ref=e214]
+            - cell "—" [ref=e215]
+            - cell "Edit Delete" [ref=e216]:
+              - generic [ref=e217]:
+                - link "Edit" [ref=e218] [cursor=pointer]:
+                  - /url: /clients/12/edit
+                - button "Delete" [ref=e220] [cursor=pointer]
+          - row "Brian Hennesy — Edit Delete" [ref=e221]:
+            - cell "Brian Hennesy" [ref=e222]
+            - cell "—" [ref=e223]
+            - cell "Edit Delete" [ref=e224]:
+              - generic [ref=e225]:
+                - link "Edit" [ref=e226] [cursor=pointer]:
+                  - /url: /clients/54/edit
+                - button "Delete" [ref=e228] [cursor=pointer]
+          - row "Brooklyn Hillenbrand / Weassist — Edit Delete" [ref=e229]:
+            - cell "Brooklyn Hillenbrand / Weassist" [ref=e230]
+            - cell "—" [ref=e231]
+            - cell "Edit Delete" [ref=e232]:
+              - generic [ref=e233]:
+                - link "Edit" [ref=e234] [cursor=pointer]:
+                  - /url: /clients/46/edit
+                - button "Delete" [ref=e236] [cursor=pointer]
+          - row "Chad Brown cbrown@chadbrownlaw.com Edit Delete" [ref=e237]:
+            - cell "Chad Brown" [ref=e238]
+            - cell "cbrown@chadbrownlaw.com" [ref=e239]
+            - cell "Edit Delete" [ref=e240]:
+              - generic [ref=e241]:
+                - link "Edit" [ref=e242] [cursor=pointer]:
+                  - /url: /clients/102/edit
+                - button "Delete" [ref=e244] [cursor=pointer]
+          - row "Chad Capp Chad@safeteam.io Edit Delete" [ref=e245]:
+            - cell "Chad Capp" [ref=e246]
+            - cell "Chad@safeteam.io" [ref=e247]
+            - cell "Edit Delete" [ref=e248]:
+              - generic [ref=e249]:
+                - link "Edit" [ref=e250] [cursor=pointer]:
+                  - /url: /clients/99/edit
+                - button "Delete" [ref=e252] [cursor=pointer]
+          - row "Christian Romaguera romagueraenterprise@gmail.com Edit Delete" [ref=e253]:
+            - cell "Christian Romaguera" [ref=e254]
+            - cell "romagueraenterprise@gmail.com" [ref=e255]
+            - cell "Edit Delete" [ref=e256]:
+              - generic [ref=e257]:
+                - link "Edit" [ref=e258] [cursor=pointer]:
+                  - /url: /clients/66/edit
+                - button "Delete" [ref=e260] [cursor=pointer]
+          - row "Christopher Monasmith — Edit Delete" [ref=e261]:
+            - cell "Christopher Monasmith" [ref=e262]
+            - cell "—" [ref=e263]
+            - cell "Edit Delete" [ref=e264]:
+              - generic [ref=e265]:
+                - link "Edit" [ref=e266] [cursor=pointer]:
+                  - /url: /clients/14/edit
+                - button "Delete" [ref=e268] [cursor=pointer]
+          - row "Clint Murphy / Lesley Murphy — Edit Delete" [ref=e269]:
+            - cell "Clint Murphy / Lesley Murphy" [ref=e270]
+            - cell "—" [ref=e271]
+            - cell "Edit Delete" [ref=e272]:
+              - generic [ref=e273]:
+                - link "Edit" [ref=e274] [cursor=pointer]:
+                  - /url: /clients/8/edit
+                - button "Delete" [ref=e276] [cursor=pointer]
+          - row "Connor Miller (ArdentX) connor.miller@ardentx.com Edit Delete" [ref=e277]:
+            - cell "Connor Miller (ArdentX)" [ref=e278]
+            - cell "connor.miller@ardentx.com" [ref=e279]
+            - cell "Edit Delete" [ref=e280]:
+              - generic [ref=e281]:
+                - link "Edit" [ref=e282] [cursor=pointer]:
+                  - /url: /clients/32/edit
+                - button "Delete" [ref=e284] [cursor=pointer]
+          - row "Dan D'Alberto — Edit Delete" [ref=e285]:
+            - cell "Dan D'Alberto" [ref=e286]
+            - cell "—" [ref=e287]
+            - cell "Edit Delete" [ref=e288]:
+              - generic [ref=e289]:
+                - link "Edit" [ref=e290] [cursor=pointer]:
+                  - /url: /clients/41/edit
+                - button "Delete" [ref=e292] [cursor=pointer]
+          - row "Daniel Hambrick Danny@prosourceia.com Edit Delete" [ref=e293]:
+            - cell "Daniel Hambrick" [ref=e294]
+            - cell "Danny@prosourceia.com" [ref=e295]
+            - cell "Edit Delete" [ref=e296]:
+              - generic [ref=e297]:
+                - link "Edit" [ref=e298] [cursor=pointer]:
+                  - /url: /clients/91/edit
+                - button "Delete" [ref=e300] [cursor=pointer]
+          - row "Davina Zahra — Edit Delete" [ref=e301]:
+            - cell "Davina Zahra" [ref=e302]
+            - cell "—" [ref=e303]
+            - cell "Edit Delete" [ref=e304]:
+              - generic [ref=e305]:
+                - link "Edit" [ref=e306] [cursor=pointer]:
+                  - /url: /clients/18/edit
+                - button "Delete" [ref=e308] [cursor=pointer]
+          - row "Diane Rainer — Edit Delete" [ref=e309]:
+            - cell "Diane Rainer" [ref=e310]
+            - cell "—" [ref=e311]
+            - cell "Edit Delete" [ref=e312]:
+              - generic [ref=e313]:
+                - link "Edit" [ref=e314] [cursor=pointer]:
+                  - /url: /clients/36/edit
+                - button "Delete" [ref=e316] [cursor=pointer]
+          - row "Dr. Betty Murray betty.murray@me.com Edit Delete" [ref=e317]:
+            - cell "Dr. Betty Murray" [ref=e318]
+            - cell "betty.murray@me.com" [ref=e319]
+            - cell "Edit Delete" [ref=e320]:
+              - generic [ref=e321]:
+                - link "Edit" [ref=e322] [cursor=pointer]:
+                  - /url: /clients/63/edit
+                - button "Delete" [ref=e324] [cursor=pointer]
+          - row "Dr. Matthew and Theresa Steiner drmsteiner@expedientmedicolegal.com/ tsteiner@expedientmedicolegal.com Edit Delete" [ref=e325]:
+            - cell "Dr. Matthew and Theresa Steiner" [ref=e326]
+            - cell "drmsteiner@expedientmedicolegal.com/ tsteiner@expedientmedicolegal.com" [ref=e327]
+            - cell "Edit Delete" [ref=e328]:
+              - generic [ref=e329]:
+                - link "Edit" [ref=e330] [cursor=pointer]:
+                  - /url: /clients/24/edit
+                - button "Delete" [ref=e332] [cursor=pointer]
+          - row "Dr. Oliver Bathe/QualisureDx bathe@ucalgary.ca Edit Delete" [ref=e333]:
+            - cell "Dr. Oliver Bathe/QualisureDx" [ref=e334]
+            - cell "bathe@ucalgary.ca" [ref=e335]
+            - cell "Edit Delete" [ref=e336]:
+              - generic [ref=e337]:
+                - link "Edit" [ref=e338] [cursor=pointer]:
+                  - /url: /clients/75/edit
+                - button "Delete" [ref=e340] [cursor=pointer]
+          - row "Dustin Terry (Velocity) dustin.terry@velobuilt.com Edit Delete" [ref=e341]:
+            - cell "Dustin Terry (Velocity)" [ref=e342]
+            - cell "dustin.terry@velobuilt.com" [ref=e343]
+            - cell "Edit Delete" [ref=e344]:
+              - generic [ref=e345]:
+                - link "Edit" [ref=e346] [cursor=pointer]:
+                  - /url: /clients/104/edit
+                - button "Delete" [ref=e348] [cursor=pointer]
+          - row "Edward Piazza — Edit Delete" [ref=e349]:
+            - cell "Edward Piazza" [ref=e350]
+            - cell "—" [ref=e351]
+            - cell "Edit Delete" [ref=e352]:
+              - generic [ref=e353]:
+                - link "Edit" [ref=e354] [cursor=pointer]:
+                  - /url: /clients/34/edit
+                - button "Delete" [ref=e356] [cursor=pointer]
+          - row "Ellen Long/Randy Long — Edit Delete" [ref=e357]:
+            - cell "Ellen Long/Randy Long" [ref=e358]
+            - cell "—" [ref=e359]
+            - cell "Edit Delete" [ref=e360]:
+              - generic [ref=e361]:
+                - link "Edit" [ref=e362] [cursor=pointer]:
+                  - /url: /clients/53/edit
+                - button "Delete" [ref=e364] [cursor=pointer]
+          - row "Fereshteh Fattaahi — Edit Delete" [ref=e365]:
+            - cell "Fereshteh Fattaahi" [ref=e366]
+            - cell "—" [ref=e367]
+            - cell "Edit Delete" [ref=e368]:
+              - generic [ref=e369]:
+                - link "Edit" [ref=e370] [cursor=pointer]:
+                  - /url: /clients/50/edit
+                - button "Delete" [ref=e372] [cursor=pointer]
+          - row "Frank Ortega Frank@coachfrankortega.com Edit Delete" [ref=e373]:
+            - cell "Frank Ortega" [ref=e374]
+            - cell "Frank@coachfrankortega.com" [ref=e375]
+            - cell "Edit Delete" [ref=e376]:
+              - generic [ref=e377]:
+                - link "Edit" [ref=e378] [cursor=pointer]:
+                  - /url: /clients/82/edit
+                - button "Delete" [ref=e380] [cursor=pointer]
+          - row "Gary Sanchez — Edit Delete" [ref=e381]:
+            - cell "Gary Sanchez" [ref=e382]
+            - cell "—" [ref=e383]
+            - cell "Edit Delete" [ref=e384]:
+              - generic [ref=e385]:
+                - link "Edit" [ref=e386] [cursor=pointer]:
+                  - /url: /clients/38/edit
+                - button "Delete" [ref=e388] [cursor=pointer]
+          - row "Gavin Klauser michaelgklauser@gmail.com Edit Delete" [ref=e389]:
+            - cell "Gavin Klauser" [ref=e390]
+            - cell "michaelgklauser@gmail.com" [ref=e391]
+            - cell "Edit Delete" [ref=e392]:
+              - generic [ref=e393]:
+                - link "Edit" [ref=e394] [cursor=pointer]:
+                  - /url: /clients/68/edit
+                - button "Delete" [ref=e396] [cursor=pointer]
+          - row "Gazala Uradnik gazala@gfsevents.org Edit Delete" [ref=e397]:
+            - cell "Gazala Uradnik" [ref=e398]
+            - cell "gazala@gfsevents.org" [ref=e399]
+            - cell "Edit Delete" [ref=e400]:
+              - generic [ref=e401]:
+                - link "Edit" [ref=e402] [cursor=pointer]:
+                  - /url: /clients/73/edit
+                - button "Delete" [ref=e404] [cursor=pointer]
+          - row "Geoffrey Adler ga@northpathinvestments.com Edit Delete" [ref=e405]:
+            - cell "Geoffrey Adler" [ref=e406]
+            - cell "ga@northpathinvestments.com" [ref=e407]
+            - cell "Edit Delete" [ref=e408]:
+              - generic [ref=e409]:
+                - link "Edit" [ref=e410] [cursor=pointer]:
+                  - /url: /clients/22/edit
+                - button "Delete" [ref=e412] [cursor=pointer]
+          - row "Grace Carr (Raindrop) grace.c@raindrop.agency Edit Delete" [ref=e413]:
+            - cell "Grace Carr (Raindrop)" [ref=e414]
+            - cell "grace.c@raindrop.agency" [ref=e415]
+            - cell "Edit Delete" [ref=e416]:
+              - generic [ref=e417]:
+                - link "Edit" [ref=e418] [cursor=pointer]:
+                  - /url: /clients/61/edit
+                - button "Delete" [ref=e420] [cursor=pointer]
+          - row "Greg and Lisa Shields Greg@inalignmentmedia.com / lisa@inalignmentmedia.com Edit Delete" [ref=e421]:
+            - cell "Greg and Lisa Shields" [ref=e422]
+            - cell "Greg@inalignmentmedia.com / lisa@inalignmentmedia.com" [ref=e423]
+            - cell "Edit Delete" [ref=e424]:
+              - generic [ref=e425]:
+                - link "Edit" [ref=e426] [cursor=pointer]:
+                  - /url: /clients/3/edit
+                - button "Delete" [ref=e428] [cursor=pointer]
+          - row "Ian Blair ian@laundrysauce.com Edit Delete" [ref=e429]:
+            - cell "Ian Blair" [ref=e430]
+            - cell "ian@laundrysauce.com" [ref=e431]
+            - cell "Edit Delete" [ref=e432]:
+              - generic [ref=e433]:
+                - link "Edit" [ref=e434] [cursor=pointer]:
+                  - /url: /clients/23/edit
+                - button "Delete" [ref=e436] [cursor=pointer]
+          - row "Jacob Azevedo — Edit Delete" [ref=e437]:
+            - cell "Jacob Azevedo" [ref=e438]
+            - cell "—" [ref=e439]
+            - cell "Edit Delete" [ref=e440]:
+              - generic [ref=e441]:
+                - link "Edit" [ref=e442] [cursor=pointer]:
+                  - /url: /clients/51/edit
+                - button "Delete" [ref=e444] [cursor=pointer]
+          - row "Jacques Spitzer — Edit Delete" [ref=e445]:
+            - cell "Jacques Spitzer" [ref=e446]
+            - cell "—" [ref=e447]
+            - cell "Edit Delete" [ref=e448]:
+              - generic [ref=e449]:
+                - link "Edit" [ref=e450] [cursor=pointer]:
+                  - /url: /clients/15/edit
+                - button "Delete" [ref=e452] [cursor=pointer]
+          - row "James Swanwick james@jamesswanwick.com Edit Delete" [ref=e453]:
+            - cell "James Swanwick" [ref=e454]
+            - cell "james@jamesswanwick.com" [ref=e455]
+            - cell "Edit Delete" [ref=e456]:
+              - generic [ref=e457]:
+                - link "Edit" [ref=e458] [cursor=pointer]:
+                  - /url: /clients/72/edit
+                - button "Delete" [ref=e460] [cursor=pointer]
+          - row "Jamison Watts — Edit Delete" [ref=e461]:
+            - cell "Jamison Watts" [ref=e462]
+            - cell "—" [ref=e463]
+            - cell "Edit Delete" [ref=e464]:
+              - generic [ref=e465]:
+                - link "Edit" [ref=e466] [cursor=pointer]:
+                  - /url: /clients/45/edit
+                - button "Delete" [ref=e468] [cursor=pointer]
+          - row "Jason Paulus jason@acidrainwater.com Edit Delete" [ref=e469]:
+            - cell "Jason Paulus" [ref=e470]
+            - cell "jason@acidrainwater.com" [ref=e471]
+            - cell "Edit Delete" [ref=e472]:
+              - generic [ref=e473]:
+                - link "Edit" [ref=e474] [cursor=pointer]:
+                  - /url: /clients/56/edit
+                - button "Delete" [ref=e476] [cursor=pointer]
+          - row "Jeff Youngren — Edit Delete" [ref=e477]:
+            - cell "Jeff Youngren" [ref=e478]
+            - cell "—" [ref=e479]
+            - cell "Edit Delete" [ref=e480]:
+              - generic [ref=e481]:
+                - link "Edit" [ref=e482] [cursor=pointer]:
+                  - /url: /clients/39/edit
+                - button "Delete" [ref=e484] [cursor=pointer]
+          - row "Jenna Corredor jenna@dandymen.com Edit Delete" [ref=e485]:
+            - cell "Jenna Corredor" [ref=e486]
+            - cell "jenna@dandymen.com" [ref=e487]
+            - cell "Edit Delete" [ref=e488]:
+              - generic [ref=e489]:
+                - link "Edit" [ref=e490] [cursor=pointer]:
+                  - /url: /clients/100/edit
+                - button "Delete" [ref=e492] [cursor=pointer]
+          - row "Jeremiah Boucher — Edit Delete" [ref=e493]:
+            - cell "Jeremiah Boucher" [ref=e494]
+            - cell "—" [ref=e495]
+            - cell "Edit Delete" [ref=e496]:
+              - generic [ref=e497]:
+                - link "Edit" [ref=e498] [cursor=pointer]:
+                  - /url: /clients/29/edit
+                - button "Delete" [ref=e500] [cursor=pointer]
+          - row "Jessica Kerr (Catalyst Agency) jess@catalystagency.au Edit Delete" [ref=e501]:
+            - cell "Jessica Kerr (Catalyst Agency)" [ref=e502]
+            - cell "jess@catalystagency.au" [ref=e503]
+            - cell "Edit Delete" [ref=e504]:
+              - generic [ref=e505]:
+                - link "Edit" [ref=e506] [cursor=pointer]:
+                  - /url: /clients/81/edit
+                - button "Delete" [ref=e508] [cursor=pointer]
+          - row "Jessica Robinson (Catalyst Agency) jess@catalystagency.au Edit Delete" [ref=e509]:
+            - cell "Jessica Robinson (Catalyst Agency)" [ref=e510]
+            - cell "jess@catalystagency.au" [ref=e511]
+            - cell "Edit Delete" [ref=e512]:
+              - generic [ref=e513]:
+                - link "Edit" [ref=e514] [cursor=pointer]:
+                  - /url: /clients/79/edit
+                - button "Delete" [ref=e516] [cursor=pointer]
+          - row "Joe Worth worthjoe@gmail.com Edit Delete" [ref=e517]:
+            - cell "Joe Worth" [ref=e518]
+            - cell "worthjoe@gmail.com" [ref=e519]
+            - cell "Edit Delete" [ref=e520]:
+              - generic [ref=e521]:
+                - link "Edit" [ref=e522] [cursor=pointer]:
+                  - /url: /clients/71/edit
+                - button "Delete" [ref=e524] [cursor=pointer]
+          - row "John Yeoh — Edit Delete" [ref=e525]:
+            - cell "John Yeoh" [ref=e526]
+            - cell "—" [ref=e527]
+            - cell "Edit Delete" [ref=e528]:
+              - generic [ref=e529]:
+                - link "Edit" [ref=e530] [cursor=pointer]:
+                  - /url: /clients/47/edit
+                - button "Delete" [ref=e532] [cursor=pointer]
+          - row "Jonathan Ploransky — Edit Delete" [ref=e533]:
+            - cell "Jonathan Ploransky" [ref=e534]
+            - cell "—" [ref=e535]
+            - cell "Edit Delete" [ref=e536]:
+              - generic [ref=e537]:
+                - link "Edit" [ref=e538] [cursor=pointer]:
+                  - /url: /clients/16/edit
+                - button "Delete" [ref=e540] [cursor=pointer]
+          - row "Jonmarc Brown — Edit Delete" [ref=e541]:
+            - cell "Jonmarc Brown" [ref=e542]
+            - cell "—" [ref=e543]
+            - cell "Edit Delete" [ref=e544]:
+              - generic [ref=e545]:
+                - link "Edit" [ref=e546] [cursor=pointer]:
+                  - /url: /clients/20/edit
+                - button "Delete" [ref=e548] [cursor=pointer]
+          - row "Jordan Bass — Edit Delete" [ref=e549]:
+            - cell "Jordan Bass" [ref=e550]
+            - cell "—" [ref=e551]
+            - cell "Edit Delete" [ref=e552]:
+              - generic [ref=e553]:
+                - link "Edit" [ref=e554] [cursor=pointer]:
+                  - /url: /clients/5/edit
+                - button "Delete" [ref=e556] [cursor=pointer]
+          - row "Joseph Bua Bua19@yahoo.com Edit Delete" [ref=e557]:
+            - cell "Joseph Bua" [ref=e558]
+            - cell "Bua19@yahoo.com" [ref=e559]
+            - cell "Edit Delete" [ref=e560]:
+              - generic [ref=e561]:
+                - link "Edit" [ref=e562] [cursor=pointer]:
+                  - /url: /clients/95/edit
+                - button "Delete" [ref=e564] [cursor=pointer]
+          - row "Joseph Lucosky / Julia Mabin jmabin@lucbro.com Edit Delete" [ref=e565]:
+            - cell "Joseph Lucosky / Julia Mabin" [ref=e566]
+            - cell "jmabin@lucbro.com" [ref=e567]
+            - cell "Edit Delete" [ref=e568]:
+              - generic [ref=e569]:
+                - link "Edit" [ref=e570] [cursor=pointer]:
+                  - /url: /clients/85/edit
+                - button "Delete" [ref=e572] [cursor=pointer]
+          - row "Josh Fancher / Dustin Terry — Edit Delete" [ref=e573]:
+            - cell "Josh Fancher / Dustin Terry" [ref=e574]
+            - cell "—" [ref=e575]
+            - cell "Edit Delete" [ref=e576]:
+              - generic [ref=e577]:
+                - link "Edit" [ref=e578] [cursor=pointer]:
+                  - /url: /clients/31/edit
+                - button "Delete" [ref=e580] [cursor=pointer]
+          - row "Josh Fancher / Ryan Goebel (CINQ) josh.fancher@tricorsfr.com / rgoebel@cinqsvc.com Edit Delete" [ref=e581]:
+            - cell "Josh Fancher / Ryan Goebel (CINQ)" [ref=e582]
+            - cell "josh.fancher@tricorsfr.com / rgoebel@cinqsvc.com" [ref=e583]
+            - cell "Edit Delete" [ref=e584]:
+              - generic [ref=e585]:
+                - link "Edit" [ref=e586] [cursor=pointer]:
+                  - /url: /clients/28/edit
+                - button "Delete" [ref=e588] [cursor=pointer]
+          - row "Josh Nelson jan2594@gmail.com Edit Delete" [ref=e589]:
+            - cell "Josh Nelson" [ref=e590]
+            - cell "jan2594@gmail.com" [ref=e591]
+            - cell "Edit Delete" [ref=e592]:
+              - generic [ref=e593]:
+                - link "Edit" [ref=e594] [cursor=pointer]:
+                  - /url: /clients/67/edit
+                - button "Delete" [ref=e596] [cursor=pointer]
+          - row "Josh Schwartz josh@bcis.net Edit Delete" [ref=e597]:
+            - cell "Josh Schwartz" [ref=e598]
+            - cell "josh@bcis.net" [ref=e599]
+            - cell "Edit Delete" [ref=e600]:
+              - generic [ref=e601]:
+                - link "Edit" [ref=e602] [cursor=pointer]:
+                  - /url: /clients/30/edit
+                - button "Delete" [ref=e604] [cursor=pointer]
+          - row "Josh Schwartz / Ed Trovato — Edit Delete" [ref=e605]:
+            - cell "Josh Schwartz / Ed Trovato" [ref=e606]
+            - cell "—" [ref=e607]
+            - cell "Edit Delete" [ref=e608]:
+              - generic [ref=e609]:
+                - link "Edit" [ref=e610] [cursor=pointer]:
+                  - /url: /clients/42/edit
+                - button "Delete" [ref=e612] [cursor=pointer]
+          - row "Josh Sullivan josh@bsimpleinvestmentproperties.com Edit Delete" [ref=e613]:
+            - cell "Josh Sullivan" [ref=e614]
+            - cell "josh@bsimpleinvestmentproperties.com" [ref=e615]
+            - cell "Edit Delete" [ref=e616]:
+              - generic [ref=e617]:
+                - link "Edit" [ref=e618] [cursor=pointer]:
+                  - /url: /clients/106/edit
+                - button "Delete" [ref=e620] [cursor=pointer]
+          - row "Joshua Jeffries — Edit Delete" [ref=e621]:
+            - cell "Joshua Jeffries" [ref=e622]
+            - cell "—" [ref=e623]
+            - cell "Edit Delete" [ref=e624]:
+              - generic [ref=e625]:
+                - link "Edit" [ref=e626] [cursor=pointer]:
+                  - /url: /clients/44/edit
+                - button "Delete" [ref=e628] [cursor=pointer]
+          - row "Kelly Patton familysecretstosuccess@gmail.com Edit Delete" [ref=e629]:
+            - cell "Kelly Patton" [ref=e630]
+            - cell "familysecretstosuccess@gmail.com" [ref=e631]
+            - cell "Edit Delete" [ref=e632]:
+              - generic [ref=e633]:
+                - link "Edit" [ref=e634] [cursor=pointer]:
+                  - /url: /clients/107/edit
+                - button "Delete" [ref=e636] [cursor=pointer]
+          - row "Larry Evans lje7579@gmail.com Edit Delete" [ref=e637]:
+            - cell "Larry Evans" [ref=e638]
+            - cell "lje7579@gmail.com" [ref=e639]
+            - cell "Edit Delete" [ref=e640]:
+              - generic [ref=e641]:
+                - link "Edit" [ref=e642] [cursor=pointer]:
+                  - /url: /clients/88/edit
+                - button "Delete" [ref=e644] [cursor=pointer]
+          - row "Lloyd Dixon — Edit Delete" [ref=e645]:
+            - cell "Lloyd Dixon" [ref=e646]
+            - cell "—" [ref=e647]
+            - cell "Edit Delete" [ref=e648]:
+              - generic [ref=e649]:
+                - link "Edit" [ref=e650] [cursor=pointer]:
+                  - /url: /clients/48/edit
+                - button "Delete" [ref=e652] [cursor=pointer]
+          - row "Lucas Kemper lucas@dandymencollection.com Edit Delete" [ref=e653]:
+            - cell "Lucas Kemper" [ref=e654]
+            - cell "lucas@dandymencollection.com" [ref=e655]
+            - cell "Edit Delete" [ref=e656]:
+              - generic [ref=e657]:
+                - link "Edit" [ref=e658] [cursor=pointer]:
+                  - /url: /clients/101/edit
+                - button "Delete" [ref=e660] [cursor=pointer]
+          - row "Lucas Robinson — Edit Delete" [ref=e661]:
+            - cell "Lucas Robinson" [ref=e662]
+            - cell "—" [ref=e663]
+            - cell "Edit Delete" [ref=e664]:
+              - generic [ref=e665]:
+                - link "Edit" [ref=e666] [cursor=pointer]:
+                  - /url: /clients/19/edit
+                - button "Delete" [ref=e668] [cursor=pointer]
+          - row "Luke Harmon luke@myserendipitysales.com Edit Delete" [ref=e669]:
+            - cell "Luke Harmon" [ref=e670]
+            - cell "luke@myserendipitysales.com" [ref=e671]
+            - cell "Edit Delete" [ref=e672]:
+              - generic [ref=e673]:
+                - link "Edit" [ref=e674] [cursor=pointer]:
+                  - /url: /clients/27/edit
+                - button "Delete" [ref=e676] [cursor=pointer]
+          - row "Maddison Koper maddison@lifecoachlawyer.net Edit Delete" [ref=e677]:
+            - cell "Maddison Koper" [ref=e678]
+            - cell "maddison@lifecoachlawyer.net" [ref=e679]
+            - cell "Edit Delete" [ref=e680]:
+              - generic [ref=e681]:
+                - link "Edit" [ref=e682] [cursor=pointer]:
+                  - /url: /clients/90/edit
+                - button "Delete" [ref=e684] [cursor=pointer]
+          - row "Madison Mains - Mains Marketing LLC info@mains.marketing Edit Delete" [ref=e685]:
+            - cell "Madison Mains - Mains Marketing LLC" [ref=e686]
+            - cell "info@mains.marketing" [ref=e687]
+            - cell "Edit Delete" [ref=e688]:
+              - generic [ref=e689]:
+                - link "Edit" [ref=e690] [cursor=pointer]:
+                  - /url: /clients/35/edit
+                - button "Delete" [ref=e692] [cursor=pointer]
+          - row "Mario Sanchez — Edit Delete" [ref=e693]:
+            - cell "Mario Sanchez" [ref=e694]
+            - cell "—" [ref=e695]
+            - cell "Edit Delete" [ref=e696]:
+              - generic [ref=e697]:
+                - link "Edit" [ref=e698] [cursor=pointer]:
+                  - /url: /clients/37/edit
+                - button "Delete" [ref=e700] [cursor=pointer]
+          - row "Mark Hunter mark@hunteronline.com Edit Delete" [ref=e701]:
+            - cell "Mark Hunter" [ref=e702]
+            - cell "mark@hunteronline.com" [ref=e703]
+            - cell "Edit Delete" [ref=e704]:
+              - generic [ref=e705]:
+                - link "Edit" [ref=e706] [cursor=pointer]:
+                  - /url: /clients/105/edit
+                - button "Delete" [ref=e708] [cursor=pointer]
+          - row "Masen Davis masen@fcaaids.org Edit Delete" [ref=e709]:
+            - cell "Masen Davis" [ref=e710]
+            - cell "masen@fcaaids.org" [ref=e711]
+            - cell "Edit Delete" [ref=e712]:
+              - generic [ref=e713]:
+                - link "Edit" [ref=e714] [cursor=pointer]:
+                  - /url: /clients/80/edit
+                - button "Delete" [ref=e716] [cursor=pointer]
+          - row "Matthew Williams Matthew@mkwlegal.com.au Edit Delete" [ref=e717]:
+            - cell "Matthew Williams" [ref=e718]
+            - cell "Matthew@mkwlegal.com.au" [ref=e719]
+            - cell "Edit Delete" [ref=e720]:
+              - generic [ref=e721]:
+                - link "Edit" [ref=e722] [cursor=pointer]:
+                  - /url: /clients/83/edit
+                - button "Delete" [ref=e724] [cursor=pointer]
+          - row "Nader Safinya nader@nsdesign.us Edit Delete" [ref=e725]:
+            - cell "Nader Safinya" [ref=e726]
+            - cell "nader@nsdesign.us" [ref=e727]
+            - cell "Edit Delete" [ref=e728]:
+              - generic [ref=e729]:
+                - link "Edit" [ref=e730] [cursor=pointer]:
+                  - /url: /clients/77/edit
+                - button "Delete" [ref=e732] [cursor=pointer]
+          - row "Nayia Pierrakos nayia@wealththrure.com Edit Delete" [ref=e733]:
+            - cell "Nayia Pierrakos" [ref=e734]
+            - cell "nayia@wealththrure.com" [ref=e735]
+            - cell "Edit Delete" [ref=e736]:
+              - generic [ref=e737]:
+                - link "Edit" [ref=e738] [cursor=pointer]:
+                  - /url: /clients/93/edit
+                - button "Delete" [ref=e740] [cursor=pointer]
+          - row "Nicole Bushnell (Mari + Gold)/ Carrie Jones — Edit Delete" [ref=e741]:
+            - cell "Nicole Bushnell (Mari + Gold)/ Carrie Jones" [ref=e742]
+            - cell "—" [ref=e743]
+            - cell "Edit Delete" [ref=e744]:
+              - generic [ref=e745]:
+                - link "Edit" [ref=e746] [cursor=pointer]:
+                  - /url: /clients/49/edit
+                - button "Delete" [ref=e748] [cursor=pointer]
+          - row "Nicole Glenn / NG Home Solutions Corp. — Edit Delete" [ref=e749]:
+            - cell "Nicole Glenn / NG Home Solutions Corp." [ref=e750]
+            - cell "—" [ref=e751]
+            - cell "Edit Delete" [ref=e752]:
+              - generic [ref=e753]:
+                - link "Edit" [ref=e754] [cursor=pointer]:
+                  - /url: /clients/21/edit
+                - button "Delete" [ref=e756] [cursor=pointer]
+          - row "One PLTFRM (Cecil Barton) cecil@onepltfrm.com Edit Delete" [ref=e757]:
+            - cell "One PLTFRM (Cecil Barton)" [ref=e758]
+            - cell "cecil@onepltfrm.com" [ref=e759]
+            - cell "Edit Delete" [ref=e760]:
+              - generic [ref=e761]:
+                - link "Edit" [ref=e762] [cursor=pointer]:
+                  - /url: /clients/60/edit
+                - button "Delete" [ref=e764] [cursor=pointer]
+          - row "Patrick O'meara — Edit Delete" [ref=e765]:
+            - cell "Patrick O'meara" [ref=e766]
+            - cell "—" [ref=e767]
+            - cell "Edit Delete" [ref=e768]:
+              - generic [ref=e769]:
+                - link "Edit" [ref=e770] [cursor=pointer]:
+                  - /url: /clients/7/edit
+                - button "Delete" [ref=e772] [cursor=pointer]
+          - row "Paul Wilson — Edit Delete" [ref=e773]:
+            - cell "Paul Wilson" [ref=e774]
+            - cell "—" [ref=e775]
+            - cell "Edit Delete" [ref=e776]:
+              - generic [ref=e777]:
+                - link "Edit" [ref=e778] [cursor=pointer]:
+                  - /url: /clients/52/edit
+                - button "Delete" [ref=e780] [cursor=pointer]
+          - row "Phil Whitebloom phil@beentherecs.com Edit Delete" [ref=e781]:
+            - cell "Phil Whitebloom" [ref=e782]
+            - cell "phil@beentherecs.com" [ref=e783]
+            - cell "Edit Delete" [ref=e784]:
+              - generic [ref=e785]:
+                - link "Edit" [ref=e786] [cursor=pointer]:
+                  - /url: /clients/86/edit
+                - button "Delete" [ref=e788] [cursor=pointer]
+          - row "Raindrop Agency grace.c@raindrop.agency Edit Delete" [ref=e789]:
+            - cell "Raindrop Agency" [ref=e790]
+            - cell "grace.c@raindrop.agency" [ref=e791]
+            - cell "Edit Delete" [ref=e792]:
+              - generic [ref=e793]:
+                - link "Edit" [ref=e794] [cursor=pointer]:
+                  - /url: /clients/57/edit
+                - button "Delete" [ref=e796] [cursor=pointer]
+          - row "Robert Cardiff / Richelle Drost — Edit Delete" [ref=e797]:
+            - cell "Robert Cardiff / Richelle Drost" [ref=e798]
+            - cell "—" [ref=e799]
+            - cell "Edit Delete" [ref=e800]:
+              - generic [ref=e801]:
+                - link "Edit" [ref=e802] [cursor=pointer]:
+                  - /url: /clients/9/edit
+                - button "Delete" [ref=e804] [cursor=pointer]
+          - row "Ross Denny ross@ezzey.com Edit Delete" [ref=e805]:
+            - cell "Ross Denny" [ref=e806]
+            - cell "ross@ezzey.com" [ref=e807]
+            - cell "Edit Delete" [ref=e808]:
+              - generic [ref=e809]:
+                - link "Edit" [ref=e810] [cursor=pointer]:
+                  - /url: /clients/94/edit
+                - button "Delete" [ref=e812] [cursor=pointer]
+          - row "Ryan Goebel rgoebel@cinqsvc.com Edit Delete" [ref=e813]:
+            - cell "Ryan Goebel" [ref=e814]
+            - cell "rgoebel@cinqsvc.com" [ref=e815]
+            - cell "Edit Delete" [ref=e816]:
+              - generic [ref=e817]:
+                - link "Edit" [ref=e818] [cursor=pointer]:
+                  - /url: /clients/78/edit
+                - button "Delete" [ref=e820] [cursor=pointer]
+          - row "Ryan McFarland Mahdi@linkedshores.com Edit Delete" [ref=e821]:
+            - cell "Ryan McFarland" [ref=e822]
+            - cell "Mahdi@linkedshores.com" [ref=e823]
+            - cell "Edit Delete" [ref=e824]:
+              - generic [ref=e825]:
+                - link "Edit" [ref=e826] [cursor=pointer]:
+                  - /url: /clients/26/edit
+                - button "Delete" [ref=e828] [cursor=pointer]
+          - row "Ryan Miller ryan@sharethestruggle.org Edit Delete" [ref=e829]:
+            - cell "Ryan Miller" [ref=e830]
+            - cell "ryan@sharethestruggle.org" [ref=e831]
+            - cell "Edit Delete" [ref=e832]:
+              - generic [ref=e833]:
+                - link "Edit" [ref=e834] [cursor=pointer]:
+                  - /url: /clients/2/edit
+                - button "Delete" [ref=e836] [cursor=pointer]
+          - row "Scott Conley — Edit Delete" [ref=e837]:
+            - cell "Scott Conley" [ref=e838]
+            - cell "—" [ref=e839]
+            - cell "Edit Delete" [ref=e840]:
+              - generic [ref=e841]:
+                - link "Edit" [ref=e842] [cursor=pointer]:
+                  - /url: /clients/10/edit
+                - button "Delete" [ref=e844] [cursor=pointer]
+          - row "Stefan Badertscher stefan.badertscher@gmail.com Edit Delete" [ref=e845]:
+            - cell "Stefan Badertscher" [ref=e846]
+            - cell "stefan.badertscher@gmail.com" [ref=e847]
+            - cell "Edit Delete" [ref=e848]:
+              - generic [ref=e849]:
+                - link "Edit" [ref=e850] [cursor=pointer]:
+                  - /url: /clients/70/edit
+                - button "Delete" [ref=e852] [cursor=pointer]
+          - row "Stella Song — Edit Delete" [ref=e853]:
+            - cell "Stella Song" [ref=e854]
+            - cell "—" [ref=e855]
+            - cell "Edit Delete" [ref=e856]:
+              - generic [ref=e857]:
+                - link "Edit" [ref=e858] [cursor=pointer]:
+                  - /url: /clients/43/edit
+                - button "Delete" [ref=e860] [cursor=pointer]
+          - row "Steve Weatherford steve@weatherford5.com Edit Delete" [ref=e861]:
+            - cell "Steve Weatherford" [ref=e862]
+            - cell "steve@weatherford5.com" [ref=e863]
+            - cell "Edit Delete" [ref=e864]:
+              - generic [ref=e865]:
+                - link "Edit" [ref=e866] [cursor=pointer]:
+                  - /url: /clients/84/edit
+                - button "Delete" [ref=e868] [cursor=pointer]
+          - row "Syam Subramaniam syam@mkwlegal.com.au Edit Delete" [ref=e869]:
+            - cell "Syam Subramaniam" [ref=e870]
+            - cell "syam@mkwlegal.com.au" [ref=e871]
+            - cell "Edit Delete" [ref=e872]:
+              - generic [ref=e873]:
+                - link "Edit" [ref=e874] [cursor=pointer]:
+                  - /url: /clients/87/edit
+                - button "Delete" [ref=e876] [cursor=pointer]
+          - row "Thomas Lotrecchiano (Vitawild) thomas@tloventures.com Edit Delete" [ref=e877]:
+            - cell "Thomas Lotrecchiano (Vitawild)" [ref=e878]
+            - cell "thomas@tloventures.com" [ref=e879]
+            - cell "Edit Delete" [ref=e880]:
+              - generic [ref=e881]:
+                - link "Edit" [ref=e882] [cursor=pointer]:
+                  - /url: /clients/65/edit
+                - button "Delete" [ref=e884] [cursor=pointer]
+          - row "Thomas Turner thomas@nationwidedm.net Edit Delete" [ref=e885]:
+            - cell "Thomas Turner" [ref=e886]
+            - cell "thomas@nationwidedm.net" [ref=e887]
+            - cell "Edit Delete" [ref=e888]:
+              - generic [ref=e889]:
+                - link "Edit" [ref=e890] [cursor=pointer]:
+                  - /url: /clients/98/edit
+                - button "Delete" [ref=e892] [cursor=pointer]
+          - row "Toccara Drucker — Edit Delete" [ref=e893]:
+            - cell "Toccara Drucker" [ref=e894]
+            - cell "—" [ref=e895]
+            - cell "Edit Delete" [ref=e896]:
+              - generic [ref=e897]:
+                - link "Edit" [ref=e898] [cursor=pointer]:
+                  - /url: /clients/40/edit
+                - button "Delete" [ref=e900] [cursor=pointer]
+          - row "Yancy Wright — Edit Delete" [ref=e901]:
+            - cell "Yancy Wright" [ref=e902]
+            - cell "—" [ref=e903]
+            - cell "Edit Delete" [ref=e904]:
+              - generic [ref=e905]:
+                - link "Edit" [ref=e906] [cursor=pointer]:
+                  - /url: /clients/25/edit
+                - button "Delete" [ref=e908] [cursor=pointer]
+          - row "Zac Gulbranson zgulbranson@gmail.com Edit Delete" [ref=e909]:
+            - cell "Zac Gulbranson" [ref=e910]
+            - cell "zgulbranson@gmail.com" [ref=e911]
+            - cell "Edit Delete" [ref=e912]:
+              - generic [ref=e913]:
+                - link "Edit" [ref=e914] [cursor=pointer]:
+                  - /url: /clients/76/edit
+                - button "Delete" [ref=e916] [cursor=pointer]
+          - row "Zac Safron / Safron Solutions — Edit Delete" [ref=e917]:
+            - cell "Zac Safron / Safron Solutions" [ref=e918]
+            - cell "—" [ref=e919]
+            - cell "Edit Delete" [ref=e920]:
+              - generic [ref=e921]:
+                - link "Edit" [ref=e922] [cursor=pointer]:
+                  - /url: /clients/4/edit
+                - button "Delete" [ref=e924] [cursor=pointer]
+          - row "Zach Papenhausen Zpapenhausen@hotmail.com Edit Delete" [ref=e925]:
+            - cell "Zach Papenhausen" [ref=e926]
+            - cell "Zpapenhausen@hotmail.com" [ref=e927]
+            - cell "Edit Delete" [ref=e928]:
+              - generic [ref=e929]:
+                - link "Edit" [ref=e930] [cursor=pointer]:
+                  - /url: /clients/64/edit
+                - button "Delete" [ref=e932] [cursor=pointer]
+          - row "Zach Paul — Edit Delete" [ref=e933]:
+            - cell "Zach Paul" [ref=e934]
+            - cell "—" [ref=e935]
+            - cell "Edit Delete" [ref=e936]:
+              - generic [ref=e937]:
+                - link "Edit" [ref=e938] [cursor=pointer]:
+                  - /url: /clients/13/edit
+                - button "Delete" [ref=e940] [cursor=pointer]

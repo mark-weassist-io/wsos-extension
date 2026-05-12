@@ -1,11 +1,11 @@
 {
-  "name": "wsos-extension",
+  "name": "nexus",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "bun run --watch src/index.ts",
-    "build": "bun build --compile src/index.ts --outfile dist/wsos-extension",
+    "build": "bun build --compile src/index.ts --outfile dist/nexus",
     "start": "bun run src/index.ts",
     "build-db": "bun run scripts/build-db.ts",
     "test": "bun test",

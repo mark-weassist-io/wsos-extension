@@ -1,0 +1,1553 @@
+- generic [ref=e2]:
+  - complementary [ref=e3]:
+    - generic [ref=e4]:
+      - heading "WSOS Ext" [level=1] [ref=e5]
+      - generic [ref=e6]: WeAssist Operations
+    - navigation [ref=e7]:
+      - link "Dashboard" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - img [ref=e10]
+        - generic [ref=e15]: Dashboard
+      - link "OP Directory" [ref=e16] [cursor=pointer]:
+        - /url: /ops
+        - img [ref=e18]
+        - generic [ref=e23]: OP Directory
+      - link "Clients" [ref=e24] [cursor=pointer]:
+        - /url: /clients
+        - img [ref=e26]
+        - generic [ref=e29]: Clients
+      - link "Assignments" [ref=e30] [cursor=pointer]:
+        - /url: /assignments
+        - img [ref=e32]
+        - generic [ref=e35]: Assignments
+      - link "Onboarding" [ref=e36] [cursor=pointer]:
+        - /url: /onboarding
+        - img [ref=e38]
+        - generic [ref=e41]: Onboarding
+      - link "Check-ins" [ref=e42] [cursor=pointer]:
+        - /url: /checkins
+        - img [ref=e44]
+        - generic [ref=e47]: Check-ins
+      - link "Check-in Schedule" [ref=e48] [cursor=pointer]:
+        - /url: /schedule
+        - img [ref=e50]
+        - generic [ref=e52]: Check-in Schedule
+      - link "CS Staff" [ref=e53] [cursor=pointer]:
+        - /url: /cs-staff
+        - img [ref=e55]
+        - generic [ref=e57]: CS Staff
+      - link "Red Flags" [ref=e58] [cursor=pointer]:
+        - /url: /red-flags
+        - img [ref=e60]
+        - generic [ref=e62]: Red Flags
+    - generic [ref=e63]: v0.1.0
+  - main [ref=e64]:
+    - heading "Onboarding" [level=2] [ref=e66]
+    - generic [ref=e67]:
+      - navigation [ref=e68]:
+        - link "All" [ref=e69] [cursor=pointer]:
+          - /url: /onboarding
+        - link "Michelle" [ref=e70] [cursor=pointer]:
+          - /url: /onboarding?person=Michelle
+        - link "Dennis" [ref=e71] [cursor=pointer]:
+          - /url: /onboarding?person=Dennis
+      - table [ref=e74]:
+        - rowgroup [ref=e75]:
+          - row "OP Client Owner Steps Completed Progress Last Stage Status" [ref=e76]:
+            - columnheader "OP" [ref=e77]
+            - columnheader "Client" [ref=e78]
+            - columnheader "Owner" [ref=e79]
+            - columnheader "Steps" [ref=e80]
+            - columnheader "Completed" [ref=e81]
+            - columnheader "Progress" [ref=e82]
+            - columnheader "Last Stage" [ref=e83]
+            - columnheader "Status" [ref=e84]
+        - rowgroup [ref=e85]:
+          - row "Andric Aliwate Cabang Raindop Agency Michelle 23 18 78% PTO Policy Sent? In Progress" [ref=e86]:
+            - cell "Andric Aliwate Cabang" [ref=e87]:
+              - link "Andric Aliwate Cabang" [ref=e88] [cursor=pointer]:
+                - /url: /onboarding/58
+            - cell "Raindop Agency" [ref=e89]
+            - cell "Michelle" [ref=e90]
+            - cell "23" [ref=e91]
+            - cell "18" [ref=e92]
+            - cell "78%" [ref=e93]:
+              - generic [ref=e97]: 78%
+            - cell "PTO Policy Sent?" [ref=e98]
+            - cell "In Progress" [ref=e99]
+          - row "Andric Aliwate Cabang Raindop Agency Dennis 23 18 78% — In Progress" [ref=e100]:
+            - cell "Andric Aliwate Cabang" [ref=e101]:
+              - link "Andric Aliwate Cabang" [ref=e102] [cursor=pointer]:
+                - /url: /onboarding/121
+            - cell "Raindop Agency" [ref=e103]
+            - cell "Dennis" [ref=e104]
+            - cell "23" [ref=e105]
+            - cell "18" [ref=e106]
+            - cell "78%" [ref=e107]:
+              - generic [ref=e111]: 78%
+            - cell "—" [ref=e112]
+            - cell "In Progress" [ref=e113]
+          - row "Angela Agranum Ryan Goebel (Josh Fancher) Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e114]:
+            - cell "Angela Agranum" [ref=e115]:
+              - link "Angela Agranum" [ref=e116] [cursor=pointer]:
+                - /url: /onboarding/21
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e117]
+            - cell "Michelle" [ref=e118]
+            - cell "23" [ref=e119]
+            - cell "20" [ref=e120]
+            - cell "87%" [ref=e121]:
+              - generic [ref=e125]: 87%
+            - cell "PTO Policy Sent?" [ref=e126]
+            - cell "In Progress" [ref=e127]
+          - row "Angela Agranum Ryan Goebel (Josh Fancher) Dennis 23 20 87% — In Progress" [ref=e128]:
+            - cell "Angela Agranum" [ref=e129]:
+              - link "Angela Agranum" [ref=e130] [cursor=pointer]:
+                - /url: /onboarding/84
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e131]
+            - cell "Dennis" [ref=e132]
+            - cell "23" [ref=e133]
+            - cell "20" [ref=e134]
+            - cell "87%" [ref=e135]:
+              - generic [ref=e139]: 87%
+            - cell "—" [ref=e140]
+            - cell "In Progress" [ref=e141]
+          - row "Angela Apostol Ryan Miller (Share The Struggle) Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e142]:
+            - cell "Angela Apostol" [ref=e143]:
+              - link "Angela Apostol" [ref=e144] [cursor=pointer]:
+                - /url: /onboarding/22
+            - cell "Ryan Miller (Share The Struggle)" [ref=e145]
+            - cell "Michelle" [ref=e146]
+            - cell "23" [ref=e147]
+            - cell "21" [ref=e148]
+            - cell "91%" [ref=e149]:
+              - generic [ref=e153]: 91%
+            - cell "PTO Policy Sent?" [ref=e154]
+            - cell "In Progress" [ref=e155]
+          - row "Angela Apostol Ryan Miller (Share The Struggle) Dennis 23 21 91% — In Progress" [ref=e156]:
+            - cell "Angela Apostol" [ref=e157]:
+              - link "Angela Apostol" [ref=e158] [cursor=pointer]:
+                - /url: /onboarding/85
+            - cell "Ryan Miller (Share The Struggle)" [ref=e159]
+            - cell "Dennis" [ref=e160]
+            - cell "23" [ref=e161]
+            - cell "21" [ref=e162]
+            - cell "91%" [ref=e163]:
+              - generic [ref=e167]: 91%
+            - cell "—" [ref=e168]
+            - cell "In Progress" [ref=e169]
+          - row "Annie Martinez Joshua Jeffries Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e170]:
+            - cell "Annie Martinez" [ref=e171]:
+              - link "Annie Martinez" [ref=e172] [cursor=pointer]:
+                - /url: /onboarding/3
+            - cell "Joshua Jeffries" [ref=e173]
+            - cell "Michelle" [ref=e174]
+            - cell "23" [ref=e175]
+            - cell "19" [ref=e176]
+            - cell "83%" [ref=e177]:
+              - generic [ref=e181]: 83%
+            - cell "PTO Policy Sent?" [ref=e182]
+            - cell "In Progress" [ref=e183]
+          - row "Annie Martinez Joshua Jeffries Dennis 23 19 83% — In Progress" [ref=e184]:
+            - cell "Annie Martinez" [ref=e185]:
+              - link "Annie Martinez" [ref=e186] [cursor=pointer]:
+                - /url: /onboarding/66
+            - cell "Joshua Jeffries" [ref=e187]
+            - cell "Dennis" [ref=e188]
+            - cell "23" [ref=e189]
+            - cell "19" [ref=e190]
+            - cell "83%" [ref=e191]:
+              - generic [ref=e195]: 83%
+            - cell "—" [ref=e196]
+            - cell "In Progress" [ref=e197]
+          - row "Arlyn Lindain Josh Fancher (Dustin Terry and Heather Tutwiler) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e198]:
+            - cell "Arlyn Lindain" [ref=e199]:
+              - link "Arlyn Lindain" [ref=e200] [cursor=pointer]:
+                - /url: /onboarding/10
+            - cell "Josh Fancher (Dustin Terry and Heather Tutwiler)" [ref=e201]
+            - cell "Michelle" [ref=e202]
+            - cell "23" [ref=e203]
+            - cell "19" [ref=e204]
+            - cell "83%" [ref=e205]:
+              - generic [ref=e209]: 83%
+            - cell "PTO Policy Sent?" [ref=e210]
+            - cell "In Progress" [ref=e211]
+          - row "Arlyn Lindain Dustin Terry (Velocity) Michelle 23 14 61% PTO Policy Sent? In Progress" [ref=e212]:
+            - cell "Arlyn Lindain" [ref=e213]:
+              - link "Arlyn Lindain" [ref=e214] [cursor=pointer]:
+                - /url: /onboarding/55
+            - cell "Dustin Terry (Velocity)" [ref=e215]
+            - cell "Michelle" [ref=e216]
+            - cell "23" [ref=e217]
+            - cell "14" [ref=e218]
+            - cell "61%" [ref=e219]:
+              - generic [ref=e223]: 61%
+            - cell "PTO Policy Sent?" [ref=e224]
+            - cell "In Progress" [ref=e225]
+          - row "Arlyn Lindain Josh Fancher (Dustin Terry and Heather Tutwiler) Dennis 23 19 83% — In Progress" [ref=e226]:
+            - cell "Arlyn Lindain" [ref=e227]:
+              - link "Arlyn Lindain" [ref=e228] [cursor=pointer]:
+                - /url: /onboarding/73
+            - cell "Josh Fancher (Dustin Terry and Heather Tutwiler)" [ref=e229]
+            - cell "Dennis" [ref=e230]
+            - cell "23" [ref=e231]
+            - cell "19" [ref=e232]
+            - cell "83%" [ref=e233]:
+              - generic [ref=e237]: 83%
+            - cell "—" [ref=e238]
+            - cell "In Progress" [ref=e239]
+          - row "Arlyn Lindain Dustin Terry (Velocity) Dennis 23 14 61% — In Progress" [ref=e240]:
+            - cell "Arlyn Lindain" [ref=e241]:
+              - link "Arlyn Lindain" [ref=e242] [cursor=pointer]:
+                - /url: /onboarding/118
+            - cell "Dustin Terry (Velocity)" [ref=e243]
+            - cell "Dennis" [ref=e244]
+            - cell "23" [ref=e245]
+            - cell "14" [ref=e246]
+            - cell "61%" [ref=e247]:
+              - generic [ref=e251]: 61%
+            - cell "—" [ref=e252]
+            - cell "In Progress" [ref=e253]
+          - row "Armie Sacala Ryan Goebel (Josh Fancher) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e254]:
+            - cell "Armie Sacala" [ref=e255]:
+              - link "Armie Sacala" [ref=e256] [cursor=pointer]:
+                - /url: /onboarding/15
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e257]
+            - cell "Michelle" [ref=e258]
+            - cell "23" [ref=e259]
+            - cell "19" [ref=e260]
+            - cell "83%" [ref=e261]:
+              - generic [ref=e265]: 83%
+            - cell "PTO Policy Sent?" [ref=e266]
+            - cell "In Progress" [ref=e267]
+          - row "Armie Sacala Ryan Goebel (Josh Fancher) Dennis 23 19 83% — In Progress" [ref=e268]:
+            - cell "Armie Sacala" [ref=e269]:
+              - link "Armie Sacala" [ref=e270] [cursor=pointer]:
+                - /url: /onboarding/78
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e271]
+            - cell "Dennis" [ref=e272]
+            - cell "23" [ref=e273]
+            - cell "19" [ref=e274]
+            - cell "83%" [ref=e275]:
+              - generic [ref=e279]: 83%
+            - cell "—" [ref=e280]
+            - cell "In Progress" [ref=e281]
+          - row "Bridge Laugo Dan D'Alberto Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e282]:
+            - cell "Bridge Laugo" [ref=e283]:
+              - link "Bridge Laugo" [ref=e284] [cursor=pointer]:
+                - /url: /onboarding/18
+            - cell "Dan D'Alberto" [ref=e285]
+            - cell "Michelle" [ref=e286]
+            - cell "23" [ref=e287]
+            - cell "21" [ref=e288]
+            - cell "91%" [ref=e289]:
+              - generic [ref=e293]: 91%
+            - cell "PTO Policy Sent?" [ref=e294]
+            - cell "In Progress" [ref=e295]
+          - row "Bridge Laugo Brian Baber Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e296]:
+            - cell "Bridge Laugo" [ref=e297]:
+              - link "Bridge Laugo" [ref=e298] [cursor=pointer]:
+                - /url: /onboarding/33
+            - cell "Brian Baber" [ref=e299]
+            - cell "Michelle" [ref=e300]
+            - cell "23" [ref=e301]
+            - cell "21" [ref=e302]
+            - cell "91%" [ref=e303]:
+              - generic [ref=e307]: 91%
+            - cell "PTO Policy Sent?" [ref=e308]
+            - cell "In Progress" [ref=e309]
+          - row "Bridge Laugo Dan D'Alberto Dennis 23 21 91% — In Progress" [ref=e310]:
+            - cell "Bridge Laugo" [ref=e311]:
+              - link "Bridge Laugo" [ref=e312] [cursor=pointer]:
+                - /url: /onboarding/81
+            - cell "Dan D'Alberto" [ref=e313]
+            - cell "Dennis" [ref=e314]
+            - cell "23" [ref=e315]
+            - cell "21" [ref=e316]
+            - cell "91%" [ref=e317]:
+              - generic [ref=e321]: 91%
+            - cell "—" [ref=e322]
+            - cell "In Progress" [ref=e323]
+          - row "Bridge Laugo Brian Baber Dennis 23 21 91% — In Progress" [ref=e324]:
+            - cell "Bridge Laugo" [ref=e325]:
+              - link "Bridge Laugo" [ref=e326] [cursor=pointer]:
+                - /url: /onboarding/96
+            - cell "Brian Baber" [ref=e327]
+            - cell "Dennis" [ref=e328]
+            - cell "23" [ref=e329]
+            - cell "21" [ref=e330]
+            - cell "91%" [ref=e331]:
+              - generic [ref=e335]: 91%
+            - cell "—" [ref=e336]
+            - cell "In Progress" [ref=e337]
+          - row "Carl Christian Reyes Dr. Matthew Steiner Michelle 23 19 83% Added Belinda+Eric to 1st & 2nd Client Check-in? In Progress" [ref=e338]:
+            - cell "Carl Christian Reyes" [ref=e339]:
+              - link "Carl Christian Reyes" [ref=e340] [cursor=pointer]:
+                - /url: /onboarding/34
+            - cell "Dr. Matthew Steiner" [ref=e341]
+            - cell "Michelle" [ref=e342]
+            - cell "23" [ref=e343]
+            - cell "19" [ref=e344]
+            - cell "83%" [ref=e345]:
+              - generic [ref=e349]: 83%
+            - cell "Added Belinda+Eric to 1st & 2nd Client Check-in?" [ref=e350]
+            - cell "In Progress" [ref=e351]
+          - row "Carl Christian Reyes Dr. Matthew Steiner Dennis 23 19 83% — In Progress" [ref=e352]:
+            - cell "Carl Christian Reyes" [ref=e353]:
+              - link "Carl Christian Reyes" [ref=e354] [cursor=pointer]:
+                - /url: /onboarding/97
+            - cell "Dr. Matthew Steiner" [ref=e355]
+            - cell "Dennis" [ref=e356]
+            - cell "23" [ref=e357]
+            - cell "19" [ref=e358]
+            - cell "83%" [ref=e359]:
+              - generic [ref=e363]: 83%
+            - cell "—" [ref=e364]
+            - cell "In Progress" [ref=e365]
+          - row "Charisse Pineda Greg and Lisa Shields (In Alignment Media) Michelle 23 16 70% PTO Policy Sent? In Progress" [ref=e366]:
+            - cell "Charisse Pineda" [ref=e367]:
+              - link "Charisse Pineda" [ref=e368] [cursor=pointer]:
+                - /url: /onboarding/62
+            - cell "Greg and Lisa Shields (In Alignment Media)" [ref=e369]
+            - cell "Michelle" [ref=e370]
+            - cell "23" [ref=e371]
+            - cell "16" [ref=e372]
+            - cell "70%" [ref=e373]:
+              - generic [ref=e377]: 70%
+            - cell "PTO Policy Sent?" [ref=e378]
+            - cell "In Progress" [ref=e379]
+          - row "Charisse Pineda Greg and Lisa Shields (In Alignment Media) Dennis 23 7 30% — In Progress" [ref=e380]:
+            - cell "Charisse Pineda" [ref=e381]:
+              - link "Charisse Pineda" [ref=e382] [cursor=pointer]:
+                - /url: /onboarding/124
+            - cell "Greg and Lisa Shields (In Alignment Media)" [ref=e383]
+            - cell "Dennis" [ref=e384]
+            - cell "23" [ref=e385]
+            - cell "7" [ref=e386]
+            - cell "30%" [ref=e387]:
+              - generic [ref=e391]: 30%
+            - cell "—" [ref=e392]
+            - cell "In Progress" [ref=e393]
+          - row "Cheere Bee May Tacluyan-Ranile Maddison Koper Michelle 23 16 70% OP Added to Weekly Gathering? Cancelled" [ref=e394]:
+            - cell "Cheere Bee May Tacluyan-Ranile" [ref=e395]:
+              - link "Cheere Bee May Tacluyan-Ranile" [ref=e396] [cursor=pointer]:
+                - /url: /onboarding/51
+            - cell "Maddison Koper" [ref=e397]
+            - cell "Michelle" [ref=e398]
+            - cell "23" [ref=e399]
+            - cell "16" [ref=e400]
+            - cell "70%" [ref=e401]:
+              - generic [ref=e405]: 70%
+            - cell "OP Added to Weekly Gathering?" [ref=e406]
+            - cell "Cancelled" [ref=e407]
+          - row "Cheere Bee May Tacluyan-Ranile Maddison Koper Dennis 23 16 70% — Cancelled" [ref=e408]:
+            - cell "Cheere Bee May Tacluyan-Ranile" [ref=e409]:
+              - link "Cheere Bee May Tacluyan-Ranile" [ref=e410] [cursor=pointer]:
+                - /url: /onboarding/114
+            - cell "Maddison Koper" [ref=e411]
+            - cell "Dennis" [ref=e412]
+            - cell "23" [ref=e413]
+            - cell "16" [ref=e414]
+            - cell "70%" [ref=e415]:
+              - generic [ref=e419]: 70%
+            - cell "—" [ref=e420]
+            - cell "Cancelled" [ref=e421]
+          - row "Cliford Macion Joe Worth Michelle 23 17 74% WhatsApp GC for Client × OP Created? Cancelled" [ref=e422]:
+            - cell "Cliford Macion" [ref=e423]:
+              - link "Cliford Macion" [ref=e424] [cursor=pointer]:
+                - /url: /onboarding/39
+            - cell "Joe Worth" [ref=e425]
+            - cell "Michelle" [ref=e426]
+            - cell "23" [ref=e427]
+            - cell "17" [ref=e428]
+            - cell "74%" [ref=e429]:
+              - generic [ref=e433]: 74%
+            - cell "WhatsApp GC for Client × OP Created?" [ref=e434]
+            - cell "Cancelled" [ref=e435]
+          - row "Cliford Macion Joe Worth Dennis 23 17 74% — Cancelled" [ref=e436]:
+            - cell "Cliford Macion" [ref=e437]:
+              - link "Cliford Macion" [ref=e438] [cursor=pointer]:
+                - /url: /onboarding/102
+            - cell "Joe Worth" [ref=e439]
+            - cell "Dennis" [ref=e440]
+            - cell "23" [ref=e441]
+            - cell "17" [ref=e442]
+            - cell "74%" [ref=e443]:
+              - generic [ref=e447]: 74%
+            - cell "—" [ref=e448]
+            - cell "Cancelled" [ref=e449]
+          - row "Daneva Joy Magallanes Joseph Bua (Cool/Hot Guys AC (HVAC Company)) Michelle 23 22 96% PTO Policy Sent? In Progress" [ref=e450]:
+            - cell "Daneva Joy Magallanes" [ref=e451]:
+              - link "Daneva Joy Magallanes" [ref=e452] [cursor=pointer]:
+                - /url: /onboarding/49
+            - cell "Joseph Bua (Cool/Hot Guys AC (HVAC Company))" [ref=e453]
+            - cell "Michelle" [ref=e454]
+            - cell "23" [ref=e455]
+            - cell "22" [ref=e456]
+            - cell "96%" [ref=e457]:
+              - generic [ref=e461]: 96%
+            - cell "PTO Policy Sent?" [ref=e462]
+            - cell "In Progress" [ref=e463]
+          - row "Daneva Joy Magallanes Joseph Bua (Cool/Hot Guys AC (HVAC Company)) Dennis 23 22 96% — In Progress" [ref=e464]:
+            - cell "Daneva Joy Magallanes" [ref=e465]:
+              - link "Daneva Joy Magallanes" [ref=e466] [cursor=pointer]:
+                - /url: /onboarding/112
+            - cell "Joseph Bua (Cool/Hot Guys AC (HVAC Company))" [ref=e467]
+            - cell "Dennis" [ref=e468]
+            - cell "23" [ref=e469]
+            - cell "22" [ref=e470]
+            - cell "96%" [ref=e471]:
+              - generic [ref=e475]: 96%
+            - cell "—" [ref=e476]
+            - cell "In Progress" [ref=e477]
+          - row "Earl Wong Taladua Mark Hunter/Heather Wagner (Austin Lambert) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e478]:
+            - cell "Earl Wong Taladua" [ref=e479]:
+              - link "Earl Wong Taladua" [ref=e480] [cursor=pointer]:
+                - /url: /onboarding/57
+            - cell "Mark Hunter/Heather Wagner (Austin Lambert)" [ref=e481]
+            - cell "Michelle" [ref=e482]
+            - cell "23" [ref=e483]
+            - cell "19" [ref=e484]
+            - cell "83%" [ref=e485]:
+              - generic [ref=e489]: 83%
+            - cell "PTO Policy Sent?" [ref=e490]
+            - cell "In Progress" [ref=e491]
+          - row "Earl Wong Taladua Mark Hunter/Heather Wagner (Austin Lambert) Dennis 23 18 78% — In Progress" [ref=e492]:
+            - cell "Earl Wong Taladua" [ref=e493]:
+              - link "Earl Wong Taladua" [ref=e494] [cursor=pointer]:
+                - /url: /onboarding/120
+            - cell "Mark Hunter/Heather Wagner (Austin Lambert)" [ref=e495]
+            - cell "Dennis" [ref=e496]
+            - cell "23" [ref=e497]
+            - cell "18" [ref=e498]
+            - cell "78%" [ref=e499]:
+              - generic [ref=e503]: 78%
+            - cell "—" [ref=e504]
+            - cell "In Progress" [ref=e505]
+          - row "Edryl Gwayne Castro Brian Lehner (Bailey Proulx) Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e506]:
+            - cell "Edryl Gwayne Castro" [ref=e507]:
+              - link "Edryl Gwayne Castro" [ref=e508] [cursor=pointer]:
+                - /url: /onboarding/13
+            - cell "Brian Lehner (Bailey Proulx)" [ref=e509]
+            - cell "Michelle" [ref=e510]
+            - cell "23" [ref=e511]
+            - cell "20" [ref=e512]
+            - cell "87%" [ref=e513]:
+              - generic [ref=e517]: 87%
+            - cell "PTO Policy Sent?" [ref=e518]
+            - cell "In Progress" [ref=e519]
+          - row "Edryl Gwayne Castro Brian Lehner (Bailey Proulx) Dennis 23 20 87% — In Progress" [ref=e520]:
+            - cell "Edryl Gwayne Castro" [ref=e521]:
+              - link "Edryl Gwayne Castro" [ref=e522] [cursor=pointer]:
+                - /url: /onboarding/76
+            - cell "Brian Lehner (Bailey Proulx)" [ref=e523]
+            - cell "Dennis" [ref=e524]
+            - cell "23" [ref=e525]
+            - cell "20" [ref=e526]
+            - cell "87%" [ref=e527]:
+              - generic [ref=e531]: 87%
+            - cell "—" [ref=e532]
+            - cell "In Progress" [ref=e533]
+          - row "Gabrielle Pauline Mirasol Yancy Wright Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e534]:
+            - cell "Gabrielle Pauline Mirasol" [ref=e535]:
+              - link "Gabrielle Pauline Mirasol" [ref=e536] [cursor=pointer]:
+                - /url: /onboarding/36
+            - cell "Yancy Wright" [ref=e537]
+            - cell "Michelle" [ref=e538]
+            - cell "23" [ref=e539]
+            - cell "20" [ref=e540]
+            - cell "87%" [ref=e541]:
+              - generic [ref=e545]: 87%
+            - cell "PTO Policy Sent?" [ref=e546]
+            - cell "In Progress" [ref=e547]
+          - row "Gabrielle Pauline Mirasol Yancy Wright Dennis 23 20 87% — In Progress" [ref=e548]:
+            - cell "Gabrielle Pauline Mirasol" [ref=e549]:
+              - link "Gabrielle Pauline Mirasol" [ref=e550] [cursor=pointer]:
+                - /url: /onboarding/99
+            - cell "Yancy Wright" [ref=e551]
+            - cell "Dennis" [ref=e552]
+            - cell "23" [ref=e553]
+            - cell "20" [ref=e554]
+            - cell "87%" [ref=e555]:
+              - generic [ref=e559]: 87%
+            - cell "—" [ref=e560]
+            - cell "In Progress" [ref=e561]
+          - row "Gerard Anthony Navarro Raindrop Agency (Grace Carr) | Reporting to Nick Geddis Michelle 23 19 83% Added Belinda+Eric to 1st & 2nd Client Check-in? In Progress" [ref=e562]:
+            - cell "Gerard Anthony Navarro" [ref=e563]:
+              - link "Gerard Anthony Navarro" [ref=e564] [cursor=pointer]:
+                - /url: /onboarding/45
+            - cell "Raindrop Agency (Grace Carr) | Reporting to Nick Geddis" [ref=e565]
+            - cell "Michelle" [ref=e566]
+            - cell "23" [ref=e567]
+            - cell "19" [ref=e568]
+            - cell "83%" [ref=e569]:
+              - generic [ref=e573]: 83%
+            - cell "Added Belinda+Eric to 1st & 2nd Client Check-in?" [ref=e574]
+            - cell "In Progress" [ref=e575]
+          - row "Gerard Anthony Navarro Raindrop Agency (Grace Carr) | Reporting to Nick Geddis Dennis 23 19 83% — In Progress" [ref=e576]:
+            - cell "Gerard Anthony Navarro" [ref=e577]:
+              - link "Gerard Anthony Navarro" [ref=e578] [cursor=pointer]:
+                - /url: /onboarding/108
+            - cell "Raindrop Agency (Grace Carr) | Reporting to Nick Geddis" [ref=e579]
+            - cell "Dennis" [ref=e580]
+            - cell "23" [ref=e581]
+            - cell "19" [ref=e582]
+            - cell "83%" [ref=e583]:
+              - generic [ref=e587]: 83%
+            - cell "—" [ref=e588]
+            - cell "In Progress" [ref=e589]
+          - row "Gideon Mark Pacete Nicole Bushnell Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e590]:
+            - cell "Gideon Mark Pacete" [ref=e591]:
+              - link "Gideon Mark Pacete" [ref=e592] [cursor=pointer]:
+                - /url: /onboarding/30
+            - cell "Nicole Bushnell" [ref=e593]
+            - cell "Michelle" [ref=e594]
+            - cell "23" [ref=e595]
+            - cell "20" [ref=e596]
+            - cell "87%" [ref=e597]:
+              - generic [ref=e601]: 87%
+            - cell "PTO Policy Sent?" [ref=e602]
+            - cell "In Progress" [ref=e603]
+          - row "Gideon Mark Pacete Nicole Bushnell Dennis 23 19 83% — In Progress" [ref=e604]:
+            - cell "Gideon Mark Pacete" [ref=e605]:
+              - link "Gideon Mark Pacete" [ref=e606] [cursor=pointer]:
+                - /url: /onboarding/93
+            - cell "Nicole Bushnell" [ref=e607]
+            - cell "Dennis" [ref=e608]
+            - cell "23" [ref=e609]
+            - cell "19" [ref=e610]
+            - cell "83%" [ref=e611]:
+              - generic [ref=e615]: 83%
+            - cell "—" [ref=e616]
+            - cell "In Progress" [ref=e617]
+          - row "Haydee Cortez Dr Betty Murray Michelle 23 19 83% Last Check-in Call In Progress" [ref=e618]:
+            - cell "Haydee Cortez" [ref=e619]:
+              - link "Haydee Cortez" [ref=e620] [cursor=pointer]:
+                - /url: /onboarding/38
+            - cell "Dr Betty Murray" [ref=e621]
+            - cell "Michelle" [ref=e622]
+            - cell "23" [ref=e623]
+            - cell "19" [ref=e624]
+            - cell "83%" [ref=e625]:
+              - generic [ref=e629]: 83%
+            - cell "Last Check-in Call" [ref=e630]
+            - cell "In Progress" [ref=e631]
+          - row "Haydee Cortez Dr Betty Murray Dennis 23 19 83% — In Progress" [ref=e632]:
+            - cell "Haydee Cortez" [ref=e633]:
+              - link "Haydee Cortez" [ref=e634] [cursor=pointer]:
+                - /url: /onboarding/101
+            - cell "Dr Betty Murray" [ref=e635]
+            - cell "Dennis" [ref=e636]
+            - cell "23" [ref=e637]
+            - cell "19" [ref=e638]
+            - cell "83%" [ref=e639]:
+              - generic [ref=e643]: 83%
+            - cell "—" [ref=e644]
+            - cell "In Progress" [ref=e645]
+          - row "Hazel Anne Llanillo Ryan Goebel (Josh Fancher) Michelle 23 19 83% Last Check-in Call In Progress" [ref=e646]:
+            - cell "Hazel Anne Llanillo" [ref=e647]:
+              - link "Hazel Anne Llanillo" [ref=e648] [cursor=pointer]:
+                - /url: /onboarding/37
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e649]
+            - cell "Michelle" [ref=e650]
+            - cell "23" [ref=e651]
+            - cell "19" [ref=e652]
+            - cell "83%" [ref=e653]:
+              - generic [ref=e657]: 83%
+            - cell "Last Check-in Call" [ref=e658]
+            - cell "In Progress" [ref=e659]
+          - row "Hazel Anne Llanillo Joseph Bua (Cool/Hot Guys AC (HVAC Company)) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e660]:
+            - cell "Hazel Anne Llanillo" [ref=e661]:
+              - link "Hazel Anne Llanillo" [ref=e662] [cursor=pointer]:
+                - /url: /onboarding/48
+            - cell "Joseph Bua (Cool/Hot Guys AC (HVAC Company))" [ref=e663]
+            - cell "Michelle" [ref=e664]
+            - cell "23" [ref=e665]
+            - cell "19" [ref=e666]
+            - cell "83%" [ref=e667]:
+              - generic [ref=e671]: 83%
+            - cell "PTO Policy Sent?" [ref=e672]
+            - cell "In Progress" [ref=e673]
+          - row "Hazel Anne Llanillo Ryan Goebel (Josh Fancher) Dennis 23 19 83% — In Progress" [ref=e674]:
+            - cell "Hazel Anne Llanillo" [ref=e675]:
+              - link "Hazel Anne Llanillo" [ref=e676] [cursor=pointer]:
+                - /url: /onboarding/100
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e677]
+            - cell "Dennis" [ref=e678]
+            - cell "23" [ref=e679]
+            - cell "19" [ref=e680]
+            - cell "83%" [ref=e681]:
+              - generic [ref=e685]: 83%
+            - cell "—" [ref=e686]
+            - cell "In Progress" [ref=e687]
+          - row "Hazel Anne Llanillo Joseph Bua (Cool/Hot Guys AC (HVAC Company)) Dennis 23 19 83% — In Progress" [ref=e688]:
+            - cell "Hazel Anne Llanillo" [ref=e689]:
+              - link "Hazel Anne Llanillo" [ref=e690] [cursor=pointer]:
+                - /url: /onboarding/111
+            - cell "Joseph Bua (Cool/Hot Guys AC (HVAC Company))" [ref=e691]
+            - cell "Dennis" [ref=e692]
+            - cell "23" [ref=e693]
+            - cell "19" [ref=e694]
+            - cell "83%" [ref=e695]:
+              - generic [ref=e699]: 83%
+            - cell "—" [ref=e700]
+            - cell "In Progress" [ref=e701]
+          - row "Honnalea Caro Dr. Betty Murray Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e702]:
+            - cell "Honnalea Caro" [ref=e703]:
+              - link "Honnalea Caro" [ref=e704] [cursor=pointer]:
+                - /url: /onboarding/35
+            - cell "Dr. Betty Murray" [ref=e705]
+            - cell "Michelle" [ref=e706]
+            - cell "23" [ref=e707]
+            - cell "20" [ref=e708]
+            - cell "87%" [ref=e709]:
+              - generic [ref=e713]: 87%
+            - cell "PTO Policy Sent?" [ref=e714]
+            - cell "In Progress" [ref=e715]
+          - row "Honnalea Caro Dr. Betty Murray Dennis 23 20 87% — In Progress" [ref=e716]:
+            - cell "Honnalea Caro" [ref=e717]:
+              - link "Honnalea Caro" [ref=e718] [cursor=pointer]:
+                - /url: /onboarding/98
+            - cell "Dr. Betty Murray" [ref=e719]
+            - cell "Dennis" [ref=e720]
+            - cell "23" [ref=e721]
+            - cell "20" [ref=e722]
+            - cell "87%" [ref=e723]:
+              - generic [ref=e727]: 87%
+            - cell "—" [ref=e728]
+            - cell "In Progress" [ref=e729]
+          - row "Isaiah James Santiago Frank Ortega Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e730]:
+            - cell "Isaiah James Santiago" [ref=e731]:
+              - link "Isaiah James Santiago" [ref=e732] [cursor=pointer]:
+                - /url: /onboarding/43
+            - cell "Frank Ortega" [ref=e733]
+            - cell "Michelle" [ref=e734]
+            - cell "23" [ref=e735]
+            - cell "21" [ref=e736]
+            - cell "91%" [ref=e737]:
+              - generic [ref=e741]: 91%
+            - cell "PTO Policy Sent?" [ref=e742]
+            - cell "In Progress" [ref=e743]
+          - row "Isaiah James Santiago Frank Ortega Dennis 23 21 91% — In Progress" [ref=e744]:
+            - cell "Isaiah James Santiago" [ref=e745]:
+              - link "Isaiah James Santiago" [ref=e746] [cursor=pointer]:
+                - /url: /onboarding/106
+            - cell "Frank Ortega" [ref=e747]
+            - cell "Dennis" [ref=e748]
+            - cell "23" [ref=e749]
+            - cell "21" [ref=e750]
+            - cell "91%" [ref=e751]:
+              - generic [ref=e755]: 91%
+            - cell "—" [ref=e756]
+            - cell "In Progress" [ref=e757]
+          - row "Ivy Rose Bongbong Mark Hunter/Heather Wagner Michelle 23 15 65% OP Added to Weekly Gathering? Cancelled" [ref=e758]:
+            - cell "Ivy Rose Bongbong" [ref=e759]:
+              - link "Ivy Rose Bongbong" [ref=e760] [cursor=pointer]:
+                - /url: /onboarding/56
+            - cell "Mark Hunter/Heather Wagner" [ref=e761]
+            - cell "Michelle" [ref=e762]
+            - cell "23" [ref=e763]
+            - cell "15" [ref=e764]
+            - cell "65%" [ref=e765]:
+              - generic [ref=e769]: 65%
+            - cell "OP Added to Weekly Gathering?" [ref=e770]
+            - cell "Cancelled" [ref=e771]
+          - row "Ivy Rose Bongbong Mark Hunter/Heather Wagner Dennis 23 15 65% — Cancelled" [ref=e772]:
+            - cell "Ivy Rose Bongbong" [ref=e773]:
+              - link "Ivy Rose Bongbong" [ref=e774] [cursor=pointer]:
+                - /url: /onboarding/119
+            - cell "Mark Hunter/Heather Wagner" [ref=e775]
+            - cell "Dennis" [ref=e776]
+            - cell "23" [ref=e777]
+            - cell "15" [ref=e778]
+            - cell "65%" [ref=e779]:
+              - generic [ref=e783]: 65%
+            - cell "—" [ref=e784]
+            - cell "Cancelled" [ref=e785]
+          - row "Jeremy Binwag Connor Miller Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e786]:
+            - cell "Jeremy Binwag" [ref=e787]:
+              - link "Jeremy Binwag" [ref=e788] [cursor=pointer]:
+                - /url: /onboarding/5
+            - cell "Connor Miller" [ref=e789]
+            - cell "Michelle" [ref=e790]
+            - cell "23" [ref=e791]
+            - cell "19" [ref=e792]
+            - cell "83%" [ref=e793]:
+              - generic [ref=e797]: 83%
+            - cell "PTO Policy Sent?" [ref=e798]
+            - cell "In Progress" [ref=e799]
+          - row "Jeremy Binwag Connor Miller Dennis 23 19 83% — In Progress" [ref=e800]:
+            - cell "Jeremy Binwag" [ref=e801]:
+              - link "Jeremy Binwag" [ref=e802] [cursor=pointer]:
+                - /url: /onboarding/68
+            - cell "Connor Miller" [ref=e803]
+            - cell "Dennis" [ref=e804]
+            - cell "23" [ref=e805]
+            - cell "19" [ref=e806]
+            - cell "83%" [ref=e807]:
+              - generic [ref=e811]: 83%
+            - cell "—" [ref=e812]
+            - cell "In Progress" [ref=e813]
+          - row "Jermaine Cabalo Ryan Miller (Share The Struggle) Michelle 23 18 78% PTO Policy Sent? In Progress" [ref=e814]:
+            - cell "Jermaine Cabalo" [ref=e815]:
+              - link "Jermaine Cabalo" [ref=e816] [cursor=pointer]:
+                - /url: /onboarding/25
+            - cell "Ryan Miller (Share The Struggle)" [ref=e817]
+            - cell "Michelle" [ref=e818]
+            - cell "23" [ref=e819]
+            - cell "18" [ref=e820]
+            - cell "78%" [ref=e821]:
+              - generic [ref=e825]: 78%
+            - cell "PTO Policy Sent?" [ref=e826]
+            - cell "In Progress" [ref=e827]
+          - row "Jermaine Cabalo Ryan Miller (Share The Struggle) Dennis 23 18 78% — In Progress" [ref=e828]:
+            - cell "Jermaine Cabalo" [ref=e829]:
+              - link "Jermaine Cabalo" [ref=e830] [cursor=pointer]:
+                - /url: /onboarding/88
+            - cell "Ryan Miller (Share The Struggle)" [ref=e831]
+            - cell "Dennis" [ref=e832]
+            - cell "23" [ref=e833]
+            - cell "18" [ref=e834]
+            - cell "78%" [ref=e835]:
+              - generic [ref=e839]: 78%
+            - cell "—" [ref=e840]
+            - cell "In Progress" [ref=e841]
+          - row "Jesalie Sotelo Eduardo Correa (Raindrop) Michelle 23 16 70% Added Belinda+Eric to 1st & 2nd Client Check-in? In Progress" [ref=e842]:
+            - cell "Jesalie Sotelo" [ref=e843]:
+              - link "Jesalie Sotelo" [ref=e844] [cursor=pointer]:
+                - /url: /onboarding/23
+            - cell "Eduardo Correa (Raindrop)" [ref=e845]
+            - cell "Michelle" [ref=e846]
+            - cell "23" [ref=e847]
+            - cell "16" [ref=e848]
+            - cell "70%" [ref=e849]:
+              - generic [ref=e853]: 70%
+            - cell "Added Belinda+Eric to 1st & 2nd Client Check-in?" [ref=e854]
+            - cell "In Progress" [ref=e855]
+          - row "Jesalie Sotelo Jessica Robinson (Catalyst) Michelle 23 11 48% Warm Intro Email Cancelled" [ref=e856]:
+            - cell "Jesalie Sotelo" [ref=e857]:
+              - link "Jesalie Sotelo" [ref=e858] [cursor=pointer]:
+                - /url: /onboarding/42
+            - cell "Jessica Robinson (Catalyst)" [ref=e859]
+            - cell "Michelle" [ref=e860]
+            - cell "23" [ref=e861]
+            - cell "11" [ref=e862]
+            - cell "48%" [ref=e863]:
+              - generic [ref=e867]: 48%
+            - cell "Warm Intro Email" [ref=e868]
+            - cell "Cancelled" [ref=e869]
+          - row "Jesalie Sotelo Eduardo Correa (Raindrop) Dennis 23 16 70% — In Progress" [ref=e870]:
+            - cell "Jesalie Sotelo" [ref=e871]:
+              - link "Jesalie Sotelo" [ref=e872] [cursor=pointer]:
+                - /url: /onboarding/86
+            - cell "Eduardo Correa (Raindrop)" [ref=e873]
+            - cell "Dennis" [ref=e874]
+            - cell "23" [ref=e875]
+            - cell "16" [ref=e876]
+            - cell "70%" [ref=e877]:
+              - generic [ref=e881]: 70%
+            - cell "—" [ref=e882]
+            - cell "In Progress" [ref=e883]
+          - row "Jesalie Sotelo Jessica Robinson (Catalyst) Dennis 23 11 48% — Cancelled" [ref=e884]:
+            - cell "Jesalie Sotelo" [ref=e885]:
+              - link "Jesalie Sotelo" [ref=e886] [cursor=pointer]:
+                - /url: /onboarding/105
+            - cell "Jessica Robinson (Catalyst)" [ref=e887]
+            - cell "Dennis" [ref=e888]
+            - cell "23" [ref=e889]
+            - cell "11" [ref=e890]
+            - cell "48%" [ref=e891]:
+              - generic [ref=e895]: 48%
+            - cell "—" [ref=e896]
+            - cell "Cancelled" [ref=e897]
+          - row "Josef Roy Advincula Luke Harmon Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e898]:
+            - cell "Josef Roy Advincula" [ref=e899]:
+              - link "Josef Roy Advincula" [ref=e900] [cursor=pointer]:
+                - /url: /onboarding/9
+            - cell "Luke Harmon" [ref=e901]
+            - cell "Michelle" [ref=e902]
+            - cell "23" [ref=e903]
+            - cell "19" [ref=e904]
+            - cell "83%" [ref=e905]:
+              - generic [ref=e909]: 83%
+            - cell "PTO Policy Sent?" [ref=e910]
+            - cell "In Progress" [ref=e911]
+          - row "Josef Roy Advincula Luke Harmon Dennis 23 19 83% — In Progress" [ref=e912]:
+            - cell "Josef Roy Advincula" [ref=e913]:
+              - link "Josef Roy Advincula" [ref=e914] [cursor=pointer]:
+                - /url: /onboarding/72
+            - cell "Luke Harmon" [ref=e915]
+            - cell "Dennis" [ref=e916]
+            - cell "23" [ref=e917]
+            - cell "19" [ref=e918]
+            - cell "83%" [ref=e919]:
+              - generic [ref=e923]: 83%
+            - cell "—" [ref=e924]
+            - cell "In Progress" [ref=e925]
+          - row "Jubrena Enopia Scott Conley (for Joel Thomas at Tricor Homes) Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e926]:
+            - cell "Jubrena Enopia" [ref=e927]:
+              - link "Jubrena Enopia" [ref=e928] [cursor=pointer]:
+                - /url: /onboarding/28
+            - cell "Scott Conley (for Joel Thomas at Tricor Homes)" [ref=e929]
+            - cell "Michelle" [ref=e930]
+            - cell "23" [ref=e931]
+            - cell "20" [ref=e932]
+            - cell "87%" [ref=e933]:
+              - generic [ref=e937]: 87%
+            - cell "PTO Policy Sent?" [ref=e938]
+            - cell "In Progress" [ref=e939]
+          - row "Jubrena Enopia Scott Conley (for Joel Thomas at Tricor Homes) Dennis 23 20 87% — In Progress" [ref=e940]:
+            - cell "Jubrena Enopia" [ref=e941]:
+              - link "Jubrena Enopia" [ref=e942] [cursor=pointer]:
+                - /url: /onboarding/91
+            - cell "Scott Conley (for Joel Thomas at Tricor Homes)" [ref=e943]
+            - cell "Dennis" [ref=e944]
+            - cell "23" [ref=e945]
+            - cell "20" [ref=e946]
+            - cell "87%" [ref=e947]:
+              - generic [ref=e951]: 87%
+            - cell "—" [ref=e952]
+            - cell "In Progress" [ref=e953]
+          - row "Julie Ann Ranin Julia Bresner (Jacob Azevedo) Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e954]:
+            - cell "Julie Ann Ranin" [ref=e955]:
+              - link "Julie Ann Ranin" [ref=e956] [cursor=pointer]:
+                - /url: /onboarding/16
+            - cell "Julia Bresner (Jacob Azevedo)" [ref=e957]
+            - cell "Michelle" [ref=e958]
+            - cell "23" [ref=e959]
+            - cell "21" [ref=e960]
+            - cell "91%" [ref=e961]:
+              - generic [ref=e965]: 91%
+            - cell "PTO Policy Sent?" [ref=e966]
+            - cell "In Progress" [ref=e967]
+          - row "Julie Ann Ranin Julia Bresner (Jacob Azevedo) Dennis 23 21 91% — In Progress" [ref=e968]:
+            - cell "Julie Ann Ranin" [ref=e969]:
+              - link "Julie Ann Ranin" [ref=e970] [cursor=pointer]:
+                - /url: /onboarding/79
+            - cell "Julia Bresner (Jacob Azevedo)" [ref=e971]
+            - cell "Dennis" [ref=e972]
+            - cell "23" [ref=e973]
+            - cell "21" [ref=e974]
+            - cell "91%" [ref=e975]:
+              - generic [ref=e979]: 91%
+            - cell "—" [ref=e980]
+            - cell "In Progress" [ref=e981]
+          - row "Julius Christopher Ramos Madison Mains Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e982]:
+            - cell "Julius Christopher Ramos" [ref=e983]:
+              - link "Julius Christopher Ramos" [ref=e984] [cursor=pointer]:
+                - /url: /onboarding/50
+            - cell "Madison Mains" [ref=e985]
+            - cell "Michelle" [ref=e986]
+            - cell "23" [ref=e987]
+            - cell "20" [ref=e988]
+            - cell "87%" [ref=e989]:
+              - generic [ref=e993]: 87%
+            - cell "PTO Policy Sent?" [ref=e994]
+            - cell "In Progress" [ref=e995]
+          - row "Julius Christopher Ramos Madison Mains Dennis 23 20 87% — In Progress" [ref=e996]:
+            - cell "Julius Christopher Ramos" [ref=e997]:
+              - link "Julius Christopher Ramos" [ref=e998] [cursor=pointer]:
+                - /url: /onboarding/113
+            - cell "Madison Mains" [ref=e999]
+            - cell "Dennis" [ref=e1000]
+            - cell "23" [ref=e1001]
+            - cell "20" [ref=e1002]
+            - cell "87%" [ref=e1003]:
+              - generic [ref=e1007]: 87%
+            - cell "—" [ref=e1008]
+            - cell "In Progress" [ref=e1009]
+          - row "Justine Marie Roce Ellen Long Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1010]:
+            - cell "Justine Marie Roce" [ref=e1011]:
+              - link "Justine Marie Roce" [ref=e1012] [cursor=pointer]:
+                - /url: /onboarding/27
+            - cell "Ellen Long" [ref=e1013]
+            - cell "Michelle" [ref=e1014]
+            - cell "23" [ref=e1015]
+            - cell "21" [ref=e1016]
+            - cell "91%" [ref=e1017]:
+              - generic [ref=e1021]: 91%
+            - cell "PTO Policy Sent?" [ref=e1022]
+            - cell "In Progress" [ref=e1023]
+          - row "Justine Marie Roce Ellen Long Dennis 23 21 91% — In Progress" [ref=e1024]:
+            - cell "Justine Marie Roce" [ref=e1025]:
+              - link "Justine Marie Roce" [ref=e1026] [cursor=pointer]:
+                - /url: /onboarding/90
+            - cell "Ellen Long" [ref=e1027]
+            - cell "Dennis" [ref=e1028]
+            - cell "23" [ref=e1029]
+            - cell "21" [ref=e1030]
+            - cell "91%" [ref=e1031]:
+              - generic [ref=e1035]: 91%
+            - cell "—" [ref=e1036]
+            - cell "In Progress" [ref=e1037]
+          - row "Kathrina Giene Shimano Jason Paulus Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1038]:
+            - cell "Kathrina Giene Shimano" [ref=e1039]:
+              - link "Kathrina Giene Shimano" [ref=e1040] [cursor=pointer]:
+                - /url: /onboarding/4
+            - cell "Jason Paulus" [ref=e1041]
+            - cell "Michelle" [ref=e1042]
+            - cell "23" [ref=e1043]
+            - cell "19" [ref=e1044]
+            - cell "83%" [ref=e1045]:
+              - generic [ref=e1049]: 83%
+            - cell "PTO Policy Sent?" [ref=e1050]
+            - cell "In Progress" [ref=e1051]
+          - row "Kathrina Giene Shimano Jason Paulus Dennis 23 19 83% — In Progress" [ref=e1052]:
+            - cell "Kathrina Giene Shimano" [ref=e1053]:
+              - link "Kathrina Giene Shimano" [ref=e1054] [cursor=pointer]:
+                - /url: /onboarding/67
+            - cell "Jason Paulus" [ref=e1055]
+            - cell "Dennis" [ref=e1056]
+            - cell "23" [ref=e1057]
+            - cell "19" [ref=e1058]
+            - cell "83%" [ref=e1059]:
+              - generic [ref=e1063]: 83%
+            - cell "—" [ref=e1064]
+            - cell "In Progress" [ref=e1065]
+          - row "Krisven Mae Leynes Aaron Martin Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1066]:
+            - cell "Krisven Mae Leynes" [ref=e1067]:
+              - link "Krisven Mae Leynes" [ref=e1068] [cursor=pointer]:
+                - /url: /onboarding/19
+            - cell "Aaron Martin" [ref=e1069]
+            - cell "Michelle" [ref=e1070]
+            - cell "23" [ref=e1071]
+            - cell "21" [ref=e1072]
+            - cell "91%" [ref=e1073]:
+              - generic [ref=e1077]: 91%
+            - cell "PTO Policy Sent?" [ref=e1078]
+            - cell "In Progress" [ref=e1079]
+          - row "Krisven Mae Leynes Aaron Martin Dennis 23 21 91% — In Progress" [ref=e1080]:
+            - cell "Krisven Mae Leynes" [ref=e1081]:
+              - link "Krisven Mae Leynes" [ref=e1082] [cursor=pointer]:
+                - /url: /onboarding/82
+            - cell "Aaron Martin" [ref=e1083]
+            - cell "Dennis" [ref=e1084]
+            - cell "23" [ref=e1085]
+            - cell "21" [ref=e1086]
+            - cell "91%" [ref=e1087]:
+              - generic [ref=e1091]: 91%
+            - cell "—" [ref=e1092]
+            - cell "In Progress" [ref=e1093]
+          - row "Laurice Anne Castillo Patrick O'Meara Michelle 23 17 74% PTO Policy Sent? In Progress" [ref=e1094]:
+            - cell "Laurice Anne Castillo" [ref=e1095]:
+              - link "Laurice Anne Castillo" [ref=e1096] [cursor=pointer]:
+                - /url: /onboarding/12
+            - cell "Patrick O'Meara" [ref=e1097]
+            - cell "Michelle" [ref=e1098]
+            - cell "23" [ref=e1099]
+            - cell "17" [ref=e1100]
+            - cell "74%" [ref=e1101]:
+              - generic [ref=e1105]: 74%
+            - cell "PTO Policy Sent?" [ref=e1106]
+            - cell "In Progress" [ref=e1107]
+          - row "Laurice Anne Castillo Ross Denny Michelle 23 12 52% Warm Intro Email Cancelled" [ref=e1108]:
+            - cell "Laurice Anne Castillo" [ref=e1109]:
+              - link "Laurice Anne Castillo" [ref=e1110] [cursor=pointer]:
+                - /url: /onboarding/47
+            - cell "Ross Denny" [ref=e1111]
+            - cell "Michelle" [ref=e1112]
+            - cell "23" [ref=e1113]
+            - cell "12" [ref=e1114]
+            - cell "52%" [ref=e1115]:
+              - generic [ref=e1119]: 52%
+            - cell "Warm Intro Email" [ref=e1120]
+            - cell "Cancelled" [ref=e1121]
+          - row "Laurice Anne Castillo Patrick O'Meara Dennis 23 17 74% — In Progress" [ref=e1122]:
+            - cell "Laurice Anne Castillo" [ref=e1123]:
+              - link "Laurice Anne Castillo" [ref=e1124] [cursor=pointer]:
+                - /url: /onboarding/75
+            - cell "Patrick O'Meara" [ref=e1125]
+            - cell "Dennis" [ref=e1126]
+            - cell "23" [ref=e1127]
+            - cell "17" [ref=e1128]
+            - cell "74%" [ref=e1129]:
+              - generic [ref=e1133]: 74%
+            - cell "—" [ref=e1134]
+            - cell "In Progress" [ref=e1135]
+          - row "Laurice Anne Castillo Ross Denny Dennis 23 12 52% — Cancelled" [ref=e1136]:
+            - cell "Laurice Anne Castillo" [ref=e1137]:
+              - link "Laurice Anne Castillo" [ref=e1138] [cursor=pointer]:
+                - /url: /onboarding/110
+            - cell "Ross Denny" [ref=e1139]
+            - cell "Dennis" [ref=e1140]
+            - cell "23" [ref=e1141]
+            - cell "12" [ref=e1142]
+            - cell "52%" [ref=e1143]:
+              - generic [ref=e1147]: 52%
+            - cell "—" [ref=e1148]
+            - cell "Cancelled" [ref=e1149]
+          - row "Ma. Caisa Salvador Austin Blair (Laundrysauce) Michelle 23 17 74% PTO Policy Sent? In Progress" [ref=e1150]:
+            - cell "Ma. Caisa Salvador" [ref=e1151]:
+              - link "Ma. Caisa Salvador" [ref=e1152] [cursor=pointer]:
+                - /url: /onboarding/54
+            - cell "Austin Blair (Laundrysauce)" [ref=e1153]
+            - cell "Michelle" [ref=e1154]
+            - cell "23" [ref=e1155]
+            - cell "17" [ref=e1156]
+            - cell "74%" [ref=e1157]:
+              - generic [ref=e1161]: 74%
+            - cell "PTO Policy Sent?" [ref=e1162]
+            - cell "In Progress" [ref=e1163]
+          - row "Ma. Caisa Salvador Austin Blair (Laundrysauce) Dennis 23 16 70% — In Progress" [ref=e1164]:
+            - cell "Ma. Caisa Salvador" [ref=e1165]:
+              - link "Ma. Caisa Salvador" [ref=e1166] [cursor=pointer]:
+                - /url: /onboarding/117
+            - cell "Austin Blair (Laundrysauce)" [ref=e1167]
+            - cell "Dennis" [ref=e1168]
+            - cell "23" [ref=e1169]
+            - cell "16" [ref=e1170]
+            - cell "70%" [ref=e1171]:
+              - generic [ref=e1175]: 70%
+            - cell "—" [ref=e1176]
+            - cell "In Progress" [ref=e1177]
+          - 'row "Marc Waltson Leandado Theresa Steiner / Dr. Matthew Steiner (PIC: Charlie Helton + Theresa) Michelle 23 20 87% Added Belinda+Eric to 1st & 2nd Client Check-in? In Progress" [ref=e1178]':
+            - cell "Marc Waltson Leandado" [ref=e1179]:
+              - link "Marc Waltson Leandado" [ref=e1180] [cursor=pointer]:
+                - /url: /onboarding/32
+            - 'cell "Theresa Steiner / Dr. Matthew Steiner (PIC: Charlie Helton + Theresa)" [ref=e1181]'
+            - cell "Michelle" [ref=e1182]
+            - cell "23" [ref=e1183]
+            - cell "20" [ref=e1184]
+            - cell "87%" [ref=e1185]:
+              - generic [ref=e1189]: 87%
+            - cell "Added Belinda+Eric to 1st & 2nd Client Check-in?" [ref=e1190]
+            - cell "In Progress" [ref=e1191]
+          - 'row "Marc Waltson Leandado Theresa Steiner / Dr. Matthew Steiner (PIC: Charlie Helton + Theresa) Dennis 23 20 87% — In Progress" [ref=e1192]':
+            - cell "Marc Waltson Leandado" [ref=e1193]:
+              - link "Marc Waltson Leandado" [ref=e1194] [cursor=pointer]:
+                - /url: /onboarding/95
+            - 'cell "Theresa Steiner / Dr. Matthew Steiner (PIC: Charlie Helton + Theresa)" [ref=e1195]'
+            - cell "Dennis" [ref=e1196]
+            - cell "23" [ref=e1197]
+            - cell "20" [ref=e1198]
+            - cell "87%" [ref=e1199]:
+              - generic [ref=e1203]: 87%
+            - cell "—" [ref=e1204]
+            - cell "In Progress" [ref=e1205]
+          - row "Maria Patricia Arango Perez James Swanwick Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1206]:
+            - cell "Maria Patricia Arango Perez" [ref=e1207]:
+              - link "Maria Patricia Arango Perez" [ref=e1208] [cursor=pointer]:
+                - /url: /onboarding/40
+            - cell "James Swanwick" [ref=e1209]
+            - cell "Michelle" [ref=e1210]
+            - cell "23" [ref=e1211]
+            - cell "21" [ref=e1212]
+            - cell "91%" [ref=e1213]:
+              - generic [ref=e1217]: 91%
+            - cell "PTO Policy Sent?" [ref=e1218]
+            - cell "In Progress" [ref=e1219]
+          - row "Maria Patricia Arango Perez James Swanwick Dennis 23 21 91% — In Progress" [ref=e1220]:
+            - cell "Maria Patricia Arango Perez" [ref=e1221]:
+              - link "Maria Patricia Arango Perez" [ref=e1222] [cursor=pointer]:
+                - /url: /onboarding/103
+            - cell "James Swanwick" [ref=e1223]
+            - cell "Dennis" [ref=e1224]
+            - cell "23" [ref=e1225]
+            - cell "21" [ref=e1226]
+            - cell "91%" [ref=e1227]:
+              - generic [ref=e1231]: 91%
+            - cell "—" [ref=e1232]
+            - cell "In Progress" [ref=e1233]
+          - row "Mark Lester Caraan Luke Harmon Michelle 23 17 74% PTO Policy Sent? In Progress" [ref=e1234]:
+            - cell "Mark Lester Caraan" [ref=e1235]:
+              - link "Mark Lester Caraan" [ref=e1236] [cursor=pointer]:
+                - /url: /onboarding/61
+            - cell "Luke Harmon" [ref=e1237]
+            - cell "Michelle" [ref=e1238]
+            - cell "23" [ref=e1239]
+            - cell "17" [ref=e1240]
+            - cell "74%" [ref=e1241]:
+              - generic [ref=e1245]: 74%
+            - cell "PTO Policy Sent?" [ref=e1246]
+            - cell "In Progress" [ref=e1247]
+          - row "Mary Anne Soriano Weblife - Eden Michelle 23 17 74% SCHEDULE NEXT CHECK-IN (AFTER 1 MONTH) In Progress" [ref=e1248]:
+            - cell "Mary Anne Soriano" [ref=e1249]:
+              - link "Mary Anne Soriano" [ref=e1250] [cursor=pointer]:
+                - /url: /onboarding/1
+            - cell "Weblife - Eden" [ref=e1251]
+            - cell "Michelle" [ref=e1252]
+            - cell "23" [ref=e1253]
+            - cell "17" [ref=e1254]
+            - cell "74%" [ref=e1255]:
+              - generic [ref=e1259]: 74%
+            - cell "SCHEDULE NEXT CHECK-IN (AFTER 1 MONTH)" [ref=e1260]
+            - cell "In Progress" [ref=e1261]
+          - row "Mary Anne Soriano Weblife - Eden Dennis 23 17 74% — In Progress" [ref=e1262]:
+            - cell "Mary Anne Soriano" [ref=e1263]:
+              - link "Mary Anne Soriano" [ref=e1264] [cursor=pointer]:
+                - /url: /onboarding/64
+            - cell "Weblife - Eden" [ref=e1265]
+            - cell "Dennis" [ref=e1266]
+            - cell "23" [ref=e1267]
+            - cell "17" [ref=e1268]
+            - cell "74%" [ref=e1269]:
+              - generic [ref=e1273]: 74%
+            - cell "—" [ref=e1274]
+            - cell "In Progress" [ref=e1275]
+          - row "Mary Rachelle Trinidad Ryan Auhl (for Thomas Turner / Relentless Beats) Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1276]:
+            - cell "Mary Rachelle Trinidad" [ref=e1277]:
+              - link "Mary Rachelle Trinidad" [ref=e1278] [cursor=pointer]:
+                - /url: /onboarding/52
+            - cell "Ryan Auhl (for Thomas Turner / Relentless Beats)" [ref=e1279]
+            - cell "Michelle" [ref=e1280]
+            - cell "23" [ref=e1281]
+            - cell "21" [ref=e1282]
+            - cell "91%" [ref=e1283]:
+              - generic [ref=e1287]: 91%
+            - cell "PTO Policy Sent?" [ref=e1288]
+            - cell "In Progress" [ref=e1289]
+          - row "Mary Rachelle Trinidad Ryan Auhl (for Thomas Turner / Relentless Beats) Dennis 23 21 91% — In Progress" [ref=e1290]:
+            - cell "Mary Rachelle Trinidad" [ref=e1291]:
+              - link "Mary Rachelle Trinidad" [ref=e1292] [cursor=pointer]:
+                - /url: /onboarding/115
+            - cell "Ryan Auhl (for Thomas Turner / Relentless Beats)" [ref=e1293]
+            - cell "Dennis" [ref=e1294]
+            - cell "23" [ref=e1295]
+            - cell "21" [ref=e1296]
+            - cell "91%" [ref=e1297]:
+              - generic [ref=e1301]: 91%
+            - cell "—" [ref=e1302]
+            - cell "In Progress" [ref=e1303]
+          - row "Maynard Ivan Milana Greg and Lisa Shields Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e1304]:
+            - cell "Maynard Ivan Milana" [ref=e1305]:
+              - link "Maynard Ivan Milana" [ref=e1306] [cursor=pointer]:
+                - /url: /onboarding/53
+            - cell "Greg and Lisa Shields" [ref=e1307]
+            - cell "Michelle" [ref=e1308]
+            - cell "23" [ref=e1309]
+            - cell "20" [ref=e1310]
+            - cell "87%" [ref=e1311]:
+              - generic [ref=e1315]: 87%
+            - cell "PTO Policy Sent?" [ref=e1316]
+            - cell "In Progress" [ref=e1317]
+          - row "Maynard Ivan Milana Greg and Lisa Shields Dennis 23 20 87% — In Progress" [ref=e1318]:
+            - cell "Maynard Ivan Milana" [ref=e1319]:
+              - link "Maynard Ivan Milana" [ref=e1320] [cursor=pointer]:
+                - /url: /onboarding/116
+            - cell "Greg and Lisa Shields" [ref=e1321]
+            - cell "Dennis" [ref=e1322]
+            - cell "23" [ref=e1323]
+            - cell "20" [ref=e1324]
+            - cell "87%" [ref=e1325]:
+              - generic [ref=e1329]: 87%
+            - cell "—" [ref=e1330]
+            - cell "In Progress" [ref=e1331]
+          - row "Melody Berdan Josh Fancher (Dustin Terry and Heather Tutwiler) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1332]:
+            - cell "Melody Berdan" [ref=e1333]:
+              - link "Melody Berdan" [ref=e1334] [cursor=pointer]:
+                - /url: /onboarding/11
+            - cell "Josh Fancher (Dustin Terry and Heather Tutwiler)" [ref=e1335]
+            - cell "Michelle" [ref=e1336]
+            - cell "23" [ref=e1337]
+            - cell "19" [ref=e1338]
+            - cell "83%" [ref=e1339]:
+              - generic [ref=e1343]: 83%
+            - cell "PTO Policy Sent?" [ref=e1344]
+            - cell "In Progress" [ref=e1345]
+          - row "Melody Berdan Josh Fancher (Dustin Terry and Heather Tutwiler) Dennis 23 19 83% — In Progress" [ref=e1346]:
+            - cell "Melody Berdan" [ref=e1347]:
+              - link "Melody Berdan" [ref=e1348] [cursor=pointer]:
+                - /url: /onboarding/74
+            - cell "Josh Fancher (Dustin Terry and Heather Tutwiler)" [ref=e1349]
+            - cell "Dennis" [ref=e1350]
+            - cell "23" [ref=e1351]
+            - cell "19" [ref=e1352]
+            - cell "83%" [ref=e1353]:
+              - generic [ref=e1357]: 83%
+            - cell "—" [ref=e1358]
+            - cell "In Progress" [ref=e1359]
+          - row "Mike John Singh Ryan Goebel (Josh Fancher) Michelle 23 20 87% PTO Policy Sent? In Progress" [ref=e1360]:
+            - cell "Mike John Singh" [ref=e1361]:
+              - link "Mike John Singh" [ref=e1362] [cursor=pointer]:
+                - /url: /onboarding/20
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e1363]
+            - cell "Michelle" [ref=e1364]
+            - cell "23" [ref=e1365]
+            - cell "20" [ref=e1366]
+            - cell "87%" [ref=e1367]:
+              - generic [ref=e1371]: 87%
+            - cell "PTO Policy Sent?" [ref=e1372]
+            - cell "In Progress" [ref=e1373]
+          - row "Mike John Singh Ryan Goebel (Josh Fancher) Dennis 23 20 87% — In Progress" [ref=e1374]:
+            - cell "Mike John Singh" [ref=e1375]:
+              - link "Mike John Singh" [ref=e1376] [cursor=pointer]:
+                - /url: /onboarding/83
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e1377]
+            - cell "Dennis" [ref=e1378]
+            - cell "23" [ref=e1379]
+            - cell "20" [ref=e1380]
+            - cell "87%" [ref=e1381]:
+              - generic [ref=e1385]: 87%
+            - cell "—" [ref=e1386]
+            - cell "In Progress" [ref=e1387]
+          - row "Monaliza Rose Bustillo Ryan Goebel (Josh Fancher) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1388]:
+            - cell "Monaliza Rose Bustillo" [ref=e1389]:
+              - link "Monaliza Rose Bustillo" [ref=e1390] [cursor=pointer]:
+                - /url: /onboarding/14
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e1391]
+            - cell "Michelle" [ref=e1392]
+            - cell "23" [ref=e1393]
+            - cell "19" [ref=e1394]
+            - cell "83%" [ref=e1395]:
+              - generic [ref=e1399]: 83%
+            - cell "PTO Policy Sent?" [ref=e1400]
+            - cell "In Progress" [ref=e1401]
+          - row "Monaliza Rose Bustillo Ryan Goebel (Josh Fancher) Dennis 23 19 83% — In Progress" [ref=e1402]:
+            - cell "Monaliza Rose Bustillo" [ref=e1403]:
+              - link "Monaliza Rose Bustillo" [ref=e1404] [cursor=pointer]:
+                - /url: /onboarding/77
+            - cell "Ryan Goebel (Josh Fancher)" [ref=e1405]
+            - cell "Dennis" [ref=e1406]
+            - cell "23" [ref=e1407]
+            - cell "19" [ref=e1408]
+            - cell "83%" [ref=e1409]:
+              - generic [ref=e1413]: 83%
+            - cell "—" [ref=e1414]
+            - cell "In Progress" [ref=e1415]
+          - row "Nehm Angelito Masen Davis / Sarah Hamilton Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1416]:
+            - cell "Nehm Angelito" [ref=e1417]:
+              - link "Nehm Angelito" [ref=e1418] [cursor=pointer]:
+                - /url: /onboarding/41
+            - cell "Masen Davis / Sarah Hamilton" [ref=e1419]
+            - cell "Michelle" [ref=e1420]
+            - cell "23" [ref=e1421]
+            - cell "21" [ref=e1422]
+            - cell "91%" [ref=e1423]:
+              - generic [ref=e1427]: 91%
+            - cell "PTO Policy Sent?" [ref=e1428]
+            - cell "In Progress" [ref=e1429]
+          - row "Nehm Angelito Masen Davis / Sarah Hamilton Dennis 23 21 91% — In Progress" [ref=e1430]:
+            - cell "Nehm Angelito" [ref=e1431]:
+              - link "Nehm Angelito" [ref=e1432] [cursor=pointer]:
+                - /url: /onboarding/104
+            - cell "Masen Davis / Sarah Hamilton" [ref=e1433]
+            - cell "Dennis" [ref=e1434]
+            - cell "23" [ref=e1435]
+            - cell "21" [ref=e1436]
+            - cell "91%" [ref=e1437]:
+              - generic [ref=e1441]: 91%
+            - cell "—" [ref=e1442]
+            - cell "In Progress" [ref=e1443]
+          - row "Nikki Joy Leander Scaling Lean (Jonathan Ploransky and Nina Brennan) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1444]:
+            - cell "Nikki Joy Leander" [ref=e1445]:
+              - link "Nikki Joy Leander" [ref=e1446] [cursor=pointer]:
+                - /url: /onboarding/17
+            - cell "Scaling Lean (Jonathan Ploransky and Nina Brennan)" [ref=e1447]
+            - cell "Michelle" [ref=e1448]
+            - cell "23" [ref=e1449]
+            - cell "19" [ref=e1450]
+            - cell "83%" [ref=e1451]:
+              - generic [ref=e1455]: 83%
+            - cell "PTO Policy Sent?" [ref=e1456]
+            - cell "In Progress" [ref=e1457]
+          - row "Nikki Joy Leander Scaling Lean (Jonathan Ploransky and Nina Brennan) Dennis 23 19 83% — In Progress" [ref=e1458]:
+            - cell "Nikki Joy Leander" [ref=e1459]:
+              - link "Nikki Joy Leander" [ref=e1460] [cursor=pointer]:
+                - /url: /onboarding/80
+            - cell "Scaling Lean (Jonathan Ploransky and Nina Brennan)" [ref=e1461]
+            - cell "Dennis" [ref=e1462]
+            - cell "23" [ref=e1463]
+            - cell "19" [ref=e1464]
+            - cell "83%" [ref=e1465]:
+              - generic [ref=e1469]: 83%
+            - cell "—" [ref=e1470]
+            - cell "In Progress" [ref=e1471]
+          - row "Noly Binay Alex Tucci (TDL) Michelle 23 19 83% Added Belinda+Eric to 1st & 2nd Client Check-in? In Progress" [ref=e1472]:
+            - cell "Noly Binay" [ref=e1473]:
+              - link "Noly Binay" [ref=e1474] [cursor=pointer]:
+                - /url: /onboarding/46
+            - cell "Alex Tucci (TDL)" [ref=e1475]
+            - cell "Michelle" [ref=e1476]
+            - cell "23" [ref=e1477]
+            - cell "19" [ref=e1478]
+            - cell "83%" [ref=e1479]:
+              - generic [ref=e1483]: 83%
+            - cell "Added Belinda+Eric to 1st & 2nd Client Check-in?" [ref=e1484]
+            - cell "In Progress" [ref=e1485]
+          - row "Noly Binay Alex Tucci (TDL) Dennis 23 19 83% — In Progress" [ref=e1486]:
+            - cell "Noly Binay" [ref=e1487]:
+              - link "Noly Binay" [ref=e1488] [cursor=pointer]:
+                - /url: /onboarding/109
+            - cell "Alex Tucci (TDL)" [ref=e1489]
+            - cell "Dennis" [ref=e1490]
+            - cell "23" [ref=e1491]
+            - cell "19" [ref=e1492]
+            - cell "83%" [ref=e1493]:
+              - generic [ref=e1497]: 83%
+            - cell "—" [ref=e1498]
+            - cell "In Progress" [ref=e1499]
+          - row "Paulo Jose Gadong Brian Cross Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1500]:
+            - cell "Paulo Jose Gadong" [ref=e1501]:
+              - link "Paulo Jose Gadong" [ref=e1502] [cursor=pointer]:
+                - /url: /onboarding/2
+            - cell "Brian Cross" [ref=e1503]
+            - cell "Michelle" [ref=e1504]
+            - cell "23" [ref=e1505]
+            - cell "19" [ref=e1506]
+            - cell "83%" [ref=e1507]:
+              - generic [ref=e1511]: 83%
+            - cell "PTO Policy Sent?" [ref=e1512]
+            - cell "In Progress" [ref=e1513]
+          - row "Paulo Jose Gadong Brian Cross Dennis 23 19 83% — In Progress" [ref=e1514]:
+            - cell "Paulo Jose Gadong" [ref=e1515]:
+              - link "Paulo Jose Gadong" [ref=e1516] [cursor=pointer]:
+                - /url: /onboarding/65
+            - cell "Brian Cross" [ref=e1517]
+            - cell "Dennis" [ref=e1518]
+            - cell "23" [ref=e1519]
+            - cell "19" [ref=e1520]
+            - cell "83%" [ref=e1521]:
+              - generic [ref=e1525]: 83%
+            - cell "—" [ref=e1526]
+            - cell "In Progress" [ref=e1527]
+          - row "Race Jay Tubongbanua AJ Fontana (Brian Cross) Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1528]:
+            - cell "Race Jay Tubongbanua" [ref=e1529]:
+              - link "Race Jay Tubongbanua" [ref=e1530] [cursor=pointer]:
+                - /url: /onboarding/7
+            - cell "AJ Fontana (Brian Cross)" [ref=e1531]
+            - cell "Michelle" [ref=e1532]
+            - cell "23" [ref=e1533]
+            - cell "19" [ref=e1534]
+            - cell "83%" [ref=e1535]:
+              - generic [ref=e1539]: 83%
+            - cell "PTO Policy Sent?" [ref=e1540]
+            - cell "In Progress" [ref=e1541]
+          - row "Race Jay Tubongbanua Geoff Adler Michelle 23 15 65% PTO Policy Sent? In Progress" [ref=e1542]:
+            - cell "Race Jay Tubongbanua" [ref=e1543]:
+              - link "Race Jay Tubongbanua" [ref=e1544] [cursor=pointer]:
+                - /url: /onboarding/60
+            - cell "Geoff Adler" [ref=e1545]
+            - cell "Michelle" [ref=e1546]
+            - cell "23" [ref=e1547]
+            - cell "15" [ref=e1548]
+            - cell "65%" [ref=e1549]:
+              - generic [ref=e1553]: 65%
+            - cell "PTO Policy Sent?" [ref=e1554]
+            - cell "In Progress" [ref=e1555]
+          - row "Race Jay Tubongbanua AJ Fontana (Brian Cross) Dennis 23 19 83% — In Progress" [ref=e1556]:
+            - cell "Race Jay Tubongbanua" [ref=e1557]:
+              - link "Race Jay Tubongbanua" [ref=e1558] [cursor=pointer]:
+                - /url: /onboarding/70
+            - cell "AJ Fontana (Brian Cross)" [ref=e1559]
+            - cell "Dennis" [ref=e1560]
+            - cell "23" [ref=e1561]
+            - cell "19" [ref=e1562]
+            - cell "83%" [ref=e1563]:
+              - generic [ref=e1567]: 83%
+            - cell "—" [ref=e1568]
+            - cell "In Progress" [ref=e1569]
+          - row "Race Jay Tubongbanua Geoff Adler Dennis 23 14 61% — In Progress" [ref=e1570]:
+            - cell "Race Jay Tubongbanua" [ref=e1571]:
+              - link "Race Jay Tubongbanua" [ref=e1572] [cursor=pointer]:
+                - /url: /onboarding/123
+            - cell "Geoff Adler" [ref=e1573]
+            - cell "Dennis" [ref=e1574]
+            - cell "23" [ref=e1575]
+            - cell "14" [ref=e1576]
+            - cell "61%" [ref=e1577]:
+              - generic [ref=e1581]: 61%
+            - cell "—" [ref=e1582]
+            - cell "In Progress" [ref=e1583]
+          - row "Raymand Vico Gadores Luke Harmon Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1584]:
+            - cell "Raymand Vico Gadores" [ref=e1585]:
+              - link "Raymand Vico Gadores" [ref=e1586] [cursor=pointer]:
+                - /url: /onboarding/31
+            - cell "Luke Harmon" [ref=e1587]
+            - cell "Michelle" [ref=e1588]
+            - cell "23" [ref=e1589]
+            - cell "21" [ref=e1590]
+            - cell "91%" [ref=e1591]:
+              - generic [ref=e1595]: 91%
+            - cell "PTO Policy Sent?" [ref=e1596]
+            - cell "In Progress" [ref=e1597]
+          - row "Raymand Vico Gadores Luke Harmon Dennis 23 21 91% — In Progress" [ref=e1598]:
+            - cell "Raymand Vico Gadores" [ref=e1599]:
+              - link "Raymand Vico Gadores" [ref=e1600] [cursor=pointer]:
+                - /url: /onboarding/94
+            - cell "Luke Harmon" [ref=e1601]
+            - cell "Dennis" [ref=e1602]
+            - cell "23" [ref=e1603]
+            - cell "21" [ref=e1604]
+            - cell "91%" [ref=e1605]:
+              - generic [ref=e1609]: 91%
+            - cell "—" [ref=e1610]
+            - cell "In Progress" [ref=e1611]
+          - row "Rhona Marie Rivera Grace Carr Michelle 23 16 70% PTO Policy Sent? In Progress" [ref=e1612]:
+            - cell "Rhona Marie Rivera" [ref=e1613]:
+              - link "Rhona Marie Rivera" [ref=e1614] [cursor=pointer]:
+                - /url: /onboarding/63
+            - cell "Grace Carr" [ref=e1615]
+            - cell "Michelle" [ref=e1616]
+            - cell "23" [ref=e1617]
+            - cell "16" [ref=e1618]
+            - cell "70%" [ref=e1619]:
+              - generic [ref=e1623]: 70%
+            - cell "PTO Policy Sent?" [ref=e1624]
+            - cell "In Progress" [ref=e1625]
+          - row "Rio Krishel Gonzales Mario Sanchez Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1626]:
+            - cell "Rio Krishel Gonzales" [ref=e1627]:
+              - link "Rio Krishel Gonzales" [ref=e1628] [cursor=pointer]:
+                - /url: /onboarding/8
+            - cell "Mario Sanchez" [ref=e1629]
+            - cell "Michelle" [ref=e1630]
+            - cell "23" [ref=e1631]
+            - cell "19" [ref=e1632]
+            - cell "83%" [ref=e1633]:
+              - generic [ref=e1637]: 83%
+            - cell "PTO Policy Sent?" [ref=e1638]
+            - cell "In Progress" [ref=e1639]
+          - row "Rio Krishel Gonzales Mario Sanchez Dennis 23 19 83% — In Progress" [ref=e1640]:
+            - cell "Rio Krishel Gonzales" [ref=e1641]:
+              - link "Rio Krishel Gonzales" [ref=e1642] [cursor=pointer]:
+                - /url: /onboarding/71
+            - cell "Mario Sanchez" [ref=e1643]
+            - cell "Dennis" [ref=e1644]
+            - cell "23" [ref=e1645]
+            - cell "19" [ref=e1646]
+            - cell "83%" [ref=e1647]:
+              - generic [ref=e1651]: 83%
+            - cell "—" [ref=e1652]
+            - cell "In Progress" [ref=e1653]
+          - row "Rovie Ceaira Pillejera Nicole Glenn Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1654]:
+            - cell "Rovie Ceaira Pillejera" [ref=e1655]:
+              - link "Rovie Ceaira Pillejera" [ref=e1656] [cursor=pointer]:
+                - /url: /onboarding/24
+            - cell "Nicole Glenn" [ref=e1657]
+            - cell "Michelle" [ref=e1658]
+            - cell "23" [ref=e1659]
+            - cell "21" [ref=e1660]
+            - cell "91%" [ref=e1661]:
+              - generic [ref=e1665]: 91%
+            - cell "PTO Policy Sent?" [ref=e1666]
+            - cell "In Progress" [ref=e1667]
+          - row "Rovie Ceaira Pillejera Nicole Glenn Dennis 23 21 91% — In Progress" [ref=e1668]:
+            - cell "Rovie Ceaira Pillejera" [ref=e1669]:
+              - link "Rovie Ceaira Pillejera" [ref=e1670] [cursor=pointer]:
+                - /url: /onboarding/87
+            - cell "Nicole Glenn" [ref=e1671]
+            - cell "Dennis" [ref=e1672]
+            - cell "23" [ref=e1673]
+            - cell "21" [ref=e1674]
+            - cell "91%" [ref=e1675]:
+              - generic [ref=e1679]: 91%
+            - cell "—" [ref=e1680]
+            - cell "In Progress" [ref=e1681]
+          - row "Rowenna Remulta Paul Wilson Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1682]:
+            - cell "Rowenna Remulta" [ref=e1683]:
+              - link "Rowenna Remulta" [ref=e1684] [cursor=pointer]:
+                - /url: /onboarding/6
+            - cell "Paul Wilson" [ref=e1685]
+            - cell "Michelle" [ref=e1686]
+            - cell "23" [ref=e1687]
+            - cell "19" [ref=e1688]
+            - cell "83%" [ref=e1689]:
+              - generic [ref=e1693]: 83%
+            - cell "PTO Policy Sent?" [ref=e1694]
+            - cell "In Progress" [ref=e1695]
+          - row "Rowenna Remulta Frank Ortega (for Steve) / Laura Weatherword Michelle 23 16 70% PTO Policy Sent? In Progress" [ref=e1696]:
+            - cell "Rowenna Remulta" [ref=e1697]:
+              - link "Rowenna Remulta" [ref=e1698] [cursor=pointer]:
+                - /url: /onboarding/44
+            - cell "Frank Ortega (for Steve) / Laura Weatherword" [ref=e1699]
+            - cell "Michelle" [ref=e1700]
+            - cell "23" [ref=e1701]
+            - cell "16" [ref=e1702]
+            - cell "70%" [ref=e1703]:
+              - generic [ref=e1707]: 70%
+            - cell "PTO Policy Sent?" [ref=e1708]
+            - cell "In Progress" [ref=e1709]
+          - row "Rowenna Remulta Paul Wilson Dennis 23 19 83% — In Progress" [ref=e1710]:
+            - cell "Rowenna Remulta" [ref=e1711]:
+              - link "Rowenna Remulta" [ref=e1712] [cursor=pointer]:
+                - /url: /onboarding/69
+            - cell "Paul Wilson" [ref=e1713]
+            - cell "Dennis" [ref=e1714]
+            - cell "23" [ref=e1715]
+            - cell "19" [ref=e1716]
+            - cell "83%" [ref=e1717]:
+              - generic [ref=e1721]: 83%
+            - cell "—" [ref=e1722]
+            - cell "In Progress" [ref=e1723]
+          - row "Rowenna Remulta Frank Ortega (for Steve) / Laura Weatherword Dennis 23 16 70% — In Progress" [ref=e1724]:
+            - cell "Rowenna Remulta" [ref=e1725]:
+              - link "Rowenna Remulta" [ref=e1726] [cursor=pointer]:
+                - /url: /onboarding/107
+            - cell "Frank Ortega (for Steve) / Laura Weatherword" [ref=e1727]
+            - cell "Dennis" [ref=e1728]
+            - cell "23" [ref=e1729]
+            - cell "16" [ref=e1730]
+            - cell "70%" [ref=e1731]:
+              - generic [ref=e1735]: 70%
+            - cell "—" [ref=e1736]
+            - cell "In Progress" [ref=e1737]
+          - row "Star Fatima Acibar Annette Torres Michelle 23 19 83% PTO Policy Sent? In Progress" [ref=e1738]:
+            - cell "Star Fatima Acibar" [ref=e1739]:
+              - link "Star Fatima Acibar" [ref=e1740] [cursor=pointer]:
+                - /url: /onboarding/59
+            - cell "Annette Torres" [ref=e1741]
+            - cell "Michelle" [ref=e1742]
+            - cell "23" [ref=e1743]
+            - cell "19" [ref=e1744]
+            - cell "83%" [ref=e1745]:
+              - generic [ref=e1749]: 83%
+            - cell "PTO Policy Sent?" [ref=e1750]
+            - cell "In Progress" [ref=e1751]
+          - row "Star Fatima Acibar Raindrop Agency Dennis 23 15 65% — In Progress" [ref=e1752]:
+            - cell "Star Fatima Acibar" [ref=e1753]:
+              - link "Star Fatima Acibar" [ref=e1754] [cursor=pointer]:
+                - /url: /onboarding/122
+            - cell "Raindrop Agency" [ref=e1755]
+            - cell "Dennis" [ref=e1756]
+            - cell "23" [ref=e1757]
+            - cell "15" [ref=e1758]
+            - cell "65%" [ref=e1759]:
+              - generic [ref=e1763]: 65%
+            - cell "—" [ref=e1764]
+            - cell "In Progress" [ref=e1765]
+          - row "Tricia Marie Asignacion Greg and Lisa Shields Michelle 23 21 91% PTO Policy Sent? In Progress" [ref=e1766]:
+            - cell "Tricia Marie Asignacion" [ref=e1767]:
+              - link "Tricia Marie Asignacion" [ref=e1768] [cursor=pointer]:
+                - /url: /onboarding/29
+            - cell "Greg and Lisa Shields" [ref=e1769]
+            - cell "Michelle" [ref=e1770]
+            - cell "23" [ref=e1771]
+            - cell "21" [ref=e1772]
+            - cell "91%" [ref=e1773]:
+              - generic [ref=e1777]: 91%
+            - cell "PTO Policy Sent?" [ref=e1778]
+            - cell "In Progress" [ref=e1779]
+          - row "Tricia Marie Asignacion Greg and Lisa Shields Dennis 23 21 91% — In Progress" [ref=e1780]:
+            - cell "Tricia Marie Asignacion" [ref=e1781]:
+              - link "Tricia Marie Asignacion" [ref=e1782] [cursor=pointer]:
+                - /url: /onboarding/92
+            - cell "Greg and Lisa Shields" [ref=e1783]
+            - cell "Dennis" [ref=e1784]
+            - cell "23" [ref=e1785]
+            - cell "21" [ref=e1786]
+            - cell "91%" [ref=e1787]:
+              - generic [ref=e1791]: 91%
+            - cell "—" [ref=e1792]
+            - cell "In Progress" [ref=e1793]
+          - row "Wendell Cuarenta Jr. Richelle Drost / Robert Cardiff (Opt Out 90 Day) Michelle 22 18 82% Schedule Weekly Check-ins? In Progress" [ref=e1794]:
+            - cell "Wendell Cuarenta Jr." [ref=e1795]:
+              - link "Wendell Cuarenta Jr." [ref=e1796] [cursor=pointer]:
+                - /url: /onboarding/26
+            - cell "Richelle Drost / Robert Cardiff (Opt Out 90 Day)" [ref=e1797]
+            - cell "Michelle" [ref=e1798]
+            - cell "22" [ref=e1799]
+            - cell "18" [ref=e1800]
+            - cell "82%" [ref=e1801]:
+              - generic [ref=e1805]: 82%
+            - cell "Schedule Weekly Check-ins?" [ref=e1806]
+            - cell "In Progress" [ref=e1807]
+          - row "Wendell Cuarenta Jr. Richelle Drost / Robert Cardiff (Opt Out 90 Day) Dennis 22 18 82% — In Progress" [ref=e1808]:
+            - cell "Wendell Cuarenta Jr." [ref=e1809]:
+              - link "Wendell Cuarenta Jr." [ref=e1810] [cursor=pointer]:
+                - /url: /onboarding/89
+            - cell "Richelle Drost / Robert Cardiff (Opt Out 90 Day)" [ref=e1811]
+            - cell "Dennis" [ref=e1812]
+            - cell "22" [ref=e1813]
+            - cell "18" [ref=e1814]
+            - cell "82%" [ref=e1815]:
+              - generic [ref=e1819]: 82%
+            - cell "—" [ref=e1820]
+            - cell "In Progress" [ref=e1821]
