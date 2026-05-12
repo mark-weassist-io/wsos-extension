@@ -43,8 +43,8 @@ router.post("/", async (c) => {
   if (!parsed.success) {
     return c.html(<OpsListPage ops={[]} search="" total={0} showTrashed={false} editing={true} errors={parsed.error.flatten().fieldErrors as Record<string, string>} formData={form as Record<string, string>} />)
   }
-  const { fullName, firstName, lastName, email, phone, gender, nickname } = parsed.data
-  createOp({ fullName, firstName: firstName || undefined, lastName: lastName || undefined, email: email || undefined, phone: phone || undefined, gender: gender || undefined, nickname: nickname || undefined })
+  const { fullName, firstName, lastName, email, phone, gender, nickname, rate } = parsed.data
+  createOp({ fullName, firstName: firstName || undefined, lastName: lastName || undefined, email: email || undefined, phone: phone || undefined, gender: gender || undefined, nickname: nickname || undefined, rate: rate || undefined })
   return c.redirect("/ops")
 })
 

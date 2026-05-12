@@ -79,7 +79,7 @@ export function getOpByFullName(name: string) {
   return d().select(opSelect()).from(schema.ops).where(eq(schema.ops.fullName, name)).get()
 }
 
-export function createOp(data: { fullName: string; firstName?: string; lastName?: string; email?: string; phone?: string; gender?: string; nickname?: string }) {
+export function createOp(data: { fullName: string; firstName?: string; lastName?: string; email?: string; phone?: string; gender?: string; nickname?: string; rate?: string }) {
   return d().insert(schema.ops).values(data).run()
 }
 
