@@ -29,10 +29,12 @@ const db = new Database(DB_PATH)
 db.run("PRAGMA journal_mode=WAL")
 db.run("PRAGMA foreign_keys=ON")
 
-// Drop existing tables (order matters for FK constraints)
+// Drop existing tables (FK order independent with temporary disable)
+db.run("PRAGMA foreign_keys=OFF")
 for (const t of ["wa_ob_statuses", "wa_ob_records", "wa_ob_step_defs", "wa_post_90day_schedule", "wsos_ninety_day_checkins", "wsos_op_client_assignments", "wsos_clients", "wsos_ops", "wa_genders", "wa_assignment_statuses", "wa_assignment_types", "wa_checkin_statuses", "wa_cs_staff"]) {
   db.run(`DROP TABLE IF EXISTS "${t}"`)
 }
+db.run("PRAGMA foreign_keys=ON")
 
 // Create reference/lookup tables
 console.log("  Creating reference tables...")
@@ -46,7 +48,7 @@ for (const s of STEP_DEFS) {
 }
 
 // Seed staff table (will be expanded after auxiliary data loads)
-db.run(`CREATE TABLE wa_cs_staff (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, created_at TEXT DEFAULT (datetime('now')))`)
+db.run(`CREATE TABLE wa_cs_staff (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, deleted_at DATETIME DEFAULT NULL, created_at TEXT DEFAULT (datetime('now')))`)
 // Known staff that may not appear in current loaded data
 for (const name of ["Dennis"]) {
   db.prepare("INSERT OR IGNORE INTO wa_cs_staff (name) VALUES (?)").run(name)

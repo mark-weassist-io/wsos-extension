@@ -15,6 +15,7 @@ export const OPS_RULES: EntityQualityRules = {
   zip_code TEXT,
   gender TEXT CHECK(gender IN ('Male','Female')),
   nickname TEXT,
+  deleted_at DATETIME DEFAULT NULL,
   created_at DATETIME DEFAULT (datetime('now')),
   UNIQUE(full_name)
 )`,

@@ -26,7 +26,9 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title} — WSOS Extension</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <script src="https://unpkg.com/htmx.org@2.0.4" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" />
         <script dangerouslySetInnerHTML={{ __html: `
 (function() {
   var saveKey = 'nexus-theme';
@@ -108,13 +110,13 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
             <nav class="nav">
               {NAV_ITEMS.map(item => (
                 <a href={item.href}
-                  class="nav-item"
+                  class="d-flex align-items-center gap-2 px-2 py-2 rounded text-decoration-none mb-1 nav-item"
                   style={{
                     color: activeNav === item.id ? 'var(--sidebar-active-text)' : 'var(--sidebar-text)',
                     background: activeNav === item.id ? 'var(--sidebar-active)' : 'transparent',
                   }}>
                   <span class="nav-icon">{item.icon}</span>
-                  <span class="nav-label">{item.label}</span>
+                  <span style="font-size:0.875rem">{item.label}</span>
                 </a>
               ))}
             </nav>
@@ -172,7 +174,7 @@ export const css = `
 html { font-size: 14px; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
+  background: var(--body-bg);
   color: var(--text);
   line-height: 1.5;
 }

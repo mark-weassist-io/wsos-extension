@@ -9,6 +9,7 @@ export const CHECKINS_RULES: EntityQualityRules = {
   checkin_date DATE,
   status TEXT CHECK(status IN ('GRADUATED','RESIGNED','TERMINATED','TRANSITIONED')),
   notes TEXT,
+  assigned_cs TEXT,
   created_at DATETIME DEFAULT (datetime('now')),
   FOREIGN KEY (op_name) REFERENCES wsos_ops(full_name)
 )`,

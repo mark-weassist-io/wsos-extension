@@ -17,6 +17,7 @@ export const ASSIGNMENTS_RULES: EntityQualityRules = {
   rate NUMERIC,
   assigned_cs TEXT,
   department TEXT,
+  deleted_at DATETIME DEFAULT NULL,
   created_at DATETIME DEFAULT (datetime('now')),
   UNIQUE(op_name, client_name),
   FOREIGN KEY (op_name) REFERENCES wsos_ops(full_name),
