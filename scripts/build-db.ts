@@ -192,6 +192,7 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
 
   let records = 0
   let steps = 0
+  let rateVal = ""
 
   for (let r = 1; r < tabData.formatted.length; r++) {
     const row = tabData.formatted[r] as any[]
