@@ -110,7 +110,7 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
                       </div>
                       <span class="text-sm text-secondary">{pct}%</span>
                     </td>
-                    <td class="text-sm">{toTitleCase(s.last_stage) || "—"}</td>
+                    <td class="text-sm">{toTitleCase(s.last_stage_completed) || "—"}</td>
                     <td><span class={statusBadge(s.overall_status)}>{toTitleCase(s.overall_status) || "In Progress"}</span></td>
                   </tr>
                 )
