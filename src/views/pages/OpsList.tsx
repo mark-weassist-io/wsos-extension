@@ -70,7 +70,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
                       <td class="text-sm">{op.role || "—"}</td>
                       <td><span class={statusBadge(op.status)}>{op.status || "—"}</span></td>
                       <td class="text-sm">{op.assigned_cs || "—"}</td>
-                      <td class="text-sm text-secondary">{op.phone || "—"}</td>
+                      <td class="text-sm text-secondary">{(op as any).phones?.length ? (op as any).phones.join(", ") : op.phone || "—"}</td>
                       <td>
                         {op.deleted_at ? (
                           <form action={`/ops/${op.id}/restore`} method="POST" style="display:inline">
