@@ -152,6 +152,27 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
       <button type="submit" class="btn btn-primary btn-sm">Create</button>
     </form>
   `), { headers: { "Content-Type": "text/html" } }),
+  "/cs-staff": (url, req) => {
+    const includeTrashed = url.searchParams.get("trashed") === "1"
+    const staff = getCsStaff(url.searchParams.get("search") || undefined, includeTrashed)
+    const rows = staff.map(s => {
+      const actions = s.deleted_at
+        ? `<form action="/cs-staff/${s.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
+        : `<a href="/cs-staff/${s.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
+<form action="/cs-staff/${s.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
+      return `<tr${s.deleted_at ? ' style="opacity:0.5"' : ""}><td><strong>${esc(s.name)}</strong>${s.deleted_at ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(s.full_name || "")}</td><td>${actions}</td></tr>`
+    }).join("") || '<tr><td colspan="3" style="text-align:center;padding:40px;color:var(--text-secondary)">No staff found</td></tr>'
+    return new Response(pageHTML("CS Staff", "cs-staff", `
+      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
+        <a href="/cs-staff" class="badge ${!includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Active</a>
+        <a href="/cs-staff?trashed=1" class="badge ${includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Trashed</a>
+        <a href="/cs-staff/new" class="btn btn-primary btn-sm" style="text-decoration:none;margin-left:auto">+ New</a>
+      </div>
+      <div class="card" style="padding:0">
+        <table><thead><tr><th>Name</th><th>Full Name</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
+      </div>
+    `), { headers: { "Content-Type": "text/html" } })
+  },
 }
 
 serve({
