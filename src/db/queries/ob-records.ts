@@ -122,11 +122,11 @@ export function toggleStepStatus(recordId: number, stepDefId: number): string {
   return next
 }
 
-export function createObRecord(data: { opName: string; clientName?: string; companyName?: string; role?: string; rate?: string; startDate?: string; startTime?: string; contactNumber?: string; email?: string; notes?: string; sourcePerson?: string }) {
+export function createObRecord(data: { opName: string; clientName?: string; companyName?: string; role?: string; startDate?: string; startTime?: string; contactNumber?: string; email?: string; notes?: string; sourcePerson?: string }) {
   const r = getDb().prepare(`
-    INSERT INTO wa_ob_records (op_name, client_name, company_name, role, rate, start_date, start_time, contact_number, email, notes, source_person)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(data.opName, data.clientName || null, data.companyName || null, data.role || null, data.rate || null, data.startDate || null, data.startTime || null, data.contactNumber || null, data.email || null, data.notes || null, data.sourcePerson || null)
+    INSERT INTO wa_ob_records (op_name, client_name, company_name, role, start_date, start_time, contact_number, email, notes, source_person)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `).run(data.opName, data.clientName || null, data.companyName || null, data.role || null, data.startDate || null, data.startTime || null, data.contactNumber || null, data.email || null, data.notes || null, data.sourcePerson || null)
 
   // Auto-create 26 step statuses as "Not Done"
   const recordId = r.lastInsertRowid as number
