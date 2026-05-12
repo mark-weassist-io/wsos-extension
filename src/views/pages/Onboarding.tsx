@@ -23,7 +23,7 @@ export const StepRow: FC<{ step: OnboardingStep; recordId: number; index?: numbe
   return (
     <tr id={`step-${sid}`}>
       <td style="text-align:center;color:var(--text-secondary);font-size:0.75rem">{index ?? ""}</td>
-      <td>{step.step_name || "—"}</td>
+      <td>{toTitleCase(step.step_name || step.name) || "—"}</td>
       <td>
         <button
           hx-post={`/onboarding/${recordId}/toggle/${sid}`}
@@ -36,6 +36,9 @@ export const StepRow: FC<{ step: OnboardingStep; recordId: number; index?: numbe
         </button>
       </td>
       <td class="text-sm">{step.owner || "—"}</td>
+    </tr>
+  )
+}
 
 const StepStatusBtn: FC<{ status: string | null }> = ({ status }) => {
   const s = status || "Not Done"
