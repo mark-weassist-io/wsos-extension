@@ -296,6 +296,9 @@ export const statusBadge = (status: string | null): string => {
     case "inactive": case "separated": return "badge badge-danger"
     case "graduated": return "badge badge-success"
     case "completed": return "badge badge-success"
+    case "done": return "badge badge-success"
+    case "not done": return "badge badge-secondary"
+    case "na": return "badge badge-info"
     default: return "badge badge-secondary"
   }
 }

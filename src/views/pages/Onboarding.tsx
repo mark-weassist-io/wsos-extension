@@ -30,8 +30,8 @@ export const StepRow: FC<{ step: OnboardingStep; recordId: number; index?: numbe
           hx-post={`/onboarding/${recordId}/toggle/${sid}`}
           hx-target={`#step-${sid}`}
           hx-swap="outerHTML"
-          class={`btn-status ${st.toLowerCase().replace(/\s+/g, "-")}`}
-          style="cursor:pointer;border:none;padding:4px 12px;border-radius:12px;font-size:0.75rem;font-weight:500"
+          class={statusBadge(st)}
+          style="cursor:pointer;border:none"
         >
           {st}
         </button>
