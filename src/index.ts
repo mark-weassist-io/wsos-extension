@@ -68,6 +68,8 @@ tr:hover td{background:var(--accent-light)}
 .stat-label{font-size:.8rem;color:var(--text-secondary);margin-top:2px}
 .mb-4{margin-bottom:16px}.mt-4{margin-top:16px}
 .text-sm{font-size:.8rem}.text-secondary{color:var(--text-secondary)}
+.sidebar-btn{background:none;border:1px solid var(--sidebar-btn-border);border-radius:6px;color:var(--sidebar-text);cursor:pointer;padding:4px 8px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.sidebar-btn:hover{background:var(--sidebar-hover)}
 `
 
 function pageHTML(title: string, active: string, body: string): string {
