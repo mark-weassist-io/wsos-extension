@@ -15,6 +15,7 @@ const CreateOpSchema = z.object({
   phone: z.string().max(50).optional().default(""),
   gender: z.string().max(20).optional().default(""),
   nickname: z.string().max(100).optional().default(""),
+  rate: z.string().max(100).optional().default(""),
 })
 
 router.get("/", (c) => {
@@ -78,6 +79,7 @@ router.post("/:id", async (c) => {
     phone: z.string().optional(),
     gender: z.string().optional(),
     nickname: z.string().optional(),
+    rate: z.string().optional(),
   }).safeParse(form)
   if (!parsed.success) return c.redirect(`/ops/${id}/edit`)
   updateOp(id, parsed.data as any)
