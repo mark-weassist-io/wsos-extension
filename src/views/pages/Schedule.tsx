@@ -1,5 +1,6 @@
 import type { FC } from "hono/jsx"
 import { Layout, statusBadge } from "../layout"
+import { classifyMilestone } from "../../db/queries/checkins"
 
 interface ScheduleRow {
   opName: string
@@ -33,6 +34,16 @@ const MILESTONES = [
   { key: "1yr", label: "1 Yr", col: "after1Year" },
   { key: "1yr3mo", label: "15 Mo", col: "after1Year3Months" },
 ]
+
+const milestoneBadge = (status: string): string => {
+  switch (status) {
+    case "done": return "badge badge-success"
+    case "scheduled": return "badge badge-info"
+    case "overdue": return "badge badge-danger"
+    case "cancelled": return "badge badge-secondary"
+    default: return "badge badge-secondary"
+  }
+}
 
 export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, filter }) => {
   return (
@@ -68,13 +79,14 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, filter }) =>
                     {MILESTONES.map(m => {
                       const val = (s as any)[m.col]
                       const happened = flags[m.key] || 0
+                      const status = val ? classifyMilestone(val, happened === 1) : "cancelled"
                       return (
                         <td key={m.key}
                           data-milestone={m.key}
                           data-happened={happened}
-                          style={`cursor:pointer;text-align:center;background:${happened ? '#22c55e' : 'transparent'};border-radius:4px;color:${happened ? '#fff' : 'inherit'}`}
-                          onclick={`fetch('/schedule/toggle/${encodeURIComponent(s.opName)}/${m.key}',{method:'POST'}).then(r=>{if(r.ok){var h=this.dataset.happened==='1'?'0':'1';this.dataset.happened=h;this.style.background=h==='1'?'#22c55e':'transparent';this.style.color=h==='1'?'#fff':'inherit'}})`}>
-                          {val || "—"}
+                          style="cursor:pointer;text-align:center"
+                          onclick={`fetch('/schedule/toggle/${encodeURIComponent(s.opName)}/${m.key}',{method:'POST'}).then(r=>{if(r.ok){location.reload()}})`}>
+                          {val ? <span class={milestoneBadge(status)}>{val}<br/><span style="font-size:0.65rem;opacity:0.7">{status}</span></span> : "—"}
                         </td>
                       )
                     })}
