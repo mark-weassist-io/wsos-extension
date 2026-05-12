@@ -66,13 +66,13 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
                   {ops.map(op => (
                     <tr style={op.deleted_at ? "opacity:0.5" : ""}>
                       <td><strong>{op.full_name}</strong>{op.deleted_at && <span class="badge badge-danger" style="margin-left:6px">Deleted</span>}</td>
-                      <td class="text-sm text-secondary">{op.email || "—"}</td>
+                      <td class="text-sm">{op.email || "—"}</td>
                       <td>{op.client_name || "—"}</td>
                       <td class="text-sm">{op.role || "—"}</td>
                       <td><span class={statusBadge(op.status)}>{op.status || "—"}</span></td>
                       <td class="text-sm">{op.checkin_status || "—"}</td>
                       <td class="text-sm">{op.assigned_cs || "—"}</td>
-                      <td class="text-sm text-secondary">{(op as any).phones?.length ? (op as any).phones.join(", ") : op.phone || "—"}</td>
+                      <td class="text-sm">{(op as any).phones?.length ? (op as any).phones.join(", ") : op.phone || "—"}</td>
                       <td class="text-sm">{op.rate || "—"}</td>
                       <td>
                         {op.deleted_at ? (
