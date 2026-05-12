@@ -21,7 +21,7 @@ export const CheckinsPage: FC<Props> = ({ checkins, search }) => {
         <div class="table-container">
           <table>
             <thead>
-              <tr><th>OP</th><th>Client</th><th>Type</th><th>Date</th><th>Status</th><th>CS</th><th>Notes</th></tr>
+              <tr><th>OP</th><th>Client</th><th>Status</th><th>CS</th><th>Notes</th></tr>
             </thead>
             <tbody>
               {checkins.map(c => (
