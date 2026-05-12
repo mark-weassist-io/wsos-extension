@@ -49,6 +49,7 @@ export const ops = sqliteTable("wsos_ops", {
   zipCode: text("zip_code"),
   gender: text("gender"),
   nickname: text("nickname"),
+  rate: text("rate"),
   createdAt: text("created_at").default("datetime('now')"),
   deletedAt: text("deleted_at"),
 }, (table) => [

@@ -62,6 +62,7 @@ router.get("/:id/edit", (c) => {
     phone: raw.phone || "",
     gender: raw.gender || "",
     nickname: raw.nickname || "",
+    rate: raw.rate || "",
   }
   return c.html(<OpsListPage ops={ops} search="" total={0} showTrashed={false} editing={true} editId={id} formData={formData} />)
 })

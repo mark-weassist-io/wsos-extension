@@ -30,6 +30,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
             {inputField("Phone", "phone", formData?.phone || "", errors?.phone, false, "tel")}
             {inputField("Nickname", "nickname", formData?.nickname || "", errors?.nickname)}
             {selectField("Gender", "gender", formData?.gender || "", ["", "Male", "Female", "Other"], errors?.gender)}
+            {inputField("Rate ($)", "rate", formData?.rate || "", errors?.rate, false, "text")}
             <div style="display:flex;gap:8px;margin-top:16px">
               <button type="submit" class="btn btn-primary btn-sm">{editId ? "Update" : "Create"}</button>
               <a href="/ops" class="btn btn-outline-secondary btn-sm">Cancel</a>

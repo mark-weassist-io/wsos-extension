@@ -33,6 +33,7 @@ function opSelect() {
     phone: schema.ops.phone,
     gender: schema.ops.gender,
     nickname: schema.ops.nickname,
+    rate: schema.ops.rate,
     deleted_at: schema.ops.deletedAt,
   }
 }
@@ -82,7 +83,7 @@ export function createOp(data: { fullName: string; firstName?: string; lastName?
   return d().insert(schema.ops).values(data).run()
 }
 
-export function updateOp(id: number, data: Partial<{ fullName: string; firstName: string; lastName: string; email: string; phone: string; gender: string; nickname: string }>) {
+export function updateOp(id: number, data: Partial<{ fullName: string; firstName: string; lastName: string; email: string; phone: string; gender: string; nickname: string; rate: string }>) {
   return d().update(schema.ops).set(data).where(eq(schema.ops.id, id)).run()
 }
 
