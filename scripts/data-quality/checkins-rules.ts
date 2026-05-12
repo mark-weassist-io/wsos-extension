@@ -5,7 +5,7 @@ export const CHECKINS_RULES: EntityQualityRules = {
     ddl: `CREATE TABLE wsos_ninety_day_checkins (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   op_name TEXT NOT NULL,
-  status TEXT CHECK(status IN ('Graduated','Resigned','Terminated','Transitioned')),
+  status TEXT,
   notes TEXT,
   assigned_cs TEXT,
   created_at DATETIME DEFAULT (datetime('now')),
