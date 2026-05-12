@@ -27,7 +27,10 @@ export const CsStaffPage: FC<Props> = ({ staff, editId, formData }) => {
           <form action={editId ? `/cs-staff/${editId}` : "/cs-staff"} method="POST">
             {inputField("Name", "name", formData?.name || "", undefined, true)}
             {inputField("Full Name", "fullName", formData?.fullName || "")}
-            <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Save</button>
+            <div style="display:flex;gap:8px;margin-top:16px">
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+              {editId && <a href="/cs-staff" class="btn btn-outline-secondary btn-sm">Cancel</a>}
+            </div>
           </form>
         </div>
       )}
