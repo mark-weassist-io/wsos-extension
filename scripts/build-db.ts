@@ -206,18 +206,23 @@ function loadOnboardingGrid(person: string, tabKey: string): { records: number; 
     const rateVal = (row[9] || "").toString().trim()
     const startDateVal = (row[7] || "").toString().trim()
     const startTimeVal = (row[8] || "").toString().trim()
+    const rateVal = (row[9] || "").toString().trim()
     const lastStageVal = cLastStage >= 0 ? (row[cLastStage] || "").toString().trim() : ""
     const statusVal = cStatus >= 0 ? (row[cStatus] || "").toString().trim() : ""
 
     try {
+      // Pipe rate to wsos_ops table instead of ob_records
+      if (rateVal) {
+        try { db.prepare("UPDATE wsos_ops SET rate = ? WHERE full_name = ?").run(rateVal, cleanName) } catch {}
+      }
+
       const recResult = db.prepare(
-        `INSERT INTO wa_ob_records (op_name, client_name, company_name, role, rate, start_date, start_time, contact_number, email, last_stage_completed, status, source_person) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+        `INSERT INTO wa_ob_records (op_name, client_name, company_name, role, start_date, start_time, contact_number, email, last_stage_completed, status, source_person) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
       ).run(
         cleanName,
         cClient >= 0 ? (row[cClient] || "").toString().trim() || null : null,
         cCompany >= 0 ? (row[cCompany] || "").toString().trim() || null : null,
         cRole >= 0 ? (row[cRole] || "").toString().trim() || null : null,
-        rateVal || null,
         startDateVal || null,
         startTimeVal || null,
         cPhone >= 0 ? (row[cPhone] || "").toString().trim() || null : null,
