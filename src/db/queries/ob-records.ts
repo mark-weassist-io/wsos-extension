@@ -28,27 +28,32 @@ export interface ObStepWithStatus {
 }
 
 export function getObRecords(search?: string, owner?: string): ObRecordWithProgress[] {
-  const conditions = []
-  if (search) conditions.push(or(like(schema.obRecords.opName, `%${search}%`), like(schema.obRecords.clientName, `%${search}%`)))
-  if (owner) conditions.push(eq(schema.obRecords.sourcePerson, owner))
+  let sql = `SELECT r.id, r.op_name, r.client_name, r.company_name, r.role, r.rate,
+    r.start_date, r.status, r.source_person, r.last_stage_completed,
+    (SELECT COUNT(*) FROM wa_ob_statuses s WHERE s.record_id = r.id) as total_steps,
+    (SELECT COUNT(*) FROM wa_ob_statuses s WHERE s.record_id = r.id AND s.status = 'Done') as done_steps
+    FROM wa_ob_records r`
+  const conditions: string[] = []
+  const params: any[] = []
+  if (search) { conditions.push(`(r.op_name LIKE ? OR r.client_name LIKE ?)`); params.push(`%${search}%`, `%${search}%`) }
+  if (owner) { conditions.push(`r.source_person = ?`); params.push(owner) }
+  if (conditions.length) sql += ` WHERE ${conditions.join(" AND ")}`
+  sql += ` ORDER BY r.id DESC`
 
-  return d().select({
-    id: schema.obRecords.id,
-    op_name: schema.obRecords.opName,
-    client_name: schema.obRecords.clientName,
-    company_name: schema.obRecords.companyName,
-    role: schema.obRecords.role,
-    rate: schema.obRecords.rate,
-    start_date: schema.obRecords.startDate,
-    status: schema.obRecords.status,
-    source_person: schema.obRecords.sourcePerson,
-    total_steps: sql<number>`(SELECT COUNT(*) FROM wa_ob_statuses s WHERE s.record_id = ${schema.obRecords.id})`,
-    done_steps: sql<number>`(SELECT COUNT(*) FROM wa_ob_statuses s WHERE s.record_id = ${schema.obRecords.id} AND s.status = 'Done')`,
-    last_stage: schema.obRecords.lastStageCompleted,
-  }).from(schema.obRecords)
-    .where(conditions.length > 0 ? and(...conditions) : undefined)
-    .orderBy(desc(schema.obRecords.id))
-    .all()
+  return getDb().prepare(sql).all(...params).map((r: any) => ({
+    id: r.id,
+    op_name: r.op_name,
+    client_name: r.client_name,
+    company_name: r.company_name,
+    role: r.role,
+    rate: r.rate,
+    start_date: r.start_date,
+    status: r.status,
+    source_person: r.source_person,
+    total_steps: r.total_steps,
+    done_steps: r.done_steps,
+    last_stage: r.last_stage_completed,
+  }))
 }
 
 export function getObStepsWithStatus(recordId: number): ObStepWithStatus[] {
