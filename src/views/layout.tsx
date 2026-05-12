@@ -12,7 +12,6 @@ export const NAV_ITEMS = [
   { id: "clients", label: "Clients", href: "/clients", icon: "bi-building" },
   { id: "assignments", label: "Assignments", href: "/assignments", icon: "bi-link" },
   { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "bi-clipboard-data" },
-  { id: "checkins", label: "Check-ins", href: "/checkins", icon: "bi-check-circle" },
   { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
   { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
   { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
