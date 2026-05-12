@@ -49,10 +49,21 @@ router.post("/", async (c) => {
 
 router.get("/:id/edit", (c) => {
   const id = parseInt(c.req.param("id"))
-  const op = getOpById(id, true)
+  const op = getOpById(id)
   if (!op) return c.redirect("/ops")
   const ops = getOpsWithAssignments()
-  return c.html(<OpsListPage ops={ops} search="" total={0} showTrashed={false} editing={true} editId={id} formData={op as unknown as Record<string, string>} />)
+  // Cast to any and normalize snake_case → camelCase for form
+  const raw = op as any
+  const formData: Record<string, string> = {
+    fullName: raw.full_name || raw.fullName || "",
+    firstName: raw.first_name || raw.firstName || "",
+    lastName: raw.last_name || raw.lastName || "",
+    email: raw.email || "",
+    phone: raw.phone || "",
+    gender: raw.gender || "",
+    nickname: raw.nickname || "",
+  }
+  return c.html(<OpsListPage ops={ops} search="" total={0} showTrashed={false} editing={true} editId={id} formData={formData} />)
 })
 
 router.post("/:id", async (c) => {
