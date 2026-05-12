@@ -41,6 +41,10 @@ export interface RecentActivity {
   updated_at: string | null
 }
 
+// Convert M/D/YYYY to YYYY-MM-DD for proper date comparison
+const colToDate = (col: string) =>
+  `date(substr(${col},-4)||'-'||substr('0'||substr(${col},1,instr(${col},'/')-1),-2)||'-'||substr('0'||substr(substr(${col},instr(${col},'/')+1),1,instr(substr(${col},instr(${col},'/')+1),'/')-1),-2))`
+
 export function getMetrics(): DashboardMetrics {
   const total = d().select({ c: count() }).from(schema.ops).get()?.c ?? 0
   const active = d().select({ c: count() }).from(schema.assignments).where(eq(schema.assignments.status, "Active")).get()?.c ?? 0
