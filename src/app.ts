@@ -8,6 +8,7 @@ import { checkinsRouter } from "./routes/checkins"
 import { scheduleRouter } from "./routes/schedule"
 import { csStaffRouter } from "./routes/cs-staff"
 import { assignmentsRouter } from "./routes/assignments"
+import { reviewsRouter } from "./routes/reviews"
 import { schema } from "./db"
 import { getDb } from "./db"
 import { ensureSchema } from "./db/schema"
@@ -50,6 +51,7 @@ app.route("/clients", clientsRouter)
 app.route("/onboarding", onboardingRouter)
 app.route("/checkins", checkinsRouter)
 app.route("/schedule", scheduleRouter)
+app.route("/reviews", reviewsRouter)
 app.route("/cs-staff", csStaffRouter)
 app.route("/assignments", assignmentsRouter)
 
