@@ -134,44 +134,12 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
       </div>
     `), { headers: { "Content-Type": "text/html" } })
   },
-  "/red-flags/new": (url) => new Response(pageHTML("New Red Flag", "red-flags", `
-    <a href="/red-flags" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
-    <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">New Red Flag</h3>
+"/red-flags/new": (url) => new Response(pageHTML("New Red Flag", "red-flags", `
+    <a href="/red-flags" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
+    <h3 class="h5 mb-3">New Red Flag</h3>
     <form action="/red-flags" method="POST" class="card" style="padding:20px;max-width:500px">
-      <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Flag Name *</label><input type="text" name="flagName" required style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-      <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Definition</label><textarea name="definition" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box;min-height:80px"></textarea></div>
-      <button type="submit" class="btn btn-primary btn-sm">Create</button>
-    </form>
-  `), { headers: { "Content-Type": "text/html" } })
-},
-"/cs-staff": (url, req) => {
-    const includeTrashed = url.searchParams.get("trashed") === "1"
-    const staff = getCsStaff(url.searchParams.get("search") || undefined, includeTrashed)
-    const rows = staff.map(s => {
-      const actions = s.deleted_at
-        ? `<form action="/cs-staff/${s.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
-        : `<a href="/cs-staff/${s.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
-<form action="/cs-staff/${s.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
-      return `<tr${s.deleted_at ? ' style="opacity:0.5"' : ""}><td><strong>${esc(s.name)}</strong>${s.deleted_at ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(s.full_name)}</td><td>${actions}</td></tr>`
-    }).join("") || '<tr><td colspan="3" style="padding:40px;text-align:center;color:var(--text-secondary)">No staff found</td></tr>'
-
-    return new Response(pageHTML("CS Staff", "cs-staff", `
-      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <a href="/cs-staff" class="badge ${!includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Active</a>
-        <a href="/cs-staff?trashed=1" class="badge ${includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Trashed</a>
-        <a href="/cs-staff/new" style="margin-left:auto;padding:8px 16px;background:var(--accent);color:#fff;border-radius:var(--radius);text-decoration:none;font-size:.875rem">+ New</a>
-      </div>
-      <div class="card" style="padding:0">
-        <table><thead><tr><th>Name</th><th>Full Name</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
-      </div>
-    `), { headers: { "Content-Type": "text/html" } })
-  },
-  "/cs-staff/new": (url) => new Response(pageHTML("New Staff", "cs-staff", `
-    <a href="/cs-staff" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
-    <h3 class="h5 mb-3">New Staff</h3>
-    <form action="/cs-staff" method="POST" class="card" style="padding:20px;max-width:500px">
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" required class="form-control form-control-sm"></div>
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" class="form-control form-control-sm"></div>
+      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Flag Name *</label><input type="text" name="flagName" required class="form-control form-control-sm"></div>
+      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Definition</label><textarea name="definition" class="form-control form-control-sm" style="min-height:80px"></textarea></div>
       <button type="submit" class="btn btn-primary btn-sm">Create</button>
     </form>
   `), { headers: { "Content-Type": "text/html" } }),
