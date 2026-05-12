@@ -21,7 +21,12 @@ router.get("/", (c) => {
   const trashed = c.req.query("trashed") === "1"
   const ops = getOpsWithAssignments(search, trashed)
   const total = getOpsCount()
-  return c.html(<OpsListPage ops={ops} search={search} total={total} showTrashed={trashed} />)
+  // Attach phones from one-to-many table
+  const opsWithPhones = ops.map(o => ({
+    ...o,
+    phones: getOpPhones(o.full_name),
+  }))
+  return c.html(<OpsListPage ops={opsWithPhones} search={search} total={total} showTrashed={trashed} />)
 })
 
 router.get("/new", (c) => {
