@@ -280,7 +280,7 @@ function extractOpsRows(masterlist: any): any[] {
         last_name: normalizeStr(row[col("Last")]),
         nickname: normalizeStr(row[col("Nickname")]),
         email: normalizeStr(row[col("Email Add")]),
-        phone: normalizeStr(row[col("CP#")]),
+        phone: normalizePhone(row[col("CP#")]),
         birth_place: birthPlace,
         address: normalizeStr(row[col("Address")]),
         zip_code: zipCode,
