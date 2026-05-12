@@ -1,6 +1,6 @@
 import { getDrizzle, getDb, schema } from ".."
 import { eq, like, or, and, sql } from "drizzle-orm"
-import type { Post90DayCheckinSchedule } from "../../types"
+import type { Post90DayCheckinSchedule, MilestoneStatus, ClassifiedMilestone } from "../../types"
 
 const d = () => getDrizzle()
 
