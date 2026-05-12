@@ -136,13 +136,12 @@ export function createObRecord(data: { opName: string; clientName?: string; comp
   return recordId
 }
 
-export function updateObRecord(id: number, data: { opName?: string; clientName?: string; companyName?: string; role?: string; rate?: string; startDate?: string; startTime?: string; contactNumber?: string; email?: string; notes?: string; sourcePerson?: string }) {
+export function updateObRecord(id: number, data: { opName?: string; clientName?: string; companyName?: string; role?: string; startDate?: string; startTime?: string; contactNumber?: string; email?: string; notes?: string; sourcePerson?: string }) {
   const sets: string[] = []; const vals: any[] = []
   if (data.opName !== undefined) { sets.push("op_name = ?"); vals.push(data.opName) }
   if (data.clientName !== undefined) { sets.push("client_name = ?"); vals.push(data.clientName) }
   if (data.companyName !== undefined) { sets.push("company_name = ?"); vals.push(data.companyName) }
   if (data.role !== undefined) { sets.push("role = ?"); vals.push(data.role) }
-  if (data.rate !== undefined) { sets.push("rate = ?"); vals.push(data.rate) }
   if (data.startDate !== undefined) { sets.push("start_date = ?"); vals.push(data.startDate) }
   if (data.startTime !== undefined) { sets.push("start_time = ?"); vals.push(data.startTime) }
   if (data.email !== undefined) { sets.push("email = ?"); vals.push(data.email) }
