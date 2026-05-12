@@ -8,8 +8,6 @@ export interface NinetyDayCheckinRow {
   id: number
   opName: string
   clientName: string | null  // from JOIN with assignments
-  checkinType: string | null
-  checkinDate: string | null
   status: string | null
   assignedCs: string | null  // from JOIN with assignments
   notes: string | null
@@ -23,9 +21,6 @@ export function getNinetyDayCheckins(search?: string): NinetyDayCheckinRow[] {
   return d().select({
     id: schema.ninetyDayCheckins.id,
     opName: schema.ninetyDayCheckins.opName,
-    clientName: schema.assignments.clientName,
-    checkinType: schema.ninetyDayCheckins.checkinType,
-    checkinDate: schema.ninetyDayCheckins.checkinDate,
     status: schema.ninetyDayCheckins.status,
     assignedCs: schema.assignments.assignedCs,
     notes: schema.ninetyDayCheckins.notes,
