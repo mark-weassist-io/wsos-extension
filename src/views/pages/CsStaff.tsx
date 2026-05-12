@@ -61,7 +61,7 @@ export const CsStaffPage: FC<Props> = ({ staff, editId, formData }) => {
           </tbody>
         </table>
       </div>
-      {!editing && <a href="/cs-staff/0/edit" style="display:inline-block;margin-top:12px;padding:8px 16px;background:var(--accent);color:#fff;border-radius:var(--radius);text-decoration:none;font-size:0.875rem">+ Add Staff</a>}
+      {!editing && <a href="/cs-staff/new" class="btn btn-primary btn-sm" style="margin-top:12px;text-decoration:none">+ Add Staff</a>}
     </Layout>
   )
 }
