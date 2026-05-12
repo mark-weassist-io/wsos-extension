@@ -69,6 +69,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
                       <td>{op.client_name || "—"}</td>
                       <td class="text-sm">{op.role || "—"}</td>
                       <td><span class={statusBadge(op.status)}>{op.status || "—"}</span></td>
+                      <td class="text-sm">{op.checkin_status || "—"}</td>
                       <td class="text-sm">{op.assigned_cs || "—"}</td>
                       <td class="text-sm text-secondary">{(op as any).phones?.length ? (op as any).phones.join(", ") : op.phone || "—"}</td>
                       <td>
@@ -88,7 +89,7 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
                     </tr>
                   ))}
                   {ops.length === 0 && (
-                    <tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-secondary)">No OPs found</td></tr>
+                    <tr><td colspan="9" style="text-align:center;padding:40px;color:var(--text-secondary)">No OPs found</td></tr>
                   )}
                 </tbody>
               </table>
