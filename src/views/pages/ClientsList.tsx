@@ -22,8 +22,6 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
           <form action={editId ? `/clients/${editId}` : "/clients"} method="POST" class="card" style="padding:20px">
             {inputField("Name*", "name", formData?.name || "", errors?.name, true)}
             {inputField("Email", "email", formData?.email || "", errors?.email, false, "email")}
-            {inputField("Timezone", "timezone", formData?.timezone || "", errors?.timezone)}
-            {inputField("Holiday Schedule", "holidaySchedule", formData?.holidaySchedule || "", errors?.holidaySchedule)}
             <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">{editId ? "Update" : "Create"}</button>
           </form>
         </div>
@@ -42,7 +40,7 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
           </div>
           <div class="card" style="padding:0">
             <table>
-              <thead><tr><th>Name</th><th>Email</th><th>Timezone</th><th>Holiday Schedule</th><th>Actions</th></tr></thead>
+              <thead><tr><th>Name</th><th>Email</th><th>Actions</th></tr></thead>
               <tbody>
                 {clients.map(c => (
                   <tr style={c.deleted_at ? "opacity:0.5" : ""}>
