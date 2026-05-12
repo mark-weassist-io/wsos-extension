@@ -21,7 +21,27 @@ function loadRaw(filename: string): any {
 
 function normalizeStr(s: any): string {
   if (s === null || s === undefined) return ""
-  return String(s).trim()
+  return s.toString().trim()
+}
+
+function normalizePhone(s: any): string {
+  const raw = normalizeStr(s)
+  if (!raw) return ""
+  // Strip all non-digits
+  const digits = raw.replace(/\D/g, "")
+  // If starts with 09 and is 11 digits → +63
+  if (digits.startsWith("09") && digits.length === 11) {
+    return "+63" + digits.slice(1)
+  }
+  // If already starts with 63 and is 12 digits → +63
+  if (digits.startsWith("63") && digits.length === 12) {
+    return "+" + digits
+  }
+  // If 10 digits starting with 9 → +639...
+  if (digits.startsWith("9") && digits.length === 10) {
+    return "+63" + digits
+  }
+  return raw
 }
 
 function isTruthy(s: any): boolean {
