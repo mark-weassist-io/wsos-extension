@@ -12,7 +12,7 @@ export function getRedFlags(search?: string, includeTrashed?: boolean): RedFlagR
   let sql = "SELECT id, flag_name, definition, color, deleted_at FROM wa_red_flags"
   const params: any[] = []
   const cond: string[] = []
-  if (!includeTrashed) { cond.push("deleted_at IS NULL") }
+  if (includeTrashed) { cond.push("deleted_at IS NOT NULL") } else { cond.push("deleted_at IS NULL") }
   if (search) { cond.push("flag_name LIKE ?"); params.push(`%${search}%`) }
   if (cond.length > 0) sql += " WHERE " + cond.join(" AND ")
   sql += " ORDER BY flag_name"

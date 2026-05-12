@@ -12,7 +12,8 @@ export interface ClientRow {
 
 export function getClients(search?: string, includeTrashed?: boolean): ClientRow[] {
   const cond: any[] = []
-  if (!includeTrashed) cond.push(isNull(schema.clients.deletedAt))
+  if (includeTrashed) cond.push(sql`${schema.clients.deletedAt} IS NOT NULL`)
+  else cond.push(isNull(schema.clients.deletedAt))
   if (search) cond.push(or(like(schema.clients.name, `%${search}%`), like(schema.clients.email, `%${search}%`)))
   return d().select({
     id: schema.clients.id,

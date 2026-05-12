@@ -12,7 +12,8 @@ export interface CsStaffRow {
 
 export function getCsStaff(search?: string, includeTrashed?: boolean): CsStaffRow[] {
   const cond: any[] = []
-  if (!includeTrashed) cond.push(isNull(schema.csStaff.deletedAt))
+  if (includeTrashed) cond.push(sql`${schema.csStaff.deletedAt} IS NOT NULL`)
+  else cond.push(isNull(schema.csStaff.deletedAt))
   if (search) cond.push(like(schema.csStaff.name, `%${search}%`))
   return d().select({
     id: schema.csStaff.id,

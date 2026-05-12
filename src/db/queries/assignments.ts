@@ -19,7 +19,8 @@ export interface AssignmentRow {
 
 export function getAssignments(search?: string, includeTrashed?: boolean): AssignmentRow[] {
   const cond: any[] = []
-  if (!includeTrashed) cond.push(isNull(schema.assignments.deletedAt))
+  if (includeTrashed) cond.push(sql`${schema.assignments.deletedAt} IS NOT NULL`)
+  else cond.push(isNull(schema.assignments.deletedAt))
   if (search) cond.push(or(
     like(schema.assignments.opName, `%${search}%`),
     like(schema.assignments.clientName, `%${search}%`),
