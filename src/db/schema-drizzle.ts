@@ -151,8 +151,6 @@ export const obStatuses = sqliteTable("wa_ob_statuses", {
 export const ninetyDayCheckins = sqliteTable("wsos_ninety_day_checkins", {
   id: integer("id").primaryKey(),
   opName: text("op_name").notNull(),
-  checkinType: text("checkin_type"),
-  checkinDate: text("checkin_date", { mode: "text" }),
   status: text("status"),
   notes: text("notes"),
   createdAt: text("created_at").default("datetime('now')"),
