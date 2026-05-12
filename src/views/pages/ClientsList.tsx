@@ -8,6 +8,7 @@ interface Props {
   editId?: number
   errors?: Record<string, string>
   formData?: Record<string, string>
+  search?: string
 }
 
 export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formData }) => {
