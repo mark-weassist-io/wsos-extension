@@ -4,11 +4,12 @@ export interface RedFlagRow {
   id: number
   flag_name: string | null
   definition: string | null
+  color: string | null
   deleted_at: string | null
 }
 
 export function getRedFlags(search?: string, includeTrashed?: boolean): RedFlagRow[] {
-  let sql = "SELECT id, flag_name, definition, deleted_at FROM wa_red_flags"
+  let sql = "SELECT id, flag_name, definition, color, deleted_at FROM wa_red_flags"
   const params: any[] = []
   const cond: string[] = []
   if (!includeTrashed) { cond.push("deleted_at IS NULL") }
