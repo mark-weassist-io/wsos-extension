@@ -73,21 +73,26 @@ export function getPost90DaySchedule(search?: string): Post90DayCheckinSchedule[
 }
 
 export function getUpcomingCheckins(days: number = 30): Post90DayCheckinSchedule[] {
-  const future = new Date(Date.now() + days * 86400000).toLocaleDateString("en-US", { month: "numeric", day: "numeric", year: "numeric" }).split("/").map(n => n.padStart(2, "0")).join("/")
-  const s = schema.checkinSchedule
-
-  return d().select().from(s)
-    .where(or(
-      and(sql`${s.after3Mon} IS NOT NULL`, sql`${s.after3Mon} != ''`, sql`${s.after3Mon} <= ${future}`),
-      and(sql`${s.after4Mon} IS NOT NULL`, sql`${s.after4Mon} != ''`, sql`${s.after4Mon} <= ${future}`),
-      and(sql`${s.after5Mon} IS NOT NULL`, sql`${s.after5Mon} != ''`, sql`${s.after5Mon} <= ${future}`),
-      and(sql`${s.after6Mon} IS NOT NULL`, sql`${s.after6Mon} != ''`, sql`${s.after6Mon} <= ${future}`),
-      and(sql`${s.after9Mon} IS NOT NULL`, sql`${s.after9Mon} != ''`, sql`${s.after9Mon} <= ${future}`),
-      and(sql`${s.after1Year} IS NOT NULL`, sql`${s.after1Year} != ''`, sql`${s.after1Year} <= ${future}`),
-      and(sql`${s.after1Year3Months} IS NOT NULL`, sql`${s.after1Year3Months} != ''`, sql`${s.after1Year3Months} <= ${future}`),
-    ))
-    .orderBy(s.opName)
-    .all()
+  const all = getPost90DaySchedule()
+  const cutoff = new Date(Date.now() + days * 86400000)
+  const r = getDb()
+  const milestones = r.prepare("SELECT op_name, milestone, happened FROM checkin_milestones").all() as any[]
+  const map = new Map<string, Map<string, number>>()
+  for (const m of milestones) {
+    if (!map.has(m.op_name)) map.set(m.op_name, new Map())
+    map.get(m.op_name)!.set(m.milestone, m.happened)
+  }
+  const MILESTONE_MAP: Record<string, string> = { "3mo": "after3Mon", "4mo": "after4Mon", "5mo": "after5Mon", "6mo": "after6Mon", "9mo": "after9Mon", "1yr": "after1Year", "1yr3mo": "after1Year3Months" }
+  return all.filter(s => {
+    const flags = map.get(s.opName) ?? new Map()
+    for (const [key, col] of Object.entries(MILESTONE_MAP)) {
+      const val = (s as any)[col]
+      if (!val) continue
+      const d = parseMdY(val)
+      if (d && d <= cutoff && (flags.get(key) ?? 0) !== 1) return true
+    }
+    return false
+  })
 }
 
 export function getOverdueCheckins(): Post90DayCheckinSchedule[] {
