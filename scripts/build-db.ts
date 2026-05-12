@@ -284,7 +284,7 @@ if (schedTab?.formatted?.length > 1) {
   const h = schedTab.formatted[0] as string[]
   const insertCols = ["op_name", "start_date", "role", "client_name", "client_s_email", "status", "after_3_mon", "after_4_mon", "after_5_mon", "after_6_mon", "after_9_mon", "after_1_year", "after_1_year_3_months"]
   // col map: 0=NAME, 1=START DATE, 2=ROLE, 3=CLIENT NAME, 4=CLIENT'S EMAIL, 5=STATUS, 6=After 3 Mon, 7=After 4 Mon, 8=After 5 Mon, 9=After 6 Mon, 10=After 9 Mon, 11=After 1 Year, 12=After 1 Year & 3 Months
-  const colMap = [null, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  const colMap = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   const placeholders = insertCols.map(() => "?").join(",")
   const stmt = db.prepare(`INSERT INTO wa_post_90day_schedule (${insertCols.map(c => `"${c}"`).join(",")}) VALUES (${placeholders})`)
   let count = 0
