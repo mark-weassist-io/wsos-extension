@@ -44,7 +44,7 @@ db.run(`INSERT OR IGNORE INTO wa_genders (name) VALUES ('Male'), ('Female')`)
 // Create onboarding step definitions
 db.run(`CREATE TABLE wa_ob_step_defs (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL UNIQUE, step_order INTEGER NOT NULL, category TEXT, owner TEXT NOT NULL)`)
 for (const s of STEP_DEFS) {
-  db.prepare("INSERT INTO wa_ob_step_defs (id, name, step_order, category, owner) VALUES (?, ?, ?, ?, ?)").run(s.id, s.name, s.id, s.category, s.owner)
+  db.prepare("INSERT INTO wa_ob_step_defs (id, name, step_order, category, owner) VALUES (?, ?, ?, ?, ?)").run(s.id, toTitleCase(s.name), s.id, s.category, s.owner)
 }
 
 // Seed staff table (will be expanded after auxiliary data loads)
@@ -355,7 +355,7 @@ if (schedTab?.formatted?.length > 1) {
 console.log("  Computing last_stage_completed for ob_records...")
 db.run(`
   UPDATE wa_ob_records SET last_stage_completed = (
-    SELECT s.name FROM wa_ob_statuses os
+    SELECT toTitleCase(s.name) FROM wa_ob_statuses os
     JOIN wa_ob_step_defs s ON s.id = os.step_def_id
     WHERE os.record_id = wa_ob_records.id AND os.status = 'Done'
     ORDER BY os.step_def_id DESC LIMIT 1
