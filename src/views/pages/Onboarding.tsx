@@ -8,6 +8,7 @@ interface DetailProps {
   recordId: number
   startDate?: string | null
   startTime?: string | null
+  rate?: string | null
 }
 
 interface Props {
@@ -55,6 +56,7 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
         <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:0.85rem">
           {detail.startDate ? <span><strong>Start Date:</strong> {detail.startDate}</span> : null}
           {detail.startTime ? <span><strong>Start Time:</strong> {detail.startTime}</span> : null}
+          {detail.rate ? <span><strong>Rate:</strong> {detail.rate}</span> : null}
         </div>
         <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px">Click a status to toggle: Not Done → Done → NA → Not Done</p>
         <div class="card" style="padding:0">
