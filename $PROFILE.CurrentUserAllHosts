@@ -1,0 +1,20 @@
+# ──────────────────────────────────────────────────────────────
+# PowerShell Profile — Auto-loaded on every session
+# ──────────────────────────────────────────────────────────────
+
+# 1. Anti-data-loss enforcement (AGENTS.MD §3.5)
+. 'D:\dev-wrapper\agents\scripts\shell\anti-data-loss.ps1'
+
+# 2. Auto-save daemon reminder (AGENTS.MD §3.2)
+$host.UI.RawUI.WindowTitle = "🚫 ANTI-DATA-LOSS"
+Write-Host -ForegroundColor DarkGray @"
+
+  ╔════════════════════════════════════════════════════╗
+  ║  AGENTS.MD REMINDERS                               ║
+  ╠════════════════════════════════════════════════════╣
+  ║  §3.2  Start 'bun run autosave' with every project ║
+  ║  §3.5  Destructive ops physically blocked          ║
+  ║  §6.3  Archive/ directory — never delete           ║
+  ╚════════════════════════════════════════════════════╝
+  Run 'bun run autosave' in any project to auto-commit+push.
+"@
