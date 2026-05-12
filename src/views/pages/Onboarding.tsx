@@ -54,9 +54,10 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
         <a href="/onboarding" style="color:var(--accent);text-decoration:none;font-size:0.875rem;display:inline-block;margin-bottom:16px">← Back to Onboarding</a>
         <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">{detail.opName} — Onboarding</h3>
         <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:0.85rem">
-          {detail.startDate ? <span><strong>Start Date:</strong> {detail.startDate}</span> : null}
-          {detail.startTime ? <span><strong>Start Time:</strong> {detail.startTime}</span> : null}
-          {detail.rate ? <span><strong>Rate:</strong> {detail.rate}</span> : null}
+          <span><strong>Start Date:</strong> {detail.startDate || "—"}</span>
+          <span><strong>Start Time:</strong> {detail.startTime || "—"}</span>
+          <span><strong>Rate:</strong> {detail.rate || "—"}</span>
+          <a href={`/ops/${detail.opName}/edit`} class="btn btn-outline-secondary btn-sm" style="text-decoration:none">Edit OP Details</a>
         </div>
         <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px">Click a status to toggle: Not Done → Done → NA → Not Done</p>
         <div class="card" style="padding:0">
