@@ -14,7 +14,6 @@ export const ASSIGNMENTS_RULES: EntityQualityRules = {
   end_date DATE,
   working_days TEXT,
   working_hours TEXT,
-  rate NUMERIC,
   assigned_cs TEXT,
   department TEXT,
   deleted_at DATETIME DEFAULT NULL,
