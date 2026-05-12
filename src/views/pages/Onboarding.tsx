@@ -54,11 +54,22 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
       <Layout title={`Onboarding — ${detail.opName}`} activeNav="onboarding">
         <a href="/onboarding" style="color:var(--accent);text-decoration:none;font-size:0.875rem;display:inline-block;margin-bottom:16px">← Back to Onboarding</a>
         <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">{detail.opName} — Onboarding</h3>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;font-size:0.85rem">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;font-size:0.85rem;align-items:center">
           <span><strong>Start Date:</strong> {detail.startDate || "—"}</span>
           <span><strong>Start Time:</strong> {detail.startTime || "—"}</span>
           <span><strong>Rate:</strong> {detail.rate || "—"}</span>
           <a href={`/ops/${detail.opId}/edit`} class="btn btn-outline-secondary btn-sm" style="text-decoration:none">Edit Rate & Details</a>
+          <button class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('onboarding-edit-form').style.display='block';this.style.display='none'">Edit Dates</button>
+        </div>
+        <div id="onboarding-edit-form" style="display:none;margin-bottom:16px">
+          <form action={`/onboarding/${detail.recordId}`} method="POST" class="card" style="padding:16px;max-width:500px">
+            <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Date</label><input type="date" name="startDate" value={detail.startDate || ""} class="form-control form-control-sm"></div>
+            <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Time</label><input type="text" name="startTime" value={detail.startTime || ""} class="form-control form-control-sm" placeholder="e.g. 9:00am PST"></div>
+            <div style="display:flex;gap:8px">
+              <button type="submit" class="btn btn-primary btn-sm">Save</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('onboarding-edit-form').style.display='none';document.querySelector('[onclick*=\"onboarding-edit-form\"]').style.display='inline-block'">Cancel</button>
+            </div>
+          </form>
         </div>
         <p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:12px">Click a status to toggle: Not Done → Done → NA → Not Done</p>
         <div class="card" style="padding:0">
