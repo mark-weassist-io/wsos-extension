@@ -1,6 +1,6 @@
 import { Hono } from "hono"
 import { SchedulePage } from "../views/pages/Schedule"
-import { getPost90DaySchedule, getUpcomingCheckins, getOverdueCheckins, getMilestoneHappened, setMilestoneStatus, getMilestoneCustomDates } from "../db/queries/checkins"
+import { getPost90DaySchedule, getUpcomingCheckins, getOverdueCheckins, setMilestoneStatus, getMilestoneCustomDates } from "../db/queries/checkins"
 import { getDb } from "../db"
 
 const router = new Hono()
