@@ -1,6 +1,6 @@
 import { Hono } from "hono"
 import { SchedulePage } from "../views/pages/Schedule"
-import { getPost90DaySchedule, getUpcomingCheckins, getOverdueCheckins, getMilestoneHappened, toggleMilestone } from "../db/queries/checkins"
+import { getPost90DaySchedule, getUpcomingCheckins, getOverdueCheckins, getMilestoneHappened, toggleMilestone, setMilestoneStatus } from "../db/queries/checkins"
 import { getDb } from "../db"
 
 const router = new Hono()
@@ -51,15 +51,13 @@ router.get("/", (c) => {
   return c.html(<SchedulePage schedule={schedule} milestoneFlags={allFlags} milestoneGreen={allGreen} filter={filter || undefined} />)
 })
 
-router.post("/toggle/:opName/:milestone", async (c) => {
+router.post("/set-status/:opName/:milestone", async (c) => {
   const opName = decodeURIComponent(c.req.param("opName"))
   const milestone = decodeURIComponent(c.req.param("milestone"))
-  const next = toggleMilestone(opName, milestone)
-  // Return just the style change, keeping the original date text
-  const bg = next ? '#22c55e' : 'transparent'
-  const color = next ? '#fff' : 'inherit'
-  // The client sends back the original date via a header or we just update the parent
-  return c.body(null, 204)  // No content — client handles style toggle
+  const form = await c.req.parseBody()
+  const status = (form.status as string) || ""
+  setMilestoneStatus(opName, milestone, status)
+  return c.body(null, 204)
 })
 
 export { router as scheduleRouter }
