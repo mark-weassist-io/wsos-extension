@@ -66,33 +66,34 @@ const milestoneBadge = (status: string): string => {
 }
 
 const MS_SCRIPT = `
-function msDate(iso) { var m=iso.match(/^(\\d{4})-(\\d{2})-(\\d{2})$/); return m ? (+m[2])+'/'+(+m[3])+'/'+m[1] : ''; }
-function msPost(p,status) {
-  var raw = p.querySelector('.ms-dd-date').value;
-  var date = msDate(raw);
-  var op = p.querySelector('[name="opName"]').value;
-  var mk = p.querySelector('[name="milestone"]').value;
-  fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)location.reload()});
+function msCls(s){return s==='done'?'badge badge-success':s==='scheduled'?'badge badge-info':s==='overdue'?'badge badge-danger':'badge badge-secondary'}
+function msDate(iso){var m=iso.match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);return m?(+m[2])+'/'+(+m[3])+'/'+m[1]:''}
+function msUpdate(p,status,date){
+  var tog=p.querySelector('.ms-dd-toggle');
+  if(!tog)return;
+  var cls='badge';if(tog.className.indexOf('badge-success')>-1)cls+=' badge-success';else if(tog.className.indexOf('badge-info')>-1)cls+=' badge-info';else if(tog.className.indexOf('badge-danger')>-1)cls+=' badge-danger';else cls+=' badge-secondary';
+  tog.className=msCls(status)+' ms-dd-toggle';
+  var cn=tog.childNodes;
+  for(var i=0;i<cn.length;i++){if(cn[i].nodeType===3&&cn[i].textContent.trim()){cn[i].textContent=date;break}}
+  var ss=tog.querySelector('span[style]');if(ss)ss.textContent=status;
+  p.querySelector('[name="status"]').value=status;
+  p.querySelector('.ms-dd').classList.remove('show');
 }
-document.addEventListener('click', function(e) {
-  var dd = e.target.closest('.ms-dd-toggle');
-  if (dd) { e.stopPropagation(); var p = dd.closest('[data-milestone-cell]'); if(p){p.querySelector('.ms-dd').classList.toggle('show')} return }
-  var opt = e.target.closest('.ms-dd-opt');
-  if (opt) { e.stopPropagation();
-    var p = opt.closest('[data-milestone-cell]');
-    if(p) { msPost(p, opt.dataset.status); }
-  }
-  var sv = e.target.closest('.ms-dd-save');
-  if (sv) { e.stopPropagation();
-    var p = sv.closest('[data-milestone-cell]');
-    if(p) {
-      var active = p.querySelector('.ms-dd-opt.active');
-      msPost(p, active ? active.dataset.status : 'scheduled');
-    }
-  }
-  if (!e.target.closest('.ms-dd') && !e.target.closest('.ms-dd-toggle')) {
-    document.querySelectorAll('.ms-dd.show').forEach(function(d){d.classList.remove('show')});
-  }
+function msPost(p,status){
+  var raw=p.querySelector('.ms-dd-date').value;
+  var date=msDate(raw);
+  var op=p.querySelector('[name="opName"]').value;
+  var mk=p.querySelector('[name="milestone"]').value;
+  fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)msUpdate(p,status,date)});
+}
+document.addEventListener('click',function(e){
+  var dd=e.target.closest('.ms-dd-toggle');
+  if(dd){e.stopPropagation();var p=dd.closest('[data-milestone-cell]');if(p){p.querySelector('.ms-dd').classList.toggle('show')}return}
+  var opt=e.target.closest('.ms-dd-opt');
+  if(opt){e.stopPropagation();var p=opt.closest('[data-milestone-cell]');if(p)msPost(p,opt.dataset.status)}
+  var sv=e.target.closest('.ms-dd-save');
+  if(sv){e.stopPropagation();var p=sv.closest('[data-milestone-cell]');if(p){var a=p.querySelector('.ms-dd-opt.active');msPost(p,a?a.dataset.status:'scheduled')}}
+  if(!e.target.closest('.ms-dd')&&!e.target.closest('.ms-dd-toggle')){document.querySelectorAll('.ms-dd.show').forEach(function(d){d.classList.remove('show')})}
 });
 `
 
