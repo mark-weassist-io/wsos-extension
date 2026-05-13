@@ -1,8 +1,9 @@
 import { writeFileSync, unlinkSync } from "fs"
+import { join } from "path"
 import { spawnSync } from "bun"
 import { parseCSV, decryptFile } from "D:\\repositories\\dev-infra\\agents\\scripts\\credentials\\crypto"
 
-const KEY = require("path").join(process.env.TEMP, "_nx_dbu")
+const KEY = join(process.env.TEMP!, "_nx_dbu")
 const m = parseCSV(decryptFile()).find(r => r.category === "ssh" && r.name === "key-00")
 writeFileSync(KEY, m!.secret + "\n", { mode: 0o600 })
 process.on("exit", () => { try { unlinkSync(KEY) } catch {} })
