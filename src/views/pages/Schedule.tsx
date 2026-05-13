@@ -60,31 +60,28 @@ const milestoneBadge = (status: string): string => {
 }
 
 const MS_SCRIPT = `
+function msDate(iso) { var m=iso.match(/^(\\d{4})-(\\d{2})-(\\d{2})$/); return m ? (+m[2])+'/'+(+m[3])+'/'+m[1] : ''; }
+function msPost(p,status) {
+  var raw = p.querySelector('.ms-dd-date').value;
+  var date = msDate(raw);
+  var op = p.querySelector('[name="opName"]').value;
+  var mk = p.querySelector('[name="milestone"]').value;
+  fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)location.reload()});
+}
 document.addEventListener('click', function(e) {
   var dd = e.target.closest('.ms-dd-toggle');
   if (dd) { e.stopPropagation(); var p = dd.closest('[data-milestone-cell]'); if(p){p.querySelector('.ms-dd').classList.toggle('show')} return }
   var opt = e.target.closest('.ms-dd-opt');
   if (opt) { e.stopPropagation();
     var p = opt.closest('[data-milestone-cell]');
-    if(p) {
-      p.querySelectorAll('.ms-dd-opt').forEach(function(o){o.classList.remove('active')});
-      opt.classList.add('active');
-      var date = p.querySelector('.ms-dd-date').value;
-      var op = p.querySelector('[name="opName"]').value;
-      var mk = p.querySelector('[name="milestone"]').value;
-      fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(opt.dataset.status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)location.reload()});
-    }
+    if(p) { msPost(p, opt.dataset.status); }
   }
   var sv = e.target.closest('.ms-dd-save');
   if (sv) { e.stopPropagation();
     var p = sv.closest('[data-milestone-cell]');
     if(p) {
-      var date = p.querySelector('.ms-dd-date').value;
-      var op = p.querySelector('[name="opName"]').value;
-      var mk = p.querySelector('[name="milestone"]').value;
       var active = p.querySelector('.ms-dd-opt.active');
-      var status = active ? active.dataset.status : 'scheduled';
-      fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)location.reload()});
+      msPost(p, active ? active.dataset.status : 'scheduled');
     }
   }
   if (!e.target.closest('.ms-dd') && !e.target.closest('.ms-dd-toggle')) {

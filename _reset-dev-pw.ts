@@ -11,13 +11,9 @@ process.on("exit", () => { try { unlinkSync(KEY) } catch {} })
 const HOST = "root@178.105.97.246"
 const cmd = (a: string) => spawnSync(["ssh", "-i", KEY, "-o", "StrictHostKeyChecking=accept-new", HOST, a], { stdio: ["inherit", "inherit", "inherit"] })
 
-// Generate hash locally like Bun does, then set it on VPS
-// Bun uses bcrypt with 10 rounds
-const pw = "NexusDevAdmin2025!"
-const hash = spawnSync(["bun", "-e", `Bun.password.hash("${pw}").then(h=>console.log(h))`], { stdio: ["pipe", "pipe", "pipe"] })
-const hashStr = hash.stdout.toString().trim()
-console.log("Hash:", hashStr)
+// Delete existing users and restart so seed creates them with new .env password
+cmd(`sqlite3 /opt/nexus-dev/data/wsos-extension.db "DELETE FROM nexus_users;"`)
+cmd(`systemctl restart nexus-dev`)
+cmd(`sleep 3`)
+cmd(`journalctl -u nexus-dev --no-pager -n 15 | tail -10`)
 
-cmd(`sqlite3 /opt/nexus-dev/data/wsos-extension.db "UPDATE nexus_users SET password_hash='${hashStr}' WHERE email='mark@weassist.io';"`)
-cmd(`sqlite3 /opt/nexus-dev/data/wsos-extension.db "UPDATE nexus_users SET password_hash='${hashStr}' WHERE email='eric@weassist.io';"`)
-cmd(`echo "Updated"`)
