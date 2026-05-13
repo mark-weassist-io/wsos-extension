@@ -49,6 +49,12 @@ function fromInputDate(iso: string): string {
   return `${+m[2]}/${+m[3]}/${m[1]}`
 }
 
+function fmtDate(d: string): string {
+  const iso = d.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (iso) return `${+iso[2]}/${+iso[3]}/${iso[1]}`
+  return d
+}
+
 const milestoneBadge = (status: string): string => {
   switch (status) {
     case "done": return "badge badge-success"
@@ -145,7 +151,7 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGre
                       const happened = flags[m.key] || 0
                       const wasGreen = milestoneGreen?.[s.opName]?.[m.key] ?? 0
                       const status = val ? classifyMilestone(val, happened === 1, wasGreen === 1) : "cancelled"
-                      const displayDate = customVal || origVal || ""
+                      const displayDate = fmtDate(customVal || origVal || "")
                       return (
                         <td key={m.key} data-milestone-cell style="position:relative;text-align:center">
                           {origVal || customVal ? (
