@@ -6,6 +6,7 @@ interface Props {
   staff: StaffUser[]
   showAdd?: boolean
   currentUserId?: number
+  userRole?: string
 }
 
 export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId }) => {
@@ -21,7 +22,7 @@ export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId }) => {
         </div>
       </div>
 
-      {showAdd && (
+      {userRole === "admin" && showAdd && (
         <div class="card form-section" style="margin-bottom:20px">
           <h3 style="font-size:0.9rem;font-weight:600;margin-bottom:16px">Add User</h3>
           <form action="/cs-staff" method="POST">
@@ -73,7 +74,7 @@ export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId }) => {
         </table>
       </div>
 
-      {!showAdd && (
+      {userRole === "admin" && !showAdd && (
         <a href="/cs-staff/new" class="btn btn-primary btn-sm" style="margin-top:12px;text-decoration:none">+ Add User</a>
       )}
     </Layout>

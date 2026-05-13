@@ -13,9 +13,17 @@ const StaffSchema = z.object({
 
 router.get("/", (c) => {
   const currentUserId = c.get("userId") as number
+  const userRole = c.get("userRole") as string
   const trashed = c.req.query("trashed") === "1"
   const staff = getAllUsers(trashed)
-  return c.html(<CsStaffPage staff={staff} currentUserId={currentUserId} />)
+  return c.html(<CsStaffPage staff={staff} currentUserId={currentUserId} userRole={userRole} />)
+})
+
+router.get("/new", (c) => {
+  const currentUserId = c.get("userId") as number
+  const userRole = c.get("userRole") as string
+  const staff = getAllUsers(false)
+  return c.html(<CsStaffPage staff={staff} showAdd={true} currentUserId={currentUserId} userRole={userRole} />)
 })
 
 router.get("/new", (c) => {
