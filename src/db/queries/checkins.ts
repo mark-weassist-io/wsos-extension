@@ -161,7 +161,12 @@ export function setMilestoneStatus(opName: string, milestone: string, status: st
   const happened = status === "done" ? 1 : 0
   const wasGreen = status === "scheduled" ? 1 : 0
   const existing = getDb().prepare("SELECT id FROM checkin_milestones WHERE op_name = ? AND milestone = ?").get(opName, milestone) as { id: number } | undefined
-  const dateVal = customDate || null
+  // Convert ISO date (YYYY-MM-DD) to M/D/Y if needed
+  let dateVal = customDate || null
+  if (dateVal) {
+    const iso = dateVal.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+    if (iso) dateVal = `${+iso[2]}/${+iso[3]}/${iso[1]}`
+  }
   if (existing) {
     getDb().prepare("UPDATE checkin_milestones SET happened = ?, was_green = ?, custom_date = ? WHERE op_name = ? AND milestone = ?").run(happened, wasGreen, dateVal, opName, milestone)
   } else {
