@@ -153,7 +153,7 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGre
                         <td key={m.key} data-milestone-cell style="position:relative;text-align:center">
                           {origVal || customVal ? (
                             <>
-                              <span class={milestoneBadge(status)} style="cursor:pointer" class="ms-dd-toggle">
+                              <span class={`${milestoneBadge(status)} ms-dd-toggle`} style="cursor:pointer">
                                 {displayDate}<br/><span style="font-size:0.65rem;opacity:0.7">{status}</span>
                               </span>
                               <div class="ms-dd">
@@ -162,13 +162,13 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGre
                                   <input type="hidden" name="milestone" value={m.key} />
                                   <input type="date" class="ms-dd-date" name="date" value={toInputDate(displayDate)} />
                                   <div class="ms-dd-options">
-                                    <button type="button" class="ms-dd-opt" data-status="done" class={{ "ms-dd-opt": true, active: status === "done" }}>
+                                    <button type="button" class={`ms-dd-opt${status === "done" ? " active" : ""}`} data-status="done">
                                       <span class="ms-dd-dot" style="background:var(--success)"></span> Done
                                     </button>
-                                    <button type="button" class="ms-dd-opt" data-status="scheduled" class={{ "ms-dd-opt": true, active: status === "scheduled" }}>
+                                    <button type="button" class={`ms-dd-opt${status === "scheduled" ? " active" : ""}`} data-status="scheduled">
                                       <span class="ms-dd-dot" style="background:#3b82f6"></span> Scheduled
                                     </button>
-                                    <button type="button" class="ms-dd-opt" data-status="canceled" class={{ "ms-dd-opt": true, active: status === "cancelled" }}>
+                                    <button type="button" class={`ms-dd-opt${status === "cancelled" ? " active" : ""}`} data-status="canceled">
                                       <span class="ms-dd-dot" style="background:#6b7280"></span> Canceled
                                     </button>
                                   </div>
