@@ -195,6 +195,19 @@ export function ensureSchema(db: Database): void {
     if (!milestoneCols.find(c => c.name === "custom_date")) {
       db.run("ALTER TABLE checkin_milestones ADD COLUMN custom_date TEXT")
     }
+    // Mark overdue milestones as cancelled on every startup
+    const today = new Date()
+    const overdueMs = db.prepare("SELECT op_name, milestone, milestone_date, custom_date FROM checkin_milestones WHERE happened = 0 AND was_green = 1 AND milestone_date IS NOT NULL AND milestone_date != ''").all() as { op_name: string; milestone: string; milestone_date: string; custom_date: string | null }[]
+    for (const ms of overdueMs) {
+      const dateStr = ms.custom_date || ms.milestone_date
+      const parts = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+      if (parts) {
+        const msDate = new Date(+parts[3], +parts[1] - 1, +parts[2])
+        if (msDate < today) {
+          db.prepare("UPDATE checkin_milestones SET was_green = 0 WHERE op_name = ? AND milestone = ?").run(ms.op_name, ms.milestone)
+        }
+      }
+    }
   }
 
   // Ensure users table exists (auth)
