@@ -71,7 +71,6 @@ function msDate(iso){var m=iso.match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);return m?(+
 function msUpdate(p,status,date){
   var tog=p.querySelector('.ms-dd-toggle');
   if(!tog)return;
-  var cls='badge';if(tog.className.indexOf('badge-success')>-1)cls+=' badge-success';else if(tog.className.indexOf('badge-info')>-1)cls+=' badge-info';else if(tog.className.indexOf('badge-danger')>-1)cls+=' badge-danger';else cls+=' badge-secondary';
   tog.className=msCls(status)+' ms-dd-toggle';
   var cn=tog.childNodes;
   for(var i=0;i<cn.length;i++){if(cn[i].nodeType===3&&cn[i].textContent.trim()){cn[i].textContent=date;break}}
