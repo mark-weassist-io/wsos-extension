@@ -157,15 +157,26 @@ export function toggleMilestone(opName: string, milestone: string): number {
   return next
 }
 
-export function setMilestoneStatus(opName: string, milestone: string, status: string): void {
+export function setMilestoneStatus(opName: string, milestone: string, status: string, customDate?: string): void {
   const happened = status === "done" ? 1 : 0
   const wasGreen = status === "scheduled" ? 1 : 0
   const existing = getDb().prepare("SELECT id FROM checkin_milestones WHERE op_name = ? AND milestone = ?").get(opName, milestone) as { id: number } | undefined
+  const dateVal = customDate || null
   if (existing) {
-    getDb().prepare("UPDATE checkin_milestones SET happened = ?, was_green = ? WHERE op_name = ? AND milestone = ?").run(happened, wasGreen, opName, milestone)
+    getDb().prepare("UPDATE checkin_milestones SET happened = ?, was_green = ?, custom_date = ? WHERE op_name = ? AND milestone = ?").run(happened, wasGreen, dateVal, opName, milestone)
   } else {
-    getDb().prepare("INSERT INTO checkin_milestones (op_name, milestone, happened, was_green) VALUES (?, ?, ?, ?)").run(opName, milestone, happened, wasGreen)
+    getDb().prepare("INSERT INTO checkin_milestones (op_name, milestone, happened, was_green, custom_date) VALUES (?, ?, ?, ?, ?)").run(opName, milestone, happened, wasGreen, dateVal)
   }
+}
+
+export function getMilestoneCustomDates(): Record<string, Record<string, string>> {
+  const rows = getDb().prepare("SELECT op_name, milestone, custom_date FROM checkin_milestones WHERE custom_date IS NOT NULL").all() as { op_name: string; milestone: string; custom_date: string }[]
+  const result: Record<string, Record<string, string>> = {}
+  for (const row of rows) {
+    if (!result[row.op_name]) result[row.op_name] = {}
+    result[row.op_name][row.milestone] = row.custom_date
+  }
+  return result
 }
 
 // --- Ninety-day Check-ins CRUD ---
