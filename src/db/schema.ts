@@ -185,6 +185,12 @@ export function ensureSchema(db: Database): void {
     db.run("ALTER TABLE wsos_op_client_assignments ADD COLUMN assigned_cs TEXT")
   }
 
+  // Ensure checkin_milestones has was_green column
+  const milestoneCols = db.prepare("PRAGMA table_info(checkin_milestones)").all() as { name: string }[]
+  if (!milestoneCols.find(c => c.name === "was_green")) {
+    db.run("ALTER TABLE checkin_milestones ADD COLUMN was_green INTEGER NOT NULL DEFAULT 1")
+  }
+
   // Ensure users table exists (auth)
   db.run(`CREATE TABLE IF NOT EXISTS nexus_users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
