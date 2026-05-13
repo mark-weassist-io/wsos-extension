@@ -33,6 +33,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/services/nexus
+EnvironmentFile=/opt/services/nexus/.env
 ExecStart=/opt/services/nexus/nexus
 Restart=always
 RestartSec=5
