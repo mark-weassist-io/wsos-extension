@@ -138,10 +138,10 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGre
                 const dates = milestoneDates?.[s.opName] || {}
                 return (
                   <tr>
-                    <td style="max-width:140px"><span style="word-break:break-word">{s.opName || "—"}</span></td>
-                    <td style="max-width:250px"><span style="word-break:break-word">{s.clientName || "—"}</span></td>
-                    <td class="text-sm" style="max-width:220px"><span style="word-break:break-word">{s.clientSEmail || "—"}</span></td>
-                    <td class="text-sm" style="max-width:200px"><span style="word-break:break-word">{s.role || "—"}</span></td>
+                    <td><strong>{s.opName || "—"}</strong></td>
+                    <td>{s.clientName || "—"}</td>
+                    <td class="text-sm">{s.clientSEmail || "—"}</td>
+                    <td class="text-sm">{s.role || "—"}</td>
                     <td><span class={statusBadge(s.status)}>{s.status || "—"}</span></td>
                     <td class="text-sm">{s.startDate || "—"}</td>
                     {MILESTONES.map(m => {
