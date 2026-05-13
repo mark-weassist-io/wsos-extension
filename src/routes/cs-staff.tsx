@@ -33,6 +33,8 @@ router.get("/new", (c) => {
 })
 
 router.post("/", async (c) => {
+  const userRole = c.get("userRole") as string
+  if (userRole !== "admin") return c.redirect("/cs-staff")
   const form = await c.req.parseBody()
   const parsed = StaffSchema.safeParse(form)
   if (!parsed.success) return c.redirect("/cs-staff")
