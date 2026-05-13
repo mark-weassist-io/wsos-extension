@@ -51,6 +51,26 @@ router.get("/", (c) => {
     allGreen[m.op_name][m.milestone] = m.was_green ?? 0
     if (m.custom_date) allDates[m.op_name][m.milestone] = m.custom_date
   }
+  // Auto-cancel overdue milestones (happened=0, was_green=1, date past)
+  const today = new Date()
+  const cancelMs = getDb().prepare("UPDATE checkin_milestones SET was_green = 0 WHERE op_name = ? AND milestone = ?")
+  for (const s of schedule) {
+    for (const [field, key, _] of MILESTONE_FIELDS) {
+      const flags = allFlags[s.opName] || {}
+      if (flags[key]) continue // already happened (done)
+      const green = allGreen[s.opName]?.[key] ?? 0
+      if (!green) continue // already cancelled
+      const dateStr = allDates[s.opName]?.[key] || (s as any)[field] || ""
+      const parts = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+      if (!parts) continue
+      const msDate = new Date(+parts[3], +parts[1] - 1, +parts[2])
+      if (msDate < today) {
+        cancelMs.run(s.opName, key)
+        if (!allGreen[s.opName]) allGreen[s.opName] = {}
+        allGreen[s.opName][key] = 0
+      }
+    }
+  }
   return c.html(<SchedulePage schedule={schedule} milestoneFlags={allFlags} milestoneGreen={allGreen} milestoneDates={allDates} filter={filter || undefined} />)
 })
 
