@@ -23,6 +23,7 @@ interface Props {
   schedule: ScheduleRow[]
   milestoneFlags: Record<string, Record<string, number>>
   milestoneGreen?: Record<string, Record<string, number>>
+  milestoneDates?: Record<string, Record<string, string>>
   filter?: string
 }
 
@@ -36,6 +37,18 @@ const MILESTONES = [
   { key: "1yr3mo", label: "15 Mo", col: "after1Year3Months" },
 ]
 
+function toInputDate(mdy: string): string {
+  const m = mdy.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+  if (!m) return ""
+  return `${m[3]}-${m[1].padStart(2, "0")}-${m[2].padStart(2, "0")}`
+}
+
+function fromInputDate(iso: string): string {
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (!m) return ""
+  return `${+m[2]}/${+m[3]}/${m[1]}`
+}
+
 const milestoneBadge = (status: string): string => {
   switch (status) {
     case "done": return "badge badge-success"
@@ -46,22 +59,59 @@ const milestoneBadge = (status: string): string => {
   }
 }
 
-export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGreen, filter }) => {
+const MS_SCRIPT = `
+document.addEventListener('click', function(e) {
+  var dd = e.target.closest('.ms-dd-toggle');
+  if (dd) { e.stopPropagation(); var p = dd.closest('[data-milestone-cell]'); if(p){p.querySelector('.ms-dd').classList.toggle('show')} return }
+  var opt = e.target.closest('.ms-dd-opt');
+  if (opt) { e.stopPropagation();
+    var p = opt.closest('[data-milestone-cell]');
+    if(p) {
+      p.querySelectorAll('.ms-dd-opt').forEach(function(o){o.classList.remove('active')});
+      opt.classList.add('active');
+      var date = p.querySelector('.ms-dd-date').value;
+      var op = p.querySelector('[name="opName"]').value;
+      var mk = p.querySelector('[name="milestone"]').value;
+      fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(opt.dataset.status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)location.reload()});
+    }
+  }
+  var sv = e.target.closest('.ms-dd-save');
+  if (sv) { e.stopPropagation();
+    var p = sv.closest('[data-milestone-cell]');
+    if(p) {
+      var date = p.querySelector('.ms-dd-date').value;
+      var op = p.querySelector('[name="opName"]').value;
+      var mk = p.querySelector('[name="milestone"]').value;
+      var active = p.querySelector('.ms-dd-opt.active');
+      var status = active ? active.dataset.status : 'scheduled';
+      fetch('/schedule/set-status/'+encodeURIComponent(op)+'/'+encodeURIComponent(mk),{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'status='+encodeURIComponent(status)+'&date='+encodeURIComponent(date)}).then(function(r){if(r.ok)location.reload()});
+    }
+  }
+  if (!e.target.closest('.ms-dd') && !e.target.closest('.ms-dd-toggle')) {
+    document.querySelectorAll('.ms-dd.show').forEach(function(d){d.classList.remove('show')});
+  }
+});
+`
+
+const STYLE = `
+.ms-dd { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); z-index:100; min-width:220px; background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15); margin-top:4px }
+.ms-dd.show { display:block }
+.ms-dd-body { display:flex; flex-direction:column; gap:8px }
+.ms-dd-date { width:100%; padding:6px 8px; border:1px solid var(--border); border-radius:6px; font-size:0.8rem; background:var(--body-bg); color:var(--text) }
+.ms-dd-options { display:flex; flex-direction:column; gap:4px }
+.ms-dd-opt { display:flex; align-items:center; gap:8px; padding:6px 8px; border:none; border-radius:6px; cursor:pointer; font-size:0.8rem; background:transparent; color:var(--text); text-align:left; width:100% }
+.ms-dd-opt:hover { background:var(--accent-light) }
+.ms-dd-opt.active { background:var(--accent-light); font-weight:600 }
+.ms-dd-dot { display:inline-block; width:10px; height:10px; border-radius:50%; flex-shrink:0 }
+.ms-dd-save { width:100%; padding:6px; border:none; border-radius:6px; cursor:pointer; font-size:0.8rem; background:var(--accent); color:#fff; font-weight:500 }
+.ms-dd-save:hover { opacity:0.9 }
+`
+
+export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGreen, milestoneDates, filter }) => {
   return (
     <Layout title="Check-in Schedule" activeNav="schedule">
-      <script dangerouslySetInnerHTML={{ __html: `
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('[data-bs-toggle="popover"]').forEach(function(el) {
-    new bootstrap.Popover(el, { html: true, sanitize: false, trigger: 'focus' })
-  });
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('ms-option')) {
-      var td = e.target.closest('[data-milestone-cell]');
-      if (td) { var form = td.querySelector('form'); if (form) { form.querySelector('[name="status"]').value = e.target.dataset.status || ''; form.dispatchEvent(new Event('submit', { bubbles: true })); } }
-    }
-  });
-});
-` }} />
+      <style>{STYLE}</style>
+      <script dangerouslySetInnerHTML={{ __html: MS_SCRIPT }} />
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
         <a href="/schedule" class={`badge ${!filter ? "badge-info" : "badge-secondary"}`} style="text-decoration:none;cursor:pointer">All</a>
         <a href="/schedule?filter=upcoming" class={`badge ${filter === "upcoming" ? "badge-info" : "badge-secondary"}`} style="text-decoration:none;cursor:pointer">Upcoming</a>
@@ -82,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <tbody>
               {schedule.map(s => {
                 const flags = milestoneFlags[s.opName] || {}
+                const dates = milestoneDates?.[s.opName] || {}
                 return (
                   <tr>
                     <td><strong style="white-space:nowrap">{s.opName || "—"}</strong></td>
@@ -91,31 +142,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td><span class={statusBadge(s.status)}>{s.status || "—"}</span></td>
                     <td class="text-sm">{s.startDate || "—"}</td>
                     {MILESTONES.map(m => {
-                      const val = (s as any)[m.col]
+                      const origVal = (s as any)[m.col]
+                      const customVal = dates[m.key]
+                      const val = customVal || origVal
                       const happened = flags[m.key] || 0
                       const wasGreen = milestoneGreen?.[s.opName]?.[m.key] ?? 0
                       const status = val ? classifyMilestone(val, happened === 1, wasGreen === 1) : "cancelled"
+                      const displayDate = customVal || origVal || ""
                       return (
-                        <td key={m.key} data-milestone-cell style="text-align:center">
-                          {val ? (
-                            <form hx-post={`/schedule/set-status/${encodeURIComponent(s.opName)}/${m.key}`}
-                                  hx-trigger="submit" hx-swap="outerHTML" hx-target="closest td"
-                                  style="display:inline">
-                              <input type="hidden" name="status" value={status} />
-                              <button type="button" class="btn btn-sm p-0 border-0 bg-transparent"
-                                      data-bs-toggle="popover" data-bs-placement="bottom"
-                                      data-bs-content={[
-                                        '<div style="display:flex;flex-direction:column;gap:4px;padding:4px">',
-                                        '<span class="ms-option" data-status="done" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--success)"></span> Done</span>',
-                                        '<span class="ms-option" data-status="scheduled" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#3b82f6"></span> Scheduled</span>',
-                                        '<span class="ms-option" data-status="canceled" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#6b7280"></span> Canceled</span>',
-                                        '</div>',
-                                      ].join("")}>
-                                <span class={milestoneBadge(status)} style="cursor:pointer">
-                                  {val}<br/><span style="font-size:0.65rem;opacity:0.7">{status}</span>
-                                </span>
-                              </button>
-                            </form>
+                        <td key={m.key} data-milestone-cell style="position:relative;text-align:center">
+                          {origVal || customVal ? (
+                            <>
+                              <span class={milestoneBadge(status)} style="cursor:pointer" class="ms-dd-toggle">
+                                {displayDate}<br/><span style="font-size:0.65rem;opacity:0.7">{status}</span>
+                              </span>
+                              <div class="ms-dd">
+                                <div class="ms-dd-body">
+                                  <input type="hidden" name="opName" value={s.opName} />
+                                  <input type="hidden" name="milestone" value={m.key} />
+                                  <input type="date" class="ms-dd-date" name="date" value={toInputDate(displayDate)} />
+                                  <div class="ms-dd-options">
+                                    <button type="button" class="ms-dd-opt" data-status="done" class={{ "ms-dd-opt": true, active: status === "done" }}>
+                                      <span class="ms-dd-dot" style="background:var(--success)"></span> Done
+                                    </button>
+                                    <button type="button" class="ms-dd-opt" data-status="scheduled" class={{ "ms-dd-opt": true, active: status === "scheduled" }}>
+                                      <span class="ms-dd-dot" style="background:#3b82f6"></span> Scheduled
+                                    </button>
+                                    <button type="button" class="ms-dd-opt" data-status="canceled" class={{ "ms-dd-opt": true, active: status === "cancelled" }}>
+                                      <span class="ms-dd-dot" style="background:#6b7280"></span> Canceled
+                                    </button>
+                                  </div>
+                                  <button type="button" class="ms-dd-save">Save</button>
+                                </div>
+                              </div>
+                            </>
                           ) : "—"}
                         </td>
                       )
