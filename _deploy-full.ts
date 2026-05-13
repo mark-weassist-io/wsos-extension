@@ -35,15 +35,20 @@ ssh([HOST, "mkdir", "-p", "/opt/services/nexus"])
 ssh([HOST, "mv", "/tmp/nexus", "/opt/services/nexus/nexus"])
 ssh([HOST, "chmod", "+x", "/opt/services/nexus/nexus"])
 
-// 4. Create .env (with new passwords)
+// 4. Create .env with passwords
 console.log("\n=== Creating .env ===")
-const envContent = `ADMIN_SEED_PASSWORD=NexusAdmin2025!
-STAFF_SEED_PASSWORD=NexusStaff2025!
-DEFAULT_STAFF_PASSWORD=NexusStaff2025!
-JWT_SECRET=nx-jwt-secret-$(date +%s | md5sum | head -c 32)
-`
-ssh([HOST, "bash", "-c", `cat > /opt/services/nexus/.env << 'ENVEOF'
-${envContent}ENVEOF`])
+const ADMIN_PW = "NexusAdmin2025!"
+const STAFF_PW = "NexusStaff2025!"
+const JWT_SECRET = "nx-jwt-secret-9f8a7b6c5d4e3f2a1b0c"
+ssh([HOST, "bash", "-c", `cat > /opt/services/nexus/.env << ENVEOF
+ADMIN_SEED_PASSWORD=${ADMIN_PW}
+STAFF_SEED_PASSWORD=${STAFF_PW}
+DEFAULT_STAFF_PASSWORD=${STAFF_PW}
+JWT_SECRET=${JWT_SECRET}
+ENVEOF
+chmod 600 /opt/services/nexus/.env`])
+console.log(`Admin PW: ${ADMIN_PW}`)
+console.log(`Staff PW: ${STAFF_PW}`)
 
 // 5. Write new systemd service with EnvironmentFile
 console.log("\n=== Writing systemd service ===")
