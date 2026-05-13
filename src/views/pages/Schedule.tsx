@@ -163,6 +163,7 @@ export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGre
                                 <div class="ms-dd-body">
                                   <input type="hidden" name="opName" value={s.opName} />
                                   <input type="hidden" name="milestone" value={m.key} />
+                                  <input type="hidden" name="status" value={status} />
                                   <input type="date" class="ms-dd-date" name="date" value={toInputDate(displayDate)} />
                                   <div class="ms-dd-options">
                                     <button type="button" class={`ms-dd-opt${status === "done" ? " active" : ""}`} data-status="done">
