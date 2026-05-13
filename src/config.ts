@@ -7,6 +7,7 @@ export const config = {
   nodeEnv: Bun.env.NODE_ENV || "development",
   adminSeedPassword: Bun.env.ADMIN_SEED_PASSWORD || "",
   staffSeedPassword: Bun.env.STAFF_SEED_PASSWORD || "",
+  defaultStaffPassword: Bun.env.DEFAULT_STAFF_PASSWORD || "",
 } as const
 
 if (config.port < 1 || config.port > 65535) {

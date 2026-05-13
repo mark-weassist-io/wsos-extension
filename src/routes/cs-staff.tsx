@@ -2,6 +2,7 @@ import { Hono } from "hono"
 import { z } from "zod"
 import { CsStaffPage } from "../views/pages/CsStaff"
 import { getAllUsers, createUser, softDeleteUser, restoreUser } from "../db/queries/auth"
+import { config } from "../config"
 
 const router = new Hono()
 const StaffSchema = z.object({
@@ -27,7 +28,7 @@ router.post("/", async (c) => {
   const form = await c.req.parseBody()
   const parsed = StaffSchema.safeParse(form)
   if (!parsed.success) return c.redirect("/cs-staff")
-  const hash = await Bun.password.hash("Staff2024!")
+  const hash = await Bun.password.hash(config.defaultStaffPassword)
   createUser(parsed.data.email, hash, parsed.data.displayName, "staff", parsed.data.department)
   return c.redirect("/cs-staff")
 })
