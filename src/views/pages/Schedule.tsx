@@ -96,12 +96,27 @@ document.addEventListener('DOMContentLoaded', function() {
                       const wasGreen = milestoneGreen?.[s.opName]?.[m.key] ?? 0
                       const status = val ? classifyMilestone(val, happened === 1, wasGreen === 1) : "cancelled"
                       return (
-                        <td key={m.key}
-                          data-milestone={m.key}
-                          data-happened={happened}
-                          style="cursor:pointer;text-align:center"
-                          onclick={`fetch('/schedule/toggle/${encodeURIComponent(s.opName)}/${m.key}',{method:'POST'}).then(r=>{if(r.ok){location.reload()}})`}>
-                          {val ? <span class={milestoneBadge(status)}>{val}<br/><span style="font-size:0.65rem;opacity:0.7">{status}</span></span> : "—"}
+                        <td key={m.key} data-milestone-cell style="text-align:center">
+                          {val ? (
+                            <form hx-post={`/schedule/set-status/${encodeURIComponent(s.opName)}/${m.key}`}
+                                  hx-trigger="submit" hx-swap="outerHTML" hx-target="closest td"
+                                  style="display:inline">
+                              <input type="hidden" name="status" value={status} />
+                              <button type="button" class="btn btn-sm p-0 border-0 bg-transparent"
+                                      data-bs-toggle="popover" data-bs-placement="bottom"
+                                      data-bs-content={[
+                                        '<div style="display:flex;flex-direction:column;gap:4px;padding:4px">',
+                                        '<span class="ms-option" data-status="done" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--success)"></span> Done</span>',
+                                        '<span class="ms-option" data-status="scheduled" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#3b82f6"></span> Scheduled</span>',
+                                        '<span class="ms-option" data-status="canceled" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:2px 4px;border-radius:4px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#6b7280"></span> Canceled</span>',
+                                        '</div>',
+                                      ].join("")}>
+                                <span class={milestoneBadge(status)} style="cursor:pointer">
+                                  {val}<br/><span style="font-size:0.65rem;opacity:0.7">{status}</span>
+                                </span>
+                              </button>
+                            </form>
+                          ) : "—"}
                         </td>
                       )
                     })}
