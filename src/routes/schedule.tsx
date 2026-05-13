@@ -57,6 +57,7 @@ router.post("/set-status/:opName/:milestone", async (c) => {
   const form = await c.req.parseBody()
   const status = (form.status as string) || ""
   setMilestoneStatus(opName, milestone, status)
+  c.header("HX-Refresh", "true")
   return c.body(null, 204)
 })
 
