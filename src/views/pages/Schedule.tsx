@@ -49,6 +49,19 @@ const milestoneBadge = (status: string): string => {
 export const SchedulePage: FC<Props> = ({ schedule, milestoneFlags, milestoneGreen, filter }) => {
   return (
     <Layout title="Check-in Schedule" activeNav="schedule">
+      <script dangerouslySetInnerHTML={{ __html: `
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-bs-toggle="popover"]').forEach(function(el) {
+    new bootstrap.Popover(el, { html: true, sanitize: false, trigger: 'focus' })
+  });
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('ms-option')) {
+      var td = e.target.closest('[data-milestone-cell]');
+      if (td) { var form = td.querySelector('form'); if (form) { form.querySelector('[name="status"]').value = e.target.dataset.status || ''; form.dispatchEvent(new Event('submit', { bubbles: true })); } }
+    }
+  });
+});
+` }} />
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
         <a href="/schedule" class={`badge ${!filter ? "badge-info" : "badge-secondary"}`} style="text-decoration:none;cursor:pointer">All</a>
         <a href="/schedule?filter=upcoming" class={`badge ${filter === "upcoming" ? "badge-info" : "badge-secondary"}`} style="text-decoration:none;cursor:pointer">Upcoming</a>
