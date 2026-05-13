@@ -38,17 +38,20 @@ router.get("/", (c) => {
       }
     }
   }
-  // Fetch milestone happened + was_green flags for each OP
+  // Fetch milestone happened + was_green flags + custom_dates for each OP
   const allFlags: Record<string, Record<string, number>> = {}
   const allGreen: Record<string, Record<string, number>> = {}
-  const milestones = getDb().prepare("SELECT op_name, milestone, happened, was_green FROM checkin_milestones").all() as any[]
+  const allDates: Record<string, Record<string, string>> = {}
+  const milestones = getDb().prepare("SELECT op_name, milestone, happened, was_green, custom_date FROM checkin_milestones").all() as any[]
   for (const m of milestones) {
     if (!allFlags[m.op_name]) allFlags[m.op_name] = {}
     if (!allGreen[m.op_name]) allGreen[m.op_name] = {}
+    if (!allDates[m.op_name]) allDates[m.op_name] = {}
     allFlags[m.op_name][m.milestone] = m.happened
     allGreen[m.op_name][m.milestone] = m.was_green ?? 0
+    if (m.custom_date) allDates[m.op_name][m.milestone] = m.custom_date
   }
-  return c.html(<SchedulePage schedule={schedule} milestoneFlags={allFlags} milestoneGreen={allGreen} filter={filter || undefined} />)
+  return c.html(<SchedulePage schedule={schedule} milestoneFlags={allFlags} milestoneGreen={allGreen} milestoneDates={allDates} filter={filter || undefined} />)
 })
 
 router.post("/set-status/:opName/:milestone", async (c) => {
@@ -56,7 +59,8 @@ router.post("/set-status/:opName/:milestone", async (c) => {
   const milestone = decodeURIComponent(c.req.param("milestone"))
   const form = await c.req.parseBody()
   const status = (form.status as string) || ""
-  setMilestoneStatus(opName, milestone, status)
+  const dateVal = (form.date as string) || ""
+  setMilestoneStatus(opName, milestone, status, dateVal)
   c.header("HX-Refresh", "true")
   return c.body(null, 204)
 })
