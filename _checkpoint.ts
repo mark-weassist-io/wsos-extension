@@ -1,5 +1,5 @@
 import { Database } from "bun:sqlite"
-const db = new Database("data/wsos-extension.db", { readonly: false })
+const db = new Database("data/wsos-extension.db")
 db.run("PRAGMA wal_checkpoint(TRUNCATE)")
 db.run("PRAGMA journal_mode=DELETE")
 db.close()
