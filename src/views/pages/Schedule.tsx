@@ -75,8 +75,8 @@ function msUpdate(p,status,date){
   var cn=tog.childNodes;
   for(var i=0;i<cn.length;i++){if(cn[i].nodeType===3&&cn[i].textContent.trim()){cn[i].textContent=date;break}}
   var ss=tog.querySelector('span[style]');if(ss)ss.textContent=status;
-  p.querySelector('[name="status"]').value=status;
-  p.querySelector('.ms-dd').classList.remove('show');
+  var si=p.querySelector('[name="status"]');if(si)si.value=status;
+  var dd=p.querySelector('.ms-dd');if(dd)dd.classList.remove('show');
 }
 function msPost(p,status){
   var raw=p.querySelector('.ms-dd-date').value;
