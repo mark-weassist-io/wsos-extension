@@ -76,20 +76,24 @@ export function getUpcomingCheckins(days: number = 30): Post90DayCheckinSchedule
   const all = getPost90DaySchedule()
   const cutoff = new Date(Date.now() + days * 86400000)
   const r = getDb()
-  const milestones = r.prepare("SELECT op_name, milestone, happened FROM checkin_milestones").all() as any[]
-  const map = new Map<string, Map<string, number>>()
+  const milestones = r.prepare("SELECT op_name, milestone, happened, was_green FROM checkin_milestones").all() as any[]
+  const flagMap = new Map<string, Map<string, { happened: number; wasGreen: number }>>()
   for (const m of milestones) {
-    if (!map.has(m.op_name)) map.set(m.op_name, new Map())
-    map.get(m.op_name)!.set(m.milestone, m.happened)
+    if (!flagMap.has(m.op_name)) flagMap.set(m.op_name, new Map())
+    flagMap.get(m.op_name)!.set(m.milestone, { happened: m.happened, wasGreen: m.was_green ?? 0 })
   }
   const MILESTONE_MAP: Record<string, string> = { "3mo": "after3Mon", "4mo": "after4Mon", "5mo": "after5Mon", "6mo": "after6Mon", "9mo": "after9Mon", "1yr": "after1Year", "1yr3mo": "after1Year3Months" }
   return all.filter(s => {
-    const flags = map.get(s.opName) ?? new Map()
+    const flags = flagMap.get(s.opName) ?? new Map()
     for (const [key, col] of Object.entries(MILESTONE_MAP)) {
-      const val = (s as any)[col]
+      let val = (s as any)[col]
+      if (!val && (s as any).startDate) {
+        val = addMonths((s as any).startDate, MILESTONE_OFFSETS[key])
+      }
       if (!val) continue
       const d = parseMdY(val)
-      if (d && d <= cutoff && (flags.get(key) ?? 0) !== 1) return true
+      const f = flags.get(key)
+      if (d && d <= cutoff && (f?.happened ?? 0) !== 1) return true
     }
     return false
   })
@@ -108,7 +112,10 @@ export function getOverdueCheckins(): Post90DayCheckinSchedule[] {
   return all.filter(s => {
     const flags = flagMap.get(s.opName) ?? new Map()
     for (const [key, col] of Object.entries(MILESTONE_MAP)) {
-      const val = (s as any)[col]
+      let val = (s as any)[col]
+      if (!val && (s as any).startDate) {
+        val = addMonths((s as any).startDate, MILESTONE_OFFSETS[key])
+      }
       if (!val) continue
       const f = flags.get(key)
       if (classifyMilestone(val, (f?.happened ?? 0) === 1, (f?.wasGreen ?? 0) === 1) === "overdue") return true
@@ -190,10 +197,21 @@ const MILESTONE_COLS: [string, string][] = [
   ["1yr3mo", "after_1_year_3_months"],
 ]
 
+const MILESTONE_OFFSETS: Record<string, number> = {
+  "3mo": 3, "4mo": 4, "5mo": 5, "6mo": 6, "9mo": 9, "1yr": 12, "1yr3mo": 15,
+}
+
 function parseMdY(s: string): Date | null {
   const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
   if (!m) return null
   return new Date(+m[3], +m[1] - 1, +m[2])
+}
+
+function addMonths(dateStr: string, months: number): string {
+  const d = parseMdY(dateStr)
+  if (!d) return ""
+  d.setMonth(d.getMonth() + months)
+  return `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`
 }
 
 export function classifyMilestone(dateStr: string | null, happened: boolean, wasGreen: boolean = false): MilestoneStatus {
@@ -213,7 +231,6 @@ export function getAllClassifiedMilestones(): ClassifiedMilestone[] {
   const rows = r.prepare("SELECT * FROM wa_post_90day_schedule").all() as any[]
   const result: ClassifiedMilestone[] = []
 
-  // Batch-fetch all milestone happened flags
   const milestones = r.prepare("SELECT op_name, milestone, happened, was_green FROM checkin_milestones").all() as any[]
   const flagMap = new Map<string, Map<string, { happened: number; wasGreen: number }>>()
   for (const m of milestones) {
@@ -224,7 +241,10 @@ export function getAllClassifiedMilestones(): ClassifiedMilestone[] {
   for (const row of rows) {
     const flags = flagMap.get(row.op_name) ?? new Map()
     for (const [key, col] of MILESTONE_COLS) {
-      const dateStr = row[col]
+      let dateStr = row[col]
+      if (!dateStr && row.start_date) {
+        dateStr = addMonths(row.start_date, MILESTONE_OFFSETS[key])
+      }
       if (!dateStr) continue
       const f = flags.get(key)
       const happened = (f?.happened ?? 0) === 1
@@ -234,22 +254,6 @@ export function getAllClassifiedMilestones(): ClassifiedMilestone[] {
         milestone: key,
         date: dateStr,
         status: classifyMilestone(dateStr, happened, wasGreen),
-        happened,
-      })
-    }
-  }
-
-  for (const row of rows) {
-    const flags = flagMap.get(row.op_name) ?? new Map()
-    for (const [key, col] of MILESTONE_COLS) {
-      const dateStr = row[col]
-      if (!dateStr) continue
-      const happened = (flags.get(key) ?? 0) === 1
-      result.push({
-        opName: row.op_name,
-        milestone: key,
-        date: dateStr,
-        status: classifyMilestone(dateStr, happened),
         happened,
       })
     }

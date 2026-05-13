@@ -155,6 +155,18 @@ CREATE TABLE IF NOT EXISTS wa_cell_formatting (
   hex_color TEXT NOT NULL,
   created_at TEXT DEFAULT (datetime('now'))
 );
+
+CREATE TABLE IF NOT EXISTS nexus_users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  email TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
+  display_name TEXT NOT NULL DEFAULT '',
+  role TEXT NOT NULL DEFAULT 'staff',
+  department TEXT NOT NULL DEFAULT '',
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now')),
+  deleted_at TEXT
+);
 `
 
 export function ensureSchema(db: Database): void {
@@ -172,4 +184,22 @@ export function ensureSchema(db: Database): void {
   } else if (!colNames.includes("assigned_cs") && !colNames.includes("cs_staff_name")) {
     db.run("ALTER TABLE wsos_op_client_assignments ADD COLUMN assigned_cs TEXT")
   }
+
+  // Ensure users table exists (auth)
+  db.run(`CREATE TABLE IF NOT EXISTS nexus_users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    display_name TEXT NOT NULL DEFAULT '',
+    role TEXT NOT NULL DEFAULT 'staff',
+    department TEXT NOT NULL DEFAULT '',
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now')),
+    deleted_at TEXT
+  )`)
+  // Add columns to nexus_users for existing DBs
+  const userCols = db.prepare("PRAGMA table_info(nexus_users)").all() as { name: string }[]
+  const userColNames = userCols.map(c => c.name)
+  if (!userColNames.includes("department")) db.run("ALTER TABLE nexus_users ADD COLUMN department TEXT NOT NULL DEFAULT ''")
+  if (!userColNames.includes("deleted_at")) db.run("ALTER TABLE nexus_users ADD COLUMN deleted_at TEXT")
 }

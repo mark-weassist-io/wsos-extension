@@ -1,9 +1,33 @@
 import { serve } from "bun"
 import { app } from "./app"
 import { config } from "./config"
+import { verify } from "hono/jwt"
+import { getJwtSecret } from "./middleware/auth"
+import { getUserById, createUser, hasAnyUser } from "./db/queries/auth"
 import { getRedFlags, createRedFlag, updateRedFlag, softDeleteRedFlag, restoreRedFlag, getRedFlagById } from "./db/queries/red-flags"
 import { getCsStaff, createCsStaff, updateCsStaff, softDeleteCsStaff, restoreCsStaff, getCsStaffById } from "./db/queries/cs-staff"
 import { getNinetyDayCheckins, createCheckin, updateCheckin, softDeleteCheckin, restoreCheckin, getCheckinById } from "./db/queries/checkins"
+
+function getCookie(req: Request, name: string): string | null {
+  const raw = req.headers.get("cookie")
+  if (!raw) return null
+  for (const part of raw.split(";")) {
+    const [k, ...rest] = part.trim().split("=")
+    if (k === name) return rest.join("=")
+  }
+  return null
+}
+
+const PUBLIC_PATHS = new Set(["/login", "/health", "/settings"])
+
+async function isAuthenticated(req: Request): Promise<boolean> {
+  const token = getCookie(req, "nexus_token")
+  if (!token) return false
+  try {
+    const payload = await verify(token, getJwtSecret()) as { userId: number }
+    return !!getUserById(payload.userId)
+  } catch { return false }
+}
 
 const NAV = [
   { id: "dashboard", label: "Dashboard", href: "/", icon: "bi-speedometer2" },
@@ -12,9 +36,10 @@ const NAV = [
   { id: "assignments", label: "Assignments", href: "/assignments", icon: "bi-link" },
   { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "bi-clipboard-data" },
   { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
-  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
+  { id: "cs-staff", label: "Users", href: "/cs-staff", icon: "bi-person-badge" },
   { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
   { id: "reviews", label: "Reviews", href: "/reviews", icon: "bi-clipboard-check" },
+  { id: "settings", label: "Settings", href: "/settings", icon: "bi-gear" },
 ]
 
 const CSS = `
@@ -143,36 +168,37 @@ const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promis
     <button type="submit" class="btn btn-primary btn-sm">Create</button>
     </form>
   `), { headers: { "Content-Type": "text/html" } }),
-"/cs-staff/new": (url) => new Response(pageHTML("New Staff", "cs-staff", `
-    <a href="/cs-staff" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
-    <h3 class="h5 mb-3">New Staff</h3>
-    <form action="/cs-staff" method="POST" class="card" style="padding:20px;max-width:500px">
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" required class="form-control form-control-sm"></div>
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" class="form-control form-control-sm"></div>
-      <button type="submit" class="btn btn-primary btn-sm">Create</button>
-    </form>
-  `), { headers: { "Content-Type": "text/html" } }),
-  "/cs-staff": (url, req) => {
-    const includeTrashed = url.searchParams.get("trashed") === "1"
-    const staff = getCsStaff(url.searchParams.get("search") || undefined, includeTrashed)
-    const rows = staff.map(s => {
-      const actions = s.deleted_at
-        ? `<form action="/cs-staff/${s.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
-        : `<a href="/cs-staff/${s.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
-<form action="/cs-staff/${s.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
-      return `<tr${s.deleted_at ? ' style="opacity:0.5"' : ""}><td><strong>${esc(s.name)}</strong>${s.deleted_at ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(s.full_name || "")}</td><td>${actions}</td></tr>`
-    }).join("") || '<tr><td colspan="3" style="text-align:center;padding:40px;color:var(--text-secondary)">No staff found</td></tr>'
-    return new Response(pageHTML("CS Staff", "cs-staff", `
-      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <a href="/cs-staff" class="badge ${!includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Active</a>
-        <a href="/cs-staff?trashed=1" class="badge ${includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Trashed</a>
-        <a href="/cs-staff/new" class="btn btn-primary btn-sm" style="text-decoration:none;margin-left:auto">+ New</a>
-      </div>
-      <div class="card" style="padding:0">
-        <table><thead><tr><th>Name</th><th>Full Name</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
-      </div>
-    `), { headers: { "Content-Type": "text/html" } })
-  },
+  // CS Staff moved to Hono route — uses nexus_users table
+}
+
+// Seed admin users on first startup
+if (!hasAnyUser()) {
+  const adminPassword = "NexusAdmin2024!"
+  const adminHash = await Bun.password.hash(adminPassword)
+  createUser("mark@weassist.io", adminHash, "Mark", "admin", "development")
+  createUser("eric@weassist.io", adminHash, "Eric", "admin", "development")
+  const { getDb } = await import("./db")
+  const staff = getDb().prepare("SELECT * FROM wa_cs_staff WHERE deleted_at IS NULL").all() as any[]
+  const staffPassword = "Staff2024!"
+  const hash = await Bun.password.hash(staffPassword)
+  let migrated = 0
+  for (const s of staff) {
+    const displayName = s.full_name || s.name || ""
+    const email = s.email || `${displayName.toLowerCase().replace(/\s+/g, ".")}@weassist.io`
+    if (!getUserByEmail(email)) { createUser(email, hash, displayName, "staff", "customer_success"); migrated++ }
+  }
+  // Ensure existing admin users have correct departments
+  const { getDb: getDbNow } = await import("./db")
+  getDbNow().prepare("UPDATE nexus_users SET department = 'development' WHERE email IN ('mark@weassist.io','eric@weassist.io') AND (department IS NULL OR department = '')").run()
+  // Migrate any remaining CS staff to nexus_users
+  const staffToMigrate = getDbNow().prepare("SELECT * FROM wa_cs_staff WHERE deleted_at IS NULL").all() as any[]
+  for (const s of staffToMigrate) {
+    const dn = s.full_name || s.name || ""
+    const em = s.email || `${dn.toLowerCase().replace(/\s+/g, ".")}@weassist.io`
+    if (em && !getUserByEmail(em)) { createUser(em, hash, dn, "staff", "customer_success"); migrated++ }
+  }
+  console.log(`Admin accounts created: mark@weassist.io, eric@weassist.io (password: ${adminPassword})`)
+  if (migrated > 0) console.log(`CS Staff migrated: ${migrated} accounts (password: ${staffPassword})`)
 }
 
 serve({
@@ -180,28 +206,14 @@ serve({
     const url = new URL(req.url)
     const path = url.pathname
 
-    // CS Staff CRUD
-    if (path === "/cs-staff" && req.method === "POST") { const b = await bodyParams(req); if (b.name) createCsStaff({ name: b.name, fullName: b.fullName }); return Response.redirect("/cs-staff") }
-    const csMatchDel = path.match(/^\/cs-staff\/(\d+)\/delete$/)
-    if (csMatchDel && req.method === "POST") { softDeleteCsStaff(parseInt(csMatchDel[1]!)); return Response.redirect("/cs-staff") }
-    const csMatchRes = path.match(/^\/cs-staff\/(\d+)\/restore$/)
-    if (csMatchRes && req.method === "POST") { restoreCsStaff(parseInt(csMatchRes[1]!)); return Response.redirect("/cs-staff?trashed=1") }
-    const csMatchEdit = path.match(/^\/cs-staff\/(\d+)\/edit$/)
-    if (csMatchEdit) {
-      const s = getCsStaffById(parseInt(csMatchEdit[1]!)) as any
-      if (!s) return Response.redirect("/cs-staff")
-      return new Response(pageHTML("Edit Staff", "cs-staff", `
-        <a href="/cs-staff" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">Edit Staff</h3>
-        <form action="/cs-staff/${s.id}" method="POST" class="card" style="padding:20px;max-width:500px">
-          <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" value="${esc(s.name)}" required class="form-control form-control-sm"></div>
-          <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" value="${esc(s.fullName)}" class="form-control form-control-sm"></div>
-          <button type="submit" class="btn btn-primary btn-sm">Update</button>
-        </form>
-      `), { headers: { "Content-Type": "text/html" } })
+    // Auth check for protected pages
+    if (!PUBLIC_PATHS.has(path) && !path.startsWith("/login") && path !== "/health") {
+      const authed = await isAuthenticated(req)
+      if (!authed) {
+        if (req.headers.get("hx-request")) return new Response(null, { status: 401 })
+        return Response.redirect(`/login?redirect=${encodeURIComponent(path)}`)
+      }
     }
-    const csMatchUpdate = path.match(/^\/cs-staff\/(\d+)$/)
-    if (csMatchUpdate && req.method === "POST") { const b = await bodyParams(req); updateCsStaff(parseInt(csMatchUpdate[1]!), { name: b.name, fullName: b.fullName }); return Response.redirect("/cs-staff") }
 
     // Check-in CRUD
     if (path === "/checkins" && req.method === "POST") { const b = await bodyParams(req); if (b.opName) createCheckin({ opName: b.opName, checkinType: b.checkinType, checkinDate: b.checkinDate, status: b.status, notes: b.notes }); return Response.redirect("/checkins") }

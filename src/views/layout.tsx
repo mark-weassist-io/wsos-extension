@@ -1,4 +1,5 @@
 import type { FC, Child } from "hono/jsx"
+import { ThemeToggle, THEME_SCRIPT } from "./components/ThemeToggle"
 
 interface LayoutProps {
   title: string
@@ -13,9 +14,10 @@ export const NAV_ITEMS = [
   { id: "assignments", label: "Assignments", href: "/assignments", icon: "bi-link" },
   { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "bi-clipboard-data" },
   { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
-  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
+  { id: "cs-staff", label: "Users", href: "/cs-staff", icon: "bi-person-badge" },
   { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
   { id: "reviews", label: "Reviews", href: "/reviews", icon: "bi-clipboard-check" },
+  { id: "settings", label: "Settings", href: "/settings", icon: "bi-gear" },
 ]
 
 export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
@@ -29,85 +31,8 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
         <script src="https://unpkg.com/htmx.org@2.0.4" />
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" />
-        <script dangerouslySetInnerHTML={{ __html: `
-(function() {
-  var saveKey = 'nexus-theme';
-  function apply(theme) {
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var resolved = theme === 'dark' || (theme === 'system' && prefersDark) ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-bs-theme', resolved);
-    document.documentElement.setAttribute('data-theme', resolved);
-    window.__nexusTheme = theme;
-    window.__nexusResolved = resolved;
-    var root = document.documentElement;
-    if (resolved === 'dark') {
-      root.style.setProperty('--body-bg', '#0f1119');
-      root.style.setProperty('--bg', '#0f1119');
-      root.style.setProperty('--text', '#e4e6eb');
-      root.style.setProperty('--text-secondary', '#9ca3af');
-      root.style.setProperty('--border', '#2a2d3a');
-      root.style.setProperty('--card-bg', '#1a1d29');
-      root.style.setProperty('--header-bg', '#1a1d29');
-      root.style.setProperty('--header-border', '#2a2d3a');
-      root.style.setProperty('--table-header-bg', '#1a1d29');
-      root.style.setProperty('--accent-light', '#1e2a45');
-      root.style.setProperty('--sidebar-bg', '#0f1119');
-      root.style.setProperty('--sidebar-text', '#a0a4b8');
-      root.style.setProperty('--sidebar-hover', '#1a1d29');
-      root.style.setProperty('--sidebar-active', '#4f7cff');
-      root.style.setProperty('--sidebar-active-text', '#ffffff');
-      root.style.setProperty('--sidebar-border', 'rgba(255,255,255,0.06)');
-      root.style.setProperty('--sidebar-logo', '#ffffff');
-      root.style.setProperty('--sidebar-version', 'rgba(255,255,255,0.3)');
-      root.style.setProperty('--sidebar-btn-border', 'rgba(255,255,255,0.15)');
-    } else {
-      root.style.setProperty('--body-bg', '#f5f6fa');
-      root.style.setProperty('--bg', '#f5f6fa');
-      root.style.setProperty('--text', '#1a1d29');
-      root.style.setProperty('--text-secondary', '#6b6f80');
-      root.style.setProperty('--border', '#e2e4e8');
-      root.style.setProperty('--card-bg', '#ffffff');
-      root.style.setProperty('--header-bg', '#ffffff');
-      root.style.setProperty('--header-border', '#dee2e6');
-      root.style.setProperty('--table-header-bg', '#f5f6fa');
-      root.style.setProperty('--accent-light', '#e8edff');
-      root.style.setProperty('--sidebar-bg', '#ffffff');
-      root.style.setProperty('--sidebar-text', '#1a1d29');
-      root.style.setProperty('--sidebar-hover', '#f0f2f5');
-      root.style.setProperty('--sidebar-active', '#4f7cff');
-      root.style.setProperty('--sidebar-active-text', '#ffffff');
-      root.style.setProperty('--sidebar-border', '#e2e4e8');
-      root.style.setProperty('--sidebar-logo', '#1a1d29');
-      root.style.setProperty('--sidebar-version', '#9aa0b0');
-      root.style.setProperty('--sidebar-btn-border', '#d0d2d8');
-    }
-    // Update toggle icon
-    var icon = document.getElementById('theme-icon');
-    if (icon) {
-      if (theme === 'dark') {
-        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-      } else if (theme === 'light') {
-        icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
-      } else {
-        icon.innerHTML = '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>';
-      }
-    }
-  }
-  var saved = localStorage.getItem(saveKey) || 'system';
-  apply(saved);
-  window.__nexusApply = apply;
-  window.toggleTheme = function() {
-    var current = localStorage.getItem(saveKey) || 'system';
-    var next = current === 'system' ? 'light' : current === 'light' ? 'dark' : 'system';
-    localStorage.setItem(saveKey, next);
-    apply(next);
-  };
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-    var t = localStorage.getItem(saveKey) || 'system';
-    if (t === 'system') apply('system');
-  });
-})();
-` }} />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+
         <style>{css}</style>
       </head>
       <body>
@@ -132,9 +57,7 @@ export const Layout: FC<LayoutProps> = ({ title, activeNav, children }) => {
             </nav>
             <div class="sidebar-footer">
               <span class="version">v0.1.0</span>
-              <button onclick="toggleTheme()" class="sidebar-btn" title="Toggle theme">
-                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              </button>
+              <ThemeToggle className="sidebar-btn" />
             </div>
           </aside>
           <main class="main-content">
@@ -280,6 +203,28 @@ tr:last-child td { border-bottom: none; }
 /* Grid layout helpers */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* ── Forms (Bootstrap overrides for dark theme) ────────────── */
+.form-label { font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px; }
+.form-label .required { color: var(--danger); margin-left: 2px; }
+.form-control, .form-select {
+  background: var(--bg); color: var(--text); border-color: var(--border);
+  font-size: 0.875rem; border-radius: 6px;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-light);
+  background: var(--bg); color: var(--text);
+}
+.form-control::placeholder { color: var(--text-secondary); opacity: 0.6; }
+.form-control:disabled, .form-select:disabled { opacity: 0.5; }
+select.form-select { cursor: pointer; }
+
+/* Card form section */
+.form-section { max-width: 640px; }
+
+/* Alerts */
+.alert-success { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+.alert-danger { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
 
 /* Misc */
 .mb-4 { margin-bottom: 16px; }

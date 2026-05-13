@@ -1,5 +1,7 @@
 import { Hono } from "hono"
 import { logger as honoLogger } from "hono/logger"
+import { authRouter } from "./routes/auth"
+import { authMiddleware } from "./middleware/auth"
 import { dashboardRouter } from "./routes/dashboard"
 import { opsRouter } from "./routes/ops"
 import { clientsRouter } from "./routes/clients"
@@ -34,6 +36,8 @@ app.onError((err, c) => {
 
 ensureSchema(getDb())
 
+// Public routes (no auth required)
+app.route("/", authRouter)
 app.get("/health", (c) => {
   try {
     getDb().prepare("SELECT 1").get()
@@ -44,6 +48,9 @@ app.get("/health", (c) => {
     return c.json({ status: "degraded", uptime: process.uptime(), timestamp: new Date().toISOString() }, 503)
   }
 })
+
+// Protected routes (auth required)
+app.use("*", authMiddleware)
 
 app.route("/", dashboardRouter)
 app.route("/ops", opsRouter)
