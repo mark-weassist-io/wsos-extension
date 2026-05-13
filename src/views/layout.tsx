@@ -106,7 +106,7 @@ export const css = `
 }
 html { font-size: 14px; }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe\ UI, Roboto, sans-serif;
   background: var(--body-bg);
   color: var(--text);
   line-height: 1.5;
