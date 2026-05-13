@@ -19,12 +19,8 @@ console.log("=== Stopping nexus ===")
 ssh([HOST, "systemctl", "stop", "nexus"])
 
 // 2. Copy source via tar
-console.log("=== Creating source archive ===")
-const tarResult = spawnSync(["tar", "-czf", "/tmp/nx-src.tar.gz", "-C", "src", "."], { stdio: ["inherit", "inherit", "inherit"] })
-if (tarResult.exitCode !== 0) { console.error("tar failed"); process.exit(1) }
-
 console.log("=== Copying archive ===")
-const scpResult = scp("/tmp/nx-src.tar.gz", `${HOST}:/tmp/nx-src.tar.gz`)
+const scpResult = scp("nx-src.tar.gz", `${HOST}:/tmp/nx-src.tar.gz`)
 if (scpResult.exitCode !== 0) { console.error("scp failed"); process.exit(1) }
 
 console.log("=== Extracting on VPS ===")
