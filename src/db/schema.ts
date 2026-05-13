@@ -185,12 +185,15 @@ export function ensureSchema(db: Database): void {
     db.run("ALTER TABLE wsos_op_client_assignments ADD COLUMN assigned_cs TEXT")
   }
 
-  // Ensure checkin_milestones has was_green column
+  // Ensure checkin_milestones has was_green and custom_date columns
   const milestoneTable = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='checkin_milestones'").get() as { name: string } | undefined
   if (milestoneTable) {
     const milestoneCols = db.prepare("PRAGMA table_info(checkin_milestones)").all() as { name: string }[]
     if (!milestoneCols.find(c => c.name === "was_green")) {
       db.run("ALTER TABLE checkin_milestones ADD COLUMN was_green INTEGER NOT NULL DEFAULT 1")
+    }
+    if (!milestoneCols.find(c => c.name === "custom_date")) {
+      db.run("ALTER TABLE checkin_milestones ADD COLUMN custom_date TEXT")
     }
   }
 
