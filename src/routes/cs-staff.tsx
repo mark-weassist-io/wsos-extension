@@ -28,6 +28,7 @@ router.post("/", async (c) => {
   const form = await c.req.parseBody()
   const parsed = StaffSchema.safeParse(form)
   if (!parsed.success) return c.redirect("/cs-staff")
+  if (!config.defaultStaffPassword) return c.redirect("/cs-staff?error=Default staff password not configured")
   const hash = await Bun.password.hash(config.defaultStaffPassword)
   createUser(parsed.data.email, hash, parsed.data.displayName, "staff", parsed.data.department)
   return c.redirect("/cs-staff")
