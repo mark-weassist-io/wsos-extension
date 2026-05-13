@@ -186,9 +186,12 @@ export function ensureSchema(db: Database): void {
   }
 
   // Ensure checkin_milestones has was_green column
-  const milestoneCols = db.prepare("PRAGMA table_info(checkin_milestones)").all() as { name: string }[]
-  if (!milestoneCols.find(c => c.name === "was_green")) {
-    db.run("ALTER TABLE checkin_milestones ADD COLUMN was_green INTEGER NOT NULL DEFAULT 1")
+  const milestoneTable = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='checkin_milestones'").get() as { name: string } | undefined
+  if (milestoneTable) {
+    const milestoneCols = db.prepare("PRAGMA table_info(checkin_milestones)").all() as { name: string }[]
+    if (!milestoneCols.find(c => c.name === "was_green")) {
+      db.run("ALTER TABLE checkin_milestones ADD COLUMN was_green INTEGER NOT NULL DEFAULT 1")
+    }
   }
 
   // Ensure users table exists (auth)

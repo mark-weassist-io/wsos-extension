@@ -157,6 +157,17 @@ export function toggleMilestone(opName: string, milestone: string): number {
   return next
 }
 
+export function setMilestoneStatus(opName: string, milestone: string, status: string): void {
+  const happened = status === "done" ? 1 : 0
+  const wasGreen = status === "scheduled" ? 1 : 0
+  const existing = getDb().prepare("SELECT id FROM checkin_milestones WHERE op_name = ? AND milestone = ?").get(opName, milestone) as { id: number } | undefined
+  if (existing) {
+    getDb().prepare("UPDATE checkin_milestones SET happened = ?, was_green = ? WHERE op_name = ? AND milestone = ?").run(happened, wasGreen, opName, milestone)
+  } else {
+    getDb().prepare("INSERT INTO checkin_milestones (op_name, milestone, happened, was_green) VALUES (?, ?, ?, ?)").run(opName, milestone, happened, wasGreen)
+  }
+}
+
 // --- Ninety-day Check-ins CRUD ---
 
 export function getCheckinById(id: number) {
