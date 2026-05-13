@@ -1,0 +1,96 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main]
+
+env:
+  BUN_VERSION: "1.3.13"
+
+jobs:
+  # ─── Build & Test (runs on ALL pushes + PRs to main) ───────────
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Verify binary exists
+        run: test -f dist/nexus && echo "Build OK" || (echo "Build failed" && exit 1)
+
+  # ─── Deploy Production (push to main only) ────────────────────
+  deploy-production:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [check]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Deploy to production
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DEPLOY_HOST_PRODUCTION }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          strip_components: 0
+          target: /opt/nexus
+          source: "dist/,data/,package.json,bun.lock"
+          rm: true
+      - name: Install deps & restart
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST_PRODUCTION }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /opt/nexus
+            /root/.bun/bin/bun install --frozen-lockfile
+            systemctl restart nexus
+            sleep 3
+            systemctl is-active nexus || exit 1
+
+  # ─── Deploy Testing (push to dev only) ────────────────────────
+  deploy-testing:
+    if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
+    needs: [check]
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Deploy to testing
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DEPLOY_HOST_TESTING }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          strip_components: 0
+          target: /opt/nexus-dev
+          source: "dist/,data/,package.json,bun.lock"
+          rm: true
+      - name: Install deps & restart
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST_TESTING }}
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd /opt/nexus-dev
+            /root/.bun/bin/bun install --frozen-lockfile
+            systemctl restart nexus-dev || true
+            sleep 3
+            systemctl is-active nexus-dev || echo "Note: nexus-dev service not yet created"
