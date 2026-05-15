@@ -1,4 +1,7 @@
-import { getDb } from ".."
+import { getDrizzle, schema } from ".."
+import { eq, and, like, or, isNull, sql } from "drizzle-orm"
+
+const d = () => getDrizzle()
 
 export interface RedFlagRow {
   id: number
@@ -9,25 +12,31 @@ export interface RedFlagRow {
 }
 
 export function getRedFlags(search?: string, includeTrashed?: boolean): RedFlagRow[] {
-  let sql = "SELECT id, flag_name, definition, color, deleted_at FROM wa_red_flags"
-  const params: any[] = []
-  const cond: string[] = []
-  if (includeTrashed) { cond.push("deleted_at IS NOT NULL") } else { cond.push("deleted_at IS NULL") }
-  if (search) { cond.push("flag_name LIKE ?"); params.push(`%${search}%`) }
-  if (cond.length > 0) sql += " WHERE " + cond.join(" AND ")
-  sql += " ORDER BY flag_name"
-  return getDb().prepare(sql).all(...params) as RedFlagRow[]
+  const cond: any[] = []
+  if (includeTrashed) cond.push(sql`${schema.redFlags.deletedAt} IS NOT NULL`)
+  else cond.push(isNull(schema.redFlags.deletedAt))
+  if (search) cond.push(like(schema.redFlags.flagName, `%${search}%`))
+  return d().select({
+    id: schema.redFlags.id,
+    flag_name: schema.redFlags.flagName,
+    definition: schema.redFlags.definition,
+    color: schema.redFlags.color,
+    deleted_at: schema.redFlags.deletedAt,
+  }).from(schema.redFlags)
+    .where(cond.length > 0 ? and(...cond) : undefined)
+    .orderBy(schema.redFlags.flagName)
+    .all()
 }
 
 export function getRedFlagById(id: number) {
   return d().select().from(schema.redFlags).where(eq(schema.redFlags.id, id)).get()
 }
 
-export function createRedFlag(data: { flagName: string; definition?: string }) {
+export function createRedFlag(data: { flagName: string; definition?: string; color?: string }) {
   return d().insert(schema.redFlags).values(data).run()
 }
 
-export function updateRedFlag(id: number, data: { flagName?: string; definition?: string }) {
+export function updateRedFlag(id: number, data: { flagName?: string; definition?: string; color?: string }) {
   return d().update(schema.redFlags).set(data).where(eq(schema.redFlags.id, id)).run()
 }
 

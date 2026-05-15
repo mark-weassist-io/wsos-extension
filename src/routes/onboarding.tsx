@@ -39,9 +39,14 @@ router.get("/:id", (c) => {
     recordId: id,
     opId: op?.id || null,
     opName: record.opName,
+    clientName: record.clientName,
+    companyName: record.companyName,
+    role: record.role,
     startDate: record.startDate,
     startTime: record.startTime,
-    rate: op?.rate || null,
+    rate: op?.rate || record.rate || null,
+    contactNumber: record.contactNumber,
+    email: record.email,
     steps: steps.map(s => ({
       step_name: s.step_name,
       step_status: s.status,
@@ -53,15 +58,30 @@ router.get("/:id", (c) => {
   }} />)
 })
 
-// Update onboarding record (start date, time)
+// Update onboarding record (all editable fields)
 router.post("/:id", async (c) => {
   const params = IdParam.safeParse(c.req.param())
   if (!params.success) return c.redirect("/onboarding")
   const { id } = params.data
   const form = await c.req.parseBody()
-  const dateVal = (form.startDate || "").toString().trim() || null
-  const timeVal = (form.startTime || "").toString().trim() || null
-  getDb().prepare("UPDATE wa_ob_records SET start_date = ?, start_time = ? WHERE id = ?").run(dateVal, timeVal, id)
+  const fields: string[] = []
+  const vals: any[] = []
+  const set = (col: string, val: string | null) => { fields.push(`${col} = ?`); vals.push(val) }
+  const v = (k: string) => { const s = (form[k] || "").toString().trim(); return s || null }
+  set("client_name", v("clientName"))
+  set("company_name", v("companyName"))
+  set("role", v("role"))
+  set("start_date", v("startDate"))
+  set("start_time", v("startTime"))
+  set("contact_number", v("contactNumber"))
+  set("email", v("email"))
+  if (v("rate")) {
+    getDb().prepare("UPDATE wsos_ops SET rate = ? WHERE full_name = (SELECT op_name FROM wa_ob_records WHERE id = ?)").run(v("rate"), id)
+  }
+  if (fields.length > 0) {
+    vals.push(id)
+    getDb().prepare(`UPDATE wa_ob_records SET ${fields.join(", ")} WHERE id = ?`).run(...vals)
+  }
   return c.redirect(`/onboarding/${id}`)
 })
 

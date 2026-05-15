@@ -227,4 +227,26 @@ export function ensureSchema(db: Database): void {
   const userColNames = userCols.map(c => c.name)
   if (!userColNames.includes("department")) db.run("ALTER TABLE nexus_users ADD COLUMN department TEXT NOT NULL DEFAULT ''")
   if (!userColNames.includes("deleted_at")) db.run("ALTER TABLE nexus_users ADD COLUMN deleted_at TEXT")
+
+  // Ensure deleted_at on checkins table
+  const checkinCols = db.prepare("PRAGMA table_info(wsos_ninety_day_checkins)").all() as { name: string }[]
+  if (!checkinCols.find(c => c.name === "deleted_at")) {
+    db.run("ALTER TABLE wsos_ninety_day_checkins ADD COLUMN deleted_at TEXT")
+  }
+
+  // Ensure existing_accounts table exists
+  db.run(`CREATE TABLE IF NOT EXISTS wa_existing_accounts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    client_name TEXT,
+    update_note TEXT,
+    checkin_frequency TEXT,
+    source_tab TEXT,
+    created_at TEXT DEFAULT (datetime('now')),
+    deleted_at TEXT
+  )`)
+  // Ensure deleted_at column on existing_accounts
+  const eaCols = db.prepare("PRAGMA table_info(wa_existing_accounts)").all() as { name: string }[]
+  if (!eaCols.find(c => c.name === "deleted_at")) {
+    db.run("ALTER TABLE wa_existing_accounts ADD COLUMN deleted_at TEXT")
+  }
 }

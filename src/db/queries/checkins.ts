@@ -1,5 +1,5 @@
 import { getDrizzle, getDb, schema } from ".."
-import { eq, like, or, and, sql } from "drizzle-orm"
+import { eq, like, or, and, sql, isNull } from "drizzle-orm"
 import type { Post90DayCheckinSchedule, MilestoneStatus, ClassifiedMilestone } from "../../types"
 
 const d = () => getDrizzle()
@@ -7,29 +7,38 @@ const d = () => getDrizzle()
 export interface NinetyDayCheckinRow {
   id: number
   opName: string
-  clientName: string | null  // from JOIN with assignments
+  clientName: string | null
   status: string | null
-  assignedCs: string | null  // from JOIN with assignments
+  notes: string | null
+  assignedCs: string | null
+  deletedAt: string | null
 }
 
 export type Post90DayScheduleRow = Post90DayCheckinSchedule
 
 // --- 90-Day Check-ins ---
 
-export function getNinetyDayCheckins(search?: string): NinetyDayCheckinRow[] {
+export function getNinetyDayCheckins(search?: string, includeTrashed?: boolean): NinetyDayCheckinRow[] {
+  const cond: any[] = []
+  if (includeTrashed) cond.push(sql`${schema.ninetyDayCheckins.deletedAt} IS NOT NULL`)
+  else cond.push(isNull(schema.ninetyDayCheckins.deletedAt))
+  if (search) cond.push(or(
+    like(schema.ninetyDayCheckins.opName, `%${search}%`),
+    like(schema.assignments.clientName, `%${search}%`),
+    like(schema.ninetyDayCheckins.status, `%${search}%`),
+    like(schema.ninetyDayCheckins.assignedCs, `%${search}%`),
+  ))
   return d().select({
     id: schema.ninetyDayCheckins.id,
     opName: schema.ninetyDayCheckins.opName,
     clientName: schema.assignments.clientName,
     status: schema.ninetyDayCheckins.status,
-    assignedCs: schema.assignments.assignedCs,
+    notes: schema.ninetyDayCheckins.notes,
+    assignedCs: schema.ninetyDayCheckins.assignedCs,
+    deletedAt: schema.ninetyDayCheckins.deletedAt,
   }).from(schema.ninetyDayCheckins)
     .leftJoin(schema.assignments, eq(schema.ninetyDayCheckins.opName, schema.assignments.opName))
-    .where(search ? or(
-      like(schema.ninetyDayCheckins.opName, `%${search}%`),
-      like(schema.assignments.clientName, `%${search}%`),
-      like(schema.ninetyDayCheckins.status, `%${search}%`),
-    ) : undefined)
+    .where(cond.length > 0 ? and(...cond) : undefined)
     .orderBy(schema.ninetyDayCheckins.opName)
     .all()
 }
@@ -187,29 +196,25 @@ export function getMilestoneCustomDates(): Record<string, Record<string, string>
 // --- Ninety-day Check-ins CRUD ---
 
 export function getCheckinById(id: number) {
-  return getDb().prepare("SELECT * FROM wsos_ninety_day_checkins WHERE id = ?").get(id) as any | undefined
+  return d().select().from(schema.ninetyDayCheckins)
+    .where(eq(schema.ninetyDayCheckins.id, id))
+    .get()
 }
 
-export function createCheckin(data: { opName: string; status?: string }) {
-  getDb().prepare("INSERT INTO wsos_ninety_day_checkins (op_name, status) VALUES (?, ?)")
-    .run(data.opName, data.status || null)
+export function createCheckin(data: { opName: string; status?: string; notes?: string; assignedCs?: string }) {
+  return d().insert(schema.ninetyDayCheckins).values(data).run()
 }
 
-export function updateCheckin(id: number, data: { opName?: string; status?: string }) {
-  const sets: string[] = []; const vals: any[] = []
-  if (data.opName !== undefined) { sets.push("op_name = ?"); vals.push(data.opName) }
-  if (data.status !== undefined) { sets.push("status = ?"); vals.push(data.status) }
-  if (sets.length === 0) return
-  vals.push(id)
-  getDb().prepare("UPDATE wsos_ninety_day_checkins SET " + sets.join(", ") + " WHERE id = ?").run(...vals)
+export function updateCheckin(id: number, data: { opName?: string; status?: string; notes?: string; assignedCs?: string }) {
+  return d().update(schema.ninetyDayCheckins).set(data).where(eq(schema.ninetyDayCheckins.id, id)).run()
 }
 
 export function softDeleteCheckin(id: number) {
-  getDb().prepare("UPDATE wsos_ninety_day_checkins SET deleted_at = datetime('now') WHERE id = ?").run(id)
+  return d().update(schema.ninetyDayCheckins).set({ deletedAt: sql`datetime('now')` }).where(eq(schema.ninetyDayCheckins.id, id)).run()
 }
 
 export function restoreCheckin(id: number) {
-  getDb().prepare("UPDATE wsos_ninety_day_checkins SET deleted_at = NULL WHERE id = ?").run(id)
+  return d().update(schema.ninetyDayCheckins).set({ deletedAt: null }).where(eq(schema.ninetyDayCheckins.id, id)).run()
 }
 
 // ─── Milestone Classification ───────────────────────────────────────────────────

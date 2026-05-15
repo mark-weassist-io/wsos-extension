@@ -11,9 +11,12 @@ interface Props {
   editId?: number
   errors?: Record<string, string>
   formData?: Record<string, string>
+  clients?: string[]
+  statuses?: string[]
+  csStaff?: string[]
 }
 
-export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editing, editId, errors, formData }) => {
+export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editing, editId, errors, formData, clients, statuses, csStaff }) => {
   const title = editing ? (editId ? "Edit OP" : "New OP") : "OP Directory"
 
   return (
@@ -31,6 +34,10 @@ export const OpsListPage: FC<Props> = ({ ops, search, total, showTrashed, editin
             {inputField("Nickname", "nickname", formData?.nickname || "", errors?.nickname)}
             {selectField("Gender", "gender", formData?.gender || "", ["", "Male", "Female", "Other"], errors?.gender)}
             {inputField("Rate ($)", "rate", formData?.rate || "", errors?.rate, false, "text")}
+            {selectField("Client", "client", formData?.client || "", ["", ...(clients || [])], errors?.client)}
+            {inputField("Role", "role", formData?.role || "", errors?.role)}
+            {selectField("Status", "status", formData?.status || "", ["", ...(statuses || [])], errors?.status)}
+            {selectField("Assigned CS", "assignedCs", formData?.assignedCs || "", ["", ...(csStaff || [])], errors?.assignedCs)}
             <div style="display:flex;gap:8px;margin-top:16px">
               <button type="submit" class="btn btn-primary btn-sm">{editId ? "Update" : "Create"}</button>
               <a href="/ops" class="btn btn-outline-secondary btn-sm">Cancel</a>

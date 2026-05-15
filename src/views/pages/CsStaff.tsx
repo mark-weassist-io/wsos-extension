@@ -1,5 +1,5 @@
 import type { FC } from "hono/jsx"
-import { Layout } from "../layout"
+import { Layout, selectField } from "../layout"
 import type { StaffUser } from "../../db/queries/auth"
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
   userRole?: string
 }
 
-export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId }) => {
+const ROLES = ["staff", "admin"]
+
+export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId, userRole }) => {
   const active = staff.filter(s => !s.deleted_at)
   const trashed = staff.filter(s => s.deleted_at)
   return (
@@ -45,6 +47,9 @@ export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId }) => {
                   <option value="admin">Admin</option>
                 </select>
               </div>
+              <div class="col-md-6">
+                {selectField("Role", "role", "staff", ROLES)}
+              </div>
               <div class="col-12 d-flex gap-2">
                 <button type="submit" class="btn btn-primary">Create User</button>
                 <a href="/cs-staff" class="btn btn-outline-secondary">Cancel</a>
@@ -66,7 +71,23 @@ export const CsStaffPage: FC<Props> = ({ staff, showAdd, currentUserId }) => {
                 <td class="text-sm">{s.email || "—"}</td>
                 <td><span class="badge badge-info">{s.department || "—"}</span></td>
                 <td><span class="badge badge-secondary">{s.role}</span></td>
-                <td>{currentUserId === s.id ? <a href="/settings" class="badge badge-info" style="text-decoration:none">Edit</a> : <span class="text-sm text-secondary">—</span>}</td>
+                <td>
+                  {currentUserId === s.id ? (
+                    <a href="/settings" class="badge badge-info" style="text-decoration:none">Edit</a>
+                  ) : userRole === "admin" ? (
+                    s.deleted_at ? (
+                      <form action={`/cs-staff/${s.id}/restore`} method="POST" style="display:inline">
+                        <button class="badge badge-success" style="cursor:pointer;border:none;font-size:0.75rem">Restore</button>
+                      </form>
+                    ) : (
+                      <form action={`/cs-staff/${s.id}/delete`} method="POST" style="display:inline" onsubmit="return confirm('Soft delete this user?')">
+                        <button class="badge badge-danger" style="cursor:pointer;border:none;font-size:0.75rem">Delete</button>
+                      </form>
+                    )
+                  ) : (
+                    <span class="text-sm text-secondary">—</span>
+                  )}
+                </td>
               </tr>
             ))}
             {staff.length === 0 && <tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-secondary)">No users found</td></tr>}

@@ -11,6 +11,8 @@ import { scheduleRouter } from "./routes/schedule"
 import { csStaffRouter } from "./routes/cs-staff"
 import { assignmentsRouter } from "./routes/assignments"
 import { reviewsRouter } from "./routes/reviews"
+import { redFlagsRouter } from "./routes/red-flags"
+import { existingAccountsRouter } from "./routes/existing-accounts"
 import { schema } from "./db"
 import { getDb } from "./db"
 import { ensureSchema } from "./db/schema"
@@ -61,6 +63,8 @@ app.route("/schedule", scheduleRouter)
 app.route("/reviews", reviewsRouter)
 app.route("/cs-staff", csStaffRouter)
 app.route("/assignments", assignmentsRouter)
+app.route("/red-flags", redFlagsRouter)
+app.route("/existing-accounts", existingAccountsRouter)
 
 app.notFound((c) => c.redirect("/"))
 

@@ -1,128 +1,94 @@
-# Nexus — Architecture & Stack Decisions
+# Nexus — Architecture
+
+> All general conventions (FK-in-Form rule, soft delete pattern, validation flow, error handling, layout templates) are defined in the `workflow-for-designing-and-building-software-systems` skill. This document covers only what is specific to Nexus.
 
 ## What This Is
 
-An internal operations tool for WeAssist. Tracks OPs (outsourced professionals),
-clients, assignments, onboarding steps, check-in schedules, and CS staff workload.
-~200 active OPs across multiple clients. Used daily by Bel, Michelle, Adrian,
-Dennis, and others.
+Nexus is WeAssist's internal operations platform for after-sales management. Tracks ~200 OPs across ~100 clients with assignments, onboarding, check-in schedules, red flags, and reviews. Built with Bun + Hono JSX + Drizzle + SQLite + HTMX. Zero client JS framework.
 
-## The Stack
+**Platform status**: Evolving from Workstack data viewer into a standalone platform. Workstack hosts internal team temporarily; data import into Workstack is manual. Priority is full CRUD coverage across all entities.
 
-| Layer | Choice | Why Not Something Else |
-|-------|--------|-----------------------|
-| Server | **Hono** (TypeScript) | Lightest TS web framework. Runs on Bun, Node, Deno, Workers. Zero config. |
-| Rendering | **Hono JSX** | Server-rendered HTML. No client JS framework. No hydration. No bundle. |
-| Interactivity | **HTMX** | Server-driven UI. No build step. No virtual DOM. No state management. |
-| Database | **SQLite** via `bun:sqlite` | Zero infrastructure. File-based. Fast enough for 200 OPs. Portable. |
-| ORM | **Drizzle** | Type-safe SQL. No migration hell. Can swap to Postgres with an import change. |
-| Styling | **CSS Custom Properties** | Zero runtime. Zero build step. Theme-swappable. No CSS-in-JS overhead. |
+## Entity Tables (Nexus-Specific)
 
-## The Philosophy
+| Table | Rows | Purpose |
+|-------|------|---------|
+| `wsos_ops` | 218 | Outsource Professionals |
+| `wsos_clients` | 107 | Client companies |
+| `wsos_op_client_assignments` | 237 | OP↔Client relationship |
+| `wsos_ninety_day_checkins` | 174 | 90-day check-in results |
+| `wa_post_90day_schedule` | 174 | Post-90-day schedule |
+| `checkin_milestones` | 1425 | Per-milestone status |
+| `wa_ob_records` | 124 | Onboarding records |
+| `wa_ob_step_defs` | 26 | Step templates |
+| `wa_ob_statuses` | 2850 | Per-step completion |
+| `wa_red_flags` | 6 | Red flag catalog |
+| `wa_existing_accounts` | 0 | Pre-existing accounts |
+| `wa_cs_staff` | 4 | Legacy CS staff |
+| `nexus_users` | 7 | Auth users |
+| `wsos_op_phones` | 218 | OP phone numbers |
+| `wa_assignment_statuses` | 5 | Status reference |
+| `wa_assignment_types` | 3 | Type reference |
+| `op_checkin_reviews` | 69 | Review flags |
 
-### 1. Server-rendered HTML first
+## Relationship Map
 
-The page renders fully formed on the server. JS is not required to display data.
-HTMX adds interactivity (toggles, pagination, search) without writing JS.
-The entire JS budget is **HTMX itself: ~14KB gzipped**. Zero React, zero Svelte,
-zero Vue, zero build step.
+```
+wsos_ops ──┬── assignments (op_name) ──┬── wsos_clients (client_name)
+            │                            ├── wa_cs_staff (assigned_cs)
+            │                            └── wa_assignment_statuses (status)
+            ├── ninety_day_checkins (op_name) ── assignments (LEFT JOIN for client_name, assigned_cs)
+            ├── op_phones (op_name, 1:N)
+            ├── ob_records (op_name)
+            ├── post_90day_schedule (op_name)
+            └── checkin_milestones (op_name via WA)
 
-Compare to a typical React dashboard: 200-400KB gzipped before a single line
-of app code runs, plus a build step, plus hydration mismatches.
+wsos_clients ──┬── assignments (client_name)
+                ├── existing_accounts (client_name)
+                └── ob_records (client_name)
 
-**Why this matters for an internal tool:** Page load time is the #1 UX metric.
-Internal tools are used all day, every day. Every millisecond of JS parsing
-time is wasted time. There is no consumer-facing SEO or code-splitting
-requirement. The simplest stack that renders HTML is the best stack.
+ob_records ── ob_statuses (record_id)
+ob_statuses ── ob_step_defs (step_def_id)
+```
 
-### 2. SQLite is enough
+## Route Registration
 
-~200 OPs, ~1000 milestones, ~10000 status entries. SQLite handles this with
-zero tuning. No Postgres server to maintain. No connection pooling. No backup
-scripts. The database is a single file that can be backed up by copying it.
+All entity routes register in `src/app.ts` under `authMiddleware`:
 
-**When it won't be enough:** When concurrent writes exceed ~50/second, or the
-dataset exceeds ~100GB. At that point the business likely has dedicated
-infrastructure budget. Until then, SQLite is the most reliable database in
-existence with the lowest operational cost.
+```ts
+app.route("/ops", opsRouter)
+app.route("/clients", clientsRouter)
+app.route("/assignments", assignmentsRouter)
+app.route("/checkins", checkinsRouter)
+app.route("/onboarding", onboardingRouter)
+app.route("/schedule", scheduleRouter)
+app.route("/cs-staff", csStaffRouter)
+app.route("/red-flags", redFlagsRouter)
+app.route("/existing-accounts", existingAccountsRouter)
+app.route("/reviews", reviewsRouter)
+```
 
-### 3. CSS custom properties, not a framework
+`src/index.ts` handles only: cookie-based auth check, user seeding, and `app.fetch(req)` delegation. No raw-HTML routes remain.
 
-The `:root` block defines ~40 tokens. Every pixel of the app references
-`var(--*)`. Changing the brand to a different blue means changing ONE line.
+## Per-Entity Compliance
 
-A CSS framework (Tailwind, Bootstrap) would add a build step and lock us into
-utility classes. A component library (shadcn, MUI) would require React.
+| Entity | FK-in-Form | Soft Delete | Validation Re-render | Route File |
+|--------|------------|-------------|---------------------|-----------|
+| OPs | ✅ | ✅ | ✅ | `routes/ops.tsx` |
+| Clients | ✅ | ✅ | ✅ | `routes/clients.tsx` |
+| Assignments | ✅ | ✅ | ✅ (fixed this session) | `routes/assignments.tsx` |
+| Checkins | ✅ | ✅ | ✅ | `routes/checkins.tsx` |
+| Red Flags | ✅ | ✅ | ✅ | `routes/red-flags.tsx` |
+| Users | ✅ | ✅ | ✅ | `routes/cs-staff.tsx` |
+| Existing Accounts | ✅ | ✅ | ✅ | `routes/existing-accounts.tsx` |
+| OB Records | ✅ (detail) | — | — (HTMX) | `routes/onboarding.tsx` |
+| Schedule | ✅ (inline) | — | — (HTMX) | `routes/schedule.tsx` |
+| Reviews | ✅ (inline) | — | — (HTMX) | `routes/reviews.tsx` |
 
-Our own component library (Button, InputField, SelectField, pills) is ~50 lines
-of CSS + ~50 lines of Hono JSX. Zero dependencies. Zero build step.
+## Nexus-Specific Deviations From Skill
 
-## The Temptations to Resist
-
-### "Let's use React"
-
-You'll hear this when someone wants to add a date picker, a modal, or "reusable
-components." The trap: React requires a client-side JS bundle, hydration, state
-management, and a build step. Every new feature becomes "install another
-package." The app becomes heavier and slower for every feature added.
-
-**HTMX alternative:** HTMX handles modals (`hx-target` + `hx-swap`), date
-pickers (input `type="date"`), toggles, search, pagination, infinite scroll,
-inline editing — all with server-rendered HTML. No JS required.
-
-### "Let's use shadcn"
-
-shadcn is beautiful. It's also React-only. Adopting it means rewriting the
-entire app in React. Every component becomes a React component with client-side
-state. An internal tool with 10 pages and 30 tables becomes a "React app" with
-all the complexity that entails.
-
-**What we lose:** 14KB JS budget → 300KB+. Instant page loads → hydration
-delays. Write HTML → write JSX + React hooks. No build step → Vite/Next.js.
-File-based routing → router configuration.
-
-**What we gain:** Pre-built buttons. It's not worth it.
-
-### "Let's use Tailwind"
-
-Tailwind is excellent for prototyping. For a maintained app, it creates
-unreadable templates and couples styling to utility classes. CSS custom
-properties are more maintainable and themeable without a build step.
-
-### "Let's move to Postgres"
-
-Useful when SQLite becomes a bottleneck. The migration path is smooth:
-Drizzle ORM abstracts the database. Swap the import, change the connection
-string, run the migration. Everything else stays the same.
-
-**Don't do this preemptively.** SQLite handles this dataset fine.
-
-### "Let's add authentication middleware"
-
-The app is on a local VPN. Adding OAuth, session management, and login pages
-adds complexity with zero security benefit for a local-only tool. If the app
-goes public, add auth then.
-
-## The Real Risks
-
-These are the things that will actually cause problems:
-
-1. **No tests.** The app has zero automated tests. A refactor breaks things.
-2. **Hardcoded values.** The Google Sheets credentials, sheet IDs, and file
-   paths should be configurable, not hardcoded in build-db.ts.
-3. **Import pipeline fragility.** The build-db.ts script assumes a specific
-   sheet structure. If the sheet changes, the import breaks silently.
-4. **Duplicate records.** The ob_records table has duplicates per OP/client
-   (one per CS staff). This is a data model issue that causes confusing UI.
-
-These are worth fixing. Rewriting in React is not.
-
-## When to Re-Evaluate
-
-- **When SQLite starts struggling** (>50 concurrent writes, >100GB data)
-- **When the team grows** and needs a component library with documentation
-- **When the app needs to be public** and auth/add-tenancy is required
-- **When HTMX stops being maintained** (unlikely — it's more active than ever)
-
-Until then, the stack is the right stack. Simple, fast, zero-dependency,
-maintainable by one person.
+1. **Text-based FK joins**: `wsos_ops` and `wsos_clients` use `full_name`/`name` as join keys (legacy from Google Sheets). New tables use numeric IDs.
+2. **OP form FK persistence**: Uses `upsertOpAssignment()` to create/update assignment row alongside OP. Assignment fields (client, role, status, cs) live in assignment table, not ops table.
+3. **Onboarding detail**: Mixed HTMX step toggles + inline form for metadata fields. No traditional create/edit page pattern.
+4. **Schedule & Reviews**: Fully HTMX-driven — no full-page forms. Milestone status toggles and flag picks via inline editors.
+5. **Rate field**: Stored as text (e.g., "$4/hour") across ops and assignments. Not a number column — allows mixed format from source data.
+6. **Phones 1:N**: `wsos_op_phones` stores multiple phone numbers per OP. Only the primary phone appears in the OP form; additional phones are neither displayed nor editable.
