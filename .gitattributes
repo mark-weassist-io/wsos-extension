@@ -1,0 +1,29 @@
+﻿# >>> dev-wrapper line-ending policy >>>
+* text=auto eol=lf
+
+# Binary / archive formats
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.zip binary
+*.7z binary
+*.tar binary
+*.gz binary
+
+# Office files
+*.docx binary
+*.xlsx binary
+*.xlsm binary
+*.pptx binary
+*.pptm binary
+*.one binary
+
+# Data files that should remain byte-stable
+*.parquet binary
+*.sqlite binary
+*.db binary
+# <<< dev-wrapper line-ending policy <<<

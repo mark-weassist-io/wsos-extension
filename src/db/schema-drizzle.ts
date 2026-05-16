@@ -160,7 +160,9 @@ export const ninetyDayCheckins = sqliteTable("wsos_ninety_day_checkins", {
   opName: text("op_name").notNull(),
   status: text("status"),
   notes: text("notes"),
+  assignedCs: text("assigned_cs"),
   createdAt: text("created_at").default("datetime('now')"),
+  deletedAt: text("deleted_at"),
 }, (table) => [
   index("idx_checkins_op").on(table.opName),
 ])
@@ -193,6 +195,7 @@ export const redFlags = sqliteTable("wa_red_flags", {
   definition: text("definition"),
   sourceTab: text("source_tab"),
   createdAt: text("created_at").default("datetime('now')"),
+  deletedAt: text("deleted_at"),
 })
 
 export const existingAccounts = sqliteTable("wa_existing_accounts", {
@@ -202,6 +205,7 @@ export const existingAccounts = sqliteTable("wa_existing_accounts", {
   checkinFrequency: text("checkin_frequency"),
   sourceTab: text("source_tab"),
   createdAt: text("created_at").default("datetime('now')"),
+  deletedAt: text("deleted_at"),
 })
 
 export const slackSupportTickets = sqliteTable("wsos_slack_support_tickets", {

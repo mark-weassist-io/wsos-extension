@@ -155,6 +155,18 @@ CREATE TABLE IF NOT EXISTS wa_cell_formatting (
   hex_color TEXT NOT NULL,
   created_at TEXT DEFAULT (datetime('now'))
 );
+
+CREATE TABLE IF NOT EXISTS nexus_users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  email TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
+  display_name TEXT NOT NULL DEFAULT '',
+  role TEXT NOT NULL DEFAULT 'staff',
+  department TEXT NOT NULL DEFAULT '',
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now')),
+  deleted_at TEXT
+);
 `
 
 export function ensureSchema(db: Database): void {
@@ -171,5 +183,70 @@ export function ensureSchema(db: Database): void {
     db.run("ALTER TABLE wsos_op_client_assignments RENAME COLUMN cs_staff_name TO assigned_cs")
   } else if (!colNames.includes("assigned_cs") && !colNames.includes("cs_staff_name")) {
     db.run("ALTER TABLE wsos_op_client_assignments ADD COLUMN assigned_cs TEXT")
+  }
+
+  // Ensure checkin_milestones has was_green and custom_date columns
+  const milestoneTable = db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='checkin_milestones'").get() as { name: string } | undefined
+  if (milestoneTable) {
+    const milestoneCols = db.prepare("PRAGMA table_info(checkin_milestones)").all() as { name: string }[]
+    if (!milestoneCols.find(c => c.name === "was_green")) {
+      db.run("ALTER TABLE checkin_milestones ADD COLUMN was_green INTEGER NOT NULL DEFAULT 1")
+    }
+    if (!milestoneCols.find(c => c.name === "custom_date")) {
+      db.run("ALTER TABLE checkin_milestones ADD COLUMN custom_date TEXT")
+    }
+    // Mark overdue milestones as cancelled on every startup
+    const today = new Date()
+    const overdueMs = db.prepare("SELECT op_name, milestone, milestone_date, custom_date FROM checkin_milestones WHERE happened = 0 AND was_green = 1 AND milestone_date IS NOT NULL AND milestone_date != ''").all() as { op_name: string; milestone: string; milestone_date: string; custom_date: string | null }[]
+    for (const ms of overdueMs) {
+      const dateStr = ms.custom_date || ms.milestone_date
+      const parts = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+      if (parts) {
+        const msDate = new Date(+parts[3], +parts[1] - 1, +parts[2])
+        if (msDate < today) {
+          db.prepare("UPDATE checkin_milestones SET was_green = 0 WHERE op_name = ? AND milestone = ?").run(ms.op_name, ms.milestone)
+        }
+      }
+    }
+  }
+
+  // Ensure users table exists (auth)
+  db.run(`CREATE TABLE IF NOT EXISTS nexus_users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    display_name TEXT NOT NULL DEFAULT '',
+    role TEXT NOT NULL DEFAULT 'staff',
+    department TEXT NOT NULL DEFAULT '',
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now')),
+    deleted_at TEXT
+  )`)
+  // Add columns to nexus_users for existing DBs
+  const userCols = db.prepare("PRAGMA table_info(nexus_users)").all() as { name: string }[]
+  const userColNames = userCols.map(c => c.name)
+  if (!userColNames.includes("department")) db.run("ALTER TABLE nexus_users ADD COLUMN department TEXT NOT NULL DEFAULT ''")
+  if (!userColNames.includes("deleted_at")) db.run("ALTER TABLE nexus_users ADD COLUMN deleted_at TEXT")
+
+  // Ensure deleted_at on checkins table
+  const checkinCols = db.prepare("PRAGMA table_info(wsos_ninety_day_checkins)").all() as { name: string }[]
+  if (!checkinCols.find(c => c.name === "deleted_at")) {
+    db.run("ALTER TABLE wsos_ninety_day_checkins ADD COLUMN deleted_at TEXT")
+  }
+
+  // Ensure existing_accounts table exists
+  db.run(`CREATE TABLE IF NOT EXISTS wa_existing_accounts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    client_name TEXT,
+    update_note TEXT,
+    checkin_frequency TEXT,
+    source_tab TEXT,
+    created_at TEXT DEFAULT (datetime('now')),
+    deleted_at TEXT
+  )`)
+  // Ensure deleted_at column on existing_accounts
+  const eaCols = db.prepare("PRAGMA table_info(wa_existing_accounts)").all() as { name: string }[]
+  if (!eaCols.find(c => c.name === "deleted_at")) {
+    db.run("ALTER TABLE wa_existing_accounts ADD COLUMN deleted_at TEXT")
   }
 }

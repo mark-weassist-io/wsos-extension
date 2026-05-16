@@ -1,5 +1,7 @@
 import { Hono } from "hono"
 import { logger as honoLogger } from "hono/logger"
+import { authRouter } from "./routes/auth"
+import { authMiddleware } from "./middleware/auth"
 import { dashboardRouter } from "./routes/dashboard"
 import { opsRouter } from "./routes/ops"
 import { clientsRouter } from "./routes/clients"
@@ -9,6 +11,8 @@ import { scheduleRouter } from "./routes/schedule"
 import { csStaffRouter } from "./routes/cs-staff"
 import { assignmentsRouter } from "./routes/assignments"
 import { reviewsRouter } from "./routes/reviews"
+import { redFlagsRouter } from "./routes/red-flags"
+import { existingAccountsRouter } from "./routes/existing-accounts"
 import { schema } from "./db"
 import { getDb } from "./db"
 import { ensureSchema } from "./db/schema"
@@ -34,6 +38,8 @@ app.onError((err, c) => {
 
 ensureSchema(getDb())
 
+// Public routes (no auth required)
+app.route("/", authRouter)
 app.get("/health", (c) => {
   try {
     getDb().prepare("SELECT 1").get()
@@ -45,6 +51,9 @@ app.get("/health", (c) => {
   }
 })
 
+// Protected routes (auth required)
+app.use("*", authMiddleware)
+
 app.route("/", dashboardRouter)
 app.route("/ops", opsRouter)
 app.route("/clients", clientsRouter)
@@ -54,6 +63,8 @@ app.route("/schedule", scheduleRouter)
 app.route("/reviews", reviewsRouter)
 app.route("/cs-staff", csStaffRouter)
 app.route("/assignments", assignmentsRouter)
+app.route("/red-flags", redFlagsRouter)
+app.route("/existing-accounts", existingAccountsRouter)
 
 app.notFound((c) => c.redirect("/"))
 

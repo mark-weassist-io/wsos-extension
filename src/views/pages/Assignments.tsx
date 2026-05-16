@@ -11,11 +11,12 @@ interface Props {
   ops?: string[]
   clients?: string[]
   csStaff?: string[]
+  statuses?: string[]
   search?: string
+  showTrashed?: boolean
 }
 
-export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formData, errors, ops, clients, csStaff, search }) => {
-  const showTrashed = assignments.length > 0 && assignments[0]?.deleted_at ? true : false
+export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formData, errors, ops, clients, csStaff, statuses, search, showTrashed }) => {
   return (
     <Layout title={editing ? (editId ? "Edit Assignment" : "New Assignment") : "Assignments"} activeNav="assignments">
       {editing ? (
@@ -26,12 +27,12 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
             {selectField("OP*", "opName", formData?.opName || "", ops || [], errors?.opName)}
             {selectField("Client*", "clientName", formData?.clientName || "", clients || [], errors?.clientName)}
             {inputField("Role", "role", formData?.role || "", errors?.role)}
-            {selectField("Status", "status", formData?.status || "Probation", ["Probation", "Active", "Inactive", "Separated", "Resigned"], errors?.status)}
+            {selectField("Status", "status", formData?.status || "Probation", statuses && statuses.length > 0 ? statuses : ["Probation", "Active", "Inactive", "Separated", "Resigned"], errors?.status)}
             {selectField("Type", "type", formData?.type || "", ["", "Full-Time", "Part-Time", "6 Hours"], errors?.type)}
             {inputField("Start Date", "startDate", formData?.startDate || "", errors?.startDate, false, "date")}
             {inputField("End Date", "endDate", formData?.endDate || "", errors?.endDate, false, "date")}
-            {inputField("Rate", "rate", formData?.rate || "", errors?.rate, false, "number")}
-            {csStaff ? selectField("Assigned CS", "assignedCs", formData?.assignedCs || "", csStaff, errors?.assignedCs) : inputField("Assigned CS", "assignedCs", formData?.assignedCs || "", errors?.assignedCs)}
+            {inputField("Rate", "rate", formData?.rate || "", errors?.rate)}
+            {selectField("Assigned CS", "assignedCs", formData?.assignedCs || "", csStaff || [], errors?.assignedCs)}
             <div style="display:flex;gap:8px;margin-top:16px">
               <button type="submit" class="btn btn-primary btn-sm">{editId ? "Update" : "Create"}</button>
               <a href="/assignments" class="btn btn-outline-secondary btn-sm">Cancel</a>
@@ -42,6 +43,7 @@ export const AssignmentsPage: FC<Props> = ({ assignments, editing, editId, formD
         <>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
             <div style="display:flex;gap:8px;align-items:center">
+              <span class="text-secondary">{assignments.length} assignments</span>
               <a href="/assignments" class={`badge ${!showTrashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Active</a>
               <a href="/assignments?trashed=1" class={`badge ${showTrashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Trashed</a>
             </div>

@@ -1,178 +1,59 @@
 import { serve } from "bun"
 import { app } from "./app"
 import { config } from "./config"
-import { getRedFlags, createRedFlag, updateRedFlag, softDeleteRedFlag, restoreRedFlag, getRedFlagById } from "./db/queries/red-flags"
-import { getCsStaff, createCsStaff, updateCsStaff, softDeleteCsStaff, restoreCsStaff, getCsStaffById } from "./db/queries/cs-staff"
-import { getNinetyDayCheckins, createCheckin, updateCheckin, softDeleteCheckin, restoreCheckin, getCheckinById } from "./db/queries/checkins"
+import { verify } from "hono/jwt"
+import { getJwtSecret } from "./middleware/auth"
+import { getUserById, getUserByEmail, createUser, hasAnyUser } from "./db/queries/auth"
 
-const NAV = [
-  { id: "dashboard", label: "Dashboard", href: "/", icon: "bi-speedometer2" },
-  { id: "ops", label: "OP Directory", href: "/ops", icon: "bi-people" },
-  { id: "clients", label: "Clients", href: "/clients", icon: "bi-building" },
-  { id: "assignments", label: "Assignments", href: "/assignments", icon: "bi-link" },
-  { id: "onboarding", label: "Onboarding", href: "/onboarding", icon: "bi-clipboard-data" },
-  { id: "schedule", label: "Check-in Schedule", href: "/schedule", icon: "bi-calendar" },
-  { id: "cs-staff", label: "CS Staff", href: "/cs-staff", icon: "bi-person-badge" },
-  { id: "red-flags", label: "Red Flags", href: "/red-flags", icon: "bi-exclamation-triangle" },
-  { id: "reviews", label: "Reviews", href: "/reviews", icon: "bi-clipboard-check" },
-]
-
-const CSS = `
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root {
-  --sidebar-w:220px; --bg:#f5f6fa; --body-bg:#f5f6fa;
-  --sidebar-bg:#ffffff; --sidebar-text:#1a1d29; --sidebar-hover:#f0f2f5;
-  --sidebar-active:#4f7cff; --sidebar-active-text:#ffffff;
-  --sidebar-border:#e2e4e8; --sidebar-logo:#1a1d29; --sidebar-version:#9aa0b0;
-  --sidebar-btn-border:#d0d2d8;
-  --accent:#4f7cff; --accent-light:#e8edff; --border:#e2e4e8;
-  --text:#1a1d29; --text-secondary:#6b6f80;
-  --card-bg:#fff; --header-bg:#fff; --header-border:#dee2e6; --table-header-bg:#f5f6fa;
-  --success:#22c55e; --warning:#f59e0b; --danger:#ef4444;
-  --radius:8px; --shadow:0 1px 3px rgba(0,0,0,0.08);
-}
-html{font-size:14px}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--body-bg);color:var(--text);line-height:1.5}
-.app-shell{display:flex;min-height:100vh}
-.sidebar{width:var(--sidebar-w);background:var(--sidebar-bg);color:var(--sidebar-text);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:100}
-.sidebar-header{padding:20px 16px 16px;border-bottom:1px solid var(--sidebar-border)}
-.logo{font-size:1.25rem;font-weight:700;color:var(--sidebar-logo);letter-spacing:-0.02em}
-.subtitle{font-size:.75rem;color:var(--sidebar-text);display:block;margin-top:2px}
-.nav{flex:1;padding:8px;display:flex;flex-direction:column;gap:2px;overflow-y:auto}
-.nav-item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:6px;color:var(--sidebar-text);text-decoration:none;font-size:.875rem;transition:all .15s}
-.nav-item:hover{background:var(--sidebar-hover);color:inherit}
-.nav-item.active{background:var(--sidebar-active);color:var(--sidebar-active-text)}
-.sidebar-footer{padding:12px 16px;border-top:1px solid var(--sidebar-border);display:flex;align-items:center;justify-content:space-between}
-.version{font-size:.7rem;color:var(--sidebar-version)}
-.main-content{margin-left:var(--sidebar-w);flex:1;min-height:100vh}
-.page-header{padding:20px 24px;background:var(--card-bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
-.page-title{font-size:1.25rem;font-weight:600}
-.content-body{padding:24px}
-.card{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:20px;box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;font-size:.875rem}
-th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
-th{background:var(--bg);font-weight:600;color:var(--text-secondary);font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
-tr:hover td{background:var(--accent-light)}
-.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.75rem;font-weight:500}
-.badge-success{background:#dcfce7;color:#166534}
-.badge-warning{background:#fef3c7;color:#92400e}
-.badge-danger{background:#fee2e2;color:#991b1b}
-.badge-info{background:#dbeafe;color:#1e40af}
-.badge-secondary{background:#f1f5f9;color:#475569}
-.search-bar{display:flex;gap:8px;margin-bottom:16px;max-width:400px}
-.search-bar input{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;outline:none}
-.search-bar input:focus{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-light)}
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:24px}
-.stat-card{background:var(--card-bg);border-radius:var(--radius);border:1px solid var(--border);padding:16px 20px;box-shadow:var(--shadow)}
-.stat-value{font-size:1.75rem;font-weight:700}
-.stat-label{font-size:.8rem;color:var(--text-secondary);margin-top:2px}
-.mb-4{margin-bottom:16px}.mt-4{margin-top:16px}
-.text-sm{font-size:.8rem}.text-secondary{color:var(--text-secondary)}
-.sidebar-btn{background:none;border:1px solid var(--sidebar-btn-border);border-radius:6px;color:var(--sidebar-text);cursor:pointer;padding:4px 8px;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.sidebar-btn:hover{background:var(--sidebar-hover)}
-`
-
-function pageHTML(title: string, active: string, body: string): string {
-  return `<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>${title} — Nexus</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-<script src="https://unpkg.com/htmx.org@2.0.4"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>(function(){var k="nexus-theme";function a(t){var d=window.matchMedia("(prefers-color-scheme: dark)").matches;var r=t==="dark"||(t==="system"&&d)?"dark":"light";document.documentElement.setAttribute("data-bs-theme",r);document.documentElement.setAttribute("data-theme",r);window.__nexusTheme=t;window.__nexusResolved=r;var o=document.documentElement;if(r==="dark"){o.style.setProperty("--body-bg","#0f1119");o.style.setProperty("--bg","#0f1119");o.style.setProperty("--text","#e4e6eb");o.style.setProperty("--text-secondary","#c5cad6");o.style.setProperty("--border","#2a2d3a");o.style.setProperty("--card-bg","#1a1d29");o.style.setProperty("--header-bg","#1a1d29");o.style.setProperty("--header-border","#2a2d3a");o.style.setProperty("--table-header-bg","#1a1d29");o.style.setProperty("--accent-light","#1e2a45");o.style.setProperty("--sidebar-bg","#0f1119");o.style.setProperty("--sidebar-text","#a0a4b8");o.style.setProperty("--sidebar-hover","#1a1d29");o.style.setProperty("--sidebar-active","#4f7cff");o.style.setProperty("--sidebar-active-text","#ffffff");o.style.setProperty("--sidebar-border","rgba(255,255,255,0.06)");o.style.setProperty("--sidebar-logo","#ffffff");o.style.setProperty("--sidebar-version","rgba(255,255,255,0.3)");o.style.setProperty("--sidebar-btn-border","rgba(255,255,255,0.15)")}else{o.style.setProperty("--body-bg","#f5f6fa");o.style.setProperty("--bg","#f5f6fa");o.style.setProperty("--text","#1a1d29");o.style.setProperty("--text-secondary","#6b6f80");o.style.setProperty("--border","#e2e4e8");o.style.setProperty("--card-bg","#ffffff");o.style.setProperty("--header-bg","#ffffff");o.style.setProperty("--header-border","#dee2e6");o.style.setProperty("--table-header-bg","#f5f6fa");o.style.setProperty("--accent-light","#e8edff");o.style.setProperty("--sidebar-bg","#ffffff");o.style.setProperty("--sidebar-text","#1a1d29");o.style.setProperty("--sidebar-hover","#f0f2f5");o.style.setProperty("--sidebar-active","#4f7cff");o.style.setProperty("--sidebar-active-text","#ffffff");o.style.setProperty("--sidebar-border","#e2e4e8");o.style.setProperty("--sidebar-logo","#1a1d29");o.style.setProperty("--sidebar-version","#9aa0b0");o.style.setProperty("--sidebar-btn-border","#d0d2d8")}var i=document.getElementById("theme-icon");if(i){if(t==="dark"){i.innerHTML='<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'}else if(t==="light"){i.innerHTML='<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'}else{i.innerHTML='<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>'}}}var s=localStorage.getItem(k)||"system";a(s);window.__nexusApply=a;window.toggleTheme=function(){var c=localStorage.getItem(k)||"system";var n=c==="system"?"light":c==="light"?"dark":"system";localStorage.setItem(k,n);a(n)};window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){var t=localStorage.getItem(k)||"system";if(t==="system")a("system")})})();</script>
-<style>${CSS}</style></head>
-<body><div class="app-shell"><aside class="sidebar">
-<div class="sidebar-header"><h1 class="logo">Nexus</h1><span class="subtitle">WeAssist Operations</span></div>
-<nav class="nav">${NAV.map(n => `<a href="${n.href}" class="d-flex align-items-center gap-2 px-2 py-2 rounded text-decoration-none mb-1 nav-item${active === n.id ? " active" : ""}" style="${active === n.id ? "color:var(--sidebar-active-text);background:var(--sidebar-active)" : "color:var(--sidebar-text);background:transparent"}"><i class="${n.icon}" style="font-size:1rem"></i><span style="font-size:0.875rem">${n.label}</span></a>`).join("")}</nav>
-<div class="sidebar-footer"><span class="version">v0.1.0</span>
-<button onclick="toggleTheme()" class="sidebar-btn" title="Toggle theme"><svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></button>
-</div>
-</aside><main class="main-content">
-<header class="page-header"><h2 class="page-title">${title}</h2></header>
-<div class="content-body">${body}</div>
-</main></div></body></html>`
-}
-
-function esc(s: string | null | undefined): string {
-  if (!s) return ""
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
-}
-
-// Pure string-template routes — no Hono, no JSX
-// Handle POST bodies
-async function bodyParams(req: Request): Promise<Record<string, string>> {
-  const text = await req.text()
-  const params: Record<string, string> = {}
-  for (const part of text.split("&")) {
-    const [k, v] = part.split("=")
-    if (k) params[decodeURIComponent(k)] = v ? decodeURIComponent(v.replace(/\+/g, " ")) : ""
+function getCookie(req: Request, name: string): string | null {
+  const raw = req.headers.get("cookie")
+  if (!raw) return null
+  for (const part of raw.split(";")) {
+    const [k, ...rest] = part.trim().split("=")
+    if (k === name) return rest.join("=")
   }
-  return params
+  return null
 }
 
-const staticRoutes: Record<string, (url: URL, req: Request) => Response | Promise<Response>> = {
-  "/red-flags": (url, req) => {
-    const trashed = url.searchParams.get("trashed") === "1"
-    const flags = getRedFlags(url.searchParams.get("search") || undefined, trashed)
-    const rows = flags.map(f => {
-      const d = f.deleted_at
-      const ad = d
-        ? `<form action="/red-flags/${f.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
-        : `<a href="/red-flags/${f.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
-<form action="/red-flags/${f.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
-      return `<tr${d ? ' style="opacity:0.5"' : ""}><td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${f.color || '#ccc'};margin-right:4px;vertical-align:middle"></span><strong>${esc(f.flag_name)}</strong>${d ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(f.definition)}</td><td>${ad}</td></tr>`
-    }).join("") || '<tr><td colspan="3" style="padding:40px;text-align:center;color:var(--text-secondary)">No flags found</td></tr>'
+const PUBLIC_PATHS = new Set(["/login", "/health", "/settings"])
 
-    return new Response(pageHTML("Red Flags", "red-flags", `
-      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <a href="/red-flags" class="badge ${!trashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Active</a>
-        <a href="/red-flags?trashed=1" class="badge ${trashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Trashed</a>
-      </div>
-      <div class="card" style="padding:0">
-        <table><thead><tr><th>Flag</th><th>Definition</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
-      </div>
-    `), { headers: { "Content-Type": "text/html" } })
-  },
-"/red-flags/new": (url) => new Response(pageHTML("New Red Flag", "red-flags", `
-    <a href="/red-flags" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
-    <h3 class="h5 mb-3">New Red Flag</h3>
-    <form action="/red-flags" method="POST" class="card" style="padding:20px;max-width:500px">
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Flag Name *</label><input type="text" name="flagName" required class="form-control form-control-sm"></div>
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Definition</label><textarea name="definition" class="form-control form-control-sm" style="min-height:80px"></textarea></div>
-    <button type="submit" class="btn btn-primary btn-sm">Create</button>
-    </form>
-  `), { headers: { "Content-Type": "text/html" } }),
-"/cs-staff/new": (url) => new Response(pageHTML("New Staff", "cs-staff", `
-    <a href="/cs-staff" class="btn btn-outline-secondary btn-sm mb-3">← Back</a>
-    <h3 class="h5 mb-3">New Staff</h3>
-    <form action="/cs-staff" method="POST" class="card" style="padding:20px;max-width:500px">
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" required class="form-control form-control-sm"></div>
-      <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" class="form-control form-control-sm"></div>
-      <button type="submit" class="btn btn-primary btn-sm">Create</button>
-    </form>
-  `), { headers: { "Content-Type": "text/html" } }),
-  "/cs-staff": (url, req) => {
-    const includeTrashed = url.searchParams.get("trashed") === "1"
-    const staff = getCsStaff(url.searchParams.get("search") || undefined, includeTrashed)
-    const rows = staff.map(s => {
-      const actions = s.deleted_at
-        ? `<form action="/cs-staff/${s.id}/restore" method="POST" style="display:inline"><button class="badge badge-success" style="cursor:pointer;border:none">Restore</button></form>`
-        : `<a href="/cs-staff/${s.id}/edit" class="badge badge-info" style="text-decoration:none">Edit</a>
-<form action="/cs-staff/${s.id}/delete" method="POST" style="display:inline"><button class="badge badge-danger" style="cursor:pointer;border:none">Delete</button></form>`
-      return `<tr${s.deleted_at ? ' style="opacity:0.5"' : ""}><td><strong>${esc(s.name)}</strong>${s.deleted_at ? ' <span class="badge badge-danger">Deleted</span>' : ""}</td><td>${esc(s.full_name || "")}</td><td>${actions}</td></tr>`
-    }).join("") || '<tr><td colspan="3" style="text-align:center;padding:40px;color:var(--text-secondary)">No staff found</td></tr>'
-    return new Response(pageHTML("CS Staff", "cs-staff", `
-      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <a href="/cs-staff" class="badge ${!includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Active</a>
-        <a href="/cs-staff?trashed=1" class="badge ${includeTrashed ? "badge-info" : "badge-secondary"}" style="text-decoration:none">Trashed</a>
-        <a href="/cs-staff/new" class="btn btn-primary btn-sm" style="text-decoration:none;margin-left:auto">+ New</a>
-      </div>
-      <div class="card" style="padding:0">
-        <table><thead><tr><th>Name</th><th>Full Name</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>
-      </div>
-    `), { headers: { "Content-Type": "text/html" } })
-  },
+async function isAuthenticated(req: Request): Promise<boolean> {
+  const token = getCookie(req, "nexus_token")
+  if (!token) return false
+  try {
+    const payload = await verify(token, getJwtSecret()) as { userId: number }
+    return !!getUserById(payload.userId)
+  } catch { return false }
+}
+
+// Seed admin users on first startup
+if (!hasAnyUser()) {
+  const { adminSeedPassword, staffSeedPassword } = config
+  if (adminSeedPassword) {
+    const adminHash = await Bun.password.hash(adminSeedPassword)
+    createUser("mark@weassist.io", adminHash, "Mark", "admin", "development")
+    createUser("eric@weassist.io", adminHash, "Eric", "admin", "development")
+  }
+  const { getDb } = await import("./db")
+  if (staffSeedPassword) {
+    const hash = await Bun.password.hash(staffSeedPassword)
+    const staff = getDb().prepare("SELECT * FROM wa_cs_staff WHERE deleted_at IS NULL").all() as any[]
+    let migrated = 0
+    for (const s of staff) {
+      const displayName = s.full_name || s.name || ""
+      const email = s.email || `${displayName.toLowerCase().replace(/\s+/g, ".")}@weassist.io`
+      if (!getUserByEmail(email)) { createUser(email, hash, displayName, "staff", "customer_success"); migrated++ }
+    }
+  }
+  const { getDb: getDbNow } = await import("./db")
+  getDbNow().prepare("UPDATE nexus_users SET department = 'development' WHERE email IN ('mark@weassist.io','eric@weassist.io') AND (department IS NULL OR department = '')").run()
+  const staffToMigrate = getDbNow().prepare("SELECT * FROM wa_cs_staff WHERE deleted_at IS NULL").all() as any[]
+  const staffHash = staffSeedPassword ? await Bun.password.hash(staffSeedPassword) : null
+  for (const s of staffToMigrate) {
+    const dn = s.full_name || s.name || ""
+    const em = s.email || `${dn.toLowerCase().replace(/\s+/g, ".")}@weassist.io`
+    if (em && !getUserByEmail(em) && staffHash) { createUser(em, staffHash, dn, "staff", "customer_success") }
+  }
 }
 
 serve({
@@ -180,68 +61,14 @@ serve({
     const url = new URL(req.url)
     const path = url.pathname
 
-    // CS Staff CRUD
-    if (path === "/cs-staff" && req.method === "POST") { const b = await bodyParams(req); if (b.name) createCsStaff({ name: b.name, fullName: b.fullName }); return Response.redirect("/cs-staff") }
-    const csMatchDel = path.match(/^\/cs-staff\/(\d+)\/delete$/)
-    if (csMatchDel && req.method === "POST") { softDeleteCsStaff(parseInt(csMatchDel[1]!)); return Response.redirect("/cs-staff") }
-    const csMatchRes = path.match(/^\/cs-staff\/(\d+)\/restore$/)
-    if (csMatchRes && req.method === "POST") { restoreCsStaff(parseInt(csMatchRes[1]!)); return Response.redirect("/cs-staff?trashed=1") }
-    const csMatchEdit = path.match(/^\/cs-staff\/(\d+)\/edit$/)
-    if (csMatchEdit) {
-      const s = getCsStaffById(parseInt(csMatchEdit[1]!)) as any
-      if (!s) return Response.redirect("/cs-staff")
-      return new Response(pageHTML("Edit Staff", "cs-staff", `
-        <a href="/cs-staff" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">Edit Staff</h3>
-        <form action="/cs-staff/${s.id}" method="POST" class="card" style="padding:20px;max-width:500px">
-          <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Name *</label><input type="text" name="name" value="${esc(s.name)}" required class="form-control form-control-sm"></div>
-          <div class="mb-3"><label class="form-label" style="font-size:.8rem;color:var(--text-secondary)">Full Name</label><input type="text" name="fullName" value="${esc(s.fullName)}" class="form-control form-control-sm"></div>
-          <button type="submit" class="btn btn-primary btn-sm">Update</button>
-        </form>
-      `), { headers: { "Content-Type": "text/html" } })
+    if (!PUBLIC_PATHS.has(path) && !path.startsWith("/login") && path !== "/health") {
+      const authed = await isAuthenticated(req)
+      if (!authed) {
+        if (req.headers.get("hx-request")) return new Response(null, { status: 401 })
+        return Response.redirect(`/login?redirect=${encodeURIComponent(path)}`)
+      }
     }
-    const csMatchUpdate = path.match(/^\/cs-staff\/(\d+)$/)
-    if (csMatchUpdate && req.method === "POST") { const b = await bodyParams(req); updateCsStaff(parseInt(csMatchUpdate[1]!), { name: b.name, fullName: b.fullName }); return Response.redirect("/cs-staff") }
 
-    // Check-in CRUD
-    if (path === "/checkins" && req.method === "POST") { const b = await bodyParams(req); if (b.opName) createCheckin({ opName: b.opName, checkinType: b.checkinType, checkinDate: b.checkinDate, status: b.status, notes: b.notes }); return Response.redirect("/checkins") }
-    const ciEdit = path.match(/^\/checkins\/(\d+)\/edit$/)
-    if (ciEdit) { const c = getCheckinById(parseInt(ciEdit[1]!)); if (!c) return Response.redirect("/checkins"); return new Response(pageHTML("Edit Check-in", "checkins", `
-      <a href="/checkins" style="color:var(--accent);text-decoration:none;font-size:.875rem;display:inline-block;margin-bottom:16px">← Back</a>
-      <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">Edit Check-in</h3>
-      <form action="/checkins/${c.id}" method="POST" class="card" style="padding:20px;max-width:500px">
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">OP *</label><input type="text" name="opName" value="${esc(c.op_name)}" required style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Type</label><input type="text" name="checkinType" value="${esc(c.checkin_type)}" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Date</label><input type="date" name="checkinDate" value="${esc(c.checkin_date)}" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box"></div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Status</label>
-          <select name="status" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box;background:#fff">
-            <option value="">—</option><option value="GRADUATED"${c.status === "GRADUATED" ? " selected" : ""}>GRADUATED</option>
-            <option value="RESIGNED"${c.status === "RESIGNED" ? " selected" : ""}>RESIGNED</option>
-            <option value="TERMINATED"${c.status === "TERMINATED" ? " selected" : ""}>TERMINATED</option>
-            <option value="TRANSITIONED"${c.status === "TRANSITIONED" ? " selected" : ""}>TRANSITIONED</option>
-          </select></div>
-        <div style="margin-bottom:12px"><label style="display:block;font-size:.8rem;font-weight:500;margin-bottom:4px;color:var(--text-secondary)">Notes</label><textarea name="notes" style="width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:.875rem;box-sizing:border-box;min-height:80px">${esc(c.notes)}</textarea></div>
-        <button type="submit" style="padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500">Update</button>
-      </form>
-    `), { headers: { "Content-Type": "text/html" } }) }
-    const ciDel = path.match(/^\/checkins\/(\d+)\/delete$/)
-    if (ciDel && req.method === "POST") { softDeleteCheckin(parseInt(ciDel[1]!)); return Response.redirect("/checkins") }
-    const ciRes = path.match(/^\/checkins\/(\d+)\/restore$/)
-    if (ciRes && req.method === "POST") { restoreCheckin(parseInt(ciRes[1]!)); return Response.redirect("/checkins?trashed=1") }
-    const ciUpdate = path.match(/^\/checkins\/(\d+)$/)
-    if (ciUpdate && req.method === "POST") { const b = await bodyParams(req); updateCheckin(parseInt(ciUpdate[1]!), b as any); return Response.redirect("/checkins") }
-
-    // Red-flags CRUD
-    if (path === "/red-flags" && req.method === "POST") { const b = await bodyParams(req); if (b.flagName) createRedFlag({ flagName: b.flagName, definition: b.definition }); return Response.redirect("/red-flags") }
-    const matchDelete = path.match(/^\/red-flags\/(\d+)\/delete$/)
-    if (matchDelete && req.method === "POST") { softDeleteRedFlag(parseInt(matchDelete[1]!)); return Response.redirect("/red-flags") }
-    const matchRestore = path.match(/^\/red-flags\/(\d+)\/restore$/)
-    if (matchRestore && req.method === "POST") { restoreRedFlag(parseInt(matchRestore[1]!)); return Response.redirect("/red-flags?trashed=1") }
-    const matchUpdate = path.match(/^\/red-flags\/(\d+)$/)
-    if (matchUpdate && req.method === "POST") { const b = await bodyParams(req); updateRedFlag(parseInt(matchUpdate[1]!), b as any); return Response.redirect("/red-flags") }
-
-    const handler = staticRoutes[path]
-    if (handler) return handler(url, req)
     return app.fetch(req)
   },
   port: config.port,

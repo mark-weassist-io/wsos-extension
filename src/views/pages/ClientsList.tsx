@@ -32,6 +32,7 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
         <>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px">
             <div style="display:flex;gap:8px;align-items:center">
+              <span class="text-secondary">{clients.length} clients</span>
               <a href="/clients" class={`badge ${!trashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Active</a>
               <a href="/clients?trashed=1" class={`badge ${trashed ? "badge-info" : "badge-secondary"}`} style="text-decoration:none">Trashed</a>
             </div>
@@ -60,7 +61,7 @@ export const ClientsPage: FC<Props> = ({ clients, editing, editId, errors, formD
                     </td>
                   </tr>
                 ))}
-                {clients.length === 0 && <tr><td colspan="5" style="text-align:center;padding:40px;color:var(--text-secondary)">No clients found</td></tr>}
+                {clients.length === 0 && <tr><td colspan="3" style="text-align:center;padding:40px;color:var(--text-secondary)">No clients found</td></tr>}
               </tbody>
             </table>
           </div>

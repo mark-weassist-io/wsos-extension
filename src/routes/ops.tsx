@@ -1,9 +1,8 @@
 import { Hono } from "hono"
 import { z } from "zod"
 import { OpsListPage } from "../views/pages/OpsList"
-import { getOpsWithAssignments, getOpById, getOpsCount, createOp, updateOp, softDeleteOp, restoreOp, getOpPhones } from "../db/queries/ops"
+import { getOpsWithAssignments, getOpById, getOpsCount, createOp, updateOp, softDeleteOp, restoreOp, getOpPhones, getOpAssignment, upsertOpAssignment, getClientsForDropdown, getAssignmentStatuses, getCsStaffNames } from "../db/queries/ops"
 import { getDb } from "../db"
-import { getCsStaff } from "../db/queries/cs-staff"
 
 const router = new Hono()
 
@@ -16,6 +15,10 @@ const CreateOpSchema = z.object({
   gender: z.string().max(20).optional().default(""),
   nickname: z.string().max(100).optional().default(""),
   rate: z.string().max(100).optional().default(""),
+  client: z.string().max(200).optional().default(""),
+  role: z.string().max(100).optional().default(""),
+  status: z.string().max(50).optional().default(""),
+  assignedCs: z.string().max(100).optional().default(""),
 })
 
 router.get("/", (c) => {
@@ -34,17 +37,23 @@ router.get("/", (c) => {
 })
 
 router.get("/new", (c) => {
-  return c.html(<OpsListPage ops={[]} search="" total={0} showTrashed={false} editing={true} />)
+  return c.html(<OpsListPage ops={[]} search="" total={0} showTrashed={false} editing={true}
+    clients={getClientsForDropdown()} statuses={getAssignmentStatuses()} csStaff={getCsStaffNames()} />)
 })
 
 router.post("/", async (c) => {
   const form = await c.req.parseBody()
   const parsed = CreateOpSchema.safeParse(form)
   if (!parsed.success) {
-    return c.html(<OpsListPage ops={[]} search="" total={0} showTrashed={false} editing={true} errors={parsed.error.flatten().fieldErrors as Record<string, string>} formData={form as Record<string, string>} />)
+    return c.html(<OpsListPage ops={[]} search="" total={0} showTrashed={false} editing={true}
+      errors={parsed.error.flatten().fieldErrors as Record<string, string>} formData={form as Record<string, string>}
+      clients={getClientsForDropdown()} statuses={getAssignmentStatuses()} csStaff={getCsStaffNames()} />)
   }
-  const { fullName, firstName, lastName, email, phone, gender, nickname, rate } = parsed.data
+  const { fullName, firstName, lastName, email, phone, gender, nickname, rate, client, role, status, assignedCs } = parsed.data
   createOp({ fullName, firstName: firstName || undefined, lastName: lastName || undefined, email: email || undefined, phone: phone || undefined, gender: gender || undefined, nickname: nickname || undefined, rate: rate || undefined })
+  if (client) {
+    upsertOpAssignment(fullName, { clientName: client, role: role || undefined, status: status || undefined, assignedCs: assignedCs || undefined })
+  }
   return c.redirect("/ops")
 })
 
@@ -53,7 +62,6 @@ router.get("/:id/edit", (c) => {
   const op = getOpById(id)
   if (!op) return c.redirect("/ops")
   const ops = getOpsWithAssignments()
-  // Cast to any and normalize snake_case → camelCase for form
   const raw = op as any
   const formData: Record<string, string> = {
     fullName: raw.full_name || raw.fullName || "",
@@ -65,7 +73,18 @@ router.get("/:id/edit", (c) => {
     nickname: raw.nickname || "",
     rate: raw.rate || "",
   }
-  return c.html(<OpsListPage ops={ops} search="" total={0} showTrashed={false} editing={true} editId={id} formData={formData} />)
+  const fullName = raw.full_name || raw.fullName || ""
+  if (fullName) {
+    const assignment = getOpAssignment(fullName)
+    if (assignment) {
+      formData.client = assignment.clientName || ""
+      formData.role = assignment.role || ""
+      formData.status = assignment.status || ""
+      formData.assignedCs = assignment.assignedCs || ""
+    }
+  }
+  return c.html(<OpsListPage ops={ops} search="" total={0} showTrashed={false} editing={true} editId={id}
+    formData={formData} clients={getClientsForDropdown()} statuses={getAssignmentStatuses()} csStaff={getCsStaffNames()} />)
 })
 
 router.post("/:id", async (c) => {
@@ -80,9 +99,18 @@ router.post("/:id", async (c) => {
     gender: z.string().optional(),
     nickname: z.string().optional(),
     rate: z.string().optional(),
+    client: z.string().optional(),
+    role: z.string().optional(),
+    status: z.string().optional(),
+    assignedCs: z.string().optional(),
   }).safeParse(form)
   if (!parsed.success) return c.redirect(`/ops/${id}/edit`)
-  updateOp(id, parsed.data as any)
+  updateOp(id, { fullName: parsed.data.fullName, firstName: parsed.data.firstName, lastName: parsed.data.lastName, email: parsed.data.email, phone: parsed.data.phone, gender: parsed.data.gender, nickname: parsed.data.nickname, rate: parsed.data.rate })
+  const op = getOpById(id) as any
+  const opName = op?.full_name || op?.fullName || parsed.data.fullName
+  if (opName) {
+    upsertOpAssignment(opName, { clientName: parsed.data.client, role: parsed.data.role, status: parsed.data.status, assignedCs: parsed.data.assignedCs })
+  }
   return c.redirect("/ops")
 })
 

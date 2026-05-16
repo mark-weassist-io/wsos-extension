@@ -332,6 +332,8 @@ if (schedTab?.formatted?.length > 1) {
     milestone TEXT NOT NULL,
     milestone_date TEXT,
     happened INTEGER NOT NULL DEFAULT 0,
+    was_green INTEGER NOT NULL DEFAULT 1,
+    custom_date TEXT,
     created_at TEXT DEFAULT (datetime('now')),
     UNIQUE(op_name, milestone)
   )`)

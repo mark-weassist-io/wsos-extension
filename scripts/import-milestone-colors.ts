@@ -53,16 +53,16 @@ async function main() {
   const db = new Database(DB_PATH)
   db.run("PRAGMA journal_mode=WAL")
 
-  // 4. Upsert milestones with was_green flag
+  // 4. Upsert milestones with was_green flag + milestone_date
   const upsertGreen = db.prepare(`
-    INSERT INTO checkin_milestones (op_name, milestone, happened, was_green)
-    VALUES (?, ?, 1, 1)
-    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 1, was_green = 1
+    INSERT INTO checkin_milestones (op_name, milestone, happened, was_green, milestone_date)
+    VALUES (?, ?, 1, 1, ?)
+    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 1, was_green = 1, milestone_date = ?
   `)
   const upsertNonGreen = db.prepare(`
-    INSERT INTO checkin_milestones (op_name, milestone, happened, was_green)
-    VALUES (?, ?, 0, 0)
-    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 0, was_green = 0
+    INSERT INTO checkin_milestones (op_name, milestone, happened, was_green, milestone_date)
+    VALUES (?, ?, 0, 0, ?)
+    ON CONFLICT(op_name, milestone) DO UPDATE SET happened = 0, was_green = 0, milestone_date = ?
   `)
 
   let greenCount = 0, nonGreenCount = 0, errors = 0
@@ -78,10 +78,10 @@ async function main() {
           if (!dateVal) continue
           const cellColor = gridRows[r]?.values?.[col]?.effectiveFormat?.backgroundColor
           if (isGreen(cellColor)) {
-            upsertGreen.run(opName, milestone)
+            upsertGreen.run(opName, milestone, dateVal, dateVal)
             greenCount++
           } else {
-            upsertNonGreen.run(opName, milestone)
+            upsertNonGreen.run(opName, milestone, dateVal, dateVal)
             nonGreenCount++
           }
         }
@@ -94,10 +94,39 @@ async function main() {
 
   try {
     tx()
-    log(`Done: ${greenCount} green (scheduled), ${nonGreenCount} non-green (cancelled), ${errors} errors`)
+    log(`Done: ${greenCount} green, ${nonGreenCount} non-green, ${errors} errors`)
   } catch (e) {
     log(`FATAL transaction failed: ${e}`)
   }
+
+  // 5. Mark overdue as cancelled — any milestone where happened=0 and date has past
+  //    gets was_green=0 so it shows as "cancelled" instead of "overdue"
+  log("Marking overdue milestones as cancelled...")
+  const markCancelled = db.prepare(`
+    UPDATE checkin_milestones
+    SET was_green = 0
+    WHERE happened = 0
+      AND was_green = 1
+      AND milestone_date IS NOT NULL
+      AND milestone_date != ''
+  `)
+  // Parse milestone_date (M/D/YYYY) and compare to today
+  const today = new Date()
+  const dateStr = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`
+  let cancelled = 0
+  const overdueRows = db.prepare("SELECT op_name, milestone, milestone_date FROM checkin_milestones WHERE happened = 0 AND was_green = 1 AND milestone_date IS NOT NULL AND milestone_date != ''").all() as { op_name: string; milestone: string; milestone_date: string }[]
+  for (const row of overdueRows) {
+    try {
+      const parts = row.milestone_date.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+      if (!parts) continue
+      const msDate = new Date(+parts[3], +parts[1] - 1, +parts[2])
+      if (msDate < today) {
+        db.prepare("UPDATE checkin_milestones SET was_green = 0 WHERE op_name = ? AND milestone = ?").run(row.op_name, row.milestone)
+        cancelled++
+      }
+    } catch {}
+  }
+  log(`Marked ${cancelled} overdue milestones as cancelled`)
 
   db.close()
 }

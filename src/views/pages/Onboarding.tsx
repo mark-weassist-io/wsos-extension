@@ -10,6 +10,11 @@ interface DetailProps {
   startDate?: string | null
   startTime?: string | null
   rate?: string | null
+  clientName?: string | null
+  companyName?: string | null
+  role?: string | null
+  contactNumber?: string | null
+  email?: string | null
 }
 
 interface Props {
@@ -55,17 +60,29 @@ export const OnboardingPage: FC<Props> = ({ summaries, detail, person }) => {
         <a href="/onboarding" style="color:var(--accent);text-decoration:none;font-size:0.875rem;display:inline-block;margin-bottom:16px">← Back to Onboarding</a>
         <h3 style="font-size:1rem;font-weight:600;margin-bottom:12px">{detail.opName} — Onboarding</h3>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;font-size:0.85rem;align-items:center">
+          <span><strong>Client:</strong> {detail.clientName || "—"}</span>
+          <span><strong>Role:</strong> {detail.role || "—"}</span>
           <span><strong>Start Date:</strong> {detail.startDate || "—"}</span>
           <span><strong>Start Time:</strong> {detail.startTime || "—"}</span>
           <span><strong>Rate:</strong> {detail.rate || "—"}</span>
-          <a href={`/ops/${detail.opId}/edit`} class="btn btn-outline-secondary btn-sm" style="text-decoration:none">Edit Rate & Details</a>
-          <button class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('onboarding-edit-form').style.display='block';this.style.display='none'">Edit Dates</button>
+          <span><strong>Contact:</strong> {detail.contactNumber || "—"}</span>
+          <span><strong>Email:</strong> {detail.email || "—"}</span>
+          <a href={`/ops/${detail.opId}/edit`} class="btn btn-outline-secondary btn-sm" style="text-decoration:none">Edit Rate &amp; Details</a>
+          <button class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('onboarding-edit-form').style.display='block';this.style.display='none'">Edit Record</button>
         </div>
         <div id="onboarding-edit-form" style="display:none;margin-bottom:16px">
-          <form action={`/onboarding/${detail.recordId}`} method="POST" class="card" style="padding:16px;max-width:500px">
-            <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Date</label><input type="text" name="startDate" value={detail.startDate || ""} class="form-control form-control-sm" placeholder="e.g. 6 Apr 2026" /></div>
-            <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Time</label><input type="text" name="startTime" value={detail.startTime || ""} class="form-control form-control-sm" placeholder="e.g. 9:00am PST" /></div>
-            <div style="display:flex;gap:8px">
+          <form action={`/onboarding/${detail.recordId}`} method="POST" class="card" style="padding:16px;max-width:600px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Client Name</label><input type="text" name="clientName" value={detail.clientName || ""} class="form-control form-control-sm" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Company Name</label><input type="text" name="companyName" value={detail.companyName || ""} class="form-control form-control-sm" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Role</label><input type="text" name="role" value={detail.role || ""} class="form-control form-control-sm" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Rate</label><input type="text" name="rate" value={detail.rate || ""} class="form-control form-control-sm" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Date</label><input type="text" name="startDate" value={detail.startDate || ""} class="form-control form-control-sm" placeholder="e.g. 6 Apr 2026" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Start Time</label><input type="text" name="startTime" value={detail.startTime || ""} class="form-control form-control-sm" placeholder="e.g. 9:00am PST" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Contact Number</label><input type="text" name="contactNumber" value={detail.contactNumber || ""} class="form-control form-control-sm" /></div>
+              <div class="mb-2"><label class="form-label" style="font-size:.8rem">Email</label><input type="email" name="email" value={detail.email || ""} class="form-control form-control-sm" /></div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px">
               <button type="submit" class="btn btn-primary btn-sm">Save</button>
               <button type="button" class="btn btn-outline-secondary btn-sm" onclick="document.getElementById('onboarding-edit-form').style.display='none'">Cancel</button>
             </div>

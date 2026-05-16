@@ -6,7 +6,7 @@ import * as schema from "./schema-drizzle"
 let _db: Database | null = null
 let _drizzle: BunSQLiteDatabase<typeof schema> | null = null
 
-const DB_PATH = join(import.meta.dir, "..", "..", "data", "wsos-extension.db")
+const DB_PATH = Bun.env.DB_PATH || join(import.meta.dir, "..", "..", "data", "wsos-extension.db")
 
 export function getDb(): Database {
   if (!_db) {

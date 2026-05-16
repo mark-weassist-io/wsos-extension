@@ -9,3 +9,4 @@ server.log
 
 .playwright-mcp/
 session-ses_1e78.md
+.env

@@ -13,6 +13,7 @@ export interface OpRow {
   phone: string | null
   gender: string | null
   nickname: string | null
+  rate: string | null
   deleted_at: string | null
 }
 
@@ -21,6 +22,7 @@ export interface OpWithAssignment extends OpRow {
   role: string | null
   status: string | null
   assigned_cs: string | null
+  assignment_id: number | null
 }
 
 function opSelect() {
@@ -64,6 +66,7 @@ export function getOpsWithAssignments(search?: string, includeTrashed?: boolean)
     role: schema.assignments.role,
     status: schema.assignments.status,
     assigned_cs: schema.assignments.assignedCs,
+    assignment_id: schema.assignments.id,
   }).from(schema.ops)
     .leftJoin(schema.assignments, eq(schema.ops.fullName, schema.assignments.opName))
     .where(conditions.length > 0 ? and(...conditions) : undefined)
@@ -108,5 +111,67 @@ export function getOpPhones(opName: string): string[] {
     .orderBy(schema.opPhones.sortOrder)
     .all()
     .map(r => r.phone)
+}
+
+export interface OpAssignmentRow {
+  id: number
+  opName: string
+  clientName: string
+  role: string | null
+  status: string | null
+  assignedCs: string | null
+}
+
+export function getOpAssignment(opName: string): OpAssignmentRow | undefined {
+  return d().select({
+    id: schema.assignments.id,
+    opName: schema.assignments.opName,
+    clientName: schema.assignments.clientName,
+    role: schema.assignments.role,
+    status: schema.assignments.status,
+    assignedCs: schema.assignments.assignedCs,
+  }).from(schema.assignments)
+    .where(eq(schema.assignments.opName, opName))
+    .limit(1)
+    .get()
+}
+
+export function upsertOpAssignment(opName: string, data: { clientName?: string; role?: string; status?: string; assignedCs?: string }) {
+  const existing = d().select({ id: schema.assignments.id }).from(schema.assignments)
+    .where(eq(schema.assignments.opName, opName))
+    .limit(1).get()
+  if (existing) {
+    d().update(schema.assignments).set(data).where(eq(schema.assignments.id, existing.id)).run()
+  } else if (data.clientName) {
+    d().insert(schema.assignments).values({ opName, ...data, clientName: data.clientName }).run()
+  }
+}
+
+export function getClientsForDropdown(): string[] {
+  return d().select({ name: schema.clients.name })
+    .from(schema.clients)
+    .where(isNull(schema.clients.deletedAt))
+    .orderBy(schema.clients.name)
+    .all()
+    .map(r => r.name)
+}
+
+export function getAssignmentStatuses(): string[] {
+  try {
+    return d().select({ name: schema.assignmentStatuses.name })
+      .from(schema.assignmentStatuses)
+      .orderBy(schema.assignmentStatuses.name)
+      .all()
+      .map(r => r.name)
+  } catch { return ["Active", "Probation", "Inactive", "Separated", "Graduated"] }
+}
+
+export function getCsStaffNames(): string[] {
+  return d().select({ name: schema.csStaff.name })
+    .from(schema.csStaff)
+    .where(isNull(schema.csStaff.deletedAt))
+    .orderBy(schema.csStaff.name)
+    .all()
+    .map(r => r.name)
 }
 
